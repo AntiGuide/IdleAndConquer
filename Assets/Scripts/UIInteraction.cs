@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class UIInteraction : MonoBehaviour {
 
-    private MenueControll menueController;
+    private MenueController menueController;
 
     // Use this for initialization
     void Start () {
 
-        menueController = GameObject.Find("BackgroundBuyMenue").GetComponent<MenueControll>();
+        menueController = GameObject.Find("BackgroundBuyMenue").GetComponent<MenueController>();
 
     }
 	
@@ -19,7 +19,7 @@ public class UIInteraction : MonoBehaviour {
 	}
 
     public void OpenWorldMap() {
-        menueController.OpenMenue(MenueControll.Screen.MAP);
+        menueController.OpenMenue(MenueController.MenueCategory.MAP);
         Debug.Log("OpenWorldMap");
     }
 
