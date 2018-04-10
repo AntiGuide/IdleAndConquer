@@ -20,6 +20,12 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     MenueCategory enabledScreen;
     float canvasHeight;
     float startYMenue;
+    private float lerpJourneyLength;
+    private float lerpStartTime;
+    private Vector3 startMarker;
+    private Vector3 endMarker;
+    private float lerpSpeed;
+    private bool menueLerping;
 
     public void OnBeginDrag(PointerEventData eventData) {
         itemBeingDragged = gameObject;
@@ -31,7 +37,8 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         if (y > canvasHeight * 0.8f) {
             y = canvasHeight * 0.8f;
-
+        } else if (y < startYMenue) {
+            y = startYMenue;
         }
         transform.position = new Vector3(transform.position.x,y,0);
     }
@@ -45,7 +52,12 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         } else {
             y = startYMenue;
         }
-        transform.position = new Vector3(transform.position.x, y, 0);
+        startMarker = transform.position;
+        endMarker = new Vector3(transform.position.x, y, 0);
+        lerpJourneyLength = Vector3.Distance(startMarker, endMarker);
+        menueLerping = true;
+        lerpStartTime = Time.time;
+        //transform.position = new Vector3(transform.position.x, y, 0);
     }
 
     // Use this for initialization
@@ -53,11 +65,22 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         enabledScreen = MenueCategory.NONE;
         canvasHeight = GameObject.Find("/Canvas").GetComponent<RectTransform>().rect.height;
         startYMenue = transform.position.y;
+        lerpSpeed = 1000.0f;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if (menueLerping && lerpJourneyLength == 0f) {
+            menueLerping = false;
+        }
+        if (menueLerping) {
+            float distCovered = (Time.time - lerpStartTime) * lerpSpeed;
+            float fracJourney = distCovered / lerpJourneyLength;
+            transform.position = Vector3.Lerp(startMarker, endMarker, fracJourney);
+            if (fracJourney >= 1f) {
+                menueLerping = false;
+            }
+        }
     }
 
     /**
