@@ -15,11 +15,12 @@ public class MenueControll : MonoBehaviour {
     };
 
     Screen enabledScreen;
+    private float canvasHeight;
 
     // Use this for initialization
     void Start () {
         enabledScreen = Screen.NONE;
-
+        canvasHeight = GameObject.Find("/Canvas").GetComponent<RectTransform>().rect.height;
     }
 	
 	// Update is called once per frame
@@ -27,10 +28,22 @@ public class MenueControll : MonoBehaviour {
 		
 	}
 
+    /**
+     * <summary>This method opens the called type of menue instantly an without an animation.</summary>
+     * <param name="screenType">Der Typ des zu öffnenden Menüs</param>
+     * <returns>Nichts</returns>
+     * <remarks>This method opens the called type of menue instantly an without an animation. The types to be called are: MAP, RESEARCH, PRODUCTION_BOOST, BLACK_MARKET and OPTIONS</remarks>
+     * <value>The method sets the _enabledScreen data member.</value>
+     * */
     public void OpenMenue(Screen screenType) {
         switch (screenType) {
             case Screen.MAP:
                 if (enabledScreen == Screen.MAP) {
+                    float y = transform.position.y;
+                    if (y > canvasHeight * 0.8f) {
+                        y = canvasHeight * 0.8f;
+                    }
+                    transform.position = new Vector3(transform.position.x, y, 0);
                     transform.localScale = new Vector3(1, 1, 1);
                     enabledScreen = Screen.NONE;
                 } else {
