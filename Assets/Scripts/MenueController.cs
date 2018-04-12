@@ -56,7 +56,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnEndDrag(PointerEventData eventData) {
         itemBeingDragged = null;
         float y = transform.position.y;
-        Debug.Log(y);
+        //Debug.Log(y);
         if (y > canvasHeight * menueExbandTriggerHeight) {
             y = canvasHeight * menueExpandedHeight;
             enabledScreen = MenueCategory.MAP;
