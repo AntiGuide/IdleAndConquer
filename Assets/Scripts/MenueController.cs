@@ -77,20 +77,6 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         canvasHeight = canvasRectTransform.rect.height * canvasRectTransform.localScale.y;
         startYMenue = transform.position.y;
         
-        /*Vector3[] tmpVec = new Vector3[4];
-        canvasRectTransform.GetLocalCorners(tmpVec);
-        for (int i = 0; i < 4; i++) {
-            Debug.Log(tmpVec[i].x + " | " + tmpVec[i].y);
-
-        }
-        tmpVec = new Vector3[4];
-        canvasRectTransform.GetWorldCorners(tmpVec);
-        for (int i = 0; i < 4; i++) {
-            Debug.Log(tmpVec[i].x + " | " + tmpVec[i].y);
-
-        }
-        
-        DrawLine(new Vector3(0f,111f,0f), new Vector3(300f, 111f, 0f), Color.red,20.0f);*/
     }
 	
 	// Update is called once per frame
@@ -135,25 +121,6 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         }
 
         //transform.localPosition = Vector3.zero;
-    }
-
-
-
-    void DrawLine(Vector3 start, Vector3 end, Color color, float duration = 0.2f) {
-        
-        GameObject myLine = new GameObject("Line", typeof(LineRenderer));
-        myLine.transform.parent = GameObject.Find("/Canvas").transform;
-        myLine.transform.position = start;
-        //myLine.AddComponent<LineRenderer>();
-        LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Particles/Alpha Blended Premultiply"));
-        lr.startColor = color;
-        lr.endColor = color;
-        lr.startWidth = 1.0f;
-        lr.endWidth = 1.0f;
-        lr.SetPosition(0, start);
-        lr.SetPosition(1, end);
-        GameObject.Destroy(myLine, duration);
     }
 
 
