@@ -36,6 +36,11 @@ public class UIInteraction : MonoBehaviour {
         Debug.Log("OpenBlackMarket");
     }
 
+    public void OpenBuildings(GameObject BuildMenue) {
+        Instantiate(BuildMenue, GameObject.Find("Canvas").transform);
+        Debug.Log("OpenBuildings");
+    }
+
     public void OpenOptions() {
         Debug.Log("OpenOptions");
     }

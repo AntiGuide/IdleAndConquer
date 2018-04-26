@@ -10,15 +10,18 @@ public class CreateAndOrderUnit : MonoBehaviour {
     public int damage;
     public int defense;
     public float buildtime;
+    public GameObject textDollar;
 
     private Unit attachedUnit;
     private Text unitCountText;
     private int availableUnits = 0;
+    private MoneyManagement moneyManager;
 
     // Use this for initialization
     void Start () {
         attachedUnit = new Unit(unitName, cost, damage, defense, buildtime);
         unitCountText = gameObject.GetComponentInChildren<Text>();
+        moneyManager = textDollar.GetComponent<MoneyManagement>();
     }
 	
 	// Update is called once per frame
@@ -27,11 +30,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
 	}
 
     public void OrderUnitOnClick() {
-        attachedUnit.Order(ref availableUnits);
+        attachedUnit.Order(ref availableUnits, ref moneyManager);
     }
-
-    /*public void AddAvailableUnit() {
-        availableUnits++;
-    }*/
-
 }
