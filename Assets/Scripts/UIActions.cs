@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIActions : MonoBehaviour {
 
@@ -24,10 +25,13 @@ public class UIActions : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetMouseButton(0)) {
-            if (playerBuilding) {
+            if (EventSystem.current.IsPointerOverGameObject()){    // is the touch on the GUI
+                Debug.Log("GUI");
+            }else if(playerBuilding) {
                 touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 layerMask = LayerMask.GetMask("Plane", "UI");
                 Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 100.0f, layerMask);
+                //Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 100.0f);
                 //Debug.DrawRay(Camera.main.transform.position, touchRay.direction * 100, Color.red, 10);
 
                 if (hitInformation.collider != null) {
