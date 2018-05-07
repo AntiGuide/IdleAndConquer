@@ -5,9 +5,9 @@ using UnityEngine;
 public class CameraHandler : MonoBehaviour {
     private Ray touchRay;
     private RaycastHit hitInformation;
-    private int layerMask;
-    private GameObject objectToMove;
-    private Material oToMovMaterial;
+    //private int layerMask;
+    //private GameObject objectToMove;
+    //private Material oToMovMaterial;
 
 
     public static float cellSize = 5f;
