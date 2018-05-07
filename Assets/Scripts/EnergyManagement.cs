@@ -10,7 +10,8 @@ public class EnergyManagement : MonoBehaviour {
     public long minEnergy = 0;
 
     private long curEnergy = 0;
-    
+    private float EnergyTimer = 0;
+
     // Use this for initialization
     void Start () {
 
@@ -18,7 +19,11 @@ public class EnergyManagement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        EnergyTimer += Time.deltaTime;
+        if (EnergyTimer > 0.2f) {
+            addEnergy(1);
+            EnergyTimer = EnergyTimer - 1;
+        }
     }
 
     public void addEnergy(long energyToAdd) {

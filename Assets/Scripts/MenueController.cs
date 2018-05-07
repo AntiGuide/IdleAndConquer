@@ -31,11 +31,6 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     bool menueLerping;
 
     private void Awake() {
-        //Set screen size for Standalone
-#if UNITY_STANDALONE
-         Screen.SetResolution(576, 1024, false);
-         Screen.fullScreen = false;
-#endif
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
