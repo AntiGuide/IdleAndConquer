@@ -21,4 +21,15 @@ public class TankFactory {
             return false;
         }
     }
+
+    public void BuildTankButton(int place) {
+        int i = 0;
+        foreach (TankCategory category in tankTypes) {
+            if (++i == place) {
+                if (Build(category)) {
+                    //Start que Animation
+                }
+            }
+        }
+    }
 }

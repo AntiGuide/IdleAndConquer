@@ -1,8 +1,5 @@
 ﻿public class TankCategory
 {
-    private string name;
-    private int damage;
-    private float buildTime;
 
     public MoneyManagement moneyManager;
 
@@ -17,11 +14,44 @@
         }
     }
 
+    private float buildTime;
+    public float BuildTime {
+        get {
+            return buildTime;
+        }
+
+        set {
+            buildTime = value;
+        }
+    }
+
+    private int damage;
+    public int Damage {
+        get {
+            return damage;
+        }
+
+        set {
+            damage = value;
+        }
+    }
+
+    private string name;
+    public string Name {
+        get {
+            return name;
+        }
+
+        set {
+            name = value;
+        }
+    }
+
     public TankCategory(string name, int damage, int cost, float buildTime) {
-        this.name = name;
-        this.damage = damage;
+        this.Name = name;
+        this.Damage = damage;
         this.Cost = cost;
-        this.buildTime = buildTime;
+        this.BuildTime = buildTime;
     }
 
     public bool Build(ref int availableUnits, ref MoneyManagement moneyManager) {

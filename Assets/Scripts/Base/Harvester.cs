@@ -12,7 +12,6 @@ public class Harvester : MonoBehaviour {
     public MoneyManagement moneyManagement;
 
     private float currentProgressWay;
-    private bool refineryReached = false;
 
     // Use this for initialization
     void Start () {
