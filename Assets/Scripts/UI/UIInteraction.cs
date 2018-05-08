@@ -20,7 +20,7 @@ public class UIInteraction : MonoBehaviour {
 	}
 
     public void OpenWorldMap() {
-        menueController.OpenMenue(MenueController.MenueCategory.MAP);
+        menueController.OpenMenue(MenueController.MenueCategory.MENUE_ONE);
         Debug.Log("OpenWorldMap");
     }
 

@@ -12,11 +12,11 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public enum MenueCategory
     {
         NONE = 0,
-        MAP,
-        RESEARCH,
-        PRODUCTION_BOOST,
-        BLACK_MARKET,
-        OPTIONS
+        MENUE_ONE,
+        MENUE_TWO,
+        MENUE_THREE,
+        MENUE_FOUR,
+        MENUE_FIVE
     };
 
     MenueCategory enabledScreen;
@@ -29,6 +29,9 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     Vector3 endMarker;
     public float lerpSpeed = 1000f;
     bool menueLerping;
+
+    private Image bgButtonsImage;
+    private float menueExpandedHeightNew;
 
     private void Awake() {
     }
@@ -54,9 +57,10 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         //Debug.Log(y);
         if (y > canvasHeight * menueExbandTriggerHeight) {
             y = canvasHeight * menueExpandedHeight;
-            enabledScreen = MenueCategory.MAP;
+            enabledScreen = MenueCategory.MENUE_ONE;
         } else {
             y = startYMenue;
+            enabledScreen = MenueCategory.NONE;
         }
         startMarker = transform.position;
         endMarker = new Vector3(transform.position.x, y, 0);
@@ -69,6 +73,8 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     void Start () {
         enabledScreen = MenueCategory.NONE;
         canvasRectTransform = GameObject.Find("/Canvas").GetComponent<RectTransform>();
+        bgButtonsImage = GameObject.Find("BackgroundButtons").GetComponent<Image>();
+        
         canvasHeight = canvasRectTransform.rect.height * canvasRectTransform.localScale.y;
         startYMenue = transform.position.y;
         
@@ -81,7 +87,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             menueLerping = false;
         }
         if (menueLerping) {
-            float distCovered = (Time.time - lerpStartTime) * lerpSpeed;
+            float distCovered = (Time.time - lerpStartTime) * (lerpSpeed/250) * lerpJourneyLength;
             float fracJourney = distCovered / lerpJourneyLength;
             transform.position = Vector3.Lerp(startMarker, endMarker, fracJourney);
             if (fracJourney >= 1f) {
@@ -94,21 +100,19 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
      * <summary>This method opens the called type of menue instantly an without an animation.</summary>
      * <param name="screenType">Der Typ des zu öffnenden Menüs</param>
      * <returns>Nichts</returns>
-     * <remarks>This method opens the called type of menue instantly an without an animation. The types to be called are: MAP, RESEARCH, PRODUCTION_BOOST, BLACK_MARKET and OPTIONS</remarks>
-     * <value>The method sets the _enabledScreen data member.</value>
+     * <remarks>This method opens the called type of menue instantly an without an animation.</remarks>
+     * <value>The method sets the enabledScreen data member.</value>
      * */
     public void OpenMenue(MenueCategory screenType) {
         switch (screenType) {
-            case MenueCategory.MAP:
-                if (enabledScreen == MenueCategory.MAP) {
-                    float y = transform.position.y;
-                    if (y > canvasHeight * menueExpandedHeight) {
-                        y = canvasHeight * menueExpandedHeight;
-                    }
-                    transform.position = new Vector3(transform.position.x, y, 0);
-                    enabledScreen = MenueCategory.NONE;
+            case MenueCategory.MENUE_ONE:
+                if (enabledScreen != MenueCategory.MENUE_ONE) {
+                    
+                    transform.position = new Vector3(transform.position.x, canvasHeight * menueExpandedHeight, 0);
+                    enabledScreen = MenueCategory.MENUE_ONE;
                 } else {
-                    enabledScreen = MenueCategory.MAP;
+                    transform.position = new Vector3(transform.position.x, startYMenue, 0);
+                    enabledScreen = MenueCategory.NONE;
                 }
                 break;
             default:

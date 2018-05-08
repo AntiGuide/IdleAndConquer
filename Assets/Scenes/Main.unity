@@ -2457,14 +2457,13 @@ GameObject:
   - component: {fileID: 1023076695}
   - component: {fileID: 1023076698}
   - component: {fileID: 1023076697}
-  - component: {fileID: 1023076696}
   m_Layer: 5
-  m_Name: EnergyBar
+  m_Name: EnergyBarOverlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1023076695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2478,25 +2477,11 @@ RectTransform:
   m_Father: {fileID: 1954250487}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.098000005, y: 0.049519975}
-  m_AnchorMax: {x: 0.90200007, y: 0.9507761}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1023076696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1023076694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5572cc8b8fe3cbd48bdc3b4a270e086c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bar: {fileID: 1023076697}
-  maxEnergy: 100
-  minEnergy: 0
 --- !u!114 &1023076697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2516,9 +2501,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 66982843b793e4fca92ac00569f2a7ad, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 50fe69232afb2614c9776edbe809f7be, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 1
   m_FillAmount: 1
@@ -2843,8 +2828,8 @@ RectTransform:
   m_Father: {fileID: 1343580271}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.15677224}
-  m_AnchorMax: {x: 1, y: 0.8854357}
+  m_AnchorMin: {x: 0.05, y: 0.15677224}
+  m_AnchorMax: {x: 0.95, y: 0.8854357}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3581,10 +3566,10 @@ RectTransform:
   m_Father: {fileID: 1931439383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.27, y: 1}
-  m_AnchorMax: {x: 0.73, y: 1}
+  m_AnchorMin: {x: 0.27, y: 0.975}
+  m_AnchorMax: {x: 0.73, y: 0.975}
   m_AnchoredPosition: {x: 0, y: 27}
-  m_SizeDelta: {x: 0, y: 54}
+  m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517390283
 MonoBehaviour:
@@ -4892,6 +4877,7 @@ GameObject:
   - component: {fileID: 1954250487}
   - component: {fileID: 1954250489}
   - component: {fileID: 1954250488}
+  - component: {fileID: 1954250490}
   m_Layer: 5
   m_Name: BackgroundSideStrip
   m_TagString: Untagged
@@ -4937,11 +4923,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 50fe69232afb2614c9776edbe809f7be, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
+  m_Sprite: {fileID: 21300000, guid: a01bfb2562fb2174883659a9890941d0, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -4951,6 +4937,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1954250486}
+--- !u!114 &1954250490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954250486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5572cc8b8fe3cbd48bdc3b4a270e086c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bar: {fileID: 1954250488}
+  maxEnergy: 100
+  minEnergy: 0
 --- !u!1 &1954518596
 GameObject:
   m_ObjectHideFlags: 0

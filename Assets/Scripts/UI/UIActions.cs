@@ -26,7 +26,7 @@ public class UIActions : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButton(0)) {
             if (EventSystem.current.IsPointerOverGameObject()){    // is the touch on the GUI
-                Debug.Log("GUI");
+                //Debug.Log("GUI");
             }else if(playerBuilding) {
                 touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 layerMask = LayerMask.GetMask("Plane", "UI");

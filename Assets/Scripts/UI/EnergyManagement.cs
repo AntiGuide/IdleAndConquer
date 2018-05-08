@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class EnergyManagement : MonoBehaviour {
 
     public Image Bar;
-    public long maxEnergy = 100;
-    public long minEnergy = 0;
+    public float maxEnergy = 100;
+    public float minEnergy = 0;
 
-    private long curEnergy = 0;
-    private float EnergyTimer = 0;
+    private float curEnergy = 0;
+    //private float EnergyTimer = 0;
 
     // Use this for initialization
     void Start () {
@@ -19,14 +19,15 @@ public class EnergyManagement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        EnergyTimer += Time.deltaTime;
-        if (EnergyTimer > 0.2f) {
-            addEnergy(1);
-            EnergyTimer = EnergyTimer - 1;
-        }
+        addEnergy(Time.deltaTime * 5);
+        //EnergyTimer += Time.deltaTime;
+        //if (EnergyTimer > 0.2f) {
+        //    addEnergy(1);
+        //    EnergyTimer = EnergyTimer - 1;
+        //}
     }
 
-    public void addEnergy(long energyToAdd) {
+    public void addEnergy(float energyToAdd) {
         if (isInBounds(curEnergy + energyToAdd)) {
             curEnergy = curEnergy + energyToAdd;
             outputEnergy(curEnergy);
@@ -36,7 +37,7 @@ public class EnergyManagement : MonoBehaviour {
         }
     }
 
-    public bool subEnergy(long energyToSub) {
+    public bool subEnergy(float energyToSub) {
         if (isInBounds(curEnergy - energyToSub)) {
             curEnergy = curEnergy - energyToSub;
             outputEnergy(curEnergy);
@@ -46,7 +47,7 @@ public class EnergyManagement : MonoBehaviour {
         }
     }
 
-    public void setEnergy(long valueToSet) {
+    public void setEnergy(float valueToSet) {
         if (isInBounds(valueToSet)) {
             curEnergy = valueToSet;
             outputEnergy(curEnergy);
@@ -55,11 +56,11 @@ public class EnergyManagement : MonoBehaviour {
         }
     }
 
-    private void outputEnergy(long curEnergy) {
-        Bar.fillAmount = (float)curEnergy / (float)(maxEnergy - minEnergy);
+    private void outputEnergy(float curEnergy) {
+        Bar.fillAmount = curEnergy / (maxEnergy - minEnergy);
     }
 
-    private bool isInBounds(long valueToCheck) {
+    private bool isInBounds(float valueToCheck) {
         if (valueToCheck >= minEnergy && valueToCheck <= maxEnergy) {
             return true;
         } else {
