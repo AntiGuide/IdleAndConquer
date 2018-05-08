@@ -5,12 +5,14 @@ using UnityEngine.Events;
 
 public class UIInteraction : MonoBehaviour {
 
-    private MenueController menueController;
+    //private MenueController menueController;
+
+    public MainMenueController mainMenueController;
 
     // Use this for initialization
     void Start () {
 
-        menueController = GameObject.Find("BackgroundBuyMenue").GetComponent<MenueController>();
+        //menueController = GameObject.Find("BackgroundBuyMenue").GetComponent<MenueController>();
 
     }
 	
@@ -20,7 +22,7 @@ public class UIInteraction : MonoBehaviour {
 	}
 
     public void OpenWorldMap() {
-        menueController.OpenMenue(MenueController.MenueCategory.MENUE_ONE);
+        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_ONE);
         Debug.Log("OpenWorldMap");
     }
 

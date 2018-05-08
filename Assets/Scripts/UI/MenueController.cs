@@ -9,7 +9,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     
     public float menueExpandedHeight = 0.8f;
     public float menueExbandTriggerHeight = 0.6f;
-    public enum MenueCategory
+    /*public enum MenueCategory
     {
         NONE = 0,
         MENUE_ONE,
@@ -17,9 +17,10 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         MENUE_THREE,
         MENUE_FOUR,
         MENUE_FIVE
-    };
+    };*/
 
-    MenueCategory enabledScreen;
+    public MainMenueController mainMenueController;
+    
     private RectTransform canvasRectTransform;
     float canvasHeight;
     float startYMenue;
@@ -30,7 +31,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public float lerpSpeed = 1000f;
     bool menueLerping;
 
-    private Image bgButtonsImage;
+    //private Image bgButtonsImage;
     private float menueExpandedHeightNew;
 
     private void Awake() {
@@ -57,10 +58,10 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         //Debug.Log(y);
         if (y > canvasHeight * menueExbandTriggerHeight) {
             y = canvasHeight * menueExpandedHeight;
-            enabledScreen = MenueCategory.MENUE_ONE;
+            //enabledScreen = MenueCategory.MENUE_ONE;
         } else {
             y = startYMenue;
-            enabledScreen = MenueCategory.NONE;
+            mainMenueController.closeMenue();
         }
         startMarker = transform.position;
         endMarker = new Vector3(transform.position.x, y, 0);
@@ -71,9 +72,9 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     // Use this for initialization
     void Start () {
-        enabledScreen = MenueCategory.NONE;
+        mainMenueController.closeMenue();
         canvasRectTransform = GameObject.Find("/Canvas").GetComponent<RectTransform>();
-        bgButtonsImage = GameObject.Find("BackgroundButtons").GetComponent<Image>();
+        //bgButtonsImage = GameObject.Find("BackgroundButtons").GetComponent<Image>();
         
         canvasHeight = canvasRectTransform.rect.height * canvasRectTransform.localScale.y;
         startYMenue = transform.position.y;
@@ -96,30 +97,20 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         }
     }
 
-    /**
-     * <summary>This method opens the called type of menue instantly an without an animation.</summary>
-     * <param name="screenType">Der Typ des zu öffnenden Menüs</param>
-     * <returns>Nichts</returns>
-     * <remarks>This method opens the called type of menue instantly an without an animation.</remarks>
-     * <value>The method sets the enabledScreen data member.</value>
-     * */
-    public void OpenMenue(MenueCategory screenType) {
-        switch (screenType) {
-            case MenueCategory.MENUE_ONE:
-                if (enabledScreen != MenueCategory.MENUE_ONE) {
-                    
-                    transform.position = new Vector3(transform.position.x, canvasHeight * menueExpandedHeight, 0);
-                    enabledScreen = MenueCategory.MENUE_ONE;
-                } else {
-                    transform.position = new Vector3(transform.position.x, startYMenue, 0);
-                    enabledScreen = MenueCategory.NONE;
-                }
-                break;
-            default:
-                break;
-        }
+    public void Expand(bool animated) {
+        if (animated) {
 
-        //transform.localPosition = Vector3.zero;
+        } else {
+            transform.position = new Vector3(transform.position.x, canvasHeight * menueExpandedHeight, 0);
+        }
+    }
+
+    public void Unexpand(bool animated) {
+        if (animated) {
+
+        } else {
+            transform.position = new Vector3(transform.position.x, startYMenue, 0);
+        }
     }
 
 
