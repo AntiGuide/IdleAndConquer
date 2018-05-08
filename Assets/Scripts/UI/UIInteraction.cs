@@ -37,7 +37,6 @@ public class UIInteraction : MonoBehaviour {
     }
 
     public void OpenBuildings(GameObject BuildMenue) {
-        Instantiate(BuildMenue, GameObject.Find("Canvas").transform);
         Debug.Log("OpenBuildings");
     }
 
