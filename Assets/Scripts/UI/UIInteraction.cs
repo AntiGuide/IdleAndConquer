@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class UIInteraction : MonoBehaviour {
 
@@ -21,29 +22,25 @@ public class UIInteraction : MonoBehaviour {
 		
 	}
 
-    public void OpenWorldMap() {
-        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_ONE);
-        Debug.Log("OpenWorldMap");
+    public void OpenButton1() {
+        SceneManager.LoadScene("MissionMap", LoadSceneMode.Single);
+        //The SceneManager loads your new Scene as a single Scene (not overlapping). This is Single mode.
     }
 
-    public void OpenResearch() {
-        Debug.Log("OpenResearch");
+    public void OpenButton2() {
+        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_TWO);
     }
 
-    public void OpenProductionBoost() {
-        Debug.Log("OpenProductionBoost");
+    public void OpenButton3() {
+        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_THREE);
     }
 
-    public void OpenBlackMarket() {
-        Debug.Log("OpenBlackMarket");
+    public void OpenButton4() {
+        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_FOUR);
     }
 
-    public void OpenBuildings(GameObject BuildMenue) {
-        Debug.Log("OpenBuildings");
-    }
-
-    public void OpenOptions() {
-        Debug.Log("OpenOptions");
+    public void OpenButton5() {
+        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_FIVE);
     }
 
 

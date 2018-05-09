@@ -34,9 +34,6 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     //private Image bgButtonsImage;
     private float menueExpandedHeightNew;
 
-    private void Awake() {
-    }
-
     public void OnBeginDrag(PointerEventData eventData) {
         itemBeingDragged = gameObject;
     }
@@ -61,7 +58,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             //enabledScreen = MenueCategory.MENUE_ONE;
         } else {
             y = startYMenue;
-            mainMenueController.closeMenue();
+            //mainMenueController.closeMenue();
         }
         startMarker = transform.position;
         endMarker = new Vector3(transform.position.x, y, 0);
@@ -72,7 +69,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     // Use this for initialization
     void Start () {
-        mainMenueController.closeMenue();
+        //mainMenueController.closeMenue();
         canvasRectTransform = GameObject.Find("/Canvas").GetComponent<RectTransform>();
         //bgButtonsImage = GameObject.Find("BackgroundButtons").GetComponent<Image>();
         
