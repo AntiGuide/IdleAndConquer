@@ -23,24 +23,24 @@ public class UIInteraction : MonoBehaviour {
 	}
 
     public void OpenButton1() {
-        SceneManager.LoadScene("MissionMap", LoadSceneMode.Single);
+        //SceneManager.LoadScene("MissionMap", LoadSceneMode.Single);
         //The SceneManager loads your new Scene as a single Scene (not overlapping). This is Single mode.
     }
 
     public void OpenButton2() {
-        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_TWO);
+        mainMenueController.ToggleMenue(2);
     }
 
     public void OpenButton3() {
-        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_THREE);
+        mainMenueController.ToggleMenue(3);
     }
 
     public void OpenButton4() {
-        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_FOUR);
+        mainMenueController.ToggleMenue(4);
     }
 
     public void OpenButton5() {
-        mainMenueController.ToggleMenue(MainMenueController.MenueCategory.MENUE_FIVE);
+        mainMenueController.ToggleMenue(5);
     }
 
 

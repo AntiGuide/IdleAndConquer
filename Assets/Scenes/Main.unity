@@ -9007,11 +9007,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38786d07d72dfa348af2b7e9e1e187da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menue1: {fileID: 0}
-  menue2: {fileID: 1958121001}
-  menue3: {fileID: 1856048914}
-  menue4: {fileID: 461962926}
-  menue5: {fileID: 1443325880}
+  menue:
+  - {fileID: 0}
+  - {fileID: 1958121001}
+  - {fileID: 1856048914}
+  - {fileID: 461962926}
+  - {fileID: 1443325880}
 --- !u!222 &1931439385
 CanvasRenderer:
   m_ObjectHideFlags: 0
