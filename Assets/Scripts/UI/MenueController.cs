@@ -14,8 +14,8 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private RectTransform canvasRectTransform;
     private Vector3 startMarker;
     private Vector3 endMarker;
-    private float canvasHeight;
-    private float startYMenue;
+    private static float canvasHeight;
+    private static float startYMenue;
     private float lerpJourneyLength;
     private float lerpStartTime;
     private bool menueLerping;
@@ -54,7 +54,6 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	// Update is called once per frame
 	void Update () {
         if (menueLerping && lerpJourneyLength == 0f) {
-
             menueLerping = false;
         }else if (menueLerping) {
             float distCovered = (Time.time - lerpStartTime) * (lerpSpeed/250) * lerpJourneyLength;
