@@ -26,7 +26,9 @@ public class CreateAndOrderUnit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        unitCountText.text = "" + availableUnits;
+        if (unitCountText != null) {
+            unitCountText.text = "" + availableUnits;
+        }
 	}
 
     public void OrderUnitOnClick() {

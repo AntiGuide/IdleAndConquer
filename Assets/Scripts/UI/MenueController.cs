@@ -29,6 +29,8 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             transform.position = new Vector3(transform.position.x, canvasHeight * menueExpandedHeight, 0);
         } else if (eventData.position.y < startYMenue) {
             transform.position = new Vector3(transform.position.x, startYMenue, 0);
+        } else {
+            transform.position = new Vector3(transform.position.x, eventData.position.y, 0);
         }
     }
 
