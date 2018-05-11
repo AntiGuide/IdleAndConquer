@@ -73,7 +73,7 @@ public class MainMenueController : MonoBehaviour {
             if (isExpanded) {
                 menueController[enabledMenue].Unexpand(true);//false wenn nicht animiert
                 //isExpanded = false;
-                enabledMenue = -1;
+                //enabledMenue = -1;
             } else {
                 menueController[enabledMenue].Expand(true);//false wenn nicht animiert
                 //isExpanded = true;

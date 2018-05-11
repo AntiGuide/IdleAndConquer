@@ -7,12 +7,16 @@ public class BuildBuilding : MonoBehaviour {
     
     public GameObject[] buildings;
     public float cellSize;
+    public float percentageXOffsetUI;
+    public float percentageYOffsetUI;
+    public GameObject buildConfirmUI;
 
     private bool playerBuilding;
     private Ray touchRay;
     private int layerMask;
     private RaycastHit hitInformation;
     private GameObject newBuilding;
+
 
     // Use this for initialization
     void Start () {
@@ -29,9 +33,23 @@ public class BuildBuilding : MonoBehaviour {
                 layerMask = LayerMask.GetMask("Plane");
                 Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
                 if (hitInformation.collider != null) {
+                    hitInformation.point = new Vector3(hitInformation.point.x, hitInformation.point.y + newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size.y / 2, hitInformation.point.z);
                     newBuilding.transform.position = toGrid(hitInformation.point);
                 }
             }
+        }
+    }
+
+    private void LateUpdate() {
+        if (playerBuilding) {
+            buildConfirmUI.SetActive(true);
+            //Confirm Build UI
+            Vector2 screenPoint = Camera.main.WorldToScreenPoint(newBuilding.transform.position);
+            //newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size
+            //Offset Replacement
+            screenPoint = new Vector2(screenPoint.x - (Screen.width * percentageXOffsetUI), screenPoint.y - (Screen.height * percentageYOffsetUI));
+            buildConfirmUI.transform.position = screenPoint;
+
         }
     }
 
@@ -47,6 +65,21 @@ public class BuildBuilding : MonoBehaviour {
     public void buildBuilding(int buildingID) {
         buildingID--;
         newBuilding = Instantiate(buildings[buildingID]);
+        newBuilding.transform.position = new Vector3(newBuilding.transform.position.x, hitInformation.point.y + newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size.y / 2, newBuilding.transform.position.z);
         playerBuilding = true;
+    }
+
+    public void CancelBuildingProcess() {
+        if (newBuilding != null) {
+            Destroy(newBuilding);
+            playerBuilding = false;
+            buildConfirmUI.SetActive(false);
+        }
+    }
+
+    public void ConfirmBuildingProcess() {
+        newBuilding = null;
+        playerBuilding = false;
+        buildConfirmUI.SetActive(false);
     }
 }

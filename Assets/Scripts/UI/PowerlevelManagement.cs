@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PowerlevelManagement : MonoBehaviour {
 
-    private long powerlevel;
+    private static long powerlevel;
 
     // Use this for initialization
     void Start () {
