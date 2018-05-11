@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class PowerlevelManagement : MonoBehaviour {
 
-    private static long powerlevel;
+    private static long powerlevel = 0;
 
     // Use this for initialization
     void Start () {
-        setPowerlevel(0);
+        
     }
 	
 	// Update is called once per frame
@@ -20,13 +20,13 @@ public class PowerlevelManagement : MonoBehaviour {
 
     public void addPowerlevel(long powerlevelToAdd) {
         powerlevel = powerlevel + powerlevelToAdd;
-        outputPowerlevel(powerlevel);
+        outputPowerlevel(ref powerlevel);
     }
 
     public bool subPowerlevel(long powerlevelToSub) {
         if (powerlevel >= powerlevelToSub) {
             powerlevel = powerlevel - powerlevelToSub;
-            outputPowerlevel(powerlevel);
+            outputPowerlevel(ref powerlevel);
             return true;
         } else {
             return false;
@@ -36,13 +36,13 @@ public class PowerlevelManagement : MonoBehaviour {
     public void setPowerlevel(long valueToSet) {
         if (valueToSet >= 0) {
             powerlevel = valueToSet;
-            outputPowerlevel(powerlevel);
+            outputPowerlevel(ref powerlevel);
         } else {
             throw new ArgumentException("Can not set a negative Dollar Value", "valueToSet");
         }
     }
 
-    private void outputPowerlevel(long powerlevel) {
+    private void outputPowerlevel(ref long powerlevel) {
         GetComponent<Text>().text = powerlevel.ToString() + " PL";
     }
 

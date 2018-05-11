@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MoneyManagement : MonoBehaviour {
 
-    private long money;
+    private static long money;
 
     // Use this for initialization
     void Start () {
