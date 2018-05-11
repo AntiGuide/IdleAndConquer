@@ -26,7 +26,7 @@ public class BuildBuilding : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetMouseButton(0)) {
-            if (EventSystem.current.IsPointerOverGameObject()) {    // is the touch on the GUI
+            if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject()) {    // is the touch on the GUI
                 //Debug.Log("GUI");
             } else if (playerBuilding) {
                 touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
