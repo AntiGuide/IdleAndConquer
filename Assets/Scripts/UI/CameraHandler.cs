@@ -9,8 +9,6 @@ public class CameraHandler : MonoBehaviour {
     //private GameObject objectToMove;
     //private Material oToMovMaterial;
 
-
-    public static float cellSize = 5f;
     // Use this for initialization
     void Start () {
         /*objectToMove = GameObject.Find("__BakerHouseCollider");
@@ -33,14 +31,7 @@ public class CameraHandler : MonoBehaviour {
         }
     }
 
-    public static Vector3 toGrid(Vector3 allignToGrid) {
-        //TODO Dont use variables
-        float x, y, z;
-        x = Mathf.Round(allignToGrid.x / cellSize) * cellSize;
-        y = allignToGrid.y;
-        z = Mathf.Round(allignToGrid.z / cellSize) * cellSize;
-        return new Vector3(x, y, z);
-    }
+
 
     public static Material ChangeAlpha(Material mat, float alphaValue) {
         //Debug.Log("Set Alpha to " + alphaValue);

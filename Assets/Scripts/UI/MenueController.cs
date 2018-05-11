@@ -54,6 +54,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	// Update is called once per frame
 	void Update () {
         if (menueLerping && lerpJourneyLength == 0f) {
+
             menueLerping = false;
         }else if (menueLerping) {
             float distCovered = (Time.time - lerpStartTime) * (lerpSpeed/250) * lerpJourneyLength;
@@ -77,6 +78,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         } else {
             transform.position = new Vector3(transform.position.x, canvasHeight * menueExpandedHeight, 0);
         }
+        mainMenueController.IsExpanded = true;
     }
 
     public void Unexpand(bool animated) {
@@ -91,6 +93,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         } else {
             transform.position = new Vector3(transform.position.x, startYMenue, 0);
         }
+        mainMenueController.IsExpanded = false;
     }
 
 

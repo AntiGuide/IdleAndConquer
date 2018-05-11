@@ -7,7 +7,7 @@ public class MainMenueController : MonoBehaviour {
     public GameObject[] menue = new GameObject[5];
 
     private int enabledMenue;
-    private bool isExpanded;
+    private static bool isExpanded;
     private MenueController[] menueController = new MenueController[5];
 
     public bool IsExpanded {
@@ -67,16 +67,16 @@ public class MainMenueController : MonoBehaviour {
             }
             menue[menueNumber].SetActive(true);
             enabledMenue = menueNumber;
-            menueController[enabledMenue].Expand(true);//false wenn nicht animiert
-            isExpanded = true;
+            menueController[enabledMenue].Expand(!isExpanded);//false wenn nicht animiert
+            //isExpanded = true;
         } else {
             if (isExpanded) {
                 menueController[enabledMenue].Unexpand(true);//false wenn nicht animiert
-                isExpanded = false;
+                //isExpanded = false;
                 enabledMenue = -1;
             } else {
                 menueController[enabledMenue].Expand(true);//false wenn nicht animiert
-                isExpanded = true;
+                //isExpanded = true;
             }
         }
     }

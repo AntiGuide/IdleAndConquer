@@ -10,7 +10,6 @@ public class EnergyManagement : MonoBehaviour {
     public float minEnergy = 0;
 
     private float curEnergy = 0;
-    //private float EnergyTimer = 0;
 
     // Use this for initialization
     void Start () {
@@ -20,11 +19,6 @@ public class EnergyManagement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         addEnergy(Time.deltaTime * 5);
-        //EnergyTimer += Time.deltaTime;
-        //if (EnergyTimer > 0.2f) {
-        //    addEnergy(1);
-        //    EnergyTimer = EnergyTimer - 1;
-        //}
     }
 
     public void addEnergy(float energyToAdd) {
@@ -33,7 +27,7 @@ public class EnergyManagement : MonoBehaviour {
             outputEnergy(curEnergy);
 
         } else {
-            throw new System.ArgumentException("Can not set an Energy Value that is not in the range of min and max Energy Value", "energyToAdd");
+            //throw new System.ArgumentException("Can not set an Energy Value that is not in the range of min and max Energy Value", "energyToAdd");
         }
     }
 
