@@ -293,14 +293,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildings:
-  - {fileID: 1649292648289196, guid: bf2710f25f950924f994a52d8da9729f, type: 2}
-  - {fileID: 1825538434887104, guid: 71e408c2bff25024cbc891b4c868879b, type: 2}
-  - {fileID: 1105438407615118, guid: d8d9f046dcfc0bd4aab74163a10d5335, type: 2}
-  - {fileID: 1766647984966370, guid: d41c1ad4efddbe14f9cf74cdde90ff6c, type: 2}
-  - {fileID: 1909322691188330, guid: 4bba462def83dd7469f400cb2df8e319, type: 2}
-  - {fileID: 1377873483283972, guid: 545c5cbefde772a49b88047019faf618, type: 2}
-  - {fileID: 1727924787927912, guid: 094690530f49bdd4999ebcee7771611a, type: 2}
-  - {fileID: 1493493173424788, guid: 511b8db52198a6c4b878fda7a53851a1, type: 2}
+  - {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f, type: 2}
+  - {fileID: 1434804739179960, guid: af192f10735a1b549874494876433076, type: 2}
+  - {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a, type: 2}
+  - {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d, type: 2}
+  - {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d, type: 2}
+  - {fileID: 1515728511559848, guid: 4e50ccac9c99029439655924f5651bdf, type: 2}
+  - {fileID: 1370554197613394, guid: 15ec9883c5986e946b6e141ac8c4b5cf, type: 2}
+  - {fileID: 1816868067750538, guid: 5b2ff19feeb5ec247add004570d9cd08, type: 2}
   cellSize: 50
   percentageXOffsetUI: -0.34
   percentageYOffsetUI: 0.12
@@ -7335,7 +7335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Refinery
+  m_Text: WIP
 --- !u!222 &1250140802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8467,18 +8467,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542056074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 37522404}
-        m_MethodName: buildBuilding
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1542056074

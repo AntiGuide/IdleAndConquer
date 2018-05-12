@@ -38,6 +38,7 @@ public class BuildBuilding : MonoBehaviour {
                 Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
                 if (hitInformation.collider != null) {
                     Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+                    Vector3 cent = bounds.center;
                     hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
                     //hitInformation.point = new Vector3(hitInformation.point.x, hitInformation.point.y + newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size.y / 2, hitInformation.point.z);
                     newBuilding.transform.position = toGrid(hitInformation.point);
@@ -61,6 +62,15 @@ public class BuildBuilding : MonoBehaviour {
         }
     }
 
+    void OnDrawGizmos() {
+        if (playerBuilding) {
+            Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+            Gizmos.color = Color.red;
+            //Gizmos.DrawWireCube(bounds.center, bounds.size);
+            Gizmos.DrawSphere(newBuilding.transform.position, 1.0f);
+        }
+    }
+
     public Vector3 toGrid(Vector3 allignToGrid) {
         //TODO Dont use variables
         float x, y, z;
@@ -73,8 +83,11 @@ public class BuildBuilding : MonoBehaviour {
     public void buildBuilding(int buildingID) {
         buildingID--;
         newBuilding = Instantiate(buildings[buildingID]);
-        Bounds bounds = newBuilding.GetComponentInChildren<MeshRenderer>().bounds;
-        newBuilding.transform.position = new Vector3(newBuilding.transform.position.x, 0, newBuilding.transform.position.z);
+        newBuilding.transform.position = toGrid(new Vector3(-250, 0, 0));
+        
+        Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+        Debug.Log(bounds.center.ToString() + System.Environment.NewLine + bounds.extents.ToString() + System.Environment.NewLine + bounds.size.ToString());
+
         newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / cellSize);
         newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / cellSize);
         //Debug.Log(newBuildingXTiles + " " + newBuildingZTiles);
