@@ -10,12 +10,15 @@ public class BuildBuilding : MonoBehaviour {
     public float percentageXOffsetUI;
     public float percentageYOffsetUI;
     public GameObject buildConfirmUI;
+    public MenueController buildingMenueController;
 
     private bool playerBuilding;
     private Ray touchRay;
     private int layerMask;
     private RaycastHit hitInformation;
     private GameObject newBuilding;
+    private int newBuildingXTiles;
+    private int newBuildingZTiles;
 
 
     // Use this for initialization
@@ -25,6 +28,7 @@ public class BuildBuilding : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
         if (Input.GetMouseButton(0)) {
             if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject()) {    // is the touch on the GUI
                 //Debug.Log("GUI");
@@ -33,7 +37,9 @@ public class BuildBuilding : MonoBehaviour {
                 layerMask = LayerMask.GetMask("Plane");
                 Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
                 if (hitInformation.collider != null) {
-                    hitInformation.point = new Vector3(hitInformation.point.x, hitInformation.point.y + newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size.y / 2, hitInformation.point.z);
+                    Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+                    hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
+                    //hitInformation.point = new Vector3(hitInformation.point.x, hitInformation.point.y + newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size.y / 2, hitInformation.point.z);
                     newBuilding.transform.position = toGrid(hitInformation.point);
                 }
             }
@@ -44,7 +50,9 @@ public class BuildBuilding : MonoBehaviour {
         if (playerBuilding) {
             buildConfirmUI.SetActive(true);
             //Confirm Build UI
+
             Vector2 screenPoint = Camera.main.WorldToScreenPoint(newBuilding.transform.position);
+            
             //newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size
             //Offset Replacement
             screenPoint = new Vector2(screenPoint.x - (Screen.width * percentageXOffsetUI), screenPoint.y - (Screen.height * percentageYOffsetUI));
@@ -65,8 +73,13 @@ public class BuildBuilding : MonoBehaviour {
     public void buildBuilding(int buildingID) {
         buildingID--;
         newBuilding = Instantiate(buildings[buildingID]);
-        newBuilding.transform.position = new Vector3(newBuilding.transform.position.x, hitInformation.point.y + newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size.y / 2, newBuilding.transform.position.z);
+        Bounds bounds = newBuilding.GetComponentInChildren<MeshRenderer>().bounds;
+        newBuilding.transform.position = new Vector3(newBuilding.transform.position.x, 0, newBuilding.transform.position.z);
+        newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / cellSize);
+        newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / cellSize);
+        //Debug.Log(newBuildingXTiles + " " + newBuildingZTiles);
         playerBuilding = true;
+        buildingMenueController.Unexpand(true);
     }
 
     public void CancelBuildingProcess() {
