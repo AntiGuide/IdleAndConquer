@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 33693795155391612}
   - component: {fileID: 23724583212732884}
   - component: {fileID: 65360499766831226}
-  m_Layer: 0
+  - component: {fileID: 114724600337512492}
+  - component: {fileID: 54801595176928432}
+  m_Layer: 9
   m_Name: Barracs_PLH100x100m
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,9 +39,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4867116031489144}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: __Barracks
-  m_TagString: Untagged
+  m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b663ff94146ce5244b5cddcf46c60edb, type: 3}
+  - {fileID: 2100000, guid: c89b206e09aadad4db25344ba3f6524a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,6 +114,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151596498174420}
   m_Mesh: {fileID: 4300000, guid: b663ff94146ce5244b5cddcf46c60edb, type: 3}
+--- !u!54 &54801595176928432
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151596498174420}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65360499766831226
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -119,8 +136,19 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151596498174420}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 100.000015, y: 33.78092, z: 100.00001}
+  m_Size: {x: 99, y: 33.78092, z: 99}
   m_Center: {x: 0, y: 16.89046, z: 0}
+--- !u!114 &114724600337512492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151596498174420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d37b5a7567d7f45a0d72c58d378b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

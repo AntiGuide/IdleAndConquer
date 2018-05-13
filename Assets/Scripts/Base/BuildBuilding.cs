@@ -7,24 +7,33 @@ public class BuildBuilding : MonoBehaviour {
     
     public GameObject[] buildings;
     public float cellSize;
-    public float percentageXOffsetUI;
-    public float percentageYOffsetUI;
     public GameObject buildConfirmUI;
     public MenueController buildingMenueController;
+    public Vector3 buildUIOffset;
 
-    private bool playerBuilding;
     private Ray touchRay;
     private int layerMask;
     private RaycastHit hitInformation;
     private GameObject newBuilding;
     private int newBuildingXTiles;
     private int newBuildingZTiles;
+    private BuildColorChanger buildColorChanger;
 
+    private static bool playerBuilding;
+    public static bool PlayerBuilding {
+        get {
+            return playerBuilding;
+        }
+
+        set {
+            playerBuilding = value;
+        }
+    }
 
     // Use this for initialization
     void Start () {
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -51,13 +60,33 @@ public class BuildBuilding : MonoBehaviour {
         if (playerBuilding) {
             buildConfirmUI.SetActive(true);
             //Confirm Build UI
+            //int paddingRight = 5;
+            //int paddingLeft = 5;
+            //int paddingDown = 5;
+            //int paddingUp = 5;
+            Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+            Vector3 onlyXZ = new Vector3(bounds.size.x,0,bounds.size.z);
+            Vector2 screenPoint = Camera.main.WorldToScreenPoint(newBuilding.transform.position + buildUIOffset + onlyXZ);
+            //int newX;
+            //int newY;
+            //if (screenPoint.x > Camera.main.pixelWidth - paddingRight) {
+            //    newX = Camera.main.pixelWidth - paddingRight;
+            //} else if (screenPoint.x < paddingLeft) {
+            //    newX = paddingLeft;
+            //} else {
+            //    newX = Mathf.RoundToInt(screenPoint.x);
+            //}
 
-            Vector2 screenPoint = Camera.main.WorldToScreenPoint(newBuilding.transform.position);
-            
-            //newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size
-            //Offset Replacement
-            screenPoint = new Vector2(screenPoint.x - (Screen.width * percentageXOffsetUI), screenPoint.y - (Screen.height * percentageYOffsetUI));
-            buildConfirmUI.transform.position = screenPoint;
+            //if (screenPoint.y > Camera.main.pixelWidth - paddingUp) {
+            //    newY = Camera.main.pixelWidth - paddingUp;
+            //} else if (screenPoint.y < paddingDown) {
+            //    newY = paddingDown;
+            //} else {
+            //    newY = Mathf.RoundToInt(screenPoint.y);
+            //}
+
+            //screenPoint = new Vector2(screenPoint.x - (Screen.width * percentageXOffsetUI), screenPoint.y - (Screen.height * percentageYOffsetUI));
+            buildConfirmUI.transform.position = screenPoint;//new Vector2((float)newX, (float)newY);
 
         }
     }
@@ -67,7 +96,7 @@ public class BuildBuilding : MonoBehaviour {
             Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
             Gizmos.color = Color.red;
             //Gizmos.DrawWireCube(bounds.center, bounds.size);
-            Gizmos.DrawSphere(newBuilding.transform.position, 1.0f);
+            //Gizmos.DrawSphere(newBuilding.transform.position, 1.0f);
         }
     }
 
@@ -83,14 +112,16 @@ public class BuildBuilding : MonoBehaviour {
     public void buildBuilding(int buildingID) {
         buildingID--;
         newBuilding = Instantiate(buildings[buildingID]);
+        buildColorChanger = newBuilding.GetComponentInChildren<BuildColorChanger>();
         newBuilding.transform.position = toGrid(new Vector3(-250, 0, 0));
         
         Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
-        Debug.Log(bounds.center.ToString() + System.Environment.NewLine + bounds.extents.ToString() + System.Environment.NewLine + bounds.size.ToString());
+        //Debug.Log(bounds.center.ToString() + System.Environment.NewLine + bounds.extents.ToString() + System.Environment.NewLine + bounds.size.ToString());
 
         newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / cellSize);
         newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / cellSize);
         //Debug.Log(newBuildingXTiles + " " + newBuildingZTiles);
+
         playerBuilding = true;
         buildingMenueController.Unexpand(true);
     }
@@ -104,8 +135,10 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     public void ConfirmBuildingProcess() {
-        newBuilding = null;
-        playerBuilding = false;
-        buildConfirmUI.SetActive(false);
-    }
+        if (buildColorChanger.CollidingBuildings == 0) {
+            newBuilding = null;
+            playerBuilding = false;
+            buildConfirmUI.SetActive(false);
+        }
+    }  
 }

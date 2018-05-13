@@ -9,7 +9,7 @@ public class CameraHandler : MonoBehaviour {
     // Use this for initialization
     void Start () {
         /*objectToMove = GameObject.Find("__BakerHouseCollider");
-        oToMovMaterial = objectToMove.GetComponent<MeshRenderer>().material;*/
+        */
     }
 	
 	// Update is called once per frame
@@ -25,12 +25,5 @@ public class CameraHandler : MonoBehaviour {
         }
     }
     
-    public static Material ChangeAlpha(Material mat, float alphaValue) {
-        if (mat != null && mat.HasProperty("_Color")) {
-            Color oldColor = mat.color;
-            Color newColor = new Color(oldColor.r, oldColor.g, oldColor.b, alphaValue);
-            mat.SetColor("_Color", newColor);
-        }
-        return mat;
-    }
+
 }
