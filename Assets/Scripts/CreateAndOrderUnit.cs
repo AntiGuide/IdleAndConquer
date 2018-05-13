@@ -6,32 +6,33 @@ using UnityEngine.UI;
 public class CreateAndOrderUnit : MonoBehaviour {
 
     public string unitName;
-    public int cost;
-    public int damage;
+    public int hp;
+    public int attack;
     public int defense;
+    public int type;
+    public int cost;
     public float buildtime;
-    public GameObject textDollar;
+    public MoneyManagement moneyManager;
+    public PowerlevelManagement powerlevelManager;
 
     private Unit attachedUnit;
     private Text unitCountText;
     private int availableUnits = 0;
-    private MoneyManagement moneyManager;
 
     // Use this for initialization
     void Start () {
-        attachedUnit = new Unit(unitName, cost, damage, defense, buildtime);
+        attachedUnit = new Unit(unitName, hp, attack, defense, type, cost, buildtime);
         unitCountText = gameObject.GetComponentInChildren<Text>();
-        moneyManager = textDollar.GetComponent<MoneyManagement>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (unitCountText != null) {
-            unitCountText.text = "" + availableUnits;
-        }
+        //if (unitCountText != null) {
+        //    unitCountText.text = "" + availableUnits;
+        //}
 	}
 
     public void OrderUnitOnClick() {
-        attachedUnit.Order(ref availableUnits, ref moneyManager);
+        attachedUnit.Order(ref availableUnits, ref moneyManager, ref powerlevelManager);
     }
 }

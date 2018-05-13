@@ -49,7 +49,6 @@ public class BuildBuilding : MonoBehaviour {
                     Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
                     Vector3 cent = bounds.center;
                     hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
-                    //hitInformation.point = new Vector3(hitInformation.point.x, hitInformation.point.y + newBuilding.GetComponentInChildren<MeshRenderer>().bounds.size.y / 2, hitInformation.point.z);
                     newBuilding.transform.position = toGrid(hitInformation.point);
                 }
             }
@@ -59,35 +58,10 @@ public class BuildBuilding : MonoBehaviour {
     private void LateUpdate() {
         if (playerBuilding) {
             buildConfirmUI.SetActive(true);
-            //Confirm Build UI
-            //int paddingRight = 5;
-            //int paddingLeft = 5;
-            //int paddingDown = 5;
-            //int paddingUp = 5;
             Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
             Vector3 onlyXZ = new Vector3(bounds.size.x,0,bounds.size.z);
             Vector2 screenPoint = Camera.main.WorldToScreenPoint(newBuilding.transform.position + buildUIOffset + onlyXZ);
-            //int newX;
-            //int newY;
-            //if (screenPoint.x > Camera.main.pixelWidth - paddingRight) {
-            //    newX = Camera.main.pixelWidth - paddingRight;
-            //} else if (screenPoint.x < paddingLeft) {
-            //    newX = paddingLeft;
-            //} else {
-            //    newX = Mathf.RoundToInt(screenPoint.x);
-            //}
-
-            //if (screenPoint.y > Camera.main.pixelWidth - paddingUp) {
-            //    newY = Camera.main.pixelWidth - paddingUp;
-            //} else if (screenPoint.y < paddingDown) {
-            //    newY = paddingDown;
-            //} else {
-            //    newY = Mathf.RoundToInt(screenPoint.y);
-            //}
-
-            //screenPoint = new Vector2(screenPoint.x - (Screen.width * percentageXOffsetUI), screenPoint.y - (Screen.height * percentageYOffsetUI));
             buildConfirmUI.transform.position = screenPoint;//new Vector2((float)newX, (float)newY);
-
         }
     }
 

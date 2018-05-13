@@ -15,7 +15,7 @@ public class PowerlevelManagement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        addPowerlevel(1);
+        outputPowerlevel(ref powerlevel);
     }
 
     public void addPowerlevel(long powerlevelToAdd) {
