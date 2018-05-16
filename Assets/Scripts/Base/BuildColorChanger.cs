@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class BuildColorChanger : MonoBehaviour {
 
+    public Texture2D greenTransparent;
+    public Texture2D redTransparent;
+
     private Material buildMaterial;
+    private Texture2D finishedBuildingTexture;
 
     private bool isBuilt;
     public bool IsBuilt {
@@ -32,9 +36,10 @@ public class BuildColorChanger : MonoBehaviour {
     // Use this for initialization
     void Start () {
         buildMaterial = gameObject.GetComponentInChildren<MeshRenderer>().material;
-        if (buildMaterial != null && buildMaterial.HasProperty("_Color")) {
-            buildMaterial.SetColor("_Color", new Color(0, 1, 0, 0.44f));
-            //TODO: Maybe disable texture if needed to see color and transparency
+        finishedBuildingTexture = (Texture2D)buildMaterial.GetTexture("_MainTex");
+        
+        if (buildMaterial != null && buildMaterial.HasProperty("_MainTex")) {
+            buildMaterial.SetTexture("_MainTex", greenTransparent);
         } else {
             Debug.Log("Non existent material or no color property");
         }
@@ -44,9 +49,8 @@ public class BuildColorChanger : MonoBehaviour {
 	void Update () {
         if (!isBuilt && !BuildBuilding.PlayerBuilding) {
             buildMaterial = gameObject.GetComponentInChildren<MeshRenderer>().material;
-            if (buildMaterial != null && buildMaterial.HasProperty("_Color")) {
-                buildMaterial.SetColor("_Color", new Color(1, 1, 1, 1));
-                //TODO: Maybe disable texture if needed to see color and transparency
+            if (buildMaterial != null && buildMaterial.HasProperty("_MainTex")) {
+                buildMaterial.SetTexture("_MainTex", finishedBuildingTexture);
             } else {
                 Debug.Log("Non existent material or no color property");
             }
@@ -57,8 +61,8 @@ public class BuildColorChanger : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
         if (!isBuilt && BuildBuilding.PlayerBuilding && other.tag == "Buildings") {
             collidingBuildings++;
-            if (buildMaterial != null && buildMaterial.HasProperty("_Color")) {
-                buildMaterial.SetColor("_Color", new Color(1, 0, 0, 0.44f));
+            if (buildMaterial != null && buildMaterial.HasProperty("_MainTex")) {
+                buildMaterial.SetTexture("_MainTex",redTransparent);
             } else {
                 Debug.Log("Non existent material or no color property");
             }
@@ -69,8 +73,8 @@ public class BuildColorChanger : MonoBehaviour {
         if (!isBuilt && BuildBuilding.PlayerBuilding && other.tag == "Buildings") {
             collidingBuildings--;
             if (collidingBuildings == 0) {
-                if (buildMaterial != null && buildMaterial.HasProperty("_Color")) {
-                    buildMaterial.SetColor("_Color", new Color(0, 1, 0, 0.44f));
+                if (buildMaterial != null && buildMaterial.HasProperty("_MainTex")) {
+                    buildMaterial.SetTexture("_MainTex", greenTransparent);
                 } else {
                     Debug.Log("Non existent material or no color property");
                 }
