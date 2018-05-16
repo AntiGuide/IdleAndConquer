@@ -370,7 +370,7 @@ MonoBehaviour:
   - {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f, type: 2}
   - {fileID: 1434804739179960, guid: af192f10735a1b549874494876433076, type: 2}
   - {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a, type: 2}
-  - {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d, type: 2}
+  - {fileID: 1730811312245924, guid: bf72985a4c93c634681a5e5ee0bc42e7, type: 2}
   - {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d, type: 2}
   - {fileID: 1515728511559848, guid: 4e50ccac9c99029439655924f5651bdf, type: 2}
   - {fileID: 1370554197613394, guid: 15ec9883c5986e946b6e141ac8c4b5cf, type: 2}
@@ -4614,7 +4614,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 696164444}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.53952086
+  m_Size: 0.5395209
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10731,7 +10731,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 155860188}
   m_Direction: 2
   m_Value: 0.9999998
-  m_Size: 0.29102972
+  m_Size: 0.29102975
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11291,7 +11291,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WIP
+  m_Text: Ore Refinery
 --- !u!222 &1250140802
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13133,7 +13133,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1542056074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 37522404}
+        m_MethodName: buildBuilding
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1542056074

@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: f5e6d17a282086f489aa67aeb7e96763
-timeCreated: 1526023670
+guid: b4a0366e3d13f514bbfa9dbb716dc3dd
+timeCreated: 1526471296
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Refinery_PLC
-    100002: //RootNode
-    400000: Refinery_PLC
-    400002: //RootNode
-    2100000: Refinery_PLCMat
-    2300000: Refinery_PLC
-    3300000: Refinery_PLC
-    4300000: Refinery_PLC
+    100000: //RootNode
+    100002: Refinery_PLH
+    400000: //RootNode
+    400002: Refinery_PLH
+    2100000: Refinery_PLHMat
+    2300000: Refinery_PLH
+    3300000: Refinery_PLH
+    4300000: Refinery_PLH
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +43,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.025
+    globalScale: 0.0254
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

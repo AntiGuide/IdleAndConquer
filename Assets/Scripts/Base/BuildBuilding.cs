@@ -47,6 +47,7 @@ public class BuildBuilding : MonoBehaviour {
                 Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
                 if (hitInformation.collider != null) {
                     Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+                    Debug.Log(bounds.size.ToString());
                     Vector3 cent = bounds.center;
                     hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
                     newBuilding.transform.position = toGrid(hitInformation.point);
