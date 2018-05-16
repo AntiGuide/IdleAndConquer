@@ -10,6 +10,7 @@ public class BuildBuilding : MonoBehaviour {
     public GameObject buildConfirmUI;
     public MenueController buildingMenueController;
     public Vector3 buildUIOffset;
+    public MoneyManagement moneyManager;
 
     private Ray touchRay;
     private int layerMask;
@@ -18,6 +19,10 @@ public class BuildBuilding : MonoBehaviour {
     private int newBuildingXTiles;
     private int newBuildingZTiles;
     private BuildColorChanger buildColorChanger;
+    private static bool[] isBuilt;
+    private static int newBuildingID;
+
+    public static GameObject[] builtBuildings;
 
     private static bool playerBuilding;
     public static bool PlayerBuilding {
@@ -32,7 +37,11 @@ public class BuildBuilding : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        isBuilt = new bool[buildings.Length];
+        builtBuildings = new GameObject[buildings.Length];
+        for (int i = 0; i < isBuilt.Length; i++) {
+            isBuilt[i] = false;
+        }
     }
 	
 	// Update is called once per frame
@@ -47,7 +56,7 @@ public class BuildBuilding : MonoBehaviour {
                 Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
                 if (hitInformation.collider != null) {
                     Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
-                    Debug.Log(bounds.size.ToString());
+                    //Debug.Log(bounds.size.ToString());
                     Vector3 cent = bounds.center;
                     hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
                     newBuilding.transform.position = toGrid(hitInformation.point);
@@ -85,20 +94,28 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     public void buildBuilding(int buildingID) {
+        //bool ret = false;
         buildingID--;
-        newBuilding = Instantiate(buildings[buildingID]);
-        buildColorChanger = newBuilding.GetComponentInChildren<BuildColorChanger>();
-        newBuilding.transform.position = toGrid(new Vector3(-250, 0, 0));
+        newBuildingID = buildingID;
+        if (buildingID == 3 && !isBuilt[2]) {
+            //ret = false;
+        } else {
+            newBuilding = Instantiate(buildings[buildingID]);
+            buildColorChanger = newBuilding.GetComponentInChildren<BuildColorChanger>();
+            newBuilding.transform.position = toGrid(new Vector3(-250, 0, 0));
         
-        Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
-        //Debug.Log(bounds.center.ToString() + System.Environment.NewLine + bounds.extents.ToString() + System.Environment.NewLine + bounds.size.ToString());
+            Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+            //Debug.Log(bounds.center.ToString() + System.Environment.NewLine + bounds.extents.ToString() + System.Environment.NewLine + bounds.size.ToString());
 
-        newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / cellSize);
-        newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / cellSize);
-        //Debug.Log(newBuildingXTiles + " " + newBuildingZTiles);
+            newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / cellSize);
+            newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / cellSize);
+            //Debug.Log(newBuildingXTiles + " " + newBuildingZTiles);
 
-        playerBuilding = true;
-        buildingMenueController.Unexpand(true);
+            playerBuilding = true;
+            buildingMenueController.Unexpand(true);
+            //ret = true;
+        }
+        //return ret;
     }
 
     public void CancelBuildingProcess() {
@@ -111,6 +128,11 @@ public class BuildBuilding : MonoBehaviour {
 
     public void ConfirmBuildingProcess() {
         if (buildColorChanger.CollidingBuildings == 0) {
+            if (newBuildingID == 3) {
+                newBuilding.GetComponentInChildren<OreRefinery>().Initialize(ref moneyManager);
+            }
+            isBuilt[newBuildingID] = true;
+            builtBuildings[newBuildingID] = newBuilding;
             newBuilding = null;
             playerBuilding = false;
             buildConfirmUI.SetActive(false);

@@ -379,6 +379,7 @@ MonoBehaviour:
   buildConfirmUI: {fileID: 477947662}
   buildingMenueController: {fileID: 995991362}
   buildUIOffset: {x: 12.88, y: -24.22, z: -10.57}
+  moneyManager: {fileID: 1083180769}
 --- !u!1 &45591920
 GameObject:
   m_ObjectHideFlags: 0

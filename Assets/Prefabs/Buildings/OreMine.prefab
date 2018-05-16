@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 65239745330939318}
   - component: {fileID: 114140391513055742}
   - component: {fileID: 54630465661798586}
+  - component: {fileID: 114335779102921938}
   m_Layer: 9
   m_Name: Ore_Mine50x50m
   m_TagString: Buildings
@@ -154,3 +155,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenTransparent: {fileID: 2800000, guid: 8c5397737983bd34697861fe680c634e, type: 3}
   redTransparent: {fileID: 2800000, guid: fb3a3d18be4b16c489e770b232eadd9d, type: 3}
+--- !u!114 &114335779102921938
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370095924474384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3f47a200c71da42a5943183b1104b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
