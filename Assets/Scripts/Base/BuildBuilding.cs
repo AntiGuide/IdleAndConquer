@@ -6,11 +6,13 @@ using UnityEngine.EventSystems;
 public class BuildBuilding : MonoBehaviour {
     
     public GameObject[] buildings;
+    public MenueController[] menueController;
     public float cellSize;
     public GameObject buildConfirmUI;
     public MenueController buildingMenueController;
     public Vector3 buildUIOffset;
     public MoneyManagement moneyManager;
+    public MainMenueController mainMenueController;
 
     private Ray touchRay;
     private int layerMask;
@@ -61,6 +63,20 @@ public class BuildBuilding : MonoBehaviour {
                     hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
                     newBuilding.transform.position = toGrid(hitInformation.point);
                 }
+            } else if (MainMenueController.IsExpanded){
+                //mainMenueController.GetActiveMenueController().Unexpand(true);
+            }
+        }
+        if (Input.GetMouseButtonDown(0)) {
+            if(!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
+                Debug.Log("OpenScreen");
+                touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                layerMask = LayerMask.GetMask("Buildings");
+                Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
+                if (hitInformation.collider != null) {
+                    Debug.Log("OpenScreen2");
+                    mainMenueController.ToggleMenue(hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().GetMenueController());
+                }
             }
         }
     }
@@ -102,6 +118,9 @@ public class BuildBuilding : MonoBehaviour {
         } else {
             newBuilding = Instantiate(buildings[buildingID]);
             buildColorChanger = newBuilding.GetComponentInChildren<BuildColorChanger>();
+            
+            buildColorChanger.SetMenueController(menueController[buildingID]);
+            
             newBuilding.transform.position = toGrid(new Vector3(-250, 0, 0));
         
             Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using System;
 
 public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler{
 
@@ -53,12 +54,13 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	
 	// Update is called once per frame
 	void Update () {
-        if (menueLerping && lerpJourneyLength == 0f) {
-            menueLerping = false;
-        }else if (menueLerping) {
+        if (menueLerping) {
             float distCovered = (Time.time - lerpStartTime) * (lerpSpeed/250) * lerpJourneyLength;
+            
             float fracJourney = distCovered / lerpJourneyLength;
+            
             transform.position = Vector3.Lerp(startMarker, endMarker, fracJourney);
+            
             if (fracJourney >= 1f) {
                 menueLerping = false;
             }
@@ -66,24 +68,32 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     }
 
     public void Expand(bool animated) {
+        Debug.Log("OpenScreen6");
         if (animated) {
             float y = canvasHeight * menueExpandedHeight;
-            mainMenueController.IsExpanded = true;
+            MainMenueController.IsExpanded = true;
             startMarker = transform.position;
             endMarker = new Vector3(transform.position.x, y, 0);
+
             lerpJourneyLength = Vector3.Distance(startMarker, endMarker);
-            menueLerping = true;
+
+            if (lerpJourneyLength <= 0.001f) {
+                menueLerping = false;
+            } else {
+                menueLerping = true;
+            }
             lerpStartTime = Time.time;
         } else {
             transform.position = new Vector3(transform.position.x, canvasHeight * menueExpandedHeight, 0);
         }
-        mainMenueController.IsExpanded = true;
+        MainMenueController.IsExpanded = true;
     }
 
     public void Unexpand(bool animated) {
+        Debug.Log("OpenScreen7");
         if (animated) {
             float y = startYMenue;
-            mainMenueController.IsExpanded = false;
+            MainMenueController.IsExpanded = false;
             startMarker = transform.position;
             endMarker = new Vector3(transform.position.x, y, 0);
             lerpJourneyLength = Vector3.Distance(startMarker, endMarker);
@@ -92,7 +102,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         } else {
             transform.position = new Vector3(transform.position.x, startYMenue, 0);
         }
-        mainMenueController.IsExpanded = false;
+        MainMenueController.IsExpanded = false;
     }
 
 

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MainMenueController : MonoBehaviour {
 
-    public GameObject[] menue = new GameObject[5];
+    public GameObject[] menue;
 
     private int enabledMenue;
     private static bool isExpanded;
-    private MenueController[] menueController = new MenueController[5];
+    private MenueController[] menueController;
 
-    public bool IsExpanded {
+    public static bool IsExpanded {
         get {
             return isExpanded;
         }
@@ -22,6 +22,7 @@ public class MainMenueController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        menueController = new MenueController[menue.Length];
         int i = 0;
         bool standardSelected = false;
 
@@ -59,6 +60,7 @@ public class MainMenueController : MonoBehaviour {
      * <value>The method sets the enabledMenue data member.</value>
      * */
     public void ToggleMenue(int menueNumber) {
+        Debug.Log("OpenScreen4");
         menueNumber--;
 
         if (enabledMenue != menueNumber) {
@@ -67,17 +69,29 @@ public class MainMenueController : MonoBehaviour {
             }
             menue[menueNumber].SetActive(true);
             enabledMenue = menueNumber;
-            menueController[enabledMenue].Expand(!isExpanded);//false wenn nicht animiert
-            //isExpanded = true;
+            Debug.Log("OpenScreen5");
+            menueController[enabledMenue].Expand(!isExpanded);
         } else {
             if (isExpanded) {
-                menueController[enabledMenue].Unexpand(true);//false wenn nicht animiert
-                //isExpanded = false;
-                //enabledMenue = -1;
+                menueController[enabledMenue].Unexpand(true);
             } else {
-                menueController[enabledMenue].Expand(true);//false wenn nicht animiert
-                //isExpanded = true;
+                menueController[enabledMenue].Expand(true);
             }
         }
+    }
+
+    public void ToggleMenue(MenueController menueCon) {
+        Debug.Log("OpenScreen3");
+        for (int i = 0; i < menueController.Length; i++) {
+            if (menueCon == menueController[i]) {
+                ToggleMenue(i+1);
+            }
+            
+        }
+
+    }
+
+    public MenueController GetActiveMenueController() {
+        return menueController[enabledMenue];
     }
 }

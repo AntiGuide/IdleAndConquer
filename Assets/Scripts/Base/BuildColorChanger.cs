@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class BuildColorChanger : MonoBehaviour {
 
     public Texture2D greenTransparent;
     public Texture2D redTransparent;
+
+    private MenueController menueController;// For menue on click
 
     private Material buildMaterial;
     private Texture2D finishedBuildingTexture;
@@ -80,5 +83,13 @@ public class BuildColorChanger : MonoBehaviour {
                 }
             }
         }
+    }
+
+    public MenueController GetMenueController() {
+        return menueController;
+    }
+
+    public void SetMenueController(MenueController menueController) {
+        this.menueController = menueController;
     }
 }
