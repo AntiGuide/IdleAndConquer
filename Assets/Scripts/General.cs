@@ -29,7 +29,7 @@ public class General {
     }
 
     public bool Died() {
-        if (Random.value < chanceToPermaDeath) {
+        if (Random.value < chanceToPermaDeath + Passives.GeneralSurvivability) {
             return true;
         } else {
             return false;

@@ -8,8 +8,11 @@ public class CreateAndOrderUnit : MonoBehaviour {
     public string unitName;
     public int hp;
     public int attack;
+    public float critChance;
+    public float critMultiplier;
     public int defense;
-    public int type;
+    public Unit.Type type;
+    public Unit.ArmorType armorType;
     public int cost;
     public float buildtime;
     public MoneyManagement moneyManager;
@@ -21,15 +24,13 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        attachedUnit = new Unit(unitName, hp, attack, defense, type, cost, buildtime);
+        attachedUnit = new Unit(unitName, hp, attack, critChance, critMultiplier, defense, type, armorType, cost, buildtime);
         unitCountText = gameObject.GetComponentInChildren<Text>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //if (unitCountText != null) {
-        //    unitCountText.text = "" + availableUnits;
-        //}
+
 	}
 
     public void OrderUnitOnClick() {
