@@ -68,7 +68,6 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     }
 
     public void Expand(bool animated) {
-        Debug.Log("OpenScreen6");
         if (animated) {
             float y = canvasHeight * menueExpandedHeight;
             MainMenueController.IsExpanded = true;
@@ -90,7 +89,6 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     }
 
     public void Unexpand(bool animated) {
-        Debug.Log("OpenScreen7");
         if (animated) {
             float y = startYMenue;
             MainMenueController.IsExpanded = false;

@@ -60,7 +60,6 @@ public class MainMenueController : MonoBehaviour {
      * <value>The method sets the enabledMenue data member.</value>
      * */
     public void ToggleMenue(int menueNumber) {
-        Debug.Log("OpenScreen4");
         menueNumber--;
 
         if (enabledMenue != menueNumber) {
@@ -69,7 +68,6 @@ public class MainMenueController : MonoBehaviour {
             }
             menue[menueNumber].SetActive(true);
             enabledMenue = menueNumber;
-            Debug.Log("OpenScreen5");
             menueController[enabledMenue].Expand(!isExpanded);
         } else {
             if (isExpanded) {
@@ -81,7 +79,6 @@ public class MainMenueController : MonoBehaviour {
     }
 
     public void ToggleMenue(MenueController menueCon) {
-        Debug.Log("OpenScreen3");
         for (int i = 0; i < menueController.Length; i++) {
             if (menueCon == menueController[i]) {
                 ToggleMenue(i+1);

@@ -1,45 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class General {
-
-    public static float genMinChanceToPermaDeath;
-    public static float genMaxChanceToPermaDeath;
-
+public class General : MonoBehaviour{
     private float chanceToPermaDeath;
     private Sprite portrait;
-    private Country country;
-    private string name;
+    private string country;
+    private string generalName;
     private int wins;
     private int loses;
     private List<Passives> passives;
-    
-    public enum Country
-    {
-        GERMANY = 1
-    }
 
-    private General(float chanceToPermaDeath, Sprite portrait, Country country, string name, List<Passives> passives) {
+    public void InitGeneral(float chanceToPermaDeath, Sprite portrait, string country, string generalName, List<Passives> passives) {
         this.chanceToPermaDeath = chanceToPermaDeath;
         this.portrait = portrait;
         this.country = country;
-        this.name = name;
+        this.generalName = generalName;
         this.passives = passives;
     }
 
     public bool Died() {
-        if (Random.value < chanceToPermaDeath + Passives.GeneralSurvivability) {
+        if (UnityEngine.Random.value < chanceToPermaDeath + Passives.GeneralSurvivability) {
             return true;
         } else {
             return false;
         }
     }
 
-    public static General GenerateGeneral() {
-        float aktChanceToPermaDeath = Random.Range(genMinChanceToPermaDeath, genMaxChanceToPermaDeath);
-        General ret = new General(aktChanceToPermaDeath,null,Country.GERMANY, null,null);
-        return ret;
-    }
+    
 
 }

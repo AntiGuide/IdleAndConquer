@@ -69,12 +69,10 @@ public class BuildBuilding : MonoBehaviour {
         }
         if (Input.GetMouseButtonDown(0)) {
             if(!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
-                Debug.Log("OpenScreen");
                 touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 layerMask = LayerMask.GetMask("Buildings");
                 Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
                 if (hitInformation.collider != null) {
-                    Debug.Log("OpenScreen2");
                     mainMenueController.ToggleMenue(hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().GetMenueController());
                 }
             }
