@@ -4,22 +4,64 @@ public class InputHandler : MonoBehaviour {
     public float deadZoneDrag;
     public float cameraMaxX;
     public float cameraMinX;
+    public float cameraMaxZ;
+    public float cameraMinZ;
 
     private Vector2 startPos;
     private Vector3 startPosCamera;
     private bool movedDuringTouch = false;
+    private Vector3 ScreenSize;
+    private float startOrtographicSize;
 
 
     // Use this for initialization
     void Start () {
-		
-	}
+        ScreenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        startOrtographicSize = gameObject.GetComponent<Camera>().orthographicSize;
+    }
 
     // Update is called once per frame
     void Update() {
+        //Debug PC Zoom
+        if (Input.GetKeyDown(KeyCode.I)) {
+            gameObject.GetComponent<Camera>().orthographicSize = 70f;
+        }else if(Input.GetKeyDown(KeyCode.O)) {
+            gameObject.GetComponent<Camera>().orthographicSize = 140f;
+        }else if (Input.GetKeyDown(KeyCode.P)) {
+            gameObject.GetComponent<Camera>().orthographicSize = 280f;
+        }
+
         // Handle native touch events
-        foreach (Touch touch in Input.touches) {
-            HandleTouch(touch.fingerId, Camera.main.ScreenToWorldPoint(touch.position), touch.phase);
+        if (Input.touchCount == 2) {
+            // Store both touches.
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
+
+            // Find the position in the previous frame of each touch.
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            // Find the magnitude of the vector (the distance) between the touches in each frame.
+            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+            // Find the difference in the distances between each frame.
+            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+            // If the camera is orthographic...
+            if (gameObject.GetComponent<Camera>().orthographic) {
+                // ... change the orthographic size based on the change in distance between the touches.
+                gameObject.GetComponent<Camera>().orthographicSize += deltaMagnitudeDiff * 0.5f;
+
+                // Make sure the orthographic size never drops below zero.
+                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Max(gameObject.GetComponent<Camera>().orthographicSize, 70f);
+                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Min(gameObject.GetComponent<Camera>().orthographicSize, 280f);
+                
+            }
+        } else {
+            foreach (Touch touch in Input.touches) {
+                HandleTouch(touch.fingerId, touch.position, touch.phase);
+            }
         }
 
         // Simulate touch events from mouse events
@@ -48,11 +90,16 @@ public class InputHandler : MonoBehaviour {
                     movedDuringTouch = true;
                 }
                 if (movedDuringTouch) {
-                    //TODO move to touch position
-                    float newX = startPosCamera.x + (touchPosition.x - startPos.x);
-                    newX = newX < cameraMaxX ? newX : cameraMaxX;
-                    newX = newX > cameraMinX ? newX : cameraMinX;
-                    transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+                    float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / startOrtographicSize;
+                    float screenScale = 315f / Screen.width;
+
+                    float newX = startPosCamera.x + (touchPosition.x - startPos.x) * screenScale * zoomScale;
+                    newX = newX < cameraMaxX + (160f - (zoomScale * 160f)) ? newX : cameraMaxX + (160f - (zoomScale * 160f));
+                    newX = newX > cameraMinX - (160f - (zoomScale * 160f)) ? newX : cameraMinX - (160f - (zoomScale * 160f));
+                    float newZ = startPosCamera.z + (touchPosition.y - startPos.y) * screenScale * zoomScale;
+                    newZ = newZ < cameraMaxZ + (280f - (zoomScale * 280f)) ? newZ : cameraMaxZ + (280f - (zoomScale * 280f));
+                    newZ = newZ > cameraMinZ - (280f - (zoomScale * 280f)) ? newZ : cameraMinZ - (280f - (zoomScale * 280f));
+                    transform.position = new Vector3(newX, transform.position.y, newZ);
                 }
                 break;
             case TouchPhase.Ended:
