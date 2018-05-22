@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plane
   - Buildings
+  - MissionLocation
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - Plane
   - Buildings
-  - 
+  - MissionLocation
   - 
   - 
   - 

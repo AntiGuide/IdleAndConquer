@@ -6,14 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class UIInteraction : MonoBehaviour {
 
-    //private MenueController menueController;
-
     public MainMenueController mainMenueController;
 
     // Use this for initialization
     void Start () {
-
-        //menueController = GameObject.Find("BackgroundBuyMenue").GetComponent<MenueController>();
 
     }
 	
@@ -23,7 +19,7 @@ public class UIInteraction : MonoBehaviour {
 	}
 
     public void OpenButton1() {
-        //SceneManager.LoadScene("MissionMap", LoadSceneMode.Single);
+        SceneManager.LoadScene("MissionMap", LoadSceneMode.Single);
         //The SceneManager loads your new Scene as a single Scene (not overlapping). This is Single mode.
     }
 
