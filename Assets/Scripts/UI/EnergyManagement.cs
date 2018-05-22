@@ -13,12 +13,12 @@ public class EnergyManagement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
+        setEnergy(50);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        addEnergy(Time.deltaTime * 5);
+        //addEnergy(Time.deltaTime * 5);
     }
 
     public void addEnergy(float energyToAdd) {

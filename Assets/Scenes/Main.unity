@@ -3811,16 +3811,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 4506bf6ca285b494ab0993e12703d5e6, type: 3}
     m_FontSize: 49
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 62
+    m_MaxSize: 49
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "5\u272F"
+  m_Text: "0\u272F"
 --- !u!222 &525106186
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8274,16 +8274,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 4506bf6ca285b494ab0993e12703d5e6, type: 3}
     m_FontSize: 49
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 62
+    m_MaxSize: 49
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1337$
+  m_Text: 0$
 --- !u!222 &1083180768
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14366,16 +14366,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 4506bf6ca285b494ab0993e12703d5e6, type: 3}
     m_FontSize: 49
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 62
+    m_MaxSize: 49
     m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "100\u25CA"
+  m_Text: "0\u25CA"
 --- !u!222 &1899302184
 CanvasRenderer:
   m_ObjectHideFlags: 0

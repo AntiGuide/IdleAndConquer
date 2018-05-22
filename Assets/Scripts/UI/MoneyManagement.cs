@@ -10,12 +10,11 @@ public class MoneyManagement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        setMoney(0);
+        setMoney(20000);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        addMoney(1);
     }
 
     public void addMoney(long moneyToAdd) {
