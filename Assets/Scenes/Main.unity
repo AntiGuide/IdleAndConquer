@@ -3161,6 +3161,7 @@ MonoBehaviour:
   cost: {fileID: 250608953}
   attachedBuilding: {fileID: 1515728511559848, guid: 4e50ccac9c99029439655924f5651bdf,
     type: 2}
+  moneyManager: {fileID: 1083180769}
 --- !u!1 &420638859
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,6 +4323,7 @@ MonoBehaviour:
   cost: {fileID: 1417084064}
   attachedBuilding: {fileID: 1370554197613394, guid: 15ec9883c5986e946b6e141ac8c4b5cf,
     type: 2}
+  moneyManager: {fileID: 1083180769}
 --- !u!1 &571682791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5330,6 +5332,7 @@ MonoBehaviour:
   cost: {fileID: 650737593}
   attachedBuilding: {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a,
     type: 2}
+  moneyManager: {fileID: 1083180769}
 --- !u!1 &696164443
 GameObject:
   m_ObjectHideFlags: 0
@@ -7169,6 +7172,7 @@ MonoBehaviour:
   cost: {fileID: 1161362942}
   attachedBuilding: {fileID: 1434804739179960, guid: af192f10735a1b549874494876433076,
     type: 2}
+  moneyManager: {fileID: 1083180769}
 --- !u!1 &935213188
 GameObject:
   m_ObjectHideFlags: 0
@@ -12185,6 +12189,7 @@ MonoBehaviour:
   cost: {fileID: 1463699031}
   attachedBuilding: {fileID: 1730811312245924, guid: bf72985a4c93c634681a5e5ee0bc42e7,
     type: 2}
+  moneyManager: {fileID: 1083180769}
 --- !u!1 &1567044704
 GameObject:
   m_ObjectHideFlags: 0
@@ -13526,6 +13531,7 @@ MonoBehaviour:
   cost: {fileID: 1827217466}
   attachedBuilding: {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d,
     type: 2}
+  moneyManager: {fileID: 1083180769}
 --- !u!1 &1713472764
 GameObject:
   m_ObjectHideFlags: 0
@@ -13813,6 +13819,7 @@ MonoBehaviour:
   cost: {fileID: 571682793}
   attachedBuilding: {fileID: 1816868067750538, guid: 5b2ff19feeb5ec247add004570d9cd08,
     type: 2}
+  moneyManager: {fileID: 1083180769}
 --- !u!1 &1724906059
 GameObject:
   m_ObjectHideFlags: 0
@@ -15250,6 +15257,7 @@ MonoBehaviour:
   cost: {fileID: 1618341253}
   attachedBuilding: {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f,
     type: 2}
+  moneyManager: {fileID: 1083180769}
 --- !u!114 &1921256366
 MonoBehaviour:
   m_ObjectHideFlags: 0
