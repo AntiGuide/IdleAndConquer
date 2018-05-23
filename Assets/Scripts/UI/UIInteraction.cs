@@ -7,20 +7,19 @@ using UnityEngine.SceneManagement;
 public class UIInteraction : MonoBehaviour {
 
     public MainMenueController mainMenueController;
-
+    
     // Use this for initialization
     void Start () {
-
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        
 	}
 
     public void OpenButton1() {
-        SceneManager.LoadScene("MissionMap", LoadSceneMode.Single);
-        //The SceneManager loads your new Scene as a single Scene (not overlapping). This is Single mode.
+        __SceneSwitch.MissionMapLoad();
     }
 
     public void OpenButton2() {

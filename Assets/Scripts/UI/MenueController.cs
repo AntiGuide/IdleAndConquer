@@ -22,26 +22,32 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private bool menueLerping;
 
     public void OnBeginDrag(PointerEventData eventData) {
-        itemBeingDragged = gameObject;
+        if (MainMenueController.IsExpanded) {
+            itemBeingDragged = gameObject;
+        }
     }
 
     public void OnDrag(PointerEventData eventData) {
-        if (eventData.position.y > canvasHeight * menueExpandedHeight) {
-            transform.position = new Vector3(transform.position.x, canvasHeight * menueExpandedHeight, 0);
-        } else if (eventData.position.y < startYMenue) {
-            transform.position = new Vector3(transform.position.x, startYMenue, 0);
-        } else {
-            transform.position = new Vector3(transform.position.x, eventData.position.y, 0);
+        if (MainMenueController.IsExpanded) {
+            if (eventData.position.y > canvasHeight * menueExpandedHeight) {
+                transform.position = new Vector3(transform.position.x, canvasHeight * menueExpandedHeight, 0);
+            } else if (eventData.position.y < startYMenue) {
+                transform.position = new Vector3(transform.position.x, startYMenue, 0);
+            } else {
+                transform.position = new Vector3(transform.position.x, eventData.position.y, 0);
+            }
         }
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        itemBeingDragged = null;
-        
-        if (transform.position.y > canvasHeight * menueExbandTriggerHeight) {
-            Expand(true);
-        } else {
-            Unexpand(true);
+        if (MainMenueController.IsExpanded) {
+            itemBeingDragged = null;
+
+            if (transform.position.y > canvasHeight * menueExbandTriggerHeight) {
+                Expand(true);
+            } else {
+                Unexpand(true);
+            }
         }
     }
 

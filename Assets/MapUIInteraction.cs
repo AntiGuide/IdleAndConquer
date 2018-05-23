@@ -16,7 +16,6 @@ public class MapUIInteraction : MonoBehaviour {
 	}
 
     public void ClickButtonClose() {
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
-        //The SceneManager loads your new Scene as a single Scene (not overlapping). This is Single mode.
+        SceneManager.UnloadSceneAsync("MissionMap");
     }
 }
