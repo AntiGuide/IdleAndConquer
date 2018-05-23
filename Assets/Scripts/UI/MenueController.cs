@@ -64,7 +64,10 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             float distCovered = (Time.time - lerpStartTime) * (lerpSpeed/250) * lerpJourneyLength;
             
             float fracJourney = distCovered / lerpJourneyLength;
-            
+            if (lerpJourneyLength <= 1f) {
+                menueLerping = false;
+                return;
+            }
             transform.position = Vector3.Lerp(startMarker, endMarker, fracJourney);
             
             if (fracJourney >= 1f) {
