@@ -12,12 +12,12 @@ public class EnergyManagement : MonoBehaviour {
     private float curEnergy = 0;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         setEnergy(50);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         //addEnergy(Time.deltaTime * 5);
     }
 
@@ -30,7 +30,7 @@ public class EnergyManagement : MonoBehaviour {
             //throw new System.ArgumentException("Can not set an Energy Value that is not in the range of min and max Energy Value", "energyToAdd");
         }
     }
-
+    //TODO Negative Energy + Blinking Energy
     public bool subEnergy(float energyToSub) {
         if (isInBounds(curEnergy - energyToSub)) {
             curEnergy = curEnergy - energyToSub;

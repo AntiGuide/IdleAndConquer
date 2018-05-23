@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BuildBuilding : MonoBehaviour {
-    
+
     public GameObject[] buildings;
     public MenueController[] menueController;
     public float cellSize;
@@ -23,7 +23,7 @@ public class BuildBuilding : MonoBehaviour {
     private BuildColorChanger buildColorChanger;
     private static bool[] isBuilt;
     private static int newBuildingID;
-    private long costBuilding;
+    private long costBuilding = 0;
 
     public static GameObject[] builtBuildings;
 
@@ -39,17 +39,17 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         isBuilt = new bool[buildings.Length];
         builtBuildings = new GameObject[buildings.Length];
         for (int i = 0; i < isBuilt.Length; i++) {
             isBuilt[i] = false;
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    // Update is called once per frame
+    void Update() {
+
         if (Input.GetMouseButton(0)) {
             if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject()) {    // is the touch on the GUI
                 //Debug.Log("GUI");
@@ -64,12 +64,12 @@ public class BuildBuilding : MonoBehaviour {
                     hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
                     newBuilding.transform.position = toGrid(hitInformation.point);
                 }
-            } else if (MainMenueController.IsExpanded){
+            } else if (MainMenueController.IsExpanded) {
                 //mainMenueController.GetActiveMenueController().Unexpand(true);
             }
         }
         if (Input.GetMouseButtonDown(0)) {
-            if(!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
+            if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
                 touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 layerMask = LayerMask.GetMask("Buildings");
                 Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
@@ -84,7 +84,7 @@ public class BuildBuilding : MonoBehaviour {
         if (playerBuilding) {
             buildConfirmUI.SetActive(true);
             Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
-            Vector3 onlyXZ = new Vector3(bounds.size.x,0,bounds.size.z);
+            Vector3 onlyXZ = new Vector3(bounds.size.x, 0, bounds.size.z);
             Vector2 screenPoint = Camera.main.WorldToScreenPoint(newBuilding.transform.position + buildUIOffset + onlyXZ);
             buildConfirmUI.transform.position = screenPoint;//new Vector2((float)newX, (float)newY);
         }
@@ -118,11 +118,11 @@ public class BuildBuilding : MonoBehaviour {
         } else {
             newBuilding = Instantiate(buildings[buildingID]);
             buildColorChanger = newBuilding.GetComponentInChildren<BuildColorChanger>();
-            
+
             buildColorChanger.SetMenueController(menueController[buildingID]);
-            
+
             newBuilding.transform.position = toGrid(new Vector3(-250, 0, 0));
-        
+
             Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
             //Debug.Log(bounds.center.ToString() + System.Environment.NewLine + bounds.extents.ToString() + System.Environment.NewLine + bounds.size.ToString());
 
@@ -156,5 +156,5 @@ public class BuildBuilding : MonoBehaviour {
                 buildConfirmUI.SetActive(false);
             }
         }
-    }  
+    }
 }

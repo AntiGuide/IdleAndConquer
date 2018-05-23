@@ -15,7 +15,20 @@ public class Unit {
     private float critMultiplier;
     private int defense;
     private int cost;
+    private CreateAndOrderUnit cAOButton;
+    private int unitCount;
+    private ProductionQueue productionQueue;
+
     private float buildtime;
+    public float Buildtime {
+        get {
+            return buildtime;
+        }
+
+        set {
+            buildtime = value;
+        }
+    }
 #pragma warning restore 0414
 
     public enum Type:int
@@ -33,7 +46,7 @@ public class Unit {
         HEAVY
     }
 
-    public Unit(string unitName, int hp, int attack, float critChance, float critMultiplier, int defense, Type type, ArmorType armorType, int cost, float buildtime) {
+    public Unit(string unitName, int hp, int attack, float critChance, float critMultiplier, int defense, Type type, ArmorType armorType, int cost, float buildtime, CreateAndOrderUnit cAOButton, ProductionQueue productionQueue) {
         this.unitName = unitName;
         this.hp = hp;
         this.attack = attack;
@@ -44,12 +57,14 @@ public class Unit {
         this.armorType = armorType;
         this.cost = cost;
         this.buildtime = buildtime;
+        this.cAOButton = cAOButton;
+        this.productionQueue = productionQueue;
     }   
 
     internal void Order(ref int availableUnits, ref MoneyManagement moneyManager, ref PowerlevelManagement powerlevelManager) {
         if (moneyManager.subMoney(cost)) {
-            availableUnits++;
-            powerlevelManager.addPowerlevel(Mathf.RoundToInt((hp * attack * defense) / 1000));
+            productionQueue.addToQueue(this, cAOButton);
+            cAOButton.addSingleUnitBuilding();
         }
     }
 
@@ -87,5 +102,10 @@ public class Unit {
 
     public Type GetUnitType() {
         return type;
+    }
+
+    public void addSingleBuiltUnit() {
+        cAOButton.setUnitCount((++unitCount).ToString());
+        cAOButton.addPowerlevel(Mathf.RoundToInt((hp * attack * defense) / 1000));
     }
 }
