@@ -23,6 +23,7 @@ public class BuildBuilding : MonoBehaviour {
     private BuildColorChanger buildColorChanger;
     private static bool[] isBuilt;
     private static int newBuildingID;
+    private long costBuilding;
 
     public static GameObject[] builtBuildings;
 
@@ -107,7 +108,8 @@ public class BuildBuilding : MonoBehaviour {
         return new Vector3(x, y, z);
     }
 
-    public void buildBuilding(int buildingID) {
+    public void buildBuilding(int buildingID, long costBuilding) {
+        this.costBuilding = costBuilding;
         //bool ret = false;
         buildingID--;
         newBuildingID = buildingID;
@@ -145,14 +147,14 @@ public class BuildBuilding : MonoBehaviour {
 
     public void ConfirmBuildingProcess() {
         if (buildColorChanger.CollidingBuildings == 0) {
-            if (newBuildingID == 3) {
-                newBuilding.GetComponentInChildren<OreRefinery>().Initialize(ref moneyManager);
+            if (moneyManager.subMoney(costBuilding)) {
+                newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+                isBuilt[newBuildingID] = true;
+                builtBuildings[newBuildingID] = newBuilding;
+                newBuilding = null;
+                playerBuilding = false;
+                buildConfirmUI.SetActive(false);
             }
-            isBuilt[newBuildingID] = true;
-            builtBuildings[newBuildingID] = newBuilding;
-            newBuilding = null;
-            playerBuilding = false;
-            buildConfirmUI.SetActive(false);
         }
     }  
 }

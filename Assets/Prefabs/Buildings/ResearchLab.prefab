@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65105140777493796}
   - component: {fileID: 114022733404760616}
   - component: {fileID: 54640875434100986}
+  - component: {fileID: 114537504458853532}
+  - component: {fileID: 114023959232037168}
   m_Layer: 9
   m_Name: Research_Lab_PLH100x100m
   m_TagString: Buildings
@@ -87,7 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 40b28a62c5b85ad4aabe3a0acf1f3ed5, type: 2}
+  - {fileID: 2100000, guid: e287bc1dca7795d41983a8c0fdaabbc1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,3 +156,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenTransparent: {fileID: 2800000, guid: 8c5397737983bd34697861fe680c634e, type: 3}
   redTransparent: {fileID: 2800000, guid: fb3a3d18be4b16c489e770b232eadd9d, type: 3}
+--- !u!114 &114023959232037168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1026125992870854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3317bb80768885247990759ce258c681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114537504458853532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1026125992870854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildCost: 1000
+  costEnergy: 5
+  buildingType: 4

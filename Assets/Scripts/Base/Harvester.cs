@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Harvester : MonoBehaviour {
     //Operates automatically. Refinery level equals number of Havesters operating. Drives to Mine to harvest and then unloads at Refinery to generate income. $ is the only universal Resource (so far). Mine --> $
     public float miningSpeed = 20.0f;//Every 20 seconds
     public int miningAmount = 50;//50 $
-
+    
     private Mine attachedMine;
     private OreRefinery attachedOreRefinery;
     private MoneyManagement moneyManagement;

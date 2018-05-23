@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65360499766831226}
   - component: {fileID: 114724600337512492}
   - component: {fileID: 54801595176928432}
+  - component: {fileID: 114357675456785480}
+  - component: {fileID: 114411429501681626}
   m_Layer: 9
   m_Name: BarracsPlaceholder
   m_TagString: Buildings
@@ -87,7 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 40b28a62c5b85ad4aabe3a0acf1f3ed5, type: 2}
+  - {fileID: 2100000, guid: e287bc1dca7795d41983a8c0fdaabbc1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,6 +143,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 98, y: 33.78092, z: 98}
   m_Center: {x: 0, y: 16.89046, z: 0}
+--- !u!114 &114357675456785480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151596498174420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildCost: 1000
+  costEnergy: 5
+  buildingType: 5
+--- !u!114 &114411429501681626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151596498174420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db6468c27873be45bef8791ca876487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114724600337512492
 MonoBehaviour:
   m_ObjectHideFlags: 1

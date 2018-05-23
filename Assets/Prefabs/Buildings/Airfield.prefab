@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65850023758743206}
   - component: {fileID: 114530092685658022}
   - component: {fileID: 54360237961810178}
+  - component: {fileID: 114431638660391360}
+  - component: {fileID: 114135263115175966}
   m_Layer: 9
   m_Name: Airfield_PLH
   m_TagString: Buildings
@@ -87,7 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 40b28a62c5b85ad4aabe3a0acf1f3ed5, type: 2}
+  - {fileID: 2100000, guid: e287bc1dca7795d41983a8c0fdaabbc1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -141,6 +143,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 98, y: 67.01196, z: 196}
   m_Center: {x: -100, y: 33.50598, z: 0}
+--- !u!114 &114135263115175966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517821258466202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e86b24b0600c6f4c8d5b94d6ddb6724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114431638660391360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517821258466202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildCost: 1000
+  costEnergy: 5
+  buildingType: 0
 --- !u!114 &114530092685658022
 MonoBehaviour:
   m_ObjectHideFlags: 1

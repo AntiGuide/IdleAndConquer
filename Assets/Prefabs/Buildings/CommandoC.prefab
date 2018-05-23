@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65773156577222192}
   - component: {fileID: 114024491423949042}
   - component: {fileID: 54121141963135334}
+  - component: {fileID: 114615238804618022}
+  - component: {fileID: 114852184489491228}
   m_Layer: 9
   m_Name: HQ_Lv1
   m_TagString: Buildings
@@ -66,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1434804739179960}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -261, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.998, y: 1, z: 1.003}
   m_Children:
   - {fileID: 4238723157323766}
@@ -87,7 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 40b28a62c5b85ad4aabe3a0acf1f3ed5, type: 2}
+  - {fileID: 2100000, guid: e287bc1dca7795d41983a8c0fdaabbc1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,4 +156,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenTransparent: {fileID: 2800000, guid: 8c5397737983bd34697861fe680c634e, type: 3}
   redTransparent: {fileID: 2800000, guid: fb3a3d18be4b16c489e770b232eadd9d, type: 3}
-  menueController: {fileID: 0}
+--- !u!114 &114615238804618022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010216045696974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildCost: 1000
+  costEnergy: 5
+  buildingType: 1
+--- !u!114 &114852184489491228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010216045696974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe6a99af6a63704aa1e1df0c3e364db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

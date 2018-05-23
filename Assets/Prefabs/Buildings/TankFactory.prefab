@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65577727821785710}
   - component: {fileID: 54755666336755832}
   - component: {fileID: 114383080225830474}
+  - component: {fileID: 114633690219259758}
+  - component: {fileID: 114588083608391762}
   m_Layer: 9
   m_Name: TankFactoryPlaceholder
   m_TagString: Buildings
@@ -87,7 +89,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 40b28a62c5b85ad4aabe3a0acf1f3ed5, type: 2}
+  - {fileID: 2100000, guid: e287bc1dca7795d41983a8c0fdaabbc1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,3 +156,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenTransparent: {fileID: 2800000, guid: 8c5397737983bd34697861fe680c634e, type: 3}
   redTransparent: {fileID: 2800000, guid: fb3a3d18be4b16c489e770b232eadd9d, type: 3}
+--- !u!114 &114588083608391762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234367519569472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876347d6aa78f294d8a5a15199a55dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114633690219259758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234367519569472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildCost: 1000
+  costEnergy: 5
+  buildingType: 7

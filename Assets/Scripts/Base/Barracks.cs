@@ -1,3 +1,5 @@
-﻿public class Barracks
-{
+﻿using UnityEngine;
+
+public class Barracks : MonoBehaviour {
+    
 }

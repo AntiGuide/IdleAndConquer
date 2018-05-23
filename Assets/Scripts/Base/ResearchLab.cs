@@ -1,3 +1,5 @@
-﻿public class ResearchLab
-{
+﻿using UnityEngine;
+
+public class ResearchLab : MonoBehaviour {
+
 }

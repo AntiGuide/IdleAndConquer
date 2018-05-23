@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class TankFactory {
+public class TankFactory : MonoBehaviour {
     //To build tanks
     //+1 Tank Tier each
     private List<TankCategory> tankTypes = new List<TankCategory>();

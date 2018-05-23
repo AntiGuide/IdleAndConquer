@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +32,9 @@ public class MoneyManagement : MonoBehaviour {
             return false;
         }
     }
+    public bool hasMoney(long moneyToCheck) {
+        return money >= moneyToCheck;
+    }
 
     public void setMoney(long valueToSet) {
         if (valueToSet >= 0) {
@@ -42,6 +46,12 @@ public class MoneyManagement : MonoBehaviour {
     }
 
     private void outputMoney(long money) {
-        GetComponent<Text>().text = money.ToString() + " $";
+        GetComponent<Text>().text = formatMoney(money);
+    }
+
+    public static string formatMoney(long money) {
+        CultureInfo cultureInfo = new CultureInfo("de-DE", false);
+        cultureInfo.NumberFormat.CurrencySymbol = "$";
+        return money.ToString("C0", cultureInfo);
     }
 }
