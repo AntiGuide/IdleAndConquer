@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33289002174196656}
   - component: {fileID: 23898770333842420}
   - component: {fileID: 65773156577222192}
-  - component: {fileID: 114024491423949042}
   - component: {fileID: 54121141963135334}
+  - component: {fileID: 114024491423949042}
   - component: {fileID: 114615238804618022}
   - component: {fileID: 114852184489491228}
   m_Layer: 9
@@ -167,8 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildCost: 1000
-  costEnergy: 5
   buildingType: 1
 --- !u!114 &114852184489491228
 MonoBehaviour:

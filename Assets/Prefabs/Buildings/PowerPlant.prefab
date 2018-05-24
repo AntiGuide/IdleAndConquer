@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4334303701370378}
   m_Layer: 9
-  m_Name: Powerplant
+  m_Name: PowerPlant
   m_TagString: Buildings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,6 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildCost: 1000
-  costEnergy: 5
   buildingType: 6

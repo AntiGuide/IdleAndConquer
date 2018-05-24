@@ -90,14 +90,14 @@ public class BuildBuilding : MonoBehaviour {
         }
     }
 
-    void OnDrawGizmos() {
-        if (playerBuilding) {
-            Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
-            Gizmos.color = Color.red;
-            //Gizmos.DrawWireCube(bounds.center, bounds.size);
-            //Gizmos.DrawSphere(newBuilding.transform.position, 1.0f);
-        }
-    }
+    //void OnDrawGizmos() {
+    //    if (playerBuilding) {
+    //        Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawWireCube(bounds.center, bounds.size);
+    //        Gizmos.DrawSphere(newBuilding.transform.position, 1.0f);
+    //    }
+    //}
 
     public Vector3 toGrid(Vector3 allignToGrid) {
         //TODO Dont use variables
