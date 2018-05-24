@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class InputHandler : MonoBehaviour {
@@ -7,6 +8,8 @@ public class InputHandler : MonoBehaviour {
     public float cameraMinX;
     public float cameraMaxZ;
     public float cameraMinZ;
+    public float minZoom;
+    public float maxZoom;
 
     private Vector2 startPos;
     private Vector3 startPosCamera;
@@ -14,24 +17,29 @@ public class InputHandler : MonoBehaviour {
     private bool blockMapMovement = false;
     private Vector3 ScreenSize;
     private float startOrtographicSize;
-
+    private float screenScale;
 
     // Use this for initialization
     void Start () {
         ScreenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         startOrtographicSize = gameObject.GetComponent<Camera>().orthographicSize;
+        screenScale = 4500f / Screen.width;
     }
 
     // Update is called once per frame
     void Update() {
         //Debug PC Zoom
-        //if (Input.GetKeyDown(KeyCode.I)) {
-        //    gameObject.GetComponent<Camera>().orthographicSize = 70f;
-        //}else if(Input.GetKeyDown(KeyCode.O)) {
-        //    gameObject.GetComponent<Camera>().orthographicSize = 140f;
-        //}else if (Input.GetKeyDown(KeyCode.P)) {
-        //    gameObject.GetComponent<Camera>().orthographicSize = 280f;
-        //}
+        if (Input.GetKeyDown(KeyCode.I)) {
+            gameObject.GetComponent<Camera>().orthographicSize = 2000f;
+            moveInBounds(transform.position);
+        } else if (Input.GetKeyDown(KeyCode.O)) {
+            gameObject.GetComponent<Camera>().orthographicSize = 3000f;
+            moveInBounds(transform.position);
+        } else if (Input.GetKeyDown(KeyCode.P)) {
+            gameObject.GetComponent<Camera>().orthographicSize = 4000f;
+            moveInBounds(transform.position);
+        }
+        
 
         // Handle native touch events
         //TODO Mobile Pointer 0
@@ -57,19 +65,10 @@ public class InputHandler : MonoBehaviour {
                 gameObject.GetComponent<Camera>().orthographicSize += deltaMagnitudeDiff * 0.5f;
 
                 // Make sure the orthographic size never drops below zero.
-                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Max(gameObject.GetComponent<Camera>().orthographicSize, 70f);
-                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Min(gameObject.GetComponent<Camera>().orthographicSize, 280f);
+                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Max(gameObject.GetComponent<Camera>().orthographicSize, maxZoom);
+                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Min(gameObject.GetComponent<Camera>().orthographicSize, minZoom);
 
-                float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / startOrtographicSize;
-                float screenScale = 315f / Screen.width;
-
-                float newX = startPosCamera.x + (transform.position.x - startPos.x) * screenScale * zoomScale;
-                newX = newX < cameraMaxX + (160f - (zoomScale * 160f)) ? newX : cameraMaxX + (160f - (zoomScale * 160f));
-                newX = newX > cameraMinX - (160f - (zoomScale * 160f)) ? newX : cameraMinX - (160f - (zoomScale * 160f));
-                float newZ = startPosCamera.z + (transform.position.y - startPos.y) * screenScale * zoomScale;
-                newZ = newZ < cameraMaxZ + (280f - (zoomScale * 280f)) ? newZ : cameraMaxZ + (280f - (zoomScale * 280f));
-                newZ = newZ > cameraMinZ - (280f - (zoomScale * 280f)) ? newZ : cameraMinZ - (280f - (zoomScale * 280f));
-                transform.position = new Vector3(newX, transform.position.y, newZ);
+                moveInBounds(transform.position);
             }
         } else if(!EventSystem.current.IsPointerOverGameObject()) {
             foreach (Touch touch in Input.touches) {
@@ -110,16 +109,7 @@ public class InputHandler : MonoBehaviour {
                         movedDuringTouch = true;
                     }
                     if (movedDuringTouch) {
-                        float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / startOrtographicSize;
-                        float screenScale = 315f / Screen.width;
-
-                        float newX = startPosCamera.x + (touchPosition.x - startPos.x) * screenScale * zoomScale;
-                        newX = newX < cameraMaxX + (160f - (zoomScale * 160f)) ? newX : cameraMaxX + (160f - (zoomScale * 160f));
-                        newX = newX > cameraMinX - (160f - (zoomScale * 160f)) ? newX : cameraMinX - (160f - (zoomScale * 160f));
-                        float newZ = startPosCamera.z + (touchPosition.y - startPos.y) * screenScale * zoomScale;
-                        newZ = newZ < cameraMaxZ + (280f - (zoomScale * 280f)) ? newZ : cameraMaxZ + (280f - (zoomScale * 280f));
-                        newZ = newZ > cameraMinZ - (280f - (zoomScale * 280f)) ? newZ : cameraMinZ - (280f - (zoomScale * 280f));
-                        transform.position = new Vector3(newX, transform.position.y, newZ);
+                        moveInBounds(touchPosition);
                     }
                 }
                 break;
@@ -139,5 +129,17 @@ public class InputHandler : MonoBehaviour {
                 }
                 break;
         }
+    }
+
+    private void moveInBounds(Vector2 touchPosition) {
+        float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / startOrtographicSize;
+        float aspectRatio = Camera.main.aspect;
+        float newX = startPosCamera.x + (touchPosition.x - startPos.x) * screenScale * zoomScale;
+        newX = newX < cameraMaxX + ((startOrtographicSize * aspectRatio) - (zoomScale * (startOrtographicSize * aspectRatio))) ? newX : cameraMaxX + ((startOrtographicSize * aspectRatio) - (zoomScale * (startOrtographicSize * aspectRatio)));
+        newX = newX > cameraMinX - ((startOrtographicSize * aspectRatio) - (zoomScale * (startOrtographicSize * aspectRatio))) ? newX : cameraMinX - ((startOrtographicSize * aspectRatio) - (zoomScale * (startOrtographicSize * aspectRatio)));
+        float newZ = startPosCamera.z + (touchPosition.y - startPos.y) * screenScale * zoomScale;
+        newZ = newZ < cameraMaxZ + (startOrtographicSize - (zoomScale * startOrtographicSize)) ? newZ : cameraMaxZ + (startOrtographicSize - (zoomScale * startOrtographicSize));
+        newZ = newZ > cameraMinZ - (startOrtographicSize - (zoomScale * startOrtographicSize)) ? newZ : cameraMinZ - (startOrtographicSize - (zoomScale * startOrtographicSize));
+        transform.position = new Vector3(newX, transform.position.y, newZ);
     }
 }
