@@ -10,6 +10,7 @@ public class InputHandler : MonoBehaviour {
     public float cameraMinZ;
     public float minZoom;
     public float maxZoom;
+    public MainMenueController mainMenueController;
 
     private Vector2 startPos;
     private Vector3 startPosCamera;
@@ -124,6 +125,8 @@ public class InputHandler : MonoBehaviour {
                     if (hitInformation.collider != null) {
                         if (hitInformation.collider.tag.Equals("MissionLocation")) {
                             Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().missionName);
+                            MissionDetails missionToLoad = hitInformation.collider.GetComponent<MissionDetails>();
+                            mainMenueController.ToggleMenue(3);
                         }
                     }
                 }

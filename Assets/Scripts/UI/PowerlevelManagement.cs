@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PowerlevelManagement : MonoBehaviour {
 
+    public FloatUpSpawner floatUpSpawner;
+
     private static long powerlevel = 0;
 
     // Use this for initialization
@@ -20,6 +22,7 @@ public class PowerlevelManagement : MonoBehaviour {
 
     public void addPowerlevel(long powerlevelToAdd) {
         powerlevel = powerlevel + powerlevelToAdd;
+        floatUpSpawner.generateFloatUp(powerlevelToAdd, FloatUp.ResourceType.POWERLEVEL, transform.position);
         outputPowerlevel(ref powerlevel);
     }
 

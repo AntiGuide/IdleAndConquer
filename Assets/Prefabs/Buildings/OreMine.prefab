@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4117354705352950}
   m_Layer: 9
   m_Name: OreMine
-  m_TagString: Buildings
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1832060747791218}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -300, y: 0, z: 150}
   m_LocalScale: {x: 1.015, y: 1, z: 0.932}
   m_Children:
   - {fileID: 4921455524702824}
@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   greenTransparent: {fileID: 2800000, guid: 8c5397737983bd34697861fe680c634e, type: 3}
   redTransparent: {fileID: 2800000, guid: fb3a3d18be4b16c489e770b232eadd9d, type: 3}
+  menueController: {fileID: 0}
 --- !u!114 &114335779102921938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,6 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildCost: 1000
-  costEnergy: 5
   buildingType: 2

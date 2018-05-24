@@ -9,11 +9,13 @@ public class Harvester : MonoBehaviour {
     private OreRefinery attachedOreRefinery;
     private MoneyManagement moneyManagement;
     private float currentProgressWay;
+    private FloatUpSpawner floatUpSpawner;
 
-    public void Initialize(OreRefinery attachedOreRefinery, Mine attachedMine,ref MoneyManagement moneyManagement) {
+    public void Initialize(OreRefinery attachedOreRefinery, Mine attachedMine,ref MoneyManagement moneyManagement, FloatUpSpawner floatUpSpawner) {
         this.attachedOreRefinery = attachedOreRefinery;
         this.attachedMine = attachedMine;
         this.moneyManagement = moneyManagement;
+        this.floatUpSpawner = floatUpSpawner;
     }
 
     // Use this for initialization
@@ -34,6 +36,7 @@ public class Harvester : MonoBehaviour {
         } else{
             currentProgressWay -= miningSpeed;
             moneyManagement.addMoney(miningAmount);//Sold ore
+            floatUpSpawner.generateFloatUp(miningAmount, FloatUp.ResourceType.DOLLAR, Camera.main.WorldToScreenPoint(transform.position));
             transform.LookAt(attachedMine.transform.position);
         }
     }

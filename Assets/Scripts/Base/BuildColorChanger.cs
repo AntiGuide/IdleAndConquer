@@ -8,12 +8,12 @@ public class BuildColorChanger : MonoBehaviour {
     public Texture2D greenTransparent;
     public Texture2D redTransparent;
 
-    private MenueController menueController;// For menue on click
+    public MenueController menueController;// For menue on click
 
     private Material buildMaterial;
     private Texture2D finishedBuildingTexture;
 
-    private bool isBuilt;
+    private bool isBuilt = true;
     public bool IsBuilt {
         get {
             return isBuilt;
@@ -40,11 +40,14 @@ public class BuildColorChanger : MonoBehaviour {
     void Start () {
         buildMaterial = gameObject.GetComponentInChildren<MeshRenderer>().material;
         finishedBuildingTexture = (Texture2D)buildMaterial.GetTexture("_MainTex");
-        
-        if (buildMaterial != null && buildMaterial.HasProperty("_MainTex")) {
-            buildMaterial.SetTexture("_MainTex", greenTransparent);
-        } else {
-            Debug.Log("Non existent material or no color property");
+
+        if (!isBuilt) {
+            if (buildMaterial != null && buildMaterial.HasProperty("_MainTex")) {
+                buildMaterial.SetTexture("_MainTex", greenTransparent);
+            } else {
+                Debug.Log("Non existent material or no color property");
+            }
+
         }
     }
 	

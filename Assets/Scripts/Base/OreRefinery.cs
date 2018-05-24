@@ -8,7 +8,8 @@ public class OreRefinery : MonoBehaviour{
     public int upgradeCost = 5000;
     //public Mine oreMine;
     public GameObject harvesterPrefab;
-    
+    private FloatUpSpawner floatUpSpawner;
+
     //private GameObject[] attachedHarvesters = new GameObject[5];
     private List<GameObject> attachedHarvesters = new List<GameObject>();
 
@@ -21,6 +22,7 @@ public class OreRefinery : MonoBehaviour{
 
     public void InitializeBuilt() {
         moneyManager = GameObject.Find("/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
+        floatUpSpawner = GameObject.Find("/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
         for (int i = 0; i < level; i++) {
             Mine mine = BuildBuilding.builtBuildings[2].GetComponentInChildren<Mine>();
             AddHarvester(ref attachedHarvesters, ref moneyManager, this, mine);
@@ -44,7 +46,7 @@ public class OreRefinery : MonoBehaviour{
         GameObject go;
         go = Instantiate(harvesterPrefab);
         Harvester harvester = go.GetComponentInChildren<Harvester>();
-        harvester.Initialize(oreRefinery, oreMine, ref moneyManager);
+        harvester.Initialize(oreRefinery, oreMine, ref moneyManager, floatUpSpawner);
         attachedHarvesters.Add(go);
     }
 }

@@ -24,6 +24,7 @@ public class BuildBuilding : MonoBehaviour {
     private static bool[] isBuilt;
     private static int newBuildingID;
     private long costBuilding = 0;
+    private Vector3 prevScale;
 
     public static GameObject[] builtBuildings;
 
@@ -44,6 +45,11 @@ public class BuildBuilding : MonoBehaviour {
         builtBuildings = new GameObject[buildings.Length];
         for (int i = 0; i < isBuilt.Length; i++) {
             isBuilt[i] = false;
+        }
+        if (GameObject.FindGameObjectWithTag("Mine") != null) {
+            builtBuildings[2] = GameObject.FindGameObjectsWithTag("Mine")[0];
+            builtBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+            isBuilt[2] = true;
         }
     }
 
@@ -72,7 +78,8 @@ public class BuildBuilding : MonoBehaviour {
             if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
                 touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 layerMask = LayerMask.GetMask("Buildings");
-                Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
+                Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 2000.0f, layerMask);
+                //Debug.DrawRay(Camera.main.transform.position, touchRay.direction * 2000f, Color.red,3f);
                 if (hitInformation.collider != null) {
                     mainMenueController.ToggleMenue(hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().GetMenueController());
                 }
@@ -120,8 +127,11 @@ public class BuildBuilding : MonoBehaviour {
             buildColorChanger = newBuilding.GetComponentInChildren<BuildColorChanger>();
 
             buildColorChanger.SetMenueController(menueController[buildingID]);
-
-            newBuilding.transform.position = toGrid(new Vector3(-250, 0, 0));
+            buildColorChanger.IsBuilt = false;
+            Vector3 tmpVec3 = new Vector3(-250, 1, 0);
+            newBuilding.transform.position = toGrid(tmpVec3);
+            prevScale = newBuilding.transform.localScale;
+            newBuilding.transform.localScale *= 1.001f;
 
             Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
             //Debug.Log(bounds.center.ToString() + System.Environment.NewLine + bounds.extents.ToString() + System.Environment.NewLine + bounds.size.ToString());
@@ -151,6 +161,8 @@ public class BuildBuilding : MonoBehaviour {
                 newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
                 isBuilt[newBuildingID] = true;
                 builtBuildings[newBuildingID] = newBuilding;
+                newBuilding.transform.localScale = prevScale;
+                newBuilding.transform.position = new Vector3(newBuilding.transform.position.x, 0, newBuilding.transform.position.z);
                 newBuilding = null;
                 playerBuilding = false;
                 buildConfirmUI.SetActive(false);
