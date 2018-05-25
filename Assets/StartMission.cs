@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartMission : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class StartMission : MonoBehaviour {
 	}
 
     public void OnClick() {
-        Debug.Log("Started Mossion!");
+        SceneManager.UnloadSceneAsync("MissionMap");
+        //TODO Start mission
     }
 }

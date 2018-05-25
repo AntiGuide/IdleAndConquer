@@ -6,14 +6,16 @@ using UnityEngine.UI;
 
 public class OnClickDeploy : MonoBehaviour {
 
-    private Text remainingUnitsText;
-    private Text unitNameText;
-    private int remainingUnits;
+    public Text remainingUnitsText;
+    public Text unitNameText;
+    private ShowChosenGeneral showChosenGeneral;
 
-	// Use this for initialization
-	void Start () {
-        unitNameText = transform.Find("NameText").GetComponent<Text>();
-        remainingUnitsText = transform.Find("RemainigUnitsText").GetComponent<Text>();
+    private Unit attachedUnit;
+    private int unitCount;
+
+    // Use this for initialization
+    void Start () {
+        showChosenGeneral = GameObject.Find("Canvas/DeployUI/BG").GetComponent<ShowChosenGeneral>();
     }
 
     // Update is called once per frame
@@ -22,13 +24,18 @@ public class OnClickDeploy : MonoBehaviour {
 	}
 
     public void OnClickDeployEvent() {
-        remainingUnits--;
-        remainingUnitsText.text = remainingUnits.ToString();
+        if (unitCount > 0) {
+            unitCount--;
+            remainingUnitsText.text = unitCount.ToString();
+            showChosenGeneral.createNewUnitImage(attachedUnit);
+
+        }
     }
 
-    public void Initialize(string name, int count) {
-        remainingUnits = count;
-        remainingUnitsText.text = name;
-        unitNameText.text = name;
+    public void Initialize(Unit unit) {
+        attachedUnit = unit;
+        remainingUnitsText.text = attachedUnit.UnitCount.ToString();
+        unitCount = attachedUnit.UnitCount;
+        unitNameText.text = attachedUnit.UnitName;
     }
 }

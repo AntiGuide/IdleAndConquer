@@ -20,6 +20,7 @@ public class Unit {
     private ProductionQueue productionQueue;
 
     private float buildtime;
+
     public float Buildtime {
         get {
             return buildtime;
@@ -27,6 +28,26 @@ public class Unit {
 
         set {
             buildtime = value;
+        }
+    }
+
+    public int UnitCount {
+        get {
+            return unitCount;
+        }
+
+        set {
+            unitCount = value;
+        }
+    }
+
+    public string UnitName {
+        get {
+            return unitName;
+        }
+
+        set {
+            unitName = value;
         }
     }
 #pragma warning restore 0414
@@ -59,7 +80,12 @@ public class Unit {
         this.buildtime = buildtime;
         this.cAOButton = cAOButton;
         this.productionQueue = productionQueue;
-    }   
+    }
+
+    public Unit(string unitName, int unitCount) {
+        this.unitName = unitName;
+        this.unitCount = unitCount;
+    }
 
     internal void Order(ref int availableUnits, ref MoneyManagement moneyManager, ref PowerlevelManagement powerlevelManager) {
         if (moneyManager.subMoney(cost)) {

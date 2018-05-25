@@ -21,7 +21,7 @@ public class LoadUnits : MonoBehaviour {
                 //setUnitCount(count.ToString());
                 //attachedUnit.setUnitCount(count);
                 OnClickDeploy ocd = Instantiate(unitButtonPrefab, transform).GetComponent<OnClickDeploy>();
-                ocd.Initialize(unitName, count);
+                ocd.Initialize(new Unit(unitName, count));
             }
             
             //PlayerPrefs.SetInt(unitName + "_HP", hp);

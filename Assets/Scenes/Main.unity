@@ -1265,7 +1265,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 620172863}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.539521
+  m_Size: 0.53952104
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 696164444}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.5395209
+  m_Size: 0.539521
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7493,7 +7493,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 829425684}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.5395209
+  m_Size: 0.539521
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -23005,6 +23005,7 @@ MonoBehaviour:
   - {fileID: 83128360}
   - {fileID: 1115942159}
   - {fileID: 1773842997}
+  deployUI: {fileID: 0}
 --- !u!222 &1931439385
 CanvasRenderer:
   m_ObjectHideFlags: 0
