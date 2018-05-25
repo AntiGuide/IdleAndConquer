@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LoadGenerals : MonoBehaviour {
 
+    public GameObject generalButtonMissionMap;
+
     private float chanceDeath;
     private string country;
     private string generalName;
@@ -24,7 +26,7 @@ public class LoadGenerals : MonoBehaviour {
             if (chanceDeath < 0f) {
                 break;
             }
-            GeneralButton attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), transform).GetComponent<GeneralButton>();
+            GeneralButton attachedButton = Instantiate(generalButtonMissionMap, transform).GetComponent<GeneralButton>();
             attachedButton.setTexts(country, generalName, wins + Environment.NewLine + "-" + Environment.NewLine + loses);
 
             General ret = attachedButton.gameObject.GetComponent<General>();

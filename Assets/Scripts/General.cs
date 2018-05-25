@@ -10,6 +10,66 @@ public class General : MonoBehaviour{
     private int loses;
     private List<Passives> passives;
 
+    public float ChanceToPermaDeath {
+        get {
+            return chanceToPermaDeath;
+        }
+
+        set {
+            chanceToPermaDeath = value;
+        }
+    }
+
+    public Sprite Portrait {
+        get {
+            return portrait;
+        }
+
+        set {
+            portrait = value;
+        }
+    }
+
+    public string Country {
+        get {
+            return country;
+        }
+
+        set {
+            country = value;
+        }
+    }
+
+    public string GeneralName {
+        get {
+            return generalName;
+        }
+
+        set {
+            generalName = value;
+        }
+    }
+
+    public int Wins {
+        get {
+            return wins;
+        }
+
+        set {
+            wins = value;
+        }
+    }
+
+    public int Loses {
+        get {
+            return loses;
+        }
+
+        set {
+            loses = value;
+        }
+    }
+
     public void InitGeneral(float chanceToPermaDeath, Sprite portrait, string country, string generalName, List<Passives> passives) {
         this.chanceToPermaDeath = chanceToPermaDeath;
         this.portrait = portrait;

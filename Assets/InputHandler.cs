@@ -118,7 +118,12 @@ public class InputHandler : MonoBehaviour {
                 if (blockMapMovement) {
                     blockMapMovement = false;
                 }else if (!movedDuringTouch) {
-                    Ray touchRay = Camera.allCameras[1].ScreenPointToRay(touchPosition);
+                    Ray touchRay;
+                    if (Camera.allCamerasCount > 1) {
+                        touchRay = Camera.allCameras[1].ScreenPointToRay(touchPosition);
+                    } else {
+                        touchRay = Camera.allCameras[0].ScreenPointToRay(touchPosition);
+                    }
                     
                     int layerMask = LayerMask.GetMask("MissionLocation");
                     RaycastHit hitInformation;
@@ -128,7 +133,7 @@ public class InputHandler : MonoBehaviour {
                         if (hitInformation.collider.tag.Equals("MissionLocation")) {
                             Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().missionName);
                             MissionDetails missionToLoad = hitInformation.collider.GetComponent<MissionDetails>();
-                            mainMenueController.ToggleMenue(3);
+                            mainMenueController.ToggleMenue(1);
                         }
                     }
                 }

@@ -8,9 +8,10 @@ public class LoadUnits : MonoBehaviour {
     public GameObject unitButtonPrefab;
     // Use this for initialization
     void Start () {
+
         for (unitID = 0;true; unitID++) {
             unitName = PlayerPrefs.GetString("UnitName_" + unitID,null);
-            if (unitName == null) {
+            if (unitName.Equals("")) {
                 break;
             }
 
