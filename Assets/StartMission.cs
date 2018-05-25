@@ -1,22 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartMission : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    
 
     public void OnClick() {
+        PlayerPrefs.SetFloat("Mission", 60.0f);
         SceneManager.UnloadSceneAsync("MissionMap");
         //TODO Start mission
     }
+
 }

@@ -5338,6 +5338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d0392acc2f9fd439c0be0d45476ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyManagement: {fileID: 0}
+  floatUpSpawner: {fileID: 0}
 --- !u!114 &2101674954
 MonoBehaviour:
   m_ObjectHideFlags: 0

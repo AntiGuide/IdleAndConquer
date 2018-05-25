@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class __SceneSwitch : MonoBehaviour {
-
+    public GameObject timePrefab;
     private static GameObject canvas;
     private static bool canvasHidden = false;
 
@@ -18,6 +18,13 @@ public class __SceneSwitch : MonoBehaviour {
         if (SceneManager.sceneCount <= 1 && canvasHidden) {
             canvas.SetActive(true);
             canvasHidden = false;
+            GameObject go;
+            float time = PlayerPrefs.GetFloat("Mission", -1.0f);
+            if (time >= 0f) {
+                go = Instantiate(timePrefab, canvas.transform);
+                MissionUI mui = go.GetComponentInChildren<MissionUI>();
+                mui.setTime(time);
+            }
         }
     }
 

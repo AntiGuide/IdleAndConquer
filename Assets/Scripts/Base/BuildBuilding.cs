@@ -120,9 +120,9 @@ public class BuildBuilding : MonoBehaviour {
         //bool ret = false;
         buildingID--;
         newBuildingID = buildingID;
-        if (buildingID == 3 && !isBuilt[2]) {
-            //ret = false;
-        } else {
+        //if (buildingID == 3 && !isBuilt[2]) {
+        //    //ret = false;
+        //} else {
             newBuilding = Instantiate(buildings[buildingID]);
             buildColorChanger = newBuilding.GetComponentInChildren<BuildColorChanger>();
 
@@ -143,7 +143,7 @@ public class BuildBuilding : MonoBehaviour {
             playerBuilding = true;
             buildingMenueController.Unexpand(true);
             //ret = true;
-        }
+        //}
         //return ret;
     }
 
