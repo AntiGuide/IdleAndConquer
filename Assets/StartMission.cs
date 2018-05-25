@@ -13,4 +13,8 @@ public class StartMission : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void OnClick() {
+        Debug.Log("Started Mossion!");
+    }
 }

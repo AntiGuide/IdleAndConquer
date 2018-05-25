@@ -11,11 +11,11 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     private Text generalName;
     private Text winLoseHistory;
 
-    public MainMenueController mainMenueController;
+    private MainMenueController mainMenueController;
 
     // Use this for initialization
     void Start() {
-
+        mainMenueController = GameObject.Find("/Canvas/MainMenue/").GetComponent<MainMenueController>();
     }
 
     // Update is called once per frame
@@ -32,6 +32,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     public void OnClick() {
 
         SelectedGeneral.General = gameObject.GetComponent<General>();
+        mainMenueController.activateDeployUI(true);
         mainMenueController.ToggleMenue(2);
     }
 }

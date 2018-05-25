@@ -3,6 +3,7 @@
 public class MainMenueController : MonoBehaviour {
 
     public GameObject[] menue;
+    public GameObject deployUI;
 
     private int enabledMenue;
     private static bool isExpanded;
@@ -88,5 +89,9 @@ public class MainMenueController : MonoBehaviour {
 
     public MenueController GetActiveMenueController() {
         return menueController[enabledMenue];
+    }
+
+    public void activateDeployUI(bool val) {
+        deployUI.SetActive(val);
     }
 }

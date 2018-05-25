@@ -33,6 +33,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     void Start () {
         attachedUnit = new Unit(unitName, hp, attack, critChance, critMultiplier, defense, type, armorType, cost, buildtime, this, productionQueue);
         PlayerPrefs.SetString("UnitName_" + unitID, unitName);
+        unitID++;
         PlayerPrefs.SetInt(unitName + "_HP", hp);
         PlayerPrefs.SetInt(unitName + "_ATTACK", attack);
         PlayerPrefs.SetFloat(unitName + "_CHC", critChance);

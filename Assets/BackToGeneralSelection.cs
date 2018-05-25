@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackToGeneralSelection : MonoBehaviour {
 
-    MainMenueController mainMenueController;
+    public MainMenueController mainMenueController;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,7 @@ public class BackToGeneralSelection : MonoBehaviour {
 
     public void OnClick() {
         mainMenueController.ToggleMenue(1);
+        mainMenueController.activateDeployUI(false);
         SelectedGeneral.General = null;
     }
 }
