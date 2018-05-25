@@ -105,7 +105,13 @@ public class Unit {
     }
 
     public void addSingleBuiltUnit() {
+
         cAOButton.setUnitCount((++unitCount).ToString());
-        cAOButton.addPowerlevel(Mathf.RoundToInt((hp * attack * defense) / 1000));
+        PlayerPrefs.SetInt(unitName + "_COUNT", unitCount);
+        cAOButton.addPowerlevel(Mathf.RoundToInt((hp * attack * defense) / 1000), false);
+    }
+
+    public void setUnitCount(int count) {
+        this.unitCount = count;
     }
 }

@@ -20,9 +20,11 @@ public class PowerlevelManagement : MonoBehaviour {
         outputPowerlevel(ref powerlevel);
     }
 
-    public void addPowerlevel(long powerlevelToAdd) {
+    public void addPowerlevel(long powerlevelToAdd, bool supressed) {
         powerlevel = powerlevel + powerlevelToAdd;
-        floatUpSpawner.generateFloatUp(powerlevelToAdd, FloatUp.ResourceType.POWERLEVEL, transform.position);
+        if (!supressed) {
+            floatUpSpawner.generateFloatUp(powerlevelToAdd, FloatUp.ResourceType.POWERLEVEL, transform.position);
+        }
         outputPowerlevel(ref powerlevel);
     }
 

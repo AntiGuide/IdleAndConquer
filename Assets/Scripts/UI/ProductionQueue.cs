@@ -12,7 +12,7 @@ public class ProductionQueue : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-
+        
     }
     //0.83//0.966
     // Update is called once per frame

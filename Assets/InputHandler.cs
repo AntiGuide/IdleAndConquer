@@ -118,10 +118,12 @@ public class InputHandler : MonoBehaviour {
                 if (blockMapMovement) {
                     blockMapMovement = false;
                 }else if (!movedDuringTouch) {
-                    Ray touchRay = Camera.main.ScreenPointToRay(touchPosition);
+                    Ray touchRay = Camera.allCameras[1].ScreenPointToRay(touchPosition);
+                    
                     int layerMask = LayerMask.GetMask("MissionLocation");
                     RaycastHit hitInformation;
                     Physics.Raycast(touchRay.origin, touchRay.direction, out hitInformation, 700.0f, layerMask);
+                    //Debug.DrawRay(touchRay.origin, touchRay.direction, Color.red, 3f);
                     if (hitInformation.collider != null) {
                         if (hitInformation.collider.tag.Equals("MissionLocation")) {
                             Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().missionName);
