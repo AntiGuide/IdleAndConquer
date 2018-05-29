@@ -68,7 +68,7 @@ public class BuildBuilding : MonoBehaviour {
                     //Debug.Log(bounds.size.ToString());
                     Vector3 cent = bounds.center;
                     hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
-                    newBuilding.transform.position = toGrid(hitInformation.point);
+                    newBuilding.transform.position = ToGrid(hitInformation.point);
                 }
             } else if (MainMenueController.IsExpanded) {
                 //mainMenueController.GetActiveMenueController().Unexpand(true);
@@ -106,7 +106,7 @@ public class BuildBuilding : MonoBehaviour {
     //    }
     //}
 
-    public Vector3 toGrid(Vector3 allignToGrid) {
+    public Vector3 ToGrid(Vector3 allignToGrid) {
         //TODO Dont use variables
         float x, y, z;
         x = Mathf.Round(allignToGrid.x / cellSize) * cellSize;
@@ -115,7 +115,7 @@ public class BuildBuilding : MonoBehaviour {
         return new Vector3(x, y, z);
     }
 
-    public void buildBuilding(int buildingID, long costBuilding) {
+    public void BuildABuilding(int buildingID, long costBuilding) {
         this.costBuilding = costBuilding;
         //bool ret = false;
         buildingID--;
@@ -129,7 +129,7 @@ public class BuildBuilding : MonoBehaviour {
             buildColorChanger.SetMenueController(menueController[buildingID]);
             buildColorChanger.IsBuilt = false;
             Vector3 tmpVec3 = new Vector3(-250, 1, 0);
-            newBuilding.transform.position = toGrid(tmpVec3);
+            newBuilding.transform.position = ToGrid(tmpVec3);
             prevScale = newBuilding.transform.localScale;
             newBuilding.transform.localScale *= 1.001f;
 

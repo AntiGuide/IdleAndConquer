@@ -32,13 +32,13 @@ public class InputHandler : MonoBehaviour {
         //Debug PC Zoom
         if (Input.GetKeyDown(KeyCode.I)) {
             gameObject.GetComponent<Camera>().orthographicSize = 2000f;
-            moveInBounds(transform.position);
+            MoveInBounds(transform.position);
         } else if (Input.GetKeyDown(KeyCode.O)) {
             gameObject.GetComponent<Camera>().orthographicSize = 3000f;
-            moveInBounds(transform.position);
+            MoveInBounds(transform.position);
         } else if (Input.GetKeyDown(KeyCode.P)) {
             gameObject.GetComponent<Camera>().orthographicSize = 4000f;
-            moveInBounds(transform.position);
+            MoveInBounds(transform.position);
         }
         
 
@@ -69,7 +69,7 @@ public class InputHandler : MonoBehaviour {
                 gameObject.GetComponent<Camera>().orthographicSize = Mathf.Max(gameObject.GetComponent<Camera>().orthographicSize, maxZoom);
                 gameObject.GetComponent<Camera>().orthographicSize = Mathf.Min(gameObject.GetComponent<Camera>().orthographicSize, minZoom);
 
-                moveInBounds(transform.position);
+                MoveInBounds(transform.position);
             }
         } else if(!EventSystem.current.IsPointerOverGameObject()) {
             foreach (Touch touch in Input.touches) {
@@ -110,7 +110,7 @@ public class InputHandler : MonoBehaviour {
                         movedDuringTouch = true;
                     }
                     if (movedDuringTouch) {
-                        moveInBounds(touchPosition);
+                        MoveInBounds(touchPosition);
                     }
                 }
                 break;
@@ -141,7 +141,7 @@ public class InputHandler : MonoBehaviour {
         }
     }
 
-    private void moveInBounds(Vector2 touchPosition) {
+    private void MoveInBounds(Vector2 touchPosition) {
         float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / startOrtographicSize;
         float aspectRatio = Camera.main.aspect;
         float newX = startPosCamera.x + (touchPosition.x - startPos.x) * screenScale * zoomScale;

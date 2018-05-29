@@ -53,8 +53,8 @@ public class CreateAndOrderUnit : MonoBehaviour {
         unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
         int count = PlayerPrefs.GetInt(unitName + "_COUNT", 0);
         if (count > 0) {
-            addPowerlevel(count * Mathf.RoundToInt((hp * attack * defense) / 1000), true);
-            setUnitCount(count.ToString());
+            AddPowerlevel(count * Mathf.RoundToInt((hp * attack * defense) / 1000), true);
+            SetUnitCount(count.ToString());
             attachedUnit.setUnitCount(count);
         }
     }
@@ -68,23 +68,23 @@ public class CreateAndOrderUnit : MonoBehaviour {
         attachedUnit.Order(ref availableUnits, ref moneyManager, ref powerlevelManager);
     }
 
-    public void setUnitCount(string text) {
+    public void SetUnitCount(string text) {
         unitCountText.text = text;
     }
 
-    public void addPowerlevel(int pl, bool supressed) {
+    public void AddPowerlevel(int pl, bool supressed) {
         powerlevelManager.addPowerlevel(pl, supressed);
     }
 
-    public void setProductionOverlayFill(float fillPercentage) {
+    public void SetProductionOverlayFill(float fillPercentage) {
         buildingOverlay.fillAmount = fillPercentage;
     }
 
-    public void addSingleUnitBuilding() {
+    public void AddSingleUnitBuilding() {
         unitBuilding.text = (++buildingUnits).ToString();
     }
 
-    public void subSingleUnitBuilding() {
+    public void SubSingleUnitBuilding() {
         unitBuilding.text = (--buildingUnits).ToString();
     }
 }

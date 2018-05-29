@@ -28,7 +28,7 @@ public class MissionUI : MonoBehaviour {
                 missionTime = -1f;
                 moneyManagement.addMoney(10000);
                 //TODO
-                floatUpSpawner.generateFloatUp(10000, FloatUp.ResourceType.DOLLAR,new Vector2(300f, -273f));
+                floatUpSpawner.GenerateFloatUp(10000, FloatUp.ResourceType.DOLLAR,new Vector2(300f, -273f));
                 Destroy(gameObject);
                 PlayerPrefs.DeleteKey("Mission");
             } else {
@@ -38,7 +38,7 @@ public class MissionUI : MonoBehaviour {
         }
 
     }
-    internal void setTime(float time) {
+    internal void SetTime(float time) {
         missionTime = time;
     }
 }

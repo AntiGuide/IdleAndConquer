@@ -1,24 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Used for navigating back to the generals tab from the deployment tab on the mission map.
+/// </summary>
 public class BackToGeneralSelection : MonoBehaviour {
+    /// <summary>Reference to the used MainMenueController. Used for expanding menues</summary>
+    public MainMenueController MainMenueControll;
 
-    public MainMenueController mainMenueController;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    /// <summary>
+    /// Triggered on click on the back button
+    /// </summary>
     public void OnClick() {
-        mainMenueController.ToggleMenue(1);
-        mainMenueController.activateDeployUI(false);
+        this.MainMenueControll.ToggleMenue(1);
+        this.MainMenueControll.ActivateDeployUI(false);
         SelectedGeneral.General = null;
     }
 }

@@ -25,10 +25,10 @@ public class ProductionQueue : MonoBehaviour {
             remainingTime -= Time.deltaTime;
             overlayFill = Mathf.Min(remainingTime / latestUnit.Buildtime, 1.0f);
             overlayFill = Mathf.Max(overlayFill, 0f);
-            buttonQueue[0].setProductionOverlayFill(overlayFill);
+            buttonQueue[0].SetProductionOverlayFill(overlayFill);
             if (remainingTime <= 0f) {
                 latestUnit.addSingleBuiltUnit();
-                buttonQueue[0].subSingleUnitBuilding();
+                buttonQueue[0].SubSingleUnitBuilding();
                 prodQueue.Remove(latestUnit);
                 buttonQueue.Remove(buttonQueue[0]);
                 if (prodQueue.Count > 0) {

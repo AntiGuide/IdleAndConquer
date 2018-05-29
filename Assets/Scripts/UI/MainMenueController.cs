@@ -91,7 +91,7 @@ public class MainMenueController : MonoBehaviour {
         return menueController[enabledMenue];
     }
 
-    public void activateDeployUI(bool val) {
+    public void ActivateDeployUI(bool val) {
         deployUI.SetActive(val);
     }
 }

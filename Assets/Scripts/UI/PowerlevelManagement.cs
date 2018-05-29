@@ -23,7 +23,7 @@ public class PowerlevelManagement : MonoBehaviour {
     public void addPowerlevel(long powerlevelToAdd, bool supressed) {
         powerlevel = powerlevel + powerlevelToAdd;
         if (!supressed) {
-            floatUpSpawner.generateFloatUp(powerlevelToAdd, FloatUp.ResourceType.POWERLEVEL, transform.position);
+            floatUpSpawner.GenerateFloatUp(powerlevelToAdd, FloatUp.ResourceType.POWERLEVEL, transform.position);
         }
         outputPowerlevel(ref powerlevel);
     }

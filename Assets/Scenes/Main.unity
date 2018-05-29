@@ -1132,10 +1132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df835bbc8c30ec244974fa298c9944a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 1931439384}
-  menueExpandedHeight: 0.6
-  menueExbandTriggerHeight: 0.5
-  lerpSpeed: 1000
+  MenueExpandedHeight: 0.7
+  MenueExbandTriggerHeight: 0.6
+  LerpSpeed: 4
 --- !u!114 &83128362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2507,53 +2506,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 209618841}
---- !u!1001 &233245007
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4792012271360528, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792012271360528, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792012271360528, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792012271360528, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792012271360528, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792012271360528, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792012271360528, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4792012271360528, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114079032993114938, guid: e71cea7cbe716dd428d1a27277cabce0,
-        type: 2}
-      propertyPath: menueController
-      value: 
-      objectReference: {fileID: 1773842998}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &233738448
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,7 +3886,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 402144259}
-        m_MethodName: clickBuildBuilding
+        m_MethodName: ClickBuildBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3990,11 +3942,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 37522404}
-  cost: {fileID: 250608953}
-  attachedBuilding: {fileID: 1515728511559848, guid: 4e50ccac9c99029439655924f5651bdf,
+  Builder: {fileID: 37522404}
+  Cost: {fileID: 250608953}
+  AttachedBuilding: {fileID: 1515728511559848, guid: 4e50ccac9c99029439655924f5651bdf,
     type: 2}
-  moneyManager: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
 --- !u!1 &420638859
 GameObject:
   m_ObjectHideFlags: 0
@@ -5479,7 +5431,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 402144259}
-        m_MethodName: clickBuildBuilding
+        m_MethodName: ClickBuildBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5535,11 +5487,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 37522404}
-  cost: {fileID: 1417084064}
-  attachedBuilding: {fileID: 1370554197613394, guid: 15ec9883c5986e946b6e141ac8c4b5cf,
+  Builder: {fileID: 37522404}
+  Cost: {fileID: 1417084064}
+  AttachedBuilding: {fileID: 1370554197613394, guid: 15ec9883c5986e946b6e141ac8c4b5cf,
     type: 2}
-  moneyManager: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
 --- !u!1 &566727760
 GameObject:
   m_ObjectHideFlags: 0
@@ -7177,8 +7129,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 402144259}
-        m_MethodName: clickBuildBuilding
+      - m_Target: {fileID: 689846279}
+        m_MethodName: ClickBuildBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7234,11 +7186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 37522404}
-  cost: {fileID: 650737593}
-  attachedBuilding: {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a,
+  Builder: {fileID: 37522404}
+  Cost: {fileID: 650737593}
+  AttachedBuilding: {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a,
     type: 2}
-  moneyManager: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
 --- !u!1 &696164443
 GameObject:
   m_ObjectHideFlags: 0
@@ -9947,8 +9899,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 402144259}
-        m_MethodName: clickBuildBuilding
+      - m_Target: {fileID: 907604873}
+        m_MethodName: ClickBuildBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10004,11 +9956,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 37522404}
-  cost: {fileID: 1161362942}
-  attachedBuilding: {fileID: 1434804739179960, guid: af192f10735a1b549874494876433076,
+  Builder: {fileID: 37522404}
+  Cost: {fileID: 1161362942}
+  AttachedBuilding: {fileID: 1378292085812040, guid: e71cea7cbe716dd428d1a27277cabce0,
     type: 2}
-  moneyManager: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
 --- !u!1 &931338174
 GameObject:
   m_ObjectHideFlags: 0
@@ -10785,10 +10737,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df835bbc8c30ec244974fa298c9944a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 1931439384}
-  menueExpandedHeight: 0.6
-  menueExbandTriggerHeight: 0.5
-  lerpSpeed: 1000
+  MenueExpandedHeight: 0.7
+  MenueExbandTriggerHeight: 0.6
+  LerpSpeed: 4
 --- !u!114 &995991363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12854,10 +12805,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df835bbc8c30ec244974fa298c9944a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 1931439384}
-  menueExpandedHeight: 0.6
-  menueExbandTriggerHeight: 0.5
-  lerpSpeed: 1000
+  MenueExpandedHeight: 0.7
+  MenueExbandTriggerHeight: 0.6
+  LerpSpeed: 4
 --- !u!114 &1115942161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14849,7 +14799,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4117354705352950, guid: fc3cb79b2aa651b49978c112086d7b1a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc3cb79b2aa651b49978c112086d7b1a, type: 2}
@@ -17325,8 +17275,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 402144259}
-        m_MethodName: clickBuildBuilding
+      - m_Target: {fileID: 1542056076}
+        m_MethodName: ClickBuildBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17382,11 +17332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 37522404}
-  cost: {fileID: 1463699031}
-  attachedBuilding: {fileID: 1730811312245924, guid: bf72985a4c93c634681a5e5ee0bc42e7,
+  Builder: {fileID: 37522404}
+  Cost: {fileID: 1463699031}
+  AttachedBuilding: {fileID: 1730811312245924, guid: bf72985a4c93c634681a5e5ee0bc42e7,
     type: 2}
-  moneyManager: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
 --- !u!1 &1548174239
 GameObject:
   m_ObjectHideFlags: 0
@@ -19652,7 +19602,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 402144259}
-        m_MethodName: clickBuildBuilding
+        m_MethodName: ClickBuildBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19708,11 +19658,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 37522404}
-  cost: {fileID: 1827217466}
-  attachedBuilding: {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d,
+  Builder: {fileID: 37522404}
+  Cost: {fileID: 1827217466}
+  AttachedBuilding: {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d,
     type: 2}
-  moneyManager: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
 --- !u!1 &1712494971
 GameObject:
   m_ObjectHideFlags: 0
@@ -20088,7 +20038,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 402144259}
-        m_MethodName: clickBuildBuilding
+        m_MethodName: ClickBuildBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20144,11 +20094,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 37522404}
-  cost: {fileID: 571682793}
-  attachedBuilding: {fileID: 1816868067750538, guid: 5b2ff19feeb5ec247add004570d9cd08,
+  Builder: {fileID: 37522404}
+  Cost: {fileID: 571682793}
+  AttachedBuilding: {fileID: 1816868067750538, guid: 5b2ff19feeb5ec247add004570d9cd08,
     type: 2}
-  moneyManager: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
 --- !u!1 &1724906059
 GameObject:
   m_ObjectHideFlags: 0
@@ -20767,9 +20717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962f473e03b9d27439f7a22284167fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatUp: {fileID: 1797920367312482, guid: 521bb1064fe7ddf4686d7aa94706770b, type: 2}
-  fadeTime: 2
-  travelDistance: 100
+  FloatUpPrefab: {fileID: 0}
+  FadeTime: 0
+  TravelDistance: 0
 --- !u!1 &1761633587
 GameObject:
   m_ObjectHideFlags: 0
@@ -21207,10 +21157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df835bbc8c30ec244974fa298c9944a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 1931439384}
-  menueExpandedHeight: 0.6
-  menueExbandTriggerHeight: 0.5
-  lerpSpeed: 1000
+  MenueExpandedHeight: 0.7
+  MenueExbandTriggerHeight: 0.6
+  LerpSpeed: 4
 --- !u!114 &1773842999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22645,11 +22594,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  builder: {fileID: 37522404}
-  cost: {fileID: 1618341253}
-  attachedBuilding: {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f,
+  Builder: {fileID: 37522404}
+  Cost: {fileID: 1618341253}
+  AttachedBuilding: {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f,
     type: 2}
-  moneyManager: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
 --- !u!114 &1921256366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22690,7 +22639,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1921256365}
-        m_MethodName: clickBuildBuilding
+        m_MethodName: ClickBuildBuilding
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23386,10 +23335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df835bbc8c30ec244974fa298c9944a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 1931439384}
-  menueExpandedHeight: 0.6
-  menueExbandTriggerHeight: 0.5
-  lerpSpeed: 1000
+  MenueExpandedHeight: 0.7
+  MenueExbandTriggerHeight: 0.6
+  LerpSpeed: 4
 --- !u!114 &1958121004
 MonoBehaviour:
   m_ObjectHideFlags: 0

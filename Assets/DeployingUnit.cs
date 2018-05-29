@@ -24,7 +24,7 @@ public class DeployingUnit : MonoBehaviour {
         this.unit = unit;
     }
 
-    public void addDeployingCount(int addVal) {
+    public void AddDeployingCount(int addVal) {
         deployinCount += addVal;
     }
 }

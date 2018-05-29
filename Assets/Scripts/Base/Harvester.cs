@@ -36,7 +36,7 @@ public class Harvester : MonoBehaviour {
         } else{
             currentProgressWay -= miningSpeed;
             moneyManagement.addMoney(miningAmount);//Sold ore
-            floatUpSpawner.generateFloatUp(miningAmount, FloatUp.ResourceType.DOLLAR, Camera.main.WorldToScreenPoint(transform.position));
+            floatUpSpawner.GenerateFloatUp(miningAmount, FloatUp.ResourceType.DOLLAR, Camera.main.WorldToScreenPoint(transform.position));
             transform.LookAt(attachedMine.transform.position);
         }
     }

@@ -23,7 +23,7 @@ public class __SceneSwitch : MonoBehaviour {
             if (time >= 0f) {
                 go = Instantiate(timePrefab, canvas.transform);
                 MissionUI mui = go.GetComponentInChildren<MissionUI>();
-                mui.setTime(time);
+                mui.SetTime(time);
             }
         }
     }

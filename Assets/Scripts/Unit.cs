@@ -90,7 +90,7 @@ public class Unit {
     internal void Order(ref int availableUnits, ref MoneyManagement moneyManager, ref PowerlevelManagement powerlevelManager) {
         if (moneyManager.subMoney(cost)) {
             productionQueue.addToQueue(this, cAOButton);
-            cAOButton.addSingleUnitBuilding();
+            cAOButton.AddSingleUnitBuilding();
         }
     }
 
@@ -132,9 +132,9 @@ public class Unit {
 
     public void addSingleBuiltUnit() {
 
-        cAOButton.setUnitCount((++unitCount).ToString());
+        cAOButton.SetUnitCount((++unitCount).ToString());
         PlayerPrefs.SetInt(unitName + "_COUNT", unitCount);
-        cAOButton.addPowerlevel(Mathf.RoundToInt((hp * attack * defense) / 1000), false);
+        cAOButton.AddPowerlevel(Mathf.RoundToInt((hp * attack * defense) / 1000), false);
     }
 
     public void setUnitCount(int count) {

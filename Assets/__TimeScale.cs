@@ -14,7 +14,7 @@ public class __TimeScale : MonoBehaviour {
 		
 	}
 
-    public void setTimeScale(float scale) {
+    public void SetTimeScale(float scale) {
         Time.timeScale = scale;
     }
 }

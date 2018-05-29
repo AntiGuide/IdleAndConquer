@@ -23,7 +23,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
 
     }
 
-    public void setTexts(string country, string generalName, string winLoseHistory) {
+    public void SetTexts(string country, string generalName, string winLoseHistory) {
         this.country.text = country;
         this.generalName.text = generalName;
         this.winLoseHistory.text = winLoseHistory;
@@ -32,7 +32,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     public void OnClick() {
 
         SelectedGeneral.General = gameObject.GetComponent<General>();
-        mainMenueController.activateDeployUI(true);
+        mainMenueController.ActivateDeployUI(true);
         mainMenueController.ToggleMenue(2);
     }
 }
