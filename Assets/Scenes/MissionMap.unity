@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28df337f537835449b6f91fdf6b7353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 71144692}
+  MainMenueControll: {fileID: 0}
 --- !u!114 &40567557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2375,14 +2375,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da68cb1746724ee4bb433cb4b442d316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadZoneDrag: 10
-  cameraMaxX: 7990
-  cameraMinX: -7990
-  cameraMaxZ: 1115
-  cameraMinZ: -1115
-  minZoom: 4000
-  maxZoom: 2000
-  mainMenueController: {fileID: 71144692}
+  DeadZoneDrag: 10
+  CameraMaxX: 7990
+  CameraMinX: -7990
+  CameraMaxZ: 1115
+  CameraMinZ: -1115
+  MinZoom: 4000
+  MaxZoom: 2000
+  MainMenueControll: {fileID: 71144692}
 --- !u!1 &1185881687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3383,10 +3383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df835bbc8c30ec244974fa298c9944a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 71144692}
-  menueExpandedHeight: 0.6
-  menueExbandTriggerHeight: 0.5
-  lerpSpeed: 1000
+  MenueExpandedHeight: 0.8
+  MenueExbandTriggerHeight: 0.6
+  LerpSpeed: 4
 --- !u!114 &1595846603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3928,10 +3927,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df835bbc8c30ec244974fa298c9944a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 71144692}
-  menueExpandedHeight: 0.6
-  menueExbandTriggerHeight: 0.5
-  lerpSpeed: 1000
+  MenueExpandedHeight: 0.8
+  MenueExbandTriggerHeight: 0.6
+  LerpSpeed: 4
 --- !u!114 &1747775049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5338,8 +5336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d0392acc2f9fd439c0be0d45476ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyManagement: {fileID: 0}
-  floatUpSpawner: {fileID: 0}
 --- !u!114 &2101674954
 MonoBehaviour:
   m_ObjectHideFlags: 0

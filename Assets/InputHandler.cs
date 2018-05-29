@@ -1,123 +1,135 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>Handles input in MissionMap scene. Can zoom and navigate.</summary>
 public class InputHandler : MonoBehaviour {
-    public float deadZoneDrag;
-    public float cameraMaxX;
-    public float cameraMinX;
-    public float cameraMaxZ;
-    public float cameraMinZ;
-    public float minZoom;
-    public float maxZoom;
-    public MainMenueController mainMenueController;
+    /// <summary>The distance which the user must drag until a drag is registered as such versus a click</summary>
+    public float DeadZoneDrag;
 
+    /// <summary>The maximum X position the camera may have without zoom</summary>
+    public float CameraMaxX;
+
+    /// <summary>The minimum X position the camera may have without zoom</summary>
+    public float CameraMinX;
+
+    /// <summary>The maximum Z position the camera may have without zoom</summary>
+    public float CameraMaxZ;
+
+    /// <summary>The minimum Z position the camera may have without zoom</summary>
+    public float CameraMinZ;
+
+    /// <summary>The minimum zoom the camera may have</summary>
+    public float MinZoom;
+
+    /// <summary>The maximum zoom the camera may have</summary>
+    public float MaxZoom;
+
+    /// <summary>Reference to the MainMenueController</summary>
+    public MainMenueController MainMenueControll;
+
+    /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
+
+    /// <summary>The position where the camera was when the touch began</summary>
     private Vector3 startPosCamera;
+
+    /// <summary>Marks wether the finger moved after the touch began</summary>
     private bool movedDuringTouch = false;
+
+    /// <summary>Marks wether the map movement is blocked (e.g. during zoom)</summary>
     private bool blockMapMovement = false;
-    private Vector3 ScreenSize;
+
+    /// <summary>Worldposition at the position of maximum screen height and length</summary>
+    private Vector3 screenSize;
+
+    /// <summary>Ortographic size after start</summary>
     private float startOrtographicSize;
+
+    /// <summary>Variable in relation to the screen scale</summary>
     private float screenScale;
 
-    // Use this for initialization
-    void Start () {
-        ScreenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        startOrtographicSize = gameObject.GetComponent<Camera>().orthographicSize;
-        screenScale = 4500f / Screen.width;
+    /// <summary>Use this for initialization</summary>
+    void Start() {
+        this.screenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        this.startOrtographicSize = gameObject.GetComponent<Camera>().orthographicSize;
+        this.screenScale = 4500f / Screen.width;
     }
 
-    // Update is called once per frame
+    /// <summary>Update is called once per frame</summary>
     void Update() {
-        //Debug PC Zoom
-        if (Input.GetKeyDown(KeyCode.I)) {
-            gameObject.GetComponent<Camera>().orthographicSize = 2000f;
-            MoveInBounds(transform.position);
-        } else if (Input.GetKeyDown(KeyCode.O)) {
-            gameObject.GetComponent<Camera>().orthographicSize = 3000f;
-            MoveInBounds(transform.position);
-        } else if (Input.GetKeyDown(KeyCode.P)) {
-            gameObject.GetComponent<Camera>().orthographicSize = 4000f;
-            MoveInBounds(transform.position);
-        }
-        
-
-        // Handle native touch events
-        //TODO Mobile Pointer 0
+        // TODO Mobile Pointer 0
         if (Input.touchCount == 2 && !EventSystem.current.IsPointerOverGameObject()) {
-            // Store both touches.
             Touch touchZero = Input.GetTouch(0);
             Touch touchOne = Input.GetTouch(1);
-
-            // Find the position in the previous frame of each touch.
             Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
             Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
-
-            // Find the magnitude of the vector (the distance) between the touches in each frame.
             float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
             float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
-
-            // Find the difference in the distances between each frame.
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-
-            // If the camera is orthographic...
             if (gameObject.GetComponent<Camera>().orthographic) {
-                // ... change the orthographic size based on the change in distance between the touches.
                 gameObject.GetComponent<Camera>().orthographicSize += deltaMagnitudeDiff * 0.5f;
+                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Max(gameObject.GetComponent<Camera>().orthographicSize, this.MaxZoom);
+                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Min(gameObject.GetComponent<Camera>().orthographicSize, this.MinZoom);
 
-                // Make sure the orthographic size never drops below zero.
-                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Max(gameObject.GetComponent<Camera>().orthographicSize, maxZoom);
-                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Min(gameObject.GetComponent<Camera>().orthographicSize, minZoom);
-
-                MoveInBounds(transform.position);
+                this.MoveInBounds(transform.position);
             }
-        } else if(!EventSystem.current.IsPointerOverGameObject()) {
+        } else if (!EventSystem.current.IsPointerOverGameObject()) {
             foreach (Touch touch in Input.touches) {
-                HandleTouch(touch.fingerId, touch.position, touch.phase);
+                this.HandleTouch(touch.fingerId, touch.position, touch.phase);
             }
         }
 
         // Simulate touch events from mouse events
-        //TODO Mobile Pointer 0
+        // TODO Mobile Pointer 0
         if (Input.touchCount == 0) {
             if (Input.GetMouseButtonDown(0)) {
-                HandleTouch(10, Input.mousePosition, TouchPhase.Began);
+                this.HandleTouch(10, Input.mousePosition, TouchPhase.Began);
             }
+
             if (Input.GetMouseButton(0)) {
-                HandleTouch(10, Input.mousePosition, TouchPhase.Moved);
+                this.HandleTouch(10, Input.mousePosition, TouchPhase.Moved);
             }
+
             if (Input.GetMouseButtonUp(0)) {
-                HandleTouch(10, Input.mousePosition, TouchPhase.Ended);
+                this.HandleTouch(10, Input.mousePosition, TouchPhase.Ended);
             }
         }
     }
 
+    /// <summary>
+    /// Method handles all touch inputs on MissionMap, splits into TouchPhases and contains the movement logic
+    /// </summary>
+    /// <param name="touchFingerId">Which finger does the input come from (Counted up)</param>
+    /// <param name="touchPosition">Position on screen</param>
+    /// <param name="touchPhase">Latest TouchPhase</param>
     private void HandleTouch(int touchFingerId, Vector2 touchPosition, TouchPhase touchPhase) {
         switch (touchPhase) {
             case TouchPhase.Began:
                 if (EventSystem.current.IsPointerOverGameObject()) {
-                    blockMapMovement = true;
+                    this.blockMapMovement = true;
                 } else {
                     startPos = touchPosition;
                     startPosCamera = transform.position;
-                    movedDuringTouch = false;
+                    this.movedDuringTouch = false;
                 }
                 
                 break;
             case TouchPhase.Moved:
-                if (!blockMapMovement) {
-                    if (!movedDuringTouch && Vector2.Distance(startPos, touchPosition) > deadZoneDrag) {
-                        movedDuringTouch = true;
+                if (!this.blockMapMovement) {
+                    if (!this.movedDuringTouch && Vector2.Distance(this.startPos, touchPosition) > this.DeadZoneDrag) {
+                        this.movedDuringTouch = true;
                     }
-                    if (movedDuringTouch) {
-                        MoveInBounds(touchPosition);
+
+                    if (this.movedDuringTouch) {
+                        this.MoveInBounds(touchPosition);
                     }
                 }
+
                 break;
             case TouchPhase.Ended:
-                if (blockMapMovement) {
-                    blockMapMovement = false;
-                }else if (!movedDuringTouch) {
+                if (this.blockMapMovement) {
+                    this.blockMapMovement = false;
+                } else if (!movedDuringTouch) {
                     Ray touchRay;
                     if (Camera.allCamerasCount > 1) {
                         touchRay = Camera.allCameras[1].ScreenPointToRay(touchPosition);
@@ -128,28 +140,32 @@ public class InputHandler : MonoBehaviour {
                     int layerMask = LayerMask.GetMask("MissionLocation");
                     RaycastHit hitInformation;
                     Physics.Raycast(touchRay.origin, touchRay.direction, out hitInformation, 700.0f, layerMask);
-                    //Debug.DrawRay(touchRay.origin, touchRay.direction, Color.red, 3f);
                     if (hitInformation.collider != null) {
                         if (hitInformation.collider.tag.Equals("MissionLocation")) {
                             Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().missionName);
                             MissionDetails missionToLoad = hitInformation.collider.GetComponent<MissionDetails>();
-                            mainMenueController.ToggleMenue(1);
+                            MainMenueControll.ToggleMenue(1);
                         }
                     }
                 }
+
                 break;
         }
     }
 
+    /// <summary>
+    /// Moves the transform (camera) inside of the given bounds
+    /// </summary>
+    /// <param name="touchPosition">Position that the user ties to move to</param>
     private void MoveInBounds(Vector2 touchPosition) {
-        float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / startOrtographicSize;
+        float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / this.startOrtographicSize;
         float aspectRatio = Camera.main.aspect;
-        float newX = startPosCamera.x + (touchPosition.x - startPos.x) * screenScale * zoomScale;
-        newX = newX < cameraMaxX + ((startOrtographicSize * aspectRatio) - (zoomScale * (startOrtographicSize * aspectRatio))) ? newX : cameraMaxX + ((startOrtographicSize * aspectRatio) - (zoomScale * (startOrtographicSize * aspectRatio)));
-        newX = newX > cameraMinX - ((startOrtographicSize * aspectRatio) - (zoomScale * (startOrtographicSize * aspectRatio))) ? newX : cameraMinX - ((startOrtographicSize * aspectRatio) - (zoomScale * (startOrtographicSize * aspectRatio)));
-        float newZ = startPosCamera.z + (touchPosition.y - startPos.y) * screenScale * zoomScale;
-        newZ = newZ < cameraMaxZ + (startOrtographicSize - (zoomScale * startOrtographicSize)) ? newZ : cameraMaxZ + (startOrtographicSize - (zoomScale * startOrtographicSize));
-        newZ = newZ > cameraMinZ - (startOrtographicSize - (zoomScale * startOrtographicSize)) ? newZ : cameraMinZ - (startOrtographicSize - (zoomScale * startOrtographicSize));
+        float newX = this.startPosCamera.x + (((touchPosition.x - this.startPos.x) * this.screenScale) * zoomScale);
+        newX = newX < this.CameraMaxX + ((this.startOrtographicSize * aspectRatio) - (zoomScale * (this.startOrtographicSize * aspectRatio))) ? newX : this.CameraMaxX + ((this.startOrtographicSize * aspectRatio) - (zoomScale * (this.startOrtographicSize * aspectRatio)));
+        newX = newX > this.CameraMinX - ((this.startOrtographicSize * aspectRatio) - (zoomScale * (this.startOrtographicSize * aspectRatio))) ? newX : this.CameraMinX - ((this.startOrtographicSize * aspectRatio) - (zoomScale * (this.startOrtographicSize * aspectRatio)));
+        float newZ = this.startPosCamera.z + (((touchPosition.y - this.startPos.y) * this.screenScale) * zoomScale);
+        newZ = newZ < this.CameraMaxZ + (this.startOrtographicSize - (zoomScale * this.startOrtographicSize)) ? newZ : this.CameraMaxZ + (this.startOrtographicSize - (zoomScale * this.startOrtographicSize));
+        newZ = newZ > this.CameraMinZ - (this.startOrtographicSize - (zoomScale * this.startOrtographicSize)) ? newZ : this.CameraMinZ - (this.startOrtographicSize - (zoomScale * this.startOrtographicSize));
         transform.position = new Vector3(newX, transform.position.y, newZ);
     }
 }
