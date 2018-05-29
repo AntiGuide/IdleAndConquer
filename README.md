@@ -1,4 +1,4 @@
-
+[![CodeFactor](https://www.codefactor.io/repository/github/antiguide/idleandconquer/badge)](https://www.codefactor.io/repository/github/antiguide/idleandconquer)
 
 
 
