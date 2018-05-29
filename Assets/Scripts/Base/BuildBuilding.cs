@@ -4,84 +4,130 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BuildBuilding : MonoBehaviour {
-
-    public GameObject[] buildings;
-    public MenueController[] menueController;
-    public float cellSize;
-    public GameObject buildConfirmUI;
-    public MenueController buildingMenueController;
-    public Vector3 buildUIOffset;
-    public MoneyManagement moneyManager;
-    public MainMenueController mainMenueController;
-
-    private Ray touchRay;
-    private int layerMask;
-    private RaycastHit hitInformation;
-    private GameObject newBuilding;
-    private int newBuildingXTiles;
-    private int newBuildingZTiles;
-    private BuildColorChanger buildColorChanger;
-    private static bool[] isBuilt;
-    private static int newBuildingID;
-    private long costBuilding = 0;
-    private Vector3 prevScale;
-
-    public static GameObject[] builtBuildings;
+    public static GameObject[] BuiltBuildings;
+    public GameObject[] Buildings;
+    public GameObject BuildConfirmUI;
+    public MenueController[] MenueControll;
+    public MenueController BuildingMenueController;
+    public MainMenueController MainMenueControll;
+    public Vector3 BuildUIOffset;
+    public MoneyManagement MoneyManager;
+    public float CellSize;
 
     private static bool playerBuilding;
-    public static bool PlayerBuilding {
-        get {
-            return playerBuilding;
-        }
+    private static bool[] isBuilt;
+    private static int newBuildingID;
+    private BuildColorChanger buildColorChanger;
+    private GameObject newBuilding;
+    private RaycastHit hitInformation;
+    private Ray touchRay;
+    private Vector3 prevScale;
+    private int layerMask;
+    private int newBuildingXTiles;
+    private int newBuildingZTiles;
+    private long costBuilding = 0;
 
-        set {
-            playerBuilding = value;
+    public static bool PlayerBuilding {
+        get { return playerBuilding; }
+        set { playerBuilding = value; }
+    }
+
+    public Vector3 ToGrid(Vector3 allignToGrid) {
+        float x, y, z;
+        x = Mathf.Round(allignToGrid.x / this.CellSize) * this.CellSize;
+        y = allignToGrid.y;
+        z = Mathf.Round(allignToGrid.z / this.CellSize) * this.CellSize;
+        return new Vector3(x, y, z);
+    }
+
+    public void BuildABuilding(int buildingID, long costBuilding) {
+        this.costBuilding = costBuilding;
+        buildingID--;
+        newBuildingID = buildingID;
+        if (buildingID == 3 && !isBuilt[2]) {
+        } else {
+            this.newBuilding = UnityEngine.Object.Instantiate(this.Buildings[buildingID]);
+            this.buildColorChanger = this.newBuilding.GetComponentInChildren<BuildColorChanger>();
+
+            this.buildColorChanger.SetMenueController(this.MenueControll[buildingID]);
+            this.buildColorChanger.IsBuilt = false;
+            Vector3 tmpVec3 = new Vector3(-250, 1, 0);
+            this.newBuilding.transform.position = this.ToGrid(tmpVec3);
+            this.prevScale = this.newBuilding.transform.localScale;
+            this.newBuilding.transform.localScale *= 1.001f;
+
+            Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
+            this.newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / this.CellSize);
+            this.newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / this.CellSize);
+
+            playerBuilding = true;
+            this.BuildingMenueController.Unexpand(true);
+        }
+    }
+
+    public void CancelBuildingProcess() {
+        if (this.newBuilding != null) {
+            UnityEngine.Object.Destroy(this.newBuilding);
+            playerBuilding = false;
+            this.BuildConfirmUI.SetActive(false);
+        }
+    }
+
+    public void ConfirmBuildingProcess() {
+        if (this.buildColorChanger.CollidingBuildings == 0) {
+            if (this.MoneyManager.subMoney(this.costBuilding)) {
+                this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+                isBuilt[newBuildingID] = true;
+                BuiltBuildings[newBuildingID] = this.newBuilding;
+                this.newBuilding.transform.localScale = this.prevScale;
+                this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
+                this.newBuilding = null;
+                playerBuilding = false;
+                this.BuildConfirmUI.SetActive(false);
+            }
         }
     }
 
     // Use this for initialization
     void Start() {
-        isBuilt = new bool[buildings.Length];
-        builtBuildings = new GameObject[buildings.Length];
+        isBuilt = new bool[this.Buildings.Length];
+        BuiltBuildings = new GameObject[this.Buildings.Length];
         for (int i = 0; i < isBuilt.Length; i++) {
             isBuilt[i] = false;
         }
+
         if (GameObject.FindGameObjectWithTag("Mine") != null) {
-            builtBuildings[2] = GameObject.FindGameObjectsWithTag("Mine")[0];
-            builtBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+            BuiltBuildings[2] = GameObject.FindGameObjectsWithTag("Mine")[0];
+            BuiltBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
             isBuilt[2] = true;
         }
     }
 
     // Update is called once per frame
     void Update() {
-
         if (Input.GetMouseButton(0)) {
-            if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject()) {    // is the touch on the GUI
-                //Debug.Log("GUI");
+            if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject()) {
             } else if (playerBuilding) {
-                touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                layerMask = LayerMask.GetMask("Plane");
-                Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 1000.0f, layerMask);
-                if (hitInformation.collider != null) {
-                    Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
-                    //Debug.Log(bounds.size.ToString());
+                this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                this.layerMask = LayerMask.GetMask("Plane");
+                Physics.Raycast(Camera.main.transform.position, this.touchRay.direction, out this.hitInformation, 1000.0f, this.layerMask);
+                if (this.hitInformation.collider != null) {
+                    Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
                     Vector3 cent = bounds.center;
-                    hitInformation.point = new Vector3(hitInformation.point.x, 0, hitInformation.point.z);
-                    newBuilding.transform.position = ToGrid(hitInformation.point);
+                    this.hitInformation.point = new Vector3(this.hitInformation.point.x, 0, this.hitInformation.point.z);
+                    this.newBuilding.transform.position = this.ToGrid(this.hitInformation.point);
                 }
             } else if (MainMenueController.IsExpanded) {
-                //mainMenueController.GetActiveMenueController().Unexpand(true);
             }
         }
+
         if (Input.GetMouseButtonDown(0)) {
             if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
-                touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                layerMask = LayerMask.GetMask("Buildings");
-                Physics.Raycast(Camera.main.transform.position, touchRay.direction, out hitInformation, 2000.0f, layerMask);
-                //Debug.DrawRay(Camera.main.transform.position, touchRay.direction * 2000f, Color.red,3f);
-                if (hitInformation.collider != null) {
-                    mainMenueController.ToggleMenue(hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().GetMenueController());
+                this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                this.layerMask = LayerMask.GetMask("Buildings");
+                Physics.Raycast(Camera.main.transform.position, this.touchRay.direction, out this.hitInformation, 2000.0f, this.layerMask);
+                if (this.hitInformation.collider != null) {
+                    this.MainMenueControll.ToggleMenue(this.hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().GetMenueController());
                 }
             }
         }
@@ -89,84 +135,11 @@ public class BuildBuilding : MonoBehaviour {
 
     private void LateUpdate() {
         if (playerBuilding) {
-            buildConfirmUI.SetActive(true);
-            Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
+            this.BuildConfirmUI.SetActive(true);
+            Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
             Vector3 onlyXZ = new Vector3(bounds.size.x, 0, bounds.size.z);
-            Vector2 screenPoint = Camera.main.WorldToScreenPoint(newBuilding.transform.position + buildUIOffset + onlyXZ);
-            buildConfirmUI.transform.position = screenPoint;//new Vector2((float)newX, (float)newY);
-        }
-    }
-
-    //void OnDrawGizmos() {
-    //    if (playerBuilding) {
-    //        Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
-    //        Gizmos.color = Color.red;
-    //        Gizmos.DrawWireCube(bounds.center, bounds.size);
-    //        Gizmos.DrawSphere(newBuilding.transform.position, 1.0f);
-    //    }
-    //}
-
-    public Vector3 ToGrid(Vector3 allignToGrid) {
-        //TODO Dont use variables
-        float x, y, z;
-        x = Mathf.Round(allignToGrid.x / cellSize) * cellSize;
-        y = allignToGrid.y;
-        z = Mathf.Round(allignToGrid.z / cellSize) * cellSize;
-        return new Vector3(x, y, z);
-    }
-
-    public void BuildABuilding(int buildingID, long costBuilding) {
-        this.costBuilding = costBuilding;
-        //bool ret = false;
-        buildingID--;
-        newBuildingID = buildingID;
-        //if (buildingID == 3 && !isBuilt[2]) {
-        //    //ret = false;
-        //} else {
-            newBuilding = Instantiate(buildings[buildingID]);
-            buildColorChanger = newBuilding.GetComponentInChildren<BuildColorChanger>();
-
-            buildColorChanger.SetMenueController(menueController[buildingID]);
-            buildColorChanger.IsBuilt = false;
-            Vector3 tmpVec3 = new Vector3(-250, 1, 0);
-            newBuilding.transform.position = ToGrid(tmpVec3);
-            prevScale = newBuilding.transform.localScale;
-            newBuilding.transform.localScale *= 1.001f;
-
-            Bounds bounds = newBuilding.GetComponentInChildren<Renderer>().bounds;
-            //Debug.Log(bounds.center.ToString() + System.Environment.NewLine + bounds.extents.ToString() + System.Environment.NewLine + bounds.size.ToString());
-
-            newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / cellSize);
-            newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / cellSize);
-            //Debug.Log(newBuildingXTiles + " " + newBuildingZTiles);
-
-            playerBuilding = true;
-            buildingMenueController.Unexpand(true);
-            //ret = true;
-        //}
-        //return ret;
-    }
-
-    public void CancelBuildingProcess() {
-        if (newBuilding != null) {
-            Destroy(newBuilding);
-            playerBuilding = false;
-            buildConfirmUI.SetActive(false);
-        }
-    }
-
-    public void ConfirmBuildingProcess() {
-        if (buildColorChanger.CollidingBuildings == 0) {
-            if (moneyManager.subMoney(costBuilding)) {
-                newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
-                isBuilt[newBuildingID] = true;
-                builtBuildings[newBuildingID] = newBuilding;
-                newBuilding.transform.localScale = prevScale;
-                newBuilding.transform.position = new Vector3(newBuilding.transform.position.x, 0, newBuilding.transform.position.z);
-                newBuilding = null;
-                playerBuilding = false;
-                buildConfirmUI.SetActive(false);
-            }
+            Vector2 screenPoint = Camera.main.WorldToScreenPoint(this.newBuilding.transform.position + this.BuildUIOffset + onlyXZ);
+            this.BuildConfirmUI.transform.position = screenPoint;
         }
     }
 }

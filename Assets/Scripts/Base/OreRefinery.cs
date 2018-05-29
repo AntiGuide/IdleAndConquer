@@ -24,7 +24,7 @@ public class OreRefinery : MonoBehaviour{
         moneyManager = GameObject.Find("/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
         floatUpSpawner = GameObject.Find("/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
         for (int i = 0; i < level; i++) {
-            Mine mine = BuildBuilding.builtBuildings[2].GetComponentInChildren<Mine>();
+            Mine mine = BuildBuilding.BuiltBuildings[2].GetComponentInChildren<Mine>();
             AddHarvester(ref attachedHarvesters, ref moneyManager, this, mine);
         }
     }
@@ -36,7 +36,7 @@ public class OreRefinery : MonoBehaviour{
     public bool Upgrade(){
         if (moneyManager.subMoney(upgradeCost)) {
             level++;
-            AddHarvester(ref attachedHarvesters, ref moneyManager, this, BuildBuilding.builtBuildings[2].GetComponentInChildren<Mine>());
+            AddHarvester(ref attachedHarvesters, ref moneyManager, this, BuildBuilding.BuiltBuildings[2].GetComponentInChildren<Mine>());
             return true;
         }
         return false;

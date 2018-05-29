@@ -4473,1274 +4473,6 @@
       </violation>
     </violations>
   </sourcecode>
-  <sourcecode name="BuildBuilding.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2018.05.29 13:53:53.733</styleCop>
-      <settingsFile>2018.05.29 14:38:35.310</settingsFile>
-      <sourceFile>2018.05.29 14:22:52.972</sourceFile>
-      <parser>2018.05.29 13:53:53.733</parser>
-      <StyleCop.CSharp.DocumentationRules>2018.05.29 13:53:53.733</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2018.05.29 13:53:53.733</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2018.05.29 13:53:53.733</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2018.05.29 13:53:53.733</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2018.05.29 13:53:53.733</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2018.05.29 13:53:53.733</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2018.05.29 13:53:53.733</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The class must have a documentation header.</context>
-        <line>6</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
-        <context>An opening curly bracket must not be followed by a blank line.</context>
-        <line>6</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentsMustNotBeFollowedByBlankLine" ruleCheckId="SA1512">
-        <context>A single-line comment must not be followed by a blank line. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>107</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>100</line>
-        <index>4313</index>
-        <endIndex>4335</endIndex>
-        <startLine>100</startLine>
-        <startColumn>5</startColumn>
-        <endLine>100</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>107</line>
-        <index>4651</index>
-        <endIndex>4653</endIndex>
-        <startLine>107</startLine>
-        <startColumn>5</startColumn>
-        <endLine>107</endLine>
-        <endColumn>7</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>8</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: buildings.</context>
-        <line>8</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="StaticElementsMustAppearBeforeInstanceElements" ruleCheckId="SA1204">
-        <context>All static public fields must be placed before all non-static public fields.</context>
-        <line>29</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>9</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: menueController.</context>
-        <line>9</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>10</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: cellSize.</context>
-        <line>10</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: buildConfirmUI.</context>
-        <line>11</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: buildingMenueController.</context>
-        <line>12</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: buildUIOffset.</context>
-        <line>13</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>14</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: moneyManager.</context>
-        <line>14</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>15</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: mainMenueController.</context>
-        <line>15</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>17</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="StaticElementsMustAppearBeforeInstanceElements" ruleCheckId="SA1204">
-        <context>All static private fields must be placed before all non-static private fields.</context>
-        <line>24</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="StaticElementsMustAppearBeforeInstanceElements" ruleCheckId="SA1204">
-        <context>All static private fields must be placed before all non-static private fields.</context>
-        <line>25</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="StaticElementsMustAppearBeforeInstanceElements" ruleCheckId="SA1204">
-        <context>All static private fields must be placed before all non-static private fields.</context>
-        <line>31</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>18</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>19</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>20</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>21</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>22</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>23</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>24</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>25</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>26</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>27</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>29</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.NamingRules" rule="AccessibleFieldsMustBeginWithUpperCaseLetter" ruleCheckId="SA1307">
-        <context>Public and internal fields must start with an upper-case letter: builtBuildings.</context>
-        <line>29</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
-        <line>31</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The property must have a documentation header.</context>
-        <line>32</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ElementsMustBeSeparatedByBlankLine" ruleCheckId="SA1516">
-        <context>Adjacent elements must be separated by a blank line.</context>
-        <line>32</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>43</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
-        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
-        <line>48</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="AccessModifierMustBeDeclared" ruleCheckId="SA1400">
-        <context>The method must have an access modifier.</context>
-        <line>43</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="ElementsMustBeOrderedByAccess" ruleCheckId="SA1202">
-        <context>All private methods must be placed after all public methods.</context>
-        <line>109</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="ElementsMustBeOrderedByAccess" ruleCheckId="SA1202">
-        <context>All private methods must be placed after all public methods.</context>
-        <line>118</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="ElementsMustBeOrderedByAccess" ruleCheckId="SA1202">
-        <context>All private methods must be placed after all public methods.</context>
-        <line>150</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.OrderingRules" rule="ElementsMustBeOrderedByAccess" ruleCheckId="SA1202">
-        <context>All private methods must be placed after all public methods.</context>
-        <line>158</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildings must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>44</line>
-        <index>1250</index>
-        <endIndex>1258</endIndex>
-        <startLine>44</startLine>
-        <startColumn>28</startColumn>
-        <endLine>44</endLine>
-        <endColumn>36</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildings must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>45</line>
-        <index>1310</index>
-        <endIndex>1318</endIndex>
-        <startLine>45</startLine>
-        <startColumn>41</startColumn>
-        <endLine>45</endLine>
-        <endColumn>49</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>57</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
-        <context>An opening curly bracket must not be followed by a blank line.</context>
-        <line>57</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>68</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketMustBeFollowedByBlankLine" ruleCheckId="SA1513">
-        <context>Statements or elements wrapped in curly brackets must be followed by a blank line.</context>
-        <line>76</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>82</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="AccessModifierMustBeDeclared" ruleCheckId="SA1400">
-        <context>The method must have an access modifier.</context>
-        <line>57</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to touchRay must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>63</line>
-        <index>2069</index>
-        <endIndex>2076</endIndex>
-        <startLine>63</startLine>
-        <startColumn>17</startColumn>
-        <endLine>63</endLine>
-        <endColumn>24</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to layerMask must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>64</line>
-        <index>2148</index>
-        <endIndex>2156</endIndex>
-        <startLine>64</startLine>
-        <startColumn>17</startColumn>
-        <endLine>64</endLine>
-        <endColumn>25</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to touchRay must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>65</line>
-        <index>2253</index>
-        <endIndex>2260</endIndex>
-        <startLine>65</startLine>
-        <startColumn>65</startColumn>
-        <endLine>65</endLine>
-        <endColumn>72</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>65</line>
-        <index>2277</index>
-        <endIndex>2290</endIndex>
-        <startLine>65</startLine>
-        <startColumn>89</startColumn>
-        <endLine>65</endLine>
-        <endColumn>102</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to layerMask must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>65</line>
-        <index>2302</index>
-        <endIndex>2310</endIndex>
-        <startLine>65</startLine>
-        <startColumn>114</startColumn>
-        <endLine>65</endLine>
-        <endColumn>122</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>67</line>
-        <index>2407</index>
-        <endIndex>2417</endIndex>
-        <startLine>67</startLine>
-        <startColumn>37</startColumn>
-        <endLine>67</endLine>
-        <endColumn>47</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>70</line>
-        <index>2592</index>
-        <endIndex>2605</endIndex>
-        <startLine>70</startLine>
-        <startColumn>21</startColumn>
-        <endLine>70</endLine>
-        <endColumn>34</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>70</line>
-        <index>2627</index>
-        <endIndex>2640</endIndex>
-        <startLine>70</startLine>
-        <startColumn>56</startColumn>
-        <endLine>70</endLine>
-        <endColumn>69</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>70</line>
-        <index>2654</index>
-        <endIndex>2667</endIndex>
-        <startLine>70</startLine>
-        <startColumn>83</startColumn>
-        <endLine>70</endLine>
-        <endColumn>96</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>71</line>
-        <index>2700</index>
-        <endIndex>2710</endIndex>
-        <startLine>71</startLine>
-        <startColumn>21</startColumn>
-        <endLine>71</endLine>
-        <endColumn>31</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to ToGrid must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>71</line>
-        <index>2733</index>
-        <endIndex>2738</endIndex>
-        <startLine>71</startLine>
-        <startColumn>54</startColumn>
-        <endLine>71</endLine>
-        <endColumn>59</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>71</line>
-        <index>2740</index>
-        <endIndex>2753</endIndex>
-        <startLine>71</startLine>
-        <startColumn>61</startColumn>
-        <endLine>71</endLine>
-        <endColumn>74</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>66</line>
-        <index>2335</index>
-        <endIndex>2348</endIndex>
-        <startLine>66</startLine>
-        <startColumn>21</startColumn>
-        <endLine>66</endLine>
-        <endColumn>34</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to touchRay must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>79</line>
-        <index>3181</index>
-        <endIndex>3188</endIndex>
-        <startLine>79</startLine>
-        <startColumn>17</startColumn>
-        <endLine>79</endLine>
-        <endColumn>24</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to layerMask must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>80</line>
-        <index>3260</index>
-        <endIndex>3268</endIndex>
-        <startLine>80</startLine>
-        <startColumn>17</startColumn>
-        <endLine>80</endLine>
-        <endColumn>25</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to touchRay must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>81</line>
-        <index>3369</index>
-        <endIndex>3376</endIndex>
-        <startLine>81</startLine>
-        <startColumn>65</startColumn>
-        <endLine>81</endLine>
-        <endColumn>72</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>81</line>
-        <index>3393</index>
-        <endIndex>3406</endIndex>
-        <startLine>81</startLine>
-        <startColumn>89</startColumn>
-        <endLine>81</endLine>
-        <endColumn>102</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to layerMask must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>81</line>
-        <index>3418</index>
-        <endIndex>3426</endIndex>
-        <startLine>81</startLine>
-        <startColumn>114</startColumn>
-        <endLine>81</endLine>
-        <endColumn>122</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to mainMenueController must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>84</line>
-        <index>3615</index>
-        <endIndex>3633</endIndex>
-        <startLine>84</startLine>
-        <startColumn>21</startColumn>
-        <endLine>84</endLine>
-        <endColumn>39</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>84</line>
-        <index>3647</index>
-        <endIndex>3660</endIndex>
-        <startLine>84</startLine>
-        <startColumn>53</startColumn>
-        <endLine>84</endLine>
-        <endColumn>66</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to hitInformation must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>83</line>
-        <index>3559</index>
-        <endIndex>3572</endIndex>
-        <startLine>83</startLine>
-        <startColumn>21</startColumn>
-        <endLine>83</endLine>
-        <endColumn>34</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>61</line>
-        <index>1990</index>
-        <endIndex>2008</endIndex>
-        <startLine>61</startLine>
-        <startColumn>17</startColumn>
-        <endLine>61</endLine>
-        <endColumn>35</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>68</line>
-        <index>2483</index>
-        <endIndex>2518</endIndex>
-        <startLine>68</startLine>
-        <startColumn>21</startColumn>
-        <endLine>68</endLine>
-        <endColumn>56</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>74</line>
-        <index>2857</index>
-        <endIndex>2920</endIndex>
-        <startLine>74</startLine>
-        <startColumn>17</startColumn>
-        <endLine>74</endLine>
-        <endColumn>80</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>82</line>
-        <index>3447</index>
-        <endIndex>3536</endIndex>
-        <startLine>82</startLine>
-        <startColumn>17</startColumn>
-        <endLine>82</endLine>
-        <endColumn>106</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>90</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildConfirmUI must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>92</line>
-        <index>3870</index>
-        <endIndex>3883</endIndex>
-        <startLine>92</startLine>
-        <startColumn>13</startColumn>
-        <endLine>92</endLine>
-        <endColumn>26</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>93</line>
-        <index>3931</index>
-        <endIndex>3941</endIndex>
-        <startLine>93</startLine>
-        <startColumn>29</startColumn>
-        <endLine>93</endLine>
-        <endColumn>39</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>95</line>
-        <index>4128</index>
-        <endIndex>4138</endIndex>
-        <startLine>95</startLine>
-        <startColumn>66</startColumn>
-        <endLine>95</endLine>
-        <endColumn>76</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildUIOffset must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>95</line>
-        <index>4161</index>
-        <endIndex>4173</endIndex>
-        <startLine>95</startLine>
-        <startColumn>99</startColumn>
-        <endLine>95</endLine>
-        <endColumn>111</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildConfirmUI must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>96</line>
-        <index>4199</index>
-        <endIndex>4212</endIndex>
-        <startLine>96</startLine>
-        <startColumn>13</startColumn>
-        <endLine>96</endLine>
-        <endColumn>26</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SemicolonsMustBeSpacedCorrectly" ruleCheckId="SA1002">
-        <context>Invalid spacing around the semicolon.</context>
-        <line>96</line>
-        <index>4246</index>
-        <endIndex>4246</endIndex>
-        <startLine>96</startLine>
-        <startColumn>60</startColumn>
-        <endLine>96</endLine>
-        <endColumn>60</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>96</line>
-        <index>4247</index>
-        <endIndex>4286</endIndex>
-        <startLine>96</startLine>
-        <startColumn>61</startColumn>
-        <endLine>96</endLine>
-        <endColumn>100</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>109</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to cellSize must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>112</line>
-        <index>4809</index>
-        <endIndex>4816</endIndex>
-        <startLine>112</startLine>
-        <startColumn>42</startColumn>
-        <endLine>112</endLine>
-        <endColumn>49</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to cellSize must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>112</line>
-        <index>4821</index>
-        <endIndex>4828</endIndex>
-        <startLine>112</startLine>
-        <startColumn>54</startColumn>
-        <endLine>112</endLine>
-        <endColumn>61</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to cellSize must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>114</line>
-        <index>4902</index>
-        <endIndex>4909</endIndex>
-        <startLine>114</startLine>
-        <startColumn>42</startColumn>
-        <endLine>114</endLine>
-        <endColumn>49</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to cellSize must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>114</line>
-        <index>4914</index>
-        <endIndex>4921</endIndex>
-        <startLine>114</startLine>
-        <startColumn>54</startColumn>
-        <endLine>114</endLine>
-        <endColumn>61</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>110</line>
-        <index>4717</index>
-        <endIndex>4741</endIndex>
-        <startLine>110</startLine>
-        <startColumn>9</startColumn>
-        <endLine>110</endLine>
-        <endColumn>33</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>118</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>120</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>123</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>137</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentsMustNotBeFollowedByBlankLine" ruleCheckId="SA1512">
-        <context>A single-line comment must not be followed by a blank line. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>137</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>141</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentsMustNotBeFollowedByBlankLine" ruleCheckId="SA1512">
-        <context>A single-line comment must not be followed by a blank line. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>141</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
-        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>145</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>126</line>
-        <index>5284</index>
-        <endIndex>5294</endIndex>
-        <startLine>126</startLine>
-        <startColumn>13</startColumn>
-        <endLine>126</endLine>
-        <endColumn>23</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to Instantiate must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>126</line>
-        <index>5298</index>
-        <endIndex>5308</endIndex>
-        <startLine>126</startLine>
-        <startColumn>27</startColumn>
-        <endLine>126</endLine>
-        <endColumn>37</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildings must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>126</line>
-        <index>5310</index>
-        <endIndex>5318</endIndex>
-        <startLine>126</startLine>
-        <startColumn>39</startColumn>
-        <endLine>126</endLine>
-        <endColumn>47</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildColorChanger must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>127</line>
-        <index>5347</index>
-        <endIndex>5363</endIndex>
-        <startLine>127</startLine>
-        <startColumn>13</startColumn>
-        <endLine>127</endLine>
-        <endColumn>29</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>127</line>
-        <index>5367</index>
-        <endIndex>5377</endIndex>
-        <startLine>127</startLine>
-        <startColumn>33</startColumn>
-        <endLine>127</endLine>
-        <endColumn>43</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildColorChanger must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>129</line>
-        <index>5439</index>
-        <endIndex>5455</endIndex>
-        <startLine>129</startLine>
-        <startColumn>13</startColumn>
-        <endLine>129</endLine>
-        <endColumn>29</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to menueController must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>129</line>
-        <index>5476</index>
-        <endIndex>5490</endIndex>
-        <startLine>129</startLine>
-        <startColumn>50</startColumn>
-        <endLine>129</endLine>
-        <endColumn>64</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildColorChanger must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>130</line>
-        <index>5519</index>
-        <endIndex>5535</endIndex>
-        <startLine>130</startLine>
-        <startColumn>13</startColumn>
-        <endLine>130</endLine>
-        <endColumn>29</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>132</line>
-        <index>5623</index>
-        <endIndex>5633</endIndex>
-        <startLine>132</startLine>
-        <startColumn>13</startColumn>
-        <endLine>132</endLine>
-        <endColumn>23</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to ToGrid must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>132</line>
-        <index>5656</index>
-        <endIndex>5661</endIndex>
-        <startLine>132</startLine>
-        <startColumn>46</startColumn>
-        <endLine>132</endLine>
-        <endColumn>51</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to prevScale must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>133</line>
-        <index>5686</index>
-        <endIndex>5694</endIndex>
-        <startLine>133</startLine>
-        <startColumn>13</startColumn>
-        <endLine>133</endLine>
-        <endColumn>21</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>133</line>
-        <index>5698</index>
-        <endIndex>5708</endIndex>
-        <startLine>133</startLine>
-        <startColumn>25</startColumn>
-        <endLine>133</endLine>
-        <endColumn>35</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>134</line>
-        <index>5745</index>
-        <endIndex>5755</endIndex>
-        <startLine>134</startLine>
-        <startColumn>13</startColumn>
-        <endLine>134</endLine>
-        <endColumn>23</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>136</line>
-        <index>5820</index>
-        <endIndex>5830</endIndex>
-        <startLine>136</startLine>
-        <startColumn>29</startColumn>
-        <endLine>136</endLine>
-        <endColumn>39</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuildingXTiles must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>139</line>
-        <index>6053</index>
-        <endIndex>6069</endIndex>
-        <startLine>139</startLine>
-        <startColumn>13</startColumn>
-        <endLine>139</endLine>
-        <endColumn>29</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to cellSize must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>139</line>
-        <index>6106</index>
-        <endIndex>6113</endIndex>
-        <startLine>139</startLine>
-        <startColumn>66</startColumn>
-        <endLine>139</endLine>
-        <endColumn>73</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuildingZTiles must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>140</line>
-        <index>6130</index>
-        <endIndex>6146</endIndex>
-        <startLine>140</startLine>
-        <startColumn>13</startColumn>
-        <endLine>140</endLine>
-        <endColumn>29</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to cellSize must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>140</line>
-        <index>6183</index>
-        <endIndex>6190</endIndex>
-        <startLine>140</startLine>
-        <startColumn>66</startColumn>
-        <endLine>140</endLine>
-        <endColumn>73</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildingMenueController must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>144</line>
-        <index>6316</index>
-        <endIndex>6338</endIndex>
-        <startLine>144</startLine>
-        <startColumn>13</startColumn>
-        <endLine>144</endLine>
-        <endColumn>35</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>120</line>
-        <index>5092</index>
-        <endIndex>5110</endIndex>
-        <startLine>120</startLine>
-        <startColumn>9</startColumn>
-        <endLine>120</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>123</line>
-        <index>5181</index>
-        <endIndex>5219</endIndex>
-        <startLine>123</startLine>
-        <startColumn>9</startColumn>
-        <endLine>123</endLine>
-        <endColumn>47</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>125</line>
-        <index>5260</index>
-        <endIndex>5269</endIndex>
-        <startLine>125</startLine>
-        <startColumn>9</startColumn>
-        <endLine>125</endLine>
-        <endColumn>18</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>137</line>
-        <index>5888</index>
-        <endIndex>6036</endIndex>
-        <startLine>137</startLine>
-        <startColumn>13</startColumn>
-        <endLine>137</endLine>
-        <endColumn>161</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>141</line>
-        <index>6207</index>
-        <endIndex>6263</endIndex>
-        <startLine>141</startLine>
-        <startColumn>13</startColumn>
-        <endLine>141</endLine>
-        <endColumn>69</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>145</line>
-        <index>6369</index>
-        <endIndex>6381</endIndex>
-        <startLine>145</startLine>
-        <startColumn>13</startColumn>
-        <endLine>145</endLine>
-        <endColumn>25</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>146</line>
-        <index>6392</index>
-        <endIndex>6394</endIndex>
-        <startLine>146</startLine>
-        <startColumn>9</startColumn>
-        <endLine>146</endLine>
-        <endColumn>11</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
-        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
-        <line>147</line>
-        <index>6405</index>
-        <endIndex>6417</endIndex>
-        <startLine>147</startLine>
-        <startColumn>9</startColumn>
-        <endLine>147</endLine>
-        <endColumn>21</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>150</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to Destroy must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>152</line>
-        <index>6520</index>
-        <endIndex>6526</endIndex>
-        <startLine>152</startLine>
-        <startColumn>13</startColumn>
-        <endLine>152</endLine>
-        <endColumn>19</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>152</line>
-        <index>6528</index>
-        <endIndex>6538</endIndex>
-        <startLine>152</startLine>
-        <startColumn>21</startColumn>
-        <endLine>152</endLine>
-        <endColumn>31</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildConfirmUI must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>154</line>
-        <index>6592</index>
-        <endIndex>6605</endIndex>
-        <startLine>154</startLine>
-        <startColumn>13</startColumn>
-        <endLine>154</endLine>
-        <endColumn>26</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>151</line>
-        <index>6484</index>
-        <endIndex>6494</endIndex>
-        <startLine>151</startLine>
-        <startColumn>13</startColumn>
-        <endLine>151</endLine>
-        <endColumn>23</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The method must have a documentation header.</context>
-        <line>158</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>161</line>
-        <index>6820</index>
-        <endIndex>6830</endIndex>
-        <startLine>161</startLine>
-        <startColumn>17</startColumn>
-        <endLine>161</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>163</line>
-        <index>7001</index>
-        <endIndex>7011</endIndex>
-        <startLine>163</startLine>
-        <startColumn>49</startColumn>
-        <endLine>163</endLine>
-        <endColumn>59</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>164</line>
-        <index>7031</index>
-        <endIndex>7041</endIndex>
-        <startLine>164</startLine>
-        <startColumn>17</startColumn>
-        <endLine>164</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to prevScale must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>164</line>
-        <index>7066</index>
-        <endIndex>7074</endIndex>
-        <startLine>164</startLine>
-        <startColumn>52</startColumn>
-        <endLine>164</endLine>
-        <endColumn>60</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>165</line>
-        <index>7094</index>
-        <endIndex>7104</endIndex>
-        <startLine>165</startLine>
-        <startColumn>17</startColumn>
-        <endLine>165</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>165</line>
-        <index>7139</index>
-        <endIndex>7149</endIndex>
-        <startLine>165</startLine>
-        <startColumn>62</startColumn>
-        <endLine>165</endLine>
-        <endColumn>72</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>165</line>
-        <index>7176</index>
-        <endIndex>7186</endIndex>
-        <startLine>165</startLine>
-        <startColumn>99</startColumn>
-        <endLine>165</endLine>
-        <endColumn>109</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to newBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>166</line>
-        <index>7228</index>
-        <endIndex>7238</endIndex>
-        <startLine>166</startLine>
-        <startColumn>17</startColumn>
-        <endLine>166</endLine>
-        <endColumn>27</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildConfirmUI must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>168</line>
-        <index>7306</index>
-        <endIndex>7319</endIndex>
-        <startLine>168</startLine>
-        <startColumn>17</startColumn>
-        <endLine>168</endLine>
-        <endColumn>30</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to moneyManager must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>160</line>
-        <index>6764</index>
-        <endIndex>6775</endIndex>
-        <startLine>160</startLine>
-        <startColumn>17</startColumn>
-        <endLine>160</endLine>
-        <endColumn>28</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to costBuilding must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>160</line>
-        <index>6786</index>
-        <endIndex>6797</endIndex>
-        <startLine>160</startLine>
-        <startColumn>39</startColumn>
-        <endLine>160</endLine>
-        <endColumn>50</endColumn>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
-        <context>The call to buildColorChanger must begin with the 'this.', 'base.', 'object.' or 'BuildBuilding.' or 'MonoBehaviour.' prefix to indicate the intended method call. </context>
-        <line>159</line>
-        <index>6702</index>
-        <endIndex>6718</endIndex>
-        <startLine>159</startLine>
-        <startColumn>13</startColumn>
-        <endLine>159</endLine>
-        <endColumn>29</endColumn>
-        <warning>False</warning>
-      </violation>
-    </violations>
-  </sourcecode>
   <sourcecode name="BuildColorChanger.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2018.05.29 13:53:53.733</styleCop>
@@ -9165,9 +7897,6 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <project key="719523570">
-    <configuration>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2017_4_0;UNITY_2017_4;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</configuration>
-  </project>
   <sourcecode name="MenueController.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2018.05.29 13:53:53.733</styleCop>
@@ -9190,5 +7919,182 @@
       <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
     </timestamps>
     <violations />
+  </sourcecode>
+  <project key="719523570">
+    <configuration>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2017_4_0;UNITY_2017_4;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</configuration>
+  </project>
+  <sourcecode name="BuildBuilding.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.05.29 13:53:53.733</styleCop>
+      <settingsFile>2018.05.29 14:54:09.054</settingsFile>
+      <sourceFile>2018.05.29 16:23:06.663</sourceFile>
+      <parser>2018.05.29 13:53:53.733</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.05.29 13:53:53.733</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.05.29 13:53:53.733</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.05.29 13:53:53.733</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.05.29 13:53:53.733</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.05.29 13:53:53.733</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.05.29 13:53:53.733</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.05.29 13:53:53.733</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The class must have a documentation header.</context>
+        <line>6</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>7</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>8</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>9</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>10</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>11</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>12</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>13</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>14</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>15</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>17</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>18</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>20</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>21</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>22</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>23</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>24</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>25</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>26</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>27</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The field must have a documentation header.</context>
+        <line>28</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The property must have a documentation header.</context>
+        <line>30</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>35</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>43</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>68</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>76</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>92</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>107</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
+        <context>The method must have a documentation header.</context>
+        <line>136</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
   </sourcecode>
 </stylecopresultscache>
