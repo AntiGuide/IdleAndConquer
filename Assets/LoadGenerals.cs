@@ -27,7 +27,7 @@ public class LoadGenerals : MonoBehaviour {
                 break;
             }
             GeneralButton attachedButton = Instantiate(generalButtonMissionMap, transform).GetComponent<GeneralButton>();
-            attachedButton.setTexts(country, generalName, wins + Environment.NewLine + "-" + Environment.NewLine + loses);
+            attachedButton.SetTexts(country, generalName, wins + Environment.NewLine + "-" + Environment.NewLine + loses);
 
             General ret = attachedButton.gameObject.GetComponent<General>();
             ret.InitGeneral(chanceDeath, null, country, generalName, null);

@@ -21,7 +21,7 @@ public class GeneralButton : MonoBehaviour {
 		
 	}
 
-    public void setTexts(string country, string generalName, string winLoseHistory) {
+    public void SetTexts(string country, string generalName, string winLoseHistory) {
         this.country.text = country;
         this.generalName.text = generalName;
         this.winLoseHistory.text = winLoseHistory;

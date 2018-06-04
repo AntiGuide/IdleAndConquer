@@ -34,7 +34,7 @@ public class GeneralManager : MonoBehaviour {
                 break;
             }
             GeneralButton attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), generalList.transform).GetComponent<GeneralButton>();
-            attachedButton.setTexts(country, generalName, wins + Environment.NewLine + "-" + Environment.NewLine + loses);
+            attachedButton.SetTexts(country, generalName, wins + Environment.NewLine + "-" + Environment.NewLine + loses);
 
             General ret = attachedButton.gameObject.GetComponent<General>();
             ret.InitGeneral(chanceDeath, null, country, generalName, null);
@@ -57,7 +57,7 @@ public class GeneralManager : MonoBehaviour {
         float aktChanceToPermaDeath = UnityEngine.Random.Range(genMinChanceToPermaDeath, genMaxChanceToPermaDeath);
 
         GeneralButton attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), generalList.transform).GetComponent<GeneralButton>();
-        attachedButton.setTexts(countrys[countryID], names[nameID], 0 + Environment.NewLine + "-" + Environment.NewLine + 0);
+        attachedButton.SetTexts(countrys[countryID], names[nameID], 0 + Environment.NewLine + "-" + Environment.NewLine + 0);
         PlayerPrefs.SetFloat("GeneralChanceDeath_" + generalID, aktChanceToPermaDeath);
         PlayerPrefs.SetString("GeneralCountry_" + generalID, countrys[countryID]);
         PlayerPrefs.SetString("GeneralName_" + generalID, names[nameID]);

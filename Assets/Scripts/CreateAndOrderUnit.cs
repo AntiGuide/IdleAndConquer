@@ -55,7 +55,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         if (count > 0) {
             AddPowerlevel(count * Mathf.RoundToInt((hp * attack * defense) / 1000), true);
             SetUnitCount(count.ToString());
-            attachedUnit.setUnitCount(count);
+            attachedUnit.UnitCount = count;
         }
     }
 	
@@ -65,7 +65,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     }
 
     public void OrderUnitOnClick() {
-        attachedUnit.Order(ref availableUnits, ref moneyManager, ref powerlevelManager);
+        attachedUnit.Order(ref moneyManager);
     }
 
     public void SetUnitCount(string text) {
