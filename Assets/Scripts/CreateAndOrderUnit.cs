@@ -30,7 +30,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     private static int unitID;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         attachedUnit = new Unit(unitName, hp, attack, critChance, critMultiplier, defense, type, armorType, cost, buildtime, this, productionQueue);
         PlayerPrefs.SetString("UnitName_" + unitID, unitName);
         unitID++;
@@ -43,8 +43,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
         PlayerPrefs.SetInt(unitName + "_ARMORTYPE", (int)armorType);
         PlayerPrefs.SetInt(unitName + "_COST", cost);
         PlayerPrefs.SetFloat(unitName + "_BUILDTIME", buildtime);
-
-
         unitNameText = transform.Find("Text").GetComponent<Text>();
         unitNameText.text = unitName;
         unitCountText = transform.Find("CountText").GetComponent<Text>();
@@ -57,11 +55,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
             SetUnitCount(count.ToString());
             attachedUnit.UnitCount = count;
         }
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        
     }
 
     public void OrderUnitOnClick() {
