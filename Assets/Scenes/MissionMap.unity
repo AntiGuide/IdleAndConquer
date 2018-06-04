@@ -404,10 +404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38786d07d72dfa348af2b7e9e1e187da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menue:
+  Menue:
   - {fileID: 1747775046}
   - {fileID: 1595846600}
-  deployUI: {fileID: 2075873503}
+  DeployUI: {fileID: 2075873503}
 --- !u!222 &71144693
 CanvasRenderer:
   m_ObjectHideFlags: 0

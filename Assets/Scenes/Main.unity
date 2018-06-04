@@ -22948,14 +22948,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38786d07d72dfa348af2b7e9e1e187da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menue:
+  Menue:
   - {fileID: 0}
   - {fileID: 1958121001}
   - {fileID: 995991361}
   - {fileID: 83128360}
   - {fileID: 1115942159}
   - {fileID: 1773842997}
-  deployUI: {fileID: 0}
+  DeployUI: {fileID: 0}
 --- !u!222 &1931439385
 CanvasRenderer:
   m_ObjectHideFlags: 0
