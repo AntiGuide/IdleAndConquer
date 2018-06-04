@@ -1,70 +1,73 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>Handles input in MissionMap scene. Can zoom and navigate.</summary>
 public class InputHandler : MonoBehaviour {
+    /// <summary>The distance which the user must drag until a drag is registered as such versus a click</summary>
     public float DeadZoneDrag;
+
+    /// <summary>The maximum X position the camera may have without zoom</summary>
     public float CameraMaxX;
+
+    /// <summary>The minimum X position the camera may have without zoom</summary>
     public float CameraMinX;
+
+    /// <summary>The maximum Z position the camera may have without zoom</summary>
     public float CameraMaxZ;
+
+    /// <summary>The minimum Z position the camera may have without zoom</summary>
     public float CameraMinZ;
+
+    /// <summary>The minimum zoom the camera may have</summary>
     public float MinZoom;
+
+    /// <summary>The maximum zoom the camera may have</summary>
     public float MaxZoom;
+
+    /// <summary>Reference to the MainMenueController</summary>
     public MainMenueController MainMenueControll;
 
+    /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
+
+    /// <summary>The position where the camera was when the touch began</summary>
     private Vector3 startPosCamera;
+
+    /// <summary>Marks wether the finger moved after the touch began</summary>
     private bool movedDuringTouch = false;
+
+    /// <summary>Marks wether the map movement is blocked (e.g. during zoom)</summary>
     private bool blockMapMovement = false;
+
+    /// <summary>Worldposition at the position of maximum screen height and length</summary>
     private Vector3 screenSize;
+
+    /// <summary>Ortographic size after start</summary>
     private float startOrtographicSize;
+
+    /// <summary>Variable in relation to the screen scale</summary>
     private float screenScale;
 
-    // Use this for initialization
+    /// <summary>Use this for initialization</summary>
     void Start() {
         this.screenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         this.startOrtographicSize = gameObject.GetComponent<Camera>().orthographicSize;
         this.screenScale = 4500f / Screen.width;
     }
 
-    // Update is called once per frame
+    /// <summary>Update is called once per frame</summary>
     void Update() {
-        // Debug PC Zoom
-        if (Input.GetKeyDown(KeyCode.I)) {
-            gameObject.GetComponent<Camera>().orthographicSize = 2000f;
-            this.MoveInBounds(transform.position);
-        } else if (Input.GetKeyDown(KeyCode.O)) {
-            gameObject.GetComponent<Camera>().orthographicSize = 3000f;
-            this.MoveInBounds(transform.position);
-        } else if (Input.GetKeyDown(KeyCode.P)) {
-            gameObject.GetComponent<Camera>().orthographicSize = 4000f;
-            this.MoveInBounds(transform.position);
-        }
-        
-        // Handle native touch events
         // TODO Mobile Pointer 0
         if (Input.touchCount == 2 && !EventSystem.current.IsPointerOverGameObject()) {
-            // Store both touches.
             Touch touchZero = Input.GetTouch(0);
             Touch touchOne = Input.GetTouch(1);
-
-            // Find the position in the previous frame of each touch.
             Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
             Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
-
-            // Find the magnitude of the vector (the distance) between the touches in each frame.
             float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
             float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
-
-            // Find the difference in the distances between each frame.
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-
-            // If the camera is orthographic...
             if (gameObject.GetComponent<Camera>().orthographic) {
-                // ... change the orthographic size based on the change in distance between the touches.
                 gameObject.GetComponent<Camera>().orthographicSize += deltaMagnitudeDiff * 0.5f;
-
-                // Make sure the orthographic size never drops below zero.
                 gameObject.GetComponent<Camera>().orthographicSize = Mathf.Max(gameObject.GetComponent<Camera>().orthographicSize, this.MaxZoom);
                 gameObject.GetComponent<Camera>().orthographicSize = Mathf.Min(gameObject.GetComponent<Camera>().orthographicSize, this.MinZoom);
 
@@ -93,6 +96,12 @@ public class InputHandler : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Method handles all touch inputs on MissionMap, splits into TouchPhases and contains the movement logic
+    /// </summary>
+    /// <param name="touchFingerId">Which finger does the input come from (Counted up)</param>
+    /// <param name="touchPosition">Position on screen</param>
+    /// <param name="touchPhase">Latest TouchPhase</param>
     private void HandleTouch(int touchFingerId, Vector2 touchPosition, TouchPhase touchPhase) {
         switch (touchPhase) {
             case TouchPhase.Began:
@@ -144,6 +153,10 @@ public class InputHandler : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Moves the transform (camera) inside of the given bounds
+    /// </summary>
+    /// <param name="touchPosition">Position that the user ties to move to</param>
     private void MoveInBounds(Vector2 touchPosition) {
         float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / this.startOrtographicSize;
         float aspectRatio = Camera.main.aspect;
