@@ -1,15 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Class to be applied to a mine object
+/// </summary>
 public class Mine : MonoBehaviour {
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
