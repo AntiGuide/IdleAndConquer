@@ -142,7 +142,7 @@ public class InputHandler : MonoBehaviour {
                     Physics.Raycast(touchRay.origin, touchRay.direction, out hitInformation, 700.0f, layerMask);
                     if (hitInformation.collider != null) {
                         if (hitInformation.collider.tag.Equals("MissionLocation")) {
-                            Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().missionName);
+                            Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().MissionName);
                             MissionDetails missionToLoad = hitInformation.collider.GetComponent<MissionDetails>();
                             MainMenueControll.ToggleMenue(1);
                         }

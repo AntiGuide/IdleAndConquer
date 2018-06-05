@@ -1609,7 +1609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefeb7b487a19c64da3e5081996dfa8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionName: Beat General Ivan!
+  MissionName: Beat General Ivan!
 --- !u!1 &945244692
 GameObject:
   m_ObjectHideFlags: 0
