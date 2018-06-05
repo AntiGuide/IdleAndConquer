@@ -14537,21 +14537,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3bca86a6607464bb677b4f13f24e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  genMinChanceToPermaDeath: 0.05
-  genMaxChanceToPermaDeath: 0.15
-  countrys:
+  GenMinChanceToPermaDeath: 0.05
+  GenMaxChanceToPermaDeath: 0.15
+  Countrys:
   - Germany
   - Japan
   - Switzerland
   - Russia
   - USA
-  names:
+  Names:
   - "Hans M\xFCller"
   - Segari Miamoto
   - George Washington
   - Skarikov Meslava
   - "Hans M\xFCller"
-  generalList: {fileID: 1114288287}
+  GeneralList: {fileID: 1114288287}
 --- !u!1 &1252190778
 GameObject:
   m_ObjectHideFlags: 0
