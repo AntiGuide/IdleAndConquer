@@ -15593,7 +15593,6 @@ GameObject:
   - component: {fileID: 1343580270}
   - component: {fileID: 1343580269}
   - component: {fileID: 1343580268}
-  - component: {fileID: 1343580272}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -15687,17 +15686,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1343580272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1343580267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc8498cec28259e40908b5dcc8600762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1355213082
 GameObject:
   m_ObjectHideFlags: 0
@@ -19135,8 +19123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a305a4cdae4ec4fada3fa955f4fb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraMax: {x: 550, y: 406, z: 615}
-  CameraMin: {x: -88, y: 406, z: 25}
+  CameraMax: {x: 550, y: 406, z: 650}
+  CameraMin: {x: -100, y: 406, z: 50}
   DeadZoneDrag: 10
 --- !u!1 &1651890734
 GameObject:
