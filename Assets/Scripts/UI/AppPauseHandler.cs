@@ -9,7 +9,15 @@ using UnityEngine.UI;
 /// </summary>
 public class AppPauseHandler : MonoBehaviour {
 
-    public Text testText;
+    public FloatUpSpawner floatUpSpawner;
+
+    public Text TestText;
+
+    public GameObject PlayerBackNotification;
+
+    public Transform ParentPlayerBackNotification;
+
+    public static List<Harvester> Harvesters = new List<Harvester>();
 
     /// <summary>Time since login</summary>
     private float loginTimer = 0f;
@@ -22,18 +30,25 @@ public class AppPauseHandler : MonoBehaviour {
     /// </summary>
     /// <param name="pauseStatus">True if game is paused</param>
     void OnApplicationPause(bool pauseStatus) {
-        Debug.Log("OnApplicationPause(" + pauseStatus.ToString() + ")");
         if (!pauseStatus) {
             loginTimer = 0f;
             if (exitTime.CompareTo(DateTime.MinValue) == 0) {
                 // First start/New start
-                testText.text = "Willkommen";
+                TestText.text = "Willkommen";
             } else {
                 // Player back from pause
-                testText.text = "Willkommen" + Environment.NewLine + Math.Round((System.DateTime.Now - exitTime).TotalSeconds) + " Sekunden Abwesenheit";
+                TestText.text = "Willkommen" + Environment.NewLine + Math.Round((DateTime.Now - exitTime).TotalSeconds) + " Sekunden Abwesenheit";
+                long secondsSincePause = (long)Math.Round((DateTime.Now - exitTime).TotalSeconds);
+                long val = 0;
+                foreach (Harvester h in Harvesters) {
+                    val += h.miningAmount * (long)(secondsSincePause / h.miningSpeed);
+                }
+                if (val > 0) {
+                    GameObject go = Instantiate(PlayerBackNotification, ParentPlayerBackNotification);
+                    PlayerBackNotification pbn = go.GetComponent<PlayerBackNotification>();
+                    pbn.Initialize("You earned money while you were gone", floatUpSpawner, FloatUp.ResourceType.DOLLAR, val, secondsSincePause, ref Harvesters);
+                }
             }
-            // Compate Times
-            // Player is back
         } else {
             exitTime = System.DateTime.Now;
         }
@@ -45,7 +60,7 @@ public class AppPauseHandler : MonoBehaviour {
 
     private void Update() {
         if (loginTimer > 5f) {
-            testText.text = "";
+            TestText.text = "";
         } else {
             loginTimer += Time.deltaTime;
         }

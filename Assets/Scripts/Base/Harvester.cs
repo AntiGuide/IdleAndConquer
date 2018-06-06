@@ -16,6 +16,12 @@ public class Harvester : MonoBehaviour {
         this.attachedMine = attachedMine;
         this.moneyManagement = moneyManagement;
         this.floatUpSpawner = floatUpSpawner;
+        AppPauseHandler.Harvesters.Add(this);
+    }
+
+    public void AddAppPauseTime(long secondsToAdd) {
+        moneyManagement.addMoney((secondsToAdd / Mathf.RoundToInt(miningSpeed)) * miningAmount);
+        currentProgressWay += secondsToAdd % Mathf.RoundToInt(miningSpeed);
     }
 
     // Use this for initialization
