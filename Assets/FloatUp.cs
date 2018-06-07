@@ -15,7 +15,6 @@ public class FloatUp : MonoBehaviour {
     private Color color;
     private ResourceType type;
     private long value;
-    private float travelDistance;
 
     public enum ResourceType {
         POWERLEVEL = 0,

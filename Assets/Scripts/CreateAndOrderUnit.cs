@@ -25,7 +25,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
     private Text unitCountText;
     private Text unitBuilding;
     private Image buildingOverlay;
-    private int availableUnits = 0;
     private int buildingUnits = 0;
     private static int unitID;
 
