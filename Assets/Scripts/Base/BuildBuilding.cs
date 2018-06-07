@@ -61,6 +61,7 @@ public class BuildBuilding : MonoBehaviour {
             this.newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / this.CellSize);
 
             playerBuilding = true;
+            CameraMovement.BlockCameraMovement = true;
             this.BuildingMenueController.Unexpand(true);
         }
     }
@@ -69,6 +70,7 @@ public class BuildBuilding : MonoBehaviour {
         if (this.newBuilding != null) {
             UnityEngine.Object.Destroy(this.newBuilding);
             playerBuilding = false;
+            CameraMovement.BlockCameraMovement = false;
             this.BuildConfirmUI.SetActive(false);
         }
     }
@@ -83,6 +85,7 @@ public class BuildBuilding : MonoBehaviour {
                 this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
                 this.newBuilding = null;
                 playerBuilding = false;
+                CameraMovement.BlockCameraMovement = false;
                 this.BuildConfirmUI.SetActive(false);
             }
         }

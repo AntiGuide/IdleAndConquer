@@ -12,7 +12,9 @@ public class CameraMovement : MonoBehaviour {
 
     /// <summary>The minimum position the camera may have without zoom</summary>
     public Vector3 CameraMin;
-    
+
+    public static bool BlockCameraMovement;
+
     /// <summary>The distance which the user must drag until a drag is registered as such versus a click</summary>
     public float DeadZoneDrag;
 
@@ -75,7 +77,7 @@ public class CameraMovement : MonoBehaviour {
 
                 break;
             case TouchPhase.Moved:
-                if (!this.blockMapMovement) {
+                if (!this.blockMapMovement && !BlockCameraMovement) {
                     if (!this.movedDuringTouch && Vector2.Distance(this.startPos, touchPosition) > this.DeadZoneDrag) {
                         this.movedDuringTouch = true;
                     }
