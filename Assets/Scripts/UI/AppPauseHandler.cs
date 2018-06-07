@@ -8,16 +8,20 @@ using UnityEngine.UI;
 /// Class to handle the routine of the player coming back and leaving to the game
 /// </summary>
 public class AppPauseHandler : MonoBehaviour {
+    /// <summary>List of all harvesters</summary>
+    public static List<Harvester> Harvesters = new List<Harvester>();
 
-    public FloatUpSpawner floatUpSpawner;
+    /// <summary>Reference to the FloatUpSpawner</summary>
+    public FloatUpSpawner FloatUpSpawn;
 
+    /// <summary>Reference to the TestText (debug text)</summary>
     public Text TestText;
 
+    /// <summary>The prefab of a PlayerBackNotification</summary>
     public GameObject PlayerBackNotification;
 
+    /// <summary>The transform to attach a new instance of a PlayerBackNotification to</summary>
     public Transform ParentPlayerBackNotification;
-
-    public static List<Harvester> Harvesters = new List<Harvester>();
 
     /// <summary>Time since login</summary>
     private float loginTimer = 0f;
@@ -31,38 +35,41 @@ public class AppPauseHandler : MonoBehaviour {
     /// <param name="pauseStatus">True if game is paused</param>
     void OnApplicationPause(bool pauseStatus) {
         if (!pauseStatus) {
-            loginTimer = 0f;
-            if (exitTime.CompareTo(DateTime.MinValue) == 0) {
+            this.loginTimer = 0f;
+            if (this.exitTime.CompareTo(DateTime.MinValue) == 0) {
                 // First start/New start
-                TestText.text = "Willkommen";
+                this.TestText.text = "Willkommen";
             } else {
                 // Player back from pause
-                TestText.text = "Willkommen" + Environment.NewLine + Math.Round((DateTime.Now - exitTime).TotalSeconds) + " Sek. Abwesenheit";
-                long secondsSincePause = (long)Math.Round((DateTime.Now - exitTime).TotalSeconds);
+                this.TestText.text = "Willkommen" + Environment.NewLine + Math.Round((DateTime.Now - this.exitTime).TotalSeconds) + " Sek. Abwesenheit";
+                long secondsSincePause = (long)Math.Round((DateTime.Now - this.exitTime).TotalSeconds);
                 long additionalMoney = 0;
                 foreach (Harvester h in Harvesters) {
-                    additionalMoney += h.AddAppPauseProgressTime(secondsSincePause % (long)h.miningSpeed);
+                    additionalMoney += h.AddAppPauseProgressTime(secondsSincePause % (long)h.MiningSpeed);
                 }
-                if (secondsSincePause - (secondsSincePause % (long)Harvesters[0].miningSpeed) > 0 || additionalMoney > 0) {
-                    GameObject go = Instantiate(PlayerBackNotification, ParentPlayerBackNotification);
+
+                if (secondsSincePause - (secondsSincePause % (long)Harvesters[0].MiningSpeed) > 0 || additionalMoney > 0) {
+                    GameObject go = Instantiate(this.PlayerBackNotification, this.ParentPlayerBackNotification);
                     PlayerBackNotification pbn = go.GetComponent<PlayerBackNotification>();
-                    pbn.Initialize("You earned money while you were gone", floatUpSpawner, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, ref Harvesters);
+                    pbn.Initialize("You earned money while you were gone", this.FloatUpSpawn, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, ref Harvesters);
                 }
             }
         } else {
-            exitTime = System.DateTime.Now;
+            this.exitTime = System.DateTime.Now;
         }
     }
 
+    /// <summary>Use this for initialization</summary>
     private void Start() {
         // Set exitTime to PlayerPref Application Quit?
     }
 
+    /// <summary>Update is called once per frame</summary>
     private void Update() {
-        if (loginTimer > 5f) {
-            TestText.text = "";
+        if (this.loginTimer > 5f) {
+            this.TestText.text = string.Empty;
         } else {
-            loginTimer += Time.deltaTime;
+            this.loginTimer += Time.deltaTime;
         }
     }
 }

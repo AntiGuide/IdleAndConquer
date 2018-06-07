@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 620172863}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.53952104
+  m_Size: 0.539521
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5081,7 +5081,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 696164444}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.539521
+  m_Size: 0.5395209
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7502,7 +7502,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 829425684}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.539521
+  m_Size: 0.5395209
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13807,7 +13807,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 155860188}
   m_Direction: 2
   m_Value: 0.9999998
-  m_Size: 0.29102975
+  m_Size: 0.29102972
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18973,7 +18973,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2066953183}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.5521346
+  m_Size: 0.5521345
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20871,7 +20871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec1fd52debf6c74a8ef3f14a6a63a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatUpSpawner: {fileID: 1758475377}
+  FloatUpSpawn: {fileID: 1758475377}
   TestText: {fileID: 822428464}
   PlayerBackNotification: {fileID: 1852512382259622, guid: 0de0b8e6ca7befa43a35051fd3e5a9be,
     type: 2}

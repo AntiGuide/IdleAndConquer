@@ -1,27 +1,45 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Operates automatically. Refinery level equals number of Havesters operating. Drives to Mine to harvest and then unloads at Refinery to generate income.
+/// $ is the only universal Resource (so far). Mine --> $
+/// </summary>
 public class Harvester : MonoBehaviour {
-    //Operates automatically. Refinery level equals number of Havesters operating. Drives to Mine to harvest and then unloads at Refinery to generate income. $ is the only universal Resource (so far). Mine --> $
-    public float miningSpeed = 20.0f;//Every 20 seconds
-    public int miningAmount = 50;//50 $
-    
+    /// <summary>Generates MiningAmount every 10 seconds</summary>
+    public float MiningSpeed = 10.0f;
+
+    /// <summary>Every time the refinery is reached you get this amount of money</summary>
+    public int MiningAmount = 500;
+
+    /// <summary>The mine to drive to</summary>
     private Mine attachedMine;
+
+    /// <summary>The ore refinery to drive to</summary>
     private OreRefinery attachedOreRefinery;
+
+    /// <summary>Reference to the money pool</summary>
     private MoneyManagement moneyManagement;
+
+    /// <summary>Progress of the harvester in seconds (0 --> MinigSpeed)</summary>
     private float currentProgressWay;
+
+    /// <summary>Reference to the FloatUpSpawner</summary>
     private FloatUpSpawner floatUpSpawner;
 
+    /// <summary>Getter/Setter for currentProgressWay</summary>
     public float CurrentProgressWay {
-        get {
-            return currentProgressWay;
-        }
-
-        set {
-            currentProgressWay = value;
-        }
+        get { return this.currentProgressWay; }
+        set { this.currentProgressWay = value; }
     }
 
-    public void Initialize(OreRefinery attachedOreRefinery, Mine attachedMine,ref MoneyManagement moneyManagement, FloatUpSpawner floatUpSpawner) {
+    /// <summary>
+    /// Gives the harvester all important values
+    /// </summary>
+    /// <param name="attachedOreRefinery">Ore Refinery to drive to</param>
+    /// <param name="attachedMine">Mine to drive to</param>
+    /// <param name="moneyManagement">Reference to the money pool</param>
+    /// <param name="floatUpSpawner">Reference to the FloatUpSpawner</param>
+    public void Initialize(OreRefinery attachedOreRefinery, Mine attachedMine, ref MoneyManagement moneyManagement, FloatUpSpawner floatUpSpawner) {
         this.attachedOreRefinery = attachedOreRefinery;
         this.attachedMine = attachedMine;
         this.moneyManagement = moneyManagement;
@@ -29,43 +47,54 @@ public class Harvester : MonoBehaviour {
         AppPauseHandler.Harvesters.Add(this);
     }
 
+    /// <summary>
+    /// Adds progress for uncompleted harvester runs
+    /// </summary>
+    /// <param name="secondsToAdd">The seconds progress has to be added for</param>
+    /// <returns>Money that was made (in case a harvester finished)</returns>
     public long AddAppPauseProgressTime(long secondsToAdd) {
-        currentProgressWay += secondsToAdd % (long)miningSpeed;
-        if (currentProgressWay > (miningSpeed / 2) && currentProgressWay <= miningSpeed) {
-            transform.LookAt(attachedOreRefinery.transform.position);
-        } else if (currentProgressWay > miningSpeed) {
-            currentProgressWay -= miningSpeed;
-            transform.LookAt(attachedMine.transform.position);
-            return miningAmount;
+        this.currentProgressWay += secondsToAdd % (long)this.MiningSpeed;
+        if (this.currentProgressWay > (this.MiningSpeed / 2) && this.currentProgressWay <= this.MiningSpeed) {
+            transform.LookAt(this.attachedOreRefinery.transform.position);
+        } else if (this.currentProgressWay > this.MiningSpeed) {
+            this.currentProgressWay -= this.MiningSpeed;
+            transform.LookAt(this.attachedMine.transform.position);
+            return this.MiningAmount;
         }
+
         return 0;
     }
 
+    /// <summary>
+    /// Adds money for completed harvester runs
+    /// </summary>
+    /// <param name="secondsToAdd">The seconds money has to be added for</param>
+    /// <returns></returns>
     public long AddAppPauseTime(long secondsToAdd) {
-        moneyManagement.addMoney((secondsToAdd / (long)miningSpeed) * miningAmount);
-        return (secondsToAdd / (long)miningSpeed) * miningAmount;
+        this.moneyManagement.addMoney((secondsToAdd / (long)this.MiningSpeed) * this.MiningAmount);
+        return (secondsToAdd / (long)this.MiningSpeed) * this.MiningAmount;
     }
 
-    // Use this for initialization
-    void Start () {
-        transform.position = attachedOreRefinery.transform.position;
-        transform.LookAt(attachedMine.transform.position);
+    /// <summary>Use this for initialization</summary>
+    void Start() {
+        transform.position = this.attachedOreRefinery.transform.position;
+        transform.LookAt(this.attachedMine.transform.position);
     }
-	
-	// Update is called once per frame
-	void Update () {
-        currentProgressWay += Time.deltaTime;
-        if (currentProgressWay <= (miningSpeed / 2)) {
-            transform.position = Vector3.Lerp(attachedOreRefinery.transform.position, attachedMine.transform.position, currentProgressWay / (miningSpeed / 2)); //Hinweg
-        } else if (currentProgressWay <= miningSpeed) {
-            transform.position = Vector3.Lerp(attachedMine.transform.position, attachedOreRefinery.transform.position, (currentProgressWay - (miningSpeed / 2)) / (miningSpeed / 2)); //Rückweg
-            //Has ore loaded
-            transform.LookAt(attachedOreRefinery.transform.position);
-        } else{
-            currentProgressWay -= miningSpeed;
-            moneyManagement.addMoney(miningAmount);//Sold ore
-            floatUpSpawner.GenerateFloatUp(miningAmount, FloatUp.ResourceType.DOLLAR, Camera.main.WorldToScreenPoint(transform.position));
-            transform.LookAt(attachedMine.transform.position);
+
+    /// <summary>Update is called once per frame</summary>
+    void Update() {
+        this.currentProgressWay += Time.deltaTime;
+        if (this.currentProgressWay <= (this.MiningSpeed / 2)) {
+            transform.position = Vector3.Lerp(this.attachedOreRefinery.transform.position, this.attachedMine.transform.position, this.currentProgressWay / (this.MiningSpeed / 2)); // Hinweg
+        } else if (this.currentProgressWay <= this.MiningSpeed) {
+            transform.position = Vector3.Lerp(this.attachedMine.transform.position, this.attachedOreRefinery.transform.position, (this.currentProgressWay - (this.MiningSpeed / 2)) / (this.MiningSpeed / 2)); // Rückweg
+            // Has ore loaded
+            transform.LookAt(this.attachedOreRefinery.transform.position);
+        } else {
+            this.currentProgressWay -= this.MiningSpeed;
+            this.moneyManagement.addMoney(this.MiningAmount); // Sold ore
+            this.floatUpSpawner.GenerateFloatUp(this.MiningAmount, FloatUp.ResourceType.DOLLAR, Camera.main.WorldToScreenPoint(transform.position));
+            transform.LookAt(this.attachedMine.transform.position);
         }
     }
 }

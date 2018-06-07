@@ -3,30 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class handles the notifications the player gets when he comes back to the game
+/// </summary>
 public class PlayerBackNotification : MonoBehaviour {
-    public Text text;
+    /// <summary>The text on the pop up</summary>
+    public Text NotificationText;
 
+    /// <summary>Reference to the FloatUpSpawner</summary>
     private FloatUpSpawner floatUpSpawner;
-    private FloatUp.ResourceType type;
-    private long secondsSincePause;
-    private long additionalMoney;
-    private List<Harvester> Harvesters;
 
-    public void Initialize(string text, FloatUpSpawner floatUpSpawner, FloatUp.ResourceType type, long secondsSincePause, long additionalMoney, ref List<Harvester> Harvesters) {
-        this.text.text = text;
+    /// <summary>The type of resource that the player gets</summary>
+    private FloatUp.ResourceType type;
+
+    /// <summary>The seconds the player paused the game</summary>
+    private long secondsSincePause;
+
+    /// <summary>The money the player gets additional to the secondsSincePause</summary>
+    private long additionalMoney;
+
+    /// <summary>List of all harvesters</summary>
+    private List<Harvester> harvesters;
+
+    /// <summary>
+    /// Called to give a PlayerBackNotification all important variables
+    /// </summary>
+    /// <param name="notificationText">The text that is displayed on the notification</param>
+    /// <param name="floatUpSpawner">Reference to the FloatUpSpawner</param>
+    /// <param name="type">The type of resource that the player gets</param>
+    /// <param name="secondsSincePause">The seconds the player paused the game</param>
+    /// <param name="additionalMoney">The money the player gets additional to the secondsSincePause</param>
+    /// <param name="harvesters">List of all harvesters</param>
+    public void Initialize(string notificationText, FloatUpSpawner floatUpSpawner, FloatUp.ResourceType type, long secondsSincePause, long additionalMoney, ref List<Harvester> harvesters) {
+        this.NotificationText.text = notificationText;
         this.floatUpSpawner = floatUpSpawner;
         this.type = type;
         this.secondsSincePause = secondsSincePause;
         this.additionalMoney = additionalMoney;
-        this.Harvesters = Harvesters;
+        this.harvesters = harvesters;
     }
 
+    /// <summary>Called when the player clicks the notification. Grants earned money.</summary>
     public void OnClick() {
-        long addedMoney = additionalMoney;
-        foreach (Harvester h in Harvesters) {
-            addedMoney += h.AddAppPauseTime(secondsSincePause);
+        long addedMoney = this.additionalMoney;
+        foreach (Harvester h in this.harvesters) {
+            addedMoney += h.AddAppPauseTime(this.secondsSincePause);
         }
-        this.floatUpSpawner.GenerateFloatUp(addedMoney, type, transform.position);
-        Destroy(gameObject);
+
+        this.floatUpSpawner.GenerateFloatUp(addedMoney, this.type, transform.position);
+        MonoBehaviour.Destroy(this.gameObject);
     }
 }
