@@ -11,6 +11,16 @@ public class Harvester : MonoBehaviour {
     private float currentProgressWay;
     private FloatUpSpawner floatUpSpawner;
 
+    public float CurrentProgressWay {
+        get {
+            return currentProgressWay;
+        }
+
+        set {
+            currentProgressWay = value;
+        }
+    }
+
     public void Initialize(OreRefinery attachedOreRefinery, Mine attachedMine,ref MoneyManagement moneyManagement, FloatUpSpawner floatUpSpawner) {
         this.attachedOreRefinery = attachedOreRefinery;
         this.attachedMine = attachedMine;
@@ -19,9 +29,21 @@ public class Harvester : MonoBehaviour {
         AppPauseHandler.Harvesters.Add(this);
     }
 
-    public void AddAppPauseTime(long secondsToAdd) {
-        moneyManagement.addMoney((secondsToAdd / Mathf.RoundToInt(miningSpeed)) * miningAmount);
-        currentProgressWay += secondsToAdd % Mathf.RoundToInt(miningSpeed);
+    public long AddAppPauseProgressTime(long secondsToAdd) {
+        currentProgressWay += secondsToAdd % (long)miningSpeed;
+        if (currentProgressWay > (miningSpeed / 2) && currentProgressWay <= miningSpeed) {
+            transform.LookAt(attachedOreRefinery.transform.position);
+        } else if (currentProgressWay > miningSpeed) {
+            currentProgressWay -= miningSpeed;
+            transform.LookAt(attachedMine.transform.position);
+            return miningAmount;
+        }
+        return 0;
+    }
+
+    public long AddAppPauseTime(long secondsToAdd) {
+        moneyManagement.addMoney((secondsToAdd / (long)miningSpeed) * miningAmount);
+        return (secondsToAdd / (long)miningSpeed) * miningAmount;
     }
 
     // Use this for initialization
