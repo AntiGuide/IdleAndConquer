@@ -39,14 +39,14 @@ public class AppPauseHandler : MonoBehaviour {
                 // Player back from pause
                 TestText.text = "Willkommen" + Environment.NewLine + Math.Round((DateTime.Now - exitTime).TotalSeconds) + " Sek. Abwesenheit";
                 long secondsSincePause = (long)Math.Round((DateTime.Now - exitTime).TotalSeconds);
-                long newSecondsSincePause = secondsSincePause;
+                long additionalMoney = 0;
                 foreach (Harvester h in Harvesters) {
-                    newSecondsSincePause += (h.AddAppPauseProgressTime(secondsSincePause % (long)h.miningSpeed) / (long)h.miningAmount) * (long)h.miningSpeed;
+                    additionalMoney += h.AddAppPauseProgressTime(secondsSincePause % (long)h.miningSpeed);
                 }
-                if (newSecondsSincePause - (secondsSincePause % (long)Harvesters[0].miningSpeed) > 0) {
+                if (secondsSincePause - (secondsSincePause % (long)Harvesters[0].miningSpeed) > 0 || additionalMoney > 0) {
                     GameObject go = Instantiate(PlayerBackNotification, ParentPlayerBackNotification);
                     PlayerBackNotification pbn = go.GetComponent<PlayerBackNotification>();
-                    pbn.Initialize("You earned money while you were gone", floatUpSpawner, FloatUp.ResourceType.DOLLAR, newSecondsSincePause, ref Harvesters);
+                    pbn.Initialize("You earned money while you were gone", floatUpSpawner, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, ref Harvesters);
                 }
             }
         } else {
