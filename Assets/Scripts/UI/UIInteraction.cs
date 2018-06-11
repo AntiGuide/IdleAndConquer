@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class UIInteraction : MonoBehaviour {
 
     public MainMenueController mainMenueController;
+
+    public SoundController SoundControll;
     
     // Use this for initialization
     void Start () {
@@ -27,6 +29,7 @@ public class UIInteraction : MonoBehaviour {
     }
 
     public void OpenButton3() {
+        SoundControll.StartSound(SoundController.Sounds.BUTTON_CLICK);
         mainMenueController.ToggleMenue(3);
     }
 
