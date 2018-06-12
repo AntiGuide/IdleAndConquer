@@ -6,17 +6,11 @@ public class InputHandler : MonoBehaviour {
     /// <summary>The distance which the user must drag until a drag is registered as such versus a click</summary>
     public float DeadZoneDrag;
 
-    /// <summary>The maximum X position the camera may have without zoom</summary>
-    public float CameraMaxX;
+    /// <summary>The maximum position the camera may have without zoom</summary>
+    public Vector3 CameraMax;
 
-    /// <summary>The minimum X position the camera may have without zoom</summary>
-    public float CameraMinX;
-
-    /// <summary>The maximum Z position the camera may have without zoom</summary>
-    public float CameraMaxZ;
-
-    /// <summary>The minimum Z position the camera may have without zoom</summary>
-    public float CameraMinZ;
+    /// <summary>The minimum position the camera may have without zoom</summary>
+    public Vector3 CameraMin;
 
     /// <summary>The minimum zoom the camera may have</summary>
     public float MinZoom;
@@ -39,20 +33,10 @@ public class InputHandler : MonoBehaviour {
     /// <summary>Marks wether the map movement is blocked (e.g. during zoom)</summary>
     private bool blockMapMovement = false;
 
-    /// <summary>Worldposition at the position of maximum screen height and length</summary>
-    private Vector3 screenSize;
-
-    /// <summary>Ortographic size after start</summary>
-    private float startOrtographicSize;
-
-    /// <summary>Variable in relation to the screen scale</summary>
-    private float screenScale;
+    private Ray lastPosRay;
 
     /// <summary>Use this for initialization</summary>
     void Start() {
-        this.screenSize = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        this.startOrtographicSize = gameObject.GetComponent<Camera>().orthographicSize;
-        this.screenScale = 4500f / Screen.width;
     }
 
     /// <summary>Update is called once per frame</summary>
@@ -66,11 +50,9 @@ public class InputHandler : MonoBehaviour {
             float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
             float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-            if (gameObject.GetComponent<Camera>().orthographic) {
-                gameObject.GetComponent<Camera>().orthographicSize += deltaMagnitudeDiff * 0.5f;
-                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Max(gameObject.GetComponent<Camera>().orthographicSize, this.MaxZoom);
-                gameObject.GetComponent<Camera>().orthographicSize = Mathf.Min(gameObject.GetComponent<Camera>().orthographicSize, this.MinZoom);
-
+            Camera tmpCam = gameObject.GetComponent<Camera>();
+            if (tmpCam.orthographic) {
+                tmpCam.orthographicSize = Mathf.Max(Mathf.Min(tmpCam.orthographicSize + deltaMagnitudeDiff * 0.5f, this.MinZoom), this.MaxZoom);
                 this.MoveInBounds(transform.position);
             }
         } else if (!EventSystem.current.IsPointerOverGameObject()) {
@@ -83,15 +65,15 @@ public class InputHandler : MonoBehaviour {
         // TODO Mobile Pointer 0
         if (Input.touchCount == 0) {
             if (Input.GetMouseButtonDown(0)) {
-                this.HandleTouch(10, Input.mousePosition, TouchPhase.Began);
+                this.HandleTouch(-1, Input.mousePosition, TouchPhase.Began);
             }
 
             if (Input.GetMouseButton(0)) {
-                this.HandleTouch(10, Input.mousePosition, TouchPhase.Moved);
+                this.HandleTouch(-1, Input.mousePosition, TouchPhase.Moved);
             }
 
             if (Input.GetMouseButtonUp(0)) {
-                this.HandleTouch(10, Input.mousePosition, TouchPhase.Ended);
+                this.HandleTouch(-1, Input.mousePosition, TouchPhase.Ended);
             }
         }
     }
@@ -105,10 +87,11 @@ public class InputHandler : MonoBehaviour {
     private void HandleTouch(int touchFingerId, Vector2 touchPosition, TouchPhase touchPhase) {
         switch (touchPhase) {
             case TouchPhase.Began:
-                if (EventSystem.current.IsPointerOverGameObject()) {
+                if (EventSystem.current.IsPointerOverGameObject(touchFingerId)) {
                     this.blockMapMovement = true;
                 } else {
                     startPos = touchPosition;
+                    lastPosRay = Camera.main.ScreenPointToRay(startPos);
                     startPosCamera = transform.position;
                     this.movedDuringTouch = false;
                 }
@@ -121,7 +104,17 @@ public class InputHandler : MonoBehaviour {
                     }
 
                     if (this.movedDuringTouch) {
-                        this.MoveInBounds(touchPosition);
+                        Ray curPosRay = Camera.main.ScreenPointToRay(touchPosition);
+                        RaycastHit curHitInfo;
+                        if (Physics.Raycast(curPosRay, out curHitInfo, 2000.0f, LayerMask.GetMask("Plane"))) {
+                            RaycastHit lastHitInfo;
+                            if (Physics.Raycast(lastPosRay, out lastHitInfo, 2000.0f, LayerMask.GetMask("Plane"))) {
+                                Vector3 deltaPos = curHitInfo.point - lastHitInfo.point;
+                                deltaPos.y = 0;
+                                deltaPos *= -1;
+                                this.MoveInBounds(transform.position + deltaPos);
+                            }
+                        }
                     }
                 }
 
@@ -156,16 +149,8 @@ public class InputHandler : MonoBehaviour {
     /// <summary>
     /// Moves the transform (camera) inside of the given bounds
     /// </summary>
-    /// <param name="touchPosition">Position that the user ties to move to</param>
-    private void MoveInBounds(Vector2 touchPosition) {
-        float zoomScale = gameObject.GetComponent<Camera>().orthographicSize / this.startOrtographicSize;
-        float aspectRatio = Camera.main.aspect;
-        float newX = this.startPosCamera.x + (((touchPosition.x - this.startPos.x) * this.screenScale) * zoomScale);
-        newX = newX < this.CameraMaxX + ((this.startOrtographicSize * aspectRatio) - (zoomScale * (this.startOrtographicSize * aspectRatio))) ? newX : this.CameraMaxX + ((this.startOrtographicSize * aspectRatio) - (zoomScale * (this.startOrtographicSize * aspectRatio)));
-        newX = newX > this.CameraMinX - ((this.startOrtographicSize * aspectRatio) - (zoomScale * (this.startOrtographicSize * aspectRatio))) ? newX : this.CameraMinX - ((this.startOrtographicSize * aspectRatio) - (zoomScale * (this.startOrtographicSize * aspectRatio)));
-        float newZ = this.startPosCamera.z + (((touchPosition.y - this.startPos.y) * this.screenScale) * zoomScale);
-        newZ = newZ < this.CameraMaxZ + (this.startOrtographicSize - (zoomScale * this.startOrtographicSize)) ? newZ : this.CameraMaxZ + (this.startOrtographicSize - (zoomScale * this.startOrtographicSize));
-        newZ = newZ > this.CameraMinZ - (this.startOrtographicSize - (zoomScale * this.startOrtographicSize)) ? newZ : this.CameraMinZ - (this.startOrtographicSize - (zoomScale * this.startOrtographicSize));
-        transform.position = new Vector3(newX, transform.position.y, newZ);
+    /// <param name="newCamPosition">Position that the user ties to move the camera to</param>
+    private void MoveInBounds(Vector3 newCamPosition) {
+        transform.position = Vector3.Min(Vector3.Max(newCamPosition, this.CameraMin), this.CameraMax);
     }
 }

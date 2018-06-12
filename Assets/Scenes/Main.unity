@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 620172863}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.539521
+  m_Size: 0.53952104
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5081,7 +5081,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 696164444}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.5395209
+  m_Size: 0.539521
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7502,7 +7502,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 829425684}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.5395209
+  m_Size: 0.539521
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13807,7 +13807,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 155860188}
   m_Direction: 2
   m_Value: 0.9999998
-  m_Size: 0.29102972
+  m_Size: 0.29102975
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18973,7 +18973,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2066953183}
   m_Direction: 2
   m_Value: 0.99999976
-  m_Size: 0.5521345
+  m_Size: 0.5521346
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19098,9 +19098,9 @@ GameObject:
   - component: {fileID: 1649716199}
   - component: {fileID: 1649716198}
   - component: {fileID: 1649716197}
-  - component: {fileID: 1649716201}
   - component: {fileID: 1649716202}
   - component: {fileID: 1649716203}
+  - component: {fileID: 1649716201}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -19139,10 +19139,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 3000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 300
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -19164,13 +19164,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1649716196}
-  m_LocalRotation: {x: -0.15321776, y: 0.84495145, z: -0.39131752, w: -0.3308351}
-  m_LocalPosition: {x: 153, y: 406, z: 393}
+  m_LocalRotation: {x: -0.09904573, y: 0.8923992, z: -0.23911768, w: -0.36964363}
+  m_LocalPosition: {x: 250, y: 534, z: 660}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 49.7, y: 222.765, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 225, z: 0}
 --- !u!114 &1649716201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19179,12 +19179,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1649716196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a305a4cdae4ec4fada3fa955f4fb9f, type: 3}
+  m_Script: {fileID: 11500000, guid: da68cb1746724ee4bb433cb4b442d316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraMax: {x: 550, y: 406, z: 650}
-  CameraMin: {x: -100, y: 406, z: 50}
   DeadZoneDrag: 10
+  CameraMax: {x: 700, y: 534, z: 975}
+  CameraMin: {x: 0, y: 534, z: 0}
+  MinZoom: 300
+  MaxZoom: 600
+  MainMenueControll: {fileID: 0}
 --- !u!82 &1649716202
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19278,7 +19281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource1: {fileID: 1649716202}
   Clips:
-  - {fileID: 8300000, guid: 64a2d879ec01c8b4fa73b5ba44664520, type: 3}
+  - {fileID: 0}
 --- !u!1 &1651890734
 GameObject:
   m_ObjectHideFlags: 0

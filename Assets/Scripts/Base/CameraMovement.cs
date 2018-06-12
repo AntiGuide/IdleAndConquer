@@ -18,6 +18,12 @@ public class CameraMovement : MonoBehaviour {
     /// <summary>The distance which the user must drag until a drag is registered as such versus a click</summary>
     public float DeadZoneDrag;
 
+    public float MaxZoomSize = 600f;
+
+    public float MinZoomSize = 300f;
+
+    public bool IgnoreBounds = true;
+
     /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
 
@@ -101,6 +107,10 @@ public class CameraMovement : MonoBehaviour {
     /// </summary>
     /// <param name="positionToMoveTo">Position that the user ties to move to</param>
     private void MoveInBounds(Vector3 positionToMoveTo) {
+        if (IgnoreBounds) {
+            transform.position = new Vector3(positionToMoveTo.x, this.startPosCamera.y, positionToMoveTo.z);
+            return;
+        }
         float newX = positionToMoveTo.x;
         newX = newX < this.CameraMax.x ? newX : this.CameraMax.x;
         newX = newX > this.CameraMin.x ? newX : this.CameraMin.x;
