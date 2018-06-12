@@ -18,6 +18,8 @@ public class InputHandler : MonoBehaviour {
     /// <summary>The maximum zoom the camera may have</summary>
     public float MaxZoom;
 
+    public float OrthoZoomSpeed = 0.5f;
+
     /// <summary>Reference to the MainMenueController</summary>
     public MainMenueController MainMenueControll;
 
@@ -43,18 +45,28 @@ public class InputHandler : MonoBehaviour {
     void Update() {
         // TODO Mobile Pointer 0
         if (Input.touchCount == 2 && !EventSystem.current.IsPointerOverGameObject()) {
+            this.blockMapMovement = true;
+
+            // Store both touches.
             Touch touchZero = Input.GetTouch(0);
             Touch touchOne = Input.GetTouch(1);
+
+            // Find the position in the previous frame of each touch.
             Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
             Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            // Find the magnitude of the vector (the distance) between the touches in each frame.
             float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
             float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+            // Find the difference in the distances between each frame.
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-            Camera tmpCam = gameObject.GetComponent<Camera>();
-            if (tmpCam.orthographic) {
-                tmpCam.orthographicSize = Mathf.Max(Mathf.Min(tmpCam.orthographicSize + deltaMagnitudeDiff * 0.5f, this.MinZoom), this.MaxZoom);
-                this.MoveInBounds(transform.position);
-            }
+
+            // ... change the orthographic size based on the change in distance between the touches.
+            Camera.main.orthographicSize += deltaMagnitudeDiff * OrthoZoomSpeed;
+
+            // Make sure the orthographic size never drops below zero.
+            //Camera.main.orthographicSize = Mathf.Max(Mathf.Min(Camera.main.orthographicSize, MaxZoom), MinZoom);
         } else if (!EventSystem.current.IsPointerOverGameObject()) {
             foreach (Touch touch in Input.touches) {
                 this.HandleTouch(touch.fingerId, touch.position, touch.phase);
@@ -94,8 +106,9 @@ public class InputHandler : MonoBehaviour {
                     lastPosRay = Camera.main.ScreenPointToRay(startPos);
                     startPosCamera = transform.position;
                     this.movedDuringTouch = false;
+
                 }
-                
+
                 break;
             case TouchPhase.Moved:
                 if (!this.blockMapMovement) {
@@ -112,6 +125,7 @@ public class InputHandler : MonoBehaviour {
                                 Vector3 deltaPos = curHitInfo.point - lastHitInfo.point;
                                 deltaPos.y = 0;
                                 deltaPos *= -1;
+                                //Debug.Log(deltaPos.ToString());
                                 this.MoveInBounds(transform.position + deltaPos);
                             }
                         }
@@ -151,6 +165,27 @@ public class InputHandler : MonoBehaviour {
     /// </summary>
     /// <param name="newCamPosition">Position that the user ties to move the camera to</param>
     private void MoveInBounds(Vector3 newCamPosition) {
-        transform.position = Vector3.Min(Vector3.Max(newCamPosition, this.CameraMin), this.CameraMax);
+        transform.position = newCamPosition;
+
+        Vector3 newLocalPos = transform.localPosition;
+        Vector3 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, -transform.position.z));
+        if (topRight.x > this.CameraMax.x) {
+            newLocalPos.x -= topRight.x - this.CameraMax.x;
+        } else if (topRight.z > this.CameraMax.z) {
+            newLocalPos.z -= topRight.z - this.CameraMax.z;
+        }
+
+        Vector3 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, -transform.position.z));
+        if (bottomLeft.x < this.CameraMin.x) {
+            newLocalPos.x += this.CameraMin.x - bottomLeft.x;
+        } else if (bottomLeft.z < this.CameraMin.z) {
+            newLocalPos.z += this.CameraMin.z - bottomLeft.z;
+        }
+        transform.localPosition = newLocalPos;
+
+
+        //Vector3.Max(transform.InverseTransformPoint(topRight), this.CameraMin);
+
+        transform.localPosition = Vector3.Min(Vector3.Max(transform.localPosition, this.CameraMin), this.CameraMax);
     }
 }
