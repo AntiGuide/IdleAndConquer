@@ -113,7 +113,7 @@ public class BuildBuilding : MonoBehaviour {
             } else if (playerBuilding) {
                 this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 this.layerMask = LayerMask.GetMask("Plane");
-                Physics.Raycast(Camera.main.transform.position, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
+                Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
                 if (this.hitInformation.collider != null) {
                     Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
                     Vector3 cent = bounds.center;
@@ -128,7 +128,7 @@ public class BuildBuilding : MonoBehaviour {
             if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
                 this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 this.layerMask = LayerMask.GetMask("Buildings");
-                Physics.Raycast(Camera.main.transform.position, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
+                Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
                 if (this.hitInformation.collider != null) {
                     this.MainMenueControll.ToggleMenue(this.hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().GetMenueController());
                 }
