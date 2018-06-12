@@ -61,7 +61,7 @@ public class BuildBuilding : MonoBehaviour {
             this.newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / this.CellSize);
 
             playerBuilding = true;
-            CameraMovement.BlockCameraMovement = true;
+            InputHandler.BlockCameraMovement = true;
             this.BuildingMenueController.Unexpand(true);
         }
     }
@@ -70,7 +70,7 @@ public class BuildBuilding : MonoBehaviour {
         if (this.newBuilding != null) {
             UnityEngine.Object.Destroy(this.newBuilding);
             playerBuilding = false;
-            CameraMovement.BlockCameraMovement = false;
+            InputHandler.BlockCameraMovement = false;
             this.BuildConfirmUI.SetActive(false);
         }
     }
@@ -85,7 +85,7 @@ public class BuildBuilding : MonoBehaviour {
                 this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
                 this.newBuilding = null;
                 playerBuilding = false;
-                CameraMovement.BlockCameraMovement = false;
+                InputHandler.BlockCameraMovement = false;
                 this.BuildConfirmUI.SetActive(false);
             }
         }
@@ -113,7 +113,7 @@ public class BuildBuilding : MonoBehaviour {
             } else if (playerBuilding) {
                 this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 this.layerMask = LayerMask.GetMask("Plane");
-                Physics.Raycast(Camera.main.transform.position, this.touchRay.direction, out this.hitInformation, 1000.0f, this.layerMask);
+                Physics.Raycast(Camera.main.transform.position, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
                 if (this.hitInformation.collider != null) {
                     Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
                     Vector3 cent = bounds.center;
@@ -128,7 +128,7 @@ public class BuildBuilding : MonoBehaviour {
             if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
                 this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 this.layerMask = LayerMask.GetMask("Buildings");
-                Physics.Raycast(Camera.main.transform.position, this.touchRay.direction, out this.hitInformation, 2000.0f, this.layerMask);
+                Physics.Raycast(Camera.main.transform.position, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
                 if (this.hitInformation.collider != null) {
                     this.MainMenueControll.ToggleMenue(this.hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().GetMenueController());
                 }

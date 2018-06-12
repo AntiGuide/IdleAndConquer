@@ -37,6 +37,8 @@ public class InputHandler : MonoBehaviour {
 
     private Ray lastPosRay;
 
+    public static bool BlockCameraMovement;
+
     /// <summary>Use this for initialization</summary>
     void Start() {
     }
@@ -111,7 +113,7 @@ public class InputHandler : MonoBehaviour {
 
                 break;
             case TouchPhase.Moved:
-                if (!this.blockMapMovement) {
+                if (!this.blockMapMovement && !BlockCameraMovement) {
                     if (!this.movedDuringTouch && Vector2.Distance(this.startPos, touchPosition) > this.DeadZoneDrag) {
                         this.movedDuringTouch = true;
                     }
@@ -136,25 +138,26 @@ public class InputHandler : MonoBehaviour {
             case TouchPhase.Ended:
                 if (this.blockMapMovement) {
                     this.blockMapMovement = false;
-                } else if (!movedDuringTouch) {
-                    Ray touchRay;
-                    if (Camera.allCamerasCount > 1) {
-                        touchRay = Camera.allCameras[1].ScreenPointToRay(touchPosition);
-                    } else {
-                        touchRay = Camera.allCameras[0].ScreenPointToRay(touchPosition);
-                    }
-                    
-                    int layerMask = LayerMask.GetMask("MissionLocation");
-                    RaycastHit hitInformation;
-                    Physics.Raycast(touchRay.origin, touchRay.direction, out hitInformation, 700.0f, layerMask);
-                    if (hitInformation.collider != null) {
-                        if (hitInformation.collider.tag.Equals("MissionLocation")) {
-                            Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().MissionName);
-                            MissionDetails missionToLoad = hitInformation.collider.GetComponent<MissionDetails>();
-                            MainMenueControll.ToggleMenue(1);
-                        }
-                    }
                 }
+                //else if (!movedDuringTouch) {
+                //    Ray touchRay;
+                //    if (Camera.allCamerasCount > 1) {
+                //        touchRay = Camera.allCameras[1].ScreenPointToRay(touchPosition);
+                //    } else {
+                //        touchRay = Camera.allCameras[0].ScreenPointToRay(touchPosition);
+                //    }
+                    
+                //    int layerMask = LayerMask.GetMask("MissionLocation");
+                //    RaycastHit hitInformation;
+                //    Physics.Raycast(touchRay.origin, touchRay.direction, out hitInformation, 700.0f, layerMask);
+                //    if (hitInformation.collider != null) {
+                //        if (hitInformation.collider.tag.Equals("MissionLocation")) {
+                //            Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().MissionName);
+                //            MissionDetails missionToLoad = hitInformation.collider.GetComponent<MissionDetails>();
+                //            MainMenueControll.ToggleMenue(1);
+                //        }
+                //    }
+                //}
 
                 break;
         }
@@ -166,26 +169,6 @@ public class InputHandler : MonoBehaviour {
     /// <param name="newCamPosition">Position that the user ties to move the camera to</param>
     private void MoveInBounds(Vector3 newCamPosition) {
         transform.position = newCamPosition;
-
-        Vector3 newLocalPos = transform.localPosition;
-        Vector3 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, -transform.position.z));
-        if (topRight.x > this.CameraMax.x) {
-            newLocalPos.x -= topRight.x - this.CameraMax.x;
-        } else if (topRight.z > this.CameraMax.z) {
-            newLocalPos.z -= topRight.z - this.CameraMax.z;
-        }
-
-        Vector3 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, -transform.position.z));
-        if (bottomLeft.x < this.CameraMin.x) {
-            newLocalPos.x += this.CameraMin.x - bottomLeft.x;
-        } else if (bottomLeft.z < this.CameraMin.z) {
-            newLocalPos.z += this.CameraMin.z - bottomLeft.z;
-        }
-        transform.localPosition = newLocalPos;
-
-
-        //Vector3.Max(transform.InverseTransformPoint(topRight), this.CameraMin);
-
         transform.localPosition = Vector3.Min(Vector3.Max(transform.localPosition, this.CameraMin), this.CameraMax);
     }
 }
