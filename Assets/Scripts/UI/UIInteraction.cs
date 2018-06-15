@@ -9,7 +9,9 @@ public class UIInteraction : MonoBehaviour {
     public MainMenueController mainMenueController;
 
     public SoundController SoundControll;
-    
+
+    public __SceneSwitch SceneSwitch;
+
     // Use this for initialization
     void Start () {
         
@@ -21,7 +23,7 @@ public class UIInteraction : MonoBehaviour {
 	}
 
     public void OpenButton1() {
-        __SceneSwitch.MissionMapLoad();
+        SceneSwitch.MissionMapLoad();
     }
 
     public void OpenButton2() {

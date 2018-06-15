@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MapUIInteraction : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public __SceneSwitch SceneSwitch;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -16,6 +18,6 @@ public class MapUIInteraction : MonoBehaviour {
 	}
 
     public void ClickButtonClose() {
-        SceneManager.UnloadSceneAsync("MissionMap");
+        SceneSwitch.MainLoad();
     }
 }

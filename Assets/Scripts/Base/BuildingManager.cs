@@ -40,7 +40,7 @@ public class BuildingManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        energyManager = GameObject.Find("/Canvas/BackgroundSideStrip").GetComponent<EnergyManagement>();
+        energyManager = GameObject.Find("/Main/Canvas/BackgroundSideStrip").GetComponent<EnergyManagement>();
     }
 	
 	// Update is called once per frame
