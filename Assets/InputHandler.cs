@@ -3,6 +3,9 @@ using UnityEngine.EventSystems;
 
 /// <summary>Handles input in MissionMap scene. Can zoom and navigate.</summary>
 public class InputHandler : MonoBehaviour {
+    /// <summary>Disables camera movement when true</summary>
+    public static bool BlockCameraMovement;
+
     /// <summary>The distance which the user must drag until a drag is registered as such versus a click</summary>
     public float DeadZoneDrag;
 
@@ -18,6 +21,7 @@ public class InputHandler : MonoBehaviour {
     /// <summary>The maximum zoom the camera may have</summary>
     public float MaxZoom;
 
+    /// <summary>Determines how fast the camera will zoom</summary>
     public float OrthoZoomSpeed = 0.5f;
 
     /// <summary>Reference to the MainMenueController</summary>
@@ -35,9 +39,8 @@ public class InputHandler : MonoBehaviour {
     /// <summary>Marks wether the map movement is blocked (e.g. during zoom)</summary>
     private bool blockMapMovement = false;
 
+    /// <summary>Saves the ray from the position of the input when the touch started</summary>
     private Ray lastPosRay;
-
-    public static bool BlockCameraMovement;
 
     /// <summary>Use this for initialization</summary>
     void Start() {
@@ -65,10 +68,9 @@ public class InputHandler : MonoBehaviour {
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
             // ... change the orthographic size based on the change in distance between the touches.
-            Camera.main.orthographicSize += deltaMagnitudeDiff * OrthoZoomSpeed;
+            Camera.main.orthographicSize += deltaMagnitudeDiff * this.OrthoZoomSpeed;
 
             // Make sure the orthographic size never drops below zero.
-            //Camera.main.orthographicSize = Mathf.Max(Mathf.Min(Camera.main.orthographicSize, MaxZoom), MinZoom);
         } else if (!EventSystem.current.IsPointerOverGameObject()) {
             foreach (Touch touch in Input.touches) {
                 this.HandleTouch(touch.fingerId, touch.position, touch.phase);
@@ -108,7 +110,6 @@ public class InputHandler : MonoBehaviour {
                     lastPosRay = Camera.main.ScreenPointToRay(startPos);
                     startPosCamera = transform.position;
                     this.movedDuringTouch = false;
-
                 }
 
                 break;
@@ -123,11 +124,10 @@ public class InputHandler : MonoBehaviour {
                         RaycastHit curHitInfo;
                         if (Physics.Raycast(curPosRay, out curHitInfo, 2000.0f, LayerMask.GetMask("Plane"))) {
                             RaycastHit lastHitInfo;
-                            if (Physics.Raycast(lastPosRay, out lastHitInfo, 2000.0f, LayerMask.GetMask("Plane"))) {
+                            if (Physics.Raycast(this.lastPosRay, out lastHitInfo, 2000.0f, LayerMask.GetMask("Plane"))) {
                                 Vector3 deltaPos = curHitInfo.point - lastHitInfo.point;
                                 deltaPos.y = 0;
                                 deltaPos *= -1;
-                                //Debug.Log(deltaPos.ToString());
                                 this.MoveInBounds(transform.position + deltaPos);
                             }
                         }
@@ -139,25 +139,6 @@ public class InputHandler : MonoBehaviour {
                 if (this.blockMapMovement) {
                     this.blockMapMovement = false;
                 }
-                //else if (!movedDuringTouch) {
-                //    Ray touchRay;
-                //    if (Camera.allCamerasCount > 1) {
-                //        touchRay = Camera.allCameras[1].ScreenPointToRay(touchPosition);
-                //    } else {
-                //        touchRay = Camera.allCameras[0].ScreenPointToRay(touchPosition);
-                //    }
-                    
-                //    int layerMask = LayerMask.GetMask("MissionLocation");
-                //    RaycastHit hitInformation;
-                //    Physics.Raycast(touchRay.origin, touchRay.direction, out hitInformation, 700.0f, layerMask);
-                //    if (hitInformation.collider != null) {
-                //        if (hitInformation.collider.tag.Equals("MissionLocation")) {
-                //            Debug.Log(hitInformation.collider.GetComponent<MissionDetails>().MissionName);
-                //            MissionDetails missionToLoad = hitInformation.collider.GetComponent<MissionDetails>();
-                //            MainMenueControll.ToggleMenue(1);
-                //        }
-                //    }
-                //}
 
                 break;
         }

@@ -51,7 +51,7 @@ public class BuildBuilding : MonoBehaviour {
             this.newBuilding = UnityEngine.Object.Instantiate(this.Buildings[buildingID]);
             this.buildColorChanger = this.newBuilding.GetComponentInChildren<BuildColorChanger>();
 
-            this.buildColorChanger.SetMenueController(this.MenueControll[buildingID]);
+            this.buildColorChanger.MenueControll = this.MenueControll[buildingID];
             this.buildColorChanger.IsBuilt = false;
             Vector3 tmpVec3 = new Vector3(-250, 1, 0);
             this.newBuilding.transform.position = this.ToGrid(tmpVec3);
@@ -132,7 +132,7 @@ public class BuildBuilding : MonoBehaviour {
                 this.layerMask = LayerMask.GetMask("Buildings");
                 Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
                 if (this.hitInformation.collider != null) {
-                    this.MainMenueControll.ToggleMenue(this.hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().GetMenueController());
+                    this.MainMenueControll.ToggleMenue(this.hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().MenueControll);
                 }
             }
         }

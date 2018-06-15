@@ -92,15 +92,15 @@ public class Harvester : MonoBehaviour {
         this.currentProgressWay += Time.deltaTime;
         if (this.currentProgressWay <= (this.MiningSpeed / 2)) {
             transform.position = Vector3.Lerp(this.attachedOreRefinery.transform.position, this.attachedMine.transform.position, this.currentProgressWay / (this.MiningSpeed / 2)); // Hinweg
-        } else if (this.currentProgressWay <= (this.MiningSpeed / 2) + LoadingOnSpeed) {
+        } else if (this.currentProgressWay <= (this.MiningSpeed / 2) + this.LoadingOnSpeed) {
             transform.position = this.attachedMine.transform.position;
-        } else if (this.currentProgressWay <= this.MiningSpeed + LoadingOnSpeed) {
+        } else if (this.currentProgressWay <= this.MiningSpeed + this.LoadingOnSpeed) {
             transform.position = Vector3.Lerp(this.attachedMine.transform.position, this.attachedOreRefinery.transform.position, (this.currentProgressWay - (this.MiningSpeed / 2) - this.LoadingOnSpeed) / (this.MiningSpeed / 2)); // Rückweg
             transform.LookAt(this.attachedOreRefinery.transform.position);
-        } else if (this.currentProgressWay <= this.MiningSpeed + LoadingOnSpeed + LoadingOffSpeed) {
+        } else if (this.currentProgressWay <= this.MiningSpeed + this.LoadingOnSpeed + this.LoadingOffSpeed) {
             transform.position = this.attachedOreRefinery.transform.position;
         } else {
-            this.currentProgressWay -= (this.MiningSpeed + LoadingOnSpeed + LoadingOffSpeed);
+            this.currentProgressWay -= this.MiningSpeed + this.LoadingOnSpeed + this.LoadingOffSpeed;
             this.moneyManagement.addMoney(this.MiningAmount); // Sold ore
             this.floatUpSpawner.GenerateFloatUp(this.MiningAmount, FloatUp.ResourceType.DOLLAR, Camera.main.WorldToScreenPoint(transform.position));
             transform.LookAt(this.attachedMine.transform.position);

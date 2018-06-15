@@ -4,79 +4,141 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles the creation of units
+/// </summary>
 public class CreateAndOrderUnit : MonoBehaviour {
-
+    /// <summary>The name of the unit</summary>
     public string unitName;
+
+    /// <summary>The maximum hitpoints of the unit</summary>
     public int hp;
+
+    /// <summary>The attack of the unit</summary>
     public int attack;
+
+    /// <summary>The chance to do critical damage of the unit</summary>
     public float critChance;
+
+    /// <summary>The factor by which the damage is multiplied on critical damage</summary>
     public float critMultiplier;
+
+    /// <summary>The defense of the unit</summary>
     public int defense;
+
+    /// <summary>The type of the unit</summary>
     public Unit.Type type;
+
+    /// <summary>The armor type of the unit</summary>
     public Unit.ArmorType armorType;
+
+    /// <summary>The cost to build the unit</summary>
     public int cost;
+
+    /// <summary>The buildtime of the unit</summary>
     public float buildtime;
+
+    /// <summary>The reference to the moneypool</summary>
     public MoneyManagement moneyManager;
+
+    /// <summary>The reference to the powerlevel</summary>
     public PowerlevelManagement powerlevelManager;
+
+    /// <summary>The reference to the production pool</summary>
     public ProductionQueue productionQueue;
 
-    private Unit attachedUnit;
-    private Text unitNameText;
-    private Text unitCountText;
-    private Text unitBuilding;
-    private Image buildingOverlay;
-    private int buildingUnits = 0;
+    /// <summary>The attached units ID</summary>
     private static int unitID;
 
-    // Use this for initialization
-    void Start() {
-        attachedUnit = new Unit(unitName, hp, attack, critChance, critMultiplier, defense, type, armorType, cost, buildtime, this, productionQueue);
-        PlayerPrefs.SetString("UnitName_" + unitID, unitName);
-        unitID++;
-        PlayerPrefs.SetInt(unitName + "_HP", hp);
-        PlayerPrefs.SetInt(unitName + "_ATTACK", attack);
-        PlayerPrefs.SetFloat(unitName + "_CHC", critChance);
-        PlayerPrefs.SetFloat(unitName + "_CHD", critMultiplier);
-        PlayerPrefs.SetInt(unitName + "_DEF", defense);
-        PlayerPrefs.SetInt(unitName + "_TYPE", (int)type);
-        PlayerPrefs.SetInt(unitName + "_ARMORTYPE", (int)armorType);
-        PlayerPrefs.SetInt(unitName + "_COST", cost);
-        PlayerPrefs.SetFloat(unitName + "_BUILDTIME", buildtime);
-        unitNameText = transform.Find("Text").GetComponent<Text>();
-        unitNameText.text = unitName;
-        unitCountText = transform.Find("CountText").GetComponent<Text>();
-        buildingOverlay = transform.Find("BuildingOverlay").GetComponent<Image>();
-        buildingOverlay.fillAmount = 0f;
-        unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
-        int count = PlayerPrefs.GetInt(unitName + "_COUNT", 0);
-        if (count > 0) {
-            AddPowerlevel(count * Mathf.RoundToInt((hp * attack * defense) / 1000), true);
-            SetUnitCount(count.ToString());
-            attachedUnit.UnitCount = count;
-        }
-    }
+    /// <summary>The reference to the attached unit object</summary>
+    private Unit attachedUnit;
 
+    /// <summary>The reference to the unit name text object</summary>
+    private Text unitNameText;
+
+    /// <summary>The reference to the unit count text object</summary>
+    private Text unitCountText;
+
+    /// <summary>The reference to the unit count building text object</summary>
+    private Text unitBuilding;
+
+    /// <summary>The reference to the building vfx image</summary>
+    private Image buildingOverlay;
+
+    /// <summary>The units being built at the time</summary>
+    private int buildingUnits = 0;
+
+    /// <summary>Orders unit when a button is clicked</summary>
     public void OrderUnitOnClick() {
-        attachedUnit.Order(ref moneyManager);
+        this.attachedUnit.Order(ref this.moneyManager);
     }
 
+    /// <summary>
+    /// Sets the text unitCountText
+    /// </summary>
+    /// <param name="text">The text to be set</param>
     public void SetUnitCount(string text) {
-        unitCountText.text = text;
+        this.unitCountText.text = text;
     }
 
+    /// <summary>
+    /// Adds powerlevel.
+    /// </summary>
+    /// <param name="pl">The amount that should be added</param>
+    /// <param name="supressed">True if the floatup should be supressed</param>
     public void AddPowerlevel(int pl, bool supressed) {
-        powerlevelManager.addPowerlevel(pl, supressed);
+        this.powerlevelManager.addPowerlevel(pl, supressed);
     }
 
+    /// <summary>
+    /// Sets the overlay to visualize production
+    /// </summary>
+    /// <param name="fillPercentage">The persentage to set the fillAmount to</param>
     public void SetProductionOverlayFill(float fillPercentage) {
-        buildingOverlay.fillAmount = fillPercentage;
+        this.buildingOverlay.fillAmount = fillPercentage;
     }
 
+    /// <summary>
+    /// Adds 1 to the unit building text
+    /// </summary>
     public void AddSingleUnitBuilding() {
-        unitBuilding.text = (++buildingUnits).ToString();
+        this.unitBuilding.text = (++this.buildingUnits).ToString();
     }
 
+    /// <summary>
+    /// Subs 1 from the unit building text
+    /// </summary>
     public void SubSingleUnitBuilding() {
-        unitBuilding.text = (--buildingUnits).ToString();
+        this.unitBuilding.text = (--this.buildingUnits).ToString();
+    }
+
+    /// <summary>
+    /// Loads from PlayerPrefs. Use this for initialization
+    /// </summary>
+    void Start() {
+        this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.critChance, this.critMultiplier, this.defense, this.type, this.armorType, this.cost, this.buildtime, this, this.productionQueue);
+        PlayerPrefs.SetString("UnitName_" + unitID, this.unitName);
+        unitID++;
+        PlayerPrefs.SetInt(this.unitName + "_HP", this.hp);
+        PlayerPrefs.SetInt(this.unitName + "_ATTACK", this.attack);
+        PlayerPrefs.SetFloat(this.unitName + "_CHC", this.critChance);
+        PlayerPrefs.SetFloat(this.unitName + "_CHD", this.critMultiplier);
+        PlayerPrefs.SetInt(this.unitName + "_DEF", this.defense);
+        PlayerPrefs.SetInt(this.unitName + "_TYPE", (int)this.type);
+        PlayerPrefs.SetInt(this.unitName + "_ARMORTYPE", (int)this.armorType);
+        PlayerPrefs.SetInt(this.unitName + "_COST", this.cost);
+        PlayerPrefs.SetFloat(this.unitName + "_BUILDTIME", this.buildtime);
+        this.unitNameText = transform.Find("Text").GetComponent<Text>();
+        this.unitNameText.text = this.unitName;
+        this.unitCountText = transform.Find("CountText").GetComponent<Text>();
+        this.buildingOverlay = transform.Find("BuildingOverlay").GetComponent<Image>();
+        this.buildingOverlay.fillAmount = 0f;
+        this.unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
+        int count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
+        if (count > 0) {
+            this.AddPowerlevel(count * Mathf.RoundToInt((this.hp * this.attack * this.defense) / 1000), true);
+            this.SetUnitCount(count.ToString());
+            this.attachedUnit.UnitCount = count;
+        }
     }
 }
