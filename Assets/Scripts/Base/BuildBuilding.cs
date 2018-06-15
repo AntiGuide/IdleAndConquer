@@ -13,6 +13,8 @@ public class BuildBuilding : MonoBehaviour {
     public Vector3 BuildUIOffset;
     public MoneyManagement MoneyManager;
     public float CellSize;
+    public Vector2 MinBuildConfirmUIPosition;
+    public Vector2 MaxBuildConfirmUIPosition;
 
     private static bool playerBuilding;
     private static bool[] isBuilt;
@@ -142,6 +144,8 @@ public class BuildBuilding : MonoBehaviour {
             Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
             Vector3 onlyXZ = new Vector3(bounds.size.x, 0, bounds.size.z);
             Vector2 screenPoint = Camera.main.WorldToScreenPoint(this.newBuilding.transform.position + this.BuildUIOffset + onlyXZ);
+            screenPoint = Vector2.Max(MinBuildConfirmUIPosition, screenPoint);
+            screenPoint = Vector2.Min(MaxBuildConfirmUIPosition, screenPoint);
             this.BuildConfirmUI.transform.position = screenPoint;
         }
     }
