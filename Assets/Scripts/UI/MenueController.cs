@@ -8,6 +8,9 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     /// <summary>Saves the GameObject (Menue) that is being draged by the user</summary>
     public static GameObject ItemBeingDragged;
 
+    /// <summary>Used to determine size of the canvas</summary>
+    public RectTransform CanvasRectTransform;
+
     /// <summary>The height in percentage of the screen to which the menue extends</summary>
     public float MenueExpandedHeight = 0.8f;
 
@@ -129,8 +132,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     /// <summary>Use this for initialization</summary>
     void Start() {
-        RectTransform canvasRectTransform = GameObject.Find("/Canvas").GetComponent<RectTransform>();
-        canvasHeight = canvasRectTransform.rect.height * canvasRectTransform.localScale.y;
+        canvasHeight = CanvasRectTransform.rect.height * CanvasRectTransform.localScale.y;
         startYMenue = transform.position.y;
     }
 

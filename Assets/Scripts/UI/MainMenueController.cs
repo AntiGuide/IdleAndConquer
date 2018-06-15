@@ -38,6 +38,10 @@ public class MainMenueController : MonoBehaviour {
         menueNumber--;
 
         if (this.enabledMenue != menueNumber) {
+            if (this.Menue[menueNumber] == null) {
+                return;
+            }
+
             if (this.enabledMenue != -1) {
                 this.Menue[this.enabledMenue].SetActive(false);
             }
