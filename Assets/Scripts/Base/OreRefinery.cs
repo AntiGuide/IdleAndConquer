@@ -21,8 +21,8 @@ public class OreRefinery : MonoBehaviour{
     }
 
     public void InitializeBuilt() {
-        moneyManager = GameObject.Find("/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
-        floatUpSpawner = GameObject.Find("/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
+        moneyManager = GameObject.Find("/Main/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
+        floatUpSpawner = GameObject.Find("/Main/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
         for (int i = 0; i < level; i++) {
             Mine mine = BuildBuilding.BuiltBuildings[2].GetComponentInChildren<Mine>();
             AddHarvester(ref attachedHarvesters, ref moneyManager, this, mine);
