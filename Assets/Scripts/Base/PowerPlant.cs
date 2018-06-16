@@ -17,6 +17,6 @@ public class PowerPlant : MonoBehaviour {
 
     /// <summary>Runs one time when object is instanciated</summary>
     private void Start() {
-        this.energyManagement = GameObject.Find("/Canvas/BackgroundSideStrip").GetComponent<EnergyManagement>();
+        this.energyManagement = GameObject.Find("/Main/Canvas/BackgroundSideStrip").GetComponent<EnergyManagement>();
     }
 }

@@ -10,13 +10,10 @@ public class __SceneSwitch : MonoBehaviour {
 
     public GameObject MainContainer;
 
-    private static GameObject canvas;
-
     private static bool canvasHidden = false;
 
     // Use this for initialization
     void Start () {
-        canvas = GameObject.Find("Canvas");
     }
 	
 	// Update is called once per frame

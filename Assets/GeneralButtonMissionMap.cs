@@ -15,7 +15,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        mainMenueController = GameObject.Find("/Canvas/MainMenue/").GetComponent<MainMenueController>();
+        mainMenueController = GameObject.Find("/MissionMap/Canvas/MainMenue/").GetComponent<MainMenueController>();
     }
 
     // Update is called once per frame

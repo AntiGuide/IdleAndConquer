@@ -15,8 +15,8 @@ public class MissionUI : MonoBehaviour {
     // Use this for initialization
     void Start() {
         img = GetComponent<Image>();
-        moneyManagement = GameObject.Find("Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
-        floatUpSpawner = GameObject.Find("Canvas/UXElemente").GetComponent<FloatUpSpawner>();
+        moneyManagement = GameObject.Find("/Main/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
+        floatUpSpawner = GameObject.Find("/Main/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
     }
 
     // Update is called once per frame

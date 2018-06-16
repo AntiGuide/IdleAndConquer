@@ -15,7 +15,7 @@ public class OnClickDeploy : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        showChosenGeneral = GameObject.Find("Canvas/DeployUI/BG").GetComponent<ShowChosenGeneral>();
+        showChosenGeneral = GameObject.Find("/MissionMap/Canvas/DeployUI/BG").GetComponent<ShowChosenGeneral>();
     }
 
     // Update is called once per frame
