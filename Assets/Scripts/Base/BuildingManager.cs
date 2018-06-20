@@ -77,7 +77,7 @@ public class BuildingManager : MonoBehaviour {
             default:
                 break;
         }
-        //if (energyManager.subEnergy(costEnergy)){
+        //if (energyManager.SubEnergy(costEnergy)){
             
         //}
     }

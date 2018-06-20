@@ -160,7 +160,7 @@ public class Unit {
     /// <param name="moneyManager">The reference to the players money pool</param>
     public void Order(ref MoneyManagement moneyManager) {
         if (moneyManager.subMoney(this.cost)) {
-            this.productionQueue.addToQueue(this, this.createAndOrderButton);
+            this.productionQueue.AddToQueue(this, this.createAndOrderButton);
             this.createAndOrderButton.AddSingleUnitBuilding();
         }
     }

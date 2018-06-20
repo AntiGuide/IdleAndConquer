@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FloatUp : MonoBehaviour {
-
     private float fadeTime;
     private Vector2 startPos;
     private Vector2 destination;
@@ -21,37 +20,53 @@ public class FloatUp : MonoBehaviour {
         DOLLAR
     }
 
-    // Use this for initialization
-    void Start () {
-        text = gameObject.GetComponentInChildren<Text>();
-        shadows = gameObject.GetComponentsInChildren<Shadow>();
+    public void Initialize(ResourceType type, long value, float fadeTime, float travelDistance) {
+        if (value == 0) {
+            throw new ArgumentException("Value my not be zero!");
+        }
+
+        this.type = type;
+        this.value = value;
+        this.fadeTime = fadeTime;
+        this.startPos = transform.position;
+        travelDistance *= value < 0 ? -1f : 1f;
+        this.destination = this.startPos + new Vector2(0f, travelDistance);
     }
-	
-	// Update is called once per frame
-	void Update () {
-        percentage += Time.deltaTime / fadeTime;
-        if (percentage >= 1f) {
-            Destroy(gameObject);
+
+    // Use this for initialization
+    void Start() {
+        this.text = gameObject.GetComponentInChildren<Text>();
+        this.shadows = gameObject.GetComponentsInChildren<Shadow>();
+    }
+
+    // Update is called once per frame
+    void Update() {
+        this.percentage += Time.deltaTime / this.fadeTime;
+        if (this.percentage >= 1f) {
+            UnityEngine.Object.Destroy(this.gameObject);
         }
-        transform.position = Vector2.Lerp(startPos, destination, percentage);
-        text.color = new Color(text.color.r, text.color.g, text.color.b, 1f - percentage);
-        foreach (Shadow shadow in shadows) {
-            shadow.effectColor = new Color(shadow.effectColor.r, shadow.effectColor.g, shadow.effectColor.b, 1f - percentage);
+
+        transform.position = Vector2.Lerp(this.startPos, this.destination, this.percentage);
+        this.text.color = new Color(this.text.color.r, this.text.color.g, this.text.color.b, 1f - this.percentage);
+        foreach (Shadow shadow in this.shadows) {
+            shadow.effectColor = new Color(shadow.effectColor.r, shadow.effectColor.g, shadow.effectColor.b, 1f - this.percentage);
         }
-        if (value > 0) {
+
+        if (this.value > 0) {
             this.color = Color.green;
-            text.text = "<color=#" + ColorToHex(new Color(color.r, color.g, color.b, 1 - percentage)) + ">+</color>";
+            this.text.text = "<color=#" + this.ColorToHex(new Color(this.color.r, this.color.g, this.color.b, 1 - this.percentage)) + ">+</color>";
         } else {
             this.color = new Color(0.8f, 0f, 0f);
-            text.text = "<color=#" + ColorToHex(new Color(color.r, color.g, color.b, 1 - percentage)) + ">-</color>";
+            this.text.text = "<color=#" + this.ColorToHex(new Color(this.color.r, this.color.g, this.color.b, 1 - this.percentage)) + ">-</color>";
         }
-        text.text += " " + Math.Abs(value);
-        switch (type) {
+
+        this.text.text += " " + Math.Abs(this.value);
+        switch (this.type) {
             case ResourceType.POWERLEVEL:
-                text.text += " PL";
+                this.text.text += " PL";
                 break;
             case ResourceType.DOLLAR:
-                text.text += " $";
+                this.text.text += " $";
                 break;
             default:
                 break;
@@ -61,17 +76,5 @@ public class FloatUp : MonoBehaviour {
     private string ColorToHex(Color color) {
         Color32 color32 = color;
         return color32.r.ToString("X2") + color32.g.ToString("X2") + color32.b.ToString("X2") + color32.a.ToString("X2");
-    }
-
-    public void Initialize(ResourceType type, long value, float fadeTime, float travelDistance) {
-        if (value == 0) {
-            throw new ArgumentException("Value my not be zero!");
-        }
-        this.type = type;
-        this.value = value;
-        this.fadeTime = fadeTime;
-        startPos = transform.position;
-        travelDistance *= value < 0 ? -1f : 1f;
-        destination = startPos + new Vector2(0f, travelDistance);
     }
 }

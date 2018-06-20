@@ -12,7 +12,7 @@ public class PowerPlant : MonoBehaviour {
 
     /// <summary>Adds the energy upon initialization (after build confirmed).</summary>
     public void InitializeBuilt() {
-        this.energyManagement.addEnergy(this.EnergyProduction);
+        this.energyManagement.AddEnergy(this.EnergyProduction);
     }
 
     /// <summary>Runs one time when object is instanciated</summary>

@@ -42,6 +42,4 @@ public class UIInteraction : MonoBehaviour {
     public void OpenButton5() {
         mainMenueController.ToggleMenue(5);
     }
-
-
 }
