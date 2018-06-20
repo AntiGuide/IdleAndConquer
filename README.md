@@ -13,7 +13,7 @@ Mainly a normal installation of Unity (tested on 2017.4.0f1)
 ## Authors
 
 * **Lukas Wiedemann** - *Coding* - [AntiGuide](https://github.com/AntiGuide)
-* **Serkan Beyazkilic** - *Game Design, Production*
+* **Serkan Beyazkilic** - *Game Design, Production* - [Skerxan](https://github.com/Skerxan)
 * **Marlon Epes** - *Digital Artist*
 
 See also the list of [contributors](https://github.com/AntiGuide/IdleAndConquer/contributors) who participated in this project.
