@@ -1,0 +1,53 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:53b36d8b679157e9c273d997362c293c:49ba10a648b0affd614a42c3f8cdddc9:e0f9d471a313517cd5f0592c2075b7aa$
+#
+:format=40300
+:texture=IC.png
+:size=2048x2048
+:pivotpoints=enabled
+:borders=disabled
+
+__LeftEnergyBar;925;299;53;1137; 0.5188679245283019;0.5131926121372032; 0;0;0;0
+__LeftEnergyBarWhite;980;299;53;1137; 0.5188679245283019;0.5131926121372032; 0;0;0;0
+back_button;1092;357;55;1079; 0.5;0.5; 0;0;0;0
+Big Button;1263;1327;387;130; 0.5;0.5; 0;0;0;0
+BotButtonBackground;803;1805;1080;242; 0.5;0.5; 0;0;0;0
+BotButtonSmall;1263;789;188;176; 0.5;0.5; 0;0;0;0
+BotMiddleButtonBig;1746;1048;206;193; 0.5;0.5; 0;0;0;0
+Building_small;725;324;73;73; 0.5;0.5; 0;0;0;0
+BuildingPlane;1;757;800;1290; 0.5;0.5; 0;0;0;0
+BuyMenueTextBackground;803;1459;1080;128; 0.5;0.5; 0;0;0;0
+choose_your_squad_frame;503;33;507;234; 0.5;0.5; 0;0;0;0
+Chosen_general_frame;1;399;752;356; 0.5;0.5; 0;0;0;0
+general_icon;1885;1438;123;123; 0.5;0.5; 0;0;0;0
+IconBuildings;1885;1689;126;98; 0.5;0.5; 0;0;0;0
+IconConfirm;1885;1919;128;128; 0.5;0.5; 0;0;0;0
+IconDeny;1885;1789;128;128; 0.5;0.5; 0;0;0;0
+IconGeneral1;1652;1243;215;214; 0.5;0.5; 0;0;0;0
+IconGenerals;350;293;92;104; 0.5;0.5; 0;0;0;0
+IconInfo;239;292;109;105; 0.5;0.5; 0;0;0;0
+IconMissionMap;1885;1563;124;124; 0.5;0.5; 0;0;0;0
+IconOptionsButton;1149;1373;83;84; 0.5;0.5; 0;0;0;0
+IconOreButton;1;18;249;249; 0.5;0.5; 0;0;0;0
+IconOreButton2;1012;80;249;217; 0.5;0.42626728110599077; 0;0;0;0
+IconOreButton3;252;18;249;249; 0.5;0.5; 0;0;0;0
+IconSwipeLeftButton;1;281;117;116; 0.5;0.5; 0;0;0;0
+IconSwipeRightButton;120;281;117;116; 0.5;0.5; 0;0;0;0
+LeftEnergyFrame;803;269;59;1167; 0.5;0.5; 0;0;0;0
+LeftEnergyFrame2;864;269;59;1167; 0.5;0.5; 0;0;0;0
+MoneyBackground;1263;1178;242;147; 0.5;0.5; 0;0;0;0
+Plane_big;1474;840;204;209; 0.5;0.5; 0;0;0;0
+Plane_middle;634;304;89;93; 0.5;0.5; 0;0;0;0
+Plane_small;1012;5;73;73; 0.5;0.5; 0;0;0;0
+Soldier_middle;444;304;93;93; 0.5;0.5; 0;0;0;0
+Start_mission_button;1035;357;55;1079; 0.5;0.5; 0;0;0;0
+Tank_big;1263;967;209;209; 0.5;0.5; 0;0;0;0
+Tank_middle;539;304;93;93; 0.5;0.5; 0;0;0;0
+Tank_small;1087;5;73;73; 0.5;0.5; 0;0;0;0
+TopBar;803;1589;1080;214; 0.5;0.5; 0;0;0;0
+TopButton;1507;1051;237;190; 0.5;0.5; 0;0;0;0

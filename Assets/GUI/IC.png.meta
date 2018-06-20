@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: c5bb8c5a2b9a8af418278d308fac33fd
+timeCreated: 1529486461
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: __LeftEnergyBar
+    21300002: __LeftEnergyBarWhite
+    21300004: back_button
+    21300006: Big Button
+    21300008: BotButtonBackground
+    21300010: BotButtonSmall
+    21300012: BotMiddleButtonBig
+    21300014: Building_small
+    21300016: BuildingPlane
+    21300018: BuyMenueTextBackground
+    21300020: choose_your_squad_frame
+    21300022: Chosen_general_frame
+    21300024: general_icon
+    21300026: IconBuildings
+    21300028: IconConfirm
+    21300030: IconDeny
+    21300032: IconGeneral1
+    21300034: IconGenerals
+    21300036: IconInfo
+    21300038: IconMissionMap
+    21300040: IconOptionsButton
+    21300042: IconOreButton
+    21300044: IconOreButton2
+    21300046: IconOreButton3
+    21300048: IconSwipeLeftButton
+    21300050: IconSwipeRightButton
+    21300052: LeftEnergyFrame
+    21300054: LeftEnergyFrame2
+    21300056: MoneyBackground
+    21300058: Plane_big
+    21300060: Plane_middle
+    21300062: Plane_small
+    21300064: Soldier_middle
+    21300066: Start_mission_button
+    21300068: Tank_big
+    21300070: Tank_middle
+    21300072: Tank_small
+    21300074: TopBar
+    21300076: TopButton
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: __LeftEnergyBar
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 299
+        width: 53
+        height: 1137
+      alignment: 9
+      pivot: {x: 0.5188679, y: 0.5131926}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: __LeftEnergyBarWhite
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 299
+        width: 53
+        height: 1137
+      alignment: 9
+      pivot: {x: 0.5188679, y: 0.5131926}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: back_button
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 357
+        width: 55
+        height: 1079
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Big Button
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 1327
+        width: 387
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BotButtonBackground
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1805
+        width: 1080
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BotButtonSmall
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 789
+        width: 188
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BotMiddleButtonBig
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 1048
+        width: 206
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Building_small
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 324
+        width: 73
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BuildingPlane
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 757
+        width: 800
+        height: 1290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: BuyMenueTextBackground
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1459
+        width: 1080
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: choose_your_squad_frame
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 33
+        width: 507
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Chosen_general_frame
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 399
+        width: 752
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: general_icon
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1438
+        width: 123
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconBuildings
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1689
+        width: 126
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconConfirm
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1919
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconDeny
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1789
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconGeneral1
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 1243
+        width: 215
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconGenerals
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 293
+        width: 92
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconInfo
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 292
+        width: 109
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconMissionMap
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1563
+        width: 124
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconOptionsButton
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 1373
+        width: 83
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconOreButton
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 18
+        width: 249
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconOreButton2
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 80
+        width: 249
+        height: 217
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42626727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconOreButton3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 18
+        width: 249
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconSwipeLeftButton
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 281
+        width: 117
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: IconSwipeRightButton
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 281
+        width: 117
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LeftEnergyFrame
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 269
+        width: 59
+        height: 1167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: LeftEnergyFrame2
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 269
+        width: 59
+        height: 1167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoneyBackground
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 1178
+        width: 242
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Plane_big
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 840
+        width: 204
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Plane_middle
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 304
+        width: 89
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Plane_small
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 5
+        width: 73
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Soldier_middle
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 304
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Start_mission_button
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 357
+        width: 55
+        height: 1079
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Tank_big
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 967
+        width: 209
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Tank_middle
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 304
+        width: 93
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Tank_small
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 5
+        width: 73
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: TopBar
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1589
+        width: 1080
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: TopButton
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 1051
+        width: 237
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
