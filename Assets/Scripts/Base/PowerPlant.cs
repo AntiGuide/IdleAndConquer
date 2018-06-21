@@ -7,6 +7,7 @@ public class PowerPlant : MonoBehaviour {
     /// <summary>The energy production for an object</summary>
     public float EnergyProduction;
 
+    /// <summary>Reference to BaseSwitcher to get EnergyPool on startup</summary>
     private BaseSwitcher baseSwitch;
 
     /// <summary>The reference to the energy manager to add the energy</summary>

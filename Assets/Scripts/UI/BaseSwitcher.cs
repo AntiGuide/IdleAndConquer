@@ -36,6 +36,7 @@ public class BaseSwitcher : MonoBehaviour {
             this.Bases[this.CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
             ////this.Bases[this.CurrentBase].SetActive(true);
         }
+
         this.Bases[this.CurrentBase].GetComponent<EnergyPool>().SetActive();
         this.transform.position = this.startPosCamera;
     }
@@ -51,14 +52,25 @@ public class BaseSwitcher : MonoBehaviour {
         rightPossible = this.CurrentBase < this.Bases.Length - 1;
     }
 
+    /// <summary>
+    /// Gets the BuildBuilding object of the current base
+    /// </summary>
+    /// <returns>Returns the BuildBuilding object of the current base</returns>
     public BuildBuilding GetBuilder() {
         return this.Bases[this.CurrentBase].GetComponentInChildren<BuildBuilding>();
     }
 
+    /// <summary>
+    /// Gets the EnergyPool object of the current base
+    /// </summary>
+    /// <returns>Returns the EnergyPool object of the current base</returns>
     public EnergyPool GetEnergyPool() {
         return this.Bases[this.CurrentBase].GetComponent<EnergyPool>();
     }
 
+    /// <summary>
+    /// Saves camera position and sets the current bases energy to active
+    /// </summary>
     private void Start() {
         this.startPosCamera = this.transform.position;
         this.Bases[this.CurrentBase].GetComponent<EnergyPool>().SetActive();
