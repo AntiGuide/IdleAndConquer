@@ -5,7 +5,7 @@ using UnityEngine.UI;
 /// Class for handling button inputs for creation of buildings.
 /// </summary>
 public class BuildButtonManager : MonoBehaviour {
-    /// <summary>Attached BuildBuilding object (Only one per scene existent)</summary>
+    /// <summary>Attached BuildBuilding object (One per base)</summary>
     public BuildBuilding Builder;
 
     /// <summary>UI text element to display the cost of a building</summary>
@@ -17,6 +17,8 @@ public class BuildButtonManager : MonoBehaviour {
     /// <summary>Reference to MoneyManagement object (Only one per scene existent)</summary>
     public MoneyManagement MoneyManager;
 
+    public BaseSwitcher BaseSwitch;
+
     /// <summary>Variable to store the cost of the attached building after the Start method</summary>
     private long costBuilding;
 
@@ -26,7 +28,7 @@ public class BuildButtonManager : MonoBehaviour {
     /// <param name="i">The index of the building that should be built (Indexes defined in BuildBuilding class)</param>
     public void ClickBuildBuilding(int i) {
         if (this.MoneyManager.hasMoney(this.costBuilding)) {
-            this.Builder.BuildABuilding(i, this.costBuilding);
+            BaseSwitch.GetBuilder().BuildABuilding(i, this.costBuilding);
         }
     }
 

@@ -48,7 +48,7 @@ public class AppPauseHandler : MonoBehaviour {
                     additionalMoney += h.AddAppPauseProgressTime(secondsSincePause % (long)h.MiningSpeed);
                 }
 
-                if (secondsSincePause - (secondsSincePause % (long)Harvesters[0].MiningSpeed) > 0 || additionalMoney > 0) {
+                if (Harvesters.Count >= 1 && secondsSincePause - (secondsSincePause % (long)Harvesters[0].MiningSpeed) > 0 || additionalMoney > 0) {
                     GameObject go = Instantiate(this.PlayerBackNotification, this.ParentPlayerBackNotification);
                     PlayerBackNotification pbn = go.GetComponent<PlayerBackNotification>();
                     pbn.Initialize("You earned money while you were gone", this.FloatUpSpawn, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, ref Harvesters);

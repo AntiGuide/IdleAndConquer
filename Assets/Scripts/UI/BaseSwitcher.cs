@@ -15,11 +15,14 @@ public class BaseSwitcher : MonoBehaviour {
     /// <summary>The index of the current enabled base</summary>
     public int CurrentBase;
 
+    /// <summary>The position where the camera was when the app started</summary>
+    private Vector3 startPosCamera;
+
     /// <summary>
     /// Switches the base after a button click
     /// </summary>
     /// <param name="isLeft">If true the base should be switched to the one on the left. If false its to the right</param>
-    public void OnClickBaseSwitch(bool isLeft, out bool leftPossible, out bool rightPossible) {
+    public void OnClickBaseSwitch(bool isLeft) {
         if (isLeft && this.CurrentBase > 0) {
             this.Bases[this.CurrentBase].SetActive(false);
             this.CurrentBase--;
@@ -30,7 +33,7 @@ public class BaseSwitcher : MonoBehaviour {
             this.Bases[this.CurrentBase].SetActive(true);
         }
 
-        this.CheckPossibilities(out leftPossible, out rightPossible);
+        this.transform.position = this.startPosCamera;
     }
 
     /// <summary>
@@ -42,5 +45,13 @@ public class BaseSwitcher : MonoBehaviour {
         // Check if switches in the directions are possible
         leftPossible = this.CurrentBase > 0;
         rightPossible = this.CurrentBase < this.Bases.Length - 1;
+    }
+
+    public BuildBuilding GetBuilder() {
+        return this.Bases[this.CurrentBase].GetComponentInChildren<BuildBuilding>();
+    }
+
+    private void Start() {
+        this.startPosCamera = this.transform.position;
     }
 }

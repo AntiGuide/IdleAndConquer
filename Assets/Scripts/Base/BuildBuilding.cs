@@ -18,7 +18,7 @@ public class BuildBuilding : MonoBehaviour {
 
     private static bool playerBuilding;
     private static bool[] isBuilt;
-    private static int newBuildingID;
+    private int newBuildingID;
     private BuildColorChanger buildColorChanger;
     private GameObject newBuilding;
     private RaycastHit hitInformation;
@@ -48,7 +48,7 @@ public class BuildBuilding : MonoBehaviour {
         newBuildingID = buildingID;
         if (buildingID == 3 && !isBuilt[2]) {
         } else {
-            this.newBuilding = UnityEngine.Object.Instantiate(this.Buildings[buildingID]);
+            this.newBuilding = UnityEngine.Object.Instantiate(this.Buildings[buildingID], transform.parent);
             this.buildColorChanger = this.newBuilding.GetComponentInChildren<BuildColorChanger>();
 
             this.buildColorChanger.MenueControll = this.MenueControll[buildingID];
