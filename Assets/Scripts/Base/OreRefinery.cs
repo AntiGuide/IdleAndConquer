@@ -1,52 +1,43 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class OreRefinery : MonoBehaviour{
-    //For income. $
-    //+1 Harvester each
-    private MoneyManagement moneyManager;
+public class OreRefinery : MonoBehaviour {
+    // For income. $ +1 Harvester each level
     public int upgradeCost = 5000;
-    //public Mine oreMine;
     public GameObject harvesterPrefab;
+    private MoneyManagement moneyManager;
     private FloatUpSpawner floatUpSpawner;
-
-    //private GameObject[] attachedHarvesters = new GameObject[5];
     private List<GameObject> attachedHarvesters = new List<GameObject>();
-
     private int level = 1;
+
     public int Level {
-        get {
-            return level;
-        }
+        get { return this.level; }
     }
 
     public void InitializeBuilt() {
-        moneyManager = GameObject.Find("/Main/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
-        floatUpSpawner = GameObject.Find("/Main/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
-        for (int i = 0; i < level; i++) {
+        this.moneyManager = GameObject.Find("/Main/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
+        this.floatUpSpawner = GameObject.Find("/Main/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
+        for (int i = 0; i < this.level; i++) {
             Mine mine = BuildBuilding.BuiltBuildings[2].GetComponentInChildren<Mine>();
-            AddHarvester(ref attachedHarvesters, ref moneyManager, this, mine);
+            this.AddHarvester(ref this.attachedHarvesters, ref this.moneyManager, this, mine);
         }
     }
 
-    void Start() {
-        
-    }
-
-    public bool Upgrade(){
-        if (moneyManager.subMoney(upgradeCost)) {
-            level++;
-            AddHarvester(ref attachedHarvesters, ref moneyManager, this, BuildBuilding.BuiltBuildings[2].GetComponentInChildren<Mine>());
+    public bool Upgrade() {
+        if (this.moneyManager.subMoney(this.upgradeCost)) {
+            this.level++;
+            this.AddHarvester(ref this.attachedHarvesters, ref this.moneyManager, this, BuildBuilding.BuiltBuildings[2].GetComponentInChildren<Mine>());
             return true;
         }
+
         return false;
     }
-
-    private void AddHarvester(ref List<GameObject> attachedHarvesters, ref MoneyManagement moneyManager, OreRefinery oreRefinery,Mine oreMine) {
+    
+    private void AddHarvester(ref List<GameObject> attachedHarvesters, ref MoneyManagement moneyManager, OreRefinery oreRefinery, Mine oreMine) {
         GameObject go;
-        go = Instantiate(harvesterPrefab);
+        go = UnityEngine.Object.Instantiate(this.harvesterPrefab);
         Harvester harvester = go.GetComponentInChildren<Harvester>();
-        harvester.Initialize(oreRefinery, oreMine, ref moneyManager, floatUpSpawner);
+        harvester.Initialize(oreRefinery, oreMine, ref moneyManager, this.floatUpSpawner);
         attachedHarvesters.Add(go);
     }
 }

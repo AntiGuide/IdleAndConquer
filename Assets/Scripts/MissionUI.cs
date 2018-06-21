@@ -4,41 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MissionUI : MonoBehaviour {
-
     public MoneyManagement moneyManagement;
     public FloatUpSpawner floatUpSpawner;
-
     private Image img;
     private float missionTime = -1f;
     private float aktTime = 0f;
 
+    public void SetTime(float time) {
+        this.missionTime = time;
+    }
+
     // Use this for initialization
     void Start() {
-        img = GetComponent<Image>();
-        moneyManagement = GameObject.Find("/Main/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
-        floatUpSpawner = GameObject.Find("/Main/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
+        this.img = this.GetComponent<Image>();
+        this.moneyManagement = GameObject.Find("/Main/Canvas/BackgroundTopStripRessources/TextDollar").GetComponent<MoneyManagement>();
+        this.floatUpSpawner = GameObject.Find("/Main/Canvas/UXElemente").GetComponent<FloatUpSpawner>();
     }
 
     // Update is called once per frame
     void Update() {
-        if (missionTime > 0f) {
-            aktTime += Time.deltaTime;
-            if (aktTime / missionTime >= 1f) {
-                img.fillAmount = 1f;
-                missionTime = -1f;
-                moneyManagement.addMoney(10000);
-                //TODO
-                floatUpSpawner.GenerateFloatUp(10000, FloatUp.ResourceType.DOLLAR,new Vector2(300f, -273f));
-                Destroy(gameObject);
+        if (this.missionTime > 0f) {
+            this.aktTime += Time.deltaTime;
+            if (this.aktTime / this.missionTime >= 1f) {
+                this.img.fillAmount = 1f;
+                this.missionTime = -1f;
+                this.moneyManagement.addMoney(10000);
+                this.floatUpSpawner.GenerateFloatUp(10000, FloatUp.ResourceType.DOLLAR, new Vector2(300f, -273f));
+                UnityEngine.Object.Destroy(this.gameObject);
                 PlayerPrefs.DeleteKey("Mission");
             } else {
-                img.fillAmount = aktTime / missionTime;
+                this.img.fillAmount = this.aktTime / this.missionTime;
             }
-
         }
-
-    }
-    internal void SetTime(float time) {
-        missionTime = time;
     }
 }
