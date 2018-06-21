@@ -3146,11 +3146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5e4f0a77596334f8700d6bbe4a9e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnergy: 100
-  minEnergy: 0
+  MaxEnergy: 100
+  MinEnergy: 0
   EnergyManager: {fileID: 1954250490}
   CurEnergy: 25
-  BaseSwitch: {fileID: 1649716204}
 --- !u!1 &233738448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,11 +4057,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5e4f0a77596334f8700d6bbe4a9e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnergy: 100
-  minEnergy: 0
+  MaxEnergy: 100
+  MinEnergy: 0
   EnergyManager: {fileID: 1954250490}
   CurEnergy: 50
-  BaseSwitch: {fileID: 1649716204}
 --- !u!1 &272373486
 GameObject:
   m_ObjectHideFlags: 0
@@ -26959,11 +26957,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c9cb19adf8a7343be54b43924b7840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generalName: {fileID: 239350978}
-  generalCountry: {fileID: 2038090614}
-  unitImagePrefab: {fileID: 1702502001156100, guid: 1a734a41761c56644bfa6cead88a19af,
+  GeneralName: {fileID: 239350978}
+  GeneralCountry: {fileID: 2038090614}
+  UnitImagePrefab: {fileID: 1702502001156100, guid: 1a734a41761c56644bfa6cead88a19af,
     type: 2}
-  unitContainer: {fileID: 158012037}
+  UnitContainer: {fileID: 158012037}
 --- !u!114 &1850088639
 MonoBehaviour:
   m_ObjectHideFlags: 0

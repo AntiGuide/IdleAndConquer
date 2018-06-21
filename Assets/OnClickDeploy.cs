@@ -27,7 +27,7 @@ public class OnClickDeploy : MonoBehaviour {
         if (unitCount > 0) {
             unitCount--;
             remainingUnitsText.text = unitCount.ToString();
-            showChosenGeneral.createNewUnitImage(attachedUnit);
+            showChosenGeneral.CreateNewUnitImage(attachedUnit);
 
         }
     }

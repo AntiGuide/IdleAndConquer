@@ -4,39 +4,35 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ShowChosenGeneral : MonoBehaviour {
+    /// <summary>Reference to the text to display the general name</summary>
+    public Text GeneralName;
 
-    public Text generalName;
-    public Text generalCountry;
-    public GameObject unitImagePrefab;
-    public Transform unitContainer;
+    /// <summary>Reference to the text to display the general country</summary>
+    public Text GeneralCountry;
+
+    public GameObject UnitImagePrefab;
+
+    public Transform UnitContainer;
 
     private static List<string> unitsToShow = new List<string>();
 
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        showSelectedGeneral(SelectedGeneral.General);
+    public static void SetUnitsToShow(List<string> unitsToShowVar) {
+        unitsToShow = unitsToShowVar;
     }
 
-    public void showSelectedGeneral(General gen) {
-        generalName.text = gen.GeneralName;
-        generalCountry.text = gen.Country;
-
+    public void ShowSelectedGeneral(General gen) {
+        this.GeneralName.text = gen.GeneralName;
+        this.GeneralCountry.text = gen.Country;
     }
 
-    public GameObject createNewUnitImage(Unit unit) {
-        GameObject go = Instantiate(unitImagePrefab, unitContainer);
+    public GameObject CreateNewUnitImage(Unit unit) {
+        GameObject go = Instantiate(this.UnitImagePrefab, this.UnitContainer);
         DeployingUnit du = go.GetComponent<DeployingUnit>();
         du.Initialize(unit);
         return go;
     }
 
-    public static void setUnitsToShow(List<string> unitsToShowVar) {
-        unitsToShow = unitsToShowVar;
+    void Update() {
+        this.ShowSelectedGeneral(SelectedGeneral.General);
     }
 }
