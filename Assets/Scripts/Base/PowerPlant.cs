@@ -7,8 +7,10 @@ public class PowerPlant : MonoBehaviour {
     /// <summary>The energy production for an object</summary>
     public float EnergyProduction;
 
+    private BaseSwitcher baseSwitch;
+
     /// <summary>The reference to the energy manager to add the energy</summary>
-    private EnergyManagement energyManagement;
+    private EnergyPool energyManagement;
 
     /// <summary>Adds the energy upon initialization (after build confirmed).</summary>
     public void InitializeBuilt() {
@@ -17,6 +19,7 @@ public class PowerPlant : MonoBehaviour {
 
     /// <summary>Runs one time when object is instanciated</summary>
     private void Start() {
-        this.energyManagement = GameObject.Find("/Main/Canvas/BackgroundSideStrip").GetComponent<EnergyManagement>();
+        baseSwitch = GameObject.FindObjectOfType<BaseSwitcher>();
+        this.energyManagement = baseSwitch.GetEnergyPool();
     }
 }

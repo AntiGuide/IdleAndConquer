@@ -24,15 +24,19 @@ public class BaseSwitcher : MonoBehaviour {
     /// <param name="isLeft">If true the base should be switched to the one on the left. If false its to the right</param>
     public void OnClickBaseSwitch(bool isLeft) {
         if (isLeft && this.CurrentBase > 0) {
-            this.Bases[this.CurrentBase].SetActive(false);
+            ////this.Bases[this.CurrentBase].SetActive(false);
+            this.Bases[this.CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
             this.CurrentBase--;
-            this.Bases[this.CurrentBase].SetActive(true);
+            this.Bases[this.CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
+            ////this.Bases[this.CurrentBase].SetActive(true);
         } else if (this.CurrentBase < this.Bases.Length - 1) {
-            this.Bases[this.CurrentBase].SetActive(false);
+            ////this.Bases[this.CurrentBase].SetActive(false);
+            this.Bases[this.CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
             this.CurrentBase++;
-            this.Bases[this.CurrentBase].SetActive(true);
+            this.Bases[this.CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
+            ////this.Bases[this.CurrentBase].SetActive(true);
         }
-
+        this.Bases[this.CurrentBase].GetComponent<EnergyPool>().SetActive();
         this.transform.position = this.startPosCamera;
     }
 
@@ -51,7 +55,12 @@ public class BaseSwitcher : MonoBehaviour {
         return this.Bases[this.CurrentBase].GetComponentInChildren<BuildBuilding>();
     }
 
+    public EnergyPool GetEnergyPool() {
+        return this.Bases[this.CurrentBase].GetComponent<EnergyPool>();
+    }
+
     private void Start() {
         this.startPosCamera = this.transform.position;
+        this.Bases[this.CurrentBase].GetComponent<EnergyPool>().SetActive();
     }
 }

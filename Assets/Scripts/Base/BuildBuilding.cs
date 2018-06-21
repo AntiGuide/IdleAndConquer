@@ -16,7 +16,8 @@ public class BuildBuilding : MonoBehaviour {
     public Vector2 MinBuildConfirmUIPosition;
     public Vector2 MaxBuildConfirmUIPosition;
 
-    private static bool playerBuilding;
+    private static bool playerBuilding; 
+    private bool playerBuildingThisBase;
     private static bool[] isBuilt;
     private int newBuildingID;
     private BuildColorChanger buildColorChanger;
@@ -63,6 +64,7 @@ public class BuildBuilding : MonoBehaviour {
             this.newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / this.CellSize);
 
             playerBuilding = true;
+            playerBuildingThisBase = true;
             InputHandler.BlockCameraMovement = true;
             this.BuildingMenueController.Unexpand(true);
         }
@@ -72,6 +74,7 @@ public class BuildBuilding : MonoBehaviour {
         if (this.newBuilding != null) {
             UnityEngine.Object.Destroy(this.newBuilding);
             playerBuilding = false;
+            playerBuildingThisBase = false;
             InputHandler.BlockCameraMovement = false;
             this.BuildConfirmUI.SetActive(false);
         }
@@ -87,6 +90,7 @@ public class BuildBuilding : MonoBehaviour {
                 this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
                 this.newBuilding = null;
                 playerBuilding = false;
+                playerBuildingThisBase = false;
                 InputHandler.BlockCameraMovement = false;
                 this.BuildConfirmUI.SetActive(false);
             }
@@ -112,7 +116,7 @@ public class BuildBuilding : MonoBehaviour {
     void Update() {
         if (Input.GetMouseButton(0)) {
             if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject()) {
-            } else if (playerBuilding) {
+            } else if (playerBuildingThisBase) {
                 this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 this.layerMask = LayerMask.GetMask("Plane");
                 Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
@@ -139,7 +143,7 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (playerBuilding) {
+        if (playerBuildingThisBase) {
             this.BuildConfirmUI.SetActive(true);
             Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
             Vector3 onlyXZ = new Vector3(bounds.size.x, 0, bounds.size.z);
