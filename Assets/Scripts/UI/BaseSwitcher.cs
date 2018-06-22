@@ -24,16 +24,21 @@ public class BaseSwitcher : MonoBehaviour {
     /// <param name="isLeft">If true the base should be switched to the one on the left. If false its to the right</param>
     public void OnClickBaseSwitch(bool isLeft) {
         this.Bases[CurrentBase].GetComponent<ProductionQueue>().ResetButtons();
-        if (isLeft && CurrentBase > 0) {
+        if (isLeft) {
             ////this.Bases[CurrentBase].SetActive(false);
             this.Bases[CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
-            CurrentBase--;
+            do {
+                CurrentBase = --CurrentBase < 0 ? this.Bases.Length - 1 : CurrentBase;
+            } while (EnablesBases[CurrentBase] == false);
+
             this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
             ////this.Bases[CurrentBase].SetActive(true);
-        } else if (CurrentBase < this.Bases.Length - 1) {
+        } else {
             ////this.Bases[CurrentBase].SetActive(false);
             this.Bases[CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
-            CurrentBase++;
+            do {
+                CurrentBase = ++CurrentBase >= this.Bases.Length ?  0 : CurrentBase;
+            } while (EnablesBases[CurrentBase] == false);
             this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
             ////this.Bases[CurrentBase].SetActive(true);
         }
@@ -48,9 +53,19 @@ public class BaseSwitcher : MonoBehaviour {
     /// <param name="leftPossible">Is left possible</param>
     /// <param name="rightPossible">Is right possible</param>
     public void CheckPossibilities(out bool leftPossible, out bool rightPossible) {
-        // Check if switches in the directions are possible
-        leftPossible = CurrentBase > 0;
-        rightPossible = CurrentBase < this.Bases.Length - 1;
+        // Check if switches in the directions are possible (more than 1 base enabled)
+        int basecount = 0;
+        foreach (bool b in EnablesBases) {
+            basecount = b ? ++basecount : basecount;
+        }
+
+        if (basecount > 1) {
+            leftPossible = true;
+            rightPossible = true;
+        } else {
+            leftPossible = false;
+            rightPossible = false;
+        }
     }
 
     /// <summary>
