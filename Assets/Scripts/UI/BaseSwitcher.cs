@@ -30,7 +30,7 @@ public class BaseSwitcher : MonoBehaviour {
             do {
                 CurrentBase = --CurrentBase < 0 ? this.Bases.Length - 1 : CurrentBase;
             } while (EnablesBases[CurrentBase] == false);
-
+            
             this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
             ////this.Bases[CurrentBase].SetActive(true);
         } else {
@@ -39,6 +39,7 @@ public class BaseSwitcher : MonoBehaviour {
             do {
                 CurrentBase = ++CurrentBase >= this.Bases.Length ?  0 : CurrentBase;
             } while (EnablesBases[CurrentBase] == false);
+            
             this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
             ////this.Bases[CurrentBase].SetActive(true);
         }

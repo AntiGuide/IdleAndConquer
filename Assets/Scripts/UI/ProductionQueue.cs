@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +10,10 @@ public class ProductionQueue : MonoBehaviour {
     private Unit latestUnit;
     private float remainingTime;
     private float overlayFill;
+    private int inProduction = 0;
 
     public void AddToQueue(Unit u, CreateAndOrderUnit createAndOrderButton) {
+        this.inProduction++;
         this.prodQueue.Add(u);
         this.buttonQueue.Add(createAndOrderButton);
     }
@@ -34,6 +37,7 @@ public class ProductionQueue : MonoBehaviour {
             this.overlayFill = Mathf.Min(this.remainingTime / this.latestUnit.Buildtime, 1.0f);
             this.overlayFill = Mathf.Max(this.overlayFill, 0f);
             if (BaseSwitcher.CurrentBase == baseID) {
+                this.buttonQueue[0].SetUnitsBuilding(this.inProduction);
                 this.buttonQueue[0].SetProductionOverlayFill(this.overlayFill);
             }
             if (this.remainingTime <= 0f) {
@@ -41,6 +45,8 @@ public class ProductionQueue : MonoBehaviour {
                 if (BaseSwitcher.CurrentBase == baseID) {
                     this.buttonQueue[0].SubSingleUnitBuilding();
                 }
+
+                this.inProduction--;
                 this.prodQueue.Remove(this.latestUnit);
                 this.buttonQueue.Remove(this.buttonQueue[0]);
                 if (this.prodQueue.Count > 0) {
