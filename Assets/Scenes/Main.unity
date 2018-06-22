@@ -14445,6 +14445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a4f2983fa61da4b91fa947e25d561d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LerpTimeStart: 1
 --- !u!114 &1083180770
 MonoBehaviour:
   m_ObjectHideFlags: 0
