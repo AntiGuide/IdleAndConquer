@@ -45,7 +45,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
     public PowerlevelManagement powerlevelManager;
 
     /// <summary>The reference to the production pool</summary>
-    public ProductionQueue productionQueue;
+    // public ProductionQueue productionQueue;
+
+    /// <summary>The reference to the base switcher (used to get the correct production queue)</summary>
+    public BaseSwitcher BaseSwitch;
 
     /// <summary>The attached units ID</summary>
     private static int unitID;
@@ -93,7 +96,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>
     /// Sets the overlay to visualize production
     /// </summary>
-    /// <param name="fillPercentage">The persentage to set the fillAmount to</param>
+    /// <param name="fillPercentage">The percentage to set the fillAmount to (between 0 and 1)</param>
     public void SetProductionOverlayFill(float fillPercentage) {
         this.buildingOverlay.fillAmount = fillPercentage;
     }
@@ -102,21 +105,31 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// Adds 1 to the unit building text
     /// </summary>
     public void AddSingleUnitBuilding() {
-        this.unitBuilding.text = (++this.buildingUnits).ToString();
+        this.buildingUnits = ++this.buildingUnits;
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : (this.buildingUnits).ToString();
     }
 
     /// <summary>
     /// Subs 1 from the unit building text
     /// </summary>
     public void SubSingleUnitBuilding() {
-        this.unitBuilding.text = (--this.buildingUnits).ToString();
+        this.buildingUnits = --this.buildingUnits;
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : (this.buildingUnits).ToString();
+    }
+
+    /// <summary>
+    /// Subs 1 from the unit building text
+    /// </summary>
+    public void SetUnitsBuilding(int buildingUnits) {
+        this.buildingUnits = buildingUnits;
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : (this.buildingUnits).ToString();
     }
 
     /// <summary>
     /// Loads from PlayerPrefs. Use this for initialization
     /// </summary>
     void Start() {
-        this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.critChance, this.critMultiplier, this.defense, this.type, this.armorType, this.cost, this.buildtime, this, this.productionQueue);
+        this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.critChance, this.critMultiplier, this.defense, this.type, this.armorType, this.cost, this.buildtime, this, this.BaseSwitch);
         PlayerPrefs.SetString("UnitName_" + unitID, this.unitName);
         unitID++;
         PlayerPrefs.SetInt(this.unitName + "_HP", this.hp);

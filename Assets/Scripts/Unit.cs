@@ -9,7 +9,10 @@ public class Unit {
     private CreateAndOrderUnit createAndOrderButton;
 
     /// <summary>The production queue in which a unit in production is put into</summary>
-    private ProductionQueue productionQueue;
+    //private ProductionQueue productionQueue;
+
+    /// <summary>The used to get the correct production queue</summary>
+    private BaseSwitcher baseSwitch;
 
     /// <summary>The type of the unit. (Tank, Soldier or Plane)</summary>
     private Type type;
@@ -59,7 +62,7 @@ public class Unit {
     /// <param name="buildtime">The time it takes to build this unit in seconds</param>
     /// <param name="createAndOrderButton">The script that triggeres a production of this unit</param>
     /// <param name="productionQueue">The production queue in which a unit in production is put into</param>
-    public Unit(string unitName, int hp, int attack, float critChance, float critMultiplier, int defense, Type type, ArmorType armorType, int cost, float buildtime, CreateAndOrderUnit createAndOrderButton, ProductionQueue productionQueue) {
+    public Unit(string unitName, int hp, int attack, float critChance, float critMultiplier, int defense, Type type, ArmorType armorType, int cost, float buildtime, CreateAndOrderUnit createAndOrderButton, BaseSwitcher baseSwitch) {
         this.unitName = unitName;
         this.hp = hp;
         this.attack = attack;
@@ -71,7 +74,7 @@ public class Unit {
         this.cost = cost;
         this.buildtime = buildtime;
         this.createAndOrderButton = createAndOrderButton;
-        this.productionQueue = productionQueue;
+        this.baseSwitch = baseSwitch;
     }
 
     /// <summary>
@@ -101,57 +104,32 @@ public class Unit {
 
     /// <summary>Getter and setter for buildtime</summary>
     public float Buildtime {
-        get {
-            return this.buildtime;
-        }
-
-        set {
-            this.buildtime = value;
-        }
+        get { return this.buildtime; }
+        set { this.buildtime = value; }
     }
 
     /// <summary>Getter and setter for unitCount</summary>
     public int UnitCount {
-        get {
-            return this.unitCount;
-        }
-
-        set {
-            this.unitCount = value;
-        }
+        get { return this.unitCount; }
+        set { this.unitCount = value; }
     }
 
     /// <summary>Getter and setter for unitName</summary>
     public string UnitName {
-        get {
-            return this.unitName;
-        }
-
-        set {
-            this.unitName = value;
-        }
+        get { return this.unitName; }
+        set { this.unitName = value; }
     }
 
     /// <summary>Getter and setter for armorType</summary>
     public ArmorType ArmorTypeUnit {
-        get {
-            return this.armorType;
-        }
-
-        set {
-            this.armorType = value;
-        }
+        get { return this.armorType; }
+        set { this.armorType = value; }
     }
 
     /// <summary>Getter and setter for type (tank, plane...)</summary>
     public Type UnitType {
-        get {
-            return this.type;
-        }
-
-        set {
-            this.type = value;
-        }
+        get { return this.type; }
+        set { this.type = value; }
     }
 
     /// <summary>
@@ -160,7 +138,7 @@ public class Unit {
     /// <param name="moneyManager">The reference to the players money pool</param>
     public void Order(ref MoneyManagement moneyManager) {
         if (moneyManager.subMoney(this.cost)) {
-            this.productionQueue.AddToQueue(this, this.createAndOrderButton);
+            this.baseSwitch.GetProductionQueue().AddToQueue(this, this.createAndOrderButton);
             this.createAndOrderButton.AddSingleUnitBuilding();
         }
     }

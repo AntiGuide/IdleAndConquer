@@ -608,7 +608,7 @@ MonoBehaviour:
   buildtime: 90
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &54318849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   buildtime: 300
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &55740792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2019,7 +2019,7 @@ MonoBehaviour:
   buildtime: 130
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &132587677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3113,6 +3113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213603239}
   - component: {fileID: 213603240}
+  - component: {fileID: 213603241}
   m_Layer: 0
   m_Name: Base1
   m_TagString: Untagged
@@ -3150,6 +3151,18 @@ MonoBehaviour:
   MinEnergy: 0
   EnergyManager: {fileID: 1954250490}
   CurEnergy: 25
+--- !u!114 &213603241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 213603238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d73c175e880b749b1e3ae60ca5093f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseID: 1
 --- !u!1 &233738448
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,7 +3296,7 @@ MonoBehaviour:
   buildtime: 200
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &233804942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4024,6 +4037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 260982787}
   - component: {fileID: 260982788}
+  - component: {fileID: 260982789}
   m_Layer: 0
   m_Name: Base0
   m_TagString: Untagged
@@ -4061,6 +4075,18 @@ MonoBehaviour:
   MinEnergy: 0
   EnergyManager: {fileID: 1954250490}
   CurEnergy: 50
+--- !u!114 &260982789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 260982786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d73c175e880b749b1e3ae60ca5093f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseID: 0
 --- !u!1 &272373486
 GameObject:
   m_ObjectHideFlags: 0
@@ -5840,7 +5866,7 @@ MonoBehaviour:
   buildtime: 120
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &501536405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7831,7 +7857,7 @@ MonoBehaviour:
   buildtime: 100
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &659519243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8516,7 +8542,7 @@ MonoBehaviour:
   buildtime: 120
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &683769275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11674,7 +11700,7 @@ MonoBehaviour:
   buildtime: 210
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &894084130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12427,7 +12453,7 @@ MonoBehaviour:
   buildtime: 170
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &964966330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13114,7 +13140,7 @@ MonoBehaviour:
   buildtime: 140
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1017537775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14191,7 +14217,7 @@ MonoBehaviour:
   buildtime: 70
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1075858015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14760,7 +14786,7 @@ MonoBehaviour:
   buildtime: 170
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1092841996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15601,7 +15627,7 @@ MonoBehaviour:
   buildtime: 160
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1142651361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16612,7 +16638,7 @@ MonoBehaviour:
   buildtime: 630
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1205483844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17617,7 +17643,7 @@ MonoBehaviour:
   buildtime: 600
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1259013634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17892,7 +17918,7 @@ MonoBehaviour:
   buildtime: 610
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1281827202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20004,7 +20030,7 @@ MonoBehaviour:
   buildtime: 300
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1488313502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22989,7 +23015,7 @@ MonoBehaviour:
   buildtime: 260
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1640974082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23527,7 +23553,6 @@ MonoBehaviour:
   - {fileID: 260982786}
   - {fileID: 213603238}
   EnablesBases: 0101
-  CurrentBase: 0
 --- !u!1 &1651890734
 GameObject:
   m_ObjectHideFlags: 0
@@ -24424,7 +24449,7 @@ MonoBehaviour:
   buildtime: 320
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1713472767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25596,9 +25621,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2211ee6f8ba758645b3e765e921e4adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 1931439384}
+  MainMenueControll: {fileID: 1931439384}
   SoundControll: {fileID: 1649716203}
-  SceneSwitch: {fileID: 0}
+  SceneSwitch: {fileID: 37522405}
 --- !u!1 &1766792697
 GameObject:
   m_ObjectHideFlags: 0
@@ -27168,7 +27193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2211ee6f8ba758645b3e765e921e4adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenueController: {fileID: 0}
+  MainMenueControll: {fileID: 0}
   SoundControll: {fileID: 0}
   SceneSwitch: {fileID: 0}
 --- !u!114 &1862148353
@@ -28226,7 +28251,6 @@ GameObject:
   - component: {fileID: 1931439383}
   - component: {fileID: 1931439385}
   - component: {fileID: 1931439384}
-  - component: {fileID: 1931439386}
   m_Layer: 5
   m_Name: MainMenue
   m_TagString: Untagged
@@ -28282,17 +28306,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1931439382}
---- !u!114 &1931439386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1931439382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d73c175e880b749b1e3ae60ca5093f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1951432666
 GameObject:
   m_ObjectHideFlags: 0
@@ -28358,7 +28371,7 @@ MonoBehaviour:
   buildtime: 240
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1951432669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30147,7 +30160,7 @@ MonoBehaviour:
   buildtime: 250
   moneyManager: {fileID: 1083180769}
   powerlevelManager: {fileID: 2118292553}
-  productionQueue: {fileID: 1931439386}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &2052705616
 MonoBehaviour:
   m_ObjectHideFlags: 0

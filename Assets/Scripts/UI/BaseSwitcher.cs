@@ -13,7 +13,7 @@ public class BaseSwitcher : MonoBehaviour {
     public bool[] EnablesBases;
 
     /// <summary>The index of the current enabled base</summary>
-    public int CurrentBase;
+    public static int CurrentBase = 0;
 
     /// <summary>The position where the camera was when the app started</summary>
     private Vector3 startPosCamera;
@@ -23,21 +23,22 @@ public class BaseSwitcher : MonoBehaviour {
     /// </summary>
     /// <param name="isLeft">If true the base should be switched to the one on the left. If false its to the right</param>
     public void OnClickBaseSwitch(bool isLeft) {
-        if (isLeft && this.CurrentBase > 0) {
-            ////this.Bases[this.CurrentBase].SetActive(false);
-            this.Bases[this.CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
-            this.CurrentBase--;
-            this.Bases[this.CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
-            ////this.Bases[this.CurrentBase].SetActive(true);
-        } else if (this.CurrentBase < this.Bases.Length - 1) {
-            ////this.Bases[this.CurrentBase].SetActive(false);
-            this.Bases[this.CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
-            this.CurrentBase++;
-            this.Bases[this.CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
-            ////this.Bases[this.CurrentBase].SetActive(true);
+        this.Bases[CurrentBase].GetComponent<ProductionQueue>().ResetButtons();
+        if (isLeft && CurrentBase > 0) {
+            ////this.Bases[CurrentBase].SetActive(false);
+            this.Bases[CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
+            CurrentBase--;
+            this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
+            ////this.Bases[CurrentBase].SetActive(true);
+        } else if (CurrentBase < this.Bases.Length - 1) {
+            ////this.Bases[CurrentBase].SetActive(false);
+            this.Bases[CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
+            CurrentBase++;
+            this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
+            ////this.Bases[CurrentBase].SetActive(true);
         }
-
-        this.Bases[this.CurrentBase].GetComponent<EnergyPool>().SetActive();
+        
+        this.Bases[CurrentBase].GetComponent<EnergyPool>().SetActive();
         this.transform.position = this.startPosCamera;
     }
 
@@ -48,8 +49,8 @@ public class BaseSwitcher : MonoBehaviour {
     /// <param name="rightPossible">Is right possible</param>
     public void CheckPossibilities(out bool leftPossible, out bool rightPossible) {
         // Check if switches in the directions are possible
-        leftPossible = this.CurrentBase > 0;
-        rightPossible = this.CurrentBase < this.Bases.Length - 1;
+        leftPossible = CurrentBase > 0;
+        rightPossible = CurrentBase < this.Bases.Length - 1;
     }
 
     /// <summary>
@@ -57,7 +58,7 @@ public class BaseSwitcher : MonoBehaviour {
     /// </summary>
     /// <returns>Returns the BuildBuilding object of the current base</returns>
     public BuildBuilding GetBuilder() {
-        return this.Bases[this.CurrentBase].GetComponentInChildren<BuildBuilding>();
+        return this.Bases[CurrentBase].GetComponentInChildren<BuildBuilding>();
     }
 
     /// <summary>
@@ -65,7 +66,15 @@ public class BaseSwitcher : MonoBehaviour {
     /// </summary>
     /// <returns>Returns the EnergyPool object of the current base</returns>
     public EnergyPool GetEnergyPool() {
-        return this.Bases[this.CurrentBase].GetComponent<EnergyPool>();
+        return this.Bases[CurrentBase].GetComponent<EnergyPool>();
+    }
+
+    /// <summary>
+    /// Gets the ProductionQueue object of the current base
+    /// </summary>
+    /// <returns>Returns the ProductionQueue object of the current base</returns>
+    public ProductionQueue GetProductionQueue() {
+        return this.Bases[CurrentBase].GetComponent<ProductionQueue>();
     }
 
     /// <summary>
@@ -73,6 +82,6 @@ public class BaseSwitcher : MonoBehaviour {
     /// </summary>
     private void Start() {
         this.startPosCamera = this.transform.position;
-        this.Bases[this.CurrentBase].GetComponent<EnergyPool>().SetActive();
+        this.Bases[CurrentBase].GetComponent<EnergyPool>().SetActive();
     }
 }
