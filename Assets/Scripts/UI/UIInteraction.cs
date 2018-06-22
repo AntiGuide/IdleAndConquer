@@ -4,42 +4,42 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Handles the 5 main buttons on the bottom of the screen
+/// </summary>
 public class UIInteraction : MonoBehaviour {
+    /// <summary>Used to toggle menue</summary>
+    public MainMenueController MainMenueControll;
 
-    public MainMenueController mainMenueController;
-
+    /// <summary>Used to trigger sound</summary>
     public SoundController SoundControll;
 
+    /// <summary>Used to switch scenes</summary>
     public __SceneSwitch SceneSwitch;
 
-    // Use this for initialization
-    void Start () {
-        
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
-
+    /// <summary>Behaviour for button 1</summary>
     public void OpenButton1() {
-        SceneSwitch.MissionMapLoad();
+        this.SceneSwitch.MissionMapLoad();
     }
 
+    /// <summary>Behaviour for button 2</summary>
     public void OpenButton2() {
-        mainMenueController.ToggleMenue(2);
+        this.MainMenueControll.ToggleMenue(2);
     }
 
+    /// <summary>Behaviour for button 3</summary>
     public void OpenButton3() {
-        SoundControll.StartSound(SoundController.Sounds.BUTTON_CLICK);
-        mainMenueController.ToggleMenue(3);
+        this.SoundControll.StartSound(SoundController.Sounds.BUTTON_CLICK);
+        this.MainMenueControll.ToggleMenue(3);
     }
 
+    /// <summary>Behaviour for button 4</summary>
     public void OpenButton4() {
-        mainMenueController.ToggleMenue(4);
+        this.MainMenueControll.ToggleMenue(4);
     }
 
+    /// <summary>Behaviour for button 5</summary>
     public void OpenButton5() {
-        mainMenueController.ToggleMenue(5);
+        this.MainMenueControll.ToggleMenue(5);
     }
 }

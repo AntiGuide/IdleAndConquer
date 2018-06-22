@@ -5,37 +5,29 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class OnClickDeploy : MonoBehaviour {
-
-    public Text remainingUnitsText;
-    public Text unitNameText;
+    public Text RemainingUnitsText;
+    public Text UnitNameText;
     private ShowChosenGeneral showChosenGeneral;
-
     private Unit attachedUnit;
     private int unitCount;
 
-    // Use this for initialization
-    void Start () {
-        showChosenGeneral = GameObject.Find("/MissionMap/Canvas/DeployUI/BG").GetComponent<ShowChosenGeneral>();
-    }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
     public void OnClickDeployEvent() {
-        if (unitCount > 0) {
-            unitCount--;
-            remainingUnitsText.text = unitCount.ToString();
-            showChosenGeneral.CreateNewUnitImage(attachedUnit);
-
+        if (this.unitCount > 0) {
+            this.unitCount--;
+            this.RemainingUnitsText.text = this.unitCount.ToString();
+            this.showChosenGeneral.CreateNewUnitImage(this.attachedUnit);
         }
     }
 
     public void Initialize(Unit unit) {
-        attachedUnit = unit;
-        remainingUnitsText.text = attachedUnit.UnitCount.ToString();
-        unitCount = attachedUnit.UnitCount;
-        unitNameText.text = attachedUnit.UnitName;
+        this.attachedUnit = unit;
+        this.RemainingUnitsText.text = this.attachedUnit.UnitCount.ToString();
+        this.unitCount = this.attachedUnit.UnitCount;
+        this.UnitNameText.text = this.attachedUnit.UnitName;
+    }
+
+    /// <summary>Use this for initialization</summary>
+    void Start() {
+        this.showChosenGeneral = GameObject.Find("/MissionMap/Canvas/DeployUI/BG").GetComponent<ShowChosenGeneral>();
     }
 }
