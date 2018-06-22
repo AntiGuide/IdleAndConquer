@@ -2525,7 +2525,6 @@ GameObject:
   - component: {fileID: 165730507}
   - component: {fileID: 165730506}
   - component: {fileID: 165730505}
-  - component: {fileID: 165730504}
   m_Layer: 5
   m_Name: Button1
   m_TagString: Untagged
@@ -2553,18 +2552,6 @@ RectTransform:
   m_AnchoredPosition: {x: 112.2, y: -152.75507}
   m_SizeDelta: {x: 188, y: 176}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &165730504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 165730502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4532efc6bfe9a94d9bb88246a727105, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneSwitch: {fileID: 0}
 --- !u!114 &165730505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2604,8 +2591,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 165730504}
-        m_MethodName: ClickButtonClose
+      - m_Target: {fileID: 37522405}
+        m_MethodName: MainLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

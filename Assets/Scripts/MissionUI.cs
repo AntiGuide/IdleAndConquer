@@ -28,7 +28,7 @@ public class MissionUI : MonoBehaviour {
             if (this.aktTime / this.missionTime >= 1f) {
                 this.img.fillAmount = 1f;
                 this.missionTime = -1f;
-                this.moneyManagement.addMoney(10000);
+                this.moneyManagement.AddMoney(10000);
                 this.floatUpSpawner.GenerateFloatUp(10000, FloatUp.ResourceType.DOLLAR, new Vector2(300f, -273f));
                 UnityEngine.Object.Destroy(this.gameObject);
                 PlayerPrefs.DeleteKey("Mission");

@@ -90,7 +90,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <param name="pl">The amount that should be added</param>
     /// <param name="supressed">True if the floatup should be supressed</param>
     public void AddPowerlevel(int pl, bool supressed) {
-        this.powerlevelManager.addPowerlevel(pl, supressed);
+        this.powerlevelManager.AddPowerlevel(pl, supressed);
     }
 
     /// <summary>

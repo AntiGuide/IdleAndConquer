@@ -14,7 +14,7 @@ public class TankFactory : MonoBehaviour {
     }
     
     public bool Build(TankCategory category) {
-        if (moneyManagement.subMoney(category.Cost)) {
+        if (moneyManagement.SubMoney(category.Cost)) {
             //TODO: Que for tanks being built
             return true;
         } else {

@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Display a general as a button in the general menue
+/// </summary>
 public class GeneralButton : MonoBehaviour {
-
-    public Image image;
+    /// <summary>The country that is displayed</summary>
     public Text country;
+
+    /// <summary>The name that is displayed</summary>
     public Text generalName;
+
+    /// <summary>The win lose history that is displayed</summary>
     public Text winLoseHistory;
 
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    /// <summary>
+    /// Sets the texts of a GeneralButton
+    /// </summary>
+    /// <param name="country">The generals country</param>
+    /// <param name="generalName">The generals name</param>
+    /// <param name="winLoseHistory">The generals win lose history</param>
     public void SetTexts(string country, string generalName, string winLoseHistory) {
         this.country.text = country;
         this.generalName.text = generalName;

@@ -5,29 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class __SceneSwitch : MonoBehaviour {
     public GameObject timePrefab;
-
     public GameObject MissionMapContainer;
-
     public GameObject MainContainer;
-
     private static bool canvasHidden = false;
 
-    // Use this for initialization
-    void Start () {
-    }
-	
-	// Update is called once per frame
-	void Update () {
-    }
-
     public void MissionMapLoad() {
-        MainContainer.SetActive(false);
-        MissionMapContainer.SetActive(true);
+        this.MainContainer.SetActive(false);
+        this.MissionMapContainer.SetActive(true);
     }
 
     public void MainLoad() {
-        MissionMapContainer.SetActive(false);
-        MainContainer.SetActive(true);
+        this.MissionMapContainer.SetActive(false);
+        this.MainContainer.SetActive(true);
     }
-
 }

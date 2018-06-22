@@ -4,51 +4,70 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the players powerlevel
+/// </summary>
 public class PowerlevelManagement : MonoBehaviour {
-
+    /// <summary>Reference to the FloatUpSpawner to spawn FloatUps on PowerLevel gain</summary>
     public FloatUpSpawner floatUpSpawner;
 
+    /// <summary>The players powerlevel</summary>
     private static long powerlevel = 0;
 
-    // Use this for initialization
-    void Start () {
-        
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        outputPowerlevel(ref powerlevel);
-    }
-
-    public void addPowerlevel(long powerlevelToAdd, bool supressed) {
+    /// <summary>
+    /// Adds to the players powerlevel
+    /// </summary>
+    /// <param name="powerlevelToAdd">How much PowerLevel to add</param>
+    /// <param name="supressed">Should the Floatup be supressed</param>
+    public void AddPowerlevel(long powerlevelToAdd, bool supressed) {
         powerlevel = powerlevel + powerlevelToAdd;
         if (!supressed) {
-            floatUpSpawner.GenerateFloatUp(powerlevelToAdd, FloatUp.ResourceType.POWERLEVEL, transform.position);
+            this.floatUpSpawner.GenerateFloatUp(powerlevelToAdd, FloatUp.ResourceType.POWERLEVEL, transform.position);
         }
-        outputPowerlevel(ref powerlevel);
+
+        this.OutputPowerlevel(ref powerlevel);
     }
 
-    public bool subPowerlevel(long powerlevelToSub) {
+    /// <summary>
+    /// Subs from the players powerlevel
+    /// </summary>
+    /// <param name="powerlevelToSub">How much PowerLevel to sub</param>
+    /// <returns>Returns if the player had enough PowerLevel to sub the amount</returns>
+    public bool SubPowerlevel(long powerlevelToSub) {
         if (powerlevel >= powerlevelToSub) {
             powerlevel = powerlevel - powerlevelToSub;
-            outputPowerlevel(ref powerlevel);
+            this.OutputPowerlevel(ref powerlevel);
             return true;
         } else {
             return false;
         }
     }
 
-    public void setPowerlevel(long valueToSet) {
+    /// <summary>
+    /// Sets the PowerLevel to a value
+    /// </summary>
+    /// <param name="valueToSet">Which value to set the PowerLevel to</param>
+    public void SetPowerlevel(long valueToSet) {
         if (valueToSet >= 0) {
             powerlevel = valueToSet;
-            outputPowerlevel(ref powerlevel);
+            this.OutputPowerlevel(ref powerlevel);
         } else {
             throw new ArgumentException("Can not set a negative Dollar Value", "valueToSet");
         }
     }
 
-    private void outputPowerlevel(ref long powerlevel) {
-        GetComponent<Text>().text = powerlevel.ToString() + " PL";
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
+    void Update() {
+        this.OutputPowerlevel(ref powerlevel);
     }
 
+    /// <summary>
+    /// Outputs the Powerlevel
+    /// </summary>
+    /// <param name="powerlevel">Which amount of Powerlevel to output</param>
+    private void OutputPowerlevel(ref long powerlevel) {
+        GetComponent<Text>().text = powerlevel.ToString() + " PL";
+    }
 }

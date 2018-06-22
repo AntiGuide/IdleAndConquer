@@ -24,7 +24,7 @@ public class OreRefinery : MonoBehaviour {
     }
 
     public bool Upgrade() {
-        if (this.moneyManager.subMoney(this.upgradeCost)) {
+        if (this.moneyManager.SubMoney(this.upgradeCost)) {
             this.level++;
             this.AddHarvester(ref this.attachedHarvesters, ref this.moneyManager, this, BuildBuilding.BuiltBuildings[2].GetComponentInChildren<Mine>());
             return true;

@@ -77,7 +77,7 @@ public class Harvester : MonoBehaviour {
     /// <param name="secondsToAdd">The seconds money has to be added for</param>
     /// <returns></returns>
     public long AddAppPauseTime(long secondsToAdd) {
-        this.moneyManagement.addMoney((secondsToAdd / (long)this.MiningSpeed) * this.MiningAmount);
+        this.moneyManagement.AddMoney((secondsToAdd / (long)this.MiningSpeed) * this.MiningAmount);
         return (secondsToAdd / (long)this.MiningSpeed) * this.MiningAmount;
     }
 
@@ -101,7 +101,7 @@ public class Harvester : MonoBehaviour {
             transform.position = this.attachedOreRefinery.transform.position;
         } else {
             this.currentProgressWay -= this.MiningSpeed + this.LoadingOnSpeed + this.LoadingOffSpeed;
-            this.moneyManagement.addMoney(this.MiningAmount); // Sold ore
+            this.moneyManagement.AddMoney(this.MiningAmount); // Sold ore
             this.floatUpSpawner.GenerateFloatUp(this.MiningAmount, FloatUp.ResourceType.DOLLAR, Camera.main.WorldToScreenPoint(transform.position));
             transform.LookAt(this.attachedMine.transform.position);
         }

@@ -27,7 +27,7 @@ public class BuildButtonManager : MonoBehaviour {
     /// </summary>
     /// <param name="i">The index of the building that should be built (Indexes defined in BuildBuilding class)</param>
     public void ClickBuildBuilding(int i) {
-        if (this.MoneyManager.hasMoney(this.costBuilding)) {
+        if (this.MoneyManager.HasMoney(this.costBuilding)) {
             BaseSwitch.GetBuilder().BuildABuilding(i, this.costBuilding);
         }
     }
@@ -35,6 +35,6 @@ public class BuildButtonManager : MonoBehaviour {
     /// <summary>Use this for initialization</summary>
     void Start() {
         this.costBuilding = this.AttachedBuilding.GetComponentInChildren<BuildingManager>().BuildCost;
-        this.Cost.text = MoneyManagement.formatMoney(this.costBuilding);
+        this.Cost.text = MoneyManagement.FormatMoney(this.costBuilding);
     }
 }

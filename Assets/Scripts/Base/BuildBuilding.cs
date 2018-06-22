@@ -82,7 +82,7 @@ public class BuildBuilding : MonoBehaviour {
 
     public void ConfirmBuildingProcess() {
         if (this.buildColorChanger.CollidingBuildings == 0) {
-            if (this.MoneyManager.subMoney(this.costBuilding)) {
+            if (this.MoneyManager.SubMoney(this.costBuilding)) {
                 this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
                 isBuilt[newBuildingID] = true;
                 BuiltBuildings[newBuildingID] = this.newBuilding;
