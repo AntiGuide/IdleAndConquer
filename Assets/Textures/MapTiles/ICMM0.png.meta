@@ -1,0 +1,408 @@
+fileFormatVersion: 2
+guid: 5db906e89e58f3146bb778230f9bab13
+timeCreated: 1529909554
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Blue1
+    21300002: Blue2
+    21300004: Blue3
+    21300006: Dark Blue1
+    21300008: Dark Blue2
+    21300010: Dark Blue3
+    21300012: Orange1
+    21300014: Orange2
+    21300016: Orange3
+    21300018: Orange4
+    21300020: Orange5
+    21300022: Orange6
+    21300024: Orange7
+    21300026: Orange8
+    21300028: Orange9
+    21300030: Orange10
+    21300032: Purple1
+    21300034: Purple2
+    21300036: Purple3
+    21300038: Turquoise1
+    21300040: Turquoise2
+    21300042: Turquoise3
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blue1
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 512
+        width: 414
+        height: 367
+      alignment: 9
+      pivot: {x: 0.33454105, y: 0.726158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Blue2
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 1290
+        width: 557
+        height: 374
+      alignment: 9
+      pivot: {x: 0.56283665, y: 0.28743315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Blue3
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 1794
+        width: 212
+        height: 253
+      alignment: 9
+      pivot: {x: -0.4787736, y: -0.037549406}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dark Blue1
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 506
+        width: 381
+        height: 457
+      alignment: 9
+      pivot: {x: 1.0065616, y: 0.84354484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dark Blue2
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1111
+        width: 468
+        height: 399
+      alignment: 9
+      pivot: {x: 0.633547, y: 0.30451128}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Dark Blue3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 942
+        width: 462
+        height: 318
+      alignment: 9
+      pivot: {x: 0.16991343, y: -0.21226415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 305
+        width: 365
+        height: 635
+      alignment: 9
+      pivot: {x: 3.2260275, y: 0.5440945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange2
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 670
+        width: 335
+        height: 439
+      alignment: 9
+      pivot: {x: 2.8761194, y: 0.4020501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange3
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 63
+        width: 349
+        height: 441
+      alignment: 9
+      pivot: {x: 2.316619, y: 0.21655329}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 41
+        width: 386
+        height: 262
+      alignment: 9
+      pivot: {x: 1.6930052, y: 0.4255725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange5
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 160
+        width: 342
+        height: 350
+      alignment: 9
+      pivot: {x: 1.5336257, y: 0.012857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange6
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 881
+        width: 424
+        height: 407
+      alignment: 9
+      pivot: {x: 0.9445755, y: 0.7211302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange7
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 1666
+        width: 559
+        height: 381
+      alignment: 9
+      pivot: {x: 0.5214669, y: 0.09317585}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1663
+        width: 678
+        height: 384
+      alignment: 9
+      pivot: {x: 0.11283186, y: 0.87109375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1262
+        width: 583
+        height: 399
+      alignment: 9
+      pivot: {x: -0.17753002, y: 0.13408521}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Orange10
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1512
+        width: 587
+        height: 535
+      alignment: 9
+      pivot: {x: -1.0059625, y: 0.3542056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Purple1
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 965
+        width: 346
+        height: 144
+      alignment: 9
+      pivot: {x: 1.2283237, y: 0.27430555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Purple2
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 441
+        width: 274
+        height: 499
+      alignment: 9
+      pivot: {x: 0.40145984, y: 0.752505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Purple3
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 16
+        width: 427
+        height: 423
+      alignment: 9
+      pivot: {x: 0.0046838406, y: 0.11229315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Turquoise1
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1112
+        width: 300
+        height: 176
+      alignment: 9
+      pivot: {x: 0.7316667, y: 0.10227273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Turquoise2
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 892
+        width: 252
+        height: 216
+      alignment: 9
+      pivot: {x: 0.875, y: 0.7314815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Turquoise3
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1110
+        width: 256
+        height: 178
+      alignment: 9
+      pivot: {x: 0.13867188, y: 0.8876405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
