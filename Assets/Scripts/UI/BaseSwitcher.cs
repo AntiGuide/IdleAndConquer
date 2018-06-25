@@ -6,14 +6,14 @@ using UnityEngine;
 /// Used to handle base switching on player input
 /// </summary>
 public class BaseSwitcher : MonoBehaviour {
+    /// <summary>The index of the current enabled base</summary>
+    public static int CurrentBase = 0;
+
     /// <summary>An array of the base containers to enable/disable a base</summary>
     public GameObject[] Bases;
 
     /// <summary>An array of bools that indicate wether a base is enable/disable (indicator for array Bases)</summary>
     public bool[] EnablesBases;
-
-    /// <summary>The index of the current enabled base</summary>
-    public static int CurrentBase = 0;
 
     /// <summary>The position where the camera was when the app started</summary>
     private Vector3 startPosCamera;
@@ -29,7 +29,7 @@ public class BaseSwitcher : MonoBehaviour {
             this.Bases[CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
             do {
                 CurrentBase = --CurrentBase < 0 ? this.Bases.Length - 1 : CurrentBase;
-            } while (EnablesBases[CurrentBase] == false);
+            } while (this.EnablesBases[CurrentBase] == false);
             
             this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
             ////this.Bases[CurrentBase].SetActive(true);
@@ -37,8 +37,8 @@ public class BaseSwitcher : MonoBehaviour {
             ////this.Bases[CurrentBase].SetActive(false);
             this.Bases[CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);
             do {
-                CurrentBase = ++CurrentBase >= this.Bases.Length ?  0 : CurrentBase;
-            } while (EnablesBases[CurrentBase] == false);
+                CurrentBase = ++CurrentBase >= this.Bases.Length ? 0 : CurrentBase;
+            } while (this.EnablesBases[CurrentBase] == false);
             
             this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
             ////this.Bases[CurrentBase].SetActive(true);
@@ -56,7 +56,7 @@ public class BaseSwitcher : MonoBehaviour {
     public void CheckPossibilities(out bool leftPossible, out bool rightPossible) {
         // Check if switches in the directions are possible (more than 1 base enabled)
         int basecount = 0;
-        foreach (bool b in EnablesBases) {
+        foreach (bool b in this.EnablesBases) {
             basecount = b ? ++basecount : basecount;
         }
 

@@ -47,7 +47,7 @@ public class BuildBuilding : MonoBehaviour {
         this.costBuilding = costBuilding;
         buildingID--;
         this.newBuildingID = buildingID;
-        if (buildingID == 3 && !isBuilt[2]) {
+        if (buildingID == 3 && !this.isBuilt[2]) {
         } else {
             this.newBuilding = UnityEngine.Object.Instantiate(this.Buildings[buildingID], transform.parent);
             this.buildColorChanger = this.newBuilding.GetComponentInChildren<BuildColorChanger>();
@@ -84,8 +84,8 @@ public class BuildBuilding : MonoBehaviour {
         if (this.buildColorChanger.CollidingBuildings == 0) {
             if (this.MoneyManager.SubMoney(this.costBuilding)) {
                 this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
-                isBuilt[this.newBuildingID] = true;
-                BuiltBuildings[this.newBuildingID] = this.newBuilding;
+                this.isBuilt[this.newBuildingID] = true;
+                this.BuiltBuildings[this.newBuildingID] = this.newBuilding;
                 this.newBuilding.transform.localScale = this.prevScale;
                 this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
                 this.newBuilding = null;
@@ -99,14 +99,14 @@ public class BuildBuilding : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        isBuilt = new bool[this.Buildings.Length];
-        for (int i = 0; i < isBuilt.Length; i++) {
-            isBuilt[i] = false;
+        this.isBuilt = new bool[this.Buildings.Length];
+        for (int i = 0; i < this.isBuilt.Length; i++) {
+            this.isBuilt[i] = false;
         }
 
-        if (BuiltBuildings[2] != null) {
-            BuiltBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
-            isBuilt[2] = true;
+        if (this.BuiltBuildings[2] != null) {
+            this.BuiltBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+            this.isBuilt[2] = true;
         }
     }
 

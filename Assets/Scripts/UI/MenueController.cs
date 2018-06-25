@@ -132,7 +132,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     /// <summary>Use this for initialization</summary>
     void Start() {
-        canvasHeight = CanvasRectTransform.rect.height * CanvasRectTransform.localScale.y;
+        canvasHeight = this.CanvasRectTransform.rect.height * this.CanvasRectTransform.localScale.y;
         startYMenue = transform.position.y;
     }
 

@@ -19,7 +19,7 @@ public class ProductionQueue : MonoBehaviour {
     }
 
     public void ResetButtons() {
-        foreach (CreateAndOrderUnit button in buttonQueue) {
+        foreach (CreateAndOrderUnit button in this.buttonQueue) {
             button.SetProductionOverlayFill(0);
             button.SetUnitsBuilding(0);
         }
@@ -36,13 +36,14 @@ public class ProductionQueue : MonoBehaviour {
             this.remainingTime -= Time.deltaTime;
             this.overlayFill = Mathf.Min(this.remainingTime / this.latestUnit.Buildtime, 1.0f);
             this.overlayFill = Mathf.Max(this.overlayFill, 0f);
-            if (BaseSwitcher.CurrentBase == baseID) {
+            if (BaseSwitcher.CurrentBase == this.baseID) {
                 this.buttonQueue[0].SetUnitsBuilding(this.inProduction);
                 this.buttonQueue[0].SetProductionOverlayFill(this.overlayFill);
             }
+
             if (this.remainingTime <= 0f) {
                 this.latestUnit.AddSingleBuiltUnit();
-                if (BaseSwitcher.CurrentBase == baseID) {
+                if (BaseSwitcher.CurrentBase == this.baseID) {
                     this.buttonQueue[0].SubSingleUnitBuilding();
                 }
 

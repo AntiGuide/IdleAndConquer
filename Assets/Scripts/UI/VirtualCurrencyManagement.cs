@@ -89,6 +89,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
         if (UnityEngine.Random.Range(0f, 1f) < 0.005f) {
             this.AddVirtualCurrency(100);
         }
+
         if (this.virtualCurrencyToLerpTo != this.virtualCurrencyAmountShown) {
             this.lerpTimeDone += Time.deltaTime;
             this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);

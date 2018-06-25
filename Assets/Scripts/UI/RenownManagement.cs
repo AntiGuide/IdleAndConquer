@@ -88,6 +88,7 @@ public class RenownManagement : MonoBehaviour {
         if (UnityEngine.Random.Range(0f, 1f) < 0.005f) {
             this.AddRenown(100);
         }
+
         if (this.renownToLerpTo != this.renownAmountShown) {
             this.lerpTimeDone += Time.deltaTime;
             this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);

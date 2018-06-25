@@ -44,9 +44,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The reference to the powerlevel</summary>
     public PowerlevelManagement powerlevelManager;
 
-    /// <summary>The reference to the production pool</summary>
-    // public ProductionQueue productionQueue;
-
     /// <summary>The reference to the base switcher (used to get the correct production queue)</summary>
     public BaseSwitcher BaseSwitch;
 
@@ -106,7 +103,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// </summary>
     public void AddSingleUnitBuilding() {
         this.buildingUnits = ++this.buildingUnits;
-        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : (this.buildingUnits).ToString();
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
     }
 
     /// <summary>
@@ -114,7 +111,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// </summary>
     public void SubSingleUnitBuilding() {
         this.buildingUnits = --this.buildingUnits;
-        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : (this.buildingUnits).ToString();
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
     }
 
     /// <summary>
@@ -122,7 +119,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// </summary>
     public void SetUnitsBuilding(int buildingUnits) {
         this.buildingUnits = buildingUnits;
-        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : (this.buildingUnits).ToString();
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
     }
 
     /// <summary>

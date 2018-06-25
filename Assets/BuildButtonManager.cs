@@ -28,7 +28,7 @@ public class BuildButtonManager : MonoBehaviour {
     /// <param name="i">The index of the building that should be built (Indexes defined in BuildBuilding class)</param>
     public void ClickBuildBuilding(int i) {
         if (this.MoneyManager.HasMoney(this.costBuilding)) {
-            BaseSwitch.GetBuilder().BuildABuilding(i, this.costBuilding);
+            this.BaseSwitch.GetBuilder().BuildABuilding(i, this.costBuilding);
         }
     }
 

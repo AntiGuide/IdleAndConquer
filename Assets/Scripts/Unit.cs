@@ -8,9 +8,6 @@ public class Unit {
     /// <summary>The script that triggeres a production of this unit</summary>
     private CreateAndOrderUnit createAndOrderButton;
 
-    /// <summary>The production queue in which a unit in production is put into</summary>
-    //private ProductionQueue productionQueue;
-
     /// <summary>The used to get the correct production queue</summary>
     private BaseSwitcher baseSwitch;
 

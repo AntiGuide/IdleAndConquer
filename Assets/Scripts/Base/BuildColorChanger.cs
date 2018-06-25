@@ -53,7 +53,7 @@ public class BuildColorChanger : MonoBehaviour {
 
         if (!this.isBuilt) {
             if (this.buildMaterial != null && this.buildMaterial.HasProperty("_MainTex")) {
-                this.buildMaterial.SetTexture("_MainTex", GreenTransparent);
+                this.buildMaterial.SetTexture("_MainTex", this.GreenTransparent);
             } else {
                 Debug.Log("Non existent material or no color property");
             }
@@ -82,7 +82,7 @@ public class BuildColorChanger : MonoBehaviour {
         if (!this.isBuilt && BuildBuilding.PlayerBuilding && other.tag == "Buildings") {
             this.collidingBuildings++;
             if (this.buildMaterial != null && this.buildMaterial.HasProperty("_MainTex")) {
-                this.buildMaterial.SetTexture("_MainTex", RedTransparent);
+                this.buildMaterial.SetTexture("_MainTex", this.RedTransparent);
             } else {
                 Debug.Log("Non existent material or no color property");
             }
@@ -98,7 +98,7 @@ public class BuildColorChanger : MonoBehaviour {
             this.collidingBuildings--;
             if (this.collidingBuildings == 0) {
                 if (this.buildMaterial != null && this.buildMaterial.HasProperty("_MainTex")) {
-                    this.buildMaterial.SetTexture("_MainTex", GreenTransparent);
+                    this.buildMaterial.SetTexture("_MainTex", this.GreenTransparent);
                 } else {
                     Debug.Log("Non existent material or no color property");
                 }

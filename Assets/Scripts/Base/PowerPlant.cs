@@ -20,7 +20,7 @@ public class PowerPlant : MonoBehaviour {
 
     /// <summary>Runs one time when object is instanciated</summary>
     private void Start() {
-        baseSwitch = GameObject.FindObjectOfType<BaseSwitcher>();
-        this.energyManagement = baseSwitch.GetEnergyPool();
+        this.baseSwitch = GameObject.FindObjectOfType<BaseSwitcher>();
+        this.energyManagement = this.baseSwitch.GetEnergyPool();
     }
 }

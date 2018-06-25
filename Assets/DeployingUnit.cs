@@ -13,6 +13,6 @@ public class DeployingUnit : MonoBehaviour {
     }
 
     public void AddDeployingCount(int addVal) {
-        deployinCount += addVal;
+        this.deployinCount += addVal;
     }
 }

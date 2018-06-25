@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundController : MonoBehaviour {
-
     public AudioSource AudioSource1;
-
     public AudioClip[] Clips;
 
     public enum Sounds {
@@ -13,6 +11,6 @@ public class SoundController : MonoBehaviour {
     }
 
     public void StartSound(Sounds sound) {
-        AudioSource1.PlayOneShot(Clips[(int)Sounds.BUTTON_CLICK]);
+        this.AudioSource1.PlayOneShot(this.Clips[(int)Sounds.BUTTON_CLICK]);
     }
 }
