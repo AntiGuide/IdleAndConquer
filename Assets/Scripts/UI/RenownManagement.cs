@@ -38,6 +38,7 @@ public class RenownManagement : MonoBehaviour {
     /// <param name="renownToAdd">The amount to add</param>
     public void AddRenown(long renownToAdd) {
         renown = renown + renownToAdd;
+        PlayerPrefs.SetInt("renown", (int)RenownManagement.renown);
         this.OutputRenown(renown, true);
     }
 
@@ -49,6 +50,7 @@ public class RenownManagement : MonoBehaviour {
     public bool SubRenown(long renownToSub) {
         if (renown >= renownToSub) {
             renown = renown - renownToSub;
+            PlayerPrefs.SetInt("renown", (int)RenownManagement.renown);
             this.OutputRenown(renown, true);
             return true;
         } else {
@@ -72,6 +74,7 @@ public class RenownManagement : MonoBehaviour {
     public void SetRenown(long valueToSet) {
         if (valueToSet >= 0) {
             renown = valueToSet;
+            PlayerPrefs.SetInt("renown", (int)RenownManagement.renown);
             this.OutputRenown(renown, false);
         } else {
             throw new ArgumentException("Can not set a negative Dollar Value", "valueToSet");
@@ -80,7 +83,7 @@ public class RenownManagement : MonoBehaviour {
 
     /// <summary>Sets the renown to 0 in the beginning</summary>
     void Start() {
-        this.SetRenown(0);
+        this.SetRenown(PlayerPrefs.GetInt("renown", 0));
     }
 
     /// <summary>Called once per frame</summary>

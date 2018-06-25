@@ -39,6 +39,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
     /// <param name="virtualCurrencyToAdd">The amount to add</param>
     public void AddVirtualCurrency(long virtualCurrencyToAdd) {
         virtualCurrency = virtualCurrency + virtualCurrencyToAdd;
+        PlayerPrefs.SetInt("virtualCurrency", (int)VirtualCurrencyManagement.virtualCurrency);
         this.OutputMoney(virtualCurrency, true);
     }
 
@@ -50,6 +51,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
     public bool SubVirtualCurrency(long virtualCurrencyToSub) {
         if (virtualCurrency >= virtualCurrencyToSub) {
             virtualCurrency = virtualCurrency - virtualCurrencyToSub;
+            PlayerPrefs.SetInt("virtualCurrency", (int)VirtualCurrencyManagement.virtualCurrency);
             this.OutputMoney(virtualCurrency, true);
             return true;
         } else {
@@ -73,6 +75,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
     public void SetVirtualCurrency(long valueToSet) {
         if (valueToSet >= 0) {
             virtualCurrency = valueToSet;
+            PlayerPrefs.SetInt("virtualCurrency", (int)VirtualCurrencyManagement.virtualCurrency);
             this.OutputMoney(virtualCurrency, false);
         } else {
             throw new ArgumentException("Can not set a negative Dollar Value", "valueToSet");
@@ -81,12 +84,12 @@ public class VirtualCurrencyManagement : MonoBehaviour {
 
     /// <summary>Sets the V to 0 in the beginning</summary>
     void Start() {
-        this.SetVirtualCurrency(0);
+        this.SetVirtualCurrency(PlayerPrefs.GetInt("virtualCurrency", 0));
     }
 
     /// <summary>Called once per frame</summary>
     private void Update() {
-        if (UnityEngine.Random.Range(0f, 1f) < 0.005f) {
+        if (UnityEngine.Random.Range(0f, 1f) < 0.001f) {
             this.AddVirtualCurrency(100);
         }
 
