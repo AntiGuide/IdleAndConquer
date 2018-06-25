@@ -69,6 +69,7 @@ public class InputHandler : MonoBehaviour {
 
             // ... change the orthographic size based on the change in distance between the touches.
             Camera.main.orthographicSize += deltaMagnitudeDiff * this.OrthoZoomSpeed;
+            Camera.main.orthographicSize = Mathf.Min(this.MaxZoom, Mathf.Max(this.MinZoom, Camera.main.orthographicSize));
 
             // Make sure the orthographic size never drops below zero.
         } else if (!EventSystem.current.IsPointerOverGameObject()) {
