@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:53b36d8b679157e9c273d997362c293c:49ba10a648b0affd614a42c3f8cdddc9:e0f9d471a313517cd5f0592c2075b7aa$
+# $TexturePacker:SmartUpdate:d9998be4f4f6d8c994408de52b2ebabe:2a21f8cdd58a4a768a71b64f73bc9c6f:e0f9d471a313517cd5f0592c2075b7aa$
 #
 :format=40300
 :texture=IC.png
@@ -12,42 +12,46 @@
 :pivotpoints=enabled
 :borders=disabled
 
-__LeftEnergyBar;925;299;53;1137; 0.5188679245283019;0.5131926121372032; 0;0;0;0
-__LeftEnergyBarWhite;980;299;53;1137; 0.5188679245283019;0.5131926121372032; 0;0;0;0
-back_button;1092;357;55;1079; 0.5;0.5; 0;0;0;0
-Big Button;1263;1327;387;130; 0.5;0.5; 0;0;0;0
-BotButtonBackground;803;1805;1080;242; 0.5;0.5; 0;0;0;0
-BotButtonSmall;1263;789;188;176; 0.5;0.5; 0;0;0;0
-BotMiddleButtonBig;1746;1048;206;193; 0.5;0.5; 0;0;0;0
-Building_small;725;324;73;73; 0.5;0.5; 0;0;0;0
-BuildingPlane;1;757;800;1290; 0.5;0.5; 0;0;0;0
-BuyMenueTextBackground;803;1459;1080;128; 0.5;0.5; 0;0;0;0
-choose_your_squad_frame;503;33;507;234; 0.5;0.5; 0;0;0;0
-Chosen_general_frame;1;399;752;356; 0.5;0.5; 0;0;0;0
-general_icon;1885;1438;123;123; 0.5;0.5; 0;0;0;0
-IconBuildings;1885;1689;126;98; 0.5;0.5; 0;0;0;0
-IconConfirm;1885;1919;128;128; 0.5;0.5; 0;0;0;0
-IconDeny;1885;1789;128;128; 0.5;0.5; 0;0;0;0
-IconGeneral1;1652;1243;215;214; 0.5;0.5; 0;0;0;0
-IconGenerals;350;293;92;104; 0.5;0.5; 0;0;0;0
-IconInfo;239;292;109;105; 0.5;0.5; 0;0;0;0
-IconMissionMap;1885;1563;124;124; 0.5;0.5; 0;0;0;0
-IconOptionsButton;1149;1373;83;84; 0.5;0.5; 0;0;0;0
-IconOreButton;1;18;249;249; 0.5;0.5; 0;0;0;0
-IconOreButton2;1012;80;249;217; 0.5;0.42626728110599077; 0;0;0;0
-IconOreButton3;252;18;249;249; 0.5;0.5; 0;0;0;0
-IconSwipeLeftButton;1;281;117;116; 0.5;0.5; 0;0;0;0
-IconSwipeRightButton;120;281;117;116; 0.5;0.5; 0;0;0;0
-LeftEnergyFrame;803;269;59;1167; 0.5;0.5; 0;0;0;0
-LeftEnergyFrame2;864;269;59;1167; 0.5;0.5; 0;0;0;0
-MoneyBackground;1263;1178;242;147; 0.5;0.5; 0;0;0;0
-Plane_big;1474;840;204;209; 0.5;0.5; 0;0;0;0
-Plane_middle;634;304;89;93; 0.5;0.5; 0;0;0;0
-Plane_small;1012;5;73;73; 0.5;0.5; 0;0;0;0
-Soldier_middle;444;304;93;93; 0.5;0.5; 0;0;0;0
-Start_mission_button;1035;357;55;1079; 0.5;0.5; 0;0;0;0
-Tank_big;1263;967;209;209; 0.5;0.5; 0;0;0;0
-Tank_middle;539;304;93;93; 0.5;0.5; 0;0;0;0
-Tank_small;1087;5;73;73; 0.5;0.5; 0;0;0;0
-TopBar;803;1589;1080;214; 0.5;0.5; 0;0;0;0
-TopButton;1507;1051;237;190; 0.5;0.5; 0;0;0;0
+achievement_button;867;404;194;156; 0.5;0.5; 0;0;0;0
+back_button;1175;67;55;1079; 0.5;0.5; 0;0;0;0
+background_buttons;800;1803;1080;244; 0.5;0.5; 0;0;0;0
+background_energy_bar;800;218;65;1218; 0.5;0.5; 0;0;0;0
+Big Button;1232;1016;387;130; 0.5;0.5; 0;0;0;0
+BotButtonSmall;510;226;188;176; 0.5;0.5; 0;0;0;0
+BotMiddleButtonBig;424;23;206;193; 0.5;0.5; 0;0;0;0
+building_plane;1;727;797;1320; 0.5;0.5; 0;0;0;0
+Building_small;1031;712;73;73; 0.5;0.5; 0;0;0;0
+button_big;632;23;206;193; 0.5;0.5; 0;0;0;0
+button_small;840;39;189;177; 0.5;0.5; 0;0;0;0
+BuyMenueTextBackground;800;1506;1080;128; 0.5;0.5; 0;0;0;0
+choose_your_squad_frame;1;280;507;234; 0.5;0.5; 0;0;0;0
+Chosen_general_frame;1125;1148;752;356; 0.5;0.5; 0;0;0;0
+foreground_energy_bar;2010;624;36;1163; 0.5;0.5; 0;0;0;0
+general_icon;1882;1438;123;123; 0.5;0.5; 0;0;0;0
+IconBuildings;1882;1689;126;98; 0.5;0.5; 0;0;0;0
+IconConfirm;1882;1919;128;128; 0.5;0.5; 0;0;0;0
+IconDeny;1882;1789;128;128; 0.5;0.5; 0;0;0;0
+IconGeneral1;1;2;215;214; 0.5;0.5; 0;0;0;0
+IconGenerals;323;517;92;104; 0.5;0.5; 0;0;0;0
+IconInfo;212;516;109;105; 0.5;0.5; 0;0;0;0
+IconMissionMap;1882;1563;124;124; 0.5;0.5; 0;0;0;0
+IconOptionsButton;700;223;83;84; 0.5;0.5; 0;0;0;0
+IconOreButton;867;1187;249;249; 0.5;0.5; 0;0;0;0
+IconOreButton2;512;404;249;217; 0.5;0.42626728110599077; 0;0;0;0
+IconOreButton3;867;936;249;249; 0.5;0.5; 0;0;0;0
+loading_background;800;1465;323;39; 0.5;0.5; 0;0;0;0
+loading_foreground;800;1438;314;25; 0.5;0.5; 0;0;0;0
+MoneyBackground;867;787;242;147; 0.5;0.5; 0;0;0;0
+Plane_big;218;7;204;209; 0.5;0.5; 0;0;0;0
+Plane_middle;867;692;89;93; 0.5;0.5; 0;0;0;0
+Plane_small;1031;637;73;73; 0.5;0.5; 0;0;0;0
+report_negative;218;675;575;50; 0.5;0.5; 0;0;0;0
+report_positive;218;623;575;50; 0.5;0.5; 0;0;0;0
+Soldier_middle;417;528;93;93; 0.5;0.5; 0;0;0;0
+Start_mission_button;1118;67;55;1079; 0.5;0.5; 0;0;0;0
+swipe_button_left;1879;1204;112;232; 0.5;0.5; 0;0;0;0
+swipe_button_right;1879;970;112;232; 0.5;0.5; 0;0;0;0
+Tank_big;1;516;209;209; 0.5;0.5; 0;0;0;0
+Tank_middle;700;309;93;93; 0.5;0.5; 0;0;0;0
+Tank_small;1031;562;73;73; 0.5;0.5; 0;0;0;0
+top_energy_plane;800;1636;1080;165; 0.5;0.5; 0;0;0;0

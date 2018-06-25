@@ -7,7 +7,6 @@ public class __SceneSwitch : MonoBehaviour {
     public GameObject timePrefab;
     public GameObject MissionMapContainer;
     public GameObject MainContainer;
-    private static bool canvasHidden = false;
 
     public void MissionMapLoad() {
         this.MainContainer.SetActive(false);

@@ -43,6 +43,20 @@ TextureImporter:
     21300072: Tank_small
     21300074: TopBar
     21300076: TopButton
+    21300078: achievement_button
+    21300080: background_buttons
+    21300082: background_energy_bar
+    21300084: building_plane
+    21300086: button_big
+    21300088: button_small
+    21300090: foreground_energy_bar
+    21300092: loading_background
+    21300094: loading_foreground
+    21300096: report_negative
+    21300098: report_positive
+    21300100: swipe_button_left
+    21300102: swipe_button_right
+    21300104: top_energy_plane
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -110,29 +124,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: __LeftEnergyBar
+      name: achievement_button
       rect:
         serializedVersion: 2
-        x: 925
-        y: 299
-        width: 53
-        height: 1137
-      alignment: 9
-      pivot: {x: 0.5188679, y: 0.5131926}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: __LeftEnergyBarWhite
-      rect:
-        serializedVersion: 2
-        x: 980
-        y: 299
-        width: 53
-        height: 1137
-      alignment: 9
-      pivot: {x: 0.5188679, y: 0.5131926}
+        x: 867
+        y: 404
+        width: 194
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,10 +141,38 @@ TextureImporter:
       name: back_button
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 357
+        x: 1175
+        y: 67
         width: 55
         height: 1079
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: background_buttons
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1803
+        width: 1080
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: background_energy_bar
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 218
+        width: 65
+        height: 1218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,24 +183,10 @@ TextureImporter:
       name: Big Button
       rect:
         serializedVersion: 2
-        x: 1263
-        y: 1327
+        x: 1232
+        y: 1016
         width: 387
         height: 130
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: BotButtonBackground
-      rect:
-        serializedVersion: 2
-        x: 803
-        y: 1805
-        width: 1080
-        height: 242
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,8 +197,8 @@ TextureImporter:
       name: BotButtonSmall
       rect:
         serializedVersion: 2
-        x: 1263
-        y: 789
+        x: 510
+        y: 226
         width: 188
         height: 176
       alignment: 0
@@ -197,10 +211,24 @@ TextureImporter:
       name: BotMiddleButtonBig
       rect:
         serializedVersion: 2
-        x: 1746
-        y: 1048
+        x: 424
+        y: 23
         width: 206
         height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: building_plane
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 727
+        width: 797
+        height: 1320
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,8 +239,8 @@ TextureImporter:
       name: Building_small
       rect:
         serializedVersion: 2
-        x: 725
-        y: 324
+        x: 1031
+        y: 712
         width: 73
         height: 73
       alignment: 0
@@ -222,13 +250,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: BuildingPlane
+      name: button_big
       rect:
         serializedVersion: 2
-        x: 1
-        y: 757
-        width: 800
-        height: 1290
+        x: 632
+        y: 23
+        width: 206
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button_small
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 39
+        width: 189
+        height: 177
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,8 +281,8 @@ TextureImporter:
       name: BuyMenueTextBackground
       rect:
         serializedVersion: 2
-        x: 803
-        y: 1459
+        x: 800
+        y: 1506
         width: 1080
         height: 128
       alignment: 0
@@ -253,8 +295,8 @@ TextureImporter:
       name: choose_your_squad_frame
       rect:
         serializedVersion: 2
-        x: 503
-        y: 33
+        x: 1
+        y: 280
         width: 507
         height: 234
       alignment: 0
@@ -267,10 +309,24 @@ TextureImporter:
       name: Chosen_general_frame
       rect:
         serializedVersion: 2
-        x: 1
-        y: 399
+        x: 1125
+        y: 1148
         width: 752
         height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: foreground_energy_bar
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 624
+        width: 36
+        height: 1163
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,7 +337,7 @@ TextureImporter:
       name: general_icon
       rect:
         serializedVersion: 2
-        x: 1885
+        x: 1882
         y: 1438
         width: 123
         height: 123
@@ -295,7 +351,7 @@ TextureImporter:
       name: IconBuildings
       rect:
         serializedVersion: 2
-        x: 1885
+        x: 1882
         y: 1689
         width: 126
         height: 98
@@ -309,7 +365,7 @@ TextureImporter:
       name: IconConfirm
       rect:
         serializedVersion: 2
-        x: 1885
+        x: 1882
         y: 1919
         width: 128
         height: 128
@@ -323,7 +379,7 @@ TextureImporter:
       name: IconDeny
       rect:
         serializedVersion: 2
-        x: 1885
+        x: 1882
         y: 1789
         width: 128
         height: 128
@@ -337,8 +393,8 @@ TextureImporter:
       name: IconGeneral1
       rect:
         serializedVersion: 2
-        x: 1652
-        y: 1243
+        x: 1
+        y: 2
         width: 215
         height: 214
       alignment: 0
@@ -351,8 +407,8 @@ TextureImporter:
       name: IconGenerals
       rect:
         serializedVersion: 2
-        x: 350
-        y: 293
+        x: 323
+        y: 517
         width: 92
         height: 104
       alignment: 0
@@ -365,8 +421,8 @@ TextureImporter:
       name: IconInfo
       rect:
         serializedVersion: 2
-        x: 239
-        y: 292
+        x: 212
+        y: 516
         width: 109
         height: 105
       alignment: 0
@@ -379,7 +435,7 @@ TextureImporter:
       name: IconMissionMap
       rect:
         serializedVersion: 2
-        x: 1885
+        x: 1882
         y: 1563
         width: 124
         height: 124
@@ -393,8 +449,8 @@ TextureImporter:
       name: IconOptionsButton
       rect:
         serializedVersion: 2
-        x: 1149
-        y: 1373
+        x: 700
+        y: 223
         width: 83
         height: 84
       alignment: 0
@@ -407,8 +463,8 @@ TextureImporter:
       name: IconOreButton
       rect:
         serializedVersion: 2
-        x: 1
-        y: 18
+        x: 867
+        y: 1187
         width: 249
         height: 249
       alignment: 0
@@ -421,8 +477,8 @@ TextureImporter:
       name: IconOreButton2
       rect:
         serializedVersion: 2
-        x: 1012
-        y: 80
+        x: 512
+        y: 404
         width: 249
         height: 217
       alignment: 9
@@ -435,8 +491,8 @@ TextureImporter:
       name: IconOreButton3
       rect:
         serializedVersion: 2
-        x: 252
-        y: 18
+        x: 867
+        y: 936
         width: 249
         height: 249
       alignment: 0
@@ -446,13 +502,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: IconSwipeLeftButton
+      name: loading_background
       rect:
         serializedVersion: 2
-        x: 1
-        y: 281
-        width: 117
-        height: 116
+        x: 800
+        y: 1465
+        width: 323
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,41 +516,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: IconSwipeRightButton
+      name: loading_foreground
       rect:
         serializedVersion: 2
-        x: 120
-        y: 281
-        width: 117
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: LeftEnergyFrame
-      rect:
-        serializedVersion: 2
-        x: 803
-        y: 269
-        width: 59
-        height: 1167
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: LeftEnergyFrame2
-      rect:
-        serializedVersion: 2
-        x: 864
-        y: 269
-        width: 59
-        height: 1167
+        x: 800
+        y: 1438
+        width: 314
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -505,8 +533,8 @@ TextureImporter:
       name: MoneyBackground
       rect:
         serializedVersion: 2
-        x: 1263
-        y: 1178
+        x: 867
+        y: 787
         width: 242
         height: 147
       alignment: 0
@@ -519,8 +547,8 @@ TextureImporter:
       name: Plane_big
       rect:
         serializedVersion: 2
-        x: 1474
-        y: 840
+        x: 218
+        y: 7
         width: 204
         height: 209
       alignment: 0
@@ -533,8 +561,8 @@ TextureImporter:
       name: Plane_middle
       rect:
         serializedVersion: 2
-        x: 634
-        y: 304
+        x: 867
+        y: 692
         width: 89
         height: 93
       alignment: 0
@@ -547,10 +575,38 @@ TextureImporter:
       name: Plane_small
       rect:
         serializedVersion: 2
-        x: 1012
-        y: 5
+        x: 1031
+        y: 637
         width: 73
         height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: report_negative
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 675
+        width: 575
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: report_positive
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 623
+        width: 575
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -561,8 +617,8 @@ TextureImporter:
       name: Soldier_middle
       rect:
         serializedVersion: 2
-        x: 444
-        y: 304
+        x: 417
+        y: 528
         width: 93
         height: 93
       alignment: 0
@@ -575,10 +631,38 @@ TextureImporter:
       name: Start_mission_button
       rect:
         serializedVersion: 2
-        x: 1035
-        y: 357
+        x: 1118
+        y: 67
         width: 55
         height: 1079
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: swipe_button_left
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 1204
+        width: 112
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: swipe_button_right
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 970
+        width: 112
+        height: 232
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -589,8 +673,8 @@ TextureImporter:
       name: Tank_big
       rect:
         serializedVersion: 2
-        x: 1263
-        y: 967
+        x: 1
+        y: 516
         width: 209
         height: 209
       alignment: 0
@@ -603,8 +687,8 @@ TextureImporter:
       name: Tank_middle
       rect:
         serializedVersion: 2
-        x: 539
-        y: 304
+        x: 700
+        y: 309
         width: 93
         height: 93
       alignment: 0
@@ -617,8 +701,8 @@ TextureImporter:
       name: Tank_small
       rect:
         serializedVersion: 2
-        x: 1087
-        y: 5
+        x: 1031
+        y: 562
         width: 73
         height: 73
       alignment: 0
@@ -628,27 +712,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
     - serializedVersion: 2
-      name: TopBar
+      name: top_energy_plane
       rect:
         serializedVersion: 2
-        x: 803
-        y: 1589
+        x: 800
+        y: 1636
         width: 1080
-        height: 214
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-    - serializedVersion: 2
-      name: TopButton
-      rect:
-        serializedVersion: 2
-        x: 1507
-        y: 1051
-        width: 237
-        height: 190
+        height: 165
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
