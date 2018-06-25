@@ -454,6 +454,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8217629145f87bb4695a6c22702dd559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuiltBuildings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 122047945}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Buildings:
   - {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f, type: 2}
   - {fileID: 1378292085812040, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
@@ -1932,6 +1941,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 101614118}
+--- !u!1 &122047945 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1280341209}
 --- !u!1 &123539571
 GameObject:
   m_ObjectHideFlags: 0
@@ -11367,6 +11381,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 800854616}
+--- !u!1 &807620745 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1647772092}
 --- !u!1 &810898262
 GameObject:
   m_ObjectHideFlags: 0
@@ -20587,6 +20606,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8217629145f87bb4695a6c22702dd559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuiltBuildings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 807620745}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Buildings:
   - {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f, type: 2}
   - {fileID: 1378292085812040, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}

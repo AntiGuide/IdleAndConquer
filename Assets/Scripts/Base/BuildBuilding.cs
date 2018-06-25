@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BuildBuilding : MonoBehaviour {
-    public static GameObject[] BuiltBuildings;
+    public GameObject[] BuiltBuildings;
     public GameObject[] Buildings;
     public GameObject BuildConfirmUI;
     public MenueController[] MenueControll;
@@ -17,8 +17,8 @@ public class BuildBuilding : MonoBehaviour {
     public Vector2 MaxBuildConfirmUIPosition;
 
     private static bool playerBuilding; 
+    private bool[] isBuilt;
     private bool playerBuildingThisBase;
-    private static bool[] isBuilt;
     private int newBuildingID;
     private BuildColorChanger buildColorChanger;
     private GameObject newBuilding;
@@ -46,7 +46,7 @@ public class BuildBuilding : MonoBehaviour {
     public void BuildABuilding(int buildingID, long costBuilding) {
         this.costBuilding = costBuilding;
         buildingID--;
-        newBuildingID = buildingID;
+        this.newBuildingID = buildingID;
         if (buildingID == 3 && !isBuilt[2]) {
         } else {
             this.newBuilding = UnityEngine.Object.Instantiate(this.Buildings[buildingID], transform.parent);
@@ -64,7 +64,7 @@ public class BuildBuilding : MonoBehaviour {
             this.newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / this.CellSize);
 
             playerBuilding = true;
-            playerBuildingThisBase = true;
+            this.playerBuildingThisBase = true;
             InputHandler.BlockCameraMovement = true;
             this.BuildingMenueController.Unexpand(true);
         }
@@ -74,7 +74,7 @@ public class BuildBuilding : MonoBehaviour {
         if (this.newBuilding != null) {
             UnityEngine.Object.Destroy(this.newBuilding);
             playerBuilding = false;
-            playerBuildingThisBase = false;
+            this.playerBuildingThisBase = false;
             InputHandler.BlockCameraMovement = false;
             this.BuildConfirmUI.SetActive(false);
         }
@@ -84,13 +84,13 @@ public class BuildBuilding : MonoBehaviour {
         if (this.buildColorChanger.CollidingBuildings == 0) {
             if (this.MoneyManager.SubMoney(this.costBuilding)) {
                 this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
-                isBuilt[newBuildingID] = true;
-                BuiltBuildings[newBuildingID] = this.newBuilding;
+                isBuilt[this.newBuildingID] = true;
+                BuiltBuildings[this.newBuildingID] = this.newBuilding;
                 this.newBuilding.transform.localScale = this.prevScale;
                 this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
                 this.newBuilding = null;
                 playerBuilding = false;
-                playerBuildingThisBase = false;
+                this.playerBuildingThisBase = false;
                 InputHandler.BlockCameraMovement = false;
                 this.BuildConfirmUI.SetActive(false);
             }
@@ -100,13 +100,11 @@ public class BuildBuilding : MonoBehaviour {
     // Use this for initialization
     void Start() {
         isBuilt = new bool[this.Buildings.Length];
-        BuiltBuildings = new GameObject[this.Buildings.Length];
         for (int i = 0; i < isBuilt.Length; i++) {
             isBuilt[i] = false;
         }
 
-        if (GameObject.FindGameObjectWithTag("Mine") != null) {
-            BuiltBuildings[2] = GameObject.FindGameObjectsWithTag("Mine")[0];
+        if (BuiltBuildings[2] != null) {
             BuiltBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
             isBuilt[2] = true;
         }
@@ -116,7 +114,7 @@ public class BuildBuilding : MonoBehaviour {
     void Update() {
         if (Input.GetMouseButton(0)) {
             if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject()) {
-            } else if (playerBuildingThisBase) {
+            } else if (this.playerBuildingThisBase) {
                 this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 this.layerMask = LayerMask.GetMask("Plane");
                 Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
@@ -143,13 +141,13 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (playerBuildingThisBase) {
+        if (this.playerBuildingThisBase) {
             this.BuildConfirmUI.SetActive(true);
             Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
             Vector3 onlyXZ = new Vector3(bounds.size.x, 0, bounds.size.z);
             Vector2 screenPoint = Camera.main.WorldToScreenPoint(this.newBuilding.transform.position + this.BuildUIOffset + onlyXZ);
-            screenPoint = Vector2.Max(MinBuildConfirmUIPosition, screenPoint);
-            screenPoint = Vector2.Min(MaxBuildConfirmUIPosition, screenPoint);
+            screenPoint = Vector2.Max(this.MinBuildConfirmUIPosition, screenPoint);
+            screenPoint = Vector2.Min(this.MaxBuildConfirmUIPosition, screenPoint);
             this.BuildConfirmUI.transform.position = screenPoint;
         }
     }
