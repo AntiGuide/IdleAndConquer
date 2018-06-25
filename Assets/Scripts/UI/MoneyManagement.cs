@@ -42,6 +42,7 @@ public class MoneyManagement : MonoBehaviour {
     /// <param name="moneyToAdd">The amount to add</param>
     public void AddMoney(long moneyToAdd) {
         money = money + moneyToAdd;
+        PlayerPrefs.SetInt("money", (int)MoneyManagement.money);
         this.OutputMoney(money, true);
     }
 
@@ -53,6 +54,7 @@ public class MoneyManagement : MonoBehaviour {
     public bool SubMoney(long moneyToSub) {
         if (money >= moneyToSub) {
             money = money - moneyToSub;
+            PlayerPrefs.SetInt("money", (int)MoneyManagement.money);
             this.OutputMoney(money, true);
             return true;
         } else {
@@ -76,6 +78,7 @@ public class MoneyManagement : MonoBehaviour {
     public void SetMoney(long valueToSet) {
         if (valueToSet >= 0) {
             money = valueToSet;
+            PlayerPrefs.SetInt("money", (int)MoneyManagement.money);
             this.OutputMoney(money, false);
         } else {
             throw new ArgumentException("Can not set a negative Dollar Value", "valueToSet");
@@ -84,7 +87,7 @@ public class MoneyManagement : MonoBehaviour {
 
     /// <summary>Sets the money to 20000 in the beginning</summary>
     void Start() {
-        this.SetMoney(20000);
+        this.SetMoney(PlayerPrefs.GetInt("money", 20000));
     }
 
     /// <summary>Called once per frame</summary>

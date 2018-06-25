@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:d9998be4f4f6d8c994408de52b2ebabe:2a21f8cdd58a4a768a71b64f73bc9c6f:e0f9d471a313517cd5f0592c2075b7aa$
+# $TexturePacker:SmartUpdate:8336c2f437820d0f44d33696c1b1cd98:d2b8bc2dbb91fb4f5f62a522d82f0070:e0f9d471a313517cd5f0592c2075b7aa$
 #
 :format=40300
 :texture=IC.png
@@ -12,6 +12,7 @@
 :pivotpoints=enabled
 :borders=disabled
 
+__GreyTransparentSmall;2012;2046;1;1; 0.5;0.5; 0;0;0;0
 achievement_button;867;404;194;156; 0.5;0.5; 0;0;0;0
 back_button;1175;67;55;1079; 0.5;0.5; 0;0;0;0
 background_buttons;800;1803;1080;244; 0.5;0.5; 0;0;0;0

@@ -57,6 +57,7 @@ TextureImporter:
     21300100: swipe_button_left
     21300102: swipe_button_right
     21300104: top_energy_plane
+    21300106: __GreyTransparentSmall
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -123,6 +124,20 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites:
+    - serializedVersion: 2
+      name: __GreyTransparentSmall
+      rect:
+        serializedVersion: 2
+        x: 2012
+        y: 2046
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
     - serializedVersion: 2
       name: achievement_button
       rect:
