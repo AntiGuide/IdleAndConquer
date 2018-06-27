@@ -5,6 +5,14 @@ using UnityEngine;
 
 /// <summary>Handles all tanks, planes and soldiers with all their values</summary>
 public class Unit {
+    public static float[] HPBoostLevel = { 1f, 1.05f, 1.075f, 1.1f, 1.125f, 1.15f, 1.175f, 1.2f, 1.225f, 1.25f};
+
+    public static int[] OtherBoostLevel = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12};
+
+    public int Level = 0;
+
+    public static int[] LevelGroup = { 0, 0, 0};
+
     /// <summary>The script that triggeres a production of this unit</summary>
     private CreateAndOrderUnit createAndOrderButton;
 
@@ -146,7 +154,7 @@ public class Unit {
     /// <param name="enemyUnit">The enemy unit type which the attack value should be calculated for.</param>
     /// <returns>Returns the attack value/the damage calculated</returns>
     public int GetAttack(Unit enemyUnit) {
-        int returnDamage = this.attack;
+        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.LevelGroup[(int)this.type]];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
 
@@ -166,7 +174,7 @@ public class Unit {
     /// Calculates the attack value without the eventual passives against the enemy
     /// </summary>
     public int GetAttack() {
-        int returnDamage = this.attack;
+        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.LevelGroup[(int)this.type]];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
 
@@ -176,6 +184,18 @@ public class Unit {
         return returnDamage;
     }
 
+    public int GetHP() {
+        return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level] * Unit.HPBoostLevel[Unit.LevelGroup[(int)this.type]]);
+    }
+
+    public int GetDef() {
+        return this.defense + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.LevelGroup[(int)this.type]];
+    }
+
+    public float GetCritChance() {
+        return this.critChance + ((Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.LevelGroup[(int)this.type]]) / 100f);
+    }
+
     /// <summary>
     /// Adds a single unit of this type to the unit count (visually, save game and variable). Also sets power level.
     /// </summary>
@@ -183,5 +203,9 @@ public class Unit {
         this.createAndOrderButton.SetUnitCount((++this.unitCount).ToString());
         PlayerPrefs.SetInt(this.unitName + "_COUNT", this.unitCount);
         this.createAndOrderButton.AddPowerlevel(Mathf.RoundToInt((this.hp * this.attack * this.defense) / 1000), false);
+    }
+
+    public void LevelUp() {
+        Level++;
     }
 }
