@@ -32,7 +32,7 @@ public class MoneyManagement : MonoBehaviour {
     /// <returns>Formatted money as a string</returns>
     public static string FormatMoney(long money) {
         CultureInfo cultureInfo = new CultureInfo("de-DE", false);
-        cultureInfo.NumberFormat.CurrencySymbol = "$";
+        cultureInfo.NumberFormat.CurrencySymbol = string.Empty;
         return money.ToString("C0", cultureInfo);
     }
 

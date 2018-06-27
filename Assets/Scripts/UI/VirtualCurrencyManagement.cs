@@ -25,15 +25,6 @@ public class VirtualCurrencyManagement : MonoBehaviour {
     private long virtualCurrencyToLerpTo;
 
     /// <summary>
-    /// Formats the V
-    /// </summary>
-    /// <param name="virtualCurrency">The amount of V</param>
-    /// <returns>Formatted virtualCurrency as a string</returns>
-    public static string FormatVirtualCurrency(long virtualCurrency) {
-        return virtualCurrency.ToString() + " V";
-    }
-
-    /// <summary>
     /// Adds V
     /// </summary>
     /// <param name="virtualCurrencyToAdd">The amount to add</param>
@@ -97,7 +88,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
             this.lerpTimeDone += Time.deltaTime;
             this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);
             this.virtualCurrencyAmountShown = (long)Mathf.Lerp(this.virtualCurrencyAmountOld, this.virtualCurrencyToLerpTo, this.lerpTimeDone / this.LerpTimeStart);
-            this.GetComponent<Text>().text = FormatVirtualCurrency(this.virtualCurrencyAmountShown);
+            this.GetComponent<Text>().text = this.virtualCurrencyAmountShown.ToString();
         }
     }
 
@@ -111,7 +102,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
             this.virtualCurrencyToLerpTo = virtualCurrency;
             this.lerpTimeDone = 0.0f;
         } else {
-            this.GetComponent<Text>().text = FormatVirtualCurrency(virtualCurrency);
+            this.GetComponent<Text>().text = virtualCurrency.ToString();
             this.virtualCurrencyAmountShown = virtualCurrency;
             this.virtualCurrencyToLerpTo = virtualCurrency;
         }

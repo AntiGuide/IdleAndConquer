@@ -24,15 +24,6 @@ public class RenownManagement : MonoBehaviour {
     private long renownToLerpTo;
 
     /// <summary>
-    /// Formats the renown to german format
-    /// </summary>
-    /// <param name="renown">The amount of renown</param>
-    /// <returns>Formatted renown as a string</returns>
-    public static string FormatRenown(long renown) {
-        return renown.ToString() + " REN";
-    }
-
-    /// <summary>
     /// Adds renown
     /// </summary>
     /// <param name="renownToAdd">The amount to add</param>
@@ -96,7 +87,7 @@ public class RenownManagement : MonoBehaviour {
             this.lerpTimeDone += Time.deltaTime;
             this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);
             this.renownAmountShown = (long)Mathf.Lerp(this.renownAmountOld, this.renownToLerpTo, this.lerpTimeDone / this.LerpTimeStart);
-            this.GetComponent<Text>().text = FormatRenown(this.renownAmountShown);
+            this.GetComponent<Text>().text = this.renownAmountShown.ToString();
         }
     }
 
@@ -110,7 +101,7 @@ public class RenownManagement : MonoBehaviour {
             this.renownToLerpTo = renown;
             this.lerpTimeDone = 0.0f;
         } else {
-            this.GetComponent<Text>().text = FormatRenown(renown);
+            this.GetComponent<Text>().text = renown.ToString();
             this.renownAmountShown = renown;
             this.renownToLerpTo = renown;
         }
