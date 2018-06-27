@@ -3,13 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles the production of units per base
+/// </summary>
 public class ProductionQueue : MonoBehaviour {
-    public int baseID;
+    /// <summary>Defines which base this production queue belongs to</summary>
+    public int BaseID;
+
+    /// <summary>The list of units that the queue works on/will produce</summary>
     private List<Unit> prodQueue = new List<Unit>();
+
+    /// <summary>Reference to buttons corresponding to the units being built. Needs this for updating the button overlay.</summary>
     private List<CreateAndOrderUnit> buttonQueue = new List<CreateAndOrderUnit>();
+
+    /// <summary>The unit that is producing at the moment</summary>
     private Unit latestUnit;
+
+    /// <summary>The time that is remaining for the latestUnits build process</summary>
     private float remainingTime;
+
+    /// <summary>The percentage the overlay will be filled</summary>
     private float overlayFill;
+
+    /// <summary>The current count of orders</summary>
     private int inProduction = 0;
 
     public void AddToQueue(Unit u, CreateAndOrderUnit createAndOrderButton) {
@@ -36,14 +52,14 @@ public class ProductionQueue : MonoBehaviour {
             this.remainingTime -= Time.deltaTime;
             this.overlayFill = Mathf.Min(this.remainingTime / this.latestUnit.Buildtime, 1.0f);
             this.overlayFill = Mathf.Max(this.overlayFill, 0f);
-            if (BaseSwitcher.CurrentBase == this.baseID) {
+            if (BaseSwitcher.CurrentBase == this.BaseID) {
                 this.buttonQueue[0].SetUnitsBuilding(this.inProduction);
                 this.buttonQueue[0].SetProductionOverlayFill(this.overlayFill);
             }
 
             if (this.remainingTime <= 0f) {
                 this.latestUnit.AddSingleBuiltUnit();
-                if (BaseSwitcher.CurrentBase == this.baseID) {
+                if (BaseSwitcher.CurrentBase == this.BaseID) {
                     this.buttonQueue[0].SubSingleUnitBuilding();
                 }
 

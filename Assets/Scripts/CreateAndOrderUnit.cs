@@ -18,19 +18,19 @@ public class CreateAndOrderUnit : MonoBehaviour {
     public int attack;
 
     /// <summary>The chance to do critical damage of the unit</summary>
-    public float critChance;
+    public float CritChance;
 
     /// <summary>The factor by which the damage is multiplied on critical damage</summary>
-    public float critMultiplier;
+    public float CritMultiplier;
 
     /// <summary>The defense of the unit</summary>
-    public int defense;
+    public int Defense;
 
     /// <summary>The type of the unit</summary>
-    public Unit.Type type;
+    public Unit.Type Type;
 
     /// <summary>The armor type of the unit</summary>
-    public Unit.ArmorType armorType;
+    public Unit.ArmorType ArmorType;
 
     /// <summary>The cost to build the unit</summary>
     public int cost;
@@ -39,10 +39,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
     public float buildtime;
 
     /// <summary>The reference to the moneypool</summary>
-    public MoneyManagement moneyManager;
+    public MoneyManagement MoneyManager;
 
     /// <summary>The reference to the powerlevel</summary>
-    public PowerlevelManagement powerlevelManager;
+    public PowerlevelManagement PowerlevelManager;
 
     /// <summary>The reference to the base switcher (used to get the correct production queue)</summary>
     public BaseSwitcher BaseSwitch;
@@ -70,7 +70,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     /// <summary>Orders unit when a button is clicked</summary>
     public void OrderUnitOnClick() {
-        this.attachedUnit.Order(ref this.moneyManager);
+        this.attachedUnit.Order(ref this.MoneyManager);
     }
 
     /// <summary>
@@ -87,7 +87,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <param name="pl">The amount that should be added</param>
     /// <param name="supressed">True if the floatup should be supressed</param>
     public void AddPowerlevel(int pl, bool supressed) {
-        this.powerlevelManager.AddPowerlevel(pl, supressed);
+        this.PowerlevelManager.AddPowerlevel(pl, supressed);
     }
 
     /// <summary>
@@ -126,16 +126,16 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// Loads from PlayerPrefs. Use this for initialization
     /// </summary>
     void Start() {
-        this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.critChance, this.critMultiplier, this.defense, this.type, this.armorType, this.cost, this.buildtime, this, this.BaseSwitch);
+        this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.CritChance, this.CritMultiplier, this.Defense, this.Type, this.ArmorType, this.cost, this.buildtime, this, this.BaseSwitch);
         PlayerPrefs.SetString("UnitName_" + unitID, this.unitName);
         unitID++;
         PlayerPrefs.SetInt(this.unitName + "_HP", this.hp);
         PlayerPrefs.SetInt(this.unitName + "_ATTACK", this.attack);
-        PlayerPrefs.SetFloat(this.unitName + "_CHC", this.critChance);
-        PlayerPrefs.SetFloat(this.unitName + "_CHD", this.critMultiplier);
-        PlayerPrefs.SetInt(this.unitName + "_DEF", this.defense);
-        PlayerPrefs.SetInt(this.unitName + "_TYPE", (int)this.type);
-        PlayerPrefs.SetInt(this.unitName + "_ARMORTYPE", (int)this.armorType);
+        PlayerPrefs.SetFloat(this.unitName + "_CHC", this.CritChance);
+        PlayerPrefs.SetFloat(this.unitName + "_CHD", this.CritMultiplier);
+        PlayerPrefs.SetInt(this.unitName + "_DEF", this.Defense);
+        PlayerPrefs.SetInt(this.unitName + "_TYPE", (int)this.Type);
+        PlayerPrefs.SetInt(this.unitName + "_ARMORTYPE", (int)this.ArmorType);
         PlayerPrefs.SetInt(this.unitName + "_COST", this.cost);
         PlayerPrefs.SetFloat(this.unitName + "_BUILDTIME", this.buildtime);
         this.unitNameText = transform.Find("Text").GetComponent<Text>();
@@ -146,7 +146,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         this.unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
         int count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
         if (count > 0) {
-            this.AddPowerlevel(count * Mathf.RoundToInt((this.hp * this.attack * this.defense) / 1000), true);
+            this.AddPowerlevel(count * Mathf.RoundToInt((this.hp * this.attack * this.Defense) / 1000), true);
             this.SetUnitCount(count.ToString());
             this.attachedUnit.UnitCount = count;
         }

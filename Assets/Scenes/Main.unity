@@ -803,15 +803,15 @@ MonoBehaviour:
   unitName: Tank 1
   hp: 100
   attack: 30
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 10
-  type: 0
-  armorType: 1
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 10
+  Type: 0
+  ArmorType: 1
   cost: 900
   buildtime: 90
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &54318849
 MonoBehaviour:
@@ -954,15 +954,15 @@ MonoBehaviour:
   unitName: Soldier 6
   hp: 150
   attack: 45
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 15
-  type: 1
-  armorType: 2
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 15
+  Type: 1
+  ArmorType: 2
   cost: 3000
   buildtime: 300
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &55740792
 MonoBehaviour:
@@ -2418,15 +2418,15 @@ MonoBehaviour:
   unitName: Soldier 3
   hp: 90
   attack: 33
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 15
-  type: 1
-  armorType: 2
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 15
+  Type: 1
+  ArmorType: 2
   cost: 1300
   buildtime: 130
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &132587677
 MonoBehaviour:
@@ -3921,7 +3921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d73c175e880b749b1e3ae60ca5093f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseID: 0
+  BaseID: 1
 --- !u!1 &233738448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,15 +4046,15 @@ MonoBehaviour:
   unitName: Tank 4
   hp: 160
   attack: 42
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 10
-  type: 0
-  armorType: 1
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 10
+  Type: 0
+  ArmorType: 1
   cost: 2000
   buildtime: 200
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &233804942
 MonoBehaviour:
@@ -4769,7 +4769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d73c175e880b749b1e3ae60ca5093f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseID: 0
+  BaseID: 0
 --- !u!1 &272373486
 GameObject:
   m_ObjectHideFlags: 0
@@ -6776,15 +6776,15 @@ MonoBehaviour:
   unitName: Tank 2
   hp: 120
   attack: 34
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 10
-  type: 0
-  armorType: 1
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 10
+  Type: 0
+  ArmorType: 1
   cost: 1200
   buildtime: 120
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &501536405
 MonoBehaviour:
@@ -9281,15 +9281,15 @@ MonoBehaviour:
   unitName: Soldier 2
   hp: 75
   attack: 30
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 15
-  type: 1
-  armorType: 2
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 15
+  Type: 1
+  ArmorType: 2
   cost: 1000
   buildtime: 100
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &659519243
 MonoBehaviour:
@@ -9966,15 +9966,15 @@ MonoBehaviour:
   unitName: Plane 1
   hp: 60
   attack: 32
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 20
-  type: 2
-  armorType: 3
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 20
+  Type: 2
+  ArmorType: 3
   cost: 1200
   buildtime: 120
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &683769275
 MonoBehaviour:
@@ -13329,15 +13329,15 @@ MonoBehaviour:
   unitName: Plane 4
   hp: 90
   attack: 38
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 20
-  type: 2
-  armorType: 3
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 20
+  Type: 2
+  ArmorType: 3
   cost: 2100
   buildtime: 210
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &894084130
 MonoBehaviour:
@@ -14156,15 +14156,15 @@ MonoBehaviour:
   unitName: Soldier 4
   hp: 105
   attack: 36
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 15
-  type: 1
-  armorType: 2
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 15
+  Type: 1
+  ArmorType: 2
   cost: 1700
   buildtime: 170
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &964966330
 MonoBehaviour:
@@ -14955,15 +14955,15 @@ MonoBehaviour:
   unitName: Plane 2
   hp: 70
   attack: 34
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 20
-  type: 2
-  armorType: 3
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 20
+  Type: 2
+  ArmorType: 3
   cost: 1400
   buildtime: 140
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1017537775
 MonoBehaviour:
@@ -16273,15 +16273,15 @@ MonoBehaviour:
   unitName: Soldier 1
   hp: 60
   attack: 27
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 15
-  type: 1
-  armorType: 2
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 15
+  Type: 1
+  ArmorType: 2
   cost: 700
   buildtime: 70
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1075858015
 MonoBehaviour:
@@ -17094,15 +17094,15 @@ MonoBehaviour:
   unitName: Plane 3
   hp: 80
   attack: 36
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 20
-  type: 2
-  armorType: 3
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 20
+  Type: 2
+  ArmorType: 3
   cost: 1700
   buildtime: 170
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1092841996
 MonoBehaviour:
@@ -18047,15 +18047,15 @@ MonoBehaviour:
   unitName: Tank 3
   hp: 140
   attack: 38
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 10
-  type: 0
-  armorType: 1
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 10
+  Type: 0
+  ArmorType: 1
   cost: 1600
   buildtime: 160
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1142651361
 MonoBehaviour:
@@ -19058,15 +19058,15 @@ MonoBehaviour:
   unitName: Tank 7
   hp: 300
   attack: 70
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 10
-  type: 0
-  armorType: 1
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 10
+  Type: 0
+  ArmorType: 1
   cost: 6300
   buildtime: 630
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1205483844
 MonoBehaviour:
@@ -19995,15 +19995,15 @@ MonoBehaviour:
   unitName: Plane 7
   hp: 180
   attack: 56
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 20
-  type: 2
-  armorType: 3
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 20
+  Type: 2
+  ArmorType: 3
   cost: 6000
   buildtime: 600
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1259013634
 MonoBehaviour:
@@ -20270,15 +20270,15 @@ MonoBehaviour:
   unitName: Soldier 7
   hp: 225
   attack: 60
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 15
-  type: 1
-  armorType: 2
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 15
+  Type: 1
+  ArmorType: 2
   cost: 6100
   buildtime: 610
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1281827202
 MonoBehaviour:
@@ -22556,15 +22556,15 @@ MonoBehaviour:
   unitName: Tank 6
   hp: 200
   attack: 50
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 10
-  type: 0
-  armorType: 1
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 10
+  Type: 0
+  ArmorType: 1
   cost: 3000
   buildtime: 300
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1488313502
 MonoBehaviour:
@@ -25400,15 +25400,15 @@ MonoBehaviour:
   unitName: Soldier 5
   hp: 135
   attack: 42
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 15
-  type: 1
-  armorType: 2
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 15
+  Type: 1
+  ArmorType: 2
   cost: 2600
   buildtime: 260
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1640974082
 MonoBehaviour:
@@ -26860,15 +26860,15 @@ MonoBehaviour:
   unitName: Plane 6
   hp: 120
   attack: 44
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 20
-  type: 2
-  armorType: 3
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 20
+  Type: 2
+  ArmorType: 3
   cost: 3200
   buildtime: 320
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1713472767
 MonoBehaviour:
@@ -30879,15 +30879,15 @@ MonoBehaviour:
   unitName: Plane 5
   hp: 100
   attack: 40
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 20
-  type: 2
-  armorType: 3
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 20
+  Type: 2
+  ArmorType: 3
   cost: 2400
   buildtime: 240
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1951432669
 MonoBehaviour:
@@ -32667,15 +32667,15 @@ MonoBehaviour:
   unitName: Tank 5
   hp: 180
   attack: 46
-  critChance: 0.05
-  critMultiplier: 1.5
-  defense: 10
-  type: 0
-  armorType: 1
+  CritChance: 0.05
+  CritMultiplier: 1.5
+  Defense: 10
+  Type: 0
+  ArmorType: 1
   cost: 2500
   buildtime: 250
-  moneyManager: {fileID: 1083180769}
-  powerlevelManager: {fileID: 2118292553}
+  MoneyManager: {fileID: 1083180769}
+  PowerlevelManager: {fileID: 2118292553}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &2052705616
 MonoBehaviour:
