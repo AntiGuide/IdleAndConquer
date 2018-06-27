@@ -42,6 +42,10 @@ public class InputHandler : MonoBehaviour {
     /// <summary>Saves the ray from the position of the input when the touch started</summary>
     private Ray lastPosRay;
 
+    private Ray touchRay;
+    private int layerMask;
+    private RaycastHit hitInformation;
+
     /// <summary>Use this for initialization</summary>
     void Start() {
     }
@@ -139,6 +143,15 @@ public class InputHandler : MonoBehaviour {
             case TouchPhase.Ended:
                 if (this.blockMapMovement) {
                     this.blockMapMovement = false;
+                } else if (!this.movedDuringTouch) {
+                    if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject()) {
+                        this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                        this.layerMask = LayerMask.GetMask("MissionLocation");
+                        Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
+                        if (this.hitInformation.collider != null) {
+                            Debug.Log(this.hitInformation.collider.gameObject.GetComponent<MissionDetails>().MissionName);
+                        }
+                    }
                 }
 
                 break;
