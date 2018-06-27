@@ -68,6 +68,6 @@ public class PowerlevelManagement : MonoBehaviour {
     /// </summary>
     /// <param name="powerlevel">Which amount of Powerlevel to output</param>
     private void OutputPowerlevel(ref long powerlevel) {
-        GetComponent<Text>().text = powerlevel.ToString() + " PL";
+        GetComponent<Text>().text = powerlevel.ToString();
     }
 }
