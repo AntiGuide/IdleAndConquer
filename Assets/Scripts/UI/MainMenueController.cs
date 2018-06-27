@@ -21,13 +21,8 @@ public class MainMenueController : MonoBehaviour {
 
     /// <summary>Getter/Setter for the isExpanded variable</summary>
     public static bool IsExpanded {
-        get {
-            return isExpanded;
-        }
-
-        set {
-            isExpanded = value;
-        }
+        get { return isExpanded; }
+        set { isExpanded = value; }
     }
 
     /// <summary>

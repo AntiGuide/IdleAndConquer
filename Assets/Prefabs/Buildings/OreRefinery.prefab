@@ -166,8 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2706abf3061441944b41f3f3c06c8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeCost: 5000
-  harvesterPrefab: {fileID: 1911548418386056, guid: 61b7ed4850832cd41812b796ecd855c3,
+  HarvesterPrefab: {fileID: 1911548418386056, guid: 61b7ed4850832cd41812b796ecd855c3,
     type: 2}
 --- !u!114 &114391983503244542
 MonoBehaviour:

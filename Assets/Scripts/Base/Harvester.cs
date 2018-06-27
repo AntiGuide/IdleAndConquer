@@ -18,7 +18,7 @@ public class Harvester : MonoBehaviour {
     public int MiningAmount = 500;
 
     /// <summary>The mine to drive to</summary>
-    private Mine attachedMine;
+    private GameObject attachedMine;
 
     /// <summary>The ore refinery to drive to</summary>
     private OreRefinery attachedOreRefinery;
@@ -45,7 +45,7 @@ public class Harvester : MonoBehaviour {
     /// <param name="attachedMine">Mine to drive to</param>
     /// <param name="moneyManagement">Reference to the money pool</param>
     /// <param name="floatUpSpawner">Reference to the FloatUpSpawner</param>
-    public void Initialize(OreRefinery attachedOreRefinery, Mine attachedMine, ref MoneyManagement moneyManagement, FloatUpSpawner floatUpSpawner) {
+    public void Initialize(OreRefinery attachedOreRefinery, GameObject attachedMine, ref MoneyManagement moneyManagement, FloatUpSpawner floatUpSpawner) {
         this.attachedOreRefinery = attachedOreRefinery;
         this.attachedMine = attachedMine;
         this.moneyManagement = moneyManagement;

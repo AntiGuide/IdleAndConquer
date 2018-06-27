@@ -17,7 +17,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     }
 
     public void OnClick() {
-        SelectedGeneral.General = gameObject.GetComponent<General>();
+        // SelectedGeneral.General = gameObject.GetComponent<General>();
         this.mainMenueController.ActivateDeployUI(true);
         this.mainMenueController.ToggleMenue(2);
     }

@@ -15,11 +15,14 @@ public class UIInteraction : MonoBehaviour {
     public SoundController SoundControll;
 
     /// <summary>Used to switch scenes</summary>
-    public __SceneSwitch SceneSwitch;
+    public GameObject MissionMapContainer;
+
+    /// <summary>Used to switch scenes</summary>
+    public GameObject MainContainer;
 
     /// <summary>Behaviour for button 1</summary>
     public void OpenButton1() {
-        this.SceneSwitch.MissionMapLoad();
+        this.MissionMapLoad();
     }
 
     /// <summary>Behaviour for button 2</summary>
@@ -41,5 +44,15 @@ public class UIInteraction : MonoBehaviour {
     /// <summary>Behaviour for button 5</summary>
     public void OpenButton5() {
         this.MainMenueControll.ToggleMenue(5);
+    }
+
+    public void MissionMapLoad() {
+        this.MainContainer.SetActive(false);
+        this.MissionMapContainer.SetActive(true);
+    }
+
+    public void MainLoad() {
+        this.MissionMapContainer.SetActive(false);
+        this.MainContainer.SetActive(true);
     }
 }

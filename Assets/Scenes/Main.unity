@@ -222,7 +222,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 37522405}
+      - m_Target: {fileID: 1761633592}
         m_MethodName: MainLoad
         m_Mode: 1
         m_Arguments:
@@ -355,7 +355,6 @@ GameObject:
   - component: {fileID: 37522400}
   - component: {fileID: 37522399}
   - component: {fileID: 37522404}
-  - component: {fileID: 37522405}
   m_Layer: 8
   m_Name: Plane
   m_TagString: Plane
@@ -489,20 +488,6 @@ MonoBehaviour:
   CellSize: 50
   MinBuildConfirmUIPosition: {x: 60, y: 130}
   MaxBuildConfirmUIPosition: {x: 290, y: 540}
---- !u!114 &37522405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 37522398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa0888cde4b78d4182002e23b48e6f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timePrefab: {fileID: 1950264234471422, guid: b69abfcf436343e42bc1798a0b2a85ae, type: 2}
-  MissionMapContainer: {fileID: 864332586}
-  MainContainer: {fileID: 1654485848}
 --- !u!1 &45591920
 GameObject:
   m_ObjectHideFlags: 0
@@ -21802,7 +21787,6 @@ GameObject:
   - component: {fileID: 1457230373}
   - component: {fileID: 1457230372}
   - component: {fileID: 1457230371}
-  - component: {fileID: 1457230370}
   m_Layer: 8
   m_Name: Plane
   m_TagString: Plane
@@ -21823,20 +21807,6 @@ Transform:
   m_Father: {fileID: 213603239}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1457230370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1457230368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa0888cde4b78d4182002e23b48e6f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timePrefab: {fileID: 1950264234471422, guid: b69abfcf436343e42bc1798a0b2a85ae, type: 2}
-  MissionMapContainer: {fileID: 864332586}
-  MainContainer: {fileID: 1654485848}
 --- !u!114 &1457230371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28043,7 +28013,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMenueControll: {fileID: 1931439384}
   SoundControll: {fileID: 1649716203}
-  SceneSwitch: {fileID: 37522405}
+  MissionMapContainer: {fileID: 864332586}
+  MainContainer: {fileID: 1654485848}
 --- !u!1 &1766792697
 GameObject:
   m_ObjectHideFlags: 0
@@ -31358,7 +31329,6 @@ GameObject:
   - component: {fileID: 1960343116}
   - component: {fileID: 1960343115}
   - component: {fileID: 1960343114}
-  - component: {fileID: 1960343113}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -31384,18 +31354,6 @@ RectTransform:
   m_AnchoredPosition: {x: 83.3, y: -45.7}
   m_SizeDelta: {x: 55, y: 1079}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1960343113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1960343111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28df337f537835449b6f91fdf6b7353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 0}
 --- !u!114 &1960343114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31435,13 +31393,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1960343113}
-        m_MethodName: OnClick
-        m_Mode: 1
+      - m_Target: {fileID: 1064353850}
+        m_MethodName: ToggleMenue
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
