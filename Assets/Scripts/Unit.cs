@@ -11,7 +11,7 @@ public class Unit {
 
     public int Level = 0;
 
-    public static int[] LevelGroup = { 0, 0, 0};
+    // public static int[] LevelGroup = { 0, 0, 0};
 
     /// <summary>The script that triggeres a production of this unit</summary>
     private CreateAndOrderUnit createAndOrderButton;
@@ -154,7 +154,7 @@ public class Unit {
     /// <param name="enemyUnit">The enemy unit type which the attack value should be calculated for.</param>
     /// <returns>Returns the attack value/the damage calculated</returns>
     public int GetAttack(Unit enemyUnit) {
-        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.LevelGroup[(int)this.type]];
+        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
 
@@ -174,7 +174,7 @@ public class Unit {
     /// Calculates the attack value without the eventual passives against the enemy
     /// </summary>
     public int GetAttack() {
-        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.LevelGroup[(int)this.type]];
+        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
 
@@ -185,15 +185,15 @@ public class Unit {
     }
 
     public int GetHP() {
-        return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level] * Unit.HPBoostLevel[Unit.LevelGroup[(int)this.type]]);
+        return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level]);
     }
 
     public int GetDef() {
-        return this.defense + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.LevelGroup[(int)this.type]];
+        return this.defense + Unit.OtherBoostLevel[this.Level];
     }
 
     public float GetCritChance() {
-        return this.critChance + ((Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.LevelGroup[(int)this.type]]) / 100f);
+        return this.critChance + (Unit.OtherBoostLevel[this.Level] / 100f);
     }
 
     /// <summary>
