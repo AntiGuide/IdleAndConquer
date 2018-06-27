@@ -17,6 +17,7 @@ public class BuildButtonManager : MonoBehaviour {
     /// <summary>Reference to MoneyManagement object (Only one per scene existent)</summary>
     public MoneyManagement MoneyManager;
 
+    /// <summary>Reference to BaseSwitcher to get the correct BuildBuilding object</summary>
     public BaseSwitcher BaseSwitch;
 
     /// <summary>Variable to store the cost of the attached building after the Start method</summary>

@@ -27,6 +27,7 @@ public class ShowChosenGeneral : MonoBehaviour {
 
     public GameObject CreateNewUnitImage(Unit unit) {
         GameObject go = Instantiate(this.UnitImagePrefab, this.UnitContainer);
+
         // DeployingUnit du = go.GetComponent<DeployingUnit>();
         // du.Initialize(unit);
         return go;

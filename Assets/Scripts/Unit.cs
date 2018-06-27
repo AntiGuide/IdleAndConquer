@@ -5,13 +5,13 @@ using UnityEngine;
 
 /// <summary>Handles all tanks, planes and soldiers with all their values</summary>
 public class Unit {
-    public static float[] HPBoostLevel = { 1f, 1.05f, 1.075f, 1.1f, 1.125f, 1.15f, 1.175f, 1.2f, 1.225f, 1.25f};
+    public static float[] HPBoostLevel = { 1f, 1.05f, 1.075f, 1.1f, 1.125f, 1.15f, 1.175f, 1.2f, 1.225f, 1.25f };
 
-    public static int[] OtherBoostLevel = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12};
+    public static int[] OtherBoostLevel = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 };
 
     public int Level = 0;
 
-    // public static int[] LevelGroup = { 0, 0, 0};
+    // public static int[] LevelGroup = { 0, 0, 0 };
 
     /// <summary>The script that triggeres a production of this unit</summary>
     private CreateAndOrderUnit createAndOrderButton;
@@ -206,6 +206,6 @@ public class Unit {
     }
 
     public void LevelUp() {
-        Level++;
+        this.Level++;
     }
 }

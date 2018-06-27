@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlueprintStack : MonoBehaviour {
+    public static int[] NeededBlueprintsLevel = { 1, 2, 8, 16, 32, 48, 64, 80, 96, 112 };
+
     public int BlueprintCount = 0;
 
-    public static int[] NeededBlueprintsLevel = { 1, 2, 8, 16, 32, 48, 64, 80, 96, 112 };
+    private int level = 0;
 
     public enum BLUEPRINT_TYPE {
         UNIT = 0,
@@ -13,18 +15,15 @@ public class BlueprintStack : MonoBehaviour {
         ARMOR_GROUP,
         HARVESTER,
         QUEUE,
-        SQUADSLOTS,
-
+        SQUADSLOTS
     }
 
-    private int Level = 0;
-
     public void LevelUp() {
-        if (Level >= NeededBlueprintsLevel.Length || BlueprintCount < NeededBlueprintsLevel[Level]) {
+        if (this.level >= BlueprintStack.NeededBlueprintsLevel.Length || this.BlueprintCount < BlueprintStack.NeededBlueprintsLevel[this.level]) {
             return;
         }
 
-        BlueprintCount -= NeededBlueprintsLevel[Level];
-        Level++;
+        this.BlueprintCount -= BlueprintStack.NeededBlueprintsLevel[this.level];
+        this.level++;
     }
 }

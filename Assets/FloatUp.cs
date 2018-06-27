@@ -4,15 +4,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles a single FloatUp UXElement
+/// </summary>
 public class FloatUp : MonoBehaviour {
+    /// <summary>Time in which the FloatUp completely fades</summary>
     private float fadeTime;
+
+    /// <summary>The position at which the FloatUp starts</summary>
     private Vector2 startPos;
+
+    /// <summary>The position which the FloatUp floats to</summary>
     private Vector2 destination;
+
+    /// <summary>The percentage of the way that is completed</summary>
     private float percentage = 0f;
+
+    /// <summary>The text of the FloatUp</summary>
     private Text text;
+
+    /// <summary>Reference to the shadows for control of their alpha channel</summary>
     private Shadow[] shadows;
+
+    /// <summary>The accent color of the FloatUp</summary>
     private Color color;
+
+    /// <summary>The resource type that got added</summary>
     private ResourceType type;
+
+    /// <summary>The value of the FloatUp</summary>
     private long value;
 
     public enum ResourceType {
