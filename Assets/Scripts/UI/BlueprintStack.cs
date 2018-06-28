@@ -5,6 +5,10 @@ using UnityEngine;
 public class BlueprintStack : MonoBehaviour {
     public static int[] NeededBlueprintsLevel = { 1, 2, 8, 16, 32, 48, 64, 80, 96, 112 };
 
+    public static Unit[] Units;
+
+    public int AttachedUnit;
+
     public int BlueprintCount = 0;
 
     private int level = 0;
@@ -15,7 +19,9 @@ public class BlueprintStack : MonoBehaviour {
         ARMOR_GROUP,
         HARVESTER,
         QUEUE,
-        SQUADSLOTS
+        SQUADSLOTS,
+        CATCHING_JETS,
+        FIND_THE_BOX
     }
 
     public void LevelUp() {
