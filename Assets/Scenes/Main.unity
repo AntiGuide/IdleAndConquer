@@ -180,7 +180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plane 3
+  m_Text: Test
 --- !u!222 &1805132
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2197,7 +2197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 95261084}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -3492,7 +3492,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank 7
+  m_Text: Test
 --- !u!222 &155744534
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4514,7 +4514,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 207662496}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -5424,7 +5424,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank 3
+  m_Text: Test
 --- !u!222 &244442047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5872,7 +5872,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 256799180}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -6987,7 +6987,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Soldier 1
+  m_Text: Test
 --- !u!222 &340334372
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7490,7 +7490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank 5
+  m_Text: Test
 --- !u!222 &366968397
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10196,7 +10196,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Soldier 2
+  m_Text: Test
 --- !u!222 &533486491
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11721,7 +11721,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 615588605}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -16161,7 +16161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank 4
+  m_Text: Test
 --- !u!222 &830009120
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16718,7 +16718,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 869914824}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -17924,7 +17924,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 934796867}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -20780,7 +20780,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank 2
+  m_Text: Test
 --- !u!222 &1047681810
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21279,7 +21279,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plane 2
+  m_Text: Test
 --- !u!222 &1066739735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23379,7 +23379,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank 1
+  m_Text: Test
 --- !u!222 &1101662031
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24494,7 +24494,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1155685470}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -25437,7 +25437,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1204167661}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -25841,7 +25841,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1210862420}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -26102,7 +26102,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Soldier 3
+  m_Text: Test
 --- !u!222 &1224116232
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27713,7 +27713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Soldier 4
+  m_Text: Test
 --- !u!222 &1284737905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28389,7 +28389,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tank 6
+  m_Text: Test
 --- !u!222 &1336179504
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28491,7 +28491,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1339679848}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -29318,7 +29318,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Soldier 7
+  m_Text: Test
 --- !u!222 &1392786388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29420,7 +29420,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1395490623}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -29845,7 +29845,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1428729836}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -29986,7 +29986,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1452259333}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -31117,7 +31117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1494903826}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -31494,7 +31494,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1506628048}
-        m_MethodName: AddBlueprint
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32032,7 +32032,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1516308219}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -33525,7 +33525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Soldier 5
+  m_Text: Test
 --- !u!222 &1580148667
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33711,7 +33711,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Soldier 6
+  m_Text: Test
 --- !u!222 &1582742448
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35110,7 +35110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plane 7
+  m_Text: Test
 --- !u!222 &1639759482
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35414,7 +35414,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1649539494}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -36876,7 +36876,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plane 4
+  m_Text: Test
 --- !u!222 &1695535966
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40251,7 +40251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plane 5
+  m_Text: Test
 --- !u!222 &1830614093
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40853,7 +40853,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1874573458}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -41580,7 +41580,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plane 1
+  m_Text: Test
 --- !u!222 &1916360620
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42276,7 +42276,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 1926198520}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -45020,7 +45020,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plane 6
+  m_Text: Test
 --- !u!222 &2057032025
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -46438,7 +46438,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1579220381}
+      - m_Target: {fileID: 2119935032}
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:

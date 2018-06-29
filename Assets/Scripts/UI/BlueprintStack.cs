@@ -59,9 +59,20 @@ public class BlueprintStack : MonoBehaviour {
         }
     }
 
+    private void Update() {
+        if (UnityEngine.Random.Range(0f, 1f) < 0.001f) {
+            this.AddBlueprint();
+        }
+    }
+
     private void Start() {
         Text t = transform.Find("Text").GetComponent<Text>();
-        t.text = CreateAndOrderUnitStack.AttachedUnit.UnitName;
+        if (CreateAndOrderUnitStack.AttachedUnit != null) {
+            t.text = CreateAndOrderUnitStack.AttachedUnit.UnitName;
+        } else {
+            Debug.Log(gameObject.name = "Fail");
+        }
+
         transform.Find("CountText").GetComponent<Text>().text = "Level " + level.ToString();
         blueprintCountText = transform.Find("BuildingCountText").GetComponent<Text>();
         blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.level];
