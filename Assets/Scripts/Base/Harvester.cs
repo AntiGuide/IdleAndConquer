@@ -6,7 +6,7 @@
 /// </summary>
 public class Harvester : MonoBehaviour {
     /// <summary>Generates MiningAmount every 10 seconds</summary>
-    public float MiningSpeed = 10.0f;
+    public float miningSpeed = 10.0f;
 
     /// <summary>The time in seconds the harvester will take to load the ore at the mine</summary>
     public float LoadingOnSpeed = 2.0f;
@@ -15,7 +15,11 @@ public class Harvester : MonoBehaviour {
     public float LoadingOffSpeed = 2.0f;
 
     /// <summary>Every time the refinery is reached you get this amount of money</summary>
-    public int MiningAmount = 500;
+    public int miningAmount = 500;
+
+    private int levelSpeed = 0;
+
+    private int levelMoney = 0;
 
     /// <summary>The mine to drive to</summary>
     private GameObject attachedMine;
@@ -38,6 +42,18 @@ public class Harvester : MonoBehaviour {
         set { this.currentProgressWay = value; }
     }
 
+    /// <summary>Getter/Setter for miningSpeed</summary>
+    public float MiningSpeed {
+        get { return this.miningSpeed - ((this.miningSpeed * Unit.HPBoostLevel[this.levelSpeed]) - this.miningSpeed); }
+        set { this.miningSpeed = value; }
+    }
+
+    /// <summary>Getter/Setter for miningAmount</summary>
+    public int MiningAmount {
+        get { return Mathf.RoundToInt(this.miningAmount * Unit.HPBoostLevel[this.levelMoney]); }
+        set { this.miningAmount = value; }
+    }
+
     /// <summary>
     /// Gives the harvester all important values
     /// </summary>
@@ -51,6 +67,14 @@ public class Harvester : MonoBehaviour {
         this.moneyManagement = moneyManagement;
         this.floatUpSpawner = floatUpSpawner;
         AppPauseHandler.Harvesters.Add(this);
+    }
+
+    public void UpgradeSpeed() {
+        levelSpeed++;
+    }
+
+    public void UpgradeGeneratedMoney() {
+        levelMoney++;
     }
 
     /// <summary>

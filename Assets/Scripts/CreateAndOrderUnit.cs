@@ -8,6 +8,8 @@ using UnityEngine.UI;
 /// Handles the creation of units
 /// </summary>
 public class CreateAndOrderUnit : MonoBehaviour {
+    private static List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
+
     /// <summary>The name of the unit</summary>
     public string unitName;
 
@@ -59,6 +61,9 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The reference to the unit count text object</summary>
     private Text unitCountText;
 
+    /// <summary>The reference to the unit cost text object</summary>
+    private Text unitCostText;
+
     /// <summary>The reference to the unit count building text object</summary>
     private Text unitBuilding;
 
@@ -67,6 +72,20 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     /// <summary>The units being built at the time</summary>
     private int buildingUnits = 0;
+
+    private  static int[] costLevel = { 0, 0, 0};
+
+    public int Cost {
+        get { return cost - (cost - Mathf.RoundToInt(Unit.HPBoostLevel[CreateAndOrderUnit.costLevel[(int)this.Type]] * cost)); }
+        set { cost = value; }
+    }
+
+    public static void LevelUpCost(Unit.Type type) {
+        CreateAndOrderUnit.costLevel[(int)type]++;
+        foreach (CreateAndOrderUnit item in allCreateAndOrder) {
+            item.unitCostText.text = item.Cost.ToString();
+        }
+    }
 
     /// <summary>Orders unit when a button is clicked</summary>
     public void OrderUnitOnClick() {
@@ -141,6 +160,8 @@ public class CreateAndOrderUnit : MonoBehaviour {
         this.unitNameText = transform.Find("Text").GetComponent<Text>();
         this.unitNameText.text = this.unitName;
         this.unitCountText = transform.Find("CountText").GetComponent<Text>();
+        this.unitCostText = transform.Find("CostText").GetComponent<Text>();
+        this.unitCostText.text = this.cost.ToString();
         this.buildingOverlay = transform.Find("BuildingOverlay").GetComponent<Image>();
         this.buildingOverlay.fillAmount = 0f;
         this.unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
@@ -150,5 +171,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
             this.SetUnitCount(count.ToString());
             this.attachedUnit.UnitCount = count;
         }
+        allCreateAndOrder.Add(this);
     }
 }

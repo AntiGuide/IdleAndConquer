@@ -9,6 +9,18 @@ public class Unit {
 
     public static int[] OtherBoostLevel = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 };
 
+    public static int[] ArmorTypeLevel = { 0, 0, 0, 0};
+
+    public static int[] HPGroupLevel = { 0, 0, 0 };
+
+    public static int[] ATKGroupLevel = { 0, 0, 0 };
+
+    public static int[] CritGroupLevel = { 0, 0, 0 };
+
+    public static int[] CostGroupLevel = { 0, 0, 0 };
+
+    public static int[] BuildtimeGroupLevel = { 0, 0, 0 };
+
     public int Level = 0;
 
     // public static int[] LevelGroup = { 0, 0, 0 };
@@ -109,7 +121,7 @@ public class Unit {
 
     /// <summary>Getter and setter for buildtime</summary>
     public float Buildtime {
-        get { return this.buildtime; }
+        get { return this.buildtime - ((this.buildtime * Unit.HPBoostLevel[Unit.BuildtimeGroupLevel[(int)this.type]]) - this.buildtime); }
         set { this.buildtime = value; }
     }
 
@@ -142,7 +154,7 @@ public class Unit {
     /// </summary>
     /// <param name="moneyManager">The reference to the players money pool</param>
     public void Order(ref MoneyManagement moneyManager) {
-        if (moneyManager.SubMoney(this.cost)) {
+        if (moneyManager.SubMoney(createAndOrderButton.Cost)) {
             this.baseSwitch.GetProductionQueue().AddToQueue(this, this.createAndOrderButton);
             this.createAndOrderButton.AddSingleUnitBuilding();
         }
@@ -154,7 +166,7 @@ public class Unit {
     /// <param name="enemyUnit">The enemy unit type which the attack value should be calculated for.</param>
     /// <returns>Returns the attack value/the damage calculated</returns>
     public int GetAttack(Unit enemyUnit) {
-        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level];
+        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.type]];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
 
@@ -174,7 +186,7 @@ public class Unit {
     /// Calculates the attack value without the eventual passives against the enemy
     /// </summary>
     public int GetAttack() {
-        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level];
+        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.type]];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
 
@@ -185,15 +197,15 @@ public class Unit {
     }
 
     public int GetHP() {
-        return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level]);
+        return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level] * Unit.HPBoostLevel[Unit.HPGroupLevel[(int)this.type]]);
     }
 
     public int GetDef() {
-        return this.defense + Unit.OtherBoostLevel[this.Level];
+        return this.defense + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ArmorTypeLevel[(int)this.armorType]];
     }
 
     public float GetCritChance() {
-        return this.critChance + (Unit.OtherBoostLevel[this.Level] / 100f);
+        return this.critChance + (Unit.OtherBoostLevel[this.Level] / 100f) + (Unit.OtherBoostLevel[Unit.CritGroupLevel[(int)this.type]] / 100f);
     }
 
     /// <summary>
