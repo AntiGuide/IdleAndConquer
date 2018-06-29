@@ -80,6 +80,16 @@ public class CreateAndOrderUnit : MonoBehaviour {
         set { cost = value; }
     }
 
+    public Unit AttachedUnit {
+        get {
+            return attachedUnit;
+        }
+
+        set {
+            attachedUnit = value;
+        }
+    }
+
     public static void LevelUpCost(Unit.Type type) {
         CreateAndOrderUnit.costLevel[(int)type]++;
         foreach (CreateAndOrderUnit item in allCreateAndOrder) {
