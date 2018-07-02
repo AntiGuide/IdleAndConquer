@@ -16,7 +16,7 @@ public class MissionDetails : MonoBehaviour {
 
     public void OnClick() {
         Debug.Log(MissionName);
-        MissionManager.GenerateMission(this, UIInteractions);
+        MissionManager.GenerateMission(this, UIInteractions, MainMenueControll);
         MainMenueControll.ToggleMenue(1);
     }
 }

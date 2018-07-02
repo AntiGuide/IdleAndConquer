@@ -21,6 +21,7 @@ public class MissionQueue : MonoBehaviour {
 
     public void Add(Mission mission) {
         MissionUI missionUI = Instantiate(MissionBar, transform).GetComponentInChildren<MissionUI>();
+        missionUI.Initialize(mission);
         missionUIs.Add(missionUI);
         missionUI.MissionQueue = this;
         missionUI.moneyManagement = this.MoneyManagement;
@@ -28,6 +29,6 @@ public class MissionQueue : MonoBehaviour {
     }
 
     public void DestroyMissionBar(MissionUI missionUI) {
-        Destroy(missionUI.gameObject);
+        Destroy(missionUI.transform.parent.gameObject);
     }
 }

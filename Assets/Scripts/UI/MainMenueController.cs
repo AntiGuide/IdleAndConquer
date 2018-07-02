@@ -76,6 +76,11 @@ public class MainMenueController : MonoBehaviour {
     /// <summary>Sets the DeployUI active or inactive. The DeployUI is the UI used to send Units to missions.</summary>
     /// <param name="val">The value contains info wether the UI should be activated (true) or deactivated (false)</param>
     public void ActivateDeployUI(bool val) {
+        if (!val) {
+            while (this.DeployUI.transform.childCount > 0) {
+                this.DeployUI.transform.GetChild(0);
+            }
+        }
         this.DeployUI.SetActive(val);
     }
 

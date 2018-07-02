@@ -25,7 +25,6 @@ public class MissionUI : MonoBehaviour {
     public void Initialize(Mission mission) {
         this.missionTime = mission.MissionDetails.MissionTime;
         this.missionMoneyReward = mission.MissionDetails.MissionMoneyReward;
-        throw new NotImplementedException();
     }
 
     // Update is called once per frame
@@ -36,7 +35,7 @@ public class MissionUI : MonoBehaviour {
                 this.img.fillAmount = 1f;
                 this.missionTime = -1f;
                 this.moneyManagement.AddMoney(missionMoneyReward);
-                this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, new Vector2(300f, -273f));
+                this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, transform.position);
                 this.MissionQueue.DestroyMissionBar(this);
             } else {
                 this.img.fillAmount = this.aktTime / this.missionTime;
