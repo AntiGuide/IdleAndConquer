@@ -25,6 +25,7 @@ public class BaseSwitcher : MonoBehaviour {
     /// <param name="isLeft">If true the base should be switched to the one on the left. If false its to the right</param>
     public void OnClickBaseSwitch(bool isLeft) {
         this.Bases[CurrentBase].GetComponent<ProductionQueue>().ResetButtons();
+        this.Bases[CurrentBase].GetComponent<ProductionQueueResearch>().ResetButtons();
         if (isLeft) {
             ////this.Bases[CurrentBase].SetActive(false);
             this.Bases[CurrentBase].transform.localPosition -= new Vector3(10000, 10000, 10000);

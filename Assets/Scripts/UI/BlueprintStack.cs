@@ -23,6 +23,8 @@ public class BlueprintStack : MonoBehaviour {
 
     private int level = 0;
 
+    private int buildingTowardsLevel = 0;
+
     private Text blueprintCountText;
 
     private Text levelText;
@@ -43,10 +45,12 @@ public class BlueprintStack : MonoBehaviour {
     }
 
     public void LevelUp() {
-        if (this.level >= BlueprintStack.NeededBlueprintsLevel.Length || this.BlueprintCount < BlueprintStack.NeededBlueprintsLevel[this.level]) {
+        if (this.buildingTowardsLevel >= BlueprintStack.NeededBlueprintsLevel.Length || this.BlueprintCount < BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel]) {
             return;
         }
-        this.BlueprintCount -= BlueprintStack.NeededBlueprintsLevel[this.level];
+        this.BlueprintCount -= BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
+        buildingTowardsLevel++;
+        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[buildingTowardsLevel];
         this.BaseSwitch.GetResearchQueue().AddToQueue(this);
     }
 
@@ -59,7 +63,7 @@ public class BlueprintStack : MonoBehaviour {
     internal void PerformLevelUp() {
         this.level++;
         levelText.text = "Level " + level.ToString();
-        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.level];
+        
         switch (BlueprintTypeStack) {
             case BlueprintType.UNIT:
                 CreateAndOrderUnitStack.AttachedUnit.LevelUp();
@@ -95,11 +99,11 @@ public class BlueprintStack : MonoBehaviour {
         levelText = transform.Find("CountText").GetComponent<Text>();
         levelText.text = "Level " + level.ToString();
         blueprintCountText = transform.Find("BuildingCountText").GetComponent<Text>();
-        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.level];
+        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[buildingTowardsLevel];
     }
 
     public void AddBlueprint() {
         BlueprintCount++;
-        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.level];
+        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[buildingTowardsLevel];
     }
 }
