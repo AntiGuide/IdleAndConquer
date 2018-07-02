@@ -218,6 +218,11 @@ public class Unit {
     }
 
     public void LevelUp() {
+        int powerLevelBeforeLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000);
         this.Level++;
+        int powerLevelAfterLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000);
+        if (this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp) > 0) {
+            this.createAndOrderButton.AddPowerlevel(this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp), false);
+        }
     }
 }

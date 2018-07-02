@@ -18,6 +18,8 @@ public class BlueprintStack : MonoBehaviour {
 
     private Text blueprintCountText;
 
+    private Text levelText;
+
     public enum BlueprintType {
         UNIT = 0,
         UNIT_GROUP,
@@ -36,6 +38,8 @@ public class BlueprintStack : MonoBehaviour {
 
         this.BlueprintCount -= BlueprintStack.NeededBlueprintsLevel[this.level];
         this.level++;
+        levelText.text = "Level " + level.ToString();
+        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.level];
         switch (BlueprintTypeStack) {
             case BlueprintType.UNIT:
                 CreateAndOrderUnitStack.AttachedUnit.LevelUp();
@@ -73,7 +77,8 @@ public class BlueprintStack : MonoBehaviour {
             Debug.Log(gameObject.name = "Fail");
         }
 
-        transform.Find("CountText").GetComponent<Text>().text = "Level " + level.ToString();
+        levelText = transform.Find("CountText").GetComponent<Text>();
+        levelText.text = "Level " + level.ToString();
         blueprintCountText = transform.Find("BuildingCountText").GetComponent<Text>();
         blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.level];
     }
