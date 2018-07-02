@@ -270,8 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa0d62ce07a0c9e499bacb7c0a6a1e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remainingUnitsText: {fileID: 114364100384256442}
-  unitNameText: {fileID: 114237264562013190}
+  RemainingUnitsText: {fileID: 114364100384256442}
+  UnitNameText: {fileID: 114237264562013190}
 --- !u!114 &114308369407489756
 MonoBehaviour:
   m_ObjectHideFlags: 1

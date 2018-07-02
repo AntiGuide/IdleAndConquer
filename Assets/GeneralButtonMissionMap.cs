@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GeneralButtonMissionMap : MonoBehaviour {
+    public static MissionDetails MissionDetail;
     private Image image;
     private Text country;
     private Text generalName;
@@ -17,7 +18,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     }
 
     public void OnClick() {
-        // SelectedGeneral.General = gameObject.GetComponent<General>();
+        MissionManager.BuildingMission.MissionGeneral = gameObject.GetComponent<General>();
         this.mainMenueController.ActivateDeployUI(true);
         this.mainMenueController.ToggleMenue(2);
     }

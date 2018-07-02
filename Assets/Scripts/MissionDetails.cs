@@ -9,4 +9,12 @@ using UnityEngine.EventSystems;
 public class MissionDetails : MonoBehaviour {
     /// <summary>The name of the mission, e.g. Beat Juri</summary> 
     public string MissionName;
+
+    public MainMenueController MainMenueControll;
+
+    public void OnClick() {
+        Debug.Log(MissionName);
+        MissionManager.GenerateMission(this);
+        MainMenueControll.ToggleMenue(1);
+    }
 }

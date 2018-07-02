@@ -27,6 +27,8 @@ public class InputHandler : MonoBehaviour {
     /// <summary>Reference to the MainMenueController</summary>
     public MainMenueController MainMenueControll;
 
+    public bool IsMissionMap;
+
     /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
 
@@ -146,10 +148,12 @@ public class InputHandler : MonoBehaviour {
                 } else if (!this.movedDuringTouch) {
                     if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject()) {
                         this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                        this.layerMask = LayerMask.GetMask("MissionLocation");
-                        Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
-                        if (this.hitInformation.collider != null) {
-                            Debug.Log(this.hitInformation.collider.gameObject.GetComponent<MissionDetails>().MissionName);
+                        if (IsMissionMap) {
+                            this.layerMask = LayerMask.GetMask("MissionLocation");
+                            Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
+                            if (this.hitInformation.collider != null) {
+                                this.hitInformation.collider.gameObject.GetComponent<MissionDetails>().OnClick();
+                            }
                         }
                     }
                 }
