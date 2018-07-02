@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,11 +15,21 @@ public class BlueprintStack : MonoBehaviour {
 
     public BlueprintType BlueprintTypeStack;
 
+    public Image BuildingOverlay;
+
+    public BaseSwitcher BaseSwitch;
+
+    private static float[] buildTime = { 60f, 120f, 480f, 960f, 1920f, 2280f, 3840f, 4800f, 5760f, 6720f };
+
     private int level = 0;
 
     private Text blueprintCountText;
 
     private Text levelText;
+
+    public float Buildtime {
+        get { return buildTime[this.level]; }
+    }
 
     public enum BlueprintType {
         UNIT = 0,
@@ -35,8 +46,17 @@ public class BlueprintStack : MonoBehaviour {
         if (this.level >= BlueprintStack.NeededBlueprintsLevel.Length || this.BlueprintCount < BlueprintStack.NeededBlueprintsLevel[this.level]) {
             return;
         }
-
         this.BlueprintCount -= BlueprintStack.NeededBlueprintsLevel[this.level];
+        this.BaseSwitch.GetResearchQueue().AddToQueue(this);
+    }
+
+    private void Update() {
+        if (UnityEngine.Random.Range(0f, 1f) < 0.001f) {
+            this.AddBlueprint();
+        }
+    }
+
+    internal void PerformLevelUp() {
         this.level++;
         levelText.text = "Level " + level.ToString();
         blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.level];
@@ -63,13 +83,8 @@ public class BlueprintStack : MonoBehaviour {
         }
     }
 
-    private void Update() {
-        if (UnityEngine.Random.Range(0f, 1f) < 0.001f) {
-            this.AddBlueprint();
-        }
-    }
-
     private void Start() {
+
         Text t = transform.Find("Text").GetComponent<Text>();
         if (CreateAndOrderUnitStack.AttachedUnit != null) {
             t.text = CreateAndOrderUnitStack.AttachedUnit.UnitName;

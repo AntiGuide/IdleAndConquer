@@ -2260,6 +2260,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 54318848}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1032181929}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &95261085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4699,6 +4701,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1205483843}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 933524833}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &207662497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5014,6 +5018,7 @@ GameObject:
   - component: {fileID: 213603239}
   - component: {fileID: 213603240}
   - component: {fileID: 213603241}
+  - component: {fileID: 213603242}
   m_Layer: 0
   m_Name: Base1
   m_TagString: Untagged
@@ -5060,6 +5065,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41d73c175e880b749b1e3ae60ca5093f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseID: 1
+--- !u!114 &213603242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 213603238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d298bc8e8b7b1e647a300983fa7d5679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BaseID: 1
@@ -6057,6 +6074,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 659519242}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1055221978}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &256799181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6226,6 +6245,7 @@ GameObject:
   - component: {fileID: 260982787}
   - component: {fileID: 260982788}
   - component: {fileID: 260982789}
+  - component: {fileID: 260982790}
   m_Layer: 0
   m_Name: Base0
   m_TagString: Untagged
@@ -6272,6 +6292,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41d73c175e880b749b1e3ae60ca5093f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BaseID: 0
+--- !u!114 &260982790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 260982786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d298bc8e8b7b1e647a300983fa7d5679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BaseID: 0
@@ -8551,6 +8583,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 683769274}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1623554164}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &410435189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12421,6 +12455,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 55740791}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1879907363}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &615588606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12761,7 +12797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a4f903693abaf46bae9f56377b9840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabs:
+  Tabs:
   - {fileID: 1828208941}
   - {fileID: 474204323}
   - {fileID: 1173997371}
@@ -17506,6 +17542,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 501536404}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 978771933}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &869914825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18794,6 +18832,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 2052705615}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 962088377}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &934796868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25734,6 +25774,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 233804941}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1092500124}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1155685471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26868,6 +26910,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 894084129}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 2120517513}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1204167662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27272,6 +27316,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1092841995}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1132111410}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1210862421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30129,6 +30175,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 964966329}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 361595336}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1339679849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31058,6 +31106,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1017537774}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1139051658}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1395490624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31551,6 +31601,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1259013633}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1711121736}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1428729837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31692,6 +31744,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1713472766}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1036177959}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1452259334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32823,6 +32877,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1142651360}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 698000809}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1494903827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33199,6 +33255,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 683769274}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 474355861}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1506628049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33738,6 +33796,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1281827201}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1878329199}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1516308220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35207,6 +35267,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1488313501}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1232913746}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1579220382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37352,6 +37414,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1640974081}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1378511017}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1649539495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42893,6 +42957,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 132587676}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 678231385}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1874573459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44554,6 +44620,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1951432668}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 2071626559}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1926198521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49159,6 +49227,8 @@ MonoBehaviour:
   CreateAndOrderUnitStack: {fileID: 1075858014}
   BlueprintCount: 0
   BlueprintTypeStack: 0
+  BuildingOverlay: {fileID: 1475038045}
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &2119935033
 MonoBehaviour:
   m_ObjectHideFlags: 0

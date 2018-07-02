@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,6 +48,10 @@ public class BaseSwitcher : MonoBehaviour {
         this.GetProductionQueue().BaseSwitchRoutine();
         this.Bases[CurrentBase].GetComponent<EnergyPool>().SetActive();
         this.transform.position = this.startPosCamera;
+    }
+
+    public ProductionQueueResearch GetResearchQueue() {
+        return this.Bases[CurrentBase].GetComponent<ProductionQueueResearch>();
     }
 
     /// <summary>
