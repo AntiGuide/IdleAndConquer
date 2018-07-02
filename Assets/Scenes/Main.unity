@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1461,7 +1461,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.055000003, y: 0.2}
   m_AnchorMax: {x: 1, y: 0.73}
@@ -1661,6 +1661,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Turquoise1
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &62153588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1811,6 +1814,106 @@ MonoBehaviour:
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 1
   m_ConstraintCount: 1
+--- !u!1001 &73114880
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1097608668}
+    m_Modifications:
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 66d2a8e732a9dbf40a34a970a189fc6c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &76666356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,6 +2615,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Blue2
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &101025101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3531,7 +3637,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.055, y: 0.711}
@@ -3675,8 +3781,8 @@ RectTransform:
   m_Father: {fileID: 790373465}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7162169}
-  m_AnchorMax: {x: 1, y: 0.99999994}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4078,6 +4184,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Green1
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &169420126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4294,6 +4403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Turquoise2
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &197023995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4396,6 +4508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Green2
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &197159004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4800,6 +4915,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Turquoise3
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &209003264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5264,6 +5382,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 233804939}
+--- !u!1 &238347725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 238347727}
+  - component: {fileID: 238347726}
+  m_Layer: 0
+  m_Name: ReferenceShare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &238347726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 238347725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a89f12549821d64582ff87eaee4253a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MissionQueue: {fileID: 1097608670}
+--- !u!4 &238347727
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 238347725}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &239350976
 GameObject:
   m_ObjectHideFlags: 0
@@ -6426,6 +6585,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Red3
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &272772702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6880,6 +7042,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange4
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &323924880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7230,6 +7395,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Yellow2
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &350699507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9274,6 +9442,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Purple1
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &469993532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9627,7 +9798,7 @@ RectTransform:
   - {fileID: 1818361343}
   - {fileID: 1726234130}
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -11141,6 +11312,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange5
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &558328169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11165,6 +11339,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0879898, y: 2.1761475, z: 0.20000005}
   m_Center: {x: -3.7571678, y: 2.3669274, z: 5.2143585e-15}
+--- !u!224 &561163926 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224464776089115408, guid: 66d2a8e732a9dbf40a34a970a189fc6c,
+    type: 2}
+  m_PrefabInternal: {fileID: 73114880}
 --- !u!1 &564747374
 GameObject:
   m_ObjectHideFlags: 0
@@ -11899,8 +12078,8 @@ RectTransform:
   m_Father: {fileID: 19858383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.460864}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12095,6 +12274,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange8
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &605209896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12161,7 +12343,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.07700001}
   m_AnchorMax: {x: 0.104, y: 0.2402489}
@@ -12501,6 +12683,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange7
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &617667546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12579,8 +12764,8 @@ RectTransform:
   m_Father: {fileID: 1600020788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.4692804}
-  m_AnchorMax: {x: 1, y: 0.99999917}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12829,6 +13014,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Yellow1
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &635373361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14301,8 +14489,8 @@ RectTransform:
   m_Father: {fileID: 1977138698}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.46928144}
-  m_AnchorMax: {x: 1, y: 0.9999999}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14531,6 +14719,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange1
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &711277575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15244,7 +15435,7 @@ RectTransform:
   - {fileID: 1899302182}
   - {fileID: 1317099017}
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.9135208}
   m_AnchorMax: {x: 1, y: 1}
@@ -16429,6 +16620,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange2
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &812873517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17069,6 +17263,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange3
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &836949084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17341,7 +17538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &864332587
 Transform:
   m_ObjectHideFlags: 0
@@ -20351,6 +20548,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange10
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1007474479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20949,7 +21149,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21883503, y: 0.008756914}
   m_AnchorMax: {x: 0.79800004, y: 0.98424315}
@@ -21652,6 +21852,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Yellow3
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1047168951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22012,8 +22215,8 @@ RectTransform:
   m_Father: {fileID: 1053683587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7312421}
-  m_AnchorMax: {x: 1, y: 0.9999999}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -22437,8 +22640,8 @@ RectTransform:
   m_Father: {fileID: 701927094}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7312421}
-  m_AnchorMax: {x: 1, y: 0.9999999}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -22505,7 +22708,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.896, y: 0.11852075}
   m_AnchorMax: {x: 1, y: 0.2402489}
@@ -22995,6 +23198,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: DarkBlue1
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1079479738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23508,6 +23714,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Purple3
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1086629293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24361,6 +24570,79 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1095261834}
+--- !u!1 &1097608667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1097608668}
+  - component: {fileID: 1097608669}
+  - component: {fileID: 1097608670}
+  m_Layer: 5
+  m_Name: Missions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1097608668
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097608667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 561163926}
+  m_Father: {fileID: 1343580271}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.711}
+  m_AnchorMax: {x: 1, y: 0.924}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1097608669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097608667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 20
+    m_Bottom: 20
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 1
+  m_CellSize: {x: 323, y: 40}
+  m_Spacing: {x: 20, y: 20}
+  m_Constraint: 1
+  m_ConstraintCount: 1
+--- !u!114 &1097608670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097608667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58911862eac33a47bd0ff05967f3c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MissionBar: {fileID: 1484201823648082, guid: 66d2a8e732a9dbf40a34a970a189fc6c, type: 2}
+  MoneyManagement: {fileID: 0}
+  FloatUpSpawner: {fileID: 0}
 --- !u!1 &1101537010
 GameObject:
   m_ObjectHideFlags: 0
@@ -25149,6 +25431,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Blue3
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1137779871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25521,7 +25806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154407700
 GameObject:
@@ -26547,7 +26832,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05, y: 0.15677224}
   m_AnchorMax: {x: 0.95, y: 0.8854357}
@@ -28071,8 +28356,8 @@ RectTransform:
   m_Father: {fileID: 1909882962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7312421}
-  m_AnchorMax: {x: 1, y: 0.9999999}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -29393,6 +29678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: DarkBlue3
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1288779796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30262,6 +30550,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1097608668}
   - {fileID: 1931439383}
   - {fileID: 1152626739}
   - {fileID: 477947663}
@@ -31970,6 +32259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Red1
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1464480797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32815,6 +33107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange9
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1501615346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33609,8 +33904,8 @@ RectTransform:
   m_Father: {fileID: 277449319}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.51891536}
+  m_AnchorMax: {x: 1, y: 0.99999964}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -35213,6 +35508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Blue1
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1581635614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37837,7 +38135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1654485849
 Transform:
   m_ObjectHideFlags: 0
@@ -38563,6 +38861,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Purple2
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1694698899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38859,8 +39160,8 @@ RectTransform:
   m_Father: {fileID: 1341531984}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7312417}
-  m_AnchorMax: {x: 1, y: 0.9999994}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -40220,7 +40521,7 @@ RectTransform:
   m_Children:
   - {fileID: 822428463}
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -40298,7 +40599,7 @@ RectTransform:
   - {fileID: 782871490}
   - {fileID: 882287202}
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.128}
@@ -41036,7 +41337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1783996666
 RectTransform:
   m_ObjectHideFlags: 0
@@ -41053,7 +41354,7 @@ RectTransform:
   - {fileID: 1899289133}
   - {fileID: 810898263}
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.827}
   m_AnchorMax: {x: 0.555, y: 0.8894786}
@@ -41293,6 +41594,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: DarkBlue2
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &1798727114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42419,10 +42723,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c9cb19adf8a7343be54b43924b7840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GeneralName: {fileID: 0}
-  GeneralCountry: {fileID: 0}
-  UnitImagePrefab: {fileID: 0}
-  UnitContainer: {fileID: 0}
+  GeneralName: {fileID: 239350978}
+  GeneralCountry: {fileID: 2038090614}
+  UnitImagePrefab: {fileID: 1702502001156100, guid: 1a734a41761c56644bfa6cead88a19af,
+    type: 2}
+  UnitContainer: {fileID: 158012037}
 --- !u!114 &1850088639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44483,7 +44788,7 @@ RectTransform:
   - {fileID: 985336520}
   - {fileID: 1773843001}
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -44980,7 +45285,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1343580271}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.055, y: 0.711}
@@ -47398,6 +47703,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Red2
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &2055173378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48767,6 +49075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionName: Orange6
   MainMenueControll: {fileID: 1064353850}
+  MissionTime: 30
+  MissionMoneyReward: 1000
+  UIInteractions: {fileID: 1761633592}
 --- !u!65 &2118116844
 BoxCollider:
   m_ObjectHideFlags: 0

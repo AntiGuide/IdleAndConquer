@@ -5,17 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class OnClickDeploy : MonoBehaviour {
+    public static int MaxSlots = 5;
     public Text RemainingUnitsText;
     public Text UnitNameText;
     private ShowChosenGeneral showChosenGeneral;
     private Unit attachedUnit;
     private int unitCount;
+    private static int deployedUnits = 0;
 
     public void OnClickDeployEvent() {
-        if (this.unitCount > 0) {
+        if (this.unitCount > 0 && deployedUnits < MaxSlots) {
             this.unitCount--;
+            deployedUnits++;
             this.RemainingUnitsText.text = this.unitCount.ToString();
-            this.showChosenGeneral.CreateNewUnitImage(this.attachedUnit);
+            this.showChosenGeneral.CreateNewUnitImage();
+            MissionManager.AddUnitToBuildingMission(attachedUnit);
         }
     }
 

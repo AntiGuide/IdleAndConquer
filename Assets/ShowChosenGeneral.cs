@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Shows the units selected in the mission preparation screen
+/// </summary>
 public class ShowChosenGeneral : MonoBehaviour {
     /// <summary>Reference to the text to display the general name</summary>
     public Text GeneralName;
@@ -25,11 +28,8 @@ public class ShowChosenGeneral : MonoBehaviour {
         this.GeneralCountry.text = gen.Country;
     }
 
-    public GameObject CreateNewUnitImage(Unit unit) {
+    public GameObject CreateNewUnitImage() {
         GameObject go = Instantiate(this.UnitImagePrefab, this.UnitContainer);
-
-        // DeployingUnit du = go.GetComponent<DeployingUnit>();
-        // du.Initialize(unit);
         return go;
     }
 

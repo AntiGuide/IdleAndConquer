@@ -26,7 +26,7 @@ public class Unit {
     // public static int[] LevelGroup = { 0, 0, 0 };
 
     /// <summary>The script that triggeres a production of this unit</summary>
-    private CreateAndOrderUnit createAndOrderButton;
+    public CreateAndOrderUnit CreateAndOrderButton;
 
     /// <summary>The used to get the correct production queue</summary>
     private BaseSwitcher baseSwitch;
@@ -90,7 +90,7 @@ public class Unit {
         this.armorType = armorType;
         this.cost = cost;
         this.buildtime = buildtime;
-        this.createAndOrderButton = createAndOrderButton;
+        this.CreateAndOrderButton = createAndOrderButton;
         this.baseSwitch = baseSwitch;
     }
 
@@ -154,9 +154,9 @@ public class Unit {
     /// </summary>
     /// <param name="moneyManager">The reference to the players money pool</param>
     public void Order(ref MoneyManagement moneyManager) {
-        if (moneyManager.SubMoney(createAndOrderButton.Cost)) {
-            this.baseSwitch.GetProductionQueue().AddToQueue(this, this.createAndOrderButton);
-            this.createAndOrderButton.AddSingleUnitBuilding();
+        if (moneyManager.SubMoney(CreateAndOrderButton.Cost)) {
+            this.baseSwitch.GetProductionQueue().AddToQueue(this, this.CreateAndOrderButton);
+            this.CreateAndOrderButton.AddSingleUnitBuilding();
         }
     }
 
@@ -212,9 +212,9 @@ public class Unit {
     /// Adds a single unit of this type to the unit count (visually, save game and variable). Also sets power level.
     /// </summary>
     public void AddSingleBuiltUnit() {
-        this.createAndOrderButton.SetUnitCount((++this.unitCount).ToString());
+        this.CreateAndOrderButton.SetUnitCount((++this.unitCount).ToString());
         PlayerPrefs.SetInt(this.unitName + "_COUNT", this.unitCount);
-        this.createAndOrderButton.AddPowerlevel(Mathf.RoundToInt((this.hp * this.attack * this.defense) / 1000), false);
+        this.CreateAndOrderButton.AddPowerlevel(Mathf.RoundToInt((this.hp * this.attack * this.defense) / 1000), false);
     }
 
     public void LevelUp() {
@@ -222,7 +222,7 @@ public class Unit {
         this.Level++;
         int powerLevelAfterLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000);
         if (this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp) > 0) {
-            this.createAndOrderButton.AddPowerlevel(this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp), false);
+            this.CreateAndOrderButton.AddPowerlevel(this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp), false);
         }
     }
 }
