@@ -77,8 +77,9 @@ public class MainMenueController : MonoBehaviour {
     /// <param name="val">The value contains info wether the UI should be activated (true) or deactivated (false)</param>
     public void ActivateDeployUI(bool val) {
         if (!val) {
-            while (this.DeployUI.transform.childCount > 0) {
-                this.DeployUI.transform.GetChild(0);
+            Transform unitContainer = this.DeployUI.transform.Find("BG").Find("UnitContainer");
+            for (int i = 0; i < unitContainer.childCount; i++) {
+                Destroy(unitContainer.GetChild(i).gameObject);
             }
         }
         this.DeployUI.SetActive(val);

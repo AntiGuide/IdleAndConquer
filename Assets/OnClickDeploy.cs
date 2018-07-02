@@ -11,12 +11,12 @@ public class OnClickDeploy : MonoBehaviour {
     private ShowChosenGeneral showChosenGeneral;
     private Unit attachedUnit;
     private int unitCount;
-    private static int deployedUnits = 0;
+    public static int DeployedUnits = 0;
 
     public void OnClickDeployEvent() {
-        if (this.unitCount > 0 && deployedUnits < MaxSlots) {
+        if (this.unitCount > 0 && DeployedUnits < MaxSlots) {
             this.unitCount--;
-            deployedUnits++;
+            DeployedUnits++;
             this.RemainingUnitsText.text = this.unitCount.ToString();
             this.showChosenGeneral.CreateNewUnitImage();
             MissionManager.AddUnitToBuildingMission(attachedUnit);
