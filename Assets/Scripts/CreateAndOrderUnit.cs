@@ -67,6 +67,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The reference to the unit count building text object</summary>
     private Text unitBuilding;
 
+    public void ShowUnitsBuilding() {
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
+    }
+
     /// <summary>The reference to the building vfx image</summary>
     private Image buildingOverlay;
 
@@ -131,8 +135,8 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// Adds 1 to the unit building text
     /// </summary>
     public void AddSingleUnitBuilding() {
-        this.buildingUnits = ++this.buildingUnits;
-        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
+        this.buildingUnits++;
+        ShowUnitsBuilding();
     }
 
     /// <summary>
@@ -140,7 +144,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// </summary>
     public void SubSingleUnitBuilding() {
         this.buildingUnits = --this.buildingUnits;
-        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
+        ShowUnitsBuilding();
     }
 
     /// <summary>
@@ -148,7 +152,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// </summary>
     public void SetUnitsBuilding(int buildingUnits) {
         this.buildingUnits = buildingUnits;
-        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
+        ShowUnitsBuilding();
     }
 
     /// <summary>

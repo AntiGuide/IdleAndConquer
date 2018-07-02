@@ -53,7 +53,6 @@ public class ProductionQueue : MonoBehaviour {
             this.overlayFill = Mathf.Min(this.remainingTime / this.latestUnit.Buildtime, 1.0f);
             this.overlayFill = Mathf.Max(this.overlayFill, 0f);
             if (BaseSwitcher.CurrentBase == this.BaseID) {
-                this.buttonQueue[0].SetUnitsBuilding(this.inProduction);
                 this.buttonQueue[0].SetProductionOverlayFill(this.overlayFill);
             }
 
@@ -73,6 +72,12 @@ public class ProductionQueue : MonoBehaviour {
                     this.latestUnit = null;
                 }
             }
+        }
+    }
+
+    public void BaseSwitchRoutine() {
+        foreach (CreateAndOrderUnit item in buttonQueue) {
+            item.AddSingleUnitBuilding();
         }
     }
 }

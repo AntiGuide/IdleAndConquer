@@ -43,7 +43,8 @@ public class BaseSwitcher : MonoBehaviour {
             this.Bases[CurrentBase].transform.localPosition += new Vector3(10000, 10000, 10000);
             ////this.Bases[CurrentBase].SetActive(true);
         }
-        
+
+        this.GetProductionQueue().BaseSwitchRoutine();
         this.Bases[CurrentBase].GetComponent<EnergyPool>().SetActive();
         this.transform.position = this.startPosCamera;
     }
