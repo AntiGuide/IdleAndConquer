@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 114012042930029680}
   - component: {fileID: 65581046814959046}
   - component: {fileID: 54597011588584476}
+  - component: {fileID: 114557189352922020}
   m_Layer: 9
   m_Name: Refinery
   m_TagString: Buildings
@@ -2119,6 +2120,19 @@ MonoBehaviour:
   movSpeed: 1
   range: 0.5
   Phase: 75
+--- !u!114 &114557189352922020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094477539291470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2706abf3061441944b41f3f3c06c8dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HarvesterPrefab: {fileID: 1911548418386056, guid: 61b7ed4850832cd41812b796ecd855c3,
+    type: 2}
 --- !u!114 &114747594214264278
 MonoBehaviour:
   m_ObjectHideFlags: 1

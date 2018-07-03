@@ -762,11 +762,11 @@ MonoBehaviour:
   - {fileID: 1400704415396098, guid: 0309ec524cf43f546ace1eb447417332, type: 2}
   - {fileID: 1706830012228478, guid: ae0be251846e3944abd1438add493fb4, type: 2}
   - {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1094477539291470, guid: 6bed379ec8fbf504e9445125122b421c, type: 2}
+  - {fileID: 1920727374271818, guid: e789ee5b117d89145aedcc22951d7cd7, type: 2}
   - {fileID: 1577165762185470, guid: 9150ec5f63f3b7b4b9cd75bb509d9c6e, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1338776505941328, guid: a8d10cbb0047d944cbf533ba34a2b864, type: 2}
+  - {fileID: 1462446017090782, guid: fcc6aebcf3a0efa41a2f3fc5d9c1b569, type: 2}
   BuildConfirmUI: {fileID: 477947662}
   MenueControll:
   - {fileID: 0}
@@ -16298,11 +16298,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 800854616}
---- !u!1 &807620745 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1647772092}
 --- !u!1 &810898262
 GameObject:
   m_ObjectHideFlags: 0
@@ -31755,21 +31750,21 @@ MonoBehaviour:
   BuiltBuildings:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 807620745}
+  - {fileID: 122047945}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   Buildings:
-  - {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f, type: 2}
-  - {fileID: 1378292085812040, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
+  - {fileID: 1400704415396098, guid: 0309ec524cf43f546ace1eb447417332, type: 2}
+  - {fileID: 1706830012228478, guid: ae0be251846e3944abd1438add493fb4, type: 2}
   - {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a, type: 2}
-  - {fileID: 1730811312245924, guid: bf72985a4c93c634681a5e5ee0bc42e7, type: 2}
-  - {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d, type: 2}
-  - {fileID: 1515728511559848, guid: 4e50ccac9c99029439655924f5651bdf, type: 2}
-  - {fileID: 1370554197613394, guid: 15ec9883c5986e946b6e141ac8c4b5cf, type: 2}
-  - {fileID: 1816868067750538, guid: 5b2ff19feeb5ec247add004570d9cd08, type: 2}
+  - {fileID: 1094477539291470, guid: 6bed379ec8fbf504e9445125122b421c, type: 2}
+  - {fileID: 1920727374271818, guid: e789ee5b117d89145aedcc22951d7cd7, type: 2}
+  - {fileID: 1577165762185470, guid: 9150ec5f63f3b7b4b9cd75bb509d9c6e, type: 2}
+  - {fileID: 1338776505941328, guid: a8d10cbb0047d944cbf533ba34a2b864, type: 2}
+  - {fileID: 1462446017090782, guid: fcc6aebcf3a0efa41a2f3fc5d9c1b569, type: 2}
   BuildConfirmUI: {fileID: 477947662}
   MenueControll:
   - {fileID: 0}
