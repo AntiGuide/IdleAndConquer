@@ -258,6 +258,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4400615464947028}
+  - component: {fileID: 114732927905374662}
+  - component: {fileID: 114485467140074710}
   m_Layer: 0
   m_Name: Refinery
   m_TagString: Untagged
@@ -2034,6 +2036,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.13, y: 2.61, z: 8.42}
   m_Center: {x: 0, y: 1.37, z: -1.89}
+--- !u!114 &114485467140074710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375441472874360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb13fd17e70abc488569b056a1daf1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingType: 3
+--- !u!114 &114732927905374662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375441472874360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d37b5a7567d7f45a0d72c58d378b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GreenTransparent: {fileID: 2800000, guid: 8c5397737983bd34697861fe680c634e, type: 3}
+  RedTransparent: {fileID: 2800000, guid: fb3a3d18be4b16c489e770b232eadd9d, type: 3}
 --- !u!114 &114837642899890100
 MonoBehaviour:
   m_ObjectHideFlags: 1

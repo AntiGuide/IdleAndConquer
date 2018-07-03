@@ -759,14 +759,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Buildings:
-  - {fileID: 1735837961333510, guid: bf2710f25f950924f994a52d8da9729f, type: 2}
-  - {fileID: 1378292085812040, guid: e71cea7cbe716dd428d1a27277cabce0, type: 2}
+  - {fileID: 0}
+  - {fileID: 1407803694720192, guid: ae0be251846e3944abd1438add493fb4, type: 2}
   - {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a, type: 2}
-  - {fileID: 1730811312245924, guid: bf72985a4c93c634681a5e5ee0bc42e7, type: 2}
-  - {fileID: 1471329952214516, guid: b1490eb83783c0b459051d9eca7c1d7d, type: 2}
-  - {fileID: 1515728511559848, guid: 4e50ccac9c99029439655924f5651bdf, type: 2}
-  - {fileID: 1370554197613394, guid: 15ec9883c5986e946b6e141ac8c4b5cf, type: 2}
-  - {fileID: 1816868067750538, guid: 5b2ff19feeb5ec247add004570d9cd08, type: 2}
+  - {fileID: 1375441472874360, guid: 6bed379ec8fbf504e9445125122b421c, type: 2}
+  - {fileID: 1214953452278680, guid: e789ee5b117d89145aedcc22951d7cd7, type: 2}
+  - {fileID: 1909612196108236, guid: 9150ec5f63f3b7b4b9cd75bb509d9c6e, type: 2}
+  - {fileID: 1699160108496498, guid: a8d10cbb0047d944cbf533ba34a2b864, type: 2}
+  - {fileID: 1753446859998002, guid: fcc6aebcf3a0efa41a2f3fc5d9c1b569, type: 2}
   BuildConfirmUI: {fileID: 477947662}
   MenueControll:
   - {fileID: 0}
