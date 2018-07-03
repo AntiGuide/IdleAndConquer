@@ -127,7 +127,14 @@ PlayerSettings:
     16:9: 0
     Others: 1
   bundleVersion: 0.4.10
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 2800000, guid: c5bb8c5a2b9a8af418278d308fac33fd, type: 3}
+  - {fileID: 2800000, guid: ab09333d9cd279e42a971cdcd718e800, type: 3}
+  - {fileID: 2800000, guid: 18ffc014d433d744992598daa6e71ae5, type: 3}
+  - {fileID: 12800000, guid: ab67cec6a5c4e634eaf33f7238b764a6, type: 3}
+  - {fileID: 2800000, guid: 1db90e44357045a46bf1cb6f973db6ee, type: 3}
+  - {fileID: 2800000, guid: 5db906e89e58f3146bb778230f9bab13, type: 3}
+  - {fileID: 2800000, guid: d3786269ecfd085468174ed2b3e9128c, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -173,7 +180,7 @@ PlayerSettings:
   CreateWallpaper: 0
   APKExpansionFiles: 0
   keepLoadedShadersAlive: 0
-  StripUnusedMeshComponents: 0
+  StripUnusedMeshComponents: 1
   VertexChannelCompressionMask:
     serializedVersion: 2
     m_Bits: 238
@@ -240,7 +247,7 @@ PlayerSettings:
   tvOSManualSigningProvisioningProfileID: 
   appleEnableAutomaticSigning: 0
   clonedFromGUID: 00000000000000000000000000000000
-  AndroidTargetDevice: 0
+  AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
