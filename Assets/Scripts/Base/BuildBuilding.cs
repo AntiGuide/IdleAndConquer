@@ -144,8 +144,8 @@ public class BuildBuilding : MonoBehaviour {
     private void LateUpdate() {
         if (this.playerBuildingThisBase) {
             this.BuildConfirmUI.SetActive(true);
-            Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
-            Vector3 onlyXZ = new Vector3(bounds.size.x, 0, bounds.size.z);
+            Bounds bounds = this.newBuilding.GetComponentInChildren<BoxCollider>().bounds;
+            Vector3 onlyXZ = new Vector3(bounds.extents.x, 0, bounds.extents.z);
             Vector2 screenPoint = Camera.main.WorldToScreenPoint(this.newBuilding.transform.position + this.BuildUIOffset + onlyXZ);
             screenPoint = Vector2.Max(this.MinBuildConfirmUIPosition, screenPoint);
             screenPoint = Vector2.Min(this.MaxBuildConfirmUIPosition, screenPoint);
