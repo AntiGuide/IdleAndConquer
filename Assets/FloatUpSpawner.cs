@@ -13,6 +13,8 @@ public class FloatUpSpawner : MonoBehaviour {
     /// <summary>The distance that the newly generated FloatUp elements travel until disappearing</summary>
     public float TravelDistance;
 
+    public SoundController soundController;
+
     /// <summary>Method creates a new FloatUp element of the given parameters</summary>
     /// <param name="value">The value to display in the generated FloatUp element</param>
     /// <param name="type">The type of the generated FloatUp element. For example this could decide between Powerlevel and Dollar.</param>
@@ -27,5 +29,6 @@ public class FloatUpSpawner : MonoBehaviour {
 
         go.transform.position = pos;
         go.GetComponent<FloatUp>().Initialize(type, value, this.FadeTime, this.TravelDistance);
+        soundController.StartSound(SoundController.Sounds.FLOATUP);
     }
 }

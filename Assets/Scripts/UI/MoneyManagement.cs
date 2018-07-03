@@ -9,7 +9,10 @@ using UnityEngine.UI;
 public class MoneyManagement : MonoBehaviour {
     /// <summary>The time the money takes to lerp to a specific value</summary>
     public float LerpTimeStart = 1.0f;
-    
+
+    /// <summary>Used to trigger sound</summary>
+    public SoundController SoundControll;
+
     /// <summary>Saves the amout of money the player has at the moment</summary>
     private static long money;
     
@@ -24,6 +27,8 @@ public class MoneyManagement : MonoBehaviour {
 
     /// <summary>The amount of money that is goal of the lerp</summary>
     private long moneyToLerpTo;
+
+    private bool isFinished = true;
 
     /// <summary>
     /// Formats the money to german format
@@ -97,6 +102,12 @@ public class MoneyManagement : MonoBehaviour {
             this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);
             this.moneyAmountShown = (long)Mathf.Lerp(this.moneyAmountOld, this.moneyToLerpTo, this.lerpTimeDone / this.LerpTimeStart);
             this.GetComponent<Text>().text = FormatMoney(this.moneyAmountShown);
+        } else if (!isFinished) {
+            isFinished = true;
+            SoundControll.StopLoopingSound();
+        }
+        {
+
         }
     }
 
@@ -109,6 +120,8 @@ public class MoneyManagement : MonoBehaviour {
             this.moneyAmountOld = this.moneyAmountShown;
             this.moneyToLerpTo = money;
             this.lerpTimeDone = 0.0f;
+            this.isFinished = false;
+            SoundControll.StartLoopingSound(SoundController.Sounds.SOFTCURRENCY_COUNTUP, 0.3f);
         } else {
             this.GetComponent<Text>().text = FormatMoney(money);
             this.moneyAmountShown = money;

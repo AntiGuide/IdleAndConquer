@@ -16,6 +16,9 @@ public class BaseSwitchTrigger : MonoBehaviour {
     /// <summary>Used to tint both buttons after switch</summary>
     public BaseSwitchTrigger OtherButton;
 
+    /// <summary>Used to trigger sound</summary>
+    public SoundController SoundControll;
+
     /// <summary>Reference to the image component to regulate the tint color</summary>
     private Image image;
 
@@ -27,6 +30,7 @@ public class BaseSwitchTrigger : MonoBehaviour {
         this.BaseSwitch.OnClickBaseSwitch(this.IsLeft);
         this.UpdateButtons();
         this.OtherButton.UpdateButtons();
+        SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
     }
 
     /// <summary>Sets the color for the base switch buttons</summary>

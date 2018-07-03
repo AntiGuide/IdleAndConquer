@@ -13,6 +13,9 @@ public class ProductionQueueResearch : MonoBehaviour {
     ///// <summary>The list of researches that the queue works on/will produce</summary>
     //private List<Unit> prodQueue = new List<Unit>();
 
+    /// <summary>Used to trigger sound</summary>
+    public SoundController SoundControll;
+
     /// <summary>Reference to buttons corresponding to the researches. Needs this for updating the button overlay.</summary>
     private List<BlueprintStack> buttonQueue = new List<BlueprintStack>();
 
@@ -31,6 +34,7 @@ public class ProductionQueueResearch : MonoBehaviour {
     public void AddToQueue(BlueprintStack blueprintStack) {
         //this.inProduction++;
         //this.prodQueue.Add(u);
+        SoundControll.StartSound(SoundController.Sounds.UPGRADING);
         this.buttonQueue.Add(blueprintStack);
     }
 

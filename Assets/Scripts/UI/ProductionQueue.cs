@@ -10,6 +10,9 @@ public class ProductionQueue : MonoBehaviour {
     /// <summary>Defines which base this production queue belongs to</summary>
     public int BaseID;
 
+    /// <summary>Used to trigger sound</summary>
+    public SoundController SoundControll;
+
     /// <summary>The list of units that the queue works on/will produce</summary>
     private List<Unit> prodQueue = new List<Unit>();
 
@@ -32,6 +35,7 @@ public class ProductionQueue : MonoBehaviour {
         this.inProduction++;
         this.prodQueue.Add(u);
         this.buttonQueue.Add(createAndOrderButton);
+        SoundControll.StartSound(SoundController.Sounds.QUEUE_TAPS);
     }
 
     public void ResetButtons() {
@@ -58,6 +62,7 @@ public class ProductionQueue : MonoBehaviour {
 
             if (this.remainingTime <= 0f) {
                 this.latestUnit.AddSingleBuiltUnit();
+                SoundControll.StartSound(SoundController.Sounds.UNIT_READY);
                 if (BaseSwitcher.CurrentBase == this.BaseID) {
                     this.buttonQueue[0].SubSingleUnitBuilding();
                 }

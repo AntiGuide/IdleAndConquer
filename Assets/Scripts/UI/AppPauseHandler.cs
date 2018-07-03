@@ -23,6 +23,8 @@ public class AppPauseHandler : MonoBehaviour {
     /// <summary>The transform to attach a new instance of a PlayerBackNotification to</summary>
     public Transform ParentPlayerBackNotification;
 
+    public SoundController soundController;
+
     /// <summary>Time since login</summary>
     private float loginTimer = 0f;
 
@@ -51,7 +53,7 @@ public class AppPauseHandler : MonoBehaviour {
                 if (Harvesters.Count >= 1 && (secondsSincePause - (secondsSincePause % (long)Harvesters[0].MiningSpeed) > 0 || additionalMoney > 0)) {
                     GameObject go = Instantiate(this.PlayerBackNotification, this.ParentPlayerBackNotification);
                     PlayerBackNotification pbn = go.GetComponent<PlayerBackNotification>();
-                    pbn.Initialize("You earned money while you were gone", this.FloatUpSpawn, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, ref Harvesters);
+                    pbn.Initialize("You earned money while you were gone", this.FloatUpSpawn, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, soundController, ref Harvesters);
                 }
             }
         } else {

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TabSwitcher : MonoBehaviour {
     public GameObject[] Tabs;
+
+    /// <summary>Used to trigger sound</summary>
+    public SoundController SoundControll;
+
     private int aktTabID;
 
     public void OnClickTab(int tabID) {
@@ -11,6 +15,7 @@ public class TabSwitcher : MonoBehaviour {
             Tabs[aktTabID].SetActive(false);
             aktTabID = tabID;
             Tabs[tabID].SetActive(true);
+            SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         }
     }
 

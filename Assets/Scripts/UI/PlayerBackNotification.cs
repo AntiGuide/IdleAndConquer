@@ -10,6 +10,8 @@ public class PlayerBackNotification : MonoBehaviour {
     /// <summary>The text on the pop up</summary>
     public Text NotificationText;
 
+    private SoundController soundController;
+
     /// <summary>Reference to the FloatUpSpawner</summary>
     private FloatUpSpawner floatUpSpawner;
 
@@ -34,13 +36,14 @@ public class PlayerBackNotification : MonoBehaviour {
     /// <param name="secondsSincePause">The seconds the player paused the game</param>
     /// <param name="additionalMoney">The money the player gets additional to the secondsSincePause</param>
     /// <param name="harvesters">List of all harvesters</param>
-    public void Initialize(string notificationText, FloatUpSpawner floatUpSpawner, FloatUp.ResourceType type, long secondsSincePause, long additionalMoney, ref List<Harvester> harvesters) {
+    public void Initialize(string notificationText, FloatUpSpawner floatUpSpawner, FloatUp.ResourceType type, long secondsSincePause, long additionalMoney, SoundController soundController, ref List<Harvester> harvesters) {
         this.NotificationText.text = notificationText;
         this.floatUpSpawner = floatUpSpawner;
         this.type = type;
         this.secondsSincePause = secondsSincePause;
         this.additionalMoney = additionalMoney;
         this.harvesters = harvesters;
+        this.soundController = soundController;
     }
 
     /// <summary>Called when the player clicks the notification. Grants earned money.</summary>
@@ -51,6 +54,7 @@ public class PlayerBackNotification : MonoBehaviour {
         }
 
         this.floatUpSpawner.GenerateFloatUp(addedMoney, this.type, transform.position);
+        soundController.StartSound(SoundController.Sounds.REPORT_TAPS);
         MonoBehaviour.Destroy(this.gameObject);
     }
 }
