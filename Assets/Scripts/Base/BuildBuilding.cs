@@ -121,6 +121,7 @@ public class BuildBuilding : MonoBehaviour {
                 if (this.hitInformation.collider != null) {
                     Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
                     Vector3 cent = bounds.center;
+                    Debug.Log(bounds.size.ToString());
                     this.hitInformation.point = new Vector3(this.hitInformation.point.x, 0, this.hitInformation.point.z);
                     this.newBuilding.transform.position = this.ToGrid(this.hitInformation.point);
                 }

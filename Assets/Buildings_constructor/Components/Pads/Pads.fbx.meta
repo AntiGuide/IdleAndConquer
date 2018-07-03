@@ -1,0 +1,111 @@
+fileFormatVersion: 2
+guid: 362583fc7e654c1459035c0cec032bd1
+timeCreated: 1516623060
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Main_form_HP_00.001
+    100002: Main_form_HP_00.002
+    100004: Main_form_HP_00.003
+    100006: Main_form_HP_00.004
+    100008: Main_form_HP_00.005
+    100010: Main_form_HP_00.006
+    100012: Main_form_HP_00.007
+    100014: Main_form_HP_00.008
+    100016: //RootNode
+    400000: Main_form_HP_00.001
+    400002: Main_form_HP_00.002
+    400004: Main_form_HP_00.003
+    400006: Main_form_HP_00.004
+    400008: Main_form_HP_00.005
+    400010: Main_form_HP_00.006
+    400012: Main_form_HP_00.007
+    400014: Main_form_HP_00.008
+    400016: //RootNode
+    2300000: Main_form_HP_00.001
+    2300002: Main_form_HP_00.002
+    2300004: Main_form_HP_00.003
+    2300006: Main_form_HP_00.004
+    2300008: Main_form_HP_00.005
+    2300010: Main_form_HP_00.006
+    2300012: Main_form_HP_00.007
+    2300014: Main_form_HP_00.008
+    3300000: Main_form_HP_00.001
+    3300002: Main_form_HP_00.002
+    3300004: Main_form_HP_00.003
+    3300006: Main_form_HP_00.004
+    3300008: Main_form_HP_00.005
+    3300010: Main_form_HP_00.006
+    3300012: Main_form_HP_00.007
+    3300014: Main_form_HP_00.008
+    4300000: Main_form_HP_00.008
+    4300002: Main_form_HP_00.007
+    4300004: Main_form_HP_00.005
+    4300006: Main_form_HP_00.004
+    4300008: Main_form_HP_00.003
+    4300010: Main_form_HP_00.002
+    4300012: Main_form_HP_00.001
+    4300014: Main_form_HP_00.006
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 8a712d4ec6fd538458da6ec08834064e
+timeCreated: 1516957537
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Circle.009
+    100002: Tube_01
+    100004: Tube_01_pad
+    100006: Tube_02
+    100008: Tube_03
+    100010: Tube_03_clamp
+    100012: Tube_03_pad
+    100014: Tube_04
+    100016: Tube_04_corner
+    100018: Tube_05
+    100020: Tube_06
+    100022: Tube_07
+    100024: Tube_08
+    100026: Tube_08_clamp
+    100028: Tube_08_pad
+    100030: //RootNode
+    100032: Tube_04_half
+    100034: Tube_05_corner
+    100036: Tube_05_half
+    400000: Circle.009
+    400002: Tube_01
+    400004: Tube_01_pad
+    400006: Tube_02
+    400008: Tube_03
+    400010: Tube_03_clamp
+    400012: Tube_03_pad
+    400014: Tube_04
+    400016: Tube_04_corner
+    400018: Tube_05
+    400020: Tube_06
+    400022: Tube_07
+    400024: Tube_08
+    400026: Tube_08_clamp
+    400028: Tube_08_pad
+    400030: //RootNode
+    400032: Tube_04_half
+    400034: Tube_05_corner
+    400036: Tube_05_half
+    2300000: Circle.009
+    2300002: Tube_01
+    2300004: Tube_01_pad
+    2300006: Tube_02
+    2300008: Tube_03
+    2300010: Tube_03_clamp
+    2300012: Tube_03_pad
+    2300014: Tube_04
+    2300016: Tube_04_corner
+    2300018: Tube_05
+    2300020: Tube_06
+    2300022: Tube_07
+    2300024: Tube_08
+    2300026: Tube_08_clamp
+    2300028: Tube_08_pad
+    2300030: Tube_04_half
+    2300032: Tube_05_corner
+    2300034: Tube_05_half
+    3300000: Circle.009
+    3300002: Tube_01
+    3300004: Tube_01_pad
+    3300006: Tube_02
+    3300008: Tube_03
+    3300010: Tube_03_clamp
+    3300012: Tube_03_pad
+    3300014: Tube_04
+    3300016: Tube_04_corner
+    3300018: Tube_05
+    3300020: Tube_06
+    3300022: Tube_07
+    3300024: Tube_08
+    3300026: Tube_08_clamp
+    3300028: Tube_08_pad
+    3300030: Tube_04_half
+    3300032: Tube_05_corner
+    3300034: Tube_05_half
+    4300000: Tube_08_clamp
+    4300002: Tube_03_clamp
+    4300004: Tube_06
+    4300006: Tube_05
+    4300008: Tube_04_corner
+    4300010: Tube_04
+    4300012: Tube_03_pad
+    4300014: Circle.009
+    4300016: Tube_03
+    4300018: Tube_02
+    4300020: Tube_01_pad
+    4300022: Tube_08_pad
+    4300024: Tube_08
+    4300026: Tube_01
+    4300028: Tube_07
+    4300030: Tube_04_half
+    4300032: Tube_05_half
+    4300034: Tube_05_corner
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
