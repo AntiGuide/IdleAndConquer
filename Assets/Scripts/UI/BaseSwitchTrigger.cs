@@ -19,6 +19,8 @@ public class BaseSwitchTrigger : MonoBehaviour {
     /// <summary>Used to trigger sound</summary>
     public SoundController SoundControll;
 
+    public BuildConfirmDialogHandler BuildConfirmDialogHandle;
+
     /// <summary>Reference to the image component to regulate the tint color</summary>
     private Image image;
 
@@ -27,6 +29,7 @@ public class BaseSwitchTrigger : MonoBehaviour {
     /// </summary>
     /// <param name="isLeft">If true the base should be switched to the one on the left. If false its to the right</param>
     public void OnClickBaseSwitch() {
+        this.CheckPlayerBuilding();
         this.BaseSwitch.OnClickBaseSwitch(this.IsLeft);
         this.UpdateButtons();
         this.OtherButton.UpdateButtons();
@@ -48,5 +51,11 @@ public class BaseSwitchTrigger : MonoBehaviour {
     private void Start() {
         this.image = this.GetComponent<Image>();
         this.UpdateButtons();
+    }
+
+    private void CheckPlayerBuilding() {
+        if (BuildConfirmDialogHandle.isActiveAndEnabled) {
+            BuildConfirmDialogHandle.DenyClick();
+        }
     }
 }

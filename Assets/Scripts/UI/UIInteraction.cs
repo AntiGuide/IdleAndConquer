@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -20,33 +21,46 @@ public class UIInteraction : MonoBehaviour {
     /// <summary>Used to switch scenes</summary>
     public GameObject MainContainer;
 
+    public BuildConfirmDialogHandler BuildConfirmDialogHandle;
+
     /// <summary>Behaviour for button 1</summary>
     public void OpenButton1() {
+        this.CheckPlayerBuilding();
         this.MissionMapLoad();
     }
 
     /// <summary>Behaviour for button 2</summary>
     public void OpenButton2() {
+        this.CheckPlayerBuilding();
         SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(2);
     }
 
     /// <summary>Behaviour for button 3</summary>
     public void OpenButton3() {
+        this.CheckPlayerBuilding();
         SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(3);
     }
 
     /// <summary>Behaviour for button 4</summary>
     public void OpenButton4() {
+        this.CheckPlayerBuilding();
         SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(4);
     }
 
     /// <summary>Behaviour for button 5</summary>
     public void OpenButton5() {
+        this.CheckPlayerBuilding();
         SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(5);
+    }
+
+    private void CheckPlayerBuilding() {
+        if (BuildConfirmDialogHandle.isActiveAndEnabled) {
+            BuildConfirmDialogHandle.DenyClick();
+        }
     }
 
     public void MissionMapLoad() {
