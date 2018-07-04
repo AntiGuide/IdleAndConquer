@@ -23804,6 +23804,8 @@ MonoBehaviour:
   RewardPopUpPrefab: {fileID: 1179291650785810, guid: e5f5bd2ecc8fc614bb8075cfea10ddef,
     type: 2}
   TransformCanvas: {fileID: 1343580271}
+  LootboxPopUpPrefab: {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13,
+    type: 2}
 --- !u!1 &1101537010
 GameObject:
   m_ObjectHideFlags: 0

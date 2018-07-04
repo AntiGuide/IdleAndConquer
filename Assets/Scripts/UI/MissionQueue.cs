@@ -11,6 +11,7 @@ public class MissionQueue : MonoBehaviour {
     public FloatUpSpawner FloatUpSpawner;
     public GameObject RewardPopUpPrefab;
     public Transform TransformCanvas;
+    public GameObject LootboxPopUpPrefab;
     private List<MissionUI> missionUIs = new List<MissionUI>();
 
     // Use this for initialization
@@ -41,7 +42,11 @@ public class MissionQueue : MonoBehaviour {
         // Instantiate RewardPopUp
         GameObject go = Instantiate(RewardPopUpPrefab, TransformCanvas);
         // Initialize RewardPopUp
-        go.GetComponent<RewardPopUp>().Initialize(MoneyManager, RenownManager, VirtualCurrencyManager);
+        go.GetComponent<RewardPopUp>().Initialize(MoneyManager, RenownManager, VirtualCurrencyManager, this);
         go.GetComponent<RewardPopUp>().ShowRewards(attachedMission.MissionDetails);
+    }
+
+    public void OpenLootboxPopUp() {
+        Instantiate(LootboxPopUpPrefab, TransformCanvas);
     }
 }
