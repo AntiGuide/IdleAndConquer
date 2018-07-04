@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class MissionQueue : MonoBehaviour {
     public GameObject MissionBar;
-    public MoneyManagement MoneyManagement;
+    public MoneyManagement MoneyManager;
+    public RenownManagement RenownManager;
+    public VirtualCurrencyManagement VirtualCurrencyManager;
     public FloatUpSpawner FloatUpSpawner;
+    public GameObject RewardPopUpPrefab;
+    public Transform TransformCanvas;
     private List<MissionUI> missionUIs = new List<MissionUI>();
 
     // Use this for initialization
@@ -24,11 +28,20 @@ public class MissionQueue : MonoBehaviour {
         missionUI.Initialize(mission);
         missionUIs.Add(missionUI);
         missionUI.MissionQueue = this;
-        missionUI.moneyManagement = this.MoneyManagement;
-        missionUI.floatUpSpawner = this.FloatUpSpawner;
+        //missionUI.moneyManagement = this.MoneyManagement;
+        //missionUI.floatUpSpawner = this.FloatUpSpawner;
     }
 
     public void DestroyMissionBar(MissionUI missionUI) {
         Destroy(missionUI.transform.parent.gameObject);
+    }
+
+    public void FinshedMission(Mission attachedMission) {
+        attachedMission.MissionGeneral.IsSentToMission = false;
+        // Instantiate RewardPopUp
+        GameObject go = Instantiate(RewardPopUpPrefab, TransformCanvas);
+        // Initialize RewardPopUp
+        go.GetComponent<RewardPopUp>().Initialize(MoneyManager, RenownManager, VirtualCurrencyManager);
+        go.GetComponent<RewardPopUp>().ShowRewards(attachedMission.MissionDetails);
     }
 }

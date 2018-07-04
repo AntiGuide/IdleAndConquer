@@ -1663,6 +1663,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -2492,6 +2495,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -2599,76 +2605,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 101614118}
---- !u!1 &112982319
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 112982320}
-  - component: {fileID: 112982322}
-  - component: {fileID: 112982321}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &112982320
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 112982319}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 740793096}
-  - {fileID: 1183650281}
-  m_Father: {fileID: 867808582}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 860, y: 1020}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &112982321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 112982319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: b9c856b63172738458b7ab8022473183, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &112982322
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 112982319}
 --- !u!1 &122047945 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1832060747791218, guid: fc3cb79b2aa651b49978c112086d7b1a,
@@ -4065,6 +4001,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -4286,6 +4225,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -4393,6 +4335,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -4774,6 +4719,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -6573,6 +6521,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -7249,6 +7200,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -7604,6 +7558,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -9608,6 +9565,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -11329,6 +11289,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -12130,6 +12093,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -12515,6 +12481,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -12849,6 +12818,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -14368,6 +14340,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: Ivan
@@ -14740,80 +14715,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 738310901}
---- !u!1 &740793095
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 740793096}
-  - component: {fileID: 740793098}
-  - component: {fileID: 740793097}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &740793096
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 740793095}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 112982320}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.09411628, y: 0.822}
-  m_AnchorMax: {x: 0.9058837, y: 0.919}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &740793097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 740793095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.85294116, g: 0.85294116, b: 0.85294116, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: ab67cec6a5c4e634eaf33f7238b764a6, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 138
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Reward
---- !u!222 &740793098
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 740793095}
 --- !u!1 &751514644
 GameObject:
   m_ObjectHideFlags: 0
@@ -16153,6 +16054,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -16655,6 +16559,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -16949,75 +16856,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &867808581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 867808582}
-  - component: {fileID: 867808584}
-  - component: {fileID: 867808583}
-  m_Layer: 5
-  m_Name: RewardPopUp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &867808582
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 867808581}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 112982320}
-  m_Father: {fileID: 1343580271}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &867808583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 867808581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.441}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 92014d9b67bdfae47b62d023a33e1e74, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &867808584
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 867808581}
 --- !u!1 &869914822
 GameObject:
   m_ObjectHideFlags: 0
@@ -19995,6 +19833,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -21302,6 +21143,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -22637,6 +22481,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -23141,6 +22988,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -23947,8 +23797,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MissionBar: {fileID: 1484201823648082, guid: 66d2a8e732a9dbf40a34a970a189fc6c, type: 2}
-  MoneyManagement: {fileID: 1083180769}
+  MoneyManager: {fileID: 1083180769}
+  RenownManager: {fileID: 525106188}
+  VirtualCurrencyManager: {fileID: 1899302186}
   FloatUpSpawner: {fileID: 1758475377}
+  RewardPopUpPrefab: {fileID: 1179291650785810, guid: e5f5bd2ecc8fc614bb8075cfea10ddef,
+    type: 2}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!1 &1101537010
 GameObject:
   m_ObjectHideFlags: 0
@@ -24671,6 +24526,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -25880,117 +25738,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4117354705352950, guid: fc3cb79b2aa651b49978c112086d7b1a,
     type: 2}
   m_PrefabInternal: {fileID: 1647772092}
---- !u!1 &1183650280
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1183650281}
-  - component: {fileID: 1183650284}
-  - component: {fileID: 1183650283}
-  - component: {fileID: 1183650282}
-  m_Layer: 5
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1183650281
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183650280}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2078923735}
-  m_Father: {fileID: 112982320}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.648, y: 0.077}
-  m_AnchorMax: {x: 0.911, y: 0.19800001}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1183650282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183650280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1183650283}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1183650283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183650280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db31b2a4f8d34f0469abf98623bd88f6, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1183650284
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1183650280}
 --- !u!1 &1196226343
 GameObject:
   m_ObjectHideFlags: 0
@@ -28766,6 +28513,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -29611,7 +29361,6 @@ RectTransform:
   - {fileID: 1196226344}
   - {fileID: 1783996666}
   - {fileID: 1761633588}
-  - {fileID: 867808582}
   m_Father: {fileID: 1654485849}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31036,6 +30785,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -31790,6 +31542,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -33794,6 +33549,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -36889,6 +36647,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -39626,6 +39387,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -45335,6 +45099,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
@@ -45628,80 +45395,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2071626557}
---- !u!1 &2078923734
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2078923735}
-  - component: {fileID: 2078923737}
-  - component: {fileID: 2078923736}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2078923735
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2078923734}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1183650281}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.026527546, y: 0.040512066}
-  m_AnchorMax: {x: 0.9778938, y: 0.9513855}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2078923736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2078923734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.85294116, g: 0.85294116, b: 0.85294116, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: ab67cec6a5c4e634eaf33f7238b764a6, type: 3}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 62
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: OK
---- !u!222 &2078923737
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2078923734}
 --- !u!1 &2081557027
 GameObject:
   m_ObjectHideFlags: 0
@@ -46611,6 +46304,9 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
+  MissionRenownReward: 50
+  MissionVirtualReward: 10
+  MissionBlueprintReward: 1
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 

@@ -74,15 +74,11 @@ public class RenownManagement : MonoBehaviour {
 
     /// <summary>Sets the renown to 0 in the beginning</summary>
     void Start() {
-        this.SetRenown(PlayerPrefs.GetInt("renown", 0));
+        this.SetRenown(PlayerPrefs.GetInt("renown", 100));
     }
 
     /// <summary>Called once per frame</summary>
     private void Update() {
-        if (UnityEngine.Random.Range(0f, 1f) < 0.005f) {
-            this.AddRenown(100);
-        }
-
         if (this.renownToLerpTo != this.renownAmountShown) {
             this.lerpTimeDone += Time.deltaTime;
             this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);

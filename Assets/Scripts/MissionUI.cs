@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MissionUI : MonoBehaviour {
-    public MoneyManagement moneyManagement;
-    public FloatUpSpawner floatUpSpawner;
+    // public MoneyManagement moneyManagement;
+    // public FloatUpSpawner floatUpSpawner;
     public MissionQueue MissionQueue;
     private Image img;
     private float missionTime = -1f;
@@ -41,10 +41,9 @@ public class MissionUI : MonoBehaviour {
                 foreach (Unit item in unitsInMission) {
                     item.SentToMission--;
                 }
-                // Instantiate RewardPopUp
-                // Initialize RewardPopUp
-                this.moneyManagement.AddMoney(missionMoneyReward);
-                this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, transform.position);
+                
+                // this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, transform.position);
+                this.MissionQueue.FinshedMission(attachedMission);
                 this.MissionQueue.DestroyMissionBar(this);
             } else {
                 this.img.fillAmount = this.aktTime / this.missionTime;

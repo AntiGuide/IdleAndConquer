@@ -12,6 +12,9 @@ public class MissionDetails : MonoBehaviour {
     public MainMenueController MainMenueControll;
     public float MissionTime;
     public long MissionMoneyReward = 1000;
+    public long MissionRenownReward = 50;
+    public long MissionVirtualReward = 10;
+    public long MissionBlueprintReward = 1;
     public UIInteraction UIInteractions;
     public MissionManager MissionMan;
     public string EnemyGeneral;

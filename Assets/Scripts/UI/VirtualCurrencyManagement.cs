@@ -75,15 +75,11 @@ public class VirtualCurrencyManagement : MonoBehaviour {
 
     /// <summary>Sets the V to 0 in the beginning</summary>
     void Start() {
-        this.SetVirtualCurrency(PlayerPrefs.GetInt("virtualCurrency", 0));
+        this.SetVirtualCurrency(PlayerPrefs.GetInt("virtualCurrency", 20));
     }
 
     /// <summary>Called once per frame</summary>
     private void Update() {
-        if (UnityEngine.Random.Range(0f, 1f) < 0.001f) {
-            this.AddVirtualCurrency(100);
-        }
-
         if (this.virtualCurrencyToLerpTo != this.virtualCurrencyAmountShown) {
             this.lerpTimeDone += Time.deltaTime;
             this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);
