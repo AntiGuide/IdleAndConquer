@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 28261419}
   - component: {fileID: 28261418}
   - component: {fileID: 28261417}
+  - component: {fileID: 28261420}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -518,8 +519,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1761633592}
-        m_MethodName: MainLoad
+      - m_Target: {fileID: 28261420}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -564,6 +565,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 28261415}
+--- !u!114 &28261420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 28261415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5a0c9eeea7c484eabd22b62ff9cdea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIInteractions: {fileID: 1761633592}
 --- !u!1 &36604281
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,6 +5315,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 24fe4cd2f74fd2b4995745d367f29c2d, type: 3}
   - {fileID: 8300000, guid: 547c31a6646c926419297330c106700a, type: 3}
   - {fileID: 8300000, guid: 9acb84e58b591c14e94727aca8cfb732, type: 3}
+  - {fileID: 8300000, guid: 733a18f0081c5844aa50ac381ebf4310, type: 3}
+  - {fileID: 8300000, guid: f04515a044c202847bca9d5c4e91ac85, type: 3}
+  - {fileID: 8300000, guid: c857b90daada7354eb05519776c095ae, type: 3}
+  - {fileID: 8300000, guid: 146ec068117ce87439b5b0c904482a1b, type: 3}
+  - {fileID: 8300000, guid: d1c2353e574ed074a948c44d2dc36c28, type: 3}
   BGMClips:
   - {fileID: 8300000, guid: 123414bed7ffd574580408ac03ffe240, type: 3}
   - {fileID: 8300000, guid: b46c793667c51dd47a873927f61e01a5, type: 3}

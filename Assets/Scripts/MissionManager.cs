@@ -21,7 +21,7 @@ public class MissionManager : MonoBehaviour {
     public static void StartMission() {
         BuildingMission.StartMission();
         OnClickDeploy.DeployedUnits = 0;
-        BuildingMission = null;
+        MissionManager.BuildingMission = null;
         MissionManager.MainMenueControll.ActivateDeployUI(false);
     }
 

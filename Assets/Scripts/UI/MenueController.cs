@@ -26,7 +26,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private static float canvasHeight;
 
     /// <summary>Saves the y component of the menues position after loading</summary>
-    private static float startYMenue;
+    private float startYMenue;
 
     /// <summary>Saves the position of the menue before starting the lerp</summary>
     private Vector3 startMarker;

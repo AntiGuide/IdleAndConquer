@@ -106,10 +106,7 @@ public class MoneyManagement : MonoBehaviour {
             this.GetComponent<Text>().text = FormatMoney(this.moneyAmountShown);
         } else if (!isFinished) {
             isFinished = true;
-            SoundControll.StopLoopingSound(audioSource);
-        }
-        {
-
+            SoundControll.StopLoopingSound(ref audioSource);
         }
     }
 

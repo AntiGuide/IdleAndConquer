@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +20,12 @@ public class SoundController : MonoBehaviour {
         SWITCHBASE_TO_MISSION,
         BUILDING,
         UNIT_READY,
-        UPGRADING
+        UPGRADING,
+        RESEARCH_COMPLETE,// TODO
+        FUNDS_REQUIRED,
+        CANNOT_BUILT_HERE,
+        LOW_POWER,
+        MISSION_COMPLETE
     }
 
     public void StartSound(Sounds sound, float volume = 1f) {
@@ -32,10 +38,16 @@ public class SoundController : MonoBehaviour {
         retAudioSource.clip = this.Clips[(int)sound];
         retAudioSource.volume = volume;
         retAudioSource.Play();
+        StartCoroutine(StopLoopingSoundDelayed(retAudioSource, 1f));
         return retAudioSource;
     }
 
-    public void StopLoopingSound(AudioSource inpAudioSource) {
+    private IEnumerator StopLoopingSoundDelayed(AudioSource retAudioSource, float delay) {
+        yield return new WaitForSeconds(delay);
+        StopLoopingSound(ref retAudioSource);
+    }
+
+    public void StopLoopingSound(ref AudioSource inpAudioSource) {
         Destroy(inpAudioSource);
     }
 
@@ -46,7 +58,7 @@ public class SoundController : MonoBehaviour {
     private System.Collections.IEnumerator PlayBGM() {
         this.AudioSourceBGM.volume = volumeBGM;
         int aktTrackNumber = -1;
-        int nextTrackNumber = Mathf.RoundToInt(Random.Range(0f, BGMClips.Length - 1));
+        int nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, BGMClips.Length - 1));
         this.AudioSourceBGM.clip = this.BGMClips[nextTrackNumber];
         this.AudioSourceBGM.clip.LoadAudioData();
         while (true) {
@@ -56,7 +68,7 @@ public class SoundController : MonoBehaviour {
             }
             yield return new WaitForSeconds(this.AudioSourceBGM.clip.length / 2f);
             aktTrackNumber = nextTrackNumber;
-            nextTrackNumber = Mathf.RoundToInt(Random.Range(0f, BGMClips.Length - 1));
+            nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, BGMClips.Length - 1));
             this.BGMClips[nextTrackNumber].LoadAudioData();
             yield return new WaitForSeconds(this.AudioSourceBGM.clip.length / 2f);
             this.AudioSourceBGM.Stop();
