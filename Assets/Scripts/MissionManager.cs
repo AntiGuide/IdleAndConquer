@@ -1,31 +1,51 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MissionManager : MonoBehaviour {
-    public static List<Mission> Missions = new List<Mission>();
-    public static Mission BuildingMission = null;
-    public static MainMenueController MainMenueControll;
+    //public List<Mission> Missions = new List<Mission>();
+    //public Mission BuildingMission = null;
+    public MissionDetails MissionDetails;
+    public UIInteraction UIInteractions;
+    public MainMenueController MainMenueControll;
+    public General MissionGeneral;
+    public List<Unit> Units = new List<Unit>();
+    public MissionQueue MissionQueue;
 
-    public static Mission GenerateMission(MissionDetails missionDetails, UIInteraction UIInteractions, MainMenueController MainMenueControll, General general = null, List<Unit> units = null) {
-        if (BuildingMission != null) {
-            return null;
+
+    public void Reset() {
+        this.MissionDetails = null;
+        this.UIInteractions = null;
+        this.MainMenueControll = null;
+        this.MissionGeneral = null;
+        this.Units = new List<Unit>();
+    }
+
+    public void GenerateMission(MissionDetails missionDetails, UIInteraction UIInteractions, MainMenueController MainMenueControll, General general = null) {
+        //Mission m = new Mission(missionDetails, UIInteractions, general, units);
+        // MissionManager.MainMenueControll = MainMenueControll;
+        //BuildingMission = m;
+        //Missions.Add(m);
+        this.MissionDetails = missionDetails;
+        this.UIInteractions = UIInteractions;
+        this.MainMenueControll = MainMenueControll;
+        this.MissionGeneral = general;
+
+    }
+
+    public void StartMission() {
+        this.MissionGeneral.IsSentToMission = true;
+        foreach (Unit item in Units) {
+            item.SentToMission++;
         }
-        Mission m = new Mission(missionDetails, UIInteractions, general, units);
-        MissionManager.MainMenueControll = MainMenueControll;
-        BuildingMission = m;
-        Missions.Add(m);
-        return m;
-    }
-
-    public static void StartMission() {
-        BuildingMission.StartMission();
+        this.MissionQueue.Add(new Mission(MissionDetails, UIInteractions, MissionGeneral, Units));
+        UIInteractions.MainLoad();
         OnClickDeploy.DeployedUnits = 0;
-        MissionManager.BuildingMission = null;
-        MissionManager.MainMenueControll.ActivateDeployUI(false);
+        MainMenueControll.ActivateDeployUI(false);
     }
 
-    public static void AddUnitToBuildingMission(Unit unit) {
-        BuildingMission.Units.Add(unit);
+    public void AddUnitToBuildingMission(ref Unit unit) {
+        this.Units.Add(unit);
     }
 }

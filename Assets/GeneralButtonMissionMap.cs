@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class GeneralButtonMissionMap : MonoBehaviour {
     public static MissionDetails MissionDetail;
-    private Image image;
-    private Text country;
-    private Text generalName;
-    private Text winLoseHistory;
+    public General General;
+    // private Image image;
+    public Text country;
+    public Text generalName;
+    public Text winLoseHistory;
     private MainMenueController mainMenueController;
+    private MissionManager MissionMan;
 
     public void SetTexts(string country, string generalName, string winLoseHistory) {
         this.country.text = country;
@@ -18,7 +20,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     }
 
     public void OnClick() {
-        MissionManager.BuildingMission.MissionGeneral = gameObject.GetComponent<General>();
+        MissionMan.MissionGeneral = this.General;
         this.mainMenueController.ActivateDeployUI(true);
         this.mainMenueController.ToggleMenue(2);
     }
@@ -26,5 +28,6 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     // Use this for initialization
     void Start() {
         this.mainMenueController = GameObject.Find("/MissionMap/Canvas/MainMenue/").GetComponent<MainMenueController>();
+        this.MissionMan = GameObject.Find("/ReferenceShare").GetComponent<MissionManager>();
     }
 }

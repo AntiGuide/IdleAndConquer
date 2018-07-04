@@ -22,6 +22,8 @@ public class GeneralManager : MonoBehaviour {
     /// <summary>Parent for all general buttons</summary>
     public GameObject GeneralList;
 
+    public static List<General> AllGenerals = new List<General>();
+
     /// <summary>The highest general ID at the moment</summary>
     private int generalID = 0;
 
@@ -61,6 +63,7 @@ public class GeneralManager : MonoBehaviour {
 
         General ret = attachedButton.gameObject.GetComponent<General>();
         ret.InitGeneral(aktChanceToPermaDeath, null, this.Countrys[countryID], this.Names[nameID], null);
+        GeneralManager.AllGenerals.Add(ret);
     }
 
     /// <summary>
@@ -83,6 +86,7 @@ public class GeneralManager : MonoBehaviour {
 
             General ret = attachedButton.gameObject.GetComponent<General>();
             ret.InitGeneral(this.chanceDeath, null, this.country, this.generalName, null);
+            GeneralManager.AllGenerals.Add(ret);
         }
     }
 

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class BackToMain : MonoBehaviour {
     public UIInteraction UIInteractions;
+    public MissionManager MissionMan;
+    public MainMenueController MainMenueControll;
 
     public void OnClick() {
         OnClickDeploy.DeployedUnits = 0;
-        MissionManager.BuildingMission = null;
-        MissionManager.MainMenueControll.ActivateDeployUI(false);
+        MissionMan.Reset();
+        MainMenueControll.ActivateDeployUI(false);
         UIInteractions.MainLoad();
     }
 }

@@ -184,6 +184,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1b4d1c2e9716c479433ec9ec7dcb09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  General: {fileID: 0}
+  country: {fileID: 114798086234443408}
+  generalName: {fileID: 114252507258231474}
+  winLoseHistory: {fileID: 114967716988120670}
 --- !u!114 &114300959104226406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b790cb7de6f354a8b2034ade8a78c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsSentToMission: 0
 --- !u!114 &114384507684492128
 MonoBehaviour:
   m_ObjectHideFlags: 1

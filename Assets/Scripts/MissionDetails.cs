@@ -13,10 +13,12 @@ public class MissionDetails : MonoBehaviour {
     public float MissionTime;
     public long MissionMoneyReward = 1000;
     public UIInteraction UIInteractions;
+    public MissionManager MissionMan;
+    public string EnemyGeneral;
 
     public void OnClick() {
         Debug.Log(MissionName);
-        MissionManager.GenerateMission(this, UIInteractions, MainMenueControll);
+        MissionMan.GenerateMission(this, UIInteractions, MainMenueControll);
         MainMenueControll.ToggleMenue(1);
     }
 }

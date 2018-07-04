@@ -24,6 +24,7 @@ public class Mission : MonoBehaviour {
     }
 
     public void StartMission() {
+        this.MissionGeneral.IsSentToMission = true;
         this.MissionQueue.Add(this);
         UIInteractions.MainLoad();
     }

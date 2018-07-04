@@ -21,6 +21,10 @@ public class Unit {
 
     public static int[] BuildtimeGroupLevel = { 0, 0, 0 };
 
+    public int SentToMission = 0;
+
+    public static List<Unit> AllUnits = new List<Unit>();
+
     public int Level = 0;
 
     // public static int[] LevelGroup = { 0, 0, 0 };
@@ -92,6 +96,7 @@ public class Unit {
         this.buildtime = buildtime;
         this.CreateAndOrderButton = createAndOrderButton;
         this.baseSwitch = baseSwitch;
+        AllUnits.Add(this);
     }
 
     /// <summary>

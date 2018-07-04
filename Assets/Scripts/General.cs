@@ -3,6 +3,8 @@ using UnityEngine;
 
 /// <summary>The class contains all the information and functions a general has</summary>
 public class General : MonoBehaviour {
+    public bool IsSentToMission = false;
+    
     /// <summary>Chance between 0 and 1 to get removed upon death in a mission</summary>
     private float chanceToPermaDeath;
 
@@ -68,12 +70,13 @@ public class General : MonoBehaviour {
     /// <param name="country">The generals country</param>
     /// <param name="generalName">The generals name</param>
     /// <param name="passives">The generals active passives</param>
-    public void InitGeneral(float chanceToPermaDeath, Sprite portrait, string country, string generalName, List<Passives> passives) {
+    public void InitGeneral(float chanceToPermaDeath, Sprite portrait, string country, string generalName, List<Passives> passives, bool isSentToMission = false) {
         this.chanceToPermaDeath = chanceToPermaDeath;
         this.portrait = portrait;
         this.country = country;
         this.generalName = generalName;
         this.passives = passives;
+        this.IsSentToMission = isSentToMission;
     }
 
     /// <summary>Calculates wether the general dies (random)</summary>

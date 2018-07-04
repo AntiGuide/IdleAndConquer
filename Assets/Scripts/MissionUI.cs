@@ -12,6 +12,8 @@ public class MissionUI : MonoBehaviour {
     private float missionTime = -1f;
     private long missionMoneyReward;
     private float aktTime = 0f;
+    private List<Unit> unitsInMission;
+    private Mission attachedMission;
 
     public void SetTime(float time) {
         this.missionTime = time;
@@ -25,6 +27,8 @@ public class MissionUI : MonoBehaviour {
     public void Initialize(Mission mission) {
         this.missionTime = mission.MissionDetails.MissionTime;
         this.missionMoneyReward = mission.MissionDetails.MissionMoneyReward;
+        unitsInMission = mission.Units;
+        this.attachedMission = mission;
     }
 
     // Update is called once per frame
@@ -34,6 +38,11 @@ public class MissionUI : MonoBehaviour {
             if (this.aktTime / this.missionTime >= 1f) {
                 this.img.fillAmount = 1f;
                 this.missionTime = -1f;
+                foreach (Unit item in unitsInMission) {
+                    item.SentToMission--;
+                }
+                // Instantiate RewardPopUp
+                // Initialize RewardPopUp
                 this.moneyManagement.AddMoney(missionMoneyReward);
                 this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, transform.position);
                 this.MissionQueue.DestroyMissionBar(this);
