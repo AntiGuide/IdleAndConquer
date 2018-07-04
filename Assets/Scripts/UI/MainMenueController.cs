@@ -11,7 +11,7 @@ public class MainMenueController : MonoBehaviour {
     public GameObject DeployUI;
 
     /// <summary>Contains information if any menue is expanded at the moment</summary>
-    private static bool isExpanded;
+    private bool isExpanded;
 
     /// <summary>Contains the index of the activated menue</summary>
     private int enabledMenue;
@@ -20,7 +20,7 @@ public class MainMenueController : MonoBehaviour {
     private MenueController[] menueController;
 
     /// <summary>Getter/Setter for the isExpanded variable</summary>
-    public static bool IsExpanded {
+    public bool IsExpanded {
         get { return isExpanded; }
         set { isExpanded = value; }
     }

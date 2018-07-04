@@ -124,12 +124,11 @@ public class BuildBuilding : MonoBehaviour {
                     this.hitInformation.point = new Vector3(this.hitInformation.point.x, 0, this.hitInformation.point.z);
                     this.newBuilding.transform.position = this.ToGrid(this.hitInformation.point);
                 }
-            } else if (MainMenueController.IsExpanded) {
             }
         }
 
         if (Input.GetMouseButtonDown(0)) {
-            if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueController.IsExpanded) {
+            if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueControll.IsExpanded) {
                 this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 this.layerMask = LayerMask.GetMask("Buildings");
                 Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
