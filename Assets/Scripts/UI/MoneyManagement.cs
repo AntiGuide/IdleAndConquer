@@ -30,6 +30,8 @@ public class MoneyManagement : MonoBehaviour {
 
     private bool isFinished = true;
 
+    private AudioSource audioSource;
+
     /// <summary>
     /// Formats the money to german format
     /// </summary>
@@ -104,7 +106,7 @@ public class MoneyManagement : MonoBehaviour {
             this.GetComponent<Text>().text = FormatMoney(this.moneyAmountShown);
         } else if (!isFinished) {
             isFinished = true;
-            SoundControll.StopLoopingSound();
+            SoundControll.StopLoopingSound(audioSource);
         }
         {
 
@@ -121,7 +123,7 @@ public class MoneyManagement : MonoBehaviour {
             this.moneyToLerpTo = money;
             this.lerpTimeDone = 0.0f;
             this.isFinished = false;
-            SoundControll.StartLoopingSound(SoundController.Sounds.SOFTCURRENCY_COUNTUP, 0.3f);
+            audioSource = SoundControll.StartLoopingSound(SoundController.Sounds.SOFTCURRENCY_COUNTUP, 0.15f);
         } else {
             this.GetComponent<Text>().text = FormatMoney(money);
             this.moneyAmountShown = money;
