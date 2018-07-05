@@ -2651,6 +2651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: 5
+  BuildCost: 1000
 --- !u!114 &114881647445753938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2690,6 +2691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: 5
+  BuildCost: 20000
 --- !u!131 &131517761261088902
 GUITexture:
   m_ObjectHideFlags: 1

@@ -3,8 +3,8 @@
 public class BuildingManager : MonoBehaviour {
     public BuildingType buildingType;
     private EnergyManagement energyManager;
-    private long buildCost = 1000;
-    private float costEnergy = 5;
+    public long BuildCost = 1000;
+    public float CostEnergy = 5;
 
     public enum BuildingType {
         AIRFIELD = 0,
@@ -15,16 +15,6 @@ public class BuildingManager : MonoBehaviour {
         BARRACKS,
         POWERPLANT,
         TANK_FACTORY
-    }
-
-    public long BuildCost {
-        get { return this.buildCost; }
-        set { this.buildCost = value; }
-    }
-
-    public float CostEnergy {
-        get { return this.costEnergy; }
-        set { this.costEnergy = value; }
     }
     
     public void InitializeAttachedBuilding() {

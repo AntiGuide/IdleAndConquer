@@ -1743,6 +1743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: 7
+  BuildCost: 20000
 --- !u!114 &114902365733326284
 MonoBehaviour:
   m_ObjectHideFlags: 1
