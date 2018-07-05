@@ -6,6 +6,8 @@ public class OreRefinery : MonoBehaviour {
     /// <summary>To initialize a harvester upon build confirmation</summary>
     public GameObject HarvesterPrefab;
 
+    public bool IsBuiltOnStartup = false;
+
     /// <summary>Reference to MoneyManagement to add and sub money</summary>
     private MoneyManagement moneyManager;
 
@@ -39,5 +41,11 @@ public class OreRefinery : MonoBehaviour {
         Harvester harvester = go.GetComponentInChildren<Harvester>();
         harvester.Initialize(oreRefinery, oreMine, ref moneyManager, this.floatUpSpawner);
         attachedHarvesters.Add(go);
+    }
+
+    private void Start() {
+        if (IsBuiltOnStartup) {
+            InitializeBuilt();
+        }
     }
 }
