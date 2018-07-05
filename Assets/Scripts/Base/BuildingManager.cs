@@ -4,7 +4,7 @@ public class BuildingManager : MonoBehaviour {
     public BuildingType buildingType;
     private EnergyManagement energyManager;
     public long BuildCost = 1000;
-    public float CostEnergy = 5;
+    public int CostEnergy = 5;
 
     public enum BuildingType {
         AIRFIELD = 0,

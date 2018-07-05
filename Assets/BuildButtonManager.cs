@@ -23,6 +23,9 @@ public class BuildButtonManager : MonoBehaviour {
     /// <summary>Variable to store the cost of the attached building after the Start method</summary>
     private long costBuilding;
 
+    /// <summary>Variable to store the energy cost of the attached building after the Start method</summary>
+    private long costEnergy;
+
     /// <summary>
     /// Triggered by a button click. Builds the wanted building if the money in the attached MoneyManager is enough to cover the costs.
     /// </summary>
@@ -35,7 +38,9 @@ public class BuildButtonManager : MonoBehaviour {
 
     /// <summary>Use this for initialization</summary>
     void Start() {
-        this.costBuilding = this.AttachedBuilding.GetComponentInChildren<BuildingManager>().BuildCost;
+        BuildingManager buildingManager = this.AttachedBuilding.GetComponentInChildren<BuildingManager>();
+        this.costBuilding = buildingManager.BuildCost;
+        this.costEnergy = buildingManager.CostEnergy;
         this.Cost.text = MoneyManagement.FormatMoney(this.costBuilding);
     }
 }
