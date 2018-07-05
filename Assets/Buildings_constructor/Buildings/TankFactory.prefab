@@ -44,7 +44,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1101975526537870
 GameObject:
@@ -1744,6 +1744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingType: 7
   BuildCost: 20000
+  CostEnergy: 5
 --- !u!114 &114902365733326284
 MonoBehaviour:
   m_ObjectHideFlags: 1
