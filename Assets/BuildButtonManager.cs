@@ -24,7 +24,7 @@ public class BuildButtonManager : MonoBehaviour {
     private long costBuilding;
 
     /// <summary>Variable to store the energy cost of the attached building after the Start method</summary>
-    private long costEnergy;
+    private int costEnergy;
 
     /// <summary>
     /// Triggered by a button click. Builds the wanted building if the money in the attached MoneyManager is enough to cover the costs.
@@ -32,7 +32,7 @@ public class BuildButtonManager : MonoBehaviour {
     /// <param name="i">The index of the building that should be built (Indexes defined in BuildBuilding class)</param>
     public void ClickBuildBuilding(int i) {
         if (this.MoneyManager.HasMoney(this.costBuilding)) {
-            this.BaseSwitch.GetBuilder().BuildABuilding(i, this.costBuilding);
+            this.BaseSwitch.GetBuilder().BuildABuilding(i, this.costBuilding, this.costEnergy);
         }
     }
 
