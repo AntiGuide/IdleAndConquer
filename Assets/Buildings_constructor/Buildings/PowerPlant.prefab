@@ -1600,6 +1600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingType: 6
   BuildCost: 10000
+  CostEnergy: -30
 --- !u!114 &114385570935859874
 MonoBehaviour:
   m_ObjectHideFlags: 1

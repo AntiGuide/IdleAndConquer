@@ -2827,6 +2827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingType: 1
   BuildCost: 100000
+  CostEnergy: 0
 --- !u!114 &114540447492881724
 MonoBehaviour:
   m_ObjectHideFlags: 1

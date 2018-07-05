@@ -40,7 +40,7 @@ public class MoneyManagement : MonoBehaviour {
     public static string FormatMoney(long money) {
         CultureInfo cultureInfo = new CultureInfo("de-DE", false);
         cultureInfo.NumberFormat.CurrencySymbol = string.Empty;
-        return money.ToString("C0", cultureInfo);
+        return money.ToString("C0", cultureInfo).TrimEnd();
     }
 
     /// <summary>
