@@ -8,6 +8,7 @@ public class LootboxUI : MonoBehaviour {
     public Text PlayerCommunication;
     public Image LootBoxOpened;
     public GameObject OKButton;
+    private BlueprintManager BlueprintMan;
 
     public void ClickCase() {
         PlayerRewards.gameObject.SetActive(true);
@@ -19,6 +20,11 @@ public class LootboxUI : MonoBehaviour {
     }
 
     public void ClickOK() {
+        BlueprintMan.SearchUnitNameAddBlueprint("Tank 1", 2);
         Destroy(transform.parent.parent.gameObject);
+    }
+
+    private void Start() {
+        BlueprintMan = GameObject.Find("/Main/Canvas/MainMenue/MenueResearch").GetComponent<BlueprintManager>();
     }
 }

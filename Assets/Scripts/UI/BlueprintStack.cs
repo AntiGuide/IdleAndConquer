@@ -9,6 +9,8 @@ public class BlueprintStack : MonoBehaviour {
 
     public static Unit[] Units;
 
+    public BlueprintManager BlueprintMan;
+
     public CreateAndOrderUnit CreateAndOrderUnitStack;
 
     public int BlueprintCount = 0;
@@ -84,7 +86,7 @@ public class BlueprintStack : MonoBehaviour {
         }
     }
 
-    private void Start() {
+    private void Awake() {
 
         Text t = transform.Find("Text").GetComponent<Text>();
         if (CreateAndOrderUnitStack.AttachedUnit != null) {
@@ -97,10 +99,12 @@ public class BlueprintStack : MonoBehaviour {
         levelText.text = "Level " + level.ToString();
         blueprintCountText = transform.Find("BuildingCountText").GetComponent<Text>();
         blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[buildingTowardsLevel];
+
+        BlueprintMan.BlueprintStacks.Add(this);
     }
 
-    public void AddBlueprint() {
-        BlueprintCount++;
+    public void AddBlueprint(int count = 1) {
+        BlueprintCount += count;
         blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[buildingTowardsLevel];
     }
 }
