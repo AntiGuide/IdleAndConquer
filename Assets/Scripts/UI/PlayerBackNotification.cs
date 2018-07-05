@@ -10,6 +10,10 @@ public class PlayerBackNotification : MonoBehaviour {
     /// <summary>The text on the pop up</summary>
     public Text NotificationText;
 
+    private GameObject DailyRewardLootBoxPopUp;
+
+    private Transform CanvasTransform;
+
     private SoundController soundController;
 
     /// <summary>Reference to the FloatUpSpawner</summary>
@@ -46,6 +50,11 @@ public class PlayerBackNotification : MonoBehaviour {
         this.soundController = soundController;
     }
 
+    public void InitializeDaily(GameObject dailyRewardLootBoxPopUp, Transform canvasTransform) {
+        this.DailyRewardLootBoxPopUp = dailyRewardLootBoxPopUp;
+        this.CanvasTransform = canvasTransform;
+    }
+
     /// <summary>Called when the player clicks the notification. Grants earned money.</summary>
     public void OnClick() {
         long addedMoney = this.additionalMoney;
@@ -55,6 +64,11 @@ public class PlayerBackNotification : MonoBehaviour {
 
         this.floatUpSpawner.GenerateFloatUp(addedMoney, this.type, transform.position);
         soundController.StartSound(SoundController.Sounds.REPORT_TAPS);
+        MonoBehaviour.Destroy(this.gameObject);
+    }
+
+    public void OnDailyClick() {
+        Instantiate(DailyRewardLootBoxPopUp, CanvasTransform);
         MonoBehaviour.Destroy(this.gameObject);
     }
 }

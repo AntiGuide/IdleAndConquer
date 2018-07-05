@@ -8,19 +8,22 @@ public class LootboxUI : MonoBehaviour {
     public Text PlayerCommunication;
     public Image LootBoxOpened;
     public GameObject OKButton;
+    public int RewardCount;
+    public string RewardUnitName;
     private BlueprintManager BlueprintMan;
+
 
     public void ClickCase() {
         PlayerRewards.gameObject.SetActive(true);
         LootBoxOpened.gameObject.SetActive(true);
-        PlayerRewards.text = "2x Tank 1 Blueprints";
+        PlayerRewards.text = RewardCount + "x " + RewardUnitName + " Blueprints";
         PlayerCommunication.gameObject.SetActive(false);
         OKButton.SetActive(true);
         gameObject.SetActive(false);
     }
 
     public void ClickOK() {
-        BlueprintMan.SearchUnitNameAddBlueprint("Tank 1", 2);
+        BlueprintMan.SearchUnitNameAddBlueprint(RewardUnitName, RewardCount);
         Destroy(transform.parent.parent.gameObject);
     }
 

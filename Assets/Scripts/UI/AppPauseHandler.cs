@@ -20,16 +20,25 @@ public class AppPauseHandler : MonoBehaviour {
     /// <summary>The prefab of a PlayerBackNotification</summary>
     public GameObject PlayerBackNotification;
 
+    public GameObject DailyRewardLootBoxPopUp;
+
     /// <summary>The transform to attach a new instance of a PlayerBackNotification to</summary>
     public Transform ParentPlayerBackNotification;
 
     public SoundController soundController;
 
+    public GameObject PlayerBackNotificationDailyLoot;
+
     /// <summary>Time since login</summary>
     private float loginTimer = 0f;
 
     /// <summary>The date and time the user paused the app</summary>
-    private DateTime exitTime;
+    private DateTime exitTime = new DateTime(1970,1,1);
+
+    public void DailyLootBoxPopUp() {
+        PlayerBackNotification pbn = Instantiate(PlayerBackNotificationDailyLoot, ParentPlayerBackNotification).GetComponent<PlayerBackNotification>();
+        pbn.InitializeDaily(DailyRewardLootBoxPopUp, ParentPlayerBackNotification);
+    }
 
     /// <summary>
     /// Triggers one time on application pause or unpause
@@ -41,10 +50,16 @@ public class AppPauseHandler : MonoBehaviour {
             if (this.exitTime.CompareTo(DateTime.MinValue) == 0) {
                 // First start/New start
                 this.TestText.text = "Willkommen";
+                // bool fistStart = PlayerPrefs.GetInt("FirstStart", 1) == 1;
+                // TriggerTutorial();
             } else {
                 // Player back from pause
                 this.TestText.text = "Willkommen" + Environment.NewLine + Math.Round((DateTime.Now - this.exitTime).TotalSeconds) + " Sek. Abwesenheit";
                 long secondsSincePause = (long)Math.Round((DateTime.Now - this.exitTime).TotalSeconds);
+                // int hoursSincePause = (DateTime.Now - this.exitTime).Hours;
+                // DateTime.Parse("");
+                // if (hoursSincePause >= 24) {
+                // }
                 long additionalMoney = 0;
                 foreach (Harvester h in Harvesters) {
                     additionalMoney += h.AddAppPauseProgressTime(secondsSincePause % (long)h.MiningSpeed);
