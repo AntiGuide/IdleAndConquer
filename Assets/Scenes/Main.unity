@@ -2127,6 +2127,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &62153588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3005,6 +3006,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &101025101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4247,6 +4249,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &169420126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4443,6 +4446,16 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 181436005}
+--- !u!1 &190401799 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1663772811083836, guid: 79b642773f580274098a3029e8193756,
+    type: 2}
+  m_PrefabInternal: {fileID: 743145904}
+--- !u!224 &190401800 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+    type: 2}
+  m_PrefabInternal: {fileID: 743145904}
 --- !u!1 &197023991
 GameObject:
   m_ObjectHideFlags: 0
@@ -4539,6 +4552,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &197023995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4649,6 +4663,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &197159004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5108,6 +5123,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &209003264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6992,6 +7008,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &272772702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7386,6 +7403,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &323924880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7878,6 +7896,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &350699507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9736,6 +9755,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &469993532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11678,6 +11698,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &558328169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12742,6 +12763,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &605209896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12976,7 +12998,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300100, guid: c5bb8c5a2b9a8af418278d308fac33fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1dbed52604217c74dbae9bdc07e52a66, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -13347,6 +13369,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &617667546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14085,6 +14108,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &635373361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15681,7 +15705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: Royal Rumble!
+  MissionName: Beat General Ivan!
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -15691,6 +15715,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: Ivan
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &711277575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15986,6 +16011,106 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 731032930}
+--- !u!1001 &743145904
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1807884068}
+    m_Modifications:
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -212.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 559
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 430
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -1418
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224917674119339238, guid: 79b642773f580274098a3029e8193756,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 79b642773f580274098a3029e8193756, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &744430025
 GameObject:
   m_ObjectHideFlags: 0
@@ -17487,6 +17612,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &812873517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17918,6 +18044,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &836949084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21220,6 +21347,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1007474479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22310,6 +22438,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1047168951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23242,7 +23371,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300102, guid: c5bb8c5a2b9a8af418278d308fac33fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5140dbf2eb0a794bb0cd060d109c95c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -23428,6 +23557,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1079479738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23799,6 +23929,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1086629293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25357,6 +25488,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1137779871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28973,6 +29105,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1288779796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31988,6 +32121,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1464480797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32610,6 +32744,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1501615346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34586,6 +34721,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1581635614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37555,6 +37691,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1694698899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40015,6 +40152,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1798727114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40158,6 +40296,7 @@ RectTransform:
   - {fileID: 2110657107}
   - {fileID: 1091291009}
   - {fileID: 28261416}
+  - {fileID: 190401800}
   m_Father: {fileID: 864332587}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41130,7 +41269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 440}
+  m_AnchoredPosition: {x: 0, y: 500}
   m_SizeDelta: {x: 752, y: 357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850088638
@@ -41184,7 +41323,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1850088640}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -45857,6 +45996,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &2055173378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46778,6 +46918,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MissionMan: {fileID: 238347732}
   EnemyGeneral: 
+  MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &2118116844
 BoxCollider:
   m_ObjectHideFlags: 0

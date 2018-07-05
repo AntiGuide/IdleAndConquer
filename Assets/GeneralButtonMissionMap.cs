@@ -10,6 +10,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     public Text country;
     public Text generalName;
     public Text winLoseHistory;
+    private GameObject MissionDetailsWindow;
     private MainMenueController mainMenueController;
     private MissionManager MissionMan;
 
@@ -21,6 +22,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
 
     public void OnClick() {
         MissionMan.MissionGeneral = this.General;
+        this.MissionDetailsWindow.SetActive(false);
         this.mainMenueController.ActivateDeployUI(true);
         this.mainMenueController.ToggleMenue(2);
     }
@@ -29,5 +31,6 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     void Start() {
         this.mainMenueController = GameObject.Find("/MissionMap/Canvas/MainMenue/").GetComponent<MainMenueController>();
         this.MissionMan = GameObject.Find("/ReferenceShare").GetComponent<MissionManager>();
+        this.MissionDetailsWindow = GameObject.Find("/MissionMap/Canvas/MissionWindow");
     }
 }

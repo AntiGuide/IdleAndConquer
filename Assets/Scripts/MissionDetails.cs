@@ -18,9 +18,10 @@ public class MissionDetails : MonoBehaviour {
     public UIInteraction UIInteractions;
     public MissionManager MissionMan;
     public string EnemyGeneral;
+    public GameObject MissionDetailsWindow;
 
     public void OnClick() {
-        Debug.Log(MissionName);
+        MissionDetailsWindow.SetActive(true);
         MissionMan.GenerateMission(this, UIInteractions, MainMenueControll);
         MainMenueControll.ToggleMenue(1);
     }
