@@ -55,9 +55,6 @@ public class BlueprintStack : MonoBehaviour {
     }
 
     private void Update() {
-        if (UnityEngine.Random.Range(0f, 1f) < 0.001f) {
-            this.AddBlueprint();
-        }
     }
 
     internal void PerformLevelUp() {
