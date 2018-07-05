@@ -75,7 +75,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
 
     /// <summary>Sets the V to 0 in the beginning</summary>
     void Start() {
-        this.SetVirtualCurrency(PlayerPrefs.GetInt("virtualCurrency", 20));
+        this.SetVirtualCurrency(PlayerPrefs.GetInt("virtualCurrency", 0));
     }
 
     /// <summary>Called once per frame</summary>
