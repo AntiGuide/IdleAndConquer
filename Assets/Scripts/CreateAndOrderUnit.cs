@@ -49,6 +49,8 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The reference to the base switcher (used to get the correct production queue)</summary>
     public BaseSwitcher BaseSwitch;
 
+    public int AddCountOnStartUp = 0;
+
     /// <summary>The attached units ID</summary>
     private static int unitID;
 
@@ -180,6 +182,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         this.buildingOverlay.fillAmount = 0f;
         this.unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
         int count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
+        count += AddCountOnStartUp;
         if (count > 0) {
             this.AddPowerlevel(count * Mathf.RoundToInt((this.hp * this.attack * this.Defense) / 1000), true);
             this.SetUnitCount(count.ToString());
