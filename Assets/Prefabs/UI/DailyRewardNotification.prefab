@@ -128,7 +128,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You earned X money while you were gone
+  m_Text: You got a new research reward
 --- !u!114 &114363875509742330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,7 +216,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 2774788df6c98764fb3592d3ecfee692, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
