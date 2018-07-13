@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Cycle_moving : MonoBehaviour {
     public float movSpeed = 2f;
@@ -7,33 +6,36 @@ public class Cycle_moving : MonoBehaviour {
     [Header("Position phase in %")]
     public float Phase = 0f;
     private int n = 1;
-    private Vector3 StartPosition;
-    private float StartPhase;
+    private Vector3 startPosition;
+    private float startPhase;
 
     // Use this for initialization
     void Start() {
-        if (Phase > 100) Phase = 100;
+        if (this.Phase > 100) {
+            this.Phase = 100;
+        }
 
-        if (Phase < 1) Phase = 1;
+        if (this.Phase < 1) {
+            this.Phase = 1;
+        }
 
-        this.StartPosition = transform.position;
-        StartPhase = range * Phase / 100;
-        transform.position = new Vector3(this.StartPosition.x, this.StartPosition.y + StartPhase, this.StartPosition.z);
+        this.startPosition = transform.position;
+        this.startPhase = this.range * this.Phase / 100;
+        this.transform.position = new Vector3(this.startPosition.x, this.startPosition.y + this.startPhase, this.startPosition.z);
     }
 
     // Update is called once per frame
     void Update() {
-        if (this.transform.position.y > (this.StartPosition.y + range)) {
-            this.transform.position = new Vector3(this.StartPosition.x, this.StartPosition.y + range, this.StartPosition.z);
+        if (this.transform.position.y > (this.startPosition.y + this.range)) {
+            this.transform.position = new Vector3(this.startPosition.x, this.startPosition.y + this.range, this.startPosition.z);
             this.n = this.n * -1;
         }
 
-        if (transform.position.y < this.StartPosition.y) {
-            this.transform.position = new Vector3(this.StartPosition.x, this.StartPosition.y, this.StartPosition.z);
+        if (this.transform.position.y < this.startPosition.y) {
+            this.transform.position = new Vector3(this.startPosition.x, this.startPosition.y, this.startPosition.z);
             this.n = this.n * -1;
         }
 
         this.transform.Translate(0, this.movSpeed * Time.deltaTime * this.n, 0);
-
     }
 }

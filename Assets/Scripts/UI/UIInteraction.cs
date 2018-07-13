@@ -32,46 +32,46 @@ public class UIInteraction : MonoBehaviour {
     /// <summary>Behaviour for button 2</summary>
     public void OpenButton2() {
         this.CheckPlayerBuilding();
-        SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
+        this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(2);
     }
 
     /// <summary>Behaviour for button 3</summary>
     public void OpenButton3() {
         this.CheckPlayerBuilding();
-        SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
+        this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(3);
     }
 
     /// <summary>Behaviour for button 4</summary>
     public void OpenButton4() {
         this.CheckPlayerBuilding();
-        SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
+        this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(4);
     }
 
     /// <summary>Behaviour for button 5</summary>
     public void OpenButton5() {
         this.CheckPlayerBuilding();
-        SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
+        this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(5);
+    }
+
+    public void MissionMapLoad() {
+        this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
+        this.MainContainer.SetActive(false);
+        this.MissionMapContainer.SetActive(true);
+    }
+
+    public void MainLoad() {
+        this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
+        this.MissionMapContainer.SetActive(false);
+        this.MainContainer.SetActive(true);
     }
 
     private void CheckPlayerBuilding() {
         if (this.BuildConfirmDialogHandle.isActiveAndEnabled) {
             this.BuildConfirmDialogHandle.DenyClick();
         }
-    }
-
-    public void MissionMapLoad() {
-        SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
-        this.MainContainer.SetActive(false);
-        this.MissionMapContainer.SetActive(true);
-    }
-
-    public void MainLoad() {
-        SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
-        this.MissionMapContainer.SetActive(false);
-        this.MainContainer.SetActive(true);
     }
 }

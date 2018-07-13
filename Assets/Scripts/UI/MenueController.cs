@@ -61,8 +61,8 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         if (this.MainMenueControll.IsExpanded) {
             if (eventData.position.y > canvasHeight * this.MenueExpandedHeight) {
                 transform.position = new Vector3(transform.position.x, canvasHeight * this.MenueExpandedHeight, 0);
-            } else if (eventData.position.y < startYMenue) {
-                transform.position = new Vector3(transform.position.x, startYMenue, 0);
+            } else if (eventData.position.y < this.startYMenue) {
+                transform.position = new Vector3(transform.position.x, this.startYMenue, 0);
             } else {
                 transform.position = new Vector3(transform.position.x, eventData.position.y, 0);
             }
@@ -118,7 +118,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     /// <param name="animated">Determines wether this is done with an animation or instant</param>
     public void Unexpand(bool animated) {
         if (animated) {
-            float y = startYMenue;
+            float y = this.startYMenue;
             this.MainMenueControll.IsExpanded = false;
             this.startMarker = transform.position;
             this.endMarker = new Vector3(transform.position.x, y, 0);
@@ -126,7 +126,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             this.menueLerping = true;
             this.lerpStartTime = Time.time;
         } else {
-            transform.position = new Vector3(transform.position.x, startYMenue, 0);
+            this.transform.position = new Vector3(transform.position.x, this.startYMenue, 0);
         }
 
         this.MainMenueControll.IsExpanded = false;
@@ -135,7 +135,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     /// <summary>Use this for initialization</summary>
     void Start() {
         canvasHeight = this.CanvasRectTransform.rect.height * this.CanvasRectTransform.localScale.y;
-        startYMenue = transform.position.y;
+        this.startYMenue = this.transform.position.y;
     }
 
     /// <summary>Update is called once per frame</summary>

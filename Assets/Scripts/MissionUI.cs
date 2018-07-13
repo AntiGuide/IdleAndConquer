@@ -19,16 +19,16 @@ public class MissionUI : MonoBehaviour {
         this.missionTime = time;
     }
 
-    // Use this for initialization
-    void Start() {
-        this.img = this.GetComponent<Image>();
-    }
-
     public void Initialize(Mission mission) {
         this.missionTime = mission.MissionDetails.MissionTime;
         this.missionMoneyReward = mission.MissionDetails.MissionMoneyReward;
-        unitsInMission = mission.Units;
+        this.unitsInMission = mission.Units;
         this.attachedMission = mission;
+    }
+
+    // Use this for initialization
+    void Start() {
+        this.img = this.GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class MissionUI : MonoBehaviour {
             if (this.aktTime / this.missionTime >= 1f) {
                 this.img.fillAmount = 1f;
                 this.missionTime = -1f;
-                foreach (Unit item in unitsInMission) {
+                foreach (Unit item in this.unitsInMission) {
                     item.SentToMission--;
                 }
                 

@@ -35,13 +35,19 @@ public class ProductionQueue : MonoBehaviour {
         this.inProduction++;
         this.prodQueue.Add(u);
         this.buttonQueue.Add(createAndOrderButton);
-        SoundControll.StartSound(SoundController.Sounds.QUEUE_TAPS);
+        this.SoundControll.StartSound(SoundController.Sounds.QUEUE_TAPS);
     }
 
     public void ResetButtons() {
         foreach (CreateAndOrderUnit button in this.buttonQueue) {
             button.SetProductionOverlayFill(0);
             button.SetUnitsBuilding(0);
+        }
+    }
+
+    public void BaseSwitchRoutine() {
+        foreach (CreateAndOrderUnit item in this.buttonQueue) {
+            item.AddSingleUnitBuilding();
         }
     }
 
@@ -62,7 +68,7 @@ public class ProductionQueue : MonoBehaviour {
 
             if (this.remainingTime <= 0f) {
                 this.latestUnit.AddSingleBuiltUnit();
-                SoundControll.StartSound(SoundController.Sounds.UNIT_READY);
+                this.SoundControll.StartSound(SoundController.Sounds.UNIT_READY);
                 if (BaseSwitcher.CurrentBase == this.BaseID) {
                     this.buttonQueue[0].SubSingleUnitBuilding();
                 }
@@ -77,12 +83,6 @@ public class ProductionQueue : MonoBehaviour {
                     this.latestUnit = null;
                 }
             }
-        }
-    }
-
-    public void BaseSwitchRoutine() {
-        foreach (CreateAndOrderUnit item in this.buttonQueue) {
-            item.AddSingleUnitBuilding();
         }
     }
 }

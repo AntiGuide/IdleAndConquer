@@ -38,25 +38,25 @@ public class SoundController : MonoBehaviour {
         retAudioSource.clip = this.Clips[(int)sound];
         retAudioSource.volume = volume;
         retAudioSource.Play();
-        StartCoroutine(StopLoopingSoundDelayed(retAudioSource, 1f));
+        StartCoroutine(this.StopLoopingSoundDelayed(retAudioSource, 1f));
         return retAudioSource;
-    }
-
-    private IEnumerator StopLoopingSoundDelayed(AudioSource retAudioSource, float delay) {
-        yield return new WaitForSeconds(delay);
-        StopLoopingSound(ref retAudioSource);
     }
 
     public void StopLoopingSound(ref AudioSource inpAudioSource) {
         UnityEngine.Object.Destroy(inpAudioSource);
     }
 
+    private IEnumerator StopLoopingSoundDelayed(AudioSource retAudioSource, float delay) {
+        yield return new WaitForSeconds(delay);
+        this.StopLoopingSound(ref retAudioSource);
+    }
+
     private void Start() {
-        StartCoroutine(PlayBGM());
+        StartCoroutine(this.PlayBGM());
     }
 
     private System.Collections.IEnumerator PlayBGM() {
-        this.AudioSourceBGM.volume = volumeBGM;
+        this.AudioSourceBGM.volume = this.volumeBGM;
         int aktTrackNumber = -1;
         int nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, this.BGMClips.Length - 1));
         this.AudioSourceBGM.clip = this.BGMClips[nextTrackNumber];
@@ -66,6 +66,7 @@ public class SoundController : MonoBehaviour {
             if (aktTrackNumber >= 0) {
                 this.BGMClips[aktTrackNumber].UnloadAudioData();
             }
+
             yield return new WaitForSeconds(this.AudioSourceBGM.clip.length / 2f);
             aktTrackNumber = nextTrackNumber;
             nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, this.BGMClips.Length - 1));

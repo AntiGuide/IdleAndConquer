@@ -16,6 +16,7 @@ public class LoadUnits : MonoBehaviour {
         foreach (OnClickDeploy item in ocds) {
             UnityEngine.Object.Destroy(item.gameObject);
         }
+
         foreach (Unit item in Unit.AllUnits) {
             this.unitName = item.UnitName;
             int count = item.UnitCount - item.SentToMission;

@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 public class OnClickDeploy : MonoBehaviour {
     public static int MaxSlots = 5;
+    public static int DeployedUnits = 0;
     public Text RemainingUnitsText;
     public Text UnitNameText;
     private ShowChosenGeneral showChosenGeneral;
     private Unit attachedUnit;
     private int unitCount;
-    public static int DeployedUnits = 0;
-    private MissionManager MissionMan;
+    private MissionManager missionMan;
 
     public void OnClickDeployEvent() {
         if (this.unitCount > 0 && DeployedUnits < MaxSlots) {
@@ -20,7 +20,7 @@ public class OnClickDeploy : MonoBehaviour {
             DeployedUnits++;
             this.RemainingUnitsText.text = this.unitCount.ToString();
             this.showChosenGeneral.CreateNewUnitImage();
-            this.MissionMan.AddUnitToBuildingMission(ref this.attachedUnit);
+            this.missionMan.AddUnitToBuildingMission(ref this.attachedUnit);
         }
     }
 
@@ -34,6 +34,6 @@ public class OnClickDeploy : MonoBehaviour {
     /// <summary>Use this for initialization</summary>
     void Start() {
         this.showChosenGeneral = GameObject.Find("/MissionMap/Canvas/DeployUI/BG").GetComponent<ShowChosenGeneral>();
-        this.MissionMan = GameObject.Find("/ReferenceShare").GetComponent<MissionManager>();
+        this.missionMan = GameObject.Find("/ReferenceShare").GetComponent<MissionManager>();
     }
 }

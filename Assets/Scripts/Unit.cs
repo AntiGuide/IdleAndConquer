@@ -21,9 +21,9 @@ public class Unit {
 
     public static int[] BuildtimeGroupLevel = { 0, 0, 0 };
 
-    public int SentToMission = 0;
-
     public static List<Unit> AllUnits = new List<Unit>();
+
+    public int SentToMission = 0;
 
     public int Level = 0;
 

@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Doors : MonoBehaviour {
-
     private Animator anim = null;
 
     // Use this for initialization

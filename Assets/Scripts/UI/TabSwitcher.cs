@@ -12,17 +12,18 @@ public class TabSwitcher : MonoBehaviour {
 
     public void OnClickTab(int tabID) {
         if (tabID != this.aktTabID) {
-            Tabs[this.aktTabID].SetActive(false);
+            this.Tabs[this.aktTabID].SetActive(false);
             this.aktTabID = tabID;
-            Tabs[tabID].SetActive(true);
-            SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
+            this.Tabs[tabID].SetActive(true);
+            this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         }
     }
 
     private void Start() {
-        foreach (GameObject item in Tabs) {
+        foreach (GameObject item in this.Tabs) {
             item.SetActive(false);
         }
-        Tabs[0].SetActive(true);
+
+        this.Tabs[0].SetActive(true);
     }
 }

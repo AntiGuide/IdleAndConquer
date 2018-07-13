@@ -16,12 +16,6 @@ public class BuildColorChanger : MonoBehaviour {
     /// <summary>For menue on click</summary>
     private MenueController menueController;
 
-    /// <summary>The material of the building</summary>
-    // private Material buildMaterial;
-
-    /// <summary>Saves the normal texture when beginning to build</summary>
-    // private Texture2D finishedBuildingTexture;
-
     /// <summary>Saves wether the building is built</summary>
     private bool isBuilt = true;
 
@@ -52,19 +46,17 @@ public class BuildColorChanger : MonoBehaviour {
 
     /// <summary>Use this for initialization</summary>
     void Start() {
-        // this.buildMaterial = gameObject.GetComponentInChildren<MeshRenderer>().material;
         MeshRenderer[] meshRenderers = gameObject.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer item in meshRenderers) {
             if (!this.materialList.Contains(item.material)) { // If this couses performance issues dont remove duplicates and double change texture later
                 this.materialList.Add(item.material);
             }
         }
-        // this.buildMaterial;
+
         foreach (Material item in this.materialList) {
             this.finishedBuildingTextureList.Add((Texture2D)item.GetTexture("_MainTex"));
         }
         
-
         if (!this.isBuilt) {
             this.SetGreen();
         }

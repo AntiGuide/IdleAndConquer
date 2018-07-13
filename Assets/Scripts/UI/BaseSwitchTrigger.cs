@@ -33,7 +33,7 @@ public class BaseSwitchTrigger : MonoBehaviour {
         this.BaseSwitch.OnClickBaseSwitch(this.IsLeft);
         this.UpdateButtons();
         this.OtherButton.UpdateButtons();
-        SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION, 0.5f);
+        this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION, 0.5f);
     }
 
     /// <summary>Sets the color for the base switch buttons</summary>

@@ -1,28 +1,27 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class TopDpwnCamera : MonoBehaviour {
-    public Transform cam_target;
+    public Transform camTarget;
     public float smooth = 0.5f;
-    public Vector3 cam_offset;
+    public Vector3 camOffset;
     public float rotSpeed = 50f;
-    private Vector3 start_angle;
+    private Vector3 startAngle;
 
     void Start() {
-        start_angle = transform.position; 
+        this.startAngle = this.transform.position; 
     }
     
     void FixedUpdate() {
-        if (this.cam_target != null) {
-            Vector3 desPosition = this.cam_target.position; // + cam_offset;
-            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desPosition, smooth * Time.deltaTime);
-            transform.position = smoothedPosition;
+        if (this.camTarget != null) {
+            Vector3 desPosition = this.camTarget.position; // + cam_offset;
+            Vector3 smoothedPosition = Vector3.Lerp(this.transform.position, desPosition, this.smooth * Time.deltaTime);
+            this.transform.position = smoothedPosition;
             if (Input.GetKey("q")) {
-                transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
+                this.transform.Rotate(new Vector3(0, this.rotSpeed * Time.deltaTime, 0));
             }
             
             if (Input.GetKey("e")) {
-                transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime * -1, 0));
+                this.transform.Rotate(new Vector3(0, this.rotSpeed * Time.deltaTime * -1, 0));
             }
         }
     }

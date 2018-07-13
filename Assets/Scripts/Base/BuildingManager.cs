@@ -2,9 +2,9 @@
 
 public class BuildingManager : MonoBehaviour {
     public BuildingType buildingType;
-    private EnergyManagement energyManager;
     public long BuildCost = 1000;
     public int CostEnergy = 5;
+    private EnergyManagement energyManager;
 
     public enum BuildingType {
         AIRFIELD = 0,

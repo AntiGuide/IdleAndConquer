@@ -7,6 +7,8 @@ using UnityEngine;
 /// A class to manage the generation of generals
 /// </summary>
 public class GeneralManager : MonoBehaviour {
+    public static List<General> AllGenerals = new List<General>();
+    
     /// <summary>The minimum generatable chance of a general to die permanently</summary>
     public float GenMinChanceToPermaDeath;
 
@@ -21,8 +23,6 @@ public class GeneralManager : MonoBehaviour {
 
     /// <summary>Parent for all general buttons</summary>
     public GameObject GeneralList;
-
-    public static List<General> AllGenerals = new List<General>();
 
     /// <summary>The highest general ID at the moment</summary>
     private int generalID = 0;

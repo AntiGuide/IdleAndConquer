@@ -13,7 +13,6 @@ public class BuildBuilding : MonoBehaviour {
     public Vector3 BuildUIOffset;
     public MoneyManagement MoneyManager;
     public BaseSwitcher BaseSwitch;
-    // public EnergyManagement EnergyManager;
     public float CellSize;
     public Vector2 MinBuildConfirmUIPosition;
     public Vector2 MaxBuildConfirmUIPosition;
@@ -88,7 +87,6 @@ public class BuildBuilding : MonoBehaviour {
         if (this.buildColorChanger.CollidingBuildings == 0) {
             if (this.MoneyManager.SubMoney(this.costBuilding)) {
                 this.BaseSwitch.GetEnergyPool().SubEnergy(this.costEnergy);
-                // this.EnergyManager.SubEnergy(this.costEnergy);
                 this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
                 this.isBuilt[this.newBuildingID] = true;
                 this.BuiltBuildings[this.newBuildingID] = this.newBuilding;

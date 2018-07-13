@@ -26,6 +26,7 @@ public class EnergyManagement : MonoBehaviour {
         } else {
             this.isRed = false;
         }
+
         this.Bar.fillAmount = this.curEnergy / (this.maxEnergy - this.minEnergy);
     }
 
@@ -41,6 +42,7 @@ public class EnergyManagement : MonoBehaviour {
             this.isRed = !this.isRed;
             this.blinkTimeAkt = this.blinkTime;
         }
+
         gameObject.GetComponent<Image>().color = this.isRed ? Color.red : this.prevColor;
     }
 }

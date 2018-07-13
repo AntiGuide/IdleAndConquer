@@ -4,15 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MissionManager : MonoBehaviour {
-    // public List<Mission> Missions = new List<Mission>();
-    // public Mission BuildingMission = null;
     public MissionDetails MissionDetails;
     public UIInteraction UIInteractions;
     public MainMenueController MainMenueControll;
     public General MissionGeneral;
     public List<Unit> Units = new List<Unit>();
     public MissionQueue MissionQueue;
-
 
     public void Reset() {
         this.MissionDetails = null;
@@ -22,16 +19,11 @@ public class MissionManager : MonoBehaviour {
         this.Units = new List<Unit>();
     }
 
-    public void GenerateMission(MissionDetails missionDetails, UIInteraction UIInteractions, MainMenueController MainMenueControll, General general = null) {
-        // Mission m = new Mission(missionDetails, UIInteractions, general, units);
-        // MissionManager.MainMenueControll = MainMenueControll;
-        // BuildingMission = m;
-        // Missions.Add(m);
+    public void GenerateMission(MissionDetails missionDetails, UIInteraction uiInteractions, MainMenueController mainMenueControll, General general = null) {
         this.MissionDetails = missionDetails;
-        this.UIInteractions = UIInteractions;
-        this.MainMenueControll = MainMenueControll;
+        this.UIInteractions = uiInteractions;
+        this.MainMenueControll = mainMenueControll;
         this.MissionGeneral = general;
-
     }
 
     public void StartMission() {
@@ -39,6 +31,7 @@ public class MissionManager : MonoBehaviour {
         foreach (Unit item in this.Units) {
             item.SentToMission++;
         }
+
         this.MissionQueue.Add(new Mission(this.MissionDetails, this.UIInteractions, this.MissionGeneral, this.Units));
         this.UIInteractions.MainLoad();
         OnClickDeploy.DeployedUnits = 0;

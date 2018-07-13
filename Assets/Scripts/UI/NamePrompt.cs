@@ -9,12 +9,12 @@ public class NamePrompt : MonoBehaviour {
     public GameObject Name;
 
     public void OnOKClick() {
-        Name.SetActive(false);
+        this.Name.SetActive(false);
         this.ChooseFraction.SetActive(true);
     }
 
     public void OnFactionChoose() {
-        OKButton.SetActive(true);
+        this.OKButton.SetActive(true);
     }
 
     public void OnFactionChooseOK() {

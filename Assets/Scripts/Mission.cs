@@ -9,9 +9,9 @@ public class Mission : MonoBehaviour {
     public General MissionGeneral;
     public List<Unit> Units;
     public MissionManager MissionManager;
-    private MissionQueue MissionQueue;
+    private MissionQueue missionQueue;
 
-    public Mission(MissionDetails missionDetails, UIInteraction UIInteractions, General general = null, List<Unit> units = null) {
+    public Mission(MissionDetails missionDetails, UIInteraction uiInteractions, General general = null, List<Unit> units = null) {
         this.MissionDetails = missionDetails;
         this.MissionGeneral = general;
         if (units == null) {
@@ -19,13 +19,14 @@ public class Mission : MonoBehaviour {
         } else {
             this.Units = units;
         }
-        this.UIInteractions = UIInteractions;
-        this.MissionQueue = GameObject.Find("ReferenceShare").GetComponent<ReferenceShare>().MissionQueue;
+
+        this.UIInteractions = uiInteractions;
+        this.missionQueue = GameObject.Find("ReferenceShare").GetComponent<ReferenceShare>().MissionQueue;
     }
 
     public void StartMission() {
         this.MissionGeneral.IsSentToMission = true;
-        this.MissionQueue.Add(this);
-        UIInteractions.MainLoad();
+        this.missionQueue.Add(this);
+        this.UIInteractions.MainLoad();
     }
 }

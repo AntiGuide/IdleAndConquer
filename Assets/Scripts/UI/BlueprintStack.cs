@@ -31,10 +31,6 @@ public class BlueprintStack : MonoBehaviour {
 
     private Text levelText;
 
-    public float Buildtime {
-        get { return buildTime[this.level]; }
-    }
-
     public enum BlueprintType {
         UNIT = 0,
         UNIT_GROUP,
@@ -46,20 +42,22 @@ public class BlueprintStack : MonoBehaviour {
         FIND_THE_BOX
     }
 
+    public float Buildtime {
+        get { return buildTime[this.level]; }
+    }
+
     public void LevelUp() {
         if (this.buildingTowardsLevel >= BlueprintStack.NeededBlueprintsLevel.Length || this.BlueprintCount < BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel]) {
             return;
         }
+
         this.BlueprintCount -= BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
         this.buildingTowardsLevel++;
         this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
         this.BaseSwitch.GetResearchQueue().AddToQueue(this);
     }
 
-    private void Update() {
-    }
-
-    internal void PerformLevelUp() {
+    public void PerformLevelUp() {
         this.level++;
         this.levelText.text = "Level " + this.level.ToString();
         
@@ -86,8 +84,12 @@ public class BlueprintStack : MonoBehaviour {
         }
     }
 
-    private void Awake() {
+    public void AddBlueprint(int count = 1) {
+        this.BlueprintCount += count;
+        this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
+    }
 
+    private void Awake() {
         Text t = transform.Find("Text").GetComponent<Text>();
         if (this.CreateAndOrderUnitStack.AttachedUnit != null) {
             t.text = this.CreateAndOrderUnitStack.AttachedUnit.UnitName;
@@ -101,10 +103,5 @@ public class BlueprintStack : MonoBehaviour {
         this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
 
         this.BlueprintMan.BlueprintStacks.Add(this);
-    }
-
-    public void AddBlueprint(int count = 1) {
-        this.BlueprintCount += count;
-        this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
     }
 }

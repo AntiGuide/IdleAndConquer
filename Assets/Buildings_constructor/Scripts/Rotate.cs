@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Rotate : MonoBehaviour {
     public float rotSpeed = 3f;
@@ -14,14 +13,14 @@ public class Rotate : MonoBehaviour {
     
     // Update is called once per frame
     void Update() {
-        if (rotMaxY != 0 && rotMinY != 0) {
-            if (transform.rotation.y * 360 > rotMaxY) {
+        if (this.rotMaxY != 0 && this.rotMinY != 0) {
+            if (this.transform.rotation.y * 360 > this.rotMaxY) {
                 this.currentRotSpeed = -this.rotSpeed;
-            } else if (transform.rotation.y * 360 < rotMinY) {
+            } else if (this.transform.rotation.y * 360 < this.rotMinY) {
                 this.currentRotSpeed = this.rotSpeed;
             }
         }
 
-        transform.Rotate(new Vector3(0, this.currentRotSpeed * Time.deltaTime, 0));
+        this.transform.Rotate(new Vector3(0, this.currentRotSpeed * Time.deltaTime, 0));
     }
 }

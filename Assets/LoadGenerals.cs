@@ -16,10 +16,11 @@ public class LoadGenerals : MonoBehaviour {
     }
 
     private void OnEnable() {
-        GeneralButton[] GeneralButtons = transform.GetComponentsInChildren<GeneralButton>();
-        foreach (GeneralButton item in GeneralButtons) {
+        GeneralButton[] generalButtons = transform.GetComponentsInChildren<GeneralButton>();
+        foreach (GeneralButton item in generalButtons) {
             UnityEngine.Object.Destroy(item.gameObject);
         }
+
         foreach (General item in GeneralManager.AllGenerals) {
             if (!item.IsSentToMission) {
                 GeneralButtonMissionMap attachedButton = Instantiate(this.generalButtonMissionMap, transform).GetComponent<GeneralButtonMissionMap>();

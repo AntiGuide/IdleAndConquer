@@ -106,7 +106,7 @@ public class MoneyManagement : MonoBehaviour {
             this.GetComponent<Text>().text = FormatMoney(this.moneyAmountShown);
         } else if (!this.isFinished) {
             this.isFinished = true;
-            SoundControll.StopLoopingSound(ref this.audioSource);
+            this.SoundControll.StopLoopingSound(ref this.audioSource);
         }
     }
 
@@ -120,7 +120,7 @@ public class MoneyManagement : MonoBehaviour {
             this.moneyToLerpTo = money;
             this.lerpTimeDone = 0.0f;
             this.isFinished = false;
-            this.audioSource = SoundControll.StartLoopingSound(SoundController.Sounds.SOFTCURRENCY_COUNTUP, 0.15f);
+            this.audioSource = this.SoundControll.StartLoopingSound(SoundController.Sounds.SOFTCURRENCY_COUNTUP, 0.15f);
         } else {
             this.GetComponent<Text>().text = FormatMoney(money);
             this.moneyAmountShown = money;

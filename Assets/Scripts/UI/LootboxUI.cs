@@ -10,8 +10,7 @@ public class LootboxUI : MonoBehaviour {
     public GameObject OKButton;
     public int RewardCount;
     public string RewardUnitName;
-    private BlueprintManager BlueprintMan;
-
+    private BlueprintManager blueprintMan;
 
     public void ClickCase() {
         this.PlayerRewards.gameObject.SetActive(true);
@@ -23,11 +22,11 @@ public class LootboxUI : MonoBehaviour {
     }
 
     public void ClickOK() {
-        this.BlueprintMan.SearchUnitNameAddBlueprint(this.RewardUnitName, this.RewardCount);
+        this.blueprintMan.SearchUnitNameAddBlueprint(this.RewardUnitName, this.RewardCount);
         UnityEngine.Object.Destroy(transform.parent.parent.gameObject);
     }
 
     private void Start() {
-        this.BlueprintMan = GameObject.Find("/Main/Canvas/MainMenue/MenueResearch").GetComponent<BlueprintManager>();
+        this.blueprintMan = GameObject.Find("/Main/Canvas/MainMenue/MenueResearch").GetComponent<BlueprintManager>();
     }
 }

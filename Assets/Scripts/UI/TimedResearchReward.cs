@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TimedResearchReward : MonoBehaviour {
-
     public int SecondsComplete;
     public Text RemainingTimeText;
     public AppPauseHandler AppPauseHandle;
@@ -20,9 +19,9 @@ public class TimedResearchReward : MonoBehaviour {
     
     // Update is called once per frame
     void Update() {
-        this.fillImage.fillAmount = Mathf.Min((SecondsComplete - (Time.time - this.timeBeginning)) / (float)SecondsComplete, 1f);
-        RemainingTimeText.text = (int)((SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) / 60) + ":" + Mathf.RoundToInt((SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) % 60).ToString("00");
-        if ((int)Time.time - (int)this.timeBeginning >= SecondsComplete) {
+        this.fillImage.fillAmount = Mathf.Min((this.SecondsComplete - (Time.time - this.timeBeginning)) / (float)this.SecondsComplete, 1f);
+        this.RemainingTimeText.text = (int)((this.SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) / 60) + ":" + Mathf.RoundToInt((this.SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) % 60).ToString("00");
+        if ((int)Time.time - (int)this.timeBeginning >= this.SecondsComplete) {
             // Complete
             this.AppPauseHandle.DailyLootBoxPopUp();
             this.timeBeginning = Time.time;

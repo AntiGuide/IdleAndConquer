@@ -29,6 +29,6 @@ public class FloatUpSpawner : MonoBehaviour {
 
         go.transform.position = pos;
         go.GetComponent<FloatUp>().Initialize(type, value, this.FadeTime, this.TravelDistance);
-        soundController.StartSound(SoundController.Sounds.FLOATUP);
+        this.soundController.StartSound(SoundController.Sounds.FLOATUP);
     }
 }

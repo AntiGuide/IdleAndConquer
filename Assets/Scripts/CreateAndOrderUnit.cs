@@ -8,8 +8,6 @@ using UnityEngine.UI;
 /// Handles the creation of units
 /// </summary>
 public class CreateAndOrderUnit : MonoBehaviour {
-    private static List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
-
     /// <summary>The name of the unit</summary>
     public string unitName;
 
@@ -51,6 +49,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     public int AddCountOnStartUp = 0;
 
+    private static List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
+
+    private static int[] costLevel = { 0, 0, 0 };
+
     /// <summary>The attached units ID</summary>
     private static int unitID;
 
@@ -69,17 +71,11 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The reference to the unit count building text object</summary>
     private Text unitBuilding;
 
-    public void ShowUnitsBuilding() {
-        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
-    }
-
     /// <summary>The reference to the building vfx image</summary>
     private Image buildingOverlay;
 
     /// <summary>The units being built at the time</summary>
     private int buildingUnits = 0;
-
-    private static int[] costLevel = { 0, 0, 0 };
 
     public int Cost {
         get { return this.cost - (this.cost - Mathf.RoundToInt(Unit.HPBoostLevel[CreateAndOrderUnit.costLevel[(int)this.Type]] * this.cost)); }
@@ -96,6 +92,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
         foreach (CreateAndOrderUnit item in allCreateAndOrder) {
             item.unitCostText.text = item.Cost.ToString();
         }
+    }
+
+    public void ShowUnitsBuilding() {
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
     }
 
     /// <summary>Orders unit when a button is clicked</summary>
@@ -133,7 +133,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// </summary>
     public void AddSingleUnitBuilding() {
         this.buildingUnits++;
-        ShowUnitsBuilding();
+        this.ShowUnitsBuilding();
     }
 
     /// <summary>
@@ -141,7 +141,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// </summary>
     public void SubSingleUnitBuilding() {
         this.buildingUnits = --this.buildingUnits;
-        ShowUnitsBuilding();
+        this.ShowUnitsBuilding();
     }
 
     /// <summary>
@@ -149,7 +149,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// </summary>
     public void SetUnitsBuilding(int buildingUnits) {
         this.buildingUnits = buildingUnits;
-        ShowUnitsBuilding();
+        this.ShowUnitsBuilding();
     }
 
     /// <summary>
@@ -183,6 +183,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
             this.SetUnitCount(count.ToString());
             this.attachedUnit.UnitCount = count;
         }
+
         allCreateAndOrder.Add(this);
     }
 }

@@ -82,6 +82,7 @@ public class MainMenueController : MonoBehaviour {
                 UnityEngine.Object.Destroy(unitContainer.GetChild(i).gameObject);
             }
         }
+
         this.DeployUI.SetActive(val);
     }
 

@@ -19,8 +19,6 @@ public class MissionQueue : MonoBehaviour {
         missionUI.Initialize(mission);
         this.missionUIs.Add(missionUI);
         missionUI.MissionQueue = this;
-        // missionUI.moneyManagement = this.MoneyManagement;
-        // missionUI.floatUpSpawner = this.FloatUpSpawner;
     }
 
     public void DestroyMissionBar(MissionUI missionUI) {
@@ -29,14 +27,12 @@ public class MissionQueue : MonoBehaviour {
 
     public void FinshedMission(Mission attachedMission) {
         attachedMission.MissionGeneral.IsSentToMission = false;
-        // Instantiate RewardPopUp
         GameObject go = Instantiate(this.RewardPopUpPrefab, this.TransformCanvas);
-        // Initialize RewardPopUp
         go.GetComponent<RewardPopUp>().Initialize(this.MoneyManager, this.RenownManager, this.VirtualCurrencyManager, this);
         go.GetComponent<RewardPopUp>().ShowRewards(attachedMission.MissionDetails);
     }
 
     public void OpenLootboxPopUp() {
-        Instantiate(this.LootboxPopUpPrefab, this.TransformCanvas);
+        UnityEngine.Object.Instantiate(this.LootboxPopUpPrefab, this.TransformCanvas);
     }
 }

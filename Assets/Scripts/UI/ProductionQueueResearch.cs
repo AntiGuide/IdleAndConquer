@@ -28,13 +28,10 @@ public class ProductionQueueResearch : MonoBehaviour {
     /// <summary>The percentage the overlay will be filled</summary>
     private float overlayFill;
 
-    ///// <summary>The current count of orders</summary>
-    // private int inProduction = 0;
-
     public void AddToQueue(BlueprintStack blueprintStack) {
         // this.inProduction++;
         // this.prodQueue.Add(u);
-        SoundControll.StartSound(SoundController.Sounds.UPGRADING);
+        this.SoundControll.StartSound(SoundController.Sounds.UPGRADING);
         this.buttonQueue.Add(blueprintStack);
     }
 
