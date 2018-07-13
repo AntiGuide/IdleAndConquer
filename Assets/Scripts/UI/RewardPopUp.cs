@@ -14,13 +14,13 @@ public class RewardPopUp : MonoBehaviour {
     private VirtualCurrencyManagement VirtualCurrencyManager;
     private MissionQueue missionQueue;
 
-	public void GiveRewards() {
-        MoneyManager.AddMoney(missionDetails.MissionMoneyReward);
-        RenownManager.AddRenown(missionDetails.MissionRenownReward);
-        VirtualCurrencyManager.AddVirtualCurrency(missionDetails.MissionVirtualReward);
+    public void GiveRewards() {
+        this.MoneyManager.AddMoney(this.missionDetails.MissionMoneyReward);
+        this.RenownManager.AddRenown(this.missionDetails.MissionRenownReward);
+        this.VirtualCurrencyManager.AddVirtualCurrency(this.missionDetails.MissionVirtualReward);
         // TODO Blueprint
-        missionQueue.OpenLootboxPopUp();
-        Destroy(gameObject);
+        this.missionQueue.OpenLootboxPopUp();
+        UnityEngine.Object.Destroy(this.gameObject);
     }
 
     public void Initialize(MoneyManagement moneyManager, RenownManagement renownManager, VirtualCurrencyManagement virtualCurrencyManager, MissionQueue missionQueue) {
@@ -33,10 +33,10 @@ public class RewardPopUp : MonoBehaviour {
     public void ShowRewards(MissionDetails missionDetails) {
         this.missionDetails = missionDetails;
         PlayerCommunication.text = "Congratulations on beating " + missionDetails.EnemyGeneral + "!" + System.Environment.NewLine + System.Environment.NewLine + "You get:";
-        PlayerRewards.text =    missionDetails.MissionMoneyReward.ToString() + " Dollar" + System.Environment.NewLine +
-                                missionDetails.MissionRenownReward.ToString() + " Renown" + System.Environment.NewLine +
-                                missionDetails.MissionVirtualReward.ToString() + " Virtual" + System.Environment.NewLine +
-                                missionDetails.MissionBlueprintReward.ToString() + " Blueprint";
+        PlayerRewards.text = missionDetails.MissionMoneyReward.ToString() + " Dollar" + System.Environment.NewLine +
+                             missionDetails.MissionRenownReward.ToString() + " Renown" + System.Environment.NewLine +
+                             missionDetails.MissionVirtualReward.ToString() + " Virtual" + System.Environment.NewLine +
+                             missionDetails.MissionBlueprintReward.ToString() + " Blueprint";
         
         // GameObject go = Instantiate(RewardPrefab, transform);
         // go.GetComponent<MissionReward>();

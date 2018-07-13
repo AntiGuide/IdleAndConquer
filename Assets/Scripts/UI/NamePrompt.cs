@@ -10,7 +10,7 @@ public class NamePrompt : MonoBehaviour {
 
     public void OnOKClick() {
         Name.SetActive(false);
-        ChooseFraction.SetActive(true);
+        this.ChooseFraction.SetActive(true);
     }
 
     public void OnFactionChoose() {
@@ -18,6 +18,6 @@ public class NamePrompt : MonoBehaviour {
     }
 
     public void OnFactionChooseOK() {
-        Destroy(InputNamePrompt);
+        UnityEngine.Object.Destroy(this.InputNamePrompt);
     }
 }

@@ -22,9 +22,9 @@ public class EnergyManagement : MonoBehaviour {
         this.curEnergy = this.curEnergy <= this.redStep - 1 ? this.redStep - 1 : this.curEnergy;
         if (this.curEnergy <= this.redStep - 1) {
             this.blinking = true;
-            blinkTimeAkt = blinkTime;
+            this.blinkTimeAkt = this.blinkTime;
         } else {
-            isRed = false;
+            this.isRed = false;
         }
         this.Bar.fillAmount = this.curEnergy / (this.maxEnergy - this.minEnergy);
     }
@@ -36,11 +36,11 @@ public class EnergyManagement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        blinkTimeAkt -= Time.deltaTime;
-        if (blinking && blinkTimeAkt <= 0) {
-            isRed = !isRed;
-            blinkTimeAkt = blinkTime;
+        this.blinkTimeAkt -= Time.deltaTime;
+        if (this.blinking && this.blinkTimeAkt <= 0) {
+            this.isRed = !this.isRed;
+            this.blinkTimeAkt = this.blinkTime;
         }
-        gameObject.GetComponent<Image>().color = isRed ? Color.red : this.prevColor;
+        gameObject.GetComponent<Image>().color = this.isRed ? Color.red : this.prevColor;
     }
 }

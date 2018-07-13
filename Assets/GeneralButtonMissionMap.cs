@@ -21,7 +21,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     }
 
     public void OnClick() {
-        MissionMan.MissionGeneral = this.General;
+        this.MissionMan.MissionGeneral = this.General;
         this.MissionDetailsWindow.SetActive(false);
         this.mainMenueController.ActivateDeployUI(true);
         this.mainMenueController.ToggleMenue(2);

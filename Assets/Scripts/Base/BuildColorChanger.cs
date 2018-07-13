@@ -55,12 +55,12 @@ public class BuildColorChanger : MonoBehaviour {
         // this.buildMaterial = gameObject.GetComponentInChildren<MeshRenderer>().material;
         MeshRenderer[] meshRenderers = gameObject.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer item in meshRenderers) {
-            if (!materialList.Contains(item.material)) { // If this couses performance issues dont remove duplicates and double change texture later
-                materialList.Add(item.material);
+            if (!this.materialList.Contains(item.material)) { // If this couses performance issues dont remove duplicates and double change texture later
+                this.materialList.Add(item.material);
             }
         }
         // this.buildMaterial;
-        foreach (Material item in materialList) {
+        foreach (Material item in this.materialList) {
             this.finishedBuildingTextureList.Add((Texture2D)item.GetTexture("_MainTex"));
         }
         
@@ -71,8 +71,8 @@ public class BuildColorChanger : MonoBehaviour {
     }
 
     private void SetGreen() {
-        if (materialList.Count > 0) {
-            foreach (Material item in materialList) {
+        if (this.materialList.Count > 0) {
+            foreach (Material item in this.materialList) {
                 item.SetTexture("_MainTex", this.GreenTransparent);
             }
         } else {
@@ -81,9 +81,9 @@ public class BuildColorChanger : MonoBehaviour {
     }
 
     private void SetFinished() {
-        if (materialList.Count > 0) {
-            for (int i = 0; i < materialList.Count; i++) {
-                materialList[i].SetTexture("_MainTex", this.finishedBuildingTextureList[i]);
+        if (this.materialList.Count > 0) {
+            for (int i = 0; i < this.materialList.Count; i++) {
+                this.materialList[i].SetTexture("_MainTex", this.finishedBuildingTextureList[i]);
             }
         } else {
             Debug.Log("Non existent material");
@@ -91,8 +91,8 @@ public class BuildColorChanger : MonoBehaviour {
     }
 
     private void SetRed() {
-        if (materialList.Count > 0) {
-            foreach (Material item in materialList) {
+        if (this.materialList.Count > 0) {
+            foreach (Material item in this.materialList) {
                 item.SetTexture("_MainTex", this.RedTransparent);
             }
         } else {

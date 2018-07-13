@@ -9,7 +9,7 @@ public class Unit {
 
     public static int[] OtherBoostLevel = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 };
 
-    public static int[] ArmorTypeLevel = { 0, 0, 0, 0};
+    public static int[] ArmorTypeLevel = { 0, 0, 0, 0 };
 
     public static int[] HPGroupLevel = { 0, 0, 0 };
 
@@ -159,7 +159,7 @@ public class Unit {
     /// </summary>
     /// <param name="moneyManager">The reference to the players money pool</param>
     public void Order(ref MoneyManagement moneyManager) {
-        if (moneyManager.SubMoney(CreateAndOrderButton.Cost)) {
+        if (moneyManager.SubMoney(this.CreateAndOrderButton.Cost)) {
             this.baseSwitch.GetProductionQueue().AddToQueue(this, this.CreateAndOrderButton);
             this.CreateAndOrderButton.AddSingleUnitBuilding();
         }

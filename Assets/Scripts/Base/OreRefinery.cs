@@ -44,8 +44,8 @@ public class OreRefinery : MonoBehaviour {
     }
 
     private void Start() {
-        if (IsBuiltOnStartup) {
-            InitializeBuilt();
+        if (this.IsBuiltOnStartup) {
+            this.InitializeBuilt();
         }
     }
 }

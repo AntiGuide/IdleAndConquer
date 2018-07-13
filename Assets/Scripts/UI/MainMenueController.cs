@@ -21,8 +21,8 @@ public class MainMenueController : MonoBehaviour {
 
     /// <summary>Getter/Setter for the isExpanded variable</summary>
     public bool IsExpanded {
-        get { return isExpanded; }
-        set { isExpanded = value; }
+        get { return this.isExpanded; }
+        set { this.isExpanded = value; }
     }
 
     /// <summary>
@@ -43,9 +43,9 @@ public class MainMenueController : MonoBehaviour {
 
             this.Menue[menueNumber].SetActive(true);
             this.enabledMenue = menueNumber;
-            this.menueController[this.enabledMenue].Expand(!isExpanded);
+            this.menueController[this.enabledMenue].Expand(!this.isExpanded);
         } else {
-            if (isExpanded) {
+            if (this.isExpanded) {
                 this.menueController[this.enabledMenue].Unexpand(true);
             } else {
                 this.menueController[this.enabledMenue].Expand(true);
@@ -79,7 +79,7 @@ public class MainMenueController : MonoBehaviour {
         if (!val) {
             Transform unitContainer = this.DeployUI.transform.Find("BG").Find("UnitContainer");
             for (int i = 0; i < unitContainer.childCount; i++) {
-                Destroy(unitContainer.GetChild(i).gameObject);
+                UnityEngine.Object.Destroy(unitContainer.GetChild(i).gameObject);
             }
         }
         this.DeployUI.SetActive(val);
@@ -95,7 +95,7 @@ public class MainMenueController : MonoBehaviour {
             if (men != null && !standardSelected) {
                 men.SetActive(true);
                 this.enabledMenue = i;
-                isExpanded = false;
+                this.isExpanded = false;
                 standardSelected = true;
             } else if (men != null) {
                 men.SetActive(false);

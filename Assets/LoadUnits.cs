@@ -14,7 +14,7 @@ public class LoadUnits : MonoBehaviour {
     private void OnEnable() {
         OnClickDeploy[] ocds = transform.GetComponentsInChildren<OnClickDeploy>();
         foreach (OnClickDeploy item in ocds) {
-            Destroy(item.gameObject);
+            UnityEngine.Object.Destroy(item.gameObject);
         }
         foreach (Unit item in Unit.AllUnits) {
             this.unitName = item.UnitName;

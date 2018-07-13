@@ -5,8 +5,8 @@ using UnityEngine;
 public class BlueprintManager : MonoBehaviour {
     public List<BlueprintStack> BlueprintStacks = new List<BlueprintStack>();
 
-	public void SearchUnitAddBlueprint(Unit unit, int count = 1) {
-        foreach (BlueprintStack item in BlueprintStacks) {
+    public void SearchUnitAddBlueprint(Unit unit, int count = 1) {
+        foreach (BlueprintStack item in this.BlueprintStacks) {
             if (item.BlueprintTypeStack == BlueprintStack.BlueprintType.UNIT && item.CreateAndOrderUnitStack.AttachedUnit == unit) {
                 item.AddBlueprint(count);
             }
@@ -14,7 +14,7 @@ public class BlueprintManager : MonoBehaviour {
     }
 
     public void SearchUnitNameAddBlueprint(string unitName, int count = 1) {
-        foreach (BlueprintStack item in BlueprintStacks) {
+        foreach (BlueprintStack item in this.BlueprintStacks) {
             if (item.BlueprintTypeStack == BlueprintStack.BlueprintType.UNIT && item.CreateAndOrderUnitStack.AttachedUnit.UnitName.Equals(unitName)) {
                 item.AddBlueprint(count);
             }

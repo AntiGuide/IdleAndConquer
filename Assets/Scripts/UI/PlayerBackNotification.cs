@@ -68,7 +68,7 @@ public class PlayerBackNotification : MonoBehaviour {
     }
 
     public void OnDailyClick() {
-        Instantiate(DailyRewardLootBoxPopUp, CanvasTransform);
+        Instantiate(this.DailyRewardLootBoxPopUp, this.CanvasTransform);
         MonoBehaviour.Destroy(this.gameObject);
     }
 }

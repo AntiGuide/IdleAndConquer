@@ -70,11 +70,11 @@ public class Harvester : MonoBehaviour {
     }
 
     public void UpgradeSpeed() {
-        levelSpeed++;
+        this.levelSpeed++;
     }
 
     public void UpgradeGeneratedMoney() {
-        levelMoney++;
+        this.levelMoney++;
     }
 
     /// <summary>

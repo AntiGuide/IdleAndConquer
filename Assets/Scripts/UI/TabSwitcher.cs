@@ -11,9 +11,9 @@ public class TabSwitcher : MonoBehaviour {
     private int aktTabID;
 
     public void OnClickTab(int tabID) {
-        if (tabID != aktTabID) {
-            Tabs[aktTabID].SetActive(false);
-            aktTabID = tabID;
+        if (tabID != this.aktTabID) {
+            Tabs[this.aktTabID].SetActive(false);
+            this.aktTabID = tabID;
             Tabs[tabID].SetActive(true);
             SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         }

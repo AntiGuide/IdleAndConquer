@@ -13,7 +13,7 @@ public class BuildBuilding : MonoBehaviour {
     public Vector3 BuildUIOffset;
     public MoneyManagement MoneyManager;
     public BaseSwitcher BaseSwitch;
-    //public EnergyManagement EnergyManager;
+    // public EnergyManagement EnergyManager;
     public float CellSize;
     public Vector2 MinBuildConfirmUIPosition;
     public Vector2 MaxBuildConfirmUIPosition;
@@ -88,7 +88,7 @@ public class BuildBuilding : MonoBehaviour {
         if (this.buildColorChanger.CollidingBuildings == 0) {
             if (this.MoneyManager.SubMoney(this.costBuilding)) {
                 this.BaseSwitch.GetEnergyPool().SubEnergy(this.costEnergy);
-                //this.EnergyManager.SubEnergy(this.costEnergy);
+                // this.EnergyManager.SubEnergy(this.costEnergy);
                 this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
                 this.isBuilt[this.newBuildingID] = true;
                 this.BuiltBuildings[this.newBuildingID] = this.newBuilding;
@@ -134,7 +134,7 @@ public class BuildBuilding : MonoBehaviour {
         }
 
         if (Input.GetMouseButtonDown(0)) {
-            if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !MainMenueControll.IsExpanded) {
+            if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !this.MainMenueControll.IsExpanded) {
                 this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 this.layerMask = LayerMask.GetMask("Buildings");
                 Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);

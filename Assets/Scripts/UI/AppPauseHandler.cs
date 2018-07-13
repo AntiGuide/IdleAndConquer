@@ -33,11 +33,11 @@ public class AppPauseHandler : MonoBehaviour {
     private float loginTimer = 0f;
 
     /// <summary>The date and time the user paused the app</summary>
-    private DateTime exitTime = new DateTime(1970,1,1);
+    private DateTime exitTime = new DateTime(1970, 1, 1);
 
     public void DailyLootBoxPopUp() {
         PlayerBackNotification pbn = Instantiate(PlayerBackNotificationDailyLoot, ParentPlayerBackNotification).GetComponent<PlayerBackNotification>();
-        pbn.InitializeDaily(DailyRewardLootBoxPopUp, ParentPlayerBackNotification);
+        pbn.InitializeDaily(this.DailyRewardLootBoxPopUp, ParentPlayerBackNotification);
     }
 
     /// <summary>

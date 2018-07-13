@@ -13,6 +13,6 @@ public class StartMission : MonoBehaviour {
     /// Triggered when the player clicks the button on the mission map to start a single mission
     /// </summary>
     public void OnClick() {
-        MissionMan.StartMission();
+        this.MissionMan.StartMission();
     }
 }

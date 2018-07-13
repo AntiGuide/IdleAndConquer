@@ -79,21 +79,16 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The units being built at the time</summary>
     private int buildingUnits = 0;
 
-    private  static int[] costLevel = { 0, 0, 0};
+    private static int[] costLevel = { 0, 0, 0 };
 
     public int Cost {
-        get { return cost - (cost - Mathf.RoundToInt(Unit.HPBoostLevel[CreateAndOrderUnit.costLevel[(int)this.Type]] * cost)); }
-        set { cost = value; }
+        get { return this.cost - (this.cost - Mathf.RoundToInt(Unit.HPBoostLevel[CreateAndOrderUnit.costLevel[(int)this.Type]] * this.cost)); }
+        set { this.cost = value; }
     }
 
     public Unit AttachedUnit {
-        get {
-            return attachedUnit;
-        }
-
-        set {
-            attachedUnit = value;
-        }
+        get { return this.attachedUnit; }
+        set { this.attachedUnit = value; }
     }
 
     public static void LevelUpCost(Unit.Type type) {
@@ -182,7 +177,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         this.buildingOverlay.fillAmount = 0f;
         this.unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
         int count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
-        count += AddCountOnStartUp;
+        count += this.AddCountOnStartUp;
         if (count > 0) {
             this.AddPowerlevel(count * Mathf.RoundToInt((this.hp * this.attack * this.Defense) / 1000), true);
             this.SetUnitCount(count.ToString());

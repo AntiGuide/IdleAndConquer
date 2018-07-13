@@ -51,8 +51,8 @@ public class BlueprintStack : MonoBehaviour {
             return;
         }
         this.BlueprintCount -= BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
-        buildingTowardsLevel++;
-        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[buildingTowardsLevel];
+        this.buildingTowardsLevel++;
+        this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
         this.BaseSwitch.GetResearchQueue().AddToQueue(this);
     }
 
@@ -61,11 +61,11 @@ public class BlueprintStack : MonoBehaviour {
 
     internal void PerformLevelUp() {
         this.level++;
-        levelText.text = "Level " + level.ToString();
+        this.levelText.text = "Level " + this.level.ToString();
         
-        switch (BlueprintTypeStack) {
+        switch (this.BlueprintTypeStack) {
             case BlueprintType.UNIT:
-                CreateAndOrderUnitStack.AttachedUnit.LevelUp();
+                this.CreateAndOrderUnitStack.AttachedUnit.LevelUp();
                 break;
             case BlueprintType.UNIT_GROUP:
                 break;
@@ -89,22 +89,22 @@ public class BlueprintStack : MonoBehaviour {
     private void Awake() {
 
         Text t = transform.Find("Text").GetComponent<Text>();
-        if (CreateAndOrderUnitStack.AttachedUnit != null) {
-            t.text = CreateAndOrderUnitStack.AttachedUnit.UnitName;
+        if (this.CreateAndOrderUnitStack.AttachedUnit != null) {
+            t.text = this.CreateAndOrderUnitStack.AttachedUnit.UnitName;
         } else {
             Debug.Log(gameObject.name = "Fail");
         }
 
-        levelText = transform.Find("CountText").GetComponent<Text>();
-        levelText.text = "Level " + level.ToString();
-        blueprintCountText = transform.Find("BuildingCountText").GetComponent<Text>();
-        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[buildingTowardsLevel];
+        this.levelText = transform.Find("CountText").GetComponent<Text>();
+        this.levelText.text = "Level " + this.level.ToString();
+        this.blueprintCountText = transform.Find("BuildingCountText").GetComponent<Text>();
+        this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
 
-        BlueprintMan.BlueprintStacks.Add(this);
+        this.BlueprintMan.BlueprintStacks.Add(this);
     }
 
     public void AddBlueprint(int count = 1) {
-        BlueprintCount += count;
-        blueprintCountText.text = BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[buildingTowardsLevel];
+        this.BlueprintCount += count;
+        this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
     }
 }

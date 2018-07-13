@@ -9,8 +9,8 @@ public class BackToMain : MonoBehaviour {
 
     public void OnClick() {
         OnClickDeploy.DeployedUnits = 0;
-        MissionMan.Reset();
-        MainMenueControll.ActivateDeployUI(false);
-        UIInteractions.MainLoad();
+        this.MissionMan.Reset();
+        this.MainMenueControll.ActivateDeployUI(false);
+        this.UIInteractions.MainLoad();
     }
 }

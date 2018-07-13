@@ -58,8 +58,8 @@ public class UIInteraction : MonoBehaviour {
     }
 
     private void CheckPlayerBuilding() {
-        if (BuildConfirmDialogHandle.isActiveAndEnabled) {
-            BuildConfirmDialogHandle.DenyClick();
+        if (this.BuildConfirmDialogHandle.isActiveAndEnabled) {
+            this.BuildConfirmDialogHandle.DenyClick();
         }
     }
 

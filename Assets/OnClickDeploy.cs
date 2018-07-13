@@ -20,7 +20,7 @@ public class OnClickDeploy : MonoBehaviour {
             DeployedUnits++;
             this.RemainingUnitsText.text = this.unitCount.ToString();
             this.showChosenGeneral.CreateNewUnitImage();
-            MissionMan.AddUnitToBuildingMission(ref attachedUnit);
+            this.MissionMan.AddUnitToBuildingMission(ref this.attachedUnit);
         }
     }
 

@@ -11,7 +11,7 @@ public class ProductionQueueResearch : MonoBehaviour {
     public int BaseID;
 
     ///// <summary>The list of researches that the queue works on/will produce</summary>
-    //private List<Unit> prodQueue = new List<Unit>();
+    // private List<Unit> prodQueue = new List<Unit>();
 
     /// <summary>Used to trigger sound</summary>
     public SoundController SoundControll;
@@ -29,11 +29,11 @@ public class ProductionQueueResearch : MonoBehaviour {
     private float overlayFill;
 
     ///// <summary>The current count of orders</summary>
-    //private int inProduction = 0;
+    // private int inProduction = 0;
 
     public void AddToQueue(BlueprintStack blueprintStack) {
-        //this.inProduction++;
-        //this.prodQueue.Add(u);
+        // this.inProduction++;
+        // this.prodQueue.Add(u);
         SoundControll.StartSound(SoundController.Sounds.UPGRADING);
         this.buttonQueue.Add(blueprintStack);
     }

@@ -12,20 +12,20 @@ public class TimedResearchReward : MonoBehaviour {
     private Image fillImage;
 
     // Use this for initialization
-    void Start () {
-        timeBeginning = Time.time;
-        fillImage = gameObject.GetComponent<Image>();
-        AppPauseHandle = GameObject.Find("/Main/Canvas/UXElemente").GetComponent<AppPauseHandler>();
+    void Start() {
+        this.timeBeginning = Time.time;
+        this.fillImage = gameObject.GetComponent<Image>();
+        this.AppPauseHandle = GameObject.Find("/Main/Canvas/UXElemente").GetComponent<AppPauseHandler>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        fillImage.fillAmount = Mathf.Min((SecondsComplete - (Time.time - timeBeginning)) / (float)SecondsComplete, 1f);
-        RemainingTimeText.text = (int)(((SecondsComplete - ((int)Time.time - (int)timeBeginning)) / 60)) + ":" + Mathf.RoundToInt(((SecondsComplete - ((int)Time.time - (int)timeBeginning)) % 60)).ToString("00");
-        if ((int)Time.time - (int)timeBeginning >= SecondsComplete) {
+    
+    // Update is called once per frame
+    void Update() {
+        this.fillImage.fillAmount = Mathf.Min((SecondsComplete - (Time.time - this.timeBeginning)) / (float)SecondsComplete, 1f);
+        RemainingTimeText.text = (int)((SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) / 60) + ":" + Mathf.RoundToInt((SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) % 60).ToString("00");
+        if ((int)Time.time - (int)this.timeBeginning >= SecondsComplete) {
             // Complete
-            AppPauseHandle.DailyLootBoxPopUp();
-            timeBeginning = Time.time;
+            this.AppPauseHandle.DailyLootBoxPopUp();
+            this.timeBeginning = Time.time;
         }
     }
 }

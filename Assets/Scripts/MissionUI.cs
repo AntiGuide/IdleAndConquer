@@ -43,7 +43,7 @@ public class MissionUI : MonoBehaviour {
                 }
                 
                 // this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, transform.position);
-                this.MissionQueue.FinshedMission(attachedMission);
+                this.MissionQueue.FinshedMission(this.attachedMission);
                 this.MissionQueue.DestroyMissionBar(this);
             } else {
                 this.img.fillAmount = this.aktTime / this.missionTime;

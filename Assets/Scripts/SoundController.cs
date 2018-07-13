@@ -21,7 +21,7 @@ public class SoundController : MonoBehaviour {
         BUILDING,
         UNIT_READY,
         UPGRADING,
-        RESEARCH_COMPLETE,// TODO
+        RESEARCH_COMPLETE, // TODO
         FUNDS_REQUIRED,
         CANNOT_BUILT_HERE,
         LOW_POWER,
@@ -48,7 +48,7 @@ public class SoundController : MonoBehaviour {
     }
 
     public void StopLoopingSound(ref AudioSource inpAudioSource) {
-        Destroy(inpAudioSource);
+        UnityEngine.Object.Destroy(inpAudioSource);
     }
 
     private void Start() {
@@ -58,7 +58,7 @@ public class SoundController : MonoBehaviour {
     private System.Collections.IEnumerator PlayBGM() {
         this.AudioSourceBGM.volume = volumeBGM;
         int aktTrackNumber = -1;
-        int nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, BGMClips.Length - 1));
+        int nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, this.BGMClips.Length - 1));
         this.AudioSourceBGM.clip = this.BGMClips[nextTrackNumber];
         this.AudioSourceBGM.clip.LoadAudioData();
         while (true) {
@@ -68,7 +68,7 @@ public class SoundController : MonoBehaviour {
             }
             yield return new WaitForSeconds(this.AudioSourceBGM.clip.length / 2f);
             aktTrackNumber = nextTrackNumber;
-            nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, BGMClips.Length - 1));
+            nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, this.BGMClips.Length - 1));
             this.BGMClips[nextTrackNumber].LoadAudioData();
             yield return new WaitForSeconds(this.AudioSourceBGM.clip.length / 2f);
             this.AudioSourceBGM.Stop();

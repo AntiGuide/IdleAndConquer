@@ -14,20 +14,20 @@ public class LootboxUI : MonoBehaviour {
 
 
     public void ClickCase() {
-        PlayerRewards.gameObject.SetActive(true);
-        LootBoxOpened.gameObject.SetActive(true);
-        PlayerRewards.text = RewardCount + "x " + RewardUnitName + " Blueprints";
-        PlayerCommunication.gameObject.SetActive(false);
-        OKButton.SetActive(true);
-        gameObject.SetActive(false);
+        this.PlayerRewards.gameObject.SetActive(true);
+        this.LootBoxOpened.gameObject.SetActive(true);
+        this.PlayerRewards.text = this.RewardCount + "x " + this.RewardUnitName + " Blueprints";
+        this.PlayerCommunication.gameObject.SetActive(false);
+        this.OKButton.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 
     public void ClickOK() {
-        BlueprintMan.SearchUnitNameAddBlueprint(RewardUnitName, RewardCount);
-        Destroy(transform.parent.parent.gameObject);
+        this.BlueprintMan.SearchUnitNameAddBlueprint(this.RewardUnitName, this.RewardCount);
+        UnityEngine.Object.Destroy(transform.parent.parent.gameObject);
     }
 
     private void Start() {
-        BlueprintMan = GameObject.Find("/Main/Canvas/MainMenue/MenueResearch").GetComponent<BlueprintManager>();
+        this.BlueprintMan = GameObject.Find("/Main/Canvas/MainMenue/MenueResearch").GetComponent<BlueprintManager>();
     }
 }

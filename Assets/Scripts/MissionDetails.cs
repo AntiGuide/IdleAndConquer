@@ -21,8 +21,8 @@ public class MissionDetails : MonoBehaviour {
     public GameObject MissionDetailsWindow;
 
     public void OnClick() {
-        MissionDetailsWindow.SetActive(true);
-        MissionMan.GenerateMission(this, UIInteractions, MainMenueControll);
-        MainMenueControll.ToggleMenue(1);
+        this.MissionDetailsWindow.SetActive(true);
+        this.MissionMan.GenerateMission(this, this.UIInteractions, this.MainMenueControll);
+        this.MainMenueControll.ToggleMenue(1);
     }
 }

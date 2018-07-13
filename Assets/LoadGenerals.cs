@@ -18,7 +18,7 @@ public class LoadGenerals : MonoBehaviour {
     private void OnEnable() {
         GeneralButton[] GeneralButtons = transform.GetComponentsInChildren<GeneralButton>();
         foreach (GeneralButton item in GeneralButtons) {
-            Destroy(item.gameObject);
+            UnityEngine.Object.Destroy(item.gameObject);
         }
         foreach (General item in GeneralManager.AllGenerals) {
             if (!item.IsSentToMission) {
