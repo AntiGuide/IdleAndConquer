@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,10 +16,10 @@ public class ShowChosenGeneral : MonoBehaviour {
 
     public Transform UnitContainer;
 
-    private static List<string> unitsToShow = new List<string>();
+    // private static List<string> unitsToShow = new List<string>();
 
     public static void SetUnitsToShow(List<string> unitsToShowVar) {
-        unitsToShow = unitsToShowVar;
+        // unitsToShow = unitsToShowVar;
     }
 
     public void ShowSelectedGeneral(General gen) {

@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LoadGenerals : MonoBehaviour {
     public GameObject generalButtonMissionMap;
-    private float chanceDeath;
-    private string country;
-    private string generalName;
-    private int wins;
-    private int loses;
-
-    // Use this for initialization
-    void Start() {
-    }
+    // private float chanceDeath;
+    // private string country;
+    // private string generalName;
+    // private int wins;
+    // private int loses;
 
     private void OnEnable() {
         GeneralButton[] generalButtons = transform.GetComponentsInChildren<GeneralButton>();

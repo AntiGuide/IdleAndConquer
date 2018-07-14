@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>Contains energy data for each base</summary>
 public class EnergyPool : MonoBehaviour {

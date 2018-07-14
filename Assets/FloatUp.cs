@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,8 +85,6 @@ public class FloatUp : MonoBehaviour {
                 break;
             case ResourceType.DOLLAR:
                 this.text.text += " $";
-                break;
-            default:
                 break;
         }
     }

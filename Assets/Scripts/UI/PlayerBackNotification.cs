@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +38,7 @@ public class PlayerBackNotification : MonoBehaviour {
     /// <param name="type">The type of resource that the player gets</param>
     /// <param name="secondsSincePause">The seconds the player paused the game</param>
     /// <param name="additionalMoney">The money the player gets additional to the secondsSincePause</param>
+    /// <param name="soundController">The sound controller to play the sound</param>
     /// <param name="harvesters">List of all harvesters</param>
     public void Initialize(string notificationText, FloatUpSpawner floatUpSpawner, FloatUp.ResourceType type, long secondsSincePause, long additionalMoney, SoundController soundController, ref List<Harvester> harvesters) {
         this.NotificationText.text = notificationText;

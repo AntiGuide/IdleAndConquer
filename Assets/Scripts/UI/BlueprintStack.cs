@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class BlueprintStack : MonoBehaviour {
@@ -78,8 +75,6 @@ public class BlueprintStack : MonoBehaviour {
             case BlueprintType.CATCHING_JETS:
                 break;
             case BlueprintType.FIND_THE_BOX:
-                break;
-            default:
                 break;
         }
     }

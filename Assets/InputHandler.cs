@@ -32,9 +32,6 @@ public class InputHandler : MonoBehaviour {
     /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
 
-    /// <summary>The position where the camera was when the touch began</summary>
-    private Vector3 startPosCamera;
-
     /// <summary>Marks wether the finger moved after the touch began</summary>
     private bool movedDuringTouch = false;
 
@@ -115,7 +112,7 @@ public class InputHandler : MonoBehaviour {
                 } else {
                     startPos = touchPosition;
                     lastPosRay = Camera.main.ScreenPointToRay(startPos);
-                    startPosCamera = transform.position;
+                    // startPosCamera = transform.position;
                     this.movedDuringTouch = false;
                 }
 

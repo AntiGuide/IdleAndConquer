@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class TimedResearchReward : MonoBehaviour {
@@ -19,8 +17,8 @@ public class TimedResearchReward : MonoBehaviour {
     
     // Update is called once per frame
     void Update() {
-        this.fillImage.fillAmount = Mathf.Min((this.SecondsComplete - (Time.time - this.timeBeginning)) / (float)this.SecondsComplete, 1f);
-        this.RemainingTimeText.text = (int)((this.SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) / 60) + ":" + Mathf.RoundToInt((this.SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) % 60).ToString("00");
+        this.fillImage.fillAmount = Mathf.Min((this.SecondsComplete - (Time.time - this.timeBeginning)) / this.SecondsComplete, 1f);
+        this.RemainingTimeText.text = ((this.SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) / 60) + ":" + Mathf.RoundToInt((this.SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) % 60).ToString("00");
         if ((int)Time.time - (int)this.timeBeginning >= this.SecondsComplete) {
             // Complete
             this.AppPauseHandle.DailyLootBoxPopUp();

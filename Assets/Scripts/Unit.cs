@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>Handles all tanks, planes and soldiers with all their values</summary>
@@ -50,17 +48,11 @@ public class Unit {
     /// <summary>The defense value of a unit</summary>
     private int defense;
 
-    /// <summary>The cost to build a unit of this kind</summary>
-    private int cost;
-
     /// <summary>How many of this unit are available</summary>
     private int unitCount;
 
     /// <summary>Chance to hit a critical hit on another unit e.g. 0,1 = 10%</summary>
     private float critChance;
-
-    /// <summary>How much percent of normal hit damage a critical hit does e.g. 1,1 = 10% more damage</summary>
-    private float critMultiplier;
 
     /// <summary>The time it takes to build this unit in seconds</summary>
     private float buildtime;
@@ -75,24 +67,23 @@ public class Unit {
     /// <param name="hp">Healthpoints of the unit e.g. 100</param>
     /// <param name="attack">Attackvalue of the unit e.g. 20</param>
     /// <param name="critChance">Chance to hit a critical hit on another unit e.g. 0,1 = 10%</param>
-    /// <param name="critMultiplier">How much percent of normal hit damage a critical hit does e.g. 1,1 = 10% more damage</param>
     /// <param name="defense">The defense value of a unit</param>
     /// <param name="type">The type of the unit. (Tank, Soldier or Plane)</param>
     /// <param name="armorType">The armor type of the unit. Important for passives</param>
-    /// <param name="cost">The cost to build a unit of this kind</param>
     /// <param name="buildtime">The time it takes to build this unit in seconds</param>
     /// <param name="createAndOrderButton">The script that triggeres a production of this unit</param>
-    /// <param name="productionQueue">The production queue in which a unit in production is put into</param>
-    public Unit(string unitName, int hp, int attack, float critChance, float critMultiplier, int defense, Type type, ArmorType armorType, int cost, float buildtime, CreateAndOrderUnit createAndOrderButton, BaseSwitcher baseSwitch) {
+    /// <param name="baseSwitch">The script that handles a base switch</param>
+    public Unit(string unitName, int hp, int attack, float critChance, int defense, Type type, ArmorType armorType,
+        float buildtime, CreateAndOrderUnit createAndOrderButton, BaseSwitcher baseSwitch) {
         this.unitName = unitName;
         this.hp = hp;
         this.attack = attack;
         this.critChance = critChance;
-        this.critMultiplier = critMultiplier;
+        // this.critMultiplier = critMultiplier;
         this.defense = defense;
         this.type = type;
         this.armorType = armorType;
-        this.cost = cost;
+        // this.cost = cost;
         this.buildtime = buildtime;
         this.CreateAndOrderButton = createAndOrderButton;
         this.baseSwitch = baseSwitch;
@@ -110,14 +101,14 @@ public class Unit {
     }
 
     /// <summary>The type of the unit. (Tank, Soldier or Plane)</summary>
-    public enum Type : int {
+    public enum Type {
         TANK = 0,
         SOLDIER,
         PLANE
     }
 
     /// <summary>The armor type of the unit. Important for passives</summary>
-    public enum ArmorType : int {
+    public enum ArmorType {
         NONE = 0,
         LIGHT,
         MEDIUM,
@@ -219,13 +210,13 @@ public class Unit {
     public void AddSingleBuiltUnit() {
         this.CreateAndOrderButton.SetUnitCount((++this.unitCount).ToString());
         PlayerPrefs.SetInt(this.unitName + "_COUNT", this.unitCount);
-        this.CreateAndOrderButton.AddPowerlevel(Mathf.RoundToInt((this.hp * this.attack * this.defense) / 1000), false);
+        this.CreateAndOrderButton.AddPowerlevel(Mathf.RoundToInt((this.hp * this.attack * this.defense) / 1000f), false);
     }
 
     public void LevelUp() {
-        int powerLevelBeforeLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000);
+        int powerLevelBeforeLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000f);
         this.Level++;
-        int powerLevelAfterLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000);
+        int powerLevelAfterLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000f);
         if (this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp) > 0) {
             this.CreateAndOrderButton.AddPowerlevel(this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp), false);
         }

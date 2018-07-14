@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -91,6 +89,7 @@ public class RenownManagement : MonoBehaviour {
     /// Display the renown
     /// </summary>
     /// <param name="renown">How much renown to display</param>
+    /// <param name="lerpEffect">Wether the change should be applied instantly or with a lerp effect</param>
     private void OutputRenown(long renown, bool lerpEffect) {
         if (lerpEffect) {
             this.renownAmountOld = this.renownAmountShown;

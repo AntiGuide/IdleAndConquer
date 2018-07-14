@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,7 +61,7 @@ public class GeneralManager : MonoBehaviour {
         this.generalID++;
 
         General ret = attachedButton.gameObject.GetComponent<General>();
-        ret.InitGeneral(aktChanceToPermaDeath, null, this.Countrys[countryID], this.Names[nameID], null);
+        ret.InitGeneral(aktChanceToPermaDeath, null, this.Countrys[countryID], this.Names[nameID]);
         GeneralManager.AllGenerals.Add(ret);
     }
 
@@ -70,7 +69,7 @@ public class GeneralManager : MonoBehaviour {
     /// Use this for initialization
     /// </summary>
     void Start() {
-        for (int tmpGeneralID = 0; true; tmpGeneralID++) {
+        for (int tmpGeneralID = 0; ; tmpGeneralID++) {
             this.chanceDeath = PlayerPrefs.GetFloat("GeneralChanceDeath_" + tmpGeneralID, -1f);
             this.country = PlayerPrefs.GetString("GeneralCountry_" + tmpGeneralID, string.Empty);
             this.generalName = PlayerPrefs.GetString("GeneralName_" + tmpGeneralID, string.Empty);
@@ -85,7 +84,7 @@ public class GeneralManager : MonoBehaviour {
             attachedButton.SetTexts(this.country, this.generalName, this.wins + Environment.NewLine + "-" + Environment.NewLine + this.loses);
 
             General ret = attachedButton.gameObject.GetComponent<General>();
-            ret.InitGeneral(this.chanceDeath, null, this.country, this.generalName, null);
+            ret.InitGeneral(this.chanceDeath, null, this.country, this.generalName);
             GeneralManager.AllGenerals.Add(ret);
         }
     }

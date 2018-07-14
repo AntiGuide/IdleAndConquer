@@ -1,15 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LoadUnits : MonoBehaviour {
     public GameObject unitButtonPrefab;
-    private int unitID;
-    private string unitName;
-
-    // Use this for initialization
-    void Start() {
-    }
+    // private int unitID;
+    // private string unitName;
 
     private void OnEnable() {
         OnClickDeploy[] ocds = transform.GetComponentsInChildren<OnClickDeploy>();
@@ -18,7 +12,7 @@ public class LoadUnits : MonoBehaviour {
         }
 
         foreach (Unit item in Unit.AllUnits) {
-            this.unitName = item.UnitName;
+            // this.unitName = item.UnitName;
             int count = item.UnitCount - item.SentToMission;
             if (count > 0) {
                 // addPowerlevel(count * Mathf.RoundToInt((hp * attack * defense) / 1000), true);

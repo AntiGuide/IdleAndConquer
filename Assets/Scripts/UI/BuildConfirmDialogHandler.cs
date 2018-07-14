@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>Handles click event of dialog buttons</summary>
 public class BuildConfirmDialogHandler : MonoBehaviour {

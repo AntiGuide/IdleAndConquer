@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -92,6 +90,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
     /// Display the V
     /// </summary>
     /// <param name="virtualCurrency">How much V to display</param>
+    /// <param name="lerpEffect">Wether the change should be applied instantly or with a lerp effect</param>
     private void OutputMoney(long virtualCurrency, bool lerpEffect) {
         if (lerpEffect) {
             this.virtualCurrencyAmountOld = this.virtualCurrencyAmountShown;

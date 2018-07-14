@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +8,7 @@ public class MissionUI : MonoBehaviour {
     public MissionQueue MissionQueue;
     private Image img;
     private float missionTime = -1f;
-    private long missionMoneyReward;
+    // private long missionMoneyReward;
     private float aktTime = 0f;
     private List<Unit> unitsInMission;
     private Mission attachedMission;
@@ -21,7 +19,7 @@ public class MissionUI : MonoBehaviour {
 
     public void Initialize(Mission mission) {
         this.missionTime = mission.MissionDetails.MissionTime;
-        this.missionMoneyReward = mission.MissionDetails.MissionMoneyReward;
+        // this.missionMoneyReward = mission.MissionDetails.MissionMoneyReward;
         this.unitsInMission = mission.Units;
         this.attachedMission = mission;
     }

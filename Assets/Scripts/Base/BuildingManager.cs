@@ -4,7 +4,7 @@ public class BuildingManager : MonoBehaviour {
     public BuildingType buildingType;
     public long BuildCost = 1000;
     public int CostEnergy = 5;
-    private EnergyManagement energyManager;
+    // private EnergyManagement energyManager;
 
     public enum BuildingType {
         AIRFIELD = 0,
@@ -43,13 +43,11 @@ public class BuildingManager : MonoBehaviour {
             case BuildingType.TANK_FACTORY:
                 // gameObject.GetComponent<TankFactory>().InitializeBuilt();
                 break;
-            default:
-                break;
         }
     }
 
     // Use this for initialization
     void Start() {
-        this.energyManager = GameObject.Find("/Main/Canvas/BackgroundSideStrip").GetComponent<EnergyManagement>();
+        // this.energyManager = GameObject.Find("/Main/Canvas/BackgroundSideStrip").GetComponent<EnergyManagement>();
     }
 }

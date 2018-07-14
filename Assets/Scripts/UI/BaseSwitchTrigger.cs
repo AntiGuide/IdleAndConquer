@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
@@ -25,9 +23,9 @@ public class BaseSwitchTrigger : MonoBehaviour {
     private Image image;
 
     /// <summary>
-    /// Switches the base after a button click
+    /// Switches the base after a button click.
+    /// If isLeft is true the base should be switched to the one on the left. If false its to the right.
     /// </summary>
-    /// <param name="isLeft">If true the base should be switched to the one on the left. If false its to the right</param>
     public void OnClickBaseSwitch() {
         this.CheckPlayerBuilding();
         this.BaseSwitch.OnClickBaseSwitch(this.IsLeft);

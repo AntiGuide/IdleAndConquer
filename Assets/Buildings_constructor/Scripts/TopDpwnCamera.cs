@@ -5,10 +5,10 @@ public class TopDpwnCamera : MonoBehaviour {
     public float smooth = 0.5f;
     public Vector3 camOffset;
     public float rotSpeed = 50f;
-    private Vector3 startAngle;
+    //private Vector3 startAngle;
 
     void Start() {
-        this.startAngle = this.transform.position; 
+        //this.startAngle = this.transform.position; 
     }
     
     void FixedUpdate() {

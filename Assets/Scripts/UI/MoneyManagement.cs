@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
@@ -114,6 +112,7 @@ public class MoneyManagement : MonoBehaviour {
     /// Display the money
     /// </summary>
     /// <param name="money">How much money to display</param>
+    /// <param name="lerpEffect">Wether the change should be applied instantly or with a lerp effect</param>
     private void OutputMoney(long money, bool lerpEffect) {
         if (lerpEffect) {
             this.moneyAmountOld = this.moneyAmountShown;

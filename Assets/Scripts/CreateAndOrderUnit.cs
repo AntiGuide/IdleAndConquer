@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -156,7 +154,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// Loads from PlayerPrefs. Use this for initialization
     /// </summary>
     void Awake() {
-        this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.CritChance, this.CritMultiplier, this.Defense, this.Type, this.ArmorType, this.cost, this.buildtime, this, this.BaseSwitch);
+        this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.CritChance, this.Defense, this.Type, this.ArmorType, this.buildtime, this, this.BaseSwitch);
         PlayerPrefs.SetString("UnitName_" + unitID, this.unitName);
         unitID++;
         PlayerPrefs.SetInt(this.unitName + "_HP", this.hp);
@@ -179,7 +177,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         int count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
         count += this.AddCountOnStartUp;
         if (count > 0) {
-            this.AddPowerlevel(count * Mathf.RoundToInt((this.hp * this.attack * this.Defense) / 1000), true);
+            this.AddPowerlevel(count * Mathf.RoundToInt((this.hp * this.attack * this.Defense) / 1000f), true);
             this.SetUnitCount(count.ToString());
             this.attachedUnit.UnitCount = count;
         }

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>The class contains all the information and functions a general has</summary>
 public class General : MonoBehaviour {
@@ -22,9 +21,6 @@ public class General : MonoBehaviour {
 
     /// <summary>The generals loses</summary>
     private int loses;
-
-    /// <summary>The generals active passives</summary>
-    private List<Passives> passives;
 
     /// <summary>Getter/Setter for chanceToPermaDeath</summary>
     public float ChanceToPermaDeath {
@@ -69,13 +65,13 @@ public class General : MonoBehaviour {
     /// <param name="portrait">The generals portrait</param>
     /// <param name="country">The generals country</param>
     /// <param name="generalName">The generals name</param>
-    /// <param name="passives">The generals active passives</param>
-    public void InitGeneral(float chanceToPermaDeath, Sprite portrait, string country, string generalName, List<Passives> passives, bool isSentToMission = false) {
+    /// <param name="isSentToMission"></param>
+    public void InitGeneral(float chanceToPermaDeath, Sprite portrait, string country, string generalName,
+        bool isSentToMission = false) {
         this.chanceToPermaDeath = chanceToPermaDeath;
         this.portrait = portrait;
         this.country = country;
         this.generalName = generalName;
-        this.passives = passives;
         this.IsSentToMission = isSentToMission;
     }
 

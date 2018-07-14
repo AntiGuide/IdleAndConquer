@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BuildBuilding : MonoBehaviour {
@@ -27,8 +25,8 @@ public class BuildBuilding : MonoBehaviour {
     private Ray touchRay;
     private Vector3 prevScale;
     private int layerMask;
-    private int newBuildingXTiles;
-    private int newBuildingZTiles;
+    // private int newBuildingXTiles;
+    // private int newBuildingZTiles;
     private long costBuilding = 0;
     private int costEnergy = 0;
 
@@ -62,9 +60,9 @@ public class BuildBuilding : MonoBehaviour {
             this.prevScale = this.newBuilding.transform.localScale;
             this.newBuilding.transform.localScale *= 1.001f;
 
-            Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
-            this.newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / this.CellSize);
-            this.newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / this.CellSize);
+            // Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
+            // this.newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / this.CellSize);
+            // this.newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / this.CellSize);
 
             playerBuilding = true;
             this.playerBuildingThisBase = true;
@@ -123,8 +121,8 @@ public class BuildBuilding : MonoBehaviour {
                 this.layerMask = LayerMask.GetMask("Plane");
                 Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
                 if (this.hitInformation.collider != null) {
-                    Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
-                    Vector3 cent = bounds.center;
+                    // Bounds bounds = this.newBuilding.GetComponentInChildren<Renderer>().bounds;
+                    // Vector3 cent = bounds.center;
                     this.hitInformation.point = new Vector3(this.hitInformation.point.x, 0, this.hitInformation.point.z);
                     this.newBuilding.transform.position = this.ToGrid(this.hitInformation.point);
                 }

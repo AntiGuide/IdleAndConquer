@@ -13,7 +13,7 @@ public class Rotate : MonoBehaviour {
     
     // Update is called once per frame
     void Update() {
-        if (this.rotMaxY != 0 && this.rotMinY != 0) {
+        if (Mathf.RoundToInt(this.rotMaxY) != 0 && Mathf.RoundToInt(this.rotMinY) != 0) {
             if (this.transform.rotation.y * 360 > this.rotMaxY) {
                 this.currentRotSpeed = -this.rotSpeed;
             } else if (this.transform.rotation.y * 360 < this.rotMinY) {

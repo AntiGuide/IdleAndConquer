@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -29,10 +27,10 @@ public class ProductionQueue : MonoBehaviour {
     private float overlayFill;
 
     /// <summary>The current count of orders</summary>
-    private int inProduction = 0;
+    // private int inProduction = 0;
 
     public void AddToQueue(Unit u, CreateAndOrderUnit createAndOrderButton) {
-        this.inProduction++;
+        // this.inProduction++;
         this.prodQueue.Add(u);
         this.buttonQueue.Add(createAndOrderButton);
         this.SoundControll.StartSound(SoundController.Sounds.QUEUE_TAPS);
@@ -73,7 +71,7 @@ public class ProductionQueue : MonoBehaviour {
                     this.buttonQueue[0].SubSingleUnitBuilding();
                 }
 
-                this.inProduction--;
+                // this.inProduction--;
                 this.prodQueue.Remove(this.latestUnit);
                 this.buttonQueue.Remove(this.buttonQueue[0]);
                 if (this.prodQueue.Count > 0) {
