@@ -41,29 +41,27 @@ public class ProductionQueueResearch : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
+        if (this.buttonQueue.Count <= 0) return;
+        if (this.latestBlueprintStack == null) {
+            this.latestBlueprintStack = this.buttonQueue[0];
+            this.remainingTime += this.latestBlueprintStack.Buildtime;
+        }
+
+        this.remainingTime -= Time.deltaTime;
+        this.overlayFill = Mathf.Min(this.remainingTime / this.latestBlueprintStack.Buildtime, 1.0f);
+        this.overlayFill = Mathf.Max(this.overlayFill, 0f);
+        if (BaseSwitcher.CurrentBase == this.BaseID) {
+            this.buttonQueue[0].BuildingOverlay.fillAmount = this.overlayFill;
+        }
+
+        if (!(this.remainingTime <= 0f)) return;
+        this.latestBlueprintStack.PerformLevelUp();
+        this.buttonQueue.Remove(this.buttonQueue[0]);
         if (this.buttonQueue.Count > 0) {
-            if (this.latestBlueprintStack == null) {
-                this.latestBlueprintStack = this.buttonQueue[0];
-                this.remainingTime += this.latestBlueprintStack.Buildtime;
-            }
-
-            this.remainingTime -= Time.deltaTime;
-            this.overlayFill = Mathf.Min(this.remainingTime / this.latestBlueprintStack.Buildtime, 1.0f);
-            this.overlayFill = Mathf.Max(this.overlayFill, 0f);
-            if (BaseSwitcher.CurrentBase == this.BaseID) {
-                this.buttonQueue[0].BuildingOverlay.fillAmount = this.overlayFill;
-            }
-
-            if (this.remainingTime <= 0f) {
-                this.latestBlueprintStack.PerformLevelUp();
-                this.buttonQueue.Remove(this.buttonQueue[0]);
-                if (this.buttonQueue.Count > 0) {
-                    this.latestBlueprintStack = this.buttonQueue[0];
-                    this.remainingTime = this.latestBlueprintStack.Buildtime;
-                } else {
-                    this.latestBlueprintStack = null;
-                }
-            }
+            this.latestBlueprintStack = this.buttonQueue[0];
+            this.remainingTime = this.latestBlueprintStack.Buildtime;
+        } else {
+            this.latestBlueprintStack = null;
         }
     }
 }

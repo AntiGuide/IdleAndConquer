@@ -10,9 +10,6 @@ public class MainMenueController : MonoBehaviour {
     /// <summary>Contains menue for deploying units to a mission on the mission map</summary>
     public GameObject DeployUI;
 
-    /// <summary>Contains information if any menue is expanded at the moment</summary>
-    private bool isExpanded;
-
     /// <summary>Contains the index of the activated menue</summary>
     private int enabledMenue;
 
@@ -20,10 +17,7 @@ public class MainMenueController : MonoBehaviour {
     private MenueController[] menueController;
 
     /// <summary>Getter/Setter for the isExpanded variable</summary>
-    public bool IsExpanded {
-        get { return this.isExpanded; }
-        set { this.isExpanded = value; }
-    }
+    public bool IsExpanded { get; set; }
 
     /// <summary>
     /// This method opens the called type of menue instantly an without an animation.
@@ -43,9 +37,9 @@ public class MainMenueController : MonoBehaviour {
 
             this.Menue[menueNumber].SetActive(true);
             this.enabledMenue = menueNumber;
-            this.menueController[this.enabledMenue].Expand(!this.isExpanded);
+            this.menueController[this.enabledMenue].Expand(!this.IsExpanded);
         } else {
-            if (this.isExpanded) {
+            if (this.IsExpanded) {
                 this.menueController[this.enabledMenue].Unexpand(true);
             } else {
                 this.menueController[this.enabledMenue].Expand(true);
@@ -96,7 +90,7 @@ public class MainMenueController : MonoBehaviour {
             if (men != null && !standardSelected) {
                 men.SetActive(true);
                 this.enabledMenue = i;
-                this.isExpanded = false;
+                this.IsExpanded = false;
                 standardSelected = true;
             } else if (men != null) {
                 men.SetActive(false);

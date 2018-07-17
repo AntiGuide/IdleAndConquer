@@ -14,12 +14,13 @@ public class BuildColorChanger : MonoBehaviour {
     /// <summary>Saves wether the building is built</summary>
     private bool isBuilt = true;
 
-    /// <summary>The amount of buildings that the building collides with at the moment</summary>
-    private int collidingBuildings = 0;
-
     private readonly List<Material> materialList = new List<Material>();
 
     private readonly List<Texture2D> finishedBuildingTextureList = new List<Texture2D>();
+
+    public BuildColorChanger() {
+        CollidingBuildings = 0;
+    }
 
     /// <summary>Getter/Setter for isBuilt</summary>
     public bool IsBuilt {
@@ -28,10 +29,7 @@ public class BuildColorChanger : MonoBehaviour {
     }
 
     /// <summary>Getter/Setter for collidingBuildings</summary>
-    public int CollidingBuildings {
-        get { return this.collidingBuildings; }
-        set { this.collidingBuildings = value; }
-    }
+    public int CollidingBuildings { get; private set; }
 
     /// <summary>Getter/Setter for menueController</summary>
     public MenueController MenueControll { get; set; }
@@ -86,11 +84,10 @@ public class BuildColorChanger : MonoBehaviour {
 
     /// <summary>Update is called once per frame</summary>
     private void Update() {
-        if (!this.isBuilt && !BuildBuilding.PlayerBuilding) {
-            // this.buildMaterial = gameObject.GetComponentInChildren<MeshRenderer>().material; //?
-            this.SetFinished();
-            this.isBuilt = true;
-        }
+        if (this.isBuilt || BuildBuilding.PlayerBuilding) return;
+        // this.buildMaterial = gameObject.GetComponentInChildren<MeshRenderer>().material; //?
+        this.SetFinished();
+        this.isBuilt = true;
     }
 
     /// <summary>
@@ -98,10 +95,9 @@ public class BuildColorChanger : MonoBehaviour {
     /// </summary>
     /// <param name="other">The collider of the colliding building</param>
     private void OnTriggerEnter(Collider other) {
-        if (!this.isBuilt && BuildBuilding.PlayerBuilding && other.tag == "Buildings") {
-            this.collidingBuildings++;
-            this.SetRed();
-        }
+        if (this.isBuilt || !BuildBuilding.PlayerBuilding || other.tag != "Buildings") return;
+        this.CollidingBuildings++;
+        this.SetRed();
     }
 
     /// <summary>
@@ -109,11 +105,10 @@ public class BuildColorChanger : MonoBehaviour {
     /// </summary>
     /// <param name="other">The collider of the colliding building</param>
     private void OnTriggerExit(Collider other) {
-        if (!this.isBuilt && BuildBuilding.PlayerBuilding && other.tag == "Buildings") {
-            this.collidingBuildings--;
-            if (this.collidingBuildings == 0) {
-                this.SetGreen();
-            }
+        if (this.isBuilt || !BuildBuilding.PlayerBuilding || other.tag != "Buildings") return;
+        this.CollidingBuildings--;
+        if (this.CollidingBuildings == 0) {
+            this.SetGreen();
         }
     }
 }

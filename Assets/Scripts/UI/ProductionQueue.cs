@@ -64,22 +64,21 @@ public class ProductionQueue : MonoBehaviour {
             this.buttonQueue[0].SetProductionOverlayFill(this.overlayFill);
         }
 
-        if (this.remainingTime <= 0f) {
-            this.latestUnit.AddSingleBuiltUnit();
-            this.SoundControll.StartSound(SoundController.Sounds.UNIT_READY);
-            if (BaseSwitcher.CurrentBase == this.BaseID) {
-                this.buttonQueue[0].SubSingleUnitBuilding();
-            }
+        if (!(this.remainingTime <= 0f)) return;
+        this.latestUnit.AddSingleBuiltUnit();
+        this.SoundControll.StartSound(SoundController.Sounds.UNIT_READY);
+        if (BaseSwitcher.CurrentBase == this.BaseID) {
+            this.buttonQueue[0].SubSingleUnitBuilding();
+        }
 
-            // this.inProduction--;
-            this.prodQueue.Remove(this.latestUnit);
-            this.buttonQueue.Remove(this.buttonQueue[0]);
-            if (this.prodQueue.Count > 0) {
-                this.latestUnit = this.prodQueue[0];
-                this.remainingTime = this.latestUnit.Buildtime;
-            } else {
-                this.latestUnit = null;
-            }
+        // this.inProduction--;
+        this.prodQueue.Remove(this.latestUnit);
+        this.buttonQueue.Remove(this.buttonQueue[0]);
+        if (this.prodQueue.Count > 0) {
+            this.latestUnit = this.prodQueue[0];
+            this.remainingTime = this.latestUnit.Buildtime;
+        } else {
+            this.latestUnit = null;
         }
     }
 }

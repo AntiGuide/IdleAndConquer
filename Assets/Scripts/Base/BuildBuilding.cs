@@ -15,7 +15,6 @@ public class BuildBuilding : MonoBehaviour {
     public Vector2 MinBuildConfirmUIPosition;
     public Vector2 MaxBuildConfirmUIPosition;
 
-    private static bool playerBuilding; 
     private bool[] isBuilt;
     private bool playerBuildingThisBase;
     private int newBuildingID;
@@ -30,10 +29,7 @@ public class BuildBuilding : MonoBehaviour {
     private long costBuilding = 0;
     private int costEnergy = 0;
 
-    public static bool PlayerBuilding {
-        get { return playerBuilding; }
-        set { playerBuilding = value; }
-    }
+    public static bool PlayerBuilding { get; private set; }
 
     private Vector3 ToGrid(Vector3 allignToGrid) {
         var x = Mathf.Round(allignToGrid.x / this.CellSize) * this.CellSize;
@@ -63,7 +59,7 @@ public class BuildBuilding : MonoBehaviour {
             // this.newBuildingXTiles = Mathf.RoundToInt(bounds.size.x / this.CellSize);
             // this.newBuildingZTiles = Mathf.RoundToInt(bounds.size.z / this.CellSize);
 
-            playerBuilding = true;
+            PlayerBuilding = true;
             this.playerBuildingThisBase = true;
             InputHandler.BlockCameraMovement = true;
             this.BuildingMenueController.Unexpand(true);
@@ -71,31 +67,28 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     public void CancelBuildingProcess() {
-        if (this.newBuilding != null) {
-            UnityEngine.Object.Destroy(this.newBuilding);
-            playerBuilding = false;
-            this.playerBuildingThisBase = false;
-            InputHandler.BlockCameraMovement = false;
-            this.BuildConfirmUI.SetActive(false);
-        }
+        if (this.newBuilding == null) return;
+        UnityEngine.Object.Destroy(this.newBuilding);
+        PlayerBuilding = false;
+        this.playerBuildingThisBase = false;
+        InputHandler.BlockCameraMovement = false;
+        this.BuildConfirmUI.SetActive(false);
     }
 
     public void ConfirmBuildingProcess() {
-        if (this.buildColorChanger.CollidingBuildings == 0) {
-            if (this.MoneyManager.SubMoney(this.costBuilding)) {
-                this.BaseSwitch.GetEnergyPool().SubEnergy(this.costEnergy);
-                this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
-                this.isBuilt[this.newBuildingID] = true;
-                this.BuiltBuildings[this.newBuildingID] = this.newBuilding;
-                this.newBuilding.transform.localScale = this.prevScale;
-                this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
-                this.newBuilding = null;
-                playerBuilding = false;
-                this.playerBuildingThisBase = false;
-                InputHandler.BlockCameraMovement = false;
-                this.BuildConfirmUI.SetActive(false);
-            }
-        }
+        if (this.buildColorChanger.CollidingBuildings != 0) return;
+        if (!this.MoneyManager.SubMoney(this.costBuilding)) return;
+        this.BaseSwitch.GetEnergyPool().SubEnergy(this.costEnergy);
+        this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+        this.isBuilt[this.newBuildingID] = true;
+        this.BuiltBuildings[this.newBuildingID] = this.newBuilding;
+        this.newBuilding.transform.localScale = this.prevScale;
+        this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
+        this.newBuilding = null;
+        PlayerBuilding = false;
+        this.playerBuildingThisBase = false;
+        InputHandler.BlockCameraMovement = false;
+        this.BuildConfirmUI.SetActive(false);
     }
 
     // Use this for initialization
@@ -105,10 +98,9 @@ public class BuildBuilding : MonoBehaviour {
             this.isBuilt[i] = false;
         }
 
-        if (this.BuiltBuildings[2] != null) {
-            this.BuiltBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
-            this.isBuilt[2] = true;
-        }
+        if (this.BuiltBuildings[2] == null) return;
+        this.BuiltBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+        this.isBuilt[2] = true;
     }
 
     // Update is called once per frame
@@ -128,27 +120,25 @@ public class BuildBuilding : MonoBehaviour {
             }
         }
 
-        if (Input.GetMouseButtonDown(0)) {
-            if (!EventSystem.current.IsPointerOverGameObject(0) && !EventSystem.current.IsPointerOverGameObject() && !playerBuilding && !this.MainMenueControll.IsExpanded) {
-                this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                this.layerMask = LayerMask.GetMask("Buildings");
-                Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
-                if (this.hitInformation.collider != null) {
-                    this.MainMenueControll.ToggleMenue(this.hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().MenueControll);
-                }
-            }
+        if (!Input.GetMouseButtonDown(0)) return;
+        if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject() ||
+            PlayerBuilding || this.MainMenueControll.IsExpanded) return;
+        this.touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        this.layerMask = LayerMask.GetMask("Buildings");
+        Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
+        if (this.hitInformation.collider != null) {
+            this.MainMenueControll.ToggleMenue(this.hitInformation.collider.gameObject.GetComponent<BuildColorChanger>().MenueControll);
         }
     }
 
     private void LateUpdate() {
-        if (this.playerBuildingThisBase) {
-            this.BuildConfirmUI.SetActive(true);
-            var bounds = this.newBuilding.GetComponentInChildren<BoxCollider>().bounds;
-            var onlyXZ = new Vector3(bounds.extents.x, 0, bounds.extents.z);
-            Vector2 screenPoint = Camera.main.WorldToScreenPoint(this.newBuilding.transform.position + this.BuildUIOffset + onlyXZ);
-            screenPoint = Vector2.Max(this.MinBuildConfirmUIPosition, screenPoint);
-            screenPoint = Vector2.Min(this.MaxBuildConfirmUIPosition, screenPoint);
-            this.BuildConfirmUI.transform.position = screenPoint;
-        }
+        if (!this.playerBuildingThisBase) return;
+        this.BuildConfirmUI.SetActive(true);
+        var bounds = this.newBuilding.GetComponentInChildren<BoxCollider>().bounds;
+        var onlyXZ = new Vector3(bounds.extents.x, 0, bounds.extents.z);
+        Vector2 screenPoint = Camera.main.WorldToScreenPoint(this.newBuilding.transform.position + this.BuildUIOffset + onlyXZ);
+        screenPoint = Vector2.Max(this.MinBuildConfirmUIPosition, screenPoint);
+        screenPoint = Vector2.Min(this.MaxBuildConfirmUIPosition, screenPoint);
+        this.BuildConfirmUI.transform.position = screenPoint;
     }
 }

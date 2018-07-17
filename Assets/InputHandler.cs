@@ -76,18 +76,17 @@ public class InputHandler : MonoBehaviour {
 
         // Simulate touch events from mouse events
         // TODO Mobile Pointer 0
-        if (Input.touchCount == 0) {
-            if (Input.GetMouseButtonDown(0)) {
-                this.HandleTouch(-1, Input.mousePosition, TouchPhase.Began);
-            }
+        if (Input.touchCount != 0) return;
+        if (Input.GetMouseButtonDown(0)) {
+            this.HandleTouch(-1, Input.mousePosition, TouchPhase.Began);
+        }
 
-            if (Input.GetMouseButton(0)) {
-                this.HandleTouch(-1, Input.mousePosition, TouchPhase.Moved);
-            }
+        if (Input.GetMouseButton(0)) {
+            this.HandleTouch(-1, Input.mousePosition, TouchPhase.Moved);
+        }
 
-            if (Input.GetMouseButtonUp(0)) {
-                this.HandleTouch(-1, Input.mousePosition, TouchPhase.Ended);
-            }
+        if (Input.GetMouseButtonUp(0)) {
+            this.HandleTouch(-1, Input.mousePosition, TouchPhase.Ended);
         }
     }
 

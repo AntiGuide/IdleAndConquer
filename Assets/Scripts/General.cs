@@ -10,40 +10,16 @@ public class General : MonoBehaviour {
     /// <summary>The generals portrait</summary>
     private Sprite portrait;
 
-    /// <summary>The generals country</summary>
-    private string country;
-
-    /// <summary>The generals name</summary>
-    private string generalName;
-
     public General(int wins, int loses) {
         Wins = wins;
         Loses = loses;
     }
 
-    /// <summary>Getter/Setter for chanceToPermaDeath</summary>
-    public float ChanceToPermaDeath {
-        get { return this.chanceToPermaDeath; }
-        set { this.chanceToPermaDeath = value; }
-    }
-
-    /// <summary>Getter/Setter for portrait</summary>
-    public Sprite Portrait {
-        get { return this.portrait; }
-        set { this.portrait = value; }
-    }
-
     /// <summary>Getter/Setter for country</summary>
-    public string Country {
-        get { return this.country; }
-        set { this.country = value; }
-    }
+    public string Country { get; private set; }
 
     /// <summary>Getter/Setter for generalName</summary>
-    public string GeneralName {
-        get { return this.generalName; }
-        set { this.generalName = value; }
-    }
+    public string GeneralName { get; private set; }
 
     /// <summary>Getter/Setter for wins</summary>
     public int Wins { get; private set; }
@@ -63,18 +39,14 @@ public class General : MonoBehaviour {
         bool isSentToMission = false) {
         this.chanceToPermaDeath = chanceToPermaDeath;
         this.portrait = portrait;
-        this.country = country;
-        this.generalName = generalName;
+        this.Country = country;
+        this.GeneralName = generalName;
         this.IsSentToMission = isSentToMission;
     }
 
     /// <summary>Calculates wether the general dies (random)</summary>
     /// <returns>If true the general is removed</returns>
     public bool Died() {
-        if (UnityEngine.Random.value < this.chanceToPermaDeath + Passives.GeneralSurvivability) {
-            return true;
-        } else {
-            return false;
-        }
+        return UnityEngine.Random.value < this.chanceToPermaDeath + Passives.GeneralSurvivability;
     }
 }

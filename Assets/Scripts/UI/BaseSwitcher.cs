@@ -60,6 +60,7 @@ public class BaseSwitcher : MonoBehaviour {
     public void CheckPossibilities(out bool leftPossible, out bool rightPossible) {
         // Check if switches in the directions are possible (more than 1 base enabled)
         var basecount = 0;
+        // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (var b in this.EnablesBases) {
             basecount = b ? ++basecount : basecount;
         }

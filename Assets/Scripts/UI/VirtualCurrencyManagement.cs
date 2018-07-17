@@ -78,12 +78,11 @@ public class VirtualCurrencyManagement : MonoBehaviour {
 
     /// <summary>Called once per frame</summary>
     private void Update() {
-        if (this.virtualCurrencyToLerpTo != this.virtualCurrencyAmountShown) {
-            this.lerpTimeDone += Time.deltaTime;
-            this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);
-            this.virtualCurrencyAmountShown = (long)Mathf.Lerp(this.virtualCurrencyAmountOld, this.virtualCurrencyToLerpTo, this.lerpTimeDone / this.LerpTimeStart);
-            this.GetComponent<Text>().text = this.virtualCurrencyAmountShown.ToString();
-        }
+        if (this.virtualCurrencyToLerpTo == this.virtualCurrencyAmountShown) return;
+        this.lerpTimeDone += Time.deltaTime;
+        this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);
+        this.virtualCurrencyAmountShown = (long)Mathf.Lerp(this.virtualCurrencyAmountOld, this.virtualCurrencyToLerpTo, this.lerpTimeDone / this.LerpTimeStart);
+        this.GetComponent<Text>().text = this.virtualCurrencyAmountShown.ToString();
     }
 
     /// <summary>

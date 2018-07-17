@@ -54,9 +54,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The attached units ID</summary>
     private static int unitID;
 
-    /// <summary>The reference to the attached unit object</summary>
-    private Unit attachedUnit;
-
     /// <summary>The reference to the unit name text object</summary>
     private Text unitNameText;
 
@@ -80,10 +77,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         set { this.cost = value; }
     }
 
-    public Unit AttachedUnit {
-        get { return this.attachedUnit; }
-        set { this.attachedUnit = value; }
-    }
+    public Unit AttachedUnit { get; private set; }
 
     public static void LevelUpCost(Unit.Type type) {
         CreateAndOrderUnit.costLevel[(int)type]++;
@@ -98,7 +92,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     /// <summary>Orders unit when a button is clicked</summary>
     public void OrderUnitOnClick() {
-        this.attachedUnit.Order(ref this.MoneyManager);
+        this.AttachedUnit.Order(ref this.MoneyManager);
     }
 
     /// <summary>
@@ -154,7 +148,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// Loads from PlayerPrefs. Use this for initialization
     /// </summary>
     private void Awake() {
-        this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.CritChance, this.Defense, this.Type, this.ArmorType, this.buildtime, this, this.BaseSwitch);
+        this.AttachedUnit = new Unit(this.unitName, this.hp, this.attack, this.CritChance, this.Defense, this.Type, this.ArmorType, this.buildtime, this, this.BaseSwitch);
         PlayerPrefs.SetString("UnitName_" + unitID, this.unitName);
         unitID++;
         PlayerPrefs.SetInt(this.unitName + "_HP", this.hp);
@@ -179,7 +173,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         if (count > 0) {
             this.AddPowerlevel(count * Mathf.RoundToInt(this.hp * this.attack * this.Defense / 1000f), true);
             this.SetUnitCount(count.ToString());
-            this.attachedUnit.UnitCount = count;
+            this.AttachedUnit.UnitCount = count;
         }
 
         allCreateAndOrder.Add(this);

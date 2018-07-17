@@ -77,12 +77,11 @@ public class RenownManagement : MonoBehaviour {
 
     /// <summary>Called once per frame</summary>
     private void Update() {
-        if (this.renownToLerpTo != this.renownAmountShown) {
-            this.lerpTimeDone += Time.deltaTime;
-            this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);
-            this.renownAmountShown = (long)Mathf.Lerp(this.renownAmountOld, this.renownToLerpTo, this.lerpTimeDone / this.LerpTimeStart);
-            this.GetComponent<Text>().text = this.renownAmountShown.ToString();
-        }
+        if (this.renownToLerpTo == this.renownAmountShown) return;
+        this.lerpTimeDone += Time.deltaTime;
+        this.lerpTimeDone = Mathf.Min(this.LerpTimeStart, this.lerpTimeDone);
+        this.renownAmountShown = (long)Mathf.Lerp(this.renownAmountOld, this.renownToLerpTo, this.lerpTimeDone / this.LerpTimeStart);
+        this.GetComponent<Text>().text = this.renownAmountShown.ToString();
     }
 
     /// <summary>

@@ -36,12 +36,6 @@ public class Harvester : MonoBehaviour {
     /// <summary>Reference to the FloatUpSpawner</summary>
     private FloatUpSpawner floatUpSpawner;
 
-    /// <summary>Getter/Setter for currentProgressWay</summary>
-    public float CurrentProgressWay {
-        get { return this.currentProgressWay; }
-        set { this.currentProgressWay = value; }
-    }
-
     /// <summary>Getter/Setter for miningSpeed</summary>
     public float MiningSpeed {
         get { return this.miningSpeed - (this.miningSpeed * Unit.HPBoostLevel[this.levelSpeed] - this.miningSpeed); }

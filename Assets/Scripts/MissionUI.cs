@@ -31,21 +31,20 @@ public class MissionUI : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
-        if (this.missionTime > 0f) {
-            this.aktTime += Time.deltaTime;
-            if (this.aktTime / this.missionTime >= 1f) {
-                this.img.fillAmount = 1f;
-                this.missionTime = -1f;
-                foreach (var item in this.unitsInMission) {
-                    item.SentToMission--;
-                }
-                
-                // this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, transform.position);
-                this.MissionQueue.FinshedMission(this.attachedMission);
-                MissionQueue.DestroyMissionBar(this);
-            } else {
-                this.img.fillAmount = this.aktTime / this.missionTime;
+        if (!(this.missionTime > 0f)) return;
+        this.aktTime += Time.deltaTime;
+        if (this.aktTime / this.missionTime >= 1f) {
+            this.img.fillAmount = 1f;
+            this.missionTime = -1f;
+            foreach (var item in this.unitsInMission) {
+                item.SentToMission--;
             }
+                
+            // this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, transform.position);
+            this.MissionQueue.FinshedMission(this.attachedMission);
+            MissionQueue.DestroyMissionBar(this);
+        } else {
+            this.img.fillAmount = this.aktTime / this.missionTime;
         }
     }
 }
