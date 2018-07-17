@@ -28,10 +28,10 @@ public class RewardPopUp : MonoBehaviour {
     public void ShowRewards(MissionDetails missionDetails) {
         this.missionDetails = missionDetails;
         this.PlayerCommunication.text = "Congratulations on beating " + this.missionDetails.EnemyGeneral + "!" + System.Environment.NewLine + System.Environment.NewLine + "You get:";
-        this.PlayerRewards.text = this.missionDetails.MissionMoneyReward.ToString() + " Dollar" + System.Environment.NewLine +
-                             this.missionDetails.MissionRenownReward.ToString() + " Renown" + System.Environment.NewLine +
-                             this.missionDetails.MissionVirtualReward.ToString() + " Virtual" + System.Environment.NewLine +
-                             this.missionDetails.MissionBlueprintReward.ToString() + " Blueprint";
+        this.PlayerRewards.text = this.missionDetails.MissionMoneyReward + " Dollar" + System.Environment.NewLine +
+                             this.missionDetails.MissionRenownReward + " Renown" + System.Environment.NewLine +
+                             this.missionDetails.MissionVirtualReward + " Virtual" + System.Environment.NewLine +
+                             this.missionDetails.MissionBlueprintReward + " Blueprint";
         
         // GameObject go = Instantiate(RewardPrefab, transform);
         // go.GetComponent<MissionReward>();

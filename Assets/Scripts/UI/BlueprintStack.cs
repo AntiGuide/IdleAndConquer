@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class BlueprintStack : MonoBehaviour {
@@ -56,7 +57,7 @@ public class BlueprintStack : MonoBehaviour {
 
     public void PerformLevelUp() {
         this.level++;
-        this.levelText.text = "Level " + this.level.ToString();
+        this.levelText.text = "Level " + this.level;
         
         switch (this.BlueprintTypeStack) {
             case BlueprintType.UNIT:
@@ -76,6 +77,8 @@ public class BlueprintStack : MonoBehaviour {
                 break;
             case BlueprintType.FIND_THE_BOX:
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 
@@ -93,7 +96,7 @@ public class BlueprintStack : MonoBehaviour {
         }
 
         this.levelText = transform.Find("CountText").GetComponent<Text>();
-        this.levelText.text = "Level " + this.level.ToString();
+        this.levelText.text = "Level " + this.level;
         this.blueprintCountText = transform.Find("BuildingCountText").GetComponent<Text>();
         this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
 

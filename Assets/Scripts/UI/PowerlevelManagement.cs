@@ -32,13 +32,10 @@ public class PowerlevelManagement : MonoBehaviour {
     /// <param name="powerlevelToSub">How much PowerLevel to sub</param>
     /// <returns>Returns if the player had enough PowerLevel to sub the amount</returns>
     public bool SubPowerlevel(long powerlevelToSub) {
-        if (powerlevel >= powerlevelToSub) {
-            powerlevel = powerlevel - powerlevelToSub;
-            this.OutputPowerlevel(ref powerlevel);
-            return true;
-        } else {
-            return false;
-        }
+        if (powerlevel < powerlevelToSub) return false;
+        powerlevel = powerlevel - powerlevelToSub;
+        this.OutputPowerlevel(ref powerlevel);
+        return true;
     }
 
     /// <summary>

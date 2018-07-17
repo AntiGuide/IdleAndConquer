@@ -37,14 +37,12 @@ public class RenownManagement : MonoBehaviour {
     /// <param name="renownToSub">The amount to sub</param>
     /// <returns>If the player had enough renown for the transaction. True is returned and the transaction is performed. (False --> no transaction)</returns>
     public bool SubRenown(long renownToSub) {
-        if (renown >= renownToSub) {
-            renown = renown - renownToSub;
-            PlayerPrefs.SetInt("renown", (int)RenownManagement.renown);
-            this.OutputRenown(renown, true);
-            return true;
-        } else {
-            return false;
-        }
+        if (renown < renownToSub) return false;
+        renown = renown - renownToSub;
+        PlayerPrefs.SetInt("renown", (int)RenownManagement.renown);
+        this.OutputRenown(renown, true);
+        return true;
+
     }
 
     /// <summary>

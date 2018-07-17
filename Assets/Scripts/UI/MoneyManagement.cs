@@ -56,14 +56,12 @@ public class MoneyManagement : MonoBehaviour {
     /// <param name="moneyToSub">The amount to sub</param>
     /// <returns>If the player had enough money for the transaction. True is returned and the transaction is performed. (False --> no transaction)</returns>
     public bool SubMoney(long moneyToSub) {
-        if (money >= moneyToSub) {
-            money = money - moneyToSub;
-            PlayerPrefs.SetInt("money", (int)MoneyManagement.money);
-            this.OutputMoney(money, true);
-            return true;
-        } else {
-            return false;
-        }
+        if (money < moneyToSub) return false;
+        money = money - moneyToSub;
+        PlayerPrefs.SetInt("money", (int)MoneyManagement.money);
+        this.OutputMoney(money, true);
+        return true;
+
     }
 
     /// <summary>

@@ -86,6 +86,8 @@ public class FloatUp : MonoBehaviour {
             case ResourceType.DOLLAR:
                 this.text.text += " $";
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 

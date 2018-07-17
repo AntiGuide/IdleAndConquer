@@ -11,9 +11,6 @@ public class BuildButtonManager : MonoBehaviour {
     /// <summary>Attached building prefab</summary>
     public GameObject AttachedBuilding;
 
-    /// <summary>Reference to MoneyManagement object (Only one per scene existent)</summary>
-    public MoneyManagement MoneyManager;
-
     /// <summary>Reference to BaseSwitcher to get the correct BuildBuilding object</summary>
     public BaseSwitcher BaseSwitch;
 

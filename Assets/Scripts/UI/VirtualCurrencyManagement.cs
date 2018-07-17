@@ -38,14 +38,12 @@ public class VirtualCurrencyManagement : MonoBehaviour {
     /// <param name="virtualCurrencyToSub">The amount to sub</param>
     /// <returns>If the player had enough V for the transaction. True is returned and the transaction is performed. (False --> no transaction)</returns>
     public bool SubVirtualCurrency(long virtualCurrencyToSub) {
-        if (virtualCurrency >= virtualCurrencyToSub) {
-            virtualCurrency = virtualCurrency - virtualCurrencyToSub;
-            PlayerPrefs.SetInt("virtualCurrency", (int)VirtualCurrencyManagement.virtualCurrency);
-            this.OutputMoney(virtualCurrency, true);
-            return true;
-        } else {
-            return false;
-        }
+        if (virtualCurrency < virtualCurrencyToSub) return false;
+        virtualCurrency = virtualCurrency - virtualCurrencyToSub;
+        PlayerPrefs.SetInt("virtualCurrency", (int)VirtualCurrencyManagement.virtualCurrency);
+        this.OutputMoney(virtualCurrency, true);
+        return true;
+
     }
 
     /// <summary>

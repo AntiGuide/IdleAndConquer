@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class BuildingManager : MonoBehaviour {
     public BuildingType buildingType;
@@ -43,6 +44,8 @@ public class BuildingManager : MonoBehaviour {
             case BuildingType.TANK_FACTORY:
                 // gameObject.GetComponent<TankFactory>().InitializeBuilt();
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 }

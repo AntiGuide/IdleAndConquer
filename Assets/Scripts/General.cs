@@ -7,9 +7,6 @@ public class General : MonoBehaviour {
     /// <summary>Chance between 0 and 1 to get removed upon death in a mission</summary>
     private float chanceToPermaDeath;
 
-    /// <summary>The generals portrait</summary>
-    private Sprite portrait;
-
     public General(int wins, int loses) {
         Wins = wins;
         Loses = loses;
@@ -38,7 +35,6 @@ public class General : MonoBehaviour {
     public void InitGeneral(float chanceToPermaDeath, Sprite portrait, string country, string generalName,
         bool isSentToMission = false) {
         this.chanceToPermaDeath = chanceToPermaDeath;
-        this.portrait = portrait;
         this.Country = country;
         this.GeneralName = generalName;
         this.IsSentToMission = isSentToMission;

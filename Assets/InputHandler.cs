@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>Handles input in MissionMap scene. Can zoom and navigate.</summary>
@@ -148,6 +149,12 @@ public class InputHandler : MonoBehaviour {
                 }
 
                 break;
+            case TouchPhase.Stationary:
+                break;
+            case TouchPhase.Canceled:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException("touchPhase", touchPhase, null);
         }
     }
 
