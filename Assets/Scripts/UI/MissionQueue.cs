@@ -10,7 +10,7 @@ public class MissionQueue : MonoBehaviour {
     public GameObject RewardPopUpPrefab;
     public Transform TransformCanvas;
     public GameObject LootboxPopUpPrefab;
-    private List<MissionUI> missionUIs = new List<MissionUI>();
+    private readonly List<MissionUI> missionUIs = new List<MissionUI>();
 
     public void Add(Mission mission) {
         MissionUI missionUI = Instantiate(this.MissionBar, this.transform).GetComponentInChildren<MissionUI>();

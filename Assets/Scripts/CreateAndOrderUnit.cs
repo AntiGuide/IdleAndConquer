@@ -47,9 +47,9 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     public int AddCountOnStartUp = 0;
 
-    private static List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
+    private static readonly List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
 
-    private static int[] costLevel = { 0, 0, 0 };
+    private static readonly int[] costLevel = { 0, 0, 0 };
 
     /// <summary>The attached units ID</summary>
     private static int unitID;
@@ -92,7 +92,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         }
     }
 
-    public void ShowUnitsBuilding() {
+    private void ShowUnitsBuilding() {
         this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
     }
 

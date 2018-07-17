@@ -48,7 +48,7 @@ public class EnergyPool : MonoBehaviour {
     /// Sets the energy to a specific value
     /// </summary>
     /// <param name="valueToSet">To which level do we set the energy</param>
-    public void SetEnergy(float valueToSet) {
+    private void SetEnergy(float valueToSet) {
         if (this.IsInBounds(valueToSet)) {
             this.CurEnergy = valueToSet;
             this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy);
@@ -70,10 +70,6 @@ public class EnergyPool : MonoBehaviour {
     /// <param name="valueToCheck">The value to check the bounds for</param>
     /// <returns>Returns wether a value is in the given bounds</returns>
     private bool IsInBounds(float valueToCheck) {
-        if (valueToCheck >= this.MinEnergy && valueToCheck <= this.MaxEnergy) {
-            return true;
-        } else {
-            return false;
-        }
+        return valueToCheck >= this.MinEnergy && valueToCheck <= this.MaxEnergy;
     }
 }

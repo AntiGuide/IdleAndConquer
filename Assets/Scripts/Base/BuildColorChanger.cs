@@ -20,9 +20,9 @@ public class BuildColorChanger : MonoBehaviour {
     /// <summary>The amount of buildings that the building collides with at the moment</summary>
     private int collidingBuildings = 0;
 
-    private List<Material> materialList = new List<Material>();
+    private readonly List<Material> materialList = new List<Material>();
 
-    private List<Texture2D> finishedBuildingTextureList = new List<Texture2D>();
+    private readonly List<Texture2D> finishedBuildingTextureList = new List<Texture2D>();
 
     /// <summary>Getter/Setter for isBuilt</summary>
     public bool IsBuilt {

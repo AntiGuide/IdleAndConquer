@@ -49,7 +49,7 @@ public class Harvester : MonoBehaviour {
     }
 
     /// <summary>Getter/Setter for miningAmount</summary>
-    public int MiningAmount {
+    private int MiningAmount {
         get { return Mathf.RoundToInt(this.miningAmount * Unit.HPBoostLevel[this.levelMoney]); }
         set { this.miningAmount = value; }
     }

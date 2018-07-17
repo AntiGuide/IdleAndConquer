@@ -12,10 +12,10 @@ public class ProductionQueue : MonoBehaviour {
     public SoundController SoundControll;
 
     /// <summary>The list of units that the queue works on/will produce</summary>
-    private List<Unit> prodQueue = new List<Unit>();
+    private readonly List<Unit> prodQueue = new List<Unit>();
 
     /// <summary>Reference to buttons corresponding to the units being built. Needs this for updating the button overlay.</summary>
-    private List<CreateAndOrderUnit> buttonQueue = new List<CreateAndOrderUnit>();
+    private readonly List<CreateAndOrderUnit> buttonQueue = new List<CreateAndOrderUnit>();
 
     /// <summary>The unit that is producing at the moment</summary>
     private Unit latestUnit;

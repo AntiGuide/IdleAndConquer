@@ -80,7 +80,7 @@ public class MoneyManagement : MonoBehaviour {
     /// Sets the money to a specific amount
     /// </summary>
     /// <param name="valueToSet">To how much money should the players account be set to</param>
-    public void SetMoney(long valueToSet) {
+    private void SetMoney(long valueToSet) {
         if (valueToSet >= 0) {
             money = valueToSet;
             PlayerPrefs.SetInt("money", (int)MoneyManagement.money);

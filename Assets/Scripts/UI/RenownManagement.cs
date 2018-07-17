@@ -60,7 +60,7 @@ public class RenownManagement : MonoBehaviour {
     /// Sets the renown to a specific amount
     /// </summary>
     /// <param name="valueToSet">To how much renown should the players account be set to</param>
-    public void SetRenown(long valueToSet) {
+    private void SetRenown(long valueToSet) {
         if (valueToSet >= 0) {
             renown = valueToSet;
             PlayerPrefs.SetInt("renown", (int)RenownManagement.renown);

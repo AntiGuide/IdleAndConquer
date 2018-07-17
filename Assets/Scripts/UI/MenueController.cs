@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     /// <summary>Saves the GameObject (Menue) that is being draged by the user</summary>
-    public static GameObject ItemBeingDragged;
+    private static GameObject ItemBeingDragged;
 
     /// <summary>Used to determine size of the canvas</summary>
     public RectTransform CanvasRectTransform;

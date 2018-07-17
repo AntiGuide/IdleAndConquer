@@ -35,11 +35,10 @@ public class BuildBuilding : MonoBehaviour {
         set { playerBuilding = value; }
     }
 
-    public Vector3 ToGrid(Vector3 allignToGrid) {
-        float x, y, z;
-        x = Mathf.Round(allignToGrid.x / this.CellSize) * this.CellSize;
-        y = allignToGrid.y;
-        z = Mathf.Round(allignToGrid.z / this.CellSize) * this.CellSize;
+    private Vector3 ToGrid(Vector3 allignToGrid) {
+        float x = Mathf.Round(allignToGrid.x / this.CellSize) * this.CellSize;
+        float y = allignToGrid.y;
+        float z = Mathf.Round(allignToGrid.z / this.CellSize) * this.CellSize;
         return new Vector3(x, y, z);
     }
 

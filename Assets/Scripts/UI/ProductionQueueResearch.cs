@@ -15,7 +15,7 @@ public class ProductionQueueResearch : MonoBehaviour {
     public SoundController SoundControll;
 
     /// <summary>Reference to buttons corresponding to the researches. Needs this for updating the button overlay.</summary>
-    private List<BlueprintStack> buttonQueue = new List<BlueprintStack>();
+    private readonly List<BlueprintStack> buttonQueue = new List<BlueprintStack>();
 
     /// <summary>The unit that is producing at the moment</summary>
     private BlueprintStack latestBlueprintStack;

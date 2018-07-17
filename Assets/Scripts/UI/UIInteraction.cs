@@ -52,7 +52,7 @@ public class UIInteraction : MonoBehaviour {
         this.MainMenueControll.ToggleMenue(5);
     }
 
-    public void MissionMapLoad() {
+    private void MissionMapLoad() {
         this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
         this.MainContainer.SetActive(false);
         this.MissionMapContainer.SetActive(true);

@@ -3,35 +3,35 @@ using UnityEngine;
 
 /// <summary>Handles all tanks, planes and soldiers with all their values</summary>
 public class Unit {
-    public static float[] HPBoostLevel = { 1f, 1.05f, 1.075f, 1.1f, 1.125f, 1.15f, 1.175f, 1.2f, 1.225f, 1.25f };
+    public static readonly float[] HPBoostLevel = { 1f, 1.05f, 1.075f, 1.1f, 1.125f, 1.15f, 1.175f, 1.2f, 1.225f, 1.25f };
 
-    public static int[] OtherBoostLevel = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 };
+    private static readonly int[] OtherBoostLevel = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 };
 
-    public static int[] ArmorTypeLevel = { 0, 0, 0, 0 };
+    private static readonly int[] ArmorTypeLevel = { 0, 0, 0, 0 };
 
-    public static int[] HPGroupLevel = { 0, 0, 0 };
+    private static readonly int[] HPGroupLevel = { 0, 0, 0 };
 
-    public static int[] ATKGroupLevel = { 0, 0, 0 };
+    private static readonly int[] ATKGroupLevel = { 0, 0, 0 };
 
-    public static int[] CritGroupLevel = { 0, 0, 0 };
+    private static readonly int[] CritGroupLevel = { 0, 0, 0 };
 
     public static int[] CostGroupLevel = { 0, 0, 0 };
 
-    public static int[] BuildtimeGroupLevel = { 0, 0, 0 };
+    private static readonly int[] BuildtimeGroupLevel = { 0, 0, 0 };
 
-    public static List<Unit> AllUnits = new List<Unit>();
+    public static readonly List<Unit> AllUnits = new List<Unit>();
 
     public int SentToMission = 0;
 
-    public int Level = 0;
+    private int Level = 0;
 
     // public static int[] LevelGroup = { 0, 0, 0 };
 
     /// <summary>The script that triggeres a production of this unit</summary>
-    public CreateAndOrderUnit CreateAndOrderButton;
+    private readonly CreateAndOrderUnit CreateAndOrderButton;
 
     /// <summary>The used to get the correct production queue</summary>
-    private BaseSwitcher baseSwitch;
+    private readonly BaseSwitcher baseSwitch;
 
     /// <summary>The type of the unit. (Tank, Soldier or Plane)</summary>
     private Type type;
@@ -40,19 +40,19 @@ public class Unit {
     private ArmorType armorType;
 
     /// <summary>Healthpoints of the unit e.g. 100</summary>
-    private int hp;
+    private readonly int hp;
 
     /// <summary>Attackvalue of the unit e.g. 20</summary>
-    private int attack;
+    private readonly int attack;
 
     /// <summary>The defense value of a unit</summary>
-    private int defense;
+    private readonly int defense;
 
     /// <summary>How many of this unit are available</summary>
     private int unitCount;
 
     /// <summary>Chance to hit a critical hit on another unit e.g. 0,1 = 10%</summary>
-    private float critChance;
+    private readonly float critChance;
 
     /// <summary>The time it takes to build this unit in seconds</summary>
     private float buildtime;
@@ -134,13 +134,13 @@ public class Unit {
     }
 
     /// <summary>Getter and setter for armorType</summary>
-    public ArmorType ArmorTypeUnit {
+    private ArmorType ArmorTypeUnit {
         get { return this.armorType; }
         set { this.armorType = value; }
     }
 
     /// <summary>Getter and setter for type (tank, plane...)</summary>
-    public Type UnitType {
+    private Type UnitType {
         get { return this.type; }
         set { this.type = value; }
     }
@@ -181,7 +181,7 @@ public class Unit {
     /// <summary>
     /// Calculates the attack value without the eventual passives against the enemy
     /// </summary>
-    public int GetAttack() {
+    private int GetAttack() {
         int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.type]];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
@@ -192,11 +192,11 @@ public class Unit {
         return returnDamage;
     }
 
-    public int GetHP() {
+    private int GetHP() {
         return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level] * Unit.HPBoostLevel[Unit.HPGroupLevel[(int)this.type]]);
     }
 
-    public int GetDef() {
+    private int GetDef() {
         return this.defense + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ArmorTypeLevel[(int)this.armorType]];
     }
 

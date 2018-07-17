@@ -5,49 +5,49 @@
 /// </summary>
 public class Passives : MonoBehaviour {
     /// <summary>Bonus on single stat values (percentage)</summary>
-    private static float[,] skillValues = new float[,] { { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
+    private static readonly float[,] skillValues = new float[,] { { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                             { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                             { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                             { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f } };
 
     /// <summary>Bonus on single stat values (absolut)</summary>
-    private static int[,] skillValuesAbsolut = new int[,] { { 0, 0, 0, 0, 0, 0 },
+    private static readonly int[,] skillValuesAbsolut = new int[,] { { 0, 0, 0, 0, 0, 0 },
                                                                 { 0, 0, 0, 0, 0, 0 },
                                                                 { 0, 0, 0, 0, 0, 0 },
                                                                 { 0, 0, 0, 0, 0, 0 } };
 
     /// <summary>Bonus on stat values for specific armor type (percentage)</summary>
-    private static float[,] skillValuesArmortype = new float[,] { { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
+    private static readonly float[,] skillValuesArmortype = new float[,] { { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                             { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                             { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                             { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f } };
 
     /// <summary>Bonus on stat values for specific armor type (absolut)</summary>
-    private static int[,] skillValuesAbsolutArmortype = new int[,] { { 0, 0, 0, 0, 0, 0 },
+    private static readonly int[,] skillValuesAbsolutArmortype = new int[,] { { 0, 0, 0, 0, 0, 0 },
                                                                 { 0, 0, 0, 0, 0, 0 },
                                                                 { 0, 0, 0, 0, 0, 0 },
                                                                 { 0, 0, 0, 0, 0, 0 } };
 
     /// <summary>Bonus on stat values versus specific unit type (percentage)</summary>
-    private static float[,] skillValuesVersusType = new float[,] { { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
+    private static readonly float[,] skillValuesVersusType = new float[,] { { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                                     { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                                     { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                                     { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f } };
 
     /// <summary>Bonus on stat values versus specific unit type (absolut)</summary>
-    private static int[,] skillValuesVersusTypeAbsolut = new int[,] { { 0, 0, 0, 0, 0, 0 },
+    private static readonly int[,] skillValuesVersusTypeAbsolut = new int[,] { { 0, 0, 0, 0, 0, 0 },
                                                                     { 0, 0, 0, 0, 0, 0 },
                                                                     { 0, 0, 0, 0, 0, 0 },
                                                                     { 0, 0, 0, 0, 0, 0 } };
 
     /// <summary>Bonus on stat values versus specific armor type (percentage)</summary>
-    private static float[,] skillValuesVersusArmortype = new float[,] { { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
+    private static readonly float[,] skillValuesVersusArmortype = new float[,] { { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                                     { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                                     { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f },
                                                                     { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f } };
 
     /// <summary>Bonus on stat values versus specific armor type (absolut)</summary>
-    private static int[,] skillValuesVersusArmortypeAbsolut = new int[,] { { 0, 0, 0, 0, 0, 0 },
+    private static readonly int[,] skillValuesVersusArmortypeAbsolut = new int[,] { { 0, 0, 0, 0, 0, 0 },
                                                                     { 0, 0, 0, 0, 0, 0 },
                                                                     { 0, 0, 0, 0, 0, 0 },
                                                                     { 0, 0, 0, 0, 0, 0 } };

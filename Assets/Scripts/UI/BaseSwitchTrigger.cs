@@ -35,7 +35,7 @@ public class BaseSwitchTrigger : MonoBehaviour {
     }
 
     /// <summary>Sets the color for the base switch buttons</summary>
-    public void UpdateButtons() {
+    private void UpdateButtons() {
         bool leftPossible;
         bool rightPossible;
         this.BaseSwitch.CheckPossibilities(out leftPossible, out rightPossible);

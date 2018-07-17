@@ -61,7 +61,7 @@ public class VirtualCurrencyManagement : MonoBehaviour {
     /// Sets the V to a specific amount
     /// </summary>
     /// <param name="valueToSet">To how much V should the players account be set to</param>
-    public void SetVirtualCurrency(long valueToSet) {
+    private void SetVirtualCurrency(long valueToSet) {
         if (valueToSet >= 0) {
             virtualCurrency = valueToSet;
             PlayerPrefs.SetInt("virtualCurrency", (int)VirtualCurrencyManagement.virtualCurrency);

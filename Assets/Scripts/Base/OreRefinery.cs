@@ -36,8 +36,7 @@ public class OreRefinery : MonoBehaviour {
     /// <param name="oreRefinery">The attached refinery</param>
     /// <param name="oreMine">The attached mine</param>
     private void AddHarvester(ref List<GameObject> attachedHarvesters, ref MoneyManagement moneyManager, OreRefinery oreRefinery, GameObject oreMine) {
-        GameObject go;
-        go = UnityEngine.Object.Instantiate(this.HarvesterPrefab, transform.parent);
+        GameObject go = UnityEngine.Object.Instantiate(this.HarvesterPrefab, transform.parent);
         Harvester harvester = go.GetComponentInChildren<Harvester>();
         harvester.Initialize(oreRefinery, oreMine, ref moneyManager, this.floatUpSpawner);
         attachedHarvesters.Add(go);
