@@ -39,13 +39,11 @@ public class Harvester : MonoBehaviour {
     /// <summary>Getter/Setter for miningSpeed</summary>
     public float MiningSpeed {
         get { return this.miningSpeed - (this.miningSpeed * Unit.HPBoostLevel[this.levelSpeed] - this.miningSpeed); }
-        set { this.miningSpeed = value; }
     }
 
     /// <summary>Getter/Setter for miningAmount</summary>
     private int MiningAmount {
         get { return Mathf.RoundToInt(this.miningAmount * Unit.HPBoostLevel[this.levelMoney]); }
-        set { this.miningAmount = value; }
     }
 
     /// <summary>

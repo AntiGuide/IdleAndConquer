@@ -28,11 +28,10 @@ public class General : MonoBehaviour {
     /// Gives the general all important values
     /// </summary>
     /// <param name="chanceToPermaDeath">Chance between 0 and 1 to get removed upon death in a mission</param>
-    /// <param name="portrait">The generals portrait</param>
     /// <param name="country">The generals country</param>
     /// <param name="generalName">The generals name</param>
     /// <param name="isSentToMission"></param>
-    public void InitGeneral(float chanceToPermaDeath, Sprite portrait, string country, string generalName,
+    public void InitGeneral(float chanceToPermaDeath, string country, string generalName,
         bool isSentToMission = false) {
         this.chanceToPermaDeath = chanceToPermaDeath;
         this.Country = country;

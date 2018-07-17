@@ -61,7 +61,7 @@ public class GeneralManager : MonoBehaviour {
         this.generalID++;
 
         var ret = attachedButton.gameObject.GetComponent<General>();
-        ret.InitGeneral(aktChanceToPermaDeath, null, this.Countrys[countryID], this.Names[nameID]);
+        ret.InitGeneral(aktChanceToPermaDeath, this.Countrys[countryID], this.Names[nameID]);
         GeneralManager.AllGenerals.Add(ret);
     }
 
@@ -84,7 +84,7 @@ public class GeneralManager : MonoBehaviour {
             attachedButton.SetTexts(this.country, this.generalName, this.wins + Environment.NewLine + "-" + Environment.NewLine + this.loses);
 
             var ret = attachedButton.gameObject.GetComponent<General>();
-            ret.InitGeneral(this.chanceDeath, null, this.country, this.generalName);
+            ret.InitGeneral(this.chanceDeath, this.country, this.generalName);
             GeneralManager.AllGenerals.Add(ret);
         }
     }

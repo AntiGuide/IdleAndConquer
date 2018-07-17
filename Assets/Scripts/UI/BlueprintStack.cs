@@ -5,8 +5,6 @@ using UnityEngine.UI;
 public class BlueprintStack : MonoBehaviour {
     private static readonly int[] NeededBlueprintsLevel = { 1, 2, 8, 16, 32, 48, 64, 80, 96, 112 };
 
-    public static Unit[] Units;
-
     public BlueprintManager BlueprintMan;
 
     public CreateAndOrderUnit CreateAndOrderUnitStack;

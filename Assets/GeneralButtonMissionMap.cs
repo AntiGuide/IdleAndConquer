@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 
 public class GeneralButtonMissionMap : MonoBehaviour {
-    public static MissionDetails MissionDetail;
     public General General;
     public Text country;
     public Text generalName;

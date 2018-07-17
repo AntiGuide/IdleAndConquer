@@ -74,7 +74,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     public int Cost {
         get { return this.cost - (this.cost - Mathf.RoundToInt(Unit.HPBoostLevel[CreateAndOrderUnit.costLevel[(int)this.Type]] * this.cost)); }
-        set { this.cost = value; }
     }
 
     public Unit AttachedUnit { get; private set; }

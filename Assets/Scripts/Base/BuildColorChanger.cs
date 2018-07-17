@@ -24,7 +24,6 @@ public class BuildColorChanger : MonoBehaviour {
 
     /// <summary>Getter/Setter for isBuilt</summary>
     public bool IsBuilt {
-        get { return this.isBuilt; }
         set { this.isBuilt = value; }
     }
 

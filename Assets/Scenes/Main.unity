@@ -2741,7 +2741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -4070,7 +4069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -6006,7 +6004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -6660,7 +6657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -6771,7 +6767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -7237,7 +7232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -9654,7 +9648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -10720,7 +10713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -11348,7 +11340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -12659,11 +12650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Builder: {fileID: 0}
   Cost: {fileID: 250608953}
   AttachedBuilding: {fileID: 1577165762185470, guid: 9150ec5f63f3b7b4b9cd75bb509d9c6e,
     type: 2}
-  MoneyManager: {fileID: 1083180769}
   BaseSwitch: {fileID: 1649716204}
 --- !u!4 &402427400 stripped
 Transform:
@@ -14245,7 +14234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -17073,7 +17061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -17565,11 +17552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Builder: {fileID: 0}
   Cost: {fileID: 1417084064}
   AttachedBuilding: {fileID: 1338776505941328, guid: a8d10cbb0047d944cbf533ba34a2b864,
     type: 2}
-  MoneyManager: {fileID: 1083180769}
   BaseSwitch: {fileID: 1649716204}
 --- !u!1 &566727760
 GameObject:
@@ -19107,7 +19092,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -19924,7 +19908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -20777,7 +20760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -23186,7 +23168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -26163,7 +26144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -27034,7 +27014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -29078,11 +29057,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Builder: {fileID: 0}
   Cost: {fileID: 1161362942}
   AttachedBuilding: {fileID: 1706830012228478, guid: ae0be251846e3944abd1438add493fb4,
     type: 2}
-  MoneyManager: {fileID: 1083180769}
   BaseSwitch: {fileID: 1649716204}
 --- !u!1001 &907652386
 Prefab:
@@ -32699,7 +32676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -33985,7 +33961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -35482,7 +35457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -35854,7 +35828,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -36654,7 +36627,6 @@ MonoBehaviour:
   MoneyManager: {fileID: 1083180769}
   RenownManager: {fileID: 525106188}
   VirtualCurrencyManager: {fileID: 1899302186}
-  FloatUpSpawner: {fileID: 0}
   RewardPopUpPrefab: {fileID: 1179291650785810, guid: e5f5bd2ecc8fc614bb8075cfea10ddef,
     type: 2}
   TransformCanvas: {fileID: 1343580271}
@@ -37757,7 +37729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -42595,7 +42566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -47268,7 +47238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -48405,7 +48374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -49682,11 +49650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Builder: {fileID: 0}
   Cost: {fileID: 1463699031}
   AttachedBuilding: {fileID: 1094477539291470, guid: 6bed379ec8fbf504e9445125122b421c,
     type: 2}
-  MoneyManager: {fileID: 1083180769}
   BaseSwitch: {fileID: 1649716204}
 --- !u!1001 &1542706079
 Prefab:
@@ -51156,7 +51122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -54028,7 +53993,6 @@ MonoBehaviour:
   MinZoom: 300
   MaxZoom: 600
   OrthoZoomSpeed: 0.5
-  MainMenueControll: {fileID: 0}
   IsMissionMap: 0
 --- !u!114 &1649716204
 MonoBehaviour:
@@ -55883,7 +55847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -56124,11 +56087,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Builder: {fileID: 0}
   Cost: {fileID: 1827217466}
   AttachedBuilding: {fileID: 1920727374271818, guid: e789ee5b117d89145aedcc22951d7cd7,
     type: 2}
-  MoneyManager: {fileID: 1083180769}
   BaseSwitch: {fileID: 1649716204}
 --- !u!4 &1701829124 stripped
 Transform:
@@ -56927,11 +56888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Builder: {fileID: 0}
   Cost: {fileID: 571682793}
   AttachedBuilding: {fileID: 1462446017090782, guid: fcc6aebcf3a0efa41a2f3fc5d9c1b569,
     type: 2}
-  MoneyManager: {fileID: 1083180769}
   BaseSwitch: {fileID: 1649716204}
 --- !u!1 &1726234129
 GameObject:
@@ -59378,7 +59337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -63639,11 +63597,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d395f5e6d07931489a531fbfecda2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Builder: {fileID: 0}
   Cost: {fileID: 1618341253}
   AttachedBuilding: {fileID: 1400704415396098, guid: 0309ec524cf43f546ace1eb447417332,
     type: 2}
-  MoneyManager: {fileID: 1083180769}
   BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1921256366
 MonoBehaviour:
@@ -67562,7 +67518,6 @@ MonoBehaviour:
   MinZoom: 10
   MaxZoom: 20
   OrthoZoomSpeed: 0.5
-  MainMenueControll: {fileID: 0}
   IsMissionMap: 1
 --- !u!1 &2052705613
 GameObject:
@@ -67872,7 +67827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000
@@ -69272,7 +69226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionName: 
   MainMenueControll: {fileID: 1064353850}
   MissionTime: 30
   MissionMoneyReward: 1000

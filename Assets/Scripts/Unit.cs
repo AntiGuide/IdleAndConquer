@@ -15,8 +15,6 @@ public class Unit {
 
     private static readonly int[] CritGroupLevel = { 0, 0, 0 };
 
-    public static int[] CostGroupLevel = { 0, 0, 0 };
-
     private static readonly int[] BuildtimeGroupLevel = { 0, 0, 0 };
 
     public static readonly List<Unit> AllUnits = new List<Unit>();
@@ -78,16 +76,6 @@ public class Unit {
         AllUnits.Add(this);
     }
 
-    /// <summary>
-    /// Creates a unit with minimal information. Used for loading units in the mission map screen
-    /// </summary>
-    /// <param name="unitName">Name of the unit e.g. Tank 1</param>
-    /// <param name="unitCount">How many of this unit are available</param>
-    public Unit(string unitName, int unitCount) {
-        this.UnitName = unitName;
-        this.UnitCount = unitCount;
-    }
-
     /// <summary>The type of the unit. (Tank, Soldier or Plane)</summary>
     public enum Type {
         TANK = 0,
@@ -106,7 +94,6 @@ public class Unit {
     /// <summary>Getter and setter for buildtime</summary>
     public float Buildtime {
         get { return this.buildtime - (this.buildtime * Unit.HPBoostLevel[Unit.BuildtimeGroupLevel[(int)this.UnitType]] - this.buildtime); }
-        set { this.buildtime = value; }
     }
 
     /// <summary>Getter and setter for unitCount</summary>
