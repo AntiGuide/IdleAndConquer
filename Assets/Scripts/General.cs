@@ -16,12 +16,6 @@ public class General : MonoBehaviour {
     /// <summary>The generals name</summary>
     private string generalName;
 
-    /// <summary>The generals wins</summary>
-    private int wins;
-
-    /// <summary>The generals loses</summary>
-    private int loses;
-
     /// <summary>Getter/Setter for chanceToPermaDeath</summary>
     public float ChanceToPermaDeath {
         get { return this.chanceToPermaDeath; }
@@ -47,16 +41,10 @@ public class General : MonoBehaviour {
     }
 
     /// <summary>Getter/Setter for wins</summary>
-    public int Wins {
-        get { return this.wins; }
-        set { this.wins = value; }
-    }
+    public int Wins { get; set; }
 
     /// <summary>Getter/Setter for loses</summary>
-    public int Loses {
-        get { return this.loses; }
-        set { this.loses = value; }
-    }
+    public int Loses { get; set; }
 
     /// <summary>
     /// Gives the general all important values

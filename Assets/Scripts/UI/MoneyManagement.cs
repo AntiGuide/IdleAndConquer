@@ -36,8 +36,7 @@ public class MoneyManagement : MonoBehaviour {
     /// <param name="money">The amount of money</param>
     /// <returns>Formatted money as a string</returns>
     public static string FormatMoney(long money) {
-        CultureInfo cultureInfo = new CultureInfo("de-DE", false);
-        cultureInfo.NumberFormat.CurrencySymbol = string.Empty;
+        CultureInfo cultureInfo = new CultureInfo("de-DE", false) {NumberFormat = {CurrencySymbol = string.Empty}};
         return money.ToString("C0", cultureInfo).TrimEnd();
     }
 

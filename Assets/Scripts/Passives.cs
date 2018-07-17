@@ -52,8 +52,9 @@ public class Passives : MonoBehaviour {
                                                                     { 0, 0, 0, 0, 0, 0 },
                                                                     { 0, 0, 0, 0, 0, 0 } };
 
-    /// <summary>Bonus on permanent death chance (absolut)</summary>
-    private static float generalSurvivability = 0.0f;
+    static Passives() {
+        GeneralSurvivability = 0.0f;
+    }
 
     /// <summary>The different value categories</summary>
     public enum Value {
@@ -66,15 +67,7 @@ public class Passives : MonoBehaviour {
     }
 
     /// <summary>Getter/setter for generalSurvivability</summary>
-    public static float GeneralSurvivability {
-        get {
-            return generalSurvivability;
-        }
-
-        set {
-            generalSurvivability = value;
-        }
-    }
+    public static float GeneralSurvivability { get; private set; }
 
     // Passiv Buffs & Nerfs
 

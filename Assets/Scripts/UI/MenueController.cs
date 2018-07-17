@@ -98,11 +98,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
             this.distanceStartEndMarker = Vector3.Distance(this.startMarker, this.endMarker);
 
-            if (this.distanceStartEndMarker <= 0.001f) {
-                this.menueLerping = false;
-            } else {
-                this.menueLerping = true;
-            }
+            this.menueLerping = !(this.distanceStartEndMarker <= float.MinValue);
 
             this.lerpStartTime = Time.time;
         } else {

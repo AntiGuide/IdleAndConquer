@@ -11,9 +11,6 @@ public class BuildColorChanger : MonoBehaviour {
     /// <summary>Red transparent texture that is applied when building can not be built</summary>
     public Texture2D RedTransparent;
 
-    /// <summary>For menue on click</summary>
-    private MenueController menueController;
-
     /// <summary>Saves wether the building is built</summary>
     private bool isBuilt = true;
 
@@ -37,10 +34,7 @@ public class BuildColorChanger : MonoBehaviour {
     }
 
     /// <summary>Getter/Setter for menueController</summary>
-    public MenueController MenueControll {
-        get { return this.menueController; }
-        set { this.menueController = value; }
-    }
+    public MenueController MenueControll { get; set; }
 
     /// <summary>Use this for initialization</summary>
     void Start() {

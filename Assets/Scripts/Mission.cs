@@ -12,11 +12,7 @@ public class Mission : MonoBehaviour {
     public Mission(MissionDetails missionDetails, UIInteraction uiInteractions, General general = null, List<Unit> units = null) {
         this.MissionDetails = missionDetails;
         this.MissionGeneral = general;
-        if (units == null) {
-            this.Units = new List<Unit>();
-        } else {
-            this.Units = units;
-        }
+        this.Units = units ?? new List<Unit>();
 
         this.UIInteractions = uiInteractions;
         this.missionQueue = GameObject.Find("ReferenceShare").GetComponent<ReferenceShare>().MissionQueue;
