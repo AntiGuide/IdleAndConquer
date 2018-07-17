@@ -73,5 +73,6 @@ public class SoundController : MonoBehaviour {
             this.AudioSourceBGM.Stop();
             this.AudioSourceBGM.clip = this.BGMClips[nextTrackNumber];
         }
+        // ReSharper disable once IteratorNeverReturns
     }
 }

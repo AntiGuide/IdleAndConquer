@@ -4,8 +4,6 @@
 /// Class to hold the details of a mission 
 /// </summary> 
 public class MissionDetails : MonoBehaviour {
-    /// <summary>The name of the mission, e.g. Beat Juri</summary> 
-    public string MissionName;
     public MainMenueController MainMenueControll;
     public float MissionTime;
     public long MissionMoneyReward = 1000;

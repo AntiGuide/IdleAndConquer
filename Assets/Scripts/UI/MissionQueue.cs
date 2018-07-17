@@ -6,7 +6,6 @@ public class MissionQueue : MonoBehaviour {
     public MoneyManagement MoneyManager;
     public RenownManagement RenownManager;
     public VirtualCurrencyManagement VirtualCurrencyManager;
-    public FloatUpSpawner FloatUpSpawner;
     public GameObject RewardPopUpPrefab;
     public Transform TransformCanvas;
     public GameObject LootboxPopUpPrefab;

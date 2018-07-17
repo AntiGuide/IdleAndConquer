@@ -24,9 +24,6 @@ public class InputHandler : MonoBehaviour {
     /// <summary>Determines how fast the camera will zoom</summary>
     public float OrthoZoomSpeed = 0.5f;
 
-    /// <summary>Reference to the MainMenueController</summary>
-    public MainMenueController MainMenueControll;
-
     public bool IsMissionMap;
 
     /// <summary>The position where the touch began</summary>

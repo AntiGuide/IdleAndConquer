@@ -6,7 +6,6 @@ public class Mission : MonoBehaviour {
     public MissionDetails MissionDetails;
     public General MissionGeneral;
     public List<Unit> Units;
-    public MissionManager MissionManager;
     private readonly MissionQueue missionQueue;
 
     public Mission(MissionDetails missionDetails, UIInteraction uiInteractions, General general = null, List<Unit> units = null) {

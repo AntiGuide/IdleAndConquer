@@ -5,9 +5,6 @@ using UnityEngine.UI;
 /// Class for handling button inputs for creation of buildings.
 /// </summary>
 public class BuildButtonManager : MonoBehaviour {
-    /// <summary>Attached BuildBuilding object (One per base)</summary>
-    public BuildBuilding Builder;
-
     /// <summary>UI text element to display the cost of a building</summary>
     public Text Cost;
 
