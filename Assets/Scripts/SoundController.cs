@@ -36,17 +36,17 @@ public class SoundController : MonoBehaviour {
         retAudioSource.clip = this.Clips[(int)sound];
         retAudioSource.volume = volume;
         retAudioSource.Play();
-        StartCoroutine(this.StopLoopingSoundDelayed(retAudioSource, 1f));
+        StartCoroutine(StopLoopingSoundDelayed(retAudioSource, 1f));
         return retAudioSource;
     }
 
-    public void StopLoopingSound(ref AudioSource inpAudioSource) {
+    public static void StopLoopingSound(ref AudioSource inpAudioSource) {
         UnityEngine.Object.Destroy(inpAudioSource);
     }
 
-    private IEnumerator StopLoopingSoundDelayed(AudioSource retAudioSource, float delay) {
+    private static IEnumerator StopLoopingSoundDelayed(AudioSource retAudioSource, float delay) {
         yield return new WaitForSeconds(delay);
-        this.StopLoopingSound(ref retAudioSource);
+        StopLoopingSound(ref retAudioSource);
     }
 
     private void Start() {

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 public class OnClickDeploy : MonoBehaviour {
-    private static int MaxSlots = 5;
+    private const int MaxSlots = 5;
     public static int DeployedUnits = 0;
     public Text RemainingUnitsText;
     public Text UnitNameText;

@@ -72,10 +72,10 @@ public class FloatUp : MonoBehaviour {
 
         if (this.value > 0) {
             this.color = Color.green;
-            this.text.text = "<color=#" + this.ColorToHex(new Color(this.color.r, this.color.g, this.color.b, 1 - this.percentage)) + ">+</color>";
+            this.text.text = "<color=#" + ColorToHex(new Color(this.color.r, this.color.g, this.color.b, 1 - this.percentage)) + ">+</color>";
         } else {
             this.color = new Color(0.8f, 0f, 0f);
-            this.text.text = "<color=#" + this.ColorToHex(new Color(this.color.r, this.color.g, this.color.b, 1 - this.percentage)) + ">-</color>";
+            this.text.text = "<color=#" + ColorToHex(new Color(this.color.r, this.color.g, this.color.b, 1 - this.percentage)) + ">-</color>";
         }
 
         this.text.text += " " + Math.Abs(this.value);
@@ -89,7 +89,7 @@ public class FloatUp : MonoBehaviour {
         }
     }
 
-    private string ColorToHex(Color color) {
+    private static string ColorToHex(Color color) {
         Color32 color32 = color;
         return color32.r.ToString("X2") + color32.g.ToString("X2") + color32.b.ToString("X2") + color32.a.ToString("X2");
     }

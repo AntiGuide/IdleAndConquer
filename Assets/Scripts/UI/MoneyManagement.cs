@@ -71,7 +71,7 @@ public class MoneyManagement : MonoBehaviour {
     /// </summary>
     /// <param name="moneyToCheck">How much should be checked</param>
     /// <returns>Returns if player has at least this amount of money</returns>
-    public bool HasMoney(long moneyToCheck) {
+    public static bool HasMoney(long moneyToCheck) {
         return money >= moneyToCheck;
     }
 
@@ -103,7 +103,7 @@ public class MoneyManagement : MonoBehaviour {
             this.GetComponent<Text>().text = FormatMoney(this.moneyAmountShown);
         } else if (!this.isFinished) {
             this.isFinished = true;
-            this.SoundControll.StopLoopingSound(ref this.audioSource);
+            SoundController.StopLoopingSound(ref this.audioSource);
         }
     }
 

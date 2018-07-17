@@ -18,7 +18,7 @@ public class MissionQueue : MonoBehaviour {
         missionUI.MissionQueue = this;
     }
 
-    public void DestroyMissionBar(MissionUI missionUI) {
+    public static void DestroyMissionBar(MissionUI missionUI) {
         UnityEngine.Object.Destroy(missionUI.transform.parent.gameObject);
     }
 
