@@ -8,8 +8,8 @@ public class General : MonoBehaviour {
     private float chanceToPermaDeath;
 
     public General(int wins, int loses) {
-        Wins = wins;
-        Loses = loses;
+        this.Wins = wins;
+        this.Loses = loses;
     }
 
     /// <summary>Getter/Setter for country</summary>
@@ -31,8 +31,7 @@ public class General : MonoBehaviour {
     /// <param name="country">The generals country</param>
     /// <param name="generalName">The generals name</param>
     /// <param name="isSentToMission"></param>
-    public void InitGeneral(float chanceToPermaDeath, string country, string generalName,
-        bool isSentToMission = false) {
+    public void InitGeneral(float chanceToPermaDeath, string country, string generalName, bool isSentToMission = false) {
         this.chanceToPermaDeath = chanceToPermaDeath;
         this.Country = country;
         this.GeneralName = generalName;

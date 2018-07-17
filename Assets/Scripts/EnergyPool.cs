@@ -37,6 +37,13 @@ public class EnergyPool : MonoBehaviour {
     }
 
     /// <summary>
+    /// Loads and displays the curent energy of a base
+    /// </summary>
+    public void SetActive() {
+        this.SetEnergy(this.CurEnergy);
+    }
+
+    /// <summary>
     /// Sets the energy to a specific value
     /// </summary>
     /// <param name="valueToSet">To which level do we set the energy</param>
@@ -47,13 +54,6 @@ public class EnergyPool : MonoBehaviour {
         } else {
             throw new System.ArgumentException("Can not set an Energy Value that is not in the range of min and max Energy Value", "valueToSet");
         }
-    }
-
-    /// <summary>
-    /// Loads and displays the curent energy of a base
-    /// </summary>
-    public void SetActive() {
-        this.SetEnergy(this.CurEnergy);
     }
 
     /// <summary>

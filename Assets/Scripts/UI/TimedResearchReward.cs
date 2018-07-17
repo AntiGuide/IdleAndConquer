@@ -19,7 +19,7 @@ public class TimedResearchReward : MonoBehaviour {
     private void Update() {
         this.fillImage.fillAmount = Mathf.Min((this.SecondsComplete - (Time.time - this.timeBeginning)) / this.SecondsComplete, 1f);
         this.RemainingTimeText.text = (this.SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) / 60 + ":" + Mathf.RoundToInt((this.SecondsComplete - ((int)Time.time - (int)this.timeBeginning)) % 60).ToString("00");
-        if ((int) Time.time - (int) this.timeBeginning < this.SecondsComplete) return;
+        if ((int)Time.time - (int)this.timeBeginning < this.SecondsComplete) return;
         // Complete
         this.AppPauseHandle.DailyLootBoxPopUp();
         this.timeBeginning = Time.time;

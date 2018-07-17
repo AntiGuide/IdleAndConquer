@@ -19,7 +19,7 @@ public class BuildColorChanger : MonoBehaviour {
     private readonly List<Texture2D> finishedBuildingTextureList = new List<Texture2D>();
 
     public BuildColorChanger() {
-        CollidingBuildings = 0;
+        this.CollidingBuildings = 0;
     }
 
     /// <summary>Getter/Setter for isBuilt</summary>

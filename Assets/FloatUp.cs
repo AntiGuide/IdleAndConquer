@@ -51,6 +51,11 @@ public class FloatUp : MonoBehaviour {
         this.destination = this.startPos + new Vector2(0f, travelDistance);
     }
 
+    private static string ColorToHex(Color color) {
+        Color32 color32 = color;
+        return color32.r.ToString("X2") + color32.g.ToString("X2") + color32.b.ToString("X2") + color32.a.ToString("X2");
+    }
+
     // Use this for initialization
     private void Start() {
         this.text = gameObject.GetComponentInChildren<Text>();
@@ -89,10 +94,5 @@ public class FloatUp : MonoBehaviour {
             default:
                 throw new ArgumentOutOfRangeException();
         }
-    }
-
-    private static string ColorToHex(Color color) {
-        Color32 color32 = color;
-        return color32.r.ToString("X2") + color32.g.ToString("X2") + color32.b.ToString("X2") + color32.a.ToString("X2");
     }
 }

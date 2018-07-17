@@ -52,16 +52,16 @@ public class UIInteraction : MonoBehaviour {
         this.MainMenueControll.ToggleMenue(5);
     }
 
-    private void MissionMapLoad() {
-        this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
-        this.MainContainer.SetActive(false);
-        this.MissionMapContainer.SetActive(true);
-    }
-
     public void MainLoad() {
         this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
         this.MissionMapContainer.SetActive(false);
         this.MainContainer.SetActive(true);
+    }
+
+    private void MissionMapLoad() {
+        this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
+        this.MainContainer.SetActive(false);
+        this.MissionMapContainer.SetActive(true);
     }
 
     private void CheckPlayerBuilding() {

@@ -85,10 +85,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
         }
     }
 
-    private void ShowUnitsBuilding() {
-        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
-    }
-
     /// <summary>Orders unit when a button is clicked</summary>
     public void OrderUnitOnClick() {
         this.AttachedUnit.Order(ref this.MoneyManager);
@@ -141,6 +137,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
     public void SetUnitsBuilding(int buildingUnits) {
         this.buildingUnits = buildingUnits;
         this.ShowUnitsBuilding();
+    }
+
+    private void ShowUnitsBuilding() {
+        this.unitBuilding.text = this.buildingUnits == 0 ? string.Empty : this.buildingUnits.ToString();
     }
 
     /// <summary>

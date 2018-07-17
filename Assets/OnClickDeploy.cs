@@ -2,10 +2,10 @@
 using UnityEngine.UI;
 
 public class OnClickDeploy : MonoBehaviour {
-    private const int MaxSlots = 5;
     public static int DeployedUnits = 0;
     public Text RemainingUnitsText;
     public Text UnitNameText;
+    private const int MaxSlots = 5;
     private ShowChosenGeneral showChosenGeneral;
     private Unit attachedUnit;
     private int unitCount;

@@ -15,7 +15,7 @@ public class MissionQueue : MonoBehaviour {
         var missionUI = Instantiate(this.MissionBar, this.transform).GetComponentInChildren<MissionUI>();
         missionUI.Initialize(mission);
         this.missionUIs.Add(missionUI);
-        missionUI.MissionQueue = this;
+        missionUI.AttachedMissionQueue = this;
     }
 
     public static void DestroyMissionBar(MissionUI missionUI) {

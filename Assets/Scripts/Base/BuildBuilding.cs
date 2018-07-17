@@ -31,13 +31,6 @@ public class BuildBuilding : MonoBehaviour {
 
     public static bool PlayerBuilding { get; private set; }
 
-    private Vector3 ToGrid(Vector3 allignToGrid) {
-        var x = Mathf.Round(allignToGrid.x / this.CellSize) * this.CellSize;
-        var y = allignToGrid.y;
-        var z = Mathf.Round(allignToGrid.z / this.CellSize) * this.CellSize;
-        return new Vector3(x, y, z);
-    }
-
     public void BuildABuilding(int buildingID, long costBuilding, int costEnergy) {
         this.costBuilding = costBuilding;
         this.costEnergy = costEnergy;
@@ -89,6 +82,13 @@ public class BuildBuilding : MonoBehaviour {
         this.playerBuildingThisBase = false;
         InputHandler.BlockCameraMovement = false;
         this.BuildConfirmUI.SetActive(false);
+    }
+
+    private Vector3 ToGrid(Vector3 allignToGrid) {
+        var x = Mathf.Round(allignToGrid.x / this.CellSize) * this.CellSize;
+        var y = allignToGrid.y;
+        var z = Mathf.Round(allignToGrid.z / this.CellSize) * this.CellSize;
+        return new Vector3(x, y, z);
     }
 
     // Use this for initialization

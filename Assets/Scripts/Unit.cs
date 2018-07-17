@@ -5,6 +5,10 @@ using UnityEngine;
 public class Unit {
     public static readonly float[] HPBoostLevel = { 1f, 1.05f, 1.075f, 1.1f, 1.125f, 1.15f, 1.175f, 1.2f, 1.225f, 1.25f };
 
+    public static readonly List<Unit> AllUnits = new List<Unit>();
+
+    public int SentToMission = 0;
+
     private static readonly int[] OtherBoostLevel = { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 };
 
     private static readonly int[] ArmorTypeLevel = { 0, 0, 0, 0 };
@@ -16,10 +20,6 @@ public class Unit {
     private static readonly int[] CritGroupLevel = { 0, 0, 0 };
 
     private static readonly int[] BuildtimeGroupLevel = { 0, 0, 0 };
-
-    public static readonly List<Unit> AllUnits = new List<Unit>();
-
-    public int SentToMission = 0;
 
     private int Level = 0;
 
@@ -59,17 +59,14 @@ public class Unit {
     /// <param name="buildtime">The time it takes to build this unit in seconds</param>
     /// <param name="createAndOrderButton">The script that triggeres a production of this unit</param>
     /// <param name="baseSwitch">The script that handles a base switch</param>
-    public Unit(string unitName, int hp, int attack, float critChance, int defense, Type type, ArmorType armorType,
-        float buildtime, CreateAndOrderUnit createAndOrderButton, BaseSwitcher baseSwitch) {
+    public Unit(string unitName, int hp, int attack, float critChance, int defense, Type type, ArmorType armorType, float buildtime, CreateAndOrderUnit createAndOrderButton, BaseSwitcher baseSwitch) {
         this.UnitName = unitName;
         this.hp = hp;
         this.attack = attack;
         this.critChance = critChance;
-        // this.critMultiplier = critMultiplier;
         this.defense = defense;
         this.UnitType = type;
         this.ArmorTypeUnit = armorType;
-        // this.cost = cost;
         this.buildtime = buildtime;
         this.CreateAndOrderButton = createAndOrderButton;
         this.baseSwitch = baseSwitch;
@@ -140,28 +137,6 @@ public class Unit {
         return returnDamage;
     }
 
-    /// <summary>
-    /// Calculates the attack value without the eventual passives against the enemy
-    /// </summary>
-    private int GetAttack() {
-        var returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.UnitType]];
-        returnDamage += Passives.GetAbsolutPassive(this.UnitType, Passives.Value.ATTACK);
-        returnDamage = (int)(returnDamage * Passives.GetPassive(this.UnitType, Passives.Value.ATTACK));
-
-        returnDamage += Passives.GetAbsolutPassiveArmortype(this.ArmorTypeUnit, Passives.Value.ATTACK);
-        returnDamage = (int)(returnDamage * Passives.GetPassiveArmortype(this.ArmorTypeUnit, Passives.Value.ATTACK));
-
-        return returnDamage;
-    }
-
-    private int GetHP() {
-        return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level] * Unit.HPBoostLevel[Unit.HPGroupLevel[(int)this.UnitType]]);
-    }
-
-    private int GetDef() {
-        return this.defense + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ArmorTypeLevel[(int)this.ArmorTypeUnit]];
-    }
-
     public float GetCritChance() {
         return this.critChance + Unit.OtherBoostLevel[this.Level] / 100f + Unit.OtherBoostLevel[Unit.CritGroupLevel[(int)this.UnitType]] / 100f;
     }
@@ -182,5 +157,27 @@ public class Unit {
         if (this.UnitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp) > 0) {
             this.CreateAndOrderButton.AddPowerlevel(this.UnitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp), false);
         }
+    }
+
+    /// <summary>
+    /// Calculates the attack value without the eventual passives against the enemy
+    /// </summary>
+    private int GetAttack() {
+        var returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.UnitType]];
+        returnDamage += Passives.GetAbsolutPassive(this.UnitType, Passives.Value.ATTACK);
+        returnDamage = (int)(returnDamage * Passives.GetPassive(this.UnitType, Passives.Value.ATTACK));
+
+        returnDamage += Passives.GetAbsolutPassiveArmortype(this.ArmorTypeUnit, Passives.Value.ATTACK);
+        returnDamage = (int)(returnDamage * Passives.GetPassiveArmortype(this.ArmorTypeUnit, Passives.Value.ATTACK));
+
+        return returnDamage;
+    }
+
+    private int GetHP() {
+        return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level] * Unit.HPBoostLevel[Unit.HPGroupLevel[(int)this.UnitType]]);
+    }
+
+    private int GetDef() {
+        return this.defense + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ArmorTypeLevel[(int)this.ArmorTypeUnit]];
     }
 }

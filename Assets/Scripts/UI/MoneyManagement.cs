@@ -26,8 +26,10 @@ public class MoneyManagement : MonoBehaviour {
     /// <summary>The amount of money that is goal of the lerp</summary>
     private long moneyToLerpTo;
 
+    /// <summary>Indicates if the money display is finished lerping</summary>
     private bool isFinished = true;
 
+    /// <summary>The own audio source for money lerping</summary>
     private AudioSource audioSource;
 
     /// <summary>
@@ -36,8 +38,17 @@ public class MoneyManagement : MonoBehaviour {
     /// <param name="money">The amount of money</param>
     /// <returns>Formatted money as a string</returns>
     public static string FormatMoney(long money) {
-        var cultureInfo = new CultureInfo("de-DE", false) {NumberFormat = {CurrencySymbol = string.Empty}};
+        var cultureInfo = new CultureInfo("de-DE", false) { NumberFormat = { CurrencySymbol = string.Empty } };
         return money.ToString("C0", cultureInfo).TrimEnd();
+    }
+
+    /// <summary>
+    /// Checks money without subbing it.
+    /// </summary>
+    /// <param name="moneyToCheck">How much should be checked</param>
+    /// <returns>Returns if player has at least this amount of money</returns>
+    public static bool HasMoney(long moneyToCheck) {
+        return money >= moneyToCheck;
     }
 
     /// <summary>
@@ -56,21 +67,14 @@ public class MoneyManagement : MonoBehaviour {
     /// <param name="moneyToSub">The amount to sub</param>
     /// <returns>If the player had enough money for the transaction. True is returned and the transaction is performed. (False --> no transaction)</returns>
     public bool SubMoney(long moneyToSub) {
-        if (money < moneyToSub) return false;
+        if (money < moneyToSub) {
+            return false;
+        }
+
         money = money - moneyToSub;
         PlayerPrefs.SetInt("money", (int)MoneyManagement.money);
         this.OutputMoney(money, true);
         return true;
-
-    }
-
-    /// <summary>
-    /// Checks money without subbing it.
-    /// </summary>
-    /// <param name="moneyToCheck">How much should be checked</param>
-    /// <returns>Returns if player has at least this amount of money</returns>
-    public static bool HasMoney(long moneyToCheck) {
-        return money >= moneyToCheck;
     }
 
     /// <summary>

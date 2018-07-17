@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BlueprintStack : MonoBehaviour {
-    private static readonly int[] NeededBlueprintsLevel = { 1, 2, 8, 16, 32, 48, 64, 80, 96, 112 };
-
     public BlueprintManager BlueprintMan;
 
     public CreateAndOrderUnit CreateAndOrderUnitStack;
@@ -16,6 +14,8 @@ public class BlueprintStack : MonoBehaviour {
     public Image BuildingOverlay;
 
     public BaseSwitcher BaseSwitch;
+
+    private static readonly int[] NeededBlueprintsLevel = { 1, 2, 8, 16, 32, 48, 64, 80, 96, 112 };
 
     private static readonly float[] buildTime = { 60f, 120f, 480f, 960f, 1920f, 2280f, 3840f, 4800f, 5760f, 6720f };
 

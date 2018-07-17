@@ -6,6 +6,7 @@ using UnityEngine;
 /// A class to manage the generation of generals
 /// </summary>
 public class GeneralManager : MonoBehaviour {
+    /// <summary>Holds all generals as a static variable</summary>
     public static readonly List<General> AllGenerals = new List<General>();
     
     /// <summary>The minimum generatable chance of a general to die permanently</summary>
@@ -69,7 +70,7 @@ public class GeneralManager : MonoBehaviour {
     /// Use this for initialization
     /// </summary>
     private void Start() {
-        for (var tmpGeneralID = 0; ; tmpGeneralID++) {
+        for (var tmpGeneralID = 0;; tmpGeneralID++) {
             this.chanceDeath = PlayerPrefs.GetFloat("GeneralChanceDeath_" + tmpGeneralID, -1f);
             this.country = PlayerPrefs.GetString("GeneralCountry_" + tmpGeneralID, string.Empty);
             this.generalName = PlayerPrefs.GetString("GeneralName_" + tmpGeneralID, string.Empty);

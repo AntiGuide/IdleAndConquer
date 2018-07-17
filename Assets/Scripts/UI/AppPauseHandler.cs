@@ -19,13 +19,16 @@ public class AppPauseHandler : MonoBehaviour {
     /// <summary>The prefab of a PlayerBackNotification</summary>
     public GameObject PlayerBackNotification;
 
+    /// <summary>The daily reward loot box pop up prefab</summary>
     public GameObject DailyRewardLootBoxPopUp;
 
     /// <summary>The transform to attach a new instance of a PlayerBackNotification to</summary>
     public Transform ParentPlayerBackNotification;
 
+    /// <summary>The sound controller to start sfx and bgm</summary>
     public SoundController soundController;
 
+    /// <summary>The player back notification for daily loot</summary>
     public GameObject PlayerBackNotificationDailyLoot;
 
     /// <summary>Time since login</summary>
@@ -34,6 +37,7 @@ public class AppPauseHandler : MonoBehaviour {
     /// <summary>The date and time the user paused the app</summary>
     private DateTime exitTime = new DateTime(1970, 1, 1);
 
+    /// <summary>Triggers the notification for a daily lootbox</summary>
     public void DailyLootBoxPopUp() {
         var pbn = Instantiate(this.PlayerBackNotificationDailyLoot, this.ParentPlayerBackNotification).GetComponent<PlayerBackNotification>();
         pbn.InitializeDaily(this.DailyRewardLootBoxPopUp, this.ParentPlayerBackNotification);
@@ -56,9 +60,12 @@ public class AppPauseHandler : MonoBehaviour {
                     additionalMoney += h.AddAppPauseProgressTime(secondsSincePause % (long)h.MiningSpeed);
                 }
 
-                if (Harvesters.Count < 1 ||
-                    secondsSincePause - secondsSincePause % (long) Harvesters[0].MiningSpeed <= 0 &&
-                    additionalMoney <= 0) return;
+                if (Harvesters.Count < 1 || 
+                    (secondsSincePause - (secondsSincePause % (long)Harvesters[0].MiningSpeed) <= 0 && 
+                     additionalMoney <= 0)) {
+                    return;
+                }
+
                 var go = Instantiate(this.PlayerBackNotification, this.ParentPlayerBackNotification);
                 var pbn = go.GetComponent<PlayerBackNotification>();
                 pbn.Initialize("You earned money while you were gone", this.FloatUpSpawn, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, this.soundController, ref Harvesters);
@@ -66,11 +73,6 @@ public class AppPauseHandler : MonoBehaviour {
         } else {
             this.exitTime = System.DateTime.Now;
         }
-    }
-
-    /// <summary>Use this for initialization</summary>
-    private void Start() {
-        // Set exitTime to PlayerPref Application Quit?
     }
 
     /// <summary>Update is called once per frame</summary>

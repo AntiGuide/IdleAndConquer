@@ -26,6 +26,10 @@ public class SoundController : MonoBehaviour {
         MISSION_COMPLETE
     }
 
+    public static void StopLoopingSound(ref AudioSource inpAudioSource) {
+        UnityEngine.Object.Destroy(inpAudioSource);
+    }
+
     public void StartSound(Sounds sound, float volume = 1f) {
         this.AudioSource1.PlayOneShot(this.Clips[(int)sound], volume);
     }
@@ -36,12 +40,8 @@ public class SoundController : MonoBehaviour {
         retAudioSource.clip = this.Clips[(int)sound];
         retAudioSource.volume = volume;
         retAudioSource.Play();
-        StartCoroutine(StopLoopingSoundDelayed(retAudioSource, 1f));
+        this.StartCoroutine(StopLoopingSoundDelayed(retAudioSource, 1f));
         return retAudioSource;
-    }
-
-    public static void StopLoopingSound(ref AudioSource inpAudioSource) {
-        UnityEngine.Object.Destroy(inpAudioSource);
     }
 
     private static IEnumerator StopLoopingSoundDelayed(AudioSource retAudioSource, float delay) {
@@ -50,7 +50,7 @@ public class SoundController : MonoBehaviour {
     }
 
     private void Start() {
-        StartCoroutine(this.PlayBGM());
+        this.StartCoroutine(this.PlayBGM());
     }
 
     private System.Collections.IEnumerator PlayBGM() {
