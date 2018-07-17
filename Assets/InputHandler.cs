@@ -42,30 +42,26 @@ public class InputHandler : MonoBehaviour {
     private int layerMask;
     private RaycastHit hitInformation;
 
-    /// <summary>Use this for initialization</summary>
-    void Start() {
-    }
-
     /// <summary>Update is called once per frame</summary>
-    void Update() {
+    private void Update() {
         // TODO Mobile Pointer 0
         if (Input.touchCount == 2 && !EventSystem.current.IsPointerOverGameObject()) {
             this.blockMapMovement = true;
 
             // Store both touches.
-            Touch touchZero = Input.GetTouch(0);
-            Touch touchOne = Input.GetTouch(1);
+            var touchZero = Input.GetTouch(0);
+            var touchOne = Input.GetTouch(1);
 
             // Find the position in the previous frame of each touch.
-            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+            var touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            var touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
             // Find the magnitude of the vector (the distance) between the touches in each frame.
-            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+            var prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            var touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
 
             // Find the difference in the distances between each frame.
-            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+            var deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
             // ... change the orthographic size based on the change in distance between the touches.
             Camera.main.orthographicSize += deltaMagnitudeDiff * this.OrthoZoomSpeed;
@@ -73,7 +69,7 @@ public class InputHandler : MonoBehaviour {
 
             // Make sure the orthographic size never drops below zero.
         } else if (!EventSystem.current.IsPointerOverGameObject()) {
-            foreach (Touch touch in Input.touches) {
+            foreach (var touch in Input.touches) {
                 this.HandleTouch(touch.fingerId, touch.position, touch.phase);
             }
         }
@@ -121,12 +117,12 @@ public class InputHandler : MonoBehaviour {
                     }
 
                     if (this.movedDuringTouch) {
-                        Ray curPosRay = Camera.main.ScreenPointToRay(touchPosition);
+                        var curPosRay = Camera.main.ScreenPointToRay(touchPosition);
                         RaycastHit curHitInfo;
                         if (Physics.Raycast(curPosRay, out curHitInfo, 2000.0f, LayerMask.GetMask("Plane"))) {
                             RaycastHit lastHitInfo;
                             if (Physics.Raycast(this.lastPosRay, out lastHitInfo, 2000.0f, LayerMask.GetMask("Plane"))) {
-                                Vector3 deltaPos = curHitInfo.point - lastHitInfo.point;
+                                var deltaPos = curHitInfo.point - lastHitInfo.point;
                                 deltaPos.y = 0;
                                 deltaPos *= -1;
                                 this.MoveInBounds(transform.position + deltaPos);

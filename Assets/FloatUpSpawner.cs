@@ -20,7 +20,7 @@ public class FloatUpSpawner : MonoBehaviour {
     /// <param name="type">The type of the generated FloatUp element. For example this could decide between Powerlevel and Dollar.</param>
     /// <param name="pos">The position at which the FloatUp will spawn and begin traveling</param>
     public void GenerateFloatUp(long value, FloatUp.ResourceType type, Vector2 pos) {
-        GameObject go = Instantiate(this.FloatUpPrefab, transform);
+        var go = Instantiate(this.FloatUpPrefab, transform);
         if (value > 0) {
             pos += new Vector2(0, 25);
         } else {

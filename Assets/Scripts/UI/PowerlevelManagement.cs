@@ -57,7 +57,7 @@ public class PowerlevelManagement : MonoBehaviour {
     /// <summary>
     /// Update is called once per frame
     /// </summary>
-    void Update() {
+    private void Update() {
         this.OutputPowerlevel(ref powerlevel);
     }
 

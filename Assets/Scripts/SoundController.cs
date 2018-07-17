@@ -31,7 +31,7 @@ public class SoundController : MonoBehaviour {
     }
 
     public AudioSource StartLoopingSound(Sounds sound, float volume) {
-        AudioSource retAudioSource = this.gameObject.AddComponent<AudioSource>();
+        var retAudioSource = this.gameObject.AddComponent<AudioSource>();
         retAudioSource.loop = true;
         retAudioSource.clip = this.Clips[(int)sound];
         retAudioSource.volume = volume;
@@ -55,8 +55,8 @@ public class SoundController : MonoBehaviour {
 
     private System.Collections.IEnumerator PlayBGM() {
         this.AudioSourceBGM.volume = this.volumeBGM;
-        int aktTrackNumber = -1;
-        int nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, this.BGMClips.Length - 1));
+        var aktTrackNumber = -1;
+        var nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, this.BGMClips.Length - 1));
         this.AudioSourceBGM.clip = this.BGMClips[nextTrackNumber];
         this.AudioSourceBGM.clip.LoadAudioData();
         while (true) {

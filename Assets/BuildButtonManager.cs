@@ -34,8 +34,8 @@ public class BuildButtonManager : MonoBehaviour {
     }
 
     /// <summary>Use this for initialization</summary>
-    void Start() {
-        BuildingManager buildingManager = this.AttachedBuilding.GetComponentInChildren<BuildingManager>();
+    private void Start() {
+        var buildingManager = this.AttachedBuilding.GetComponentInChildren<BuildingManager>();
         this.costBuilding = buildingManager.BuildCost;
         this.costEnergy = buildingManager.CostEnergy;
         this.Cost.text = MoneyManagement.FormatMoney(this.costBuilding);

@@ -19,14 +19,10 @@ public class EnergyPool : MonoBehaviour {
     /// </summary>
     /// <param name="energyToAdd">How much energy to add</param>
     /// <returns>Returns wether the change is possible</returns>
-    public bool AddEnergy(float energyToAdd) {
-        if (this.IsInBounds(this.CurEnergy + energyToAdd)) {
-            this.CurEnergy += energyToAdd;
-            this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy);
-            return true;
-        } else {
-            return false;
-        }
+    public void AddEnergy(float energyToAdd) {
+        if (!this.IsInBounds(this.CurEnergy + energyToAdd)) return;
+        this.CurEnergy += energyToAdd;
+        this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy);
     }
 
     /// <summary>
@@ -34,14 +30,10 @@ public class EnergyPool : MonoBehaviour {
     /// </summary>
     /// <param name="energyToSub">How much energy to sub</param>
     /// <returns>Returns wether the change is possible</returns>
-    public bool SubEnergy(float energyToSub) {
-        if (this.IsInBounds(this.CurEnergy - energyToSub)) {
-            this.CurEnergy -= energyToSub;
-            this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy);
-            return true;
-        } else {
-            return false;
-        }
+    public void SubEnergy(float energyToSub) {
+        if (!this.IsInBounds(this.CurEnergy - energyToSub)) return;
+        this.CurEnergy -= energyToSub;
+        this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy);
     }
 
     /// <summary>

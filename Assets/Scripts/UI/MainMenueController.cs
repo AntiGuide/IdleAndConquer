@@ -58,7 +58,7 @@ public class MainMenueController : MonoBehaviour {
     /// </summary>
     /// <param name="menueCon">The MenueController to be toggled</param>
     public void ToggleMenue(MenueController menueCon) {
-        for (int i = 0; i < this.menueController.Length; i++) {
+        for (var i = 0; i < this.menueController.Length; i++) {
             if (menueCon == this.menueController[i]) {
                 this.ToggleMenue(i + 1);
             }
@@ -77,8 +77,8 @@ public class MainMenueController : MonoBehaviour {
     /// <param name="val">The value contains info wether the UI should be activated (true) or deactivated (false)</param>
     public void ActivateDeployUI(bool val) {
         if (!val) {
-            Transform unitContainer = this.DeployUI.transform.Find("BG").Find("UnitContainer");
-            for (int i = 0; i < unitContainer.childCount; i++) {
+            var unitContainer = this.DeployUI.transform.Find("BG").Find("UnitContainer");
+            for (var i = 0; i < unitContainer.childCount; i++) {
                 UnityEngine.Object.Destroy(unitContainer.GetChild(i).gameObject);
             }
         }
@@ -87,12 +87,12 @@ public class MainMenueController : MonoBehaviour {
     }
 
     /// <summary>Use this for initialization</summary>
-    void Start() {
+    private void Start() {
         this.menueController = new MenueController[this.Menue.Length];
-        int i = 0;
-        bool standardSelected = false;
+        var i = 0;
+        var standardSelected = false;
 
-        foreach (GameObject men in this.Menue) {
+        foreach (var men in this.Menue) {
             if (men != null && !standardSelected) {
                 men.SetActive(true);
                 this.enabledMenue = i;
@@ -106,7 +106,7 @@ public class MainMenueController : MonoBehaviour {
         }
 
         i = 0;
-        foreach (GameObject men in this.Menue) {
+        foreach (var men in this.Menue) {
             if (men != null) {
                 this.menueController[i] = men.GetComponent<MenueController>();
             }

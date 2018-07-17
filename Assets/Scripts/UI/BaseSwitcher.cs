@@ -59,8 +59,8 @@ public class BaseSwitcher : MonoBehaviour {
     /// <param name="rightPossible">Is right possible</param>
     public void CheckPossibilities(out bool leftPossible, out bool rightPossible) {
         // Check if switches in the directions are possible (more than 1 base enabled)
-        int basecount = 0;
-        foreach (bool b in this.EnablesBases) {
+        var basecount = 0;
+        foreach (var b in this.EnablesBases) {
             basecount = b ? ++basecount : basecount;
         }
 

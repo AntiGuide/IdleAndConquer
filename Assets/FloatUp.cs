@@ -52,13 +52,13 @@ public class FloatUp : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         this.text = gameObject.GetComponentInChildren<Text>();
         this.shadows = gameObject.GetComponentsInChildren<Shadow>();
     }
 
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         this.percentage += Time.deltaTime / this.fadeTime;
         if (this.percentage >= 1f) {
             UnityEngine.Object.Destroy(this.gameObject);
@@ -66,7 +66,7 @@ public class FloatUp : MonoBehaviour {
 
         transform.position = Vector2.Lerp(this.startPos, this.destination, this.percentage);
         this.text.color = new Color(this.text.color.r, this.text.color.g, this.text.color.b, 1f - this.percentage);
-        foreach (Shadow shadow in this.shadows) {
+        foreach (var shadow in this.shadows) {
             shadow.effectColor = new Color(shadow.effectColor.r, shadow.effectColor.g, shadow.effectColor.b, 1f - this.percentage);
         }
 

@@ -71,7 +71,7 @@ public class RenownManagement : MonoBehaviour {
     }
 
     /// <summary>Sets the renown to 0 in the beginning</summary>
-    void Start() {
+    private void Start() {
         this.SetRenown(PlayerPrefs.GetInt("renown", 0));
     }
 

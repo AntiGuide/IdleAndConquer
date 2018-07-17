@@ -85,7 +85,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     /// <param name="animated">Determines wether this is done with an animation or instant</param>
     public void Expand(bool animated) {
         if (animated) {
-            float y = canvasHeight * this.MenueExpandedHeight;
+            var y = canvasHeight * this.MenueExpandedHeight;
             this.MainMenueControll.IsExpanded = true;
             this.startMarker = transform.position;
             this.endMarker = new Vector3(transform.position.x, y, 0);
@@ -108,7 +108,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     /// <param name="animated">Determines wether this is done with an animation or instant</param>
     public void Unexpand(bool animated) {
         if (animated) {
-            float y = this.startYMenue;
+            var y = this.startYMenue;
             this.MainMenueControll.IsExpanded = false;
             this.startMarker = transform.position;
             this.endMarker = new Vector3(transform.position.x, y, 0);
@@ -123,17 +123,17 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     }
 
     /// <summary>Use this for initialization</summary>
-    void Start() {
+    private void Start() {
         canvasHeight = this.CanvasRectTransform.rect.height * this.CanvasRectTransform.localScale.y;
         this.startYMenue = this.transform.position.y;
     }
 
     /// <summary>Update is called once per frame</summary>
-    void Update() {
+    private void Update() {
         if (this.menueLerping) {
-            float distCovered = (Time.time - this.lerpStartTime) * this.LerpSpeed * this.distanceStartEndMarker;
+            var distCovered = (Time.time - this.lerpStartTime) * this.LerpSpeed * this.distanceStartEndMarker;
             
-            float fracJourney = distCovered / this.distanceStartEndMarker;
+            var fracJourney = distCovered / this.distanceStartEndMarker;
             if (this.distanceStartEndMarker <= 1f) {
                 this.menueLerping = false;
                 return;

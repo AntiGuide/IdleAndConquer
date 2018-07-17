@@ -35,7 +35,7 @@ public class AppPauseHandler : MonoBehaviour {
     private DateTime exitTime = new DateTime(1970, 1, 1);
 
     public void DailyLootBoxPopUp() {
-        PlayerBackNotification pbn = Instantiate(this.PlayerBackNotificationDailyLoot, this.ParentPlayerBackNotification).GetComponent<PlayerBackNotification>();
+        var pbn = Instantiate(this.PlayerBackNotificationDailyLoot, this.ParentPlayerBackNotification).GetComponent<PlayerBackNotification>();
         pbn.InitializeDaily(this.DailyRewardLootBoxPopUp, this.ParentPlayerBackNotification);
     }
 
@@ -43,24 +43,25 @@ public class AppPauseHandler : MonoBehaviour {
     /// Triggers one time on application pause or unpause
     /// </summary>
     /// <param name="pauseStatus">True if game is paused</param>
-    void OnApplicationPause(bool pauseStatus) {
+    private void OnApplicationPause(bool pauseStatus) {
         if (!pauseStatus) {
             this.loginTimer = 0f;
             if (this.exitTime.CompareTo(DateTime.MinValue) == 0) {
                 this.TestText.text = "Willkommen";
             } else {
                 this.TestText.text = "Willkommen" + Environment.NewLine + Math.Round((DateTime.Now - this.exitTime).TotalSeconds) + " Sek. Abwesenheit";
-                long secondsSincePause = (long)Math.Round((DateTime.Now - this.exitTime).TotalSeconds);
+                var secondsSincePause = (long)Math.Round((DateTime.Now - this.exitTime).TotalSeconds);
                 long additionalMoney = 0;
-                foreach (Harvester h in Harvesters) {
+                foreach (var h in Harvesters) {
                     additionalMoney += h.AddAppPauseProgressTime(secondsSincePause % (long)h.MiningSpeed);
                 }
 
-                if (Harvesters.Count >= 1 && (secondsSincePause - (secondsSincePause % (long)Harvesters[0].MiningSpeed) > 0 || additionalMoney > 0)) {
-                    GameObject go = Instantiate(this.PlayerBackNotification, this.ParentPlayerBackNotification);
-                    PlayerBackNotification pbn = go.GetComponent<PlayerBackNotification>();
-                    pbn.Initialize("You earned money while you were gone", this.FloatUpSpawn, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, this.soundController, ref Harvesters);
-                }
+                if (Harvesters.Count < 1 ||
+                    secondsSincePause - secondsSincePause % (long) Harvesters[0].MiningSpeed <= 0 &&
+                    additionalMoney <= 0) return;
+                var go = Instantiate(this.PlayerBackNotification, this.ParentPlayerBackNotification);
+                var pbn = go.GetComponent<PlayerBackNotification>();
+                pbn.Initialize("You earned money while you were gone", this.FloatUpSpawn, FloatUp.ResourceType.DOLLAR, secondsSincePause, additionalMoney, this.soundController, ref Harvesters);
             }
         } else {
             this.exitTime = System.DateTime.Now;

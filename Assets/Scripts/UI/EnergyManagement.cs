@@ -29,12 +29,12 @@ public class EnergyManagement : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         this.prevColor = gameObject.GetComponent<Image>().color;
     }
 
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         this.blinkTimeAkt -= Time.deltaTime;
         if (this.blinking && this.blinkTimeAkt <= 0) {
             this.isRed = !this.isRed;

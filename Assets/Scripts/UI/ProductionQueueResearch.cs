@@ -34,13 +34,13 @@ public class ProductionQueueResearch : MonoBehaviour {
     }
 
     public void ResetButtons() {
-        foreach (BlueprintStack button in this.buttonQueue) {
+        foreach (var button in this.buttonQueue) {
             button.BuildingOverlay.fillAmount = 0f;
         }
     }
 
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         if (this.buttonQueue.Count > 0) {
             if (this.latestBlueprintStack == null) {
                 this.latestBlueprintStack = this.buttonQueue[0];

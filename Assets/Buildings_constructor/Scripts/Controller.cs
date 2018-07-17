@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour {
     //private float aktRunSpeed = 0.0f; // run speed
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         //this.anim = this.GetComponent<Animator>();
         this.controller = this.GetComponent<CharacterController>();
         this.walkSpeed = this.speed; // read walk speed
@@ -20,7 +20,7 @@ public class Controller : MonoBehaviour {
     }
     
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         if (Input.GetKey("up")) {
             this.runSpeed = this.walkSpeed;
         }
@@ -31,7 +31,7 @@ public class Controller : MonoBehaviour {
 
         if (this.controller.isGrounded) {
             this.moveDirection = transform.forward * Input.GetAxis("Vertical") * this.speed * this.runSpeed;
-            float turn = Input.GetAxis("Horizontal");
+            var turn = Input.GetAxis("Horizontal");
             this.transform.Rotate(0, turn * this.turnSpeed * Time.deltaTime, 0);
         }
 

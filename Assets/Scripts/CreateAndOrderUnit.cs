@@ -87,7 +87,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     public static void LevelUpCost(Unit.Type type) {
         CreateAndOrderUnit.costLevel[(int)type]++;
-        foreach (CreateAndOrderUnit item in allCreateAndOrder) {
+        foreach (var item in allCreateAndOrder) {
             item.unitCostText.text = item.Cost.ToString();
         }
     }
@@ -153,7 +153,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>
     /// Loads from PlayerPrefs. Use this for initialization
     /// </summary>
-    void Awake() {
+    private void Awake() {
         this.attachedUnit = new Unit(this.unitName, this.hp, this.attack, this.CritChance, this.Defense, this.Type, this.ArmorType, this.buildtime, this, this.BaseSwitch);
         PlayerPrefs.SetString("UnitName_" + unitID, this.unitName);
         unitID++;
@@ -174,10 +174,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
         this.buildingOverlay = transform.Find("BuildingOverlay").GetComponent<Image>();
         this.buildingOverlay.fillAmount = 0f;
         this.unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
-        int count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
+        var count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
         count += this.AddCountOnStartUp;
         if (count > 0) {
-            this.AddPowerlevel(count * Mathf.RoundToInt((this.hp * this.attack * this.Defense) / 1000f), true);
+            this.AddPowerlevel(count * Mathf.RoundToInt(this.hp * this.attack * this.Defense / 1000f), true);
             this.SetUnitCount(count.ToString());
             this.attachedUnit.UnitCount = count;
         }

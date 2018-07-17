@@ -10,7 +10,7 @@ public class Cycle_moving : MonoBehaviour {
     private float startPhase;
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         if (this.Phase > 100) {
             this.Phase = 100;
         }
@@ -25,8 +25,8 @@ public class Cycle_moving : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-        if (this.transform.position.y > (this.startPosition.y + this.range)) {
+    private void Update() {
+        if (this.transform.position.y > this.startPosition.y + this.range) {
             this.transform.position = new Vector3(this.startPosition.x, this.startPosition.y + this.range, this.startPosition.z);
             this.n = this.n * -1;
         }

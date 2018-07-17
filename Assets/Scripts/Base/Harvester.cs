@@ -44,7 +44,7 @@ public class Harvester : MonoBehaviour {
 
     /// <summary>Getter/Setter for miningSpeed</summary>
     public float MiningSpeed {
-        get { return this.miningSpeed - ((this.miningSpeed * Unit.HPBoostLevel[this.levelSpeed]) - this.miningSpeed); }
+        get { return this.miningSpeed - (this.miningSpeed * Unit.HPBoostLevel[this.levelSpeed] - this.miningSpeed); }
         set { this.miningSpeed = value; }
     }
 
@@ -84,7 +84,7 @@ public class Harvester : MonoBehaviour {
     /// <returns>Money that was made (in case a harvester finished)</returns>
     public long AddAppPauseProgressTime(long secondsToAdd) {
         this.currentProgressWay += secondsToAdd % (long)this.MiningSpeed;
-        if (this.currentProgressWay > (this.MiningSpeed / 2) && this.currentProgressWay <= this.MiningSpeed) {
+        if (this.currentProgressWay > this.MiningSpeed / 2 && this.currentProgressWay <= this.MiningSpeed) {
             transform.LookAt(this.attachedOreRefinery.transform.position);
         } else if (this.currentProgressWay > this.MiningSpeed) {
             this.currentProgressWay -= this.MiningSpeed;
@@ -101,25 +101,25 @@ public class Harvester : MonoBehaviour {
     /// <param name="secondsToAdd">The seconds money has to be added for</param>
     /// <returns></returns>
     public long AddAppPauseTime(long secondsToAdd) {
-        this.moneyManagement.AddMoney((secondsToAdd / (long)this.MiningSpeed) * this.MiningAmount);
-        return (secondsToAdd / (long)this.MiningSpeed) * this.MiningAmount;
+        this.moneyManagement.AddMoney(secondsToAdd / (long)this.MiningSpeed * this.MiningAmount);
+        return secondsToAdd / (long)this.MiningSpeed * this.MiningAmount;
     }
 
     /// <summary>Use this for initialization</summary>
-    void Start() {
+    private void Start() {
         transform.position = this.attachedOreRefinery.transform.position;
         transform.LookAt(this.attachedMine.transform.position);
     }
 
     /// <summary>Update is called once per frame</summary>
-    void Update() {
+    private void Update() {
         this.currentProgressWay += Time.deltaTime;
-        if (this.currentProgressWay <= (this.MiningSpeed / 2)) {
+        if (this.currentProgressWay <= this.MiningSpeed / 2) {
             transform.position = Vector3.Lerp(this.attachedOreRefinery.transform.position, this.attachedMine.transform.position, this.currentProgressWay / (this.MiningSpeed / 2)); // Hinweg
-        } else if (this.currentProgressWay <= (this.MiningSpeed / 2) + this.LoadingOnSpeed) {
+        } else if (this.currentProgressWay <= this.MiningSpeed / 2 + this.LoadingOnSpeed) {
             transform.position = this.attachedMine.transform.position;
         } else if (this.currentProgressWay <= this.MiningSpeed + this.LoadingOnSpeed) {
-            transform.position = Vector3.Lerp(this.attachedMine.transform.position, this.attachedOreRefinery.transform.position, (this.currentProgressWay - (this.MiningSpeed / 2) - this.LoadingOnSpeed) / (this.MiningSpeed / 2)); // Rückweg
+            transform.position = Vector3.Lerp(this.attachedMine.transform.position, this.attachedOreRefinery.transform.position, (this.currentProgressWay - this.MiningSpeed / 2 - this.LoadingOnSpeed) / (this.MiningSpeed / 2)); // Rückweg
             transform.LookAt(this.attachedOreRefinery.transform.position);
         } else if (this.currentProgressWay <= this.MiningSpeed + this.LoadingOnSpeed + this.LoadingOffSpeed) {
             transform.position = this.attachedOreRefinery.transform.position;

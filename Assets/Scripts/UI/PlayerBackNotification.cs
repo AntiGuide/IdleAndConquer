@@ -57,8 +57,8 @@ public class PlayerBackNotification : MonoBehaviour {
 
     /// <summary>Called when the player clicks the notification. Grants earned money.</summary>
     public void OnClick() {
-        long addedMoney = this.additionalMoney;
-        foreach (Harvester h in this.harvesters) {
+        var addedMoney = this.additionalMoney;
+        foreach (var h in this.harvesters) {
             addedMoney += h.AddAppPauseTime(this.secondsSincePause);
         }
 

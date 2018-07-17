@@ -36,7 +36,7 @@ public class MoneyManagement : MonoBehaviour {
     /// <param name="money">The amount of money</param>
     /// <returns>Formatted money as a string</returns>
     public static string FormatMoney(long money) {
-        CultureInfo cultureInfo = new CultureInfo("de-DE", false) {NumberFormat = {CurrencySymbol = string.Empty}};
+        var cultureInfo = new CultureInfo("de-DE", false) {NumberFormat = {CurrencySymbol = string.Empty}};
         return money.ToString("C0", cultureInfo).TrimEnd();
     }
 
@@ -90,7 +90,7 @@ public class MoneyManagement : MonoBehaviour {
     }
 
     /// <summary>Sets the money to 20000 in the beginning</summary>
-    void Start() {
+    private void Start() {
         this.SetMoney(PlayerPrefs.GetInt("money", 80000));
     }
 

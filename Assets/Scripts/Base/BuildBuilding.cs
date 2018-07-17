@@ -36,9 +36,9 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     private Vector3 ToGrid(Vector3 allignToGrid) {
-        float x = Mathf.Round(allignToGrid.x / this.CellSize) * this.CellSize;
-        float y = allignToGrid.y;
-        float z = Mathf.Round(allignToGrid.z / this.CellSize) * this.CellSize;
+        var x = Mathf.Round(allignToGrid.x / this.CellSize) * this.CellSize;
+        var y = allignToGrid.y;
+        var z = Mathf.Round(allignToGrid.z / this.CellSize) * this.CellSize;
         return new Vector3(x, y, z);
     }
 
@@ -54,7 +54,7 @@ public class BuildBuilding : MonoBehaviour {
 
             this.buildColorChanger.MenueControll = this.MenueControll[buildingID];
             this.buildColorChanger.IsBuilt = false;
-            Vector3 tmpVec3 = new Vector3(-250, 1, 0);
+            var tmpVec3 = new Vector3(-250, 1, 0);
             this.newBuilding.transform.position = this.ToGrid(tmpVec3);
             this.prevScale = this.newBuilding.transform.localScale;
             this.newBuilding.transform.localScale *= 1.001f;
@@ -99,9 +99,9 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         this.isBuilt = new bool[this.Buildings.Length];
-        for (int i = 0; i < this.isBuilt.Length; i++) {
+        for (var i = 0; i < this.isBuilt.Length; i++) {
             this.isBuilt[i] = false;
         }
 
@@ -112,7 +112,7 @@ public class BuildBuilding : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         if (Input.GetMouseButton(0)) {
             if (EventSystem.current.IsPointerOverGameObject(0) || EventSystem.current.IsPointerOverGameObject()) {
             } else if (this.playerBuildingThisBase) {
@@ -143,8 +143,8 @@ public class BuildBuilding : MonoBehaviour {
     private void LateUpdate() {
         if (this.playerBuildingThisBase) {
             this.BuildConfirmUI.SetActive(true);
-            Bounds bounds = this.newBuilding.GetComponentInChildren<BoxCollider>().bounds;
-            Vector3 onlyXZ = new Vector3(bounds.extents.x, 0, bounds.extents.z);
+            var bounds = this.newBuilding.GetComponentInChildren<BoxCollider>().bounds;
+            var onlyXZ = new Vector3(bounds.extents.x, 0, bounds.extents.z);
             Vector2 screenPoint = Camera.main.WorldToScreenPoint(this.newBuilding.transform.position + this.BuildUIOffset + onlyXZ);
             screenPoint = Vector2.Max(this.MinBuildConfirmUIPosition, screenPoint);
             screenPoint = Vector2.Min(this.MaxBuildConfirmUIPosition, screenPoint);

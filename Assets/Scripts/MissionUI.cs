@@ -25,18 +25,18 @@ public class MissionUI : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         this.img = this.GetComponent<Image>();
     }
 
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         if (this.missionTime > 0f) {
             this.aktTime += Time.deltaTime;
             if (this.aktTime / this.missionTime >= 1f) {
                 this.img.fillAmount = 1f;
                 this.missionTime = -1f;
-                foreach (Unit item in this.unitsInMission) {
+                foreach (var item in this.unitsInMission) {
                     item.SentToMission--;
                 }
                 

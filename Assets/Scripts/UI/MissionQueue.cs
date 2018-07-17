@@ -12,7 +12,7 @@ public class MissionQueue : MonoBehaviour {
     private readonly List<MissionUI> missionUIs = new List<MissionUI>();
 
     public void Add(Mission mission) {
-        MissionUI missionUI = Instantiate(this.MissionBar, this.transform).GetComponentInChildren<MissionUI>();
+        var missionUI = Instantiate(this.MissionBar, this.transform).GetComponentInChildren<MissionUI>();
         missionUI.Initialize(mission);
         this.missionUIs.Add(missionUI);
         missionUI.MissionQueue = this;
@@ -24,7 +24,7 @@ public class MissionQueue : MonoBehaviour {
 
     public void FinshedMission(Mission attachedMission) {
         attachedMission.MissionGeneral.IsSentToMission = false;
-        GameObject go = Instantiate(this.RewardPopUpPrefab, this.TransformCanvas);
+        var go = Instantiate(this.RewardPopUpPrefab, this.TransformCanvas);
         go.GetComponent<RewardPopUp>().Initialize(this.MoneyManager, this.RenownManager, this.VirtualCurrencyManager, this);
         go.GetComponent<RewardPopUp>().ShowRewards(attachedMission.MissionDetails);
     }

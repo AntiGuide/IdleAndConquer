@@ -85,7 +85,7 @@ public class BlueprintStack : MonoBehaviour {
     }
 
     private void Awake() {
-        Text t = transform.Find("Text").GetComponent<Text>();
+        var t = transform.Find("Text").GetComponent<Text>();
         if (this.CreateAndOrderUnitStack.AttachedUnit != null) {
             t.text = this.CreateAndOrderUnitStack.AttachedUnit.UnitName;
         } else {

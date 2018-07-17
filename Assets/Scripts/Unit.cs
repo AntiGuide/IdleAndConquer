@@ -117,7 +117,7 @@ public class Unit {
 
     /// <summary>Getter and setter for buildtime</summary>
     public float Buildtime {
-        get { return this.buildtime - ((this.buildtime * Unit.HPBoostLevel[Unit.BuildtimeGroupLevel[(int)this.type]]) - this.buildtime); }
+        get { return this.buildtime - (this.buildtime * Unit.HPBoostLevel[Unit.BuildtimeGroupLevel[(int)this.type]] - this.buildtime); }
         set { this.buildtime = value; }
     }
 
@@ -162,7 +162,7 @@ public class Unit {
     /// <param name="enemyUnit">The enemy unit type which the attack value should be calculated for.</param>
     /// <returns>Returns the attack value/the damage calculated</returns>
     public int GetAttack(Unit enemyUnit) {
-        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.type]];
+        var returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.type]];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
 
@@ -182,7 +182,7 @@ public class Unit {
     /// Calculates the attack value without the eventual passives against the enemy
     /// </summary>
     private int GetAttack() {
-        int returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.type]];
+        var returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.type]];
         returnDamage += Passives.GetAbsolutPassive(this.type, Passives.Value.ATTACK);
         returnDamage = (int)(returnDamage * Passives.GetPassive(this.type, Passives.Value.ATTACK));
 
@@ -201,7 +201,7 @@ public class Unit {
     }
 
     public float GetCritChance() {
-        return this.critChance + (Unit.OtherBoostLevel[this.Level] / 100f) + (Unit.OtherBoostLevel[Unit.CritGroupLevel[(int)this.type]] / 100f);
+        return this.critChance + Unit.OtherBoostLevel[this.Level] / 100f + Unit.OtherBoostLevel[Unit.CritGroupLevel[(int)this.type]] / 100f;
     }
 
     /// <summary>
@@ -210,13 +210,13 @@ public class Unit {
     public void AddSingleBuiltUnit() {
         this.CreateAndOrderButton.SetUnitCount((++this.unitCount).ToString());
         PlayerPrefs.SetInt(this.unitName + "_COUNT", this.unitCount);
-        this.CreateAndOrderButton.AddPowerlevel(Mathf.RoundToInt((this.hp * this.attack * this.defense) / 1000f), false);
+        this.CreateAndOrderButton.AddPowerlevel(Mathf.RoundToInt(this.hp * this.attack * this.defense / 1000f), false);
     }
 
     public void LevelUp() {
-        int powerLevelBeforeLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000f);
+        var powerLevelBeforeLevelUp = Mathf.RoundToInt(this.GetHP() * this.GetAttack() * this.GetDef() / 1000f);
         this.Level++;
-        int powerLevelAfterLevelUp = Mathf.RoundToInt((this.GetHP() * this.GetAttack() * this.GetDef()) / 1000f);
+        var powerLevelAfterLevelUp = Mathf.RoundToInt(this.GetHP() * this.GetAttack() * this.GetDef() / 1000f);
         if (this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp) > 0) {
             this.CreateAndOrderButton.AddPowerlevel(this.unitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp), false);
         }

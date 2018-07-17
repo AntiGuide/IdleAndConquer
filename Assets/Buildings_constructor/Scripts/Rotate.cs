@@ -7,12 +7,12 @@ public class Rotate : MonoBehaviour {
     private float currentRotSpeed;
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         this.currentRotSpeed = this.rotSpeed;
     }
     
     // Update is called once per frame
-    void Update() {
+    private void Update() {
         if (Mathf.RoundToInt(this.rotMaxY) != 0 && Mathf.RoundToInt(this.rotMinY) != 0) {
             if (this.transform.rotation.y * 360 > this.rotMaxY) {
                 this.currentRotSpeed = -this.rotSpeed;

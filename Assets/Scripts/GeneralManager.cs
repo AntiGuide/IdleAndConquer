@@ -46,12 +46,12 @@ public class GeneralManager : MonoBehaviour {
     /// </summary>
     public void GenerateGeneral() {
         // TODO Level 1 Choose 1 Skill
-        System.Random rnd = new System.Random();
-        int nameID = rnd.Next(0, this.Names.Length);
-        int countryID = rnd.Next(0, this.Countrys.Length);
-        float aktChanceToPermaDeath = UnityEngine.Random.Range(this.GenMinChanceToPermaDeath, this.GenMaxChanceToPermaDeath);
+        var rnd = new System.Random();
+        var nameID = rnd.Next(0, this.Names.Length);
+        var countryID = rnd.Next(0, this.Countrys.Length);
+        var aktChanceToPermaDeath = UnityEngine.Random.Range(this.GenMinChanceToPermaDeath, this.GenMaxChanceToPermaDeath);
 
-        GeneralButton attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), this.GeneralList.transform).GetComponent<GeneralButton>();
+        var attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), this.GeneralList.transform).GetComponent<GeneralButton>();
         attachedButton.SetTexts(this.Countrys[countryID], this.Names[nameID], 0 + Environment.NewLine + "-" + Environment.NewLine + 0);
         PlayerPrefs.SetFloat("GeneralChanceDeath_" + this.generalID, aktChanceToPermaDeath);
         PlayerPrefs.SetString("GeneralCountry_" + this.generalID, this.Countrys[countryID]);
@@ -60,7 +60,7 @@ public class GeneralManager : MonoBehaviour {
         PlayerPrefs.SetInt("GeneralLose_" + this.generalID, 0);
         this.generalID++;
 
-        General ret = attachedButton.gameObject.GetComponent<General>();
+        var ret = attachedButton.gameObject.GetComponent<General>();
         ret.InitGeneral(aktChanceToPermaDeath, null, this.Countrys[countryID], this.Names[nameID]);
         GeneralManager.AllGenerals.Add(ret);
     }
@@ -68,8 +68,8 @@ public class GeneralManager : MonoBehaviour {
     /// <summary>
     /// Use this for initialization
     /// </summary>
-    void Start() {
-        for (int tmpGeneralID = 0; ; tmpGeneralID++) {
+    private void Start() {
+        for (var tmpGeneralID = 0; ; tmpGeneralID++) {
             this.chanceDeath = PlayerPrefs.GetFloat("GeneralChanceDeath_" + tmpGeneralID, -1f);
             this.country = PlayerPrefs.GetString("GeneralCountry_" + tmpGeneralID, string.Empty);
             this.generalName = PlayerPrefs.GetString("GeneralName_" + tmpGeneralID, string.Empty);
@@ -80,10 +80,10 @@ public class GeneralManager : MonoBehaviour {
                 break;
             }
 
-            GeneralButton attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), this.GeneralList.transform).GetComponent<GeneralButton>();
+            var attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), this.GeneralList.transform).GetComponent<GeneralButton>();
             attachedButton.SetTexts(this.country, this.generalName, this.wins + Environment.NewLine + "-" + Environment.NewLine + this.loses);
 
-            General ret = attachedButton.gameObject.GetComponent<General>();
+            var ret = attachedButton.gameObject.GetComponent<General>();
             ret.InitGeneral(this.chanceDeath, null, this.country, this.generalName);
             GeneralManager.AllGenerals.Add(ret);
         }
@@ -92,7 +92,7 @@ public class GeneralManager : MonoBehaviour {
     /// <summary>
     /// Update is called once per frame
     /// </summary>
-    void Update() {
+    private void Update() {
         if (Input.GetKeyDown(KeyCode.R)) {
             PlayerPrefs.DeleteAll();
         }

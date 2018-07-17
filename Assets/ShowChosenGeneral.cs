@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
@@ -16,23 +15,13 @@ public class ShowChosenGeneral : MonoBehaviour {
 
     public Transform UnitContainer;
 
-    // private static List<string> unitsToShow = new List<string>();
-
-    public static void SetUnitsToShow(List<string> unitsToShowVar) {
-        // unitsToShow = unitsToShowVar;
-    }
-
     public void ShowSelectedGeneral(General gen) {
         this.GeneralName.text = gen.GeneralName;
         this.GeneralCountry.text = gen.Country;
     }
 
     public GameObject CreateNewUnitImage() {
-        GameObject go = Instantiate(this.UnitImagePrefab, this.UnitContainer);
+        var go = Instantiate(this.UnitImagePrefab, this.UnitContainer);
         return go;
-    }
-
-    void Update() {
-        // this.ShowSelectedGeneral(SelectedGeneral.General);
     }
 }

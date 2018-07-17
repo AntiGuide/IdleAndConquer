@@ -45,9 +45,4 @@ public class BuildingManager : MonoBehaviour {
                 break;
         }
     }
-
-    // Use this for initialization
-    void Start() {
-        // this.energyManager = GameObject.Find("/Main/Canvas/BackgroundSideStrip").GetComponent<EnergyManagement>();
-    }
 }

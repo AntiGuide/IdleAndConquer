@@ -37,15 +37,15 @@ public class BuildColorChanger : MonoBehaviour {
     public MenueController MenueControll { get; set; }
 
     /// <summary>Use this for initialization</summary>
-    void Start() {
-        MeshRenderer[] meshRenderers = gameObject.GetComponentsInChildren<MeshRenderer>();
-        foreach (MeshRenderer item in meshRenderers) {
+    private void Start() {
+        var meshRenderers = gameObject.GetComponentsInChildren<MeshRenderer>();
+        foreach (var item in meshRenderers) {
             if (!this.materialList.Contains(item.material)) { // If this couses performance issues dont remove duplicates and double change texture later
                 this.materialList.Add(item.material);
             }
         }
 
-        foreach (Material item in this.materialList) {
+        foreach (var item in this.materialList) {
             this.finishedBuildingTextureList.Add((Texture2D)item.GetTexture("_MainTex"));
         }
         
@@ -56,7 +56,7 @@ public class BuildColorChanger : MonoBehaviour {
 
     private void SetGreen() {
         if (this.materialList.Count > 0) {
-            foreach (Material item in this.materialList) {
+            foreach (var item in this.materialList) {
                 item.SetTexture("_MainTex", this.GreenTransparent);
             }
         } else {
@@ -66,7 +66,7 @@ public class BuildColorChanger : MonoBehaviour {
 
     private void SetFinished() {
         if (this.materialList.Count > 0) {
-            for (int i = 0; i < this.materialList.Count; i++) {
+            for (var i = 0; i < this.materialList.Count; i++) {
                 this.materialList[i].SetTexture("_MainTex", this.finishedBuildingTextureList[i]);
             }
         } else {
@@ -76,7 +76,7 @@ public class BuildColorChanger : MonoBehaviour {
 
     private void SetRed() {
         if (this.materialList.Count > 0) {
-            foreach (Material item in this.materialList) {
+            foreach (var item in this.materialList) {
                 item.SetTexture("_MainTex", this.RedTransparent);
             }
         } else {
@@ -85,7 +85,7 @@ public class BuildColorChanger : MonoBehaviour {
     }
 
     /// <summary>Update is called once per frame</summary>
-    void Update() {
+    private void Update() {
         if (!this.isBuilt && !BuildBuilding.PlayerBuilding) {
             // this.buildMaterial = gameObject.GetComponentInChildren<MeshRenderer>().material; //?
             this.SetFinished();
@@ -97,7 +97,7 @@ public class BuildColorChanger : MonoBehaviour {
     /// Triggered when a collision is detected. Adds 1 to collidingBuildings and sets the proper texture.
     /// </summary>
     /// <param name="other">The collider of the colliding building</param>
-    void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other) {
         if (!this.isBuilt && BuildBuilding.PlayerBuilding && other.tag == "Buildings") {
             this.collidingBuildings++;
             this.SetRed();
@@ -108,7 +108,7 @@ public class BuildColorChanger : MonoBehaviour {
     /// Triggered when a collision is ended. Subs 1 from collidingBuildings and sets the proper texture.
     /// </summary>
     /// <param name="other">The collider of the colliding building</param>
-    void OnTriggerExit(Collider other) {
+    private void OnTriggerExit(Collider other) {
         if (!this.isBuilt && BuildBuilding.PlayerBuilding && other.tag == "Buildings") {
             this.collidingBuildings--;
             if (this.collidingBuildings == 0) {

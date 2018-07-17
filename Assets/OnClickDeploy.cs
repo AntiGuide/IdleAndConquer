@@ -12,13 +12,12 @@ public class OnClickDeploy : MonoBehaviour {
     private MissionManager missionMan;
 
     public void OnClickDeployEvent() {
-        if (this.unitCount > 0 && DeployedUnits < MaxSlots) {
-            this.unitCount--;
-            DeployedUnits++;
-            this.RemainingUnitsText.text = this.unitCount.ToString();
-            this.showChosenGeneral.CreateNewUnitImage();
-            this.missionMan.AddUnitToBuildingMission(ref this.attachedUnit);
-        }
+        if (this.unitCount <= 0 || DeployedUnits >= MaxSlots) return;
+        this.unitCount--;
+        DeployedUnits++;
+        this.RemainingUnitsText.text = this.unitCount.ToString();
+        this.showChosenGeneral.CreateNewUnitImage();
+        this.missionMan.AddUnitToBuildingMission(ref this.attachedUnit);
     }
 
     public void Initialize(Unit unit) {
@@ -29,7 +28,7 @@ public class OnClickDeploy : MonoBehaviour {
     }
 
     /// <summary>Use this for initialization</summary>
-    void Start() {
+    private void Start() {
         this.showChosenGeneral = GameObject.Find("/MissionMap/Canvas/DeployUI/BG").GetComponent<ShowChosenGeneral>();
         this.missionMan = GameObject.Find("/ReferenceShare").GetComponent<MissionManager>();
     }

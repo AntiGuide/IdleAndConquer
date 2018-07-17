@@ -25,7 +25,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         this.mainMenueController = GameObject.Find("/MissionMap/Canvas/MainMenue/").GetComponent<MainMenueController>();
         this.missionMan = GameObject.Find("/ReferenceShare").GetComponent<MissionManager>();
         this.missionDetailsWindow = GameObject.Find("/MissionMap/Canvas/MissionWindow");

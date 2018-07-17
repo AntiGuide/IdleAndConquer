@@ -37,49 +37,48 @@ public class ProductionQueue : MonoBehaviour {
     }
 
     public void ResetButtons() {
-        foreach (CreateAndOrderUnit button in this.buttonQueue) {
+        foreach (var button in this.buttonQueue) {
             button.SetProductionOverlayFill(0);
             button.SetUnitsBuilding(0);
         }
     }
 
     public void BaseSwitchRoutine() {
-        foreach (CreateAndOrderUnit item in this.buttonQueue) {
+        foreach (var item in this.buttonQueue) {
             item.AddSingleUnitBuilding();
         }
     }
 
     // Update is called once per frame
-    void Update() {
-        if (this.prodQueue.Count > 0) {
-            if (this.latestUnit == null) {
-                this.latestUnit = this.prodQueue[0];
-                this.remainingTime += this.latestUnit.Buildtime;
-            }
+    private void Update() {
+        if (this.prodQueue.Count <= 0) return;
+        if (this.latestUnit == null) {
+            this.latestUnit = this.prodQueue[0];
+            this.remainingTime += this.latestUnit.Buildtime;
+        }
 
-            this.remainingTime -= Time.deltaTime;
-            this.overlayFill = Mathf.Min(this.remainingTime / this.latestUnit.Buildtime, 1.0f);
-            this.overlayFill = Mathf.Max(this.overlayFill, 0f);
+        this.remainingTime -= Time.deltaTime;
+        this.overlayFill = Mathf.Min(this.remainingTime / this.latestUnit.Buildtime, 1.0f);
+        this.overlayFill = Mathf.Max(this.overlayFill, 0f);
+        if (BaseSwitcher.CurrentBase == this.BaseID) {
+            this.buttonQueue[0].SetProductionOverlayFill(this.overlayFill);
+        }
+
+        if (this.remainingTime <= 0f) {
+            this.latestUnit.AddSingleBuiltUnit();
+            this.SoundControll.StartSound(SoundController.Sounds.UNIT_READY);
             if (BaseSwitcher.CurrentBase == this.BaseID) {
-                this.buttonQueue[0].SetProductionOverlayFill(this.overlayFill);
+                this.buttonQueue[0].SubSingleUnitBuilding();
             }
 
-            if (this.remainingTime <= 0f) {
-                this.latestUnit.AddSingleBuiltUnit();
-                this.SoundControll.StartSound(SoundController.Sounds.UNIT_READY);
-                if (BaseSwitcher.CurrentBase == this.BaseID) {
-                    this.buttonQueue[0].SubSingleUnitBuilding();
-                }
-
-                // this.inProduction--;
-                this.prodQueue.Remove(this.latestUnit);
-                this.buttonQueue.Remove(this.buttonQueue[0]);
-                if (this.prodQueue.Count > 0) {
-                    this.latestUnit = this.prodQueue[0];
-                    this.remainingTime = this.latestUnit.Buildtime;
-                } else {
-                    this.latestUnit = null;
-                }
+            // this.inProduction--;
+            this.prodQueue.Remove(this.latestUnit);
+            this.buttonQueue.Remove(this.buttonQueue[0]);
+            if (this.prodQueue.Count > 0) {
+                this.latestUnit = this.prodQueue[0];
+                this.remainingTime = this.latestUnit.Buildtime;
+            } else {
+                this.latestUnit = null;
             }
         }
     }
