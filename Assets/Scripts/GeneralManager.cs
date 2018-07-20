@@ -24,6 +24,8 @@ public class GeneralManager : MonoBehaviour {
     /// <summary>Parent for all general buttons</summary>
     public GameObject GeneralList;
 
+    public GameObject GeneralButtonPrefab;
+
     /// <summary>The highest general ID at the moment</summary>
     private int generalID = 0;
 
@@ -81,7 +83,7 @@ public class GeneralManager : MonoBehaviour {
                 break;
             }
 
-            var attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), this.GeneralList.transform).GetComponent<GeneralButton>();
+            var attachedButton = Instantiate(GeneralButtonPrefab, this.GeneralList.transform).GetComponent<GeneralButton>();
             attachedButton.SetTexts(this.country, this.generalName, this.wins + Environment.NewLine + "-" + Environment.NewLine + this.loses);
 
             var ret = attachedButton.gameObject.GetComponent<General>();

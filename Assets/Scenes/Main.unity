@@ -2741,15 +2741,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &62153588
 BoxCollider:
@@ -4069,15 +4071,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &101025101
 BoxCollider:
@@ -6004,15 +6008,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &169420126
 BoxCollider:
@@ -6657,15 +6663,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &197023995
 BoxCollider:
@@ -6767,15 +6775,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &197159004
 BoxCollider:
@@ -7232,15 +7242,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &209003264
 BoxCollider:
@@ -8291,6 +8303,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionGeneral: {fileID: 0}
+  Units: []
   MissionQueue: {fileID: 1097608670}
 --- !u!4 &238423385 stripped
 Transform:
@@ -9648,15 +9661,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &272772702
 BoxCollider:
@@ -10713,15 +10728,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &323924880
 BoxCollider:
@@ -11340,15 +11357,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &350699507
 BoxCollider:
@@ -14234,15 +14253,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &469993532
 BoxCollider:
@@ -17061,15 +17082,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &558328169
 BoxCollider:
@@ -19092,15 +19115,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &605209896
 BoxCollider:
@@ -19908,15 +19933,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &617667546
 BoxCollider:
@@ -20760,15 +20787,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &635373361
 BoxCollider:
@@ -23168,15 +23197,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: Ivan
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &711277575
 BoxCollider:
@@ -26144,15 +26175,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &812873517
 BoxCollider:
@@ -27014,15 +27047,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &836949084
 BoxCollider:
@@ -32676,15 +32711,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1007474479
 BoxCollider:
@@ -33961,15 +33998,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1047168951
 BoxCollider:
@@ -35457,15 +35496,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1079479738
 BoxCollider:
@@ -35828,15 +35869,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1086629293
 BoxCollider:
@@ -37729,15 +37772,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1137779871
 BoxCollider:
@@ -41430,6 +41475,8 @@ MonoBehaviour:
   - Nowak
   - Nagy
   GeneralList: {fileID: 1114288287}
+  GeneralButtonPrefab: {fileID: 1999056150019072, guid: 3249b82a2c757654e95da79e65eacef2,
+    type: 2}
 --- !u!1001 &1253441066
 Prefab:
   m_ObjectHideFlags: 0
@@ -42566,15 +42613,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1288779796
 BoxCollider:
@@ -47238,15 +47287,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1464480797
 BoxCollider:
@@ -48374,15 +48425,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1501615346
 BoxCollider:
@@ -51122,15 +51175,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 764047843}
+  - {fileID: 764047843}
+  - {fileID: 764047843}
+  - {fileID: 764047843}
+  - {fileID: 764047843}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1581635614
 BoxCollider:
@@ -55847,15 +55906,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1694698899
 BoxCollider:
@@ -59337,15 +59398,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &1798727114
 BoxCollider:
@@ -67827,15 +67890,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &2055173378
 BoxCollider:
@@ -69226,15 +69291,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainMenueControll: {fileID: 1064353850}
-  MissionTime: 30
-  MissionMoneyReward: 1000
-  MissionRenownReward: 50
-  MissionVirtualReward: 10
-  MissionBlueprintReward: 1
-  UIInteractions: {fileID: 1761633592}
+  AktRating: 0
+  MissionTimeMinutes: 30
+  MissionRenownReward: 100
+  goalThreeCondition: 0
+  TypeRestriction: 0
+  AmountRestriction: 0
+  EnemyUnitsArr:
+  - {fileID: 0}
   MissionMan: {fileID: 238347732}
-  EnemyGeneral: 
+  UIInteractions: {fileID: 1761633592}
+  MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
 --- !u!65 &2118116844
 BoxCollider:

@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 114842675747755934}
   - component: {fileID: 114300959104226406}
   - component: {fileID: 114504952308385342}
-  - component: {fileID: 114384507684492128}
   - component: {fileID: 114290861419844798}
   m_Layer: 5
   m_Name: GeneralButtonMissionMap
@@ -200,17 +199,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsSentToMission: 0
---- !u!114 &114384507684492128
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1704306545099288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e3ce83a2a8dcbb48963f6edf27188b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114504952308385342
 MonoBehaviour:
   m_ObjectHideFlags: 1

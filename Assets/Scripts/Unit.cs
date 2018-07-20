@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /// <summary>Handles all tanks, planes and soldiers with all their values</summary>
-public class Unit {
+public class Unit : MonoBehaviour{
     public static readonly float[] HPBoostLevel = { 1f, 1.05f, 1.075f, 1.1f, 1.125f, 1.15f, 1.175f, 1.2f, 1.225f, 1.25f };
 
     public static readonly List<Unit> AllUnits = new List<Unit>();
@@ -45,6 +45,10 @@ public class Unit {
 
     /// <summary>The time it takes to build this unit in seconds</summary>
     private float buildtime;
+
+    public int Powerlevel {
+        get { return Mathf.RoundToInt(this.hp * this.attack * this.defense / 1000f); }
+    }
 
     /// <summary>
     /// Creates a unit with all parameters
@@ -137,6 +141,38 @@ public class Unit {
         return returnDamage;
     }
 
+    /// <summary>
+    /// Calculates the attack value against an enemy unit type
+    /// </summary>
+    /// <param name="enemyUnitType">The enemy unit type which the attack value should be calculated for.</param>
+    /// <param name="armorUnitType">The enemy unit armor type which the attack value should be calculated for.</param>
+    /// <returns>Returns the attack value/the damage calculated</returns>
+    public int GetAttack(Unit.Type enemyUnitType, Unit.ArmorType armorUnitType) {
+        var returnDamage = this.attack + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ATKGroupLevel[(int)this.UnitType]];
+        returnDamage += Passives.GetAbsolutPassive(this.UnitType, Passives.Value.ATTACK);
+        returnDamage = (int)(returnDamage * Passives.GetPassive(this.UnitType, Passives.Value.ATTACK));
+
+        returnDamage += Passives.GetAbsolutPassiveArmortype(this.ArmorTypeUnit, Passives.Value.ATTACK);
+        returnDamage = (int)(returnDamage * Passives.GetPassiveArmortype(this.ArmorTypeUnit, Passives.Value.ATTACK));
+
+        returnDamage += Passives.GetAbsolutPassiveAgainstType(enemyUnitType, Passives.Value.ATTACK);
+        returnDamage = (int)(returnDamage * Passives.GetPassiveAgainstType(enemyUnitType, Passives.Value.ATTACK));
+
+        returnDamage += Passives.GetAbsolutPassiveAgainstArmortype(armorUnitType, Passives.Value.ATTACK);
+        returnDamage = (int)(returnDamage * Passives.GetPassiveAgainstArmortype(armorUnitType, Passives.Value.ATTACK));
+
+        return returnDamage;
+    }
+
+    public int GetAverageDamage(List<Unit> enemys) {
+        var returnAttack = 0;
+        foreach (var enemy in enemys) {
+            returnAttack += GetAttack(enemy);
+        }
+
+        return returnAttack / enemys.Count;
+    }
+
     public float GetCritChance() {
         return this.critChance + Unit.OtherBoostLevel[this.Level] / 100f + Unit.OtherBoostLevel[Unit.CritGroupLevel[(int)this.UnitType]] / 100f;
     }
@@ -173,11 +209,11 @@ public class Unit {
         return returnDamage;
     }
 
-    private int GetHP() {
+    public int GetHP() {
         return Mathf.RoundToInt(this.hp * Unit.HPBoostLevel[this.Level] * Unit.HPBoostLevel[Unit.HPGroupLevel[(int)this.UnitType]]);
     }
 
-    private int GetDef() {
+    public int GetDef() {
         return this.defense + Unit.OtherBoostLevel[this.Level] + Unit.OtherBoostLevel[Unit.ArmorTypeLevel[(int)this.ArmorTypeUnit]];
     }
 }
