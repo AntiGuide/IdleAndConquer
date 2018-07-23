@@ -127,14 +127,7 @@ PlayerSettings:
     16:9: 0
     Others: 1
   bundleVersion: 0.4.10
-  preloadedAssets:
-  - {fileID: 2800000, guid: c5bb8c5a2b9a8af418278d308fac33fd, type: 3}
-  - {fileID: 2800000, guid: ab09333d9cd279e42a971cdcd718e800, type: 3}
-  - {fileID: 2800000, guid: 18ffc014d433d744992598daa6e71ae5, type: 3}
-  - {fileID: 12800000, guid: ab67cec6a5c4e634eaf33f7238b764a6, type: 3}
-  - {fileID: 2800000, guid: 1db90e44357045a46bf1cb6f973db6ee, type: 3}
-  - {fileID: 2800000, guid: 5db906e89e58f3146bb778230f9bab13, type: 3}
-  - {fileID: 2800000, guid: d3786269ecfd085468174ed2b3e9128c, type: 3}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -255,7 +248,7 @@ PlayerSettings:
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   AndroidEnableTango: 0
-  androidEnableBanner: 1
+  androidEnableBanner: 0
   androidUseLowAccuracyLocation: 0
   m_AndroidBanners:
   - width: 320

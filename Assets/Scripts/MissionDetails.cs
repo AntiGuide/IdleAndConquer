@@ -103,7 +103,7 @@ public class MissionDetails : MonoBehaviour {
     /// <param name="unitsA">The units of the player.</param>
     /// <param name="unitsB">The units of the enemys.</param>
     /// <returns></returns>
-    private int CalcPowerlevel(List<Unit> unitsA, List<Unit> unitsB) {
+    private static int CalcPowerlevel(IEnumerable<Unit> unitsA, List<Unit> unitsB) {
         var combAttack = 0;
         var combHP = 0;
         var combDef = 0;
@@ -117,15 +117,10 @@ public class MissionDetails : MonoBehaviour {
         return Mathf.RoundToInt(combHP * combAttack * combDef / 1000f);
     }
 
-    private int CalcPowerlevel(List<Unit> units) {
+    private static int CalcPowerlevel(IEnumerable<Unit> units) {
         //GewichtetesPowerlevel
-        var retPowerlevel = 0;
 
-        foreach (var unit in units) {
-            retPowerlevel += unit.Powerlevel;
-        }
-
-        return retPowerlevel;
+        return units.Sum(unit => unit.Powerlevel);
     }
 
     private void Start() {
