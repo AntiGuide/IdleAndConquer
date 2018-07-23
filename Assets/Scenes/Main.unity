@@ -28522,7 +28522,14 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 131407983183231520, guid: ae0be251846e3944abd1438add493fb4,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 131407983183231520, guid: ae0be251846e3944abd1438add493fb4, type: 2}
+    - {fileID: 131792212896636492, guid: ae0be251846e3944abd1438add493fb4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ae0be251846e3944abd1438add493fb4, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &882386731 stripped
