@@ -6,4 +6,9 @@ public class ShowFPS : MonoBehaviour {
     private void Update() {
         GetComponent<Text>().text = Mathf.RoundToInt(1.0f / Time.deltaTime) + " FPS";
     }
+
+    private void Start() {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 30;
+    }
 }
