@@ -147,7 +147,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// Loads from PlayerPrefs. Use this for initialization
     /// </summary>
     private void Awake() {
-        this.AttachedUnit = new Unit(this.unitName, this.hp, this.attack, this.CritChance, this.Defense, this.Type, this.ArmorType, this.buildtime, this, this.BaseSwitch);
+        this.AttachedUnit = gameObject.AddComponent<Unit>().Initialize(this.unitName, this.hp, this.attack, this.CritChance, this.Defense, this.Type, this.ArmorType, this.buildtime, this, this.BaseSwitch);
         PlayerPrefs.SetString("UnitName_" + unitID, this.unitName);
         unitID++;
         PlayerPrefs.SetInt(this.unitName + "_HP", this.hp);

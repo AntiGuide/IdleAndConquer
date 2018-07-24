@@ -26,22 +26,22 @@ public class Unit : MonoBehaviour{
     // public static int[] LevelGroup = { 0, 0, 0 };
 
     /// <summary>The script that triggeres a production of this unit</summary>
-    private readonly CreateAndOrderUnit CreateAndOrderButton;
+    private CreateAndOrderUnit CreateAndOrderButton;
 
     /// <summary>The used to get the correct production queue</summary>
-    private readonly BaseSwitcher baseSwitch;
+    private BaseSwitcher baseSwitch;
 
     /// <summary>Healthpoints of the unit e.g. 100</summary>
-    private readonly int hp;
+    private int hp;
 
     /// <summary>Attackvalue of the unit e.g. 20</summary>
-    private readonly int attack;
+    private int attack;
 
     /// <summary>The defense value of a unit</summary>
-    private readonly int defense;
+    private int defense;
 
     /// <summary>Chance to hit a critical hit on another unit e.g. 0,1 = 10%</summary>
-    private readonly float critChance;
+    private float critChance;
 
     /// <summary>The time it takes to build this unit in seconds</summary>
     private float buildtime;
@@ -63,7 +63,7 @@ public class Unit : MonoBehaviour{
     /// <param name="buildtime">The time it takes to build this unit in seconds</param>
     /// <param name="createAndOrderButton">The script that triggeres a production of this unit</param>
     /// <param name="baseSwitch">The script that handles a base switch</param>
-    public Unit(string unitName, int hp, int attack, float critChance, int defense, Type type, ArmorType armorType, float buildtime, CreateAndOrderUnit createAndOrderButton, BaseSwitcher baseSwitch) {
+    public Unit Initialize(string unitName, int hp, int attack, float critChance, int defense, Type type, ArmorType armorType, float buildtime, CreateAndOrderUnit createAndOrderButton, BaseSwitcher baseSwitch) {
         this.UnitName = unitName;
         this.hp = hp;
         this.attack = attack;
@@ -75,6 +75,7 @@ public class Unit : MonoBehaviour{
         this.CreateAndOrderButton = createAndOrderButton;
         this.baseSwitch = baseSwitch;
         AllUnits.Add(this);
+        return this;
     }
 
     /// <summary>The type of the unit. (Tank, Soldier or Plane)</summary>
