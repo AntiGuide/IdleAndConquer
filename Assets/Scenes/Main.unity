@@ -2684,7 +2684,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 19
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &62153586
 SpriteRenderer:
@@ -2747,12 +2747,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &62153588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3202,12 +3208,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1581635611}
-  - {fileID: 101025098}
-  - {fileID: 1137779868}
-  - {fileID: 1079479735}
-  - {fileID: 1798727111}
-  - {fileID: 1288779793}
   - {fileID: 711277572}
   - {fileID: 812873514}
   - {fileID: 836949081}
@@ -3218,20 +3218,26 @@ Transform:
   - {fileID: 605209893}
   - {fileID: 1501615343}
   - {fileID: 1007474476}
-  - {fileID: 469993529}
-  - {fileID: 1694698896}
-  - {fileID: 1086629290}
-  - {fileID: 62153585}
-  - {fileID: 197023992}
-  - {fileID: 209003261}
-  - {fileID: 169420123}
-  - {fileID: 197159001}
   - {fileID: 1464480794}
   - {fileID: 2055173375}
   - {fileID: 272772699}
+  - {fileID: 1079479735}
+  - {fileID: 1798727111}
+  - {fileID: 1288779793}
+  - {fileID: 169420123}
+  - {fileID: 197159001}
   - {fileID: 635373358}
   - {fileID: 350699504}
   - {fileID: 1047168948}
+  - {fileID: 1581635611}
+  - {fileID: 101025098}
+  - {fileID: 1137779868}
+  - {fileID: 62153585}
+  - {fileID: 197023992}
+  - {fileID: 209003261}
+  - {fileID: 469993529}
+  - {fileID: 1694698896}
+  - {fileID: 1086629290}
   m_Father: {fileID: 864332587}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -4014,7 +4020,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 1
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &101025099
 SpriteRenderer:
@@ -4077,12 +4083,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &101025101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5951,7 +5963,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 22
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &169420124
 SpriteRenderer:
@@ -6014,12 +6026,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &169420126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6606,7 +6624,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 20
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &197023993
 SpriteRenderer:
@@ -6669,12 +6687,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &197023995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6718,7 +6742,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 23
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &197159002
 SpriteRenderer:
@@ -6781,12 +6805,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &197159004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7185,7 +7215,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 21
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &209003262
 SpriteRenderer:
@@ -7248,12 +7278,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &209003264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9599,7 +9635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 26
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &272772700
 SpriteRenderer:
@@ -9662,12 +9698,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &272772702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10666,7 +10708,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 9
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &323924878
 SpriteRenderer:
@@ -10729,12 +10771,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &323924880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11295,7 +11343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 28
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &350699505
 SpriteRenderer:
@@ -11358,12 +11406,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &350699507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14191,7 +14245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 16
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &469993530
 SpriteRenderer:
@@ -14254,12 +14308,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &469993532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17020,7 +17080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 10
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &558328167
 SpriteRenderer:
@@ -17083,12 +17143,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &558328169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19067,7 +19133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 13
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &605209894
 SpriteRenderer:
@@ -19130,12 +19196,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &605209896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19885,7 +19957,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 12
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &617667544
 SpriteRenderer:
@@ -19948,12 +20020,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &617667546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20739,7 +20817,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 27
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &635373359
 SpriteRenderer:
@@ -20802,12 +20880,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &635373361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23149,7 +23233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &711277573
 SpriteRenderer:
@@ -23212,12 +23296,23 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
   EnemyUnitsArr:
-  - {fileID: 0}
+  - {fileID: 764047843}
+  - {fileID: 764047843}
+  - {fileID: 764047843}
+  - {fileID: 764047843}
+  - {fileID: 764047843}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &711277575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25042,7 +25137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &777243693
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26127,7 +26222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &812873515
 SpriteRenderer:
@@ -26185,17 +26280,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 33
+  MissionRenownReward: 110
   goalThreeCondition: 0
-  TypeRestriction: 0
+  TypeRestriction: 2
   AmountRestriction: 0
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
   EnemyUnitsArr:
-  - {fileID: 0}
+  - {fileID: 54318848}
+  - {fileID: 54318848}
+  - {fileID: 54318848}
+  - {fileID: 54318848}
+  - {fileID: 54318848}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &812873517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26999,7 +27105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &836949082
 SpriteRenderer:
@@ -27057,17 +27163,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 36
+  MissionRenownReward: 120
   goalThreeCondition: 0
-  TypeRestriction: 0
+  TypeRestriction: 1
   AmountRestriction: 0
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
   EnemyUnitsArr:
-  - {fileID: 0}
+  - {fileID: 1609145820}
+  - {fileID: 1609145820}
+  - {fileID: 1609145820}
+  - {fileID: 1609145820}
+  - {fileID: 1609145820}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &836949084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32670,7 +32787,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 15
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1007474477
 SpriteRenderer:
@@ -32733,12 +32850,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1007474479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33957,7 +34080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 29
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1047168949
 SpriteRenderer:
@@ -34020,12 +34143,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1047168951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35455,7 +35584,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 3
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1079479736
 SpriteRenderer:
@@ -35518,12 +35647,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1079479738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35828,7 +35963,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 18
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1086629291
 SpriteRenderer:
@@ -35891,12 +36026,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1086629293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37731,7 +37872,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 2
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1137779869
 SpriteRenderer:
@@ -37794,12 +37935,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1137779871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42577,7 +42724,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 5
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1288779794
 SpriteRenderer:
@@ -42640,12 +42787,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1288779796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47251,7 +47404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 24
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1464480795
 SpriteRenderer:
@@ -47314,12 +47467,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1464480797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48389,7 +48548,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 14
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1501615344
 SpriteRenderer:
@@ -48452,12 +48611,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1501615346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51139,7 +51304,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 0
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1581635612
 SpriteRenderer:
@@ -51202,16 +51367,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 764047843}
-  - {fileID: 764047843}
-  - {fileID: 764047843}
-  - {fileID: 764047843}
-  - {fileID: 764047843}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1581635614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55879,7 +56046,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 17
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1694698897
 SpriteRenderer:
@@ -55942,12 +56109,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1694698899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59371,7 +59544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 4
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1798727112
 SpriteRenderer:
@@ -59434,12 +59607,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &1798727114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67863,7 +68042,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 25
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2055173376
 SpriteRenderer:
@@ -67926,12 +68105,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &2055173378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69264,7 +69449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82450681}
-  m_RootOrder: 11
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2118116842
 SpriteRenderer:
@@ -69327,12 +69512,18 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
-  EnemyUnitsArr:
-  - {fileID: 0}
+  VCoinReward: 0a0000000f00000019000000
+  LootboxRewardPrefabs:
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  - {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13, type: 2}
+  EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  virtualCurrencyManager: {fileID: 1899302186}
+  TransformCanvas: {fileID: 1343580271}
 --- !u!65 &2118116844
 BoxCollider:
   m_ObjectHideFlags: 0

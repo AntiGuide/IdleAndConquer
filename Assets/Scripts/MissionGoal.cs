@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class MissionGoal {
     private readonly GoalTypes goalType;
-    private Unit.Type typeRestriction;
-    private int amountRestriction;
+    private readonly Unit.Type typeRestriction;
+    private readonly int amountRestriction;
 
     public MissionGoal(GoalTypes goalType, Unit.Type typeRestriction) {
         this.goalType = goalType;
@@ -24,19 +24,35 @@ public class MissionGoal {
         
     }
 
-    public bool CheckGoal() {
+    public bool CheckGoal(List<Unit> unitsSent) {
         switch (goalType) {
             case GoalTypes.ONLY_USE_TYPE:
-                break;
+                foreach (var unit in unitsSent) {
+                    if (unit.UnitType != typeRestriction) {
+                        return false;
+                    }
+                }
+                return true;
             case GoalTypes.MIN_TYPE_AMOUNT:
-                break;
+                var typesMin = new List<Unit.Type>(3);
+                foreach (var unit in unitsSent) {
+                    if (!typesMin.Contains(unit.UnitType)) {
+                        typesMin.Add(unit.UnitType);
+                    }
+                }
+                return typesMin.Count >= amountRestriction;
             case GoalTypes.MAX_TYPE_AMOUNT:
-                break;
+                var typesMax = new List<Unit.Type>(3);
+                foreach (var unit in unitsSent) {
+                    if (!typesMax.Contains(unit.UnitType)) {
+                        typesMax.Add(unit.UnitType);
+                    }
+                }
+                return typesMax.Count <= amountRestriction;
             case GoalTypes.MAX_AMOUNT:
-                break;
+                return unitsSent.Count <= amountRestriction;
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        return true;
     }
 }

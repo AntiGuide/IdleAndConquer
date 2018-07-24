@@ -36,9 +36,6 @@ public class MissionUI : MonoBehaviour {
         if (this.aktTime / this.missionTime >= 1f) {
             this.img.fillAmount = 1f;
             this.missionTime = -1f;
-            foreach (var item in this.unitsInMission) {
-                item.SentToMission--;
-            }
                 
             // this.floatUpSpawner.GenerateFloatUp(missionMoneyReward, FloatUp.ResourceType.DOLLAR, transform.position);
             this.AttachedMissionQueue.FinshedMission(this.attachedMission);

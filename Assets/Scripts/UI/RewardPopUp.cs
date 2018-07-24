@@ -12,10 +12,11 @@ public class RewardPopUp : MonoBehaviour {
     private VirtualCurrencyManagement virtualCurrencyManager;
     private MissionQueue missionQueue;
     private List<Unit> unitsSent;
+    private General generalSent;
 
     public void GiveRewards() {
-        var achievedRating = this.missionDetails.CalculateBattle(unitsSent);
-        if (achievedRating == MissionDetails.Ratings.NOT_COMPLETED || Enum.IsDefined(typeof(MissionDetails.Ratings), achievedRating)) {
+        var achievedRating = this.missionDetails.CalculateBattle(unitsSent, generalSent);
+        if (achievedRating == MissionDetails.Ratings.NOT_COMPLETED || !Enum.IsDefined(typeof(MissionDetails.Ratings), achievedRating)) {
             UnityEngine.Object.Destroy(this.gameObject);
             return;
         }
@@ -23,30 +24,31 @@ public class RewardPopUp : MonoBehaviour {
         this.moneyManager.AddMoney(this.missionDetails.MissionMoneyReward);
         this.renownManager.AddRenown(this.missionDetails.MissionRenownReward);
 
-        switch (achievedRating) {
-            case MissionDetails.Ratings.ONE_STAR:
-                this.virtualCurrencyManager.AddVirtualCurrency(10);
-                this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.LEATHER);
-                break;
-            case MissionDetails.Ratings.TWO_STAR:
-                this.virtualCurrencyManager.AddVirtualCurrency(15);
-                this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.LEATHER);
-                break;
-            case MissionDetails.Ratings.THREE_STAR:
-                this.virtualCurrencyManager.AddVirtualCurrency(25);
-                this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.LEATHER);
-                break;
-        }
+        //switch (achievedRating) {
+        //    case MissionDetails.Ratings.ONE_STAR:
+        //        this.virtualCurrencyManager.AddVirtualCurrency(10);
+        //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.LEATHER);
+        //        break;
+        //    case MissionDetails.Ratings.TWO_STAR:
+        //        this.virtualCurrencyManager.AddVirtualCurrency(15);
+        //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.METAL);
+        //        break;
+        //    case MissionDetails.Ratings.THREE_STAR:
+        //        this.virtualCurrencyManager.AddVirtualCurrency(25);
+        //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.GOLD);
+        //        break;
+        //}
 
         UnityEngine.Object.Destroy(this.gameObject);
     }
 
-    public void Initialize(MoneyManagement moneyManager, RenownManagement renownManager, VirtualCurrencyManagement virtualCurrencyManager, MissionQueue missionQueue, List<Unit> unitsSent) {
+    public void Initialize(MoneyManagement moneyManager, RenownManagement renownManager, VirtualCurrencyManagement virtualCurrencyManager, MissionQueue missionQueue, List<Unit> unitsSent, General generalSent) {
         this.moneyManager = moneyManager;
         this.renownManager = renownManager;
         this.virtualCurrencyManager = virtualCurrencyManager;
         this.missionQueue = missionQueue;
         this.unitsSent = unitsSent;
+        this.generalSent = generalSent;
     }
 
     public void ShowRewards(MissionDetails missionDetails) {

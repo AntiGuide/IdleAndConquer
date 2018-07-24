@@ -48,24 +48,14 @@ public class GeneralManager : MonoBehaviour {
     /// This method generates a general from the preset values
     /// </summary>
     public void GenerateGeneral() {
-        // TODO Level 1 Choose 1 Skill
         var rnd = new System.Random();
         var nameID = rnd.Next(0, this.Names.Length);
         var countryID = rnd.Next(0, this.Countrys.Length);
         var aktChanceToPermaDeath = UnityEngine.Random.Range(this.GenMinChanceToPermaDeath, this.GenMaxChanceToPermaDeath);
-
         var attachedButton = Instantiate(Resources.Load<GameObject>("GeneralButton"), this.GeneralList.transform).GetComponent<GeneralButton>();
-        attachedButton.SetTexts(this.Countrys[countryID], this.Names[nameID], 0 + Environment.NewLine + "-" + Environment.NewLine + 0);
-        PlayerPrefs.SetFloat("GeneralChanceDeath_" + this.generalID, aktChanceToPermaDeath);
-        PlayerPrefs.SetString("GeneralCountry_" + this.generalID, this.Countrys[countryID]);
-        PlayerPrefs.SetString("GeneralName_" + this.generalID, this.Names[nameID]);
-        PlayerPrefs.SetInt("GeneralWin_" + this.generalID, 0);
-        PlayerPrefs.SetInt("GeneralLose_" + this.generalID, 0);
-        this.generalID++;
 
-        var ret = attachedButton.gameObject.GetComponent<General>();
-        ret.InitGeneral(aktChanceToPermaDeath, this.Countrys[countryID], this.Names[nameID]);
-        GeneralManager.AllGenerals.Add(ret);
+        attachedButton.SetTexts(this.Countrys[countryID], this.Names[nameID], 0 + Environment.NewLine + "-" + Environment.NewLine + 0);
+        attachedButton.gameObject.GetComponent<General>().InitGeneral(ref this.generalID, aktChanceToPermaDeath, this.Countrys[countryID], this.Names[nameID]);
     }
 
     /// <summary>
@@ -87,8 +77,7 @@ public class GeneralManager : MonoBehaviour {
             attachedButton.SetTexts(this.country, this.generalName, this.wins + Environment.NewLine + "-" + Environment.NewLine + this.loses);
 
             var ret = attachedButton.gameObject.GetComponent<General>();
-            ret.InitGeneral(this.chanceDeath, this.country, this.generalName);
-            GeneralManager.AllGenerals.Add(ret);
+            ret.InitGeneral(this.chanceDeath, this.country, this.generalName, tmpGeneralID);
         }
     }
 

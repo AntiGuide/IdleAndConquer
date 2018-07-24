@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 /// <summary> 
 /// Class to hold the details of a mission 
 /// </summary>
 public class MissionDetails : MonoBehaviour {
-    private static readonly float MoneyPerMissionSecond = 0.1f;
+    private const float MoneyPerMissionSecond = 0.1f;
 
     [Header("Mission Details")]
     public Ratings AktRating = Ratings.NOT_COMPLETED;
@@ -16,6 +18,8 @@ public class MissionDetails : MonoBehaviour {
     public MissionGoal.GoalTypes goalThreeCondition = MissionGoal.GoalTypes.ONLY_USE_TYPE;
     public Unit.Type TypeRestriction = Unit.Type.TANK;
     public int AmountRestriction = 0;
+    public int[] VCoinReward = { 10, 15, 25 };
+    public GameObject[] LootboxRewardPrefabs = new GameObject[3];
 
     [Header("Arrays")]
     public CreateAndOrderUnit[] EnemyUnitsArr;
@@ -25,6 +29,8 @@ public class MissionDetails : MonoBehaviour {
     public UIInteraction UIInteractions;
     public MainMenueController MainMenueControll;
     public GameObject MissionDetailsWindow;
+    public VirtualCurrencyManagement virtualCurrencyManager;
+    public Transform TransformCanvas;
 
     private readonly List<Unit> EnemyUnits = new List<Unit>();
     private MissionGoal missionGoal;
@@ -42,6 +48,12 @@ public class MissionDetails : MonoBehaviour {
         }
     }
 
+    public enum LootboxType {
+        LEATHER = 0,
+        METAL,
+        GOLD
+    }
+
     public enum Ratings {
         NOT_COMPLETED = 0,
         ONE_STAR,
@@ -55,7 +67,7 @@ public class MissionDetails : MonoBehaviour {
         this.MainMenueControll.ToggleMenue(1);
     }
 
-    public Ratings CalculateBattle(List<Unit> unitsSent) {
+    public Ratings CalculateBattle(List<Unit> unitsSent, General generalSent) {
         //EnemyUnits;
         //unitsSent;
 
@@ -63,38 +75,75 @@ public class MissionDetails : MonoBehaviour {
         var plEnemy = CalcPowerlevel(EnemyUnits);
         var calculatedPercentage = (float)plPlayer / plEnemy; //Determine how much better / worse the player is in %
 
-        var guaranteedLosslessWin = 2f + UnityEngine.Random.Range(-0.05f, 0.05f); //Calculate guaranteed lossless win(200 % +/ -5 % RND)
-        var guaranteedWin = 1f + UnityEngine.Random.Range(-0.05f, 0.05f); //Calculate guaranteed win(100 % +/ -5 % RND)
+        var guaranteedLosslessWin = 2f + Random.Range(-0.05f, 0.05f); //Calculate guaranteed lossless win(200 % +/ -5 % RND)
+        var guaranteedWin = 1f + Random.Range(-0.05f, 0.05f); //Calculate guaranteed win(100 % +/ -5 % RND)
+
+        MissionDetails.Ratings tmpRating;
 
         if (calculatedPercentage < guaranteedWin) {
-            //throw new NotImplementedException();
-            // Kill Units
-            // Check if general died
-            return Ratings.NOT_COMPLETED;
+            foreach (var unit in unitsSent) {
+                unit.KillSingleUnit();
+            }
+
+            generalSent.Died();
+            tmpRating = Ratings.NOT_COMPLETED;
         } else if (calculatedPercentage < guaranteedLosslessWin) {
-            //throw new NotImplementedException();
-            AktRating = AktRating < Ratings.ONE_STAR ? Ratings.ONE_STAR : AktRating;
-            CalcLosses(calculatedPercentage);
-            return Ratings.ONE_STAR;
+            CalcLosses((calculatedPercentage - guaranteedWin) * (guaranteedLosslessWin - guaranteedWin), ref unitsSent);
+            tmpRating =  Ratings.ONE_STAR;
         } else {
-            if (missionGoal.CheckGoal()) { //Check if Condition3 is matched
-                //throw new NotImplementedException();
-                AktRating = AktRating < Ratings.THREE_STAR ? Ratings.THREE_STAR : AktRating;
-                return Ratings.THREE_STAR;
-            } else {
-                //throw new NotImplementedException();
-                AktRating = AktRating < Ratings.TWO_STAR ? Ratings.TWO_STAR : AktRating;
-                return Ratings.TWO_STAR;
+            tmpRating = Ratings.TWO_STAR;
+            if (missionGoal.CheckGoal(unitsSent)) {
+                tmpRating = Ratings.THREE_STAR;
             }
         }
+
+        foreach (var unit in unitsSent) {
+            unit.SentToMission--;
+        }
+
+        unitsSent = null;
+
+        while (AktRating < tmpRating) {
+            this.virtualCurrencyManager.AddVirtualCurrency(VCoinReward[(int)AktRating]);
+            Object.Instantiate(this.LootboxRewardPrefabs[(int)AktRating], this.TransformCanvas);
+            AktRating++;
+        }
+
+        return tmpRating;
     }
 
-    private void CalcLosses(float calculatedPercentage) {
-        calculatedPercentage--;
+    /// <summary>
+    /// Calculates the losses on mission win.
+    /// </summary>
+    /// <param name="calculatedPercentage">How much better than the enemy is the player in relation to the randomized gates to win with/without losing units.</param>
+    /// <param name="unitsSent">The units sent.</param>
+    private static void CalcLosses(float calculatedPercentage, ref List<Unit> unitsSent) {
+        var unitCountToKill = Mathf.Max(1, Mathf.Min(Mathf.RoundToInt(unitsSent.Count - (calculatedPercentage * unitsSent.Count)), unitsSent.Count - 1));
+        KillUnits(ref unitsSent, unitCountToKill);
+    }
 
-        // Calc damage of enemies
-        // Take calculatedPercentage of Enemy damage
-        throw new NotImplementedException();
+    private static void KillUnits(ref List<Unit> units, int unitCountToKill) {
+        for (; unitCountToKill > 0; unitCountToKill--) {
+            //var avgSurvivability = 0f;
+            var gesSurvivability = 0f;
+            foreach (var unit in units) {
+                gesSurvivability += unit.GetDef() + unit.GetHP();
+            }
+
+            //avgSurvivability = gesSurvivability / units.Count;
+            var rnd = Random.Range(0f, 1f);
+            var addedDeathChance = 0f;
+            foreach (var unit in units) {
+                var unitDeathChance = (unit.GetDef() + unit.GetHP()) / gesSurvivability;
+                if (rnd >= unitDeathChance + addedDeathChance) {
+                    addedDeathChance += unitDeathChance;
+                } else {
+                    unit.KillSingleUnit();
+                    units.Remove(unit);
+                    break;
+                }
+            }
+        }
     }
 
     /// <summary>
@@ -104,17 +153,13 @@ public class MissionDetails : MonoBehaviour {
     /// <param name="unitsB">The units of the enemys.</param>
     /// <returns></returns>
     private static int CalcPowerlevel(IEnumerable<Unit> unitsA, List<Unit> unitsB) {
-        var combAttack = 0;
-        var combHP = 0;
-        var combDef = 0;
+        var combPL = 0;
 
         foreach (var unit in unitsA) {
-            combAttack += unit.GetAverageDamage(unitsB);
-            combHP += unit.GetHP();
-            combDef += unit.GetDef();
+            combPL += Mathf.RoundToInt(unit.GetHP() * unit.GetAverageDamage(unitsB) * unit.GetDef() / 1000f);
         }
 
-        return Mathf.RoundToInt(combHP * combAttack * combDef / 1000f);
+        return combPL;
     }
 
     private static int CalcPowerlevel(IEnumerable<Unit> units) {

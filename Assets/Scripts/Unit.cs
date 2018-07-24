@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>Handles all tanks, planes and soldiers with all their values</summary>
@@ -34,8 +35,8 @@ public class Unit : MonoBehaviour{
     /// <summary>Healthpoints of the unit e.g. 100</summary>
     private int hp;
 
-    /// <summary>Attackvalue of the unit e.g. 20</summary>
-    private int attack;
+    /// <summary>Attackvalue of the unit e.g. 20</summary> 
+    private int attack; 
 
     /// <summary>The defense value of a unit</summary>
     private int defense;
@@ -108,7 +109,9 @@ public class Unit : MonoBehaviour{
     private ArmorType ArmorTypeUnit { get; set; }
 
     /// <summary>Getter and setter for type (tank, plane...)</summary>
-    private Type UnitType { get; set; }
+    public Type UnitType { get; set; }
+
+    public int AttackRaw { get; private set; }
 
     /// <summary>
     /// This method tries to order a specific unit. If the player has enough money the queue is started.
@@ -185,6 +188,16 @@ public class Unit : MonoBehaviour{
         this.CreateAndOrderButton.SetUnitCount((++this.UnitCount).ToString());
         PlayerPrefs.SetInt(this.UnitName + "_COUNT", this.UnitCount);
         this.CreateAndOrderButton.AddPowerlevel(Mathf.RoundToInt(this.hp * this.attack * this.defense / 1000f), false);
+    }
+
+    public void KillSingleUnit() {
+        if (UnitCount > 0) {
+            this.CreateAndOrderButton.SetUnitCount((--this.UnitCount).ToString());
+            PlayerPrefs.SetInt(this.UnitName + "_COUNT", this.UnitCount);
+            this.CreateAndOrderButton.AddPowerlevel(-Mathf.RoundToInt(this.hp * this.attack * this.defense / 1000f), false);
+        } else {
+            throw new Exception("Not enough Units to kill one!");
+        }
     }
 
     public void LevelUp() {

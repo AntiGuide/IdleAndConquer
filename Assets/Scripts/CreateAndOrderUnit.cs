@@ -104,7 +104,11 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <param name="pl">The amount that should be added</param>
     /// <param name="supressed">True if the floatup should be supressed</param>
     public void AddPowerlevel(int pl, bool supressed) {
-        this.PowerlevelManager.AddPowerlevel(pl, supressed);
+        if (pl < 0) {
+            this.PowerlevelManager.SubPowerlevel(pl);
+        } else {
+            this.PowerlevelManager.AddPowerlevel(pl, supressed);
+        }
     }
 
     /// <summary>
