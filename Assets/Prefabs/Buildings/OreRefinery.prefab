@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingType: 3
+  BuildCost: 1000
+  CostEnergy: 5
 --- !u!114 &114261282446440160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,8 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2706abf3061441944b41f3f3c06c8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HarvesterPrefab: {fileID: 1911548418386056, guid: 61b7ed4850832cd41812b796ecd855c3,
+  HarvesterPrefab: {fileID: 1148908733475574, guid: 277a27fee2076a146876d22ff1dc9e40,
     type: 2}
+  IsBuiltOnStartup: 0
 --- !u!114 &114391983503244542
 MonoBehaviour:
   m_ObjectHideFlags: 1

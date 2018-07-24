@@ -1,19 +1,23 @@
 fileFormatVersion: 2
-guid: b663ff94146ce5244b5cddcf46c60edb
-timeCreated: 1526037024
+guid: 3f38898fa7856f847bfae4b8223b5053
+timeCreated: 1532415494
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Barracs_PLH100x100m
     400000: //RootNode
-    400002: Barracs_PLH100x100m
-    2100000: Barracs_PLH100x100mMat
-    2300000: Barracs_PLH100x100m
-    3300000: Barracs_PLH100x100m
-    4300000: Barracs_PLH100x100m
-  externalObjects: {}
+    2100000: Harvester_Mat
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Harvester
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Harvester_Mat
+    second: {fileID: 2100000, guid: c87b3912c0d054c48a79b9e55c597c0c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -43,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0254
+    globalScale: 7
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -87,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
