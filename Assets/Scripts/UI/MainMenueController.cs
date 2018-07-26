@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.Profiling;
 
 /// <summary>
 /// Controlls expansion and unexpansion of the MainMenue (Slider from bottom)
@@ -24,6 +26,7 @@ public class MainMenueController : MonoBehaviour {
     /// </summary>
     /// <param name="menueNumber">Number of menue to open</param>
     public void ToggleMenue(int menueNumber) {
+        Profiler.BeginSample("MainMenueController.ToggleMenue()");
         menueNumber--;
 
         if (this.enabledMenue != menueNumber) {
@@ -32,10 +35,12 @@ public class MainMenueController : MonoBehaviour {
             }
 
             if (this.enabledMenue != -1) {
-                this.Menue[this.enabledMenue].SetActive(false);
+                this.Menue[this.enabledMenue].GetComponent<Canvas>().enabled = false;
+                //this.Menue[this.enabledMenue].SetActive(false);
             }
 
-            this.Menue[menueNumber].SetActive(true);
+            this.Menue[menueNumber].GetComponent<Canvas>().enabled = true;
+            //this.Menue[menueNumber].SetActive(true);
             this.enabledMenue = menueNumber;
             this.menueController[this.enabledMenue].Expand(!this.IsExpanded);
         } else {
@@ -45,6 +50,7 @@ public class MainMenueController : MonoBehaviour {
                 this.menueController[this.enabledMenue].Expand(true);
             }
         }
+        Profiler.EndSample();
     }
 
     /// <summary>
@@ -85,15 +91,21 @@ public class MainMenueController : MonoBehaviour {
         this.menueController = new MenueController[this.Menue.Length];
         var i = 0;
         var standardSelected = false;
+        foreach (var men in Menue) {
+            if (men != null) {
+                men.SetActive(true);
+            }
+        }
 
         foreach (var men in this.Menue) {
             if (men != null && !standardSelected) {
-                men.SetActive(true);
+                //men.SetActive(true);
                 this.enabledMenue = i;
                 this.IsExpanded = false;
                 standardSelected = true;
             } else if (men != null) {
-                men.SetActive(false);
+                men.GetComponent<Canvas>().enabled = false;
+                //men.SetActive(false);
             }
 
             i++;

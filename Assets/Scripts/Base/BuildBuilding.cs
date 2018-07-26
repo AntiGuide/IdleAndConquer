@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class BuildBuilding : MonoBehaviour {
     public GameObject[] BuiltBuildings;
@@ -137,8 +139,9 @@ public class BuildBuilding : MonoBehaviour {
         var bounds = this.newBuilding.GetComponentInChildren<BoxCollider>().bounds;
         var onlyXZ = new Vector3(bounds.extents.x, 0, bounds.extents.z);
         Vector2 screenPoint = Camera.main.WorldToScreenPoint(this.newBuilding.transform.position + this.BuildUIOffset + onlyXZ);
-        screenPoint = Vector2.Max(this.MinBuildConfirmUIPosition, screenPoint);
-        screenPoint = Vector2.Min(this.MaxBuildConfirmUIPosition, screenPoint);
+        screenPoint = Vector2.Max(new Vector2(this.MinBuildConfirmUIPosition.x * (Screen.width / 1080f), this.MinBuildConfirmUIPosition.y * (Screen.height / 1920f)), screenPoint);
+        screenPoint = Vector2.Min(new Vector2(this.MaxBuildConfirmUIPosition.x * (Screen.width / 1080f), this.MaxBuildConfirmUIPosition.y * (Screen.height / 1920f)), screenPoint);
+        //screenPoint = Vector2.Min(this.MaxBuildConfirmUIPosition, screenPoint);
         this.BuildConfirmUI.transform.position = screenPoint;
     }
 }
