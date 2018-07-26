@@ -24,6 +24,12 @@ public class LootboxUI : MonoBehaviour {
         UnityEngine.Object.Destroy(transform.parent.parent.gameObject);
     }
 
+    public void ClickOKDaily() {
+        this.blueprintMan.SearchUnitNameAddBlueprint(this.RewardUnitName, this.RewardCount);
+        TimedResearchReward.BeginNewTimerNow = true;
+        UnityEngine.Object.Destroy(transform.parent.parent.gameObject);
+    }
+
     private void Start() {
         this.blueprintMan = GameObject.Find("/Main/Canvas/MainMenue/MenueResearch").GetComponent<BlueprintManager>();
     }

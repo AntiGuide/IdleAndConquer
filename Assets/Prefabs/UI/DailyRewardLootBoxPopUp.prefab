@@ -443,7 +443,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114403576750504258}
-        m_MethodName: ClickOK
+        m_MethodName: ClickOKDaily
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
