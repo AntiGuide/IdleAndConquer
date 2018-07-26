@@ -22,6 +22,7 @@ public class EnergyManagement : MonoBehaviour {
             this.blinking = true;
             this.blinkTimeAkt = this.blinkTime;
         } else {
+            this.blinking = false;
             this.isRed = false;
         }
 
