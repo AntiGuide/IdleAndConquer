@@ -45,8 +45,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The reference to the base switcher (used to get the correct production queue)</summary>
     public BaseSwitcher BaseSwitch;
 
-    public int AddCountOnStartUp = 0;
-
     private static readonly List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
 
     private static readonly int[] costLevel = { 0, 0, 0 };
@@ -105,7 +103,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <param name="supressed">True if the floatup should be supressed</param>
     public void AddPowerlevel(int pl, bool supressed) {
         if (pl < 0) {
-            this.PowerlevelManager.SubPowerlevel(pl);
+            this.PowerlevelManager.SubPowerlevel(Mathf.Abs(pl));
         } else {
             this.PowerlevelManager.AddPowerlevel(pl, supressed);
         }
@@ -172,7 +170,6 @@ public class CreateAndOrderUnit : MonoBehaviour {
         this.buildingOverlay.fillAmount = 0f;
         this.unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
         var count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
-        count += this.AddCountOnStartUp;
         if (count > 0) {
             this.AddPowerlevel(count * Mathf.RoundToInt(this.hp * this.attack * this.Defense / 1000f), true);
             this.SetUnitCount(count.ToString());

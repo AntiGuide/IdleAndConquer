@@ -26,8 +26,17 @@ public class MissionQueue : MonoBehaviour {
 
     public void FinshedMission(Mission attachedMission) {
         attachedMission.MissionGeneral.IsSentToMission = false;
-        var go = Instantiate(this.RewardPopUpPrefab, this.TransformCanvas);
-        go.GetComponent<RewardPopUp>().Initialize(this.MoneyManager, this.RenownManager, this.VirtualCurrencyManager, this, attachedMission.Units, attachedMission.MissionGeneral);
-        go.GetComponent<RewardPopUp>().ShowRewards(attachedMission.MissionDetails);
+
+        var achievedRating = attachedMission.MissionDetails.CalculateBattle(attachedMission.Units, attachedMission.MissionGeneral);
+        if (achievedRating == MissionDetails.Ratings.NOT_COMPLETED || !Enum.IsDefined(typeof(MissionDetails.Ratings), achievedRating)) {
+            return;
+        }
+
+        this.MoneyManager.AddMoney(attachedMission.MissionDetails.MissionMoneyReward);
+        this.RenownManager.AddRenown(attachedMission.MissionDetails.MissionRenownReward);
+
+        // var go = Instantiate(this.RewardPopUpPrefab, this.TransformCanvas);
+        // go.GetComponent<RewardPopUp>().Initialize(this.MoneyManager, this.RenownManager, this.VirtualCurrencyManager, this, attachedMission.Units, attachedMission.MissionGeneral);
+        // go.GetComponent<RewardPopUp>().ShowRewards(attachedMission.MissionDetails);
     }
 }

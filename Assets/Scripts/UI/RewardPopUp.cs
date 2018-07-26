@@ -14,33 +14,26 @@ public class RewardPopUp : MonoBehaviour {
     private List<Unit> unitsSent;
     private General generalSent;
 
-    public void GiveRewards() {
-        var achievedRating = this.missionDetails.CalculateBattle(unitsSent, generalSent);
-        if (achievedRating == MissionDetails.Ratings.NOT_COMPLETED || !Enum.IsDefined(typeof(MissionDetails.Ratings), achievedRating)) {
-            UnityEngine.Object.Destroy(this.gameObject);
-            return;
-        }
+    //public void GiveRewards() {
+        
 
-        this.moneyManager.AddMoney(this.missionDetails.MissionMoneyReward);
-        this.renownManager.AddRenown(this.missionDetails.MissionRenownReward);
+    //    //switch (achievedRating) {
+    //    //    case MissionDetails.Ratings.ONE_STAR:
+    //    //        this.virtualCurrencyManager.AddVirtualCurrency(10);
+    //    //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.LEATHER);
+    //    //        break;
+    //    //    case MissionDetails.Ratings.TWO_STAR:
+    //    //        this.virtualCurrencyManager.AddVirtualCurrency(15);
+    //    //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.METAL);
+    //    //        break;
+    //    //    case MissionDetails.Ratings.THREE_STAR:
+    //    //        this.virtualCurrencyManager.AddVirtualCurrency(25);
+    //    //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.GOLD);
+    //    //        break;
+    //    //}
 
-        //switch (achievedRating) {
-        //    case MissionDetails.Ratings.ONE_STAR:
-        //        this.virtualCurrencyManager.AddVirtualCurrency(10);
-        //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.LEATHER);
-        //        break;
-        //    case MissionDetails.Ratings.TWO_STAR:
-        //        this.virtualCurrencyManager.AddVirtualCurrency(15);
-        //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.METAL);
-        //        break;
-        //    case MissionDetails.Ratings.THREE_STAR:
-        //        this.virtualCurrencyManager.AddVirtualCurrency(25);
-        //        this.missionQueue.OpenLootboxPopUp(MissionQueue.LootboxType.GOLD);
-        //        break;
-        //}
-
-        UnityEngine.Object.Destroy(this.gameObject);
-    }
+    //    UnityEngine.Object.Destroy(this.gameObject);
+    //}
 
     public void Initialize(MoneyManagement moneyManager, RenownManagement renownManager, VirtualCurrencyManagement virtualCurrencyManager, MissionQueue missionQueue, List<Unit> unitsSent, General generalSent) {
         this.moneyManager = moneyManager;
@@ -51,15 +44,14 @@ public class RewardPopUp : MonoBehaviour {
         this.generalSent = generalSent;
     }
 
-    public void ShowRewards(MissionDetails missionDetails) {
-        this.missionDetails = missionDetails;
-        this.PlayerCommunication.text = "Congratulations on beating the mission!" + System.Environment.NewLine + System.Environment.NewLine + "You get:";
-        // this.PlayerRewards.text = this.missionDetails.MissionMoneyReward + " Dollar" + System.Environment.NewLine +
-        //                     this.missionDetails.MissionRenownReward + " Renown" + System.Environment.NewLine +
-        //                     this.missionDetails.MissionVirtualReward + " Virtual" + System.Environment.NewLine +
-        //                     this.missionDetails.MissionBlueprintReward + " Blueprint";
-        
-        // GameObject go = Instantiate(RewardPrefab, transform);
-        // go.GetComponent<MissionReward>();
-    }
+    //public void ShowRewards(MissionDetails missionDetails) {
+    //    this.missionDetails = missionDetails;
+    //    this.PlayerCommunication.text = "Congratulations on beating the mission!" + System.Environment.NewLine + System.Environment.NewLine + "You get:";
+    //    // this.PlayerRewards.text = this.missionDetails.MissionMoneyReward + " Dollar" + System.Environment.NewLine +
+    //    //                     this.missionDetails.MissionRenownReward + " Renown" + System.Environment.NewLine +
+    //    //                     this.missionDetails.MissionVirtualReward + " Virtual" + System.Environment.NewLine +
+    //    //                     this.missionDetails.MissionBlueprintReward + " Blueprint";
+    //    // GameObject go = Instantiate(RewardPrefab, transform);
+    //    // go.GetComponent<MissionReward>();
+    //}
 }

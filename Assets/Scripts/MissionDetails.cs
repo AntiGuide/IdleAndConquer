@@ -75,12 +75,17 @@ public class MissionDetails : MonoBehaviour {
         var plEnemy = CalcPowerlevel(EnemyUnits);
         var calculatedPercentage = (float)plPlayer / plEnemy; //Determine how much better / worse the player is in %
 
+        Debug.Log("plPlayer: " + plPlayer);
+        Debug.Log("plEnemy: " + +plEnemy);
+        Debug.Log("calculatedPercentage: " + calculatedPercentage);
+
         var guaranteedLosslessWin = 2f + Random.Range(-0.05f, 0.05f); //Calculate guaranteed lossless win(200 % +/ -5 % RND)
         var guaranteedWin = 1f + Random.Range(-0.05f, 0.05f); //Calculate guaranteed win(100 % +/ -5 % RND)
 
         MissionDetails.Ratings tmpRating;
 
         if (calculatedPercentage < guaranteedWin) {
+            Debug.Log("Player lost mission!");
             foreach (var unit in unitsSent) {
                 unit.KillSingleUnit();
             }
@@ -88,9 +93,11 @@ public class MissionDetails : MonoBehaviour {
             generalSent.Died();
             tmpRating = Ratings.NOT_COMPLETED;
         } else if (calculatedPercentage < guaranteedLosslessWin) {
+            Debug.Log("Player won mission but lost units!");
             CalcLosses((calculatedPercentage - guaranteedWin) * (guaranteedLosslessWin - guaranteedWin), ref unitsSent);
             tmpRating =  Ratings.ONE_STAR;
         } else {
+            Debug.Log("Player won mission and lost no units!");
             tmpRating = Ratings.TWO_STAR;
             if (missionGoal.CheckGoal(unitsSent)) {
                 tmpRating = Ratings.THREE_STAR;
@@ -118,7 +125,8 @@ public class MissionDetails : MonoBehaviour {
     /// <param name="calculatedPercentage">How much better than the enemy is the player in relation to the randomized gates to win with/without losing units.</param>
     /// <param name="unitsSent">The units sent.</param>
     private static void CalcLosses(float calculatedPercentage, ref List<Unit> unitsSent) {
-        var unitCountToKill = Mathf.Max(1, Mathf.Min(Mathf.RoundToInt(unitsSent.Count - (calculatedPercentage * unitsSent.Count)), unitsSent.Count - 1));
+        var unitCountToKill = Mathf.Min(Mathf.Max(1, Mathf.RoundToInt(unitsSent.Count - (calculatedPercentage * unitsSent.Count))), unitsSent.Count - 1);
+        Debug.Log("Player lost " + unitCountToKill + " Units!");
         KillUnits(ref unitsSent, unitCountToKill);
     }
 

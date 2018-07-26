@@ -6,9 +6,9 @@ public class Mission : MonoBehaviour {
     public MissionDetails MissionDetails;
     public General MissionGeneral;
     public List<Unit> Units;
-    private readonly MissionQueue missionQueue;
+    private MissionQueue missionQueue;
 
-    public Mission(MissionDetails missionDetails, UIInteraction uiInteractions, General general = null, List<Unit> units = null) {
+    public void Initialize(MissionDetails missionDetails, UIInteraction uiInteractions, General general = null, List<Unit> units = null) {
         this.MissionDetails = missionDetails;
         this.MissionGeneral = general;
         this.Units = units ?? new List<Unit>();

@@ -30,10 +30,13 @@ public class MissionManager : MonoBehaviour {
             item.SentToMission++;
         }
 
-        this.MissionQueue.Add(new Mission(this.MissionDetails, this.UIInteractions, this.MissionGeneral, this.Units));
+        var m = gameObject.AddComponent<Mission>();
+        m.Initialize(this.MissionDetails, this.UIInteractions, this.MissionGeneral, this.Units);
+        this.MissionQueue.Add(m);
         this.UIInteractions.MainLoad();
         OnClickDeploy.DeployedUnits = 0;
         this.MainMenueControll.ActivateDeployUI(false);
+        this.Reset();
     }
 
     public void AddUnitToBuildingMission(ref Unit unit) {
