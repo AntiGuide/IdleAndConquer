@@ -10,6 +10,7 @@ public class MissionQueue : MonoBehaviour {
     public GameObject RewardPopUpPrefab;
     public Transform TransformCanvas;
     public GameObject LootboxPopUpPrefab;
+    [SerializeField] private MissionFeedbackPrompt missionFeedbackPrompt;
     private readonly List<MissionUI> missionUIs = new List<MissionUI>();
 
 
@@ -26,14 +27,16 @@ public class MissionQueue : MonoBehaviour {
 
     public void FinshedMission(Mission attachedMission) {
         attachedMission.MissionGeneral.IsSentToMission = false;
+        var tmpMissionDetails = attachedMission.MissionDetails;
 
         var achievedRating = attachedMission.MissionDetails.CalculateBattle(attachedMission.Units, attachedMission.MissionGeneral);
-        if (achievedRating == MissionDetails.Ratings.NOT_COMPLETED || !Enum.IsDefined(typeof(MissionDetails.Ratings), achievedRating)) {
+        if (!Enum.IsDefined(typeof(MissionDetails.Ratings), achievedRating)) {
             return;
         }
+        
+        missionFeedbackPrompt.ShowMissionOutcome(tmpMissionDetails.MissionRenownReward, tmpMissionDetails.MissionMoneyReward,tmpMissionDetails.AktRating, achievedRating,attachedMission.MissionDetails.name);
 
-        this.MoneyManager.AddMoney(attachedMission.MissionDetails.MissionMoneyReward);
-        this.RenownManager.AddRenown(attachedMission.MissionDetails.MissionRenownReward);
+        
 
         // var go = Instantiate(this.RewardPopUpPrefab, this.TransformCanvas);
         // go.GetComponent<RewardPopUp>().Initialize(this.MoneyManager, this.RenownManager, this.VirtualCurrencyManager, this, attachedMission.Units, attachedMission.MissionGeneral);

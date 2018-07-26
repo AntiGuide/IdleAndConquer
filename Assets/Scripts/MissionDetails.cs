@@ -12,14 +12,13 @@ public class MissionDetails : MonoBehaviour {
     private const float MoneyPerMissionSecond = 0.1f;
 
     [Header("Mission Details")]
+    public string MissionName = "Mission 1";
     public Ratings AktRating = Ratings.NOT_COMPLETED;
     public int MissionTimeMinutes;
     public int MissionRenownReward;
     public MissionGoal.GoalTypes goalThreeCondition = MissionGoal.GoalTypes.ONLY_USE_TYPE;
     public Unit.Type TypeRestriction = Unit.Type.TANK;
     public int AmountRestriction = 0;
-    public int[] VCoinReward = { 10, 15, 25 };
-    public GameObject[] LootboxRewardPrefabs = new GameObject[3];
 
     [Header("Arrays")]
     public CreateAndOrderUnit[] EnemyUnitsArr;
@@ -29,8 +28,6 @@ public class MissionDetails : MonoBehaviour {
     public UIInteraction UIInteractions;
     public MainMenueController MainMenueControll;
     public GameObject MissionDetailsWindow;
-    public VirtualCurrencyManagement virtualCurrencyManager;
-    public Transform TransformCanvas;
 
     private readonly List<Unit> EnemyUnits = new List<Unit>();
     private MissionGoal missionGoal;
@@ -110,11 +107,7 @@ public class MissionDetails : MonoBehaviour {
 
         unitsSent = null;
 
-        while (AktRating < tmpRating) {
-            this.virtualCurrencyManager.AddVirtualCurrency(VCoinReward[(int)AktRating]);
-            Object.Instantiate(this.LootboxRewardPrefabs[(int)AktRating], this.TransformCanvas);
-            AktRating++;
-        }
+        
 
         return tmpRating;
     }
