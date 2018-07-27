@@ -8,6 +8,8 @@ public class SoundController : MonoBehaviour {
     public AudioClip[] BGMClips;
     public float volumeBGM = 0.2f;
 
+    private int aktTrackNumber;
+
     public enum Sounds {
         CANCEL_SELL = 0,
         FLOATUP,
@@ -50,29 +52,16 @@ public class SoundController : MonoBehaviour {
     }
 
     private void Start() {
-        this.StartCoroutine(this.PlayBGM());
+        this.AudioSourceBGM.volume = this.volumeBGM;
+        this.AudioSourceBGM.loop = false;
+        aktTrackNumber = -1;
     }
 
-    private System.Collections.IEnumerator PlayBGM() {
-        this.AudioSourceBGM.volume = this.volumeBGM;
-        var aktTrackNumber = -1;
-        var nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, this.BGMClips.Length - 1));
-        this.AudioSourceBGM.clip = this.BGMClips[nextTrackNumber];
-        this.AudioSourceBGM.clip.LoadAudioData();
-        while (true) {
+    private void Update() {
+        if (!AudioSourceBGM.isPlaying) {
+            aktTrackNumber = ++aktTrackNumber > this.BGMClips.Length - 1 ? 0 : aktTrackNumber;
+            this.AudioSourceBGM.clip = this.BGMClips[aktTrackNumber];
             this.AudioSourceBGM.Play();
-            if (aktTrackNumber >= 0) {
-                this.BGMClips[aktTrackNumber].UnloadAudioData();
-            }
-
-            yield return new WaitForSeconds(this.AudioSourceBGM.clip.length / 2f);
-            aktTrackNumber = nextTrackNumber;
-            nextTrackNumber = Mathf.RoundToInt(UnityEngine.Random.Range(0f, this.BGMClips.Length - 1));
-            this.BGMClips[nextTrackNumber].LoadAudioData();
-            yield return new WaitForSeconds(this.AudioSourceBGM.clip.length / 2f);
-            this.AudioSourceBGM.Stop();
-            this.AudioSourceBGM.clip = this.BGMClips[nextTrackNumber];
         }
-        // ReSharper disable once IteratorNeverReturns
     }
 }
