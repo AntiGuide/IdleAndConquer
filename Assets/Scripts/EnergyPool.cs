@@ -3,26 +3,26 @@
 /// <summary>Contains energy data for each base</summary>
 public class EnergyPool : MonoBehaviour {
     /// <summary>The maximum containable energy</summary>
-    public float MaxEnergy = 100;
+    public int MaxEnergy = 96;
 
     /// <summary>The minimum containable energy</summary>
-    public float MinEnergy = 0;
+    public int MinEnergy = 0;
 
     /// <summary>The reference to the EnergyManager used to output the energy level</summary>
     public EnergyManagement EnergyManager;
 
     /// <summary>The momentarily contained energy</summary>
-    public float CurEnergy = 50;
+    public int CurEnergy = 50;
 
     /// <summary>
     /// Adds energy to the pool
     /// </summary>
     /// <param name="energyToAdd">How much energy to add</param>
     /// <returns>Returns wether the change is possible</returns>
-    public void AddEnergy(float energyToAdd) {
+    public void AddEnergy(int energyToAdd) {
         if (!this.IsInBounds(this.CurEnergy + energyToAdd)) return;
         this.CurEnergy += energyToAdd;
-        this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy);
+        this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy, true);
     }
 
     /// <summary>
@@ -30,10 +30,10 @@ public class EnergyPool : MonoBehaviour {
     /// </summary>
     /// <param name="energyToSub">How much energy to sub</param>
     /// <returns>Returns wether the change is possible</returns>
-    public void SubEnergy(float energyToSub) {
+    public void SubEnergy(int energyToSub) {
         if (!this.IsInBounds(this.CurEnergy - energyToSub)) return;
         this.CurEnergy -= energyToSub;
-        this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy);
+        this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy, true);
     }
 
     /// <summary>
@@ -47,10 +47,10 @@ public class EnergyPool : MonoBehaviour {
     /// Sets the energy to a specific value
     /// </summary>
     /// <param name="valueToSet">To which level do we set the energy</param>
-    private void SetEnergy(float valueToSet) {
+    private void SetEnergy(int valueToSet) {
         if (this.IsInBounds(valueToSet)) {
             this.CurEnergy = valueToSet;
-            this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy);
+            this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy, false);
         } else {
             throw new System.ArgumentException("Can not set an Energy Value that is not in the range of min and max Energy Value", "valueToSet");
         }
