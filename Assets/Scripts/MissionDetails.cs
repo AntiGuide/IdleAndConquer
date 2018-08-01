@@ -76,10 +76,6 @@ public class MissionDetails : MonoBehaviour {
         var plEnemy = CalcPowerlevel(EnemyUnits);
         var calculatedPercentage = (float)plPlayer / plEnemy; //Determine how much better / worse the player is in %
 
-        Debug.Log("plPlayer: " + plPlayer);
-        Debug.Log("plEnemy: " + +plEnemy);
-        Debug.Log("calculatedPercentage: " + calculatedPercentage);
-
         var guaranteedLosslessWin = 2f + Random.Range(-0.05f, 0.05f); //Calculate guaranteed lossless win(200 % +/ -5 % RND)
         var guaranteedWin = 1f + Random.Range(-0.05f, 0.05f); //Calculate guaranteed win(100 % +/ -5 % RND)
 
