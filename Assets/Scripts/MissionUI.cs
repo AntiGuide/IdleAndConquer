@@ -10,7 +10,7 @@ public class MissionUI : MonoBehaviour {
     private float missionTime = -1f;
     // private long missionMoneyReward;
     private float aktTime = 0f;
-    private List<Unit> unitsInMission;
+    //private List<Unit> unitsInMission;
     private Mission attachedMission;
 
     public void SetTime(float time) {
@@ -20,7 +20,7 @@ public class MissionUI : MonoBehaviour {
     public void Initialize(Mission mission) {
         this.missionTime = mission.MissionDetails.MissionTime;
         // this.missionMoneyReward = mission.MissionDetails.MissionMoneyReward;
-        this.unitsInMission = mission.Units;
+        //this.unitsInMission = mission.Units;
         this.attachedMission = mission;
     }
 
