@@ -93,7 +93,9 @@ public class MoneyManagement : MonoBehaviour {
 
     /// <summary>Sets the money to 20000 in the beginning</summary>
     private void Start() {
-        this.SetMoney(PlayerPrefs.GetInt("money", 80000));
+        var initValue = PlayerPrefs.GetInt("money", 80000);
+        initValue = initValue <= 0?80000:initValue;
+        this.SetMoney(initValue);
     }
 
     /// <summary>Called once per frame</summary>

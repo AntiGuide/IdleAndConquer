@@ -60,6 +60,10 @@ public class MissionDetails : MonoBehaviour {
 
     public void OnClick() {
         this.MissionDetailsWindow.SetActive(true);
+        var detailWindow =  this.MissionDetailsWindow.GetComponent<MissionDetailWindow>();
+        var rewardText = "Reward:" + System.Environment.NewLine + "Test";
+        detailWindow.FillInfo(this.MissionName, rewardText, (ushort)this.AktRating);
+
         this.MissionMan.GenerateMission(this, this.UIInteractions, this.MainMenueControll);
         this.MainMenueControll.ToggleMenue(1);
     }
