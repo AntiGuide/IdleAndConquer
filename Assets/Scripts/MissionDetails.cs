@@ -82,7 +82,6 @@ public class MissionDetails : MonoBehaviour {
         MissionDetails.Ratings tmpRating;
 
         if (calculatedPercentage < guaranteedWin) {
-            Debug.Log("Player lost mission!");
             foreach (var unit in unitsSent) {
                 unit.KillSingleUnit();
             }
