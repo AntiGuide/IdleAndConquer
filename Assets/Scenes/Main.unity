@@ -2653,7 +2653,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 16
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -3967,7 +3968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 15
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -5766,7 +5768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 10
+  MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -6359,7 +6362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &190401800
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6588,7 +6591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 15
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -6703,7 +6707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 9
+  MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -7173,7 +7178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 14
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -9589,7 +9595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 8
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -10659,7 +10666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 4
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -11291,7 +11299,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 15
+  MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -14149,7 +14158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 13
+  MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -17071,7 +17081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 4
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -17290,7 +17301,7 @@ GameObject:
   - component: {fileID: 565327316}
   - component: {fileID: 565327315}
   m_Layer: 5
-  m_Name: Star
+  m_Name: Star2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19192,7 +19203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 6
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -20013,7 +20025,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 5
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -20928,7 +20941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 16
+  MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -23340,7 +23354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 1
+  MissionVariantID: 0
   MissionName: Mission Org1
   AktRating: 0
   MissionTimeMinutes: 1
@@ -24463,7 +24478,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300012, guid: c5bb8c5a2b9a8af418278d308fac33fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2326a793b018b9e49a6a93d3e2749073, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -25925,7 +25940,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300012, guid: c5bb8c5a2b9a8af418278d308fac33fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2326a793b018b9e49a6a93d3e2749073, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26151,7 +26166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 2
+  MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 33
@@ -27031,7 +27047,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 3
+  MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 36
@@ -28258,7 +28275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 8
+  MissionVariantID: 3
   MissionName: Green3
   AktRating: 0
   MissionTimeMinutes: 30
@@ -33313,7 +33331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 7
+  MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -34545,7 +34564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 14
+  MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -36099,7 +36119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 10
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -36475,7 +36496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 11
+  MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -38382,7 +38404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 14
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -40031,7 +40054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1196226344
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43275,7 +43298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 8
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -43465,7 +43489,7 @@ GameObject:
   - component: {fileID: 1294894684}
   - component: {fileID: 1294894683}
   m_Layer: 5
-  m_Name: Star
+  m_Name: Star3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46766,7 +46790,7 @@ GameObject:
   - component: {fileID: 1420531387}
   - component: {fileID: 1420531386}
   m_Layer: 5
-  m_Name: Star
+  m_Name: Star1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48162,7 +48186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 10
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -49371,7 +49396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 6
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -49708,7 +49734,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300012, guid: c5bb8c5a2b9a8af418278d308fac33fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2326a793b018b9e49a6a93d3e2749073, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -52135,7 +52161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 16
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -56551,7 +56578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 12
+  MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -59897,7 +59925,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 9
+  MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -68249,7 +68278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 9
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30
@@ -69631,7 +69661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b608e0a5ad7766a4ba94fb5b97035ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionID: 1
+  MissionGroupID: 5
+  MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
   MissionTimeMinutes: 30

@@ -18,13 +18,6 @@ public class MissionDetailWindow : MonoBehaviour {
 
     [SerializeField] private Sprite[] lootBoxSprites;
 
-
-    private void Start() {
-        foreach (var starImage in this.starImages) {
-            starImage.color = Color.black;
-        }
-    }
-
     public void FillInfo(string missionTitleText, string rewardTextText, ushort starCount) {
         this.missionTitle.text = missionTitleText;
         this.rewardText.text = rewardTextText;

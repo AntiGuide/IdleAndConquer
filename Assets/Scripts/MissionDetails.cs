@@ -12,7 +12,8 @@ public class MissionDetails : MonoBehaviour {
     private const float MoneyPerMissionSecond = 0.1f;
 
     [Header("Mission Details")]
-    public int MissionID = 1;
+    public int MissionGroupID = 1;
+    public int MissionVariantID = 0;
     public string MissionName = "Mission 1";
     public Ratings AktRating = Ratings.NOT_COMPLETED;
     public int MissionTimeMinutes;
@@ -65,7 +66,12 @@ public class MissionDetails : MonoBehaviour {
         //this.MissionDetailsWindow.SetActive(true);
         var detailWindow =  this.MissionDetailsWindow.GetComponent<MissionDetailWindow>();
         var rewardText = "Reward:" + System.Environment.NewLine + "Test";
-        detailWindow.FillInfo(this.MissionName, rewardText, (ushort)this.AktRating);
+        if (MissionVariantID <= 0) {
+            detailWindow.FillInfo("Mission " + MissionGroupID, rewardText, (ushort)this.AktRating);
+        } else {
+            detailWindow.FillInfo("Mission " + MissionGroupID + "-" + MissionVariantID, rewardText, (ushort)this.AktRating);
+        }
+        
         //this.MissionDetailsWindow.SetActive(false);
         ScreenStateMach.SetToState(ScreenStateMachine.WindowStates.GENERAL_SELECT);
 
@@ -173,6 +179,7 @@ public class MissionDetails : MonoBehaviour {
     }
 
     private void Start() {
+        AktRating = (Ratings)PlayerPrefs.GetInt("Mission_" + MissionGroupID + "_" + MissionVariantID, (int)Ratings.NOT_COMPLETED);
         foreach (var createAndOrderUnit in EnemyUnitsArr) {
             EnemyUnits.Add(createAndOrderUnit.AttachedUnit);
         }
@@ -194,7 +201,6 @@ public class MissionDetails : MonoBehaviour {
     }
 
     public void SaveRating() {
-        PlayerPrefs.SetInt("Mission" + MissionID,(int)AktRating);
-        AktRating = (Ratings)PlayerPrefs.GetInt("Mission" + MissionID, (int)Ratings.NOT_COMPLETED);
+        PlayerPrefs.SetInt("Mission_" + MissionGroupID + "_" + MissionVariantID, (int)AktRating);
     }
 }
