@@ -46,11 +46,7 @@ public class MissionDetails : MonoBehaviour {
         }
     }
 
-    public enum LootboxType {
-        LEATHER = 0,
-        METAL,
-        GOLD
-    }
+    
 
     public enum Ratings {
         NOT_COMPLETED = 0,

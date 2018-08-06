@@ -12,8 +12,9 @@ public class MissionFeedbackPrompt : MonoBehaviour {
     [SerializeField] private MoneyManagement moneyManager;
     [SerializeField] private RenownManagement renownManager;
     [SerializeField] private int[] vCoinReward = { 10, 15, 25 };
-    [SerializeField] private GameObject[] lootboxRewardPrefabs = new GameObject[3];
+    [SerializeField] private LootBoxStackManager.LootboxType[] lootboxReward = new LootBoxStackManager.LootboxType[3];
     [SerializeField] private Transform transformCanvas;
+    [SerializeField] private LootBoxStackManager lootBoxStackManager;
 
     private MissionDetails.Ratings achievedRating;
     private MissionDetails.Ratings prevMaxRating;
@@ -74,7 +75,8 @@ public class MissionFeedbackPrompt : MonoBehaviour {
         // Give Lootboxes
         while (prevMaxRating < achievedRating) {
             this.virtualCurrencyManager.AddVirtualCurrency(vCoinReward[(int)prevMaxRating]);
-            UnityEngine.Object.Instantiate(this.lootboxRewardPrefabs[(int)prevMaxRating], this.transformCanvas);
+            //UnityEngine.Object.Instantiate(this.lootboxRewardPrefabs[(int)prevMaxRating], this.transformCanvas);
+            lootBoxStackManager.AddLootbox(lootboxReward[(int)prevMaxRating]);
             prevMaxRating++;
         }
 
