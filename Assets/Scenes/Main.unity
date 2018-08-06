@@ -33502,7 +33502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d0392acc2f9fd439c0be0d45476ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionMan: {fileID: 238347732}
+  screenStateMachine: {fileID: 864332588}
 --- !u!114 &1032777077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33542,8 +33542,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 864332588}
-        m_MethodName: NextState
+      - m_Target: {fileID: 1032777076}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
