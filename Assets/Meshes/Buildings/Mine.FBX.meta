@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-guid: 93927192567e53a4fb539fc9ad4b8b09
-timeCreated: 1526023669
+guid: 3f5373cef5eba6a4195d76c8c4a01b16
+timeCreated: 1533536064
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Ore_Mine50x50m
-    100002: //RootNode
-    400000: Ore_Mine50x50m
-    400002: //RootNode
-    2100000: Ore_Mine50x50mMat
-    2300000: Ore_Mine50x50m
-    3300000: Ore_Mine50x50m
-    4300000: Ore_Mine50x50m
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Mine_Mat
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Mine
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.025
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -87,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
