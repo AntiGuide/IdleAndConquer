@@ -48,6 +48,10 @@ public class GeneralManager : MonoBehaviour {
     /// This method generates a general from the preset values
     /// </summary>
     public void GenerateGeneral() {
+        if (generalID >= 2) {
+            return;
+        }
+
         var rnd = new System.Random();
         var nameID = rnd.Next(0, this.Names.Length);
         var countryID = rnd.Next(0, this.Countrys.Length);
