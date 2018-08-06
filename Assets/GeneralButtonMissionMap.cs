@@ -9,6 +9,7 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     private GameObject missionDetailsWindow;
     private MainMenueController mainMenueController;
     private MissionManager missionMan;
+    private ScreenStateMachine screenStateMach;
 
     public void SetTexts(string country, string generalName, string winLoseHistory) {
         this.country.text = country;
@@ -18,9 +19,10 @@ public class GeneralButtonMissionMap : MonoBehaviour {
 
     public void OnClick() {
         this.missionMan.MissionGeneral = this.General;
-        this.missionDetailsWindow.SetActive(false);
-        this.mainMenueController.ActivateDeployUI(true);
-        this.mainMenueController.ToggleMenue(2);
+        //this.missionDetailsWindow.SetActive(false);
+        //this.mainMenueController.ActivateDeployUI(true);
+        //this.mainMenueController.ToggleMenue(2);
+        screenStateMach.SetToState(ScreenStateMachine.WindowStates.SQUAD_SELECT);
     }
 
     // Use this for initialization
@@ -28,5 +30,6 @@ public class GeneralButtonMissionMap : MonoBehaviour {
         this.mainMenueController = GameObject.Find("/MissionMap/Canvas/MainMenue/").GetComponent<MainMenueController>();
         this.missionMan = GameObject.Find("/ReferenceShare").GetComponent<MissionManager>();
         this.missionDetailsWindow = GameObject.Find("/MissionMap/Canvas/MissionWindow");
+        this.screenStateMach = GameObject.Find("/MissionMap").GetComponent<ScreenStateMachine>();
     }
 }

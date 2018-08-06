@@ -24,4 +24,11 @@ public class ShowChosenGeneral : MonoBehaviour {
         var go = Instantiate(this.UnitImagePrefab, this.UnitContainer);
         return go;
     }
+
+    public void ResetUnits() {
+        var children = this.UnitContainer.GetComponentsInChildren<Image>();
+        foreach (var child in children) {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
 }

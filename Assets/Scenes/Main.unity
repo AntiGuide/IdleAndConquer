@@ -1022,8 +1022,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 28261420}
-        m_MethodName: OnClick
+      - m_Target: {fileID: 864332588}
+        m_MethodName: LastState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2665,6 +2665,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &62153588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3975,6 +3976,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &101025101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5771,6 +5773,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &169420126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6509,6 +6512,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &197023995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6621,6 +6625,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &197159004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7088,6 +7093,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &209003264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9501,6 +9507,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &272772702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10568,6 +10575,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &323924880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11197,6 +11205,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &350699507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14052,6 +14061,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &469993532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16971,6 +16981,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &558328169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19089,6 +19100,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &605209896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19907,6 +19919,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &617667546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20759,6 +20772,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &635373361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23173,6 +23187,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &711277575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25913,6 +25928,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &812873517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26790,6 +26806,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &836949084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27388,6 +27405,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 864332587}
+  - component: {fileID: 864332588}
   m_Layer: 0
   m_Name: MissionMap
   m_TagString: Untagged
@@ -27413,6 +27431,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &864332588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 864332586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748c19b6ab0098342b5573749f59881f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenueController: {fileID: 1064353850}
+  missionDetailsWindow: {fileID: 190401799}
+  missionManager: {fileID: 238347732}
+  UIInteractions: {fileID: 1761633592}
+  ShowChosenGen: {fileID: 1850088638}
 --- !u!4 &866813766 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4645026232839324, guid: 58066e31ba3d4e149abdf747f80d8bb7,
@@ -32905,6 +32939,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1007474479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33507,8 +33542,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1032777076}
-        m_MethodName: OnClick
+      - m_Target: {fileID: 864332588}
+        m_MethodName: NextState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34134,6 +34169,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1047168951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34797,6 +34833,7 @@ MonoBehaviour:
   - {fileID: 782897837}
   - {fileID: 1178012086}
   DeployUI: {fileID: 1091291008}
+  EnabledMenue: 0
 --- !u!222 &1064353851
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35684,6 +35721,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1079479738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36057,6 +36095,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1086629293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37961,6 +38000,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1137779871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42783,6 +42823,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1288779796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47667,6 +47708,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1464480797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48873,6 +48915,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1501615346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51634,6 +51677,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1581635614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56047,6 +56091,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1694698899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59390,6 +59435,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &1798727114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64055,6 +64101,7 @@ MonoBehaviour:
   - {fileID: 83128360}
   - {fileID: 985336519}
   DeployUI: {fileID: 0}
+  EnabledMenue: 0
 --- !u!222 &1931439385
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -64971,9 +65018,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1064353850}
-        m_MethodName: ToggleMenue
-        m_Mode: 3
+      - m_Target: {fileID: 864332588}
+        m_MethodName: LastState
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -67594,6 +67641,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &2055173378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68973,6 +69021,7 @@ MonoBehaviour:
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
+  ScreenStateMach: {fileID: 864332588}
 --- !u!65 &2118116844
 BoxCollider:
   m_ObjectHideFlags: 0

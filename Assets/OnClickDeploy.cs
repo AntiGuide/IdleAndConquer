@@ -9,6 +9,7 @@ public class OnClickDeploy : MonoBehaviour {
     private ShowChosenGeneral showChosenGeneral;
     private Unit attachedUnit;
     private int unitCount;
+    private int startUnitCount;
     private MissionManager missionMan;
 
     public void OnClickDeployEvent() {
@@ -24,7 +25,14 @@ public class OnClickDeploy : MonoBehaviour {
         this.attachedUnit = unit;
         this.RemainingUnitsText.text = this.attachedUnit.UnitCount.ToString();
         this.unitCount = this.attachedUnit.UnitCount - this.attachedUnit.SentToMission;
+        this.startUnitCount = this.unitCount;
         this.UnitNameText.text = this.attachedUnit.UnitName;
+        ScreenStateMachine.OCDs.Add(this);
+    }
+
+    public void ResetOCD() {
+        this.unitCount = this.startUnitCount;
+        this.RemainingUnitsText.text = this.unitCount.ToString();
     }
 
     /// <summary>Use this for initialization</summary>

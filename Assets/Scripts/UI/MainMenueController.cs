@@ -13,7 +13,7 @@ public class MainMenueController : MonoBehaviour {
     public GameObject DeployUI;
 
     /// <summary>Contains the index of the activated menue</summary>
-    private int enabledMenue;
+    public int EnabledMenue;
 
     /// <summary>Holds all MenueController components of the menues specified in "GameObject[] Menue"</summary>
     private MenueController[] menueController;
@@ -29,25 +29,25 @@ public class MainMenueController : MonoBehaviour {
         Profiler.BeginSample("MainMenueController.ToggleMenue()");
         menueNumber--;
 
-        if (this.enabledMenue != menueNumber) {
+        if (this.EnabledMenue != menueNumber) {
             if (this.Menue[menueNumber] == null) {
                 return;
             }
 
-            if (this.enabledMenue != -1) {
-                this.Menue[this.enabledMenue].GetComponent<Canvas>().enabled = false;
+            if (this.EnabledMenue != -1) {
+                this.Menue[this.EnabledMenue].GetComponent<Canvas>().enabled = false;
                 //this.Menue[this.enabledMenue].SetActive(false);
             }
 
             this.Menue[menueNumber].GetComponent<Canvas>().enabled = true;
             //this.Menue[menueNumber].SetActive(true);
-            this.enabledMenue = menueNumber;
-            this.menueController[this.enabledMenue].Expand(!this.IsExpanded);
+            this.EnabledMenue = menueNumber;
+            this.menueController[this.EnabledMenue].Expand(!this.IsExpanded);
         } else {
             if (this.IsExpanded) {
-                this.menueController[this.enabledMenue].Unexpand(true);
+                this.menueController[this.EnabledMenue].Unexpand(true);
             } else {
-                this.menueController[this.enabledMenue].Expand(true);
+                this.menueController[this.EnabledMenue].Expand(true);
             }
         }
         Profiler.EndSample();
@@ -65,23 +65,29 @@ public class MainMenueController : MonoBehaviour {
         }
     }
 
+    public void Unexpand() {
+        if (!this.IsExpanded) { return; }
+
+        ToggleMenue(EnabledMenue + 1);
+    }
+
     /// <summary>
     /// Get the MenueController of the enabled Menue
     /// </summary>
     /// <returns>Returns the MenueController of the enabled Menue</returns>
     public MenueController GetActiveMenueController() {
-        return this.menueController[this.enabledMenue];
+        return this.menueController[this.EnabledMenue];
     }
 
     /// <summary>Sets the DeployUI active or inactive. The DeployUI is the UI used to send Units to missions.</summary>
     /// <param name="val">The value contains info wether the UI should be activated (true) or deactivated (false)</param>
     public void ActivateDeployUI(bool val) {
-        if (!val) {
-            var unitContainer = this.DeployUI.transform.Find("BG").Find("UnitContainer");
-            for (var i = 0; i < unitContainer.childCount; i++) {
-                UnityEngine.Object.Destroy(unitContainer.GetChild(i).gameObject);
-            }
-        }
+        //if (!val) {
+        //    var unitContainer = this.DeployUI.transform.Find("BG").Find("UnitContainer");
+        //    for (var i = 0; i < unitContainer.childCount; i++) {
+        //        UnityEngine.Object.Destroy(unitContainer.GetChild(i).gameObject);
+        //    }
+        //}
 
         this.DeployUI.SetActive(val);
     }
@@ -100,7 +106,7 @@ public class MainMenueController : MonoBehaviour {
         foreach (var men in this.Menue) {
             if (men != null && !standardSelected) {
                 //men.SetActive(true);
-                this.enabledMenue = i;
+                this.EnabledMenue = i;
                 this.IsExpanded = false;
                 standardSelected = true;
             } else if (men != null) {
