@@ -9,7 +9,15 @@ public class MissionDetailWindow : MonoBehaviour {
 
     [SerializeField] private Text rewardText;
 
+    [Header("Images")]
     [SerializeField] private Image[] starImages;
+
+    [SerializeField] private Image[] lootBoxImages;
+
+    [SerializeField] private Sprite[] lootBoxSpritesOpened;
+
+    [SerializeField] private Sprite[] lootBoxSprites;
+
 
     private void Start() {
         foreach (var starImage in this.starImages) {
@@ -21,8 +29,14 @@ public class MissionDetailWindow : MonoBehaviour {
         this.missionTitle.text = missionTitleText;
         this.rewardText.text = rewardTextText;
 
-        for (ushort i = 0; i < starCount; i++) {
-            starImages[i].color = Color.white;
+        for (ushort i = 0; i < 3; i++) {
+            if (i < starCount) {
+                starImages[i].color = Color.white;
+                lootBoxImages[i].sprite = lootBoxSpritesOpened[i];
+            } else {
+                starImages[i].color = Color.black;
+                lootBoxImages[i].sprite = lootBoxSprites[i];
+            }
         }
     }
 }

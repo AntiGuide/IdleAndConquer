@@ -12,6 +12,7 @@ public class MissionDetails : MonoBehaviour {
     private const float MoneyPerMissionSecond = 0.1f;
 
     [Header("Mission Details")]
+    public int MissionID = 1;
     public string MissionName = "Mission 1";
     public Ratings AktRating = Ratings.NOT_COMPLETED;
     public int MissionTimeMinutes;
@@ -190,5 +191,10 @@ public class MissionDetails : MonoBehaviour {
         }
         
         MissionTime = MissionTimeMinutes * 60;
+    }
+
+    public void SaveRating() {
+        PlayerPrefs.SetInt("Mission" + MissionID,(int)AktRating);
+        AktRating = (Ratings)PlayerPrefs.GetInt("Mission" + MissionID, (int)Ratings.NOT_COMPLETED);
     }
 }

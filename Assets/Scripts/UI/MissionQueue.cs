@@ -38,7 +38,7 @@ public class MissionQueue : MonoBehaviour {
         missionFeedbackPrompt.ShowMissionOutcome(tmpMissionDetails.MissionRenownReward, tmpMissionDetails.MissionMoneyReward,tmpMissionDetails.AktRating, achievedRating,attachedMission.MissionDetails.name);
 
         tmpMissionDetails.AktRating = achievedRating;
-
+        tmpMissionDetails.SaveRating();
         // var go = Instantiate(this.RewardPopUpPrefab, this.TransformCanvas);
         // go.GetComponent<RewardPopUp>().Initialize(this.MoneyManager, this.RenownManager, this.VirtualCurrencyManager, this, attachedMission.Units, attachedMission.MissionGeneral);
         // go.GetComponent<RewardPopUp>().ShowRewards(attachedMission.MissionDetails);
