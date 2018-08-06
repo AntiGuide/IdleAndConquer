@@ -2660,6 +2660,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -3971,6 +3972,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -5768,6 +5770,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -6507,6 +6510,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -6620,6 +6624,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -7088,6 +7093,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -9502,6 +9508,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -10570,6 +10577,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -11200,6 +11208,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -14056,6 +14065,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -16976,6 +16986,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -19095,6 +19106,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -19914,6 +19926,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -20767,6 +20780,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -23177,6 +23191,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr:
   - {fileID: 764047843}
   - {fileID: 764047843}
@@ -25918,6 +25933,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 2
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr:
   - {fileID: 54318848}
   - {fileID: 54318848}
@@ -26796,6 +26812,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 1
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr:
   - {fileID: 1609145820}
   - {fileID: 1609145820}
@@ -32934,6 +32951,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -34164,6 +34182,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -35716,6 +35735,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -36090,6 +36110,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -37995,6 +38016,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -42818,6 +42840,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -47703,6 +47726,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -48910,6 +48934,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -51672,6 +51697,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -56086,6 +56112,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -59430,6 +59457,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -67636,6 +67664,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
@@ -69016,6 +69045,7 @@ MonoBehaviour:
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
+  currentlyRunning: 0
   EnemyUnitsArr: []
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}

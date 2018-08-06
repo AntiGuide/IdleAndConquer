@@ -20,6 +20,9 @@ public class MissionDetails : MonoBehaviour {
     public Unit.Type TypeRestriction = Unit.Type.TANK;
     public int AmountRestriction = 0;
 
+    [Header("State")]
+    public bool currentlyRunning = false;
+
     [Header("Arrays")]
     public CreateAndOrderUnit[] EnemyUnitsArr;
 
@@ -55,6 +58,9 @@ public class MissionDetails : MonoBehaviour {
     }
 
     public void OnClick() {
+        if (currentlyRunning) {
+            return;
+        }
         //this.MissionDetailsWindow.SetActive(true);
         var detailWindow =  this.MissionDetailsWindow.GetComponent<MissionDetailWindow>();
         var rewardText = "Reward:" + System.Environment.NewLine + "Test";

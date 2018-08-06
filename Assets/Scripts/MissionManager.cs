@@ -32,6 +32,7 @@ public class MissionManager : MonoBehaviour {
 
         var m = gameObject.AddComponent<Mission>();
         m.Initialize(this.MissionDetails, this.UIInteractions, this.MissionGeneral, this.Units);
+        this.MissionDetails.currentlyRunning = true;
         this.MissionQueue.Add(m);
         this.UIInteractions.MainLoad();
         OnClickDeploy.DeployedUnits = 0;

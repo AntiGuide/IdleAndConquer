@@ -26,6 +26,7 @@ public class MissionQueue : MonoBehaviour {
     }
 
     public void FinshedMission(Mission attachedMission) {
+        attachedMission.MissionDetails.currentlyRunning = false;
         attachedMission.MissionGeneral.IsSentToMission = false;
         var tmpMissionDetails = attachedMission.MissionDetails;
 
