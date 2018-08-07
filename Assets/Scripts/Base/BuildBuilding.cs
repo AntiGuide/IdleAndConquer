@@ -17,6 +17,7 @@ public class BuildBuilding : MonoBehaviour {
     public Vector2 MinBuildConfirmUIPosition;
     public Vector2 MaxBuildConfirmUIPosition;
     public BuildAvailabiltyManager BuildAvailabiltyMan;
+    public UnitAvailabilityManager UnitAvailabilityMan;
 
     private bool[] isBuilt;
     private bool playerBuildingThisBase;
@@ -101,6 +102,7 @@ public class BuildBuilding : MonoBehaviour {
         InputHandler.BlockCameraMovement = false;
         this.BuildConfirmUI.SetActive(false);
         BuildAvailabiltyMan.Refresh();
+        UnitAvailabilityMan.Refresh();
     }
 
     private Vector3 ToGrid(Vector3 allignToGrid) {

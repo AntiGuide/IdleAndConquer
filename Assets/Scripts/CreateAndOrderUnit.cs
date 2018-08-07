@@ -45,6 +45,8 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The reference to the base switcher (used to get the correct production queue)</summary>
     public BaseSwitcher BaseSwitch;
 
+    public Image AvailabilityImage;
+
     private static readonly List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
 
     private static readonly int[] costLevel = { 0, 0, 0 };
@@ -70,6 +72,8 @@ public class CreateAndOrderUnit : MonoBehaviour {
     /// <summary>The units being built at the time</summary>
     private int buildingUnits = 0;
 
+    private bool available;
+
     public int Cost {
         get { return this.cost - (this.cost - Mathf.RoundToInt(Unit.HPBoostLevel[CreateAndOrderUnit.costLevel[(int)this.Type]] * this.cost)); }
     }
@@ -83,8 +87,17 @@ public class CreateAndOrderUnit : MonoBehaviour {
         }
     }
 
+    public void SetAvailability(bool available) {
+        this.available = available;
+        AvailabilityImage.color = available ? new Color(0f, 0f, 0f, 0f) : new Color(0f, 0f, 0f, 0.8f);
+    }
+
     /// <summary>Orders unit when a button is clicked</summary>
     public void OrderUnitOnClick() {
+        if (!available) {
+            return;
+        }
+
         this.AttachedUnit.Order(ref this.MoneyManager);
     }
 
