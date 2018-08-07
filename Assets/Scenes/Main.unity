@@ -2729,13 +2729,113 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 1500
+  MissionRenownReward: 5000
+  goalThreeCondition: 3
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 100
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -4126,13 +4226,73 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 750
+  MissionRenownReward: 2500
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 2
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -5927,13 +6087,33 @@ MonoBehaviour:
   MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 225
+  MissionRenownReward: 750
+  goalThreeCondition: 1
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 3
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -6893,13 +7073,73 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 750
+  MissionRenownReward: 2500
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 2
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -7010,13 +7250,33 @@ MonoBehaviour:
   MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 165
+  MissionRenownReward: 550
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
+  - {fileID: 1429117069}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -7482,13 +7742,53 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 540
+  MissionRenownReward: 1800
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -9902,13 +10202,28 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 150
+  MissionRenownReward: 500
   goalThreeCondition: 0
   TypeRestriction: 0
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -11042,13 +11357,21 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 45
+  MissionRenownReward: 150
+  goalThreeCondition: 1
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 501536404}
+  - {fileID: 501536404}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -11676,13 +11999,73 @@ MonoBehaviour:
   MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 750
+  MissionRenownReward: 2500
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 2
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -14672,13 +15055,53 @@ MonoBehaviour:
   MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 420
+  MissionRenownReward: 1400
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -17670,13 +18093,21 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 48
+  MissionRenownReward: 160
+  goalThreeCondition: 1
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
+  - {fileID: 621902324}
+  - {fileID: 621902324}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -19800,13 +20231,21 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 75
+  MissionRenownReward: 250
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 589328541}
+  - {fileID: 589328541}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -20748,13 +21187,21 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 60
+  MissionRenownReward: 200
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 621902324}
+  - {fileID: 621902324}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -21669,13 +22116,113 @@ MonoBehaviour:
   MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 1500
+  MissionRenownReward: 5000
+  goalThreeCondition: 3
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 100
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -24289,7 +24836,7 @@ MonoBehaviour:
   MissionVariantID: 0
   MissionName: Mission Org1
   AktRating: 0
-  MissionTimeMinutes: 1
+  MissionTimeMinutes: 30
   MissionRenownReward: 100
   goalThreeCondition: 0
   TypeRestriction: 0
@@ -29285,13 +29832,28 @@ MonoBehaviour:
   MissionVariantID: 3
   MissionName: Green3
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 150
+  MissionRenownReward: 500
   goalThreeCondition: 0
-  TypeRestriction: 0
+  TypeRestriction: 2
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -34789,13 +35351,25 @@ MonoBehaviour:
   MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 120
+  MissionRenownReward: 400
+  goalThreeCondition: 1
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 3
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 2052705615}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
+  - {fileID: 753235995}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -36023,13 +36597,53 @@ MonoBehaviour:
   MissionVariantID: 3
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 540
+  MissionRenownReward: 1800
   goalThreeCondition: 0
-  TypeRestriction: 0
+  TypeRestriction: 1
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -37687,13 +38301,33 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 225
+  MissionRenownReward: 750
+  goalThreeCondition: 1
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 3
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -38133,13 +38767,33 @@ MonoBehaviour:
   MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 300
+  MissionRenownReward: 1000
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -40112,13 +40766,53 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 540
+  MissionRenownReward: 1800
   goalThreeCondition: 0
-  TypeRestriction: 0
+  TypeRestriction: 2
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
+  - {fileID: 517127639}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -42776,7 +43470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00045008713}
+  m_AnchoredPosition: {x: 0, y: 0.0003202341}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1209598779
@@ -45362,13 +46056,28 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 150
+  MissionRenownReward: 500
   goalThreeCondition: 0
-  TypeRestriction: 0
+  TypeRestriction: 1
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
+  - {fileID: 997796280}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -50677,13 +51386,33 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 225
+  MissionRenownReward: 750
+  goalThreeCondition: 1
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 3
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -51890,13 +52619,21 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 81
+  MissionRenownReward: 270
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 668664745}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -54656,13 +55393,113 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 1500
+  MissionRenownReward: 5000
+  goalThreeCondition: 3
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 100
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -59084,13 +59921,33 @@ MonoBehaviour:
   MissionVariantID: 0
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 300
+  MissionRenownReward: 1000
+  goalThreeCondition: 2
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 1205483843}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
+  - {fileID: 965606308}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -62698,13 +63555,33 @@ MonoBehaviour:
   MissionVariantID: 2
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 165
+  MissionRenownReward: 550
   goalThreeCondition: 0
-  TypeRestriction: 0
+  TypeRestriction: 2
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
+  - {fileID: 496000833}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -71399,13 +72276,33 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
+  MissionTimeMinutes: 165
+  MissionRenownReward: 550
   goalThreeCondition: 0
-  TypeRestriction: 0
+  TypeRestriction: 1
   AmountRestriction: 0
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
+  - {fileID: 1488313501}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
@@ -72920,13 +73817,21 @@ MonoBehaviour:
   MissionVariantID: 1
   MissionName: Mission 1
   AktRating: 0
-  MissionTimeMinutes: 30
-  MissionRenownReward: 100
-  goalThreeCondition: 0
+  MissionTimeMinutes: 51
+  MissionRenownReward: 170
+  goalThreeCondition: 1
   TypeRestriction: 0
-  AmountRestriction: 0
+  AmountRestriction: 1
   currentlyRunning: 0
-  EnemyUnitsArr: []
+  EnemyUnitsArr:
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 1142651360}
+  - {fileID: 634358235}
+  - {fileID: 634358235}
   MissionMan: {fileID: 238347732}
   UIInteractions: {fileID: 1761633592}
   MainMenueControll: {fileID: 1064353850}
