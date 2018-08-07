@@ -49,8 +49,6 @@ public class MissionDetails : MonoBehaviour {
         }
     }
 
-    
-
     public enum Ratings {
         NOT_COMPLETED = 0,
         ONE_STAR,

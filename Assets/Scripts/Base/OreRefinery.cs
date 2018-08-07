@@ -27,7 +27,15 @@ public class OreRefinery : MonoBehaviour {
         this.mine = transform.parent.transform.gameObject.GetComponentInChildren<BuildBuilding>().BuiltBuildings[2]; // .transform.GetChild(0).gameObject;
         this.AddHarvester(ref this.attachedHarvesters, ref this.moneyManager, this, this.mine);
     }
-    
+
+    /// <summary>Spawns harvesters on completed build process</summary>
+    public void DeinitializeBuilt() {
+        foreach (var attachedHarvester in attachedHarvesters) {
+            Destroy(attachedHarvester);
+        }
+        attachedHarvesters = new List<GameObject>();
+    }
+
     /// <summary>
     /// Adds a harvester to the refinery
     /// </summary>

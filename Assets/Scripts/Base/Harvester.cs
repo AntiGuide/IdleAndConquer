@@ -105,6 +105,10 @@ public class Harvester : MonoBehaviour {
 
     /// <summary>Update is called once per frame</summary>
     private void Update() {
+        if (this.attachedOreRefinery == null) {
+            Destroy(gameObject);
+            return;
+        }
         this.currentProgressWay += Time.deltaTime;
         if (this.currentProgressWay <= this.MiningSpeed / 2) {
             transform.position = Vector3.Lerp(this.attachedOreRefinery.transform.position, this.attachedMine.transform.position, this.currentProgressWay / (this.MiningSpeed / 2)); // Hinweg

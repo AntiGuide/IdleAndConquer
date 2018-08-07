@@ -31,6 +31,10 @@ public class InputHandler : MonoBehaviour {
 
     public float BuildCamMoveSpeed = 1f;
 
+    public float DoubleTapMaxLatency = 0.2f;
+
+    public BaseSwitcher BaseSwitch;
+
     /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
 
@@ -46,10 +50,10 @@ public class InputHandler : MonoBehaviour {
     private Ray touchRay;
     private int layerMask;
     private RaycastHit hitInformation;
+    private float doubleTapTimer;
 
     /// <summary>Update is called once per frame</summary>
     private void Update() {
-        // TODO Mobile Pointer 0
         if (Input.touchCount == 2 && !EventSystem.current.IsPointerOverGameObject()) {
             this.blockMapMovement = true;
 
@@ -80,7 +84,6 @@ public class InputHandler : MonoBehaviour {
         }
 
         // Simulate touch events from mouse events
-        // TODO Mobile Pointer 0
         if (Input.touchCount != 0) return;
         if (Input.GetMouseButtonDown(0)) {
             this.HandleTouch(-1, Input.mousePosition, TouchPhase.Began);
@@ -172,6 +175,26 @@ public class InputHandler : MonoBehaviour {
                             Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
                             if (this.hitInformation.collider != null) {
                                 this.hitInformation.collider.gameObject.GetComponent<MissionDetails>().OnClick();
+                            }
+                        } else {
+                            if (Time.time - doubleTapTimer < DoubleTapMaxLatency) {
+                                this.layerMask = LayerMask.GetMask("Buildings");
+                                Physics.Raycast(this.touchRay.origin, this.touchRay.direction, out this.hitInformation, 3000.0f, this.layerMask);
+                                //Activate Sell/Move:
+                                //Give money + energy back
+                                //Destroy
+                                //Build a Building
+                                if (this.hitInformation.collider != null && this.hitInformation.collider.gameObject.GetComponent<BuildingManager>().CanBeDestroyed) {
+                                    var buildingManager = this.hitInformation.collider.gameObject.GetComponent<BuildingManager>();//.OnClick();
+                                    var id = buildingManager.BuildingID;
+                                    var buildCost = buildingManager.BuildCost;
+                                    var costEnergy = buildingManager.CostEnergy;
+                                    Destroy(this.hitInformation.collider.gameObject);
+                                    BaseSwitch.GetBuilder().BuildABuilding(id, buildCost, costEnergy);
+                                }
+                                //Update dependancies
+                            } else {
+                                doubleTapTimer = Time.time;
                             }
                         }
                     }

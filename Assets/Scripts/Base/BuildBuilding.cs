@@ -31,6 +31,7 @@ public class BuildBuilding : MonoBehaviour {
     // private int newBuildingZTiles;
     private long costBuilding = 0;
     private int costEnergy = 0;
+    private int tmpBuildingID;
 
     public static bool PlayerBuilding { get; private set; }
 
@@ -38,6 +39,7 @@ public class BuildBuilding : MonoBehaviour {
         InputHandler.MoveCamForBuilding = true;
         this.costBuilding = costBuilding;
         this.costEnergy = costEnergy;
+        this.tmpBuildingID = buildingID;
         buildingID--;
         this.newBuildingID = buildingID;
         if (buildingID == 3 && !this.isBuilt[2]) {
@@ -78,7 +80,7 @@ public class BuildBuilding : MonoBehaviour {
         if (!this.MoneyManager.SubMoney(this.costBuilding)) return;
         InputHandler.MoveCamForBuilding = false;
         this.BaseSwitch.GetEnergyPool().SubEnergy(this.costEnergy);
-        this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+        this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding(tmpBuildingID);
         this.isBuilt[this.newBuildingID] = true;
         this.BuiltBuildings[this.newBuildingID] = this.newBuilding;
         this.newBuilding.transform.localScale = this.prevScale;
@@ -106,7 +108,7 @@ public class BuildBuilding : MonoBehaviour {
         }
 
         if (this.BuiltBuildings[2] == null) return;
-        this.BuiltBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
+        this.BuiltBuildings[2].GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding(3);
         this.isBuilt[2] = true;
     }
 

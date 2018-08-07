@@ -12664,10 +12664,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 168.54858, y: -761}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402144256
 MonoBehaviour:
@@ -17679,6 +17679,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114012042930029680, guid: 6bed379ec8fbf504e9445125122b421c,
+        type: 2}
+      propertyPath: CanBeDestroyed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bed379ec8fbf504e9445125122b421c, type: 2}
   m_IsPrefabParent: 0
@@ -17721,10 +17726,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 467.54858, y: -761}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565755423
 MonoBehaviour:
@@ -29022,6 +29027,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114477094025801996, guid: ae0be251846e3944abd1438add493fb4,
+        type: 2}
+      propertyPath: CanBeDestroyed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 131407983183231520, guid: ae0be251846e3944abd1438add493fb4, type: 2}
     - {fileID: 131792212896636492, guid: ae0be251846e3944abd1438add493fb4, type: 2}
@@ -29510,10 +29520,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 467.54858, y: -163}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &907604870
 MonoBehaviour:
@@ -36496,6 +36506,11 @@ Prefab:
       propertyPath: m_TagString
       value: Buildings
       objectReference: {fileID: 0}
+    - target: {fileID: 114932691577427000, guid: 156361e3d7f52984e821e39e0af87385,
+        type: 2}
+      propertyPath: CanBeDestroyed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 156361e3d7f52984e821e39e0af87385, type: 2}
   m_IsPrefabParent: 0
@@ -36521,6 +36536,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16.69252, y: 16.722668, z: 5.0927114}
   m_Center: {x: 0.0000009536743, y: -0.0000038146973, z: 2.4529064}
+--- !u!114 &1071774185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1071774179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d37b5a7567d7f45a0d72c58d378b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GreenTransparent: {fileID: 2800000, guid: 8c5397737983bd34697861fe680c634e, type: 3}
+  RedTransparent: {fileID: 2800000, guid: fb3a3d18be4b16c489e770b232eadd9d, type: 3}
 --- !u!1 &1072314586
 GameObject:
   m_ObjectHideFlags: 0
@@ -51846,10 +51874,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 168.54858, y: -462}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542056073
 MonoBehaviour:
@@ -55954,6 +55982,8 @@ MonoBehaviour:
   OrthoZoomSpeed: 0.5
   IsMissionMap: 0
   BuildCamMoveSpeed: 10
+  DoubleTapMaxLatency: 0.2
+  BaseSwitch: {fileID: 1649716204}
 --- !u!114 &1649716204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57322,6 +57352,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114298557295889846, guid: a8d10cbb0047d944cbf533ba34a2b864,
+        type: 2}
+      propertyPath: CanBeDestroyed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8d10cbb0047d944cbf533ba34a2b864, type: 2}
   m_IsPrefabParent: 0
@@ -57910,10 +57945,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 467.54858, y: -462}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1697080744
 MonoBehaviour:
@@ -58787,10 +58822,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 168.54858, y: -1060}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724725906
 MonoBehaviour:
@@ -65665,10 +65700,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 168.54858, y: -163}
+  m_SizeDelta: {x: 256, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921256365
 MonoBehaviour:
@@ -67771,6 +67806,11 @@ Prefab:
       propertyPath: m_TagString
       value: Buildings
       objectReference: {fileID: 0}
+    - target: {fileID: 114932691577427000, guid: 156361e3d7f52984e821e39e0af87385,
+        type: 2}
+      propertyPath: CanBeDestroyed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 156361e3d7f52984e821e39e0af87385, type: 2}
   m_IsPrefabParent: 0
@@ -67796,6 +67836,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16.69252, y: 16.722668, z: 5.0927114}
   m_Center: {x: 0.0000009536743, y: 0, z: 2.4529111}
+--- !u!114 &1986673576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986673570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d37b5a7567d7f45a0d72c58d378b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GreenTransparent: {fileID: 2800000, guid: 8c5397737983bd34697861fe680c634e, type: 3}
+  RedTransparent: {fileID: 2800000, guid: fb3a3d18be4b16c489e770b232eadd9d, type: 3}
 --- !u!1 &1987818576
 GameObject:
   m_ObjectHideFlags: 0
@@ -69583,6 +69636,8 @@ MonoBehaviour:
   OrthoZoomSpeed: 0.5
   IsMissionMap: 1
   BuildCamMoveSpeed: 1
+  DoubleTapMaxLatency: 0.2
+  BaseSwitch: {fileID: 0}
 --- !u!1 &2052705613
 GameObject:
   m_ObjectHideFlags: 0
