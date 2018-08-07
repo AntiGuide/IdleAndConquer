@@ -23,6 +23,8 @@ public class BaseSwitchTrigger : MonoBehaviour {
 
     public UnitAvailabilityManager UnitAvailabilityMan;
 
+    public MainMenueController MainMenueCont;
+
     /// <summary>Reference to the image component to regulate the tint color</summary>
     private Image image;
 
@@ -38,6 +40,7 @@ public class BaseSwitchTrigger : MonoBehaviour {
         this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION, 0.5f);
         BuildAvailabiltyMan.Refresh();
         UnitAvailabilityMan.Refresh();
+        MainMenueCont.Unexpand(false);
     }
 
     /// <summary>Sets the color for the base switch buttons</summary>
