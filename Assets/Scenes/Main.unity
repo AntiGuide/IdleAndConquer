@@ -1409,6 +1409,7 @@ MonoBehaviour:
   CellSize: 50
   MinBuildConfirmUIPosition: {x: 184, y: 416}
   MaxBuildConfirmUIPosition: {x: 903, y: 1695}
+  BuildAvailabiltyMan: {fileID: 995991368}
 --- !u!1 &41437683
 GameObject:
   m_ObjectHideFlags: 0
@@ -33236,6 +33237,7 @@ GameObject:
   - component: {fileID: 995991362}
   - component: {fileID: 995991366}
   - component: {fileID: 995991367}
+  - component: {fileID: 995991368}
   m_Layer: 5
   m_Name: MenueBuild
   m_TagString: Untagged
@@ -33350,6 +33352,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &995991368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995991361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989be9e5a0e59f2499496216c4f8e89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildButtonManagers:
+  - {fileID: 1921256365}
+  - {fileID: 907604873}
+  - {fileID: 0}
+  - {fileID: 1542056076}
+  - {fileID: 1697080747}
+  - {fileID: 402144259}
+  - {fileID: 565755426}
+  - {fileID: 1724725909}
+  baseSwitcher: {fileID: 1649716204}
 --- !u!1 &996565777
 GameObject:
   m_ObjectHideFlags: 0
@@ -48938,6 +48961,7 @@ MonoBehaviour:
   CellSize: 50
   MinBuildConfirmUIPosition: {x: 184, y: 416}
   MaxBuildConfirmUIPosition: {x: 903, y: 1695}
+  BuildAvailabiltyMan: {fileID: 995991368}
 --- !u!65 &1457230372
 BoxCollider:
   m_ObjectHideFlags: 0
