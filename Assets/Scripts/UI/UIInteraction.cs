@@ -52,6 +52,13 @@ public class UIInteraction : MonoBehaviour {
         this.MainMenueControll.ToggleMenue(5);
     }
 
+    /// <summary>Behaviour for button 5</summary>
+    public void OpenButton6() {
+        this.CheckPlayerBuilding();
+        this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
+        this.MainMenueControll.ToggleMenue(6);
+    }
+
     public void MainLoad() {
         this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
         this.MissionMapContainer.SetActive(false);
