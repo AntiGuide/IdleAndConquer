@@ -7,6 +7,8 @@ public class InputHandler : MonoBehaviour {
     /// <summary>Disables camera movement when true</summary>
     public static bool BlockCameraMovement;
 
+    public static bool MoveCamForBuilding;
+
     /// <summary>The distance which the user must drag until a drag is registered as such versus a click</summary>
     public float DeadZoneDrag;
 
@@ -26,6 +28,8 @@ public class InputHandler : MonoBehaviour {
     public float OrthoZoomSpeed = 0.5f;
 
     public bool IsMissionMap;
+
+    public float BuildCamMoveSpeed = 1f;
 
     /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
@@ -111,12 +115,12 @@ public class InputHandler : MonoBehaviour {
 
                 break;
             case TouchPhase.Moved:
-                if (!this.blockMapMovement && !BlockCameraMovement) {
+                if (!this.blockMapMovement) {
                     if (!this.movedDuringTouch && Vector2.Distance(this.startPos, touchPosition) > this.DeadZoneDrag) {
                         this.movedDuringTouch = true;
                     }
 
-                    if (this.movedDuringTouch) {
+                    if (this.movedDuringTouch && !BlockCameraMovement) {
                         var curPosRay = Camera.main.ScreenPointToRay(touchPosition);
                         RaycastHit curHitInfo;
                         if (Physics.Raycast(curPosRay, out curHitInfo, 2000.0f, LayerMask.GetMask("Plane"))) {
@@ -128,6 +132,31 @@ public class InputHandler : MonoBehaviour {
                                 this.MoveInBounds(transform.position + deltaPos);
                             }
                         }
+                    }
+
+                    if (this.movedDuringTouch && MoveCamForBuilding) {
+                        var screenPointPercentage = new Vector2 {
+                            x = Mathf.Min(Mathf.Max(touchPosition.x / (float)Camera.main.pixelWidth, 0f), 1f),
+                            y = Mathf.Min(Mathf.Max(touchPosition.y / (float)Camera.main.pixelHeight, 0f), 1f)
+                        };
+
+                        var moveZoneX = new Vector2(0.3f, 0.7f);
+                        var moveZoneY = new Vector2(0.3f, 0.7f);
+                        var moveDirection = new Vector2();
+                        if (screenPointPercentage.x > moveZoneX.y) {
+                            moveDirection.x = screenPointPercentage.x - moveZoneX.y;
+                        } else if (screenPointPercentage.x < moveZoneX.x) {
+                            moveDirection.x = screenPointPercentage.x - moveZoneX.x;
+                        }
+
+                        if (screenPointPercentage.y > moveZoneY.y) {
+                            moveDirection.y = screenPointPercentage.y - moveZoneY.y;
+                        } else if (screenPointPercentage.y < moveZoneY.x) {
+                            moveDirection.y = screenPointPercentage.y - moveZoneY.x;
+                        }
+                        var camMove = Camera.main.transform.right * moveDirection.x;
+                        camMove += Camera.main.transform.up * moveDirection.y * 3;
+                        this.MoveInBounds(transform.position + camMove * BuildCamMoveSpeed);
                     }
                 }
 

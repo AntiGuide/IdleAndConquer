@@ -34,6 +34,7 @@ public class BuildBuilding : MonoBehaviour {
     public static bool PlayerBuilding { get; private set; }
 
     public void BuildABuilding(int buildingID, long costBuilding, int costEnergy) {
+        InputHandler.MoveCamForBuilding = true;
         this.costBuilding = costBuilding;
         this.costEnergy = costEnergy;
         buildingID--;
@@ -63,6 +64,7 @@ public class BuildBuilding : MonoBehaviour {
 
     public void CancelBuildingProcess() {
         if (this.newBuilding == null) return;
+        InputHandler.MoveCamForBuilding = false;
         UnityEngine.Object.Destroy(this.newBuilding);
         PlayerBuilding = false;
         this.playerBuildingThisBase = false;
@@ -73,6 +75,7 @@ public class BuildBuilding : MonoBehaviour {
     public void ConfirmBuildingProcess() {
         if (this.buildColorChanger.CollidingBuildings != 0) return;
         if (!this.MoneyManager.SubMoney(this.costBuilding)) return;
+        InputHandler.MoveCamForBuilding = false;
         this.BaseSwitch.GetEnergyPool().SubEnergy(this.costEnergy);
         this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding();
         this.isBuilt[this.newBuildingID] = true;

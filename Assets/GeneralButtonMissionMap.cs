@@ -6,8 +6,8 @@ public class GeneralButtonMissionMap : MonoBehaviour {
     public Text country;
     public Text generalName;
     public Text winLoseHistory;
-    private GameObject missionDetailsWindow;
-    private MainMenueController mainMenueController;
+    //private GameObject missionDetailsWindow;
+    //private MainMenueController mainMenueController;
     private MissionManager missionMan;
     private ScreenStateMachine screenStateMach;
 
@@ -27,9 +27,9 @@ public class GeneralButtonMissionMap : MonoBehaviour {
 
     // Use this for initialization
     private void Start() {
-        this.mainMenueController = GameObject.Find("/MissionMap/Canvas/MainMenue/").GetComponent<MainMenueController>();
+        //this.mainMenueController = GameObject.Find("/MissionMap/Canvas/MainMenue/").GetComponent<MainMenueController>();
         this.missionMan = GameObject.Find("/ReferenceShare").GetComponent<MissionManager>();
-        this.missionDetailsWindow = GameObject.Find("/MissionMap/Canvas/MissionWindow");
+        //this.missionDetailsWindow = GameObject.Find("/MissionMap/Canvas/MissionWindow");
         this.screenStateMach = GameObject.Find("/MissionMap").GetComponent<ScreenStateMachine>();
     }
 }
