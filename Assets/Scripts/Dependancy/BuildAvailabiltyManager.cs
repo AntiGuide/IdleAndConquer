@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditorInternal;
+using UnityEngine;
 
 public class BuildAvailabiltyManager : MonoBehaviour {
     [SerializeField] private BuildButtonManager[] buildButtonManagers;
@@ -31,20 +32,25 @@ public class BuildAvailabiltyManager : MonoBehaviour {
             buildButtonManager.SetAvailability(false);
         }
 
-        buildButtonManagers[1].SetAvailability(true); // HQ always available
-        if (buildBuilding.BuiltBuildings[1] != null) {//HQ built
+        if (buildBuilding.BuiltBuildings[1] == null) {
+            buildButtonManagers[1].SetAvailability(true);
+        } else {
+            //HQ built
             // Enable Refinery + PowerPlant
             buildButtonManagers[3].SetAvailability(true);
             buildButtonManagers[6].SetAvailability(true);
-            if (buildBuilding.BuiltBuildings[3] != null && buildBuilding.BuiltBuildings[6] != null) { //Refinery + PowerPlant built
-                // Enable Barracks + TankFactory + Airfield
-                buildButtonManagers[5].SetAvailability(true);
-                buildButtonManagers[7].SetAvailability(true);
-                buildButtonManagers[0].SetAvailability(true);
-                if (buildBuilding.BuiltBuildings[5] != null && buildBuilding.BuiltBuildings[7] != null && buildBuilding.BuiltBuildings[0] != null) {
-                    // Enable Research Lab
-                    buildButtonManagers[4].SetAvailability(true);
-                }
+            if (buildBuilding.BuiltBuildings[3] == null || buildBuilding.BuiltBuildings[6] == null) {
+                return;
+            }
+
+            //Refinery + PowerPlant built
+            // Enable Barracks + TankFactory + Airfield
+            this.buildButtonManagers[5].SetAvailability(true);
+            this.buildButtonManagers[7].SetAvailability(true);
+            this.buildButtonManagers[0].SetAvailability(true);
+            if (buildBuilding.BuiltBuildings[5] != null && buildBuilding.BuiltBuildings[7] != null && buildBuilding.BuiltBuildings[0] != null) {
+                // Enable Research Lab
+                this.buildButtonManagers[4].SetAvailability(true);
             }
         }
     }
