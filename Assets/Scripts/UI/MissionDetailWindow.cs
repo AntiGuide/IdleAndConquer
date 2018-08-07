@@ -18,6 +18,13 @@ public class MissionDetailWindow : MonoBehaviour {
 
     [SerializeField] private Sprite[] lootBoxSprites;
 
+    [Header("Animation")]
+    [SerializeField] private float animationTime = 1f;
+
+    private float timeSpawnFinished;
+
+    private bool animating = false;
+
     public void FillInfo(string missionTitleText, string rewardTextText, ushort starCount) {
         this.missionTitle.text = missionTitleText;
         this.rewardText.text = rewardTextText;
@@ -31,5 +38,20 @@ public class MissionDetailWindow : MonoBehaviour {
                 lootBoxImages[i].sprite = lootBoxSprites[i];
             }
         }
+
+        timeSpawnFinished = Time.time + animationTime;
+        animating = true;
+    }
+
+    private void Update() {
+        if (!animating) {
+            return;
+        }
+        var timeUntilFinished = Mathf.Max(timeSpawnFinished - Time.time, 0f);
+        if (timeUntilFinished <= float.Epsilon) {
+            animating = false;
+        }
+        var tmpScale = 0.1f + (0.9f * (1f - timeUntilFinished * (1f / animationTime)));
+        transform.localScale = new Vector3(tmpScale, tmpScale, tmpScale);
     }
 }
