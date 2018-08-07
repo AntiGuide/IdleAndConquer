@@ -190,7 +190,7 @@ public class InputHandler : MonoBehaviour {
                                     var buildCost = buildingManager.BuildCost;
                                     var costEnergy = buildingManager.CostEnergy;
                                     Destroy(this.hitInformation.collider.gameObject);
-                                    BaseSwitch.GetBuilder().BuildABuilding(id, buildCost, costEnergy);
+                                    BaseSwitch.GetBuilder().BuildABuilding(id, buildCost, costEnergy, true);
                                 }
                                 //Update dependancies
                             } else {

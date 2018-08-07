@@ -32,10 +32,12 @@ public class BuildBuilding : MonoBehaviour {
     private long costBuilding = 0;
     private int costEnergy = 0;
     private int tmpBuildingID;
+    private bool tmpIsFree;
 
     public static bool PlayerBuilding { get; private set; }
 
-    public void BuildABuilding(int buildingID, long costBuilding, int costEnergy) {
+    public void BuildABuilding(int buildingID, long costBuilding, int costEnergy, bool free = false) {
+        tmpIsFree = free;
         InputHandler.MoveCamForBuilding = true;
         this.costBuilding = costBuilding;
         this.costEnergy = costEnergy;
@@ -67,6 +69,11 @@ public class BuildBuilding : MonoBehaviour {
 
     public void CancelBuildingProcess() {
         if (this.newBuilding == null) return;
+        if (tmpIsFree) {
+            //Return Resources
+            this.MoneyManager.AddMoney(this.costBuilding);
+            this.BaseSwitch.GetEnergyPool().AddEnergy(this.costEnergy);
+        }
         InputHandler.MoveCamForBuilding = false;
         UnityEngine.Object.Destroy(this.newBuilding);
         PlayerBuilding = false;
@@ -77,9 +84,12 @@ public class BuildBuilding : MonoBehaviour {
 
     public void ConfirmBuildingProcess() {
         if (this.buildColorChanger.CollidingBuildings != 0) return;
-        if (!this.MoneyManager.SubMoney(this.costBuilding)) return;
+        if (!tmpIsFree && !this.MoneyManager.SubMoney(this.costBuilding)) return;
         InputHandler.MoveCamForBuilding = false;
-        this.BaseSwitch.GetEnergyPool().SubEnergy(this.costEnergy);
+        if (!tmpIsFree) {
+            this.BaseSwitch.GetEnergyPool().SubEnergy(this.costEnergy);
+        }
+
         this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding(tmpBuildingID);
         this.isBuilt[this.newBuildingID] = true;
         this.BuiltBuildings[this.newBuildingID] = this.newBuilding;
