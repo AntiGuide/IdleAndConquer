@@ -71,7 +71,7 @@ public class MissionDetails : MonoBehaviour {
         }
         //this.MissionDetailsWindow.SetActive(true);
         var detailWindow =  this.MissionDetailsWindow.GetComponent<MissionDetailWindow>();
-        var rewardText = "Reward:" + System.Environment.NewLine + "Test";
+        var rewardText = "Reward:" + System.Environment.NewLine + this.MissionRenownReward + " Renown" + System.Environment.NewLine + MissionMoneyReward + " Credits";
         if (MissionVariantID <= 0) {
             detailWindow.FillInfo("Mission " + MissionGroupID, rewardText, (ushort)this.AktRating);
         } else {
