@@ -58,7 +58,7 @@ public class BuildBuilding : MonoBehaviour {
             PlayerBuilding = true;
             this.playerBuildingThisBase = true;
             InputHandler.BlockCameraMovement = true;
-            this.BuildingMenueController.Unexpand(true);
+            this.MainMenueControll.Unexpand(true);
         }
     }
 

@@ -94,7 +94,7 @@ public class BuildColorChanger : MonoBehaviour {
     /// </summary>
     /// <param name="other">The collider of the colliding building</param>
     private void OnTriggerEnter(Collider other) {
-        if (this.isBuilt || !BuildBuilding.PlayerBuilding || other.tag != "Buildings") return;
+        if (this.isBuilt || !BuildBuilding.PlayerBuilding || !other.CompareTag("Buildings")) return;
         this.CollidingBuildings++;
         this.SetRed();
     }
@@ -104,7 +104,7 @@ public class BuildColorChanger : MonoBehaviour {
     /// </summary>
     /// <param name="other">The collider of the colliding building</param>
     private void OnTriggerExit(Collider other) {
-        if (this.isBuilt || !BuildBuilding.PlayerBuilding || other.tag != "Buildings") return;
+        if (this.isBuilt || !BuildBuilding.PlayerBuilding || !other.CompareTag("Buildings")) return;
         this.CollidingBuildings--;
         if (this.CollidingBuildings == 0) {
             this.SetGreen();

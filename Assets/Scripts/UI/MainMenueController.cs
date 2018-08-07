@@ -68,10 +68,10 @@ public class MainMenueController : MonoBehaviour {
         }
     }
 
-    public void Unexpand() {
+    public void Unexpand(bool animation = true) {
         if (!this.IsExpanded) { return; }
-
-        ToggleMenue(EnabledMenue + 1);
+        CloseMainMenueGameObject.SetActive(false);
+        this.menueController[this.EnabledMenue].Unexpand(animation);
     }
 
     /// <summary>
