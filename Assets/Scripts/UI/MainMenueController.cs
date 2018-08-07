@@ -29,6 +29,7 @@ public class MainMenueController : MonoBehaviour {
 
     public void SetNotExpanded() {
         IsExpanded = false;
+        CloseMainMenueGameObject.SetActive(false);
         if (IsMissionMap) {
             ScreenStateMach.SetToState(ScreenStateMachine.WindowStates.MISSION_SELECT);
         }
