@@ -35,6 +35,8 @@ public class InputHandler : MonoBehaviour {
 
     public BaseSwitcher BaseSwitch;
 
+    public TapEffectHandler TapEffectHandle;
+
     /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
 
@@ -165,6 +167,9 @@ public class InputHandler : MonoBehaviour {
 
                 break;
             case TouchPhase.Ended:
+                if (!this.movedDuringTouch) {
+                    TapEffectHandle.Tap(Input.mousePosition);
+                }
                 if (this.blockMapMovement) {
                     this.blockMapMovement = false;
                 } else if (!this.movedDuringTouch) {
