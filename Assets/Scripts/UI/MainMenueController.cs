@@ -23,6 +23,17 @@ public class MainMenueController : MonoBehaviour {
     /// <summary>Getter/Setter for the isExpanded variable</summary>
     public bool IsExpanded { get; set; }
 
+    public bool IsMissionMap;
+
+    public ScreenStateMachine ScreenStateMach;
+
+    public void SetNotExpanded() {
+        IsExpanded = false;
+        if (IsMissionMap) {
+            ScreenStateMach.SetToState(ScreenStateMachine.WindowStates.MISSION_SELECT);
+        }
+    }
+
     /// <summary>
     /// This method opens the called type of menue instantly an without an animation.
     /// </summary>

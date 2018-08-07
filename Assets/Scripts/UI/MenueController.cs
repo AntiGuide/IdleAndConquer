@@ -107,7 +107,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void Unexpand(bool animated) {
         if (animated) {
             var y = this.startYMenue;
-            this.MainMenueControll.IsExpanded = false;
+            this.MainMenueControll.SetNotExpanded();
             this.startMarker = transform.position;
             this.endMarker = new Vector3(transform.position.x, y, 0);
             this.distanceStartEndMarker = Vector3.Distance(this.startMarker, this.endMarker);
@@ -117,7 +117,7 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             this.transform.position = new Vector3(transform.position.x, this.startYMenue, 0);
         }
 
-        this.MainMenueControll.IsExpanded = false;
+        this.MainMenueControll.SetNotExpanded();
     }
 
     /// <summary>Use this for initialization</summary>
