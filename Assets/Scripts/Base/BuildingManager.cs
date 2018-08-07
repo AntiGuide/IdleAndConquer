@@ -38,7 +38,7 @@ public class BuildingManager : MonoBehaviour {
         this.BuildingID = buildingID;
         switch (this.buildingType) {
             case BuildingType.AIRFIELD:
-                UnitAvailabilityMan.AirFieldCount++;
+                UnitAvailabilityMan.AirFieldCount[BaseSwitcher.CurrentBase]++;
                 // gameObject.GetComponent<AirField>().InitializeBuilt();
                 break;
             case BuildingType.COMMAND_CENTER:
@@ -55,14 +55,14 @@ public class BuildingManager : MonoBehaviour {
                 // gameObject.GetComponent<ResearchLab>().InitializeBuilt();
                 break;
             case BuildingType.BARRACKS:
-                UnitAvailabilityMan.BarracksCount++;
+                UnitAvailabilityMan.BarracksCount[BaseSwitcher.CurrentBase]++;
                 // gameObject.GetComponent<Barracks>().InitializeBuilt();
                 break;
             case BuildingType.POWERPLANT:
                 gameObject.GetComponent<PowerPlant>().InitializeBuilt();
                 break;
             case BuildingType.TANK_FACTORY:
-                UnitAvailabilityMan.TankFactoryCount++;
+                UnitAvailabilityMan.TankFactoryCount[BaseSwitcher.CurrentBase]++;
                 // gameObject.GetComponent<TankFactory>().InitializeBuilt();
                 break;
             default:
@@ -74,7 +74,7 @@ public class BuildingManager : MonoBehaviour {
         this.BuildingID = buildingID;
         switch (this.buildingType) {
             case BuildingType.AIRFIELD:
-                UnitAvailabilityMan.AirFieldCount--;
+                UnitAvailabilityMan.AirFieldCount[BaseSwitcher.CurrentBase]--;
                 // gameObject.GetComponent<AirField>().DeinitializeBuilt();
                 break;
             case BuildingType.COMMAND_CENTER:
@@ -91,14 +91,14 @@ public class BuildingManager : MonoBehaviour {
                 // gameObject.GetComponent<ResearchLab>().DeinitializeBuilt();
                 break;
             case BuildingType.BARRACKS:
-                UnitAvailabilityMan.BarracksCount--;
+                UnitAvailabilityMan.BarracksCount[BaseSwitcher.CurrentBase]--;
                 // gameObject.GetComponent<Barracks>().DeinitializeBuilt();
                 break;
             case BuildingType.POWERPLANT:
                 //gameObject.GetComponent<PowerPlant>().DeinitializeBuilt();
                 break;
             case BuildingType.TANK_FACTORY:
-                UnitAvailabilityMan.TankFactoryCount--;
+                UnitAvailabilityMan.TankFactoryCount[BaseSwitcher.CurrentBase]--;
                 // gameObject.GetComponent<TankFactory>().DeinitializeBuilt();
                 break;
             default:

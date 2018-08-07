@@ -19,6 +19,10 @@ public class BaseSwitchTrigger : MonoBehaviour {
 
     public BuildConfirmDialogHandler BuildConfirmDialogHandle;
 
+    public BuildAvailabiltyManager BuildAvailabiltyMan;
+
+    public UnitAvailabilityManager UnitAvailabilityMan;
+
     /// <summary>Reference to the image component to regulate the tint color</summary>
     private Image image;
 
@@ -32,6 +36,8 @@ public class BaseSwitchTrigger : MonoBehaviour {
         this.UpdateButtons();
         this.OtherButton.UpdateButtons();
         this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION, 0.5f);
+        BuildAvailabiltyMan.Refresh();
+        UnitAvailabilityMan.Refresh();
     }
 
     /// <summary>Sets the color for the base switch buttons</summary>
