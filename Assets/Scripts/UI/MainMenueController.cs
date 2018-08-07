@@ -12,6 +12,8 @@ public class MainMenueController : MonoBehaviour {
     /// <summary>Contains menue for deploying units to a mission on the mission map</summary>
     public GameObject DeployUI;
 
+    public GameObject CloseMainMenueGameObject;
+
     /// <summary>Contains the index of the activated menue</summary>
     public int EnabledMenue;
 
@@ -36,17 +38,18 @@ public class MainMenueController : MonoBehaviour {
 
             if (this.EnabledMenue != -1) {
                 this.Menue[this.EnabledMenue].GetComponent<Canvas>().enabled = false;
-                //this.Menue[this.enabledMenue].SetActive(false);
             }
 
             this.Menue[menueNumber].GetComponent<Canvas>().enabled = true;
-            //this.Menue[menueNumber].SetActive(true);
             this.EnabledMenue = menueNumber;
+            CloseMainMenueGameObject.SetActive(true);
             this.menueController[this.EnabledMenue].Expand(!this.IsExpanded);
         } else {
             if (this.IsExpanded) {
+                CloseMainMenueGameObject.SetActive(false);
                 this.menueController[this.EnabledMenue].Unexpand(true);
             } else {
+                CloseMainMenueGameObject.SetActive(true);
                 this.menueController[this.EnabledMenue].Expand(true);
             }
         }
