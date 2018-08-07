@@ -11,6 +11,8 @@ public class BlueprintStack : MonoBehaviour {
 
     public BlueprintType BlueprintTypeStack;
 
+    public BlueprintRarityType BlueprintTypeRarity;
+
     public Image BuildingOverlay;
 
     public BaseSwitcher BaseSwitch;
@@ -27,6 +29,8 @@ public class BlueprintStack : MonoBehaviour {
 
     private Text levelText;
 
+    public int LastAmountAdded;
+
     public enum BlueprintType {
         UNIT = 0,
         UNIT_GROUP,
@@ -38,10 +42,20 @@ public class BlueprintStack : MonoBehaviour {
         FIND_THE_BOX
     }
 
+    public enum BlueprintRarityType {
+        COMMON = 0,
+        RARE,
+        EPIC,
+        LEGENDARY
+    }
+
     public float Buildtime {
         get { return buildTime[this.level]; }
     }
 
+    /// <summary>
+    /// Triggered OnClick
+    /// </summary>
     public void LevelUp() {
         if (this.buildingTowardsLevel >= BlueprintStack.NeededBlueprintsLevel.Length || this.BlueprintCount < BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel]) {
             return;
@@ -53,6 +67,9 @@ public class BlueprintStack : MonoBehaviour {
         this.BaseSwitch.GetResearchQueue().AddToQueue(this);
     }
 
+    /// <summary>
+    /// Performed when time ran out
+    /// </summary>
     public void PerformLevelUp() {
         this.level++;
         this.levelText.text = "Level " + this.level;
@@ -82,7 +99,32 @@ public class BlueprintStack : MonoBehaviour {
 
     public void AddBlueprint(int count = 1) {
         this.BlueprintCount += count;
+        this.LastAmountAdded = count;
         this.blueprintCountText.text = this.BlueprintCount + "/" + BlueprintStack.NeededBlueprintsLevel[this.buildingTowardsLevel];
+    }
+
+    public string Description() {
+        switch (BlueprintTypeStack) {
+            case BlueprintType.UNIT:
+                return this.CreateAndOrderUnitStack.AttachedUnit.UnitName;
+            case BlueprintType.UNIT_GROUP:
+                break;
+            case BlueprintType.ARMOR_GROUP:
+                break;
+            case BlueprintType.HARVESTER:
+                break;
+            case BlueprintType.QUEUE:
+                break;
+            case BlueprintType.SQUADSLOTS:
+                break;
+            case BlueprintType.CATCHING_JETS:
+                break;
+            case BlueprintType.FIND_THE_BOX:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        return "Not Defined";
     }
 
     private void Awake() {

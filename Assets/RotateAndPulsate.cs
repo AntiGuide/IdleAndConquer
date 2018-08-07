@@ -57,20 +57,9 @@ public class RotateAndPulsate : MonoBehaviour {
             return;
         }
 
-        switch (type) {
-            case LootBoxStackManager.LootboxType.LEATHER:
-                UnityEngine.Object.Instantiate(this.lootboxRewardPrefabs[0], this.transformCanvas);
-                break;
-            case LootBoxStackManager.LootboxType.METAL:
-                UnityEngine.Object.Instantiate(this.lootboxRewardPrefabs[1], this.transformCanvas);
-                break;
-            case LootBoxStackManager.LootboxType.GOLD:
-                UnityEngine.Object.Instantiate(this.lootboxRewardPrefabs[2], this.transformCanvas);
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-
+        var go = Instantiate(this.lootboxRewardPrefabs[(int)type], this.transformCanvas);
+        var comp = go.GetComponent<LootGenerator>();
+        comp.InstantiateLootbox(type);
         AddBox(-1);
     }
 

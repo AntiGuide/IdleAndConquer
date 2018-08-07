@@ -20,4 +20,17 @@ public class BlueprintManager : MonoBehaviour {
             }
         }
     }
+
+    public BlueprintStack GetStackAndAdd(int count, BlueprintStack.BlueprintRarityType type) {
+        var possibleBlueprintStacks = new List<BlueprintStack>();
+        foreach (var item in this.BlueprintStacks) {
+            if (item.BlueprintTypeRarity == type) {
+                possibleBlueprintStacks.Add(item);
+            }
+        }
+
+        var bs = possibleBlueprintStacks[Mathf.RoundToInt(Random.Range(0, possibleBlueprintStacks.Count - 1))];
+        bs.AddBlueprint(count);
+        return bs;
+    }
 }
