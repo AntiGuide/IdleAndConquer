@@ -2580,7 +2580,7 @@ GameObject:
   - component: {fileID: 62153588}
   - component: {fileID: 62153587}
   m_Layer: 10
-  m_Name: Turquoise1
+  m_Name: 16-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2670,6 +2670,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &62153588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3044,6 +3045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 82450681}
   - component: {fileID: 82450682}
+  - component: {fileID: 82450683}
   m_Layer: 10
   m_Name: Countrys
   m_TagString: MissionLocation
@@ -3139,6 +3141,50 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
+--- !u!114 &82450683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 82450680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b299da3ccd93b3641a441282ae863166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionDets:
+  - {fileID: 711277574}
+  - {fileID: 812873516}
+  - {fileID: 836949083}
+  - {fileID: 323924879}
+  - {fileID: 558328168}
+  - {fileID: 2118116843}
+  - {fileID: 617667545}
+  - {fileID: 605209895}
+  - {fileID: 1501615345}
+  - {fileID: 1007474478}
+  - {fileID: 272772701}
+  - {fileID: 1288779795}
+  - {fileID: 881561428}
+  - {fileID: 2055173377}
+  - {fileID: 1798727113}
+  - {fileID: 197159003}
+  - {fileID: 1464480796}
+  - {fileID: 1079479737}
+  - {fileID: 169420125}
+  - {fileID: 1086629292}
+  - {fileID: 1694698898}
+  - {fileID: 469993531}
+  - {fileID: 209003263}
+  - {fileID: 1137779870}
+  - {fileID: 1047168950}
+  - {fileID: 197023994}
+  - {fileID: 101025100}
+  - {fileID: 350699506}
+  - {fileID: 62153587}
+  - {fileID: 1581635613}
+  - {fileID: 635373360}
+  baseSwitcher: {fileID: 1649716204}
 --- !u!1 &82670394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3895,7 +3941,7 @@ GameObject:
   - component: {fileID: 101025101}
   - component: {fileID: 101025100}
   m_Layer: 10
-  m_Name: Blue2
+  m_Name: 15-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3985,6 +4031,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &101025101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5695,7 +5742,7 @@ GameObject:
   - component: {fileID: 169420126}
   - component: {fileID: 169420125}
   m_Layer: 10
-  m_Name: Green1
+  m_Name: 10-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5785,6 +5832,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &169420126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6592,7 +6640,7 @@ GameObject:
   - component: {fileID: 197023995}
   - component: {fileID: 197023994}
   m_Layer: 10
-  m_Name: Turquoise2
+  m_Name: 15-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6682,6 +6730,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &197023995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6708,7 +6757,7 @@ GameObject:
   - component: {fileID: 197159004}
   - component: {fileID: 197159003}
   m_Layer: 10
-  m_Name: Green2
+  m_Name: 9-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6798,6 +6847,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &197159004
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7179,7 +7229,7 @@ GameObject:
   - component: {fileID: 209003264}
   - component: {fileID: 209003263}
   m_Layer: 10
-  m_Name: Turquoise3
+  m_Name: 14-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7269,6 +7319,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &209003264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9596,7 +9647,7 @@ GameObject:
   - component: {fileID: 272772702}
   - component: {fileID: 272772701}
   m_Layer: 10
-  m_Name: Red3
+  m_Name: 8-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9686,6 +9737,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &272772702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10667,7 +10719,7 @@ GameObject:
   - component: {fileID: 323924880}
   - component: {fileID: 323924879}
   m_Layer: 10
-  m_Name: Orange4
+  m_Name: 4-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10757,6 +10809,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &323924880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11300,7 +11353,7 @@ GameObject:
   - component: {fileID: 350699507}
   - component: {fileID: 350699506}
   m_Layer: 10
-  m_Name: Yellow2
+  m_Name: 15-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11390,6 +11443,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &350699507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12610,10 +12664,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 168.54858, y: -761}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402144256
 MonoBehaviour:
@@ -14159,7 +14213,7 @@ GameObject:
   - component: {fileID: 469993532}
   - component: {fileID: 469993531}
   m_Layer: 10
-  m_Name: Purple1
+  m_Name: 13-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14249,6 +14303,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &469993532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17082,7 +17137,7 @@ GameObject:
   - component: {fileID: 558328169}
   - component: {fileID: 558328168}
   m_Layer: 10
-  m_Name: Orange5
+  m_Name: 4-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17172,6 +17227,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &558328169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17665,10 +17721,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 467.54858, y: -761}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565755423
 MonoBehaviour:
@@ -19204,7 +19260,7 @@ GameObject:
   - component: {fileID: 605209896}
   - component: {fileID: 605209895}
   m_Layer: 10
-  m_Name: Orange8
+  m_Name: 6-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19294,6 +19350,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &605209896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20148,7 +20205,7 @@ GameObject:
   - component: {fileID: 617667546}
   - component: {fileID: 617667545}
   m_Layer: 10
-  m_Name: Orange7
+  m_Name: 5-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20238,6 +20295,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &617667546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21064,7 +21122,7 @@ GameObject:
   - component: {fileID: 635373361}
   - component: {fileID: 635373360}
   m_Layer: 10
-  m_Name: Yellow1
+  m_Name: 16-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21154,6 +21212,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &635373361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23545,7 +23604,7 @@ GameObject:
   - component: {fileID: 711277575}
   - component: {fileID: 711277574}
   m_Layer: 10
-  m_Name: Orange1
+  m_Name: 1-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23640,6 +23699,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &711277575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26180,7 +26240,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 8
+          m_FloatArgument: 100
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -26357,7 +26417,7 @@ GameObject:
   - component: {fileID: 812873517}
   - component: {fileID: 812873516}
   m_Layer: 10
-  m_Name: Orange2
+  m_Name: 2-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26452,6 +26512,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &812873517
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27238,7 +27299,7 @@ GameObject:
   - component: {fileID: 836949084}
   - component: {fileID: 836949083}
   m_Layer: 10
-  m_Name: Orange3
+  m_Name: 3-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27333,6 +27394,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &836949084
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28510,7 +28572,7 @@ GameObject:
   - component: {fileID: 881561429}
   - component: {fileID: 881561428}
   m_Layer: 10
-  m_Name: Green3
+  m_Name: 8-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28556,6 +28618,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &881561429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29447,10 +29510,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 467.54858, y: -163}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &907604870
 MonoBehaviour:
@@ -33824,7 +33887,7 @@ GameObject:
   - component: {fileID: 1007474479}
   - component: {fileID: 1007474478}
   m_Layer: 10
-  m_Name: Orange10
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33914,6 +33977,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1007474479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35057,7 +35121,7 @@ GameObject:
   - component: {fileID: 1047168951}
   - component: {fileID: 1047168950}
   m_Layer: 10
-  m_Name: Yellow3
+  m_Name: 14-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35147,6 +35211,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1047168951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36629,7 +36694,7 @@ GameObject:
   - component: {fileID: 1079479738}
   - component: {fileID: 1079479737}
   m_Layer: 10
-  m_Name: Dark Blue1
+  m_Name: 10-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36719,6 +36784,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1079479738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37006,7 +37072,7 @@ GameObject:
   - component: {fileID: 1086629293}
   - component: {fileID: 1086629292}
   m_Layer: 10
-  m_Name: Purple3
+  m_Name: 11-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37096,6 +37162,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1086629293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37891,6 +37958,7 @@ MonoBehaviour:
   LootboxPopUpPrefab: {fileID: 1824197085095706, guid: 3f62106768ff8504c97976d572485b13,
     type: 2}
   missionFeedbackPrompt: {fileID: 996565778}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!1 &1101537010
 GameObject:
   m_ObjectHideFlags: 0
@@ -38983,7 +39051,7 @@ GameObject:
   - component: {fileID: 1137779871}
   - component: {fileID: 1137779870}
   m_Layer: 10
-  m_Name: Blue3
+  m_Name: 14-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39073,6 +39141,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1137779871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44092,7 +44161,7 @@ GameObject:
   - component: {fileID: 1288779796}
   - component: {fileID: 1288779795}
   m_Layer: 10
-  m_Name: Dark Blue3
+  m_Name: 8-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44182,6 +44251,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1288779796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49197,7 +49267,7 @@ GameObject:
   - component: {fileID: 1464480797}
   - component: {fileID: 1464480796}
   m_Layer: 10
-  m_Name: Red1
+  m_Name: 10-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49287,6 +49357,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1464480797
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50407,7 +50478,7 @@ GameObject:
   - component: {fileID: 1501615346}
   - component: {fileID: 1501615345}
   m_Layer: 10
-  m_Name: Orange9
+  m_Name: 6-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50497,6 +50568,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1501615346
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51774,10 +51846,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 168.54858, y: -462}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542056073
 MonoBehaviour:
@@ -53172,7 +53244,7 @@ GameObject:
   - component: {fileID: 1581635614}
   - component: {fileID: 1581635613}
   m_Layer: 10
-  m_Name: Blue1
+  m_Name: 16-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53262,6 +53334,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1581635614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57590,7 +57663,7 @@ GameObject:
   - component: {fileID: 1694698899}
   - component: {fileID: 1694698898}
   m_Layer: 10
-  m_Name: Purple2
+  m_Name: 12-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57680,6 +57753,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1694698899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -57836,10 +57910,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 467.54858, y: -462}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1697080744
 MonoBehaviour:
@@ -58713,10 +58787,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 168.54858, y: -1060}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724725906
 MonoBehaviour:
@@ -61133,7 +61207,7 @@ GameObject:
   - component: {fileID: 1798727114}
   - component: {fileID: 1798727113}
   m_Layer: 10
-  m_Name: Dark Blue2
+  m_Name: 9-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61223,6 +61297,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &1798727114
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65590,10 +65665,10 @@ RectTransform:
   m_Father: {fileID: 272373487}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 168.54858, y: -163}
-  m_SizeDelta: {x: 256, y: 256}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921256365
 MonoBehaviour:
@@ -69741,7 +69816,7 @@ GameObject:
   - component: {fileID: 2055173378}
   - component: {fileID: 2055173377}
   m_Layer: 10
-  m_Name: Red2
+  m_Name: 9-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69831,6 +69906,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &2055173378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71193,7 +71269,7 @@ GameObject:
   - component: {fileID: 2118116844}
   - component: {fileID: 2118116843}
   m_Layer: 10
-  m_Name: Orange6
+  m_Name: 5-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71283,6 +71359,7 @@ MonoBehaviour:
   MainMenueControll: {fileID: 1064353850}
   MissionDetailsWindow: {fileID: 190401799}
   ScreenStateMach: {fileID: 864332588}
+  missionAvailabilityManager: {fileID: 82450683}
 --- !u!65 &2118116844
 BoxCollider:
   m_ObjectHideFlags: 0

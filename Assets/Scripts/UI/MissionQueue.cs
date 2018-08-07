@@ -11,6 +11,7 @@ public class MissionQueue : MonoBehaviour {
     public Transform TransformCanvas;
     public GameObject LootboxPopUpPrefab;
     [SerializeField] private MissionFeedbackPrompt missionFeedbackPrompt;
+    [SerializeField] private MissionAvailabilityManager missionAvailabilityManager;
     private readonly List<MissionUI> missionUIs = new List<MissionUI>();
 
 
@@ -39,6 +40,7 @@ public class MissionQueue : MonoBehaviour {
 
         tmpMissionDetails.AktRating = achievedRating;
         tmpMissionDetails.SaveRating();
+        missionAvailabilityManager.Refresh();
         // var go = Instantiate(this.RewardPopUpPrefab, this.TransformCanvas);
         // go.GetComponent<RewardPopUp>().Initialize(this.MoneyManager, this.RenownManager, this.VirtualCurrencyManager, this, attachedMission.Units, attachedMission.MissionGeneral);
         // go.GetComponent<RewardPopUp>().ShowRewards(attachedMission.MissionDetails);

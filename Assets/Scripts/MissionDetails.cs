@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
@@ -34,9 +35,11 @@ public class MissionDetails : MonoBehaviour {
     public MainMenueController MainMenueControll;
     public GameObject MissionDetailsWindow;
     public ScreenStateMachine ScreenStateMach;
+    public MissionAvailabilityManager missionAvailabilityManager;
 
     private readonly List<Unit> EnemyUnits = new List<Unit>();
     private MissionGoal missionGoal;
+    private bool available;
 
     public int MissionTime { get; private set; }
 
@@ -55,8 +58,17 @@ public class MissionDetails : MonoBehaviour {
         THREE_STAR,
     }
 
+    public void SetAvailability(bool available) {
+        if (MissionGroupID == 1) {
+            available = true;
+        }
+
+        this.available = available;
+        GetComponent<SpriteRenderer>().color = available ? Color.white : Color.grey;
+    }
+
     public void OnClick() {
-        if (currentlyRunning) {
+        if (currentlyRunning || !available) {
             return;
         }
         //this.MissionDetailsWindow.SetActive(true);
@@ -176,6 +188,7 @@ public class MissionDetails : MonoBehaviour {
 
     private void Start() {
         AktRating = (Ratings)PlayerPrefs.GetInt("Mission_" + MissionGroupID + "_" + MissionVariantID, (int)Ratings.NOT_COMPLETED);
+        missionAvailabilityManager.Refresh();
         foreach (var createAndOrderUnit in EnemyUnitsArr) {
             EnemyUnits.Add(createAndOrderUnit.AttachedUnit);
         }
