@@ -21,6 +21,8 @@ public class MissionDetailWindow : MonoBehaviour {
     [Header("Animation")]
     [SerializeField] private float animationTime = 1f;
 
+    public bool IsOpen;
+
     private float timeSpawnFinished;
 
     private bool animating = false;
@@ -39,8 +41,10 @@ public class MissionDetailWindow : MonoBehaviour {
             }
         }
 
-        timeSpawnFinished = Time.time + animationTime;
-        animating = true;
+        if (!this.IsOpen) {
+            timeSpawnFinished = Time.time + animationTime;
+            animating = true;
+        }
     }
 
     private void Update() {
@@ -49,6 +53,7 @@ public class MissionDetailWindow : MonoBehaviour {
         }
         var timeUntilFinished = Mathf.Max(timeSpawnFinished - Time.time, 0f);
         if (timeUntilFinished <= float.Epsilon) {
+            IsOpen = true;
             animating = false;
         }
         var tmpScale = 0.1f + (0.9f * (1f - timeUntilFinished * (1f / animationTime)));

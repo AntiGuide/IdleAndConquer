@@ -72,6 +72,8 @@ public class ScreenStateMachine : MonoBehaviour {
         switch (windowState) {
             case WindowStates.MISSION_SELECT:
                 missionDetailsWindow.SetActive(false);
+                this.missionDetailsWindow.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                this.missionDetailsWindow.GetComponent<MissionDetailWindow>().IsOpen = false;
                 this.mainMenueController.ActivateDeployUI(false);
                 mainMenueController.Unexpand();
                 // Reset MissionSelect
@@ -89,6 +91,8 @@ public class ScreenStateMachine : MonoBehaviour {
                 break;
             case WindowStates.SQUAD_SELECT:
                 this.missionDetailsWindow.SetActive(false);
+                this.missionDetailsWindow.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+                this.missionDetailsWindow.GetComponent<MissionDetailWindow>().IsOpen = false;
                 this.mainMenueController.ActivateDeployUI(true);
                 if (!mainMenueController.IsExpanded || mainMenueController.EnabledMenue + 1 != 2) {
                     this.mainMenueController.ToggleMenue(2);
