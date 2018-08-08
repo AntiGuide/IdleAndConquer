@@ -194,6 +194,7 @@ public class Unit : MonoBehaviour{
         if (UnitCount > 0) {
             this.CreateAndOrderButton.SetUnitCount((--this.UnitCount).ToString());
             PlayerPrefs.SetInt(this.UnitName + "_COUNT", this.UnitCount);
+            SentToMission--;
             this.CreateAndOrderButton.AddPowerlevel(-Mathf.RoundToInt(this.hp * this.attack * this.defense / 1000f), false);
         } else {
             throw new Exception("Not enough Units to kill one!");
