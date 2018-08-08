@@ -1601,6 +1601,9 @@ MonoBehaviour:
   buildingType: 6
   BuildCost: 10000
   CostEnergy: -30
+  BuildingID: 0
+  CanBeDestroyed: 1
+  UnitAvailabilityMan: {fileID: 0}
 --- !u!114 &114385570935859874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1612,7 +1615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c3ef19280e44d42b363b58e246bb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnergyProduction: 20
+  EnergyProduction: 30
 --- !u!114 &114516973470112162
 MonoBehaviour:
   m_ObjectHideFlags: 1

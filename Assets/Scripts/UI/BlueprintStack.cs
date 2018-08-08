@@ -3,19 +3,27 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BlueprintStack : MonoBehaviour {
-    public BlueprintManager BlueprintMan;
-
-    public CreateAndOrderUnit CreateAndOrderUnitStack;
-
-    public int BlueprintCount = 0;
-
+    [Header("Details")]
     public BlueprintType BlueprintTypeStack;
-
     public BlueprintRarityType BlueprintTypeRarity;
 
-    public Image BuildingOverlay;
+    [Header("Unit")]
+    public CreateAndOrderUnit CreateAndOrderUnitStack;
 
+    [Header("Unit Group")]
+    public Unit.Type UnitType;
+
+    [Header("Armor Group")]
+    public Unit.ArmorType UnitArmorType;
+
+    [Header("References")]
+    public BlueprintManager BlueprintMan;
+    public Image BuildingOverlay;
     public BaseSwitcher BaseSwitch;
+    public int BlueprintCount = 0;
+    public int LastAmountAdded;
+    
+
 
     private static readonly int[] NeededBlueprintsLevel = { 1, 2, 8, 16, 32, 48, 64, 80, 96, 112 };
 
@@ -28,8 +36,6 @@ public class BlueprintStack : MonoBehaviour {
     private Text blueprintCountText;
 
     private Text levelText;
-
-    public int LastAmountAdded;
 
     public enum BlueprintType {
         UNIT = 0,

@@ -156,7 +156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingType: 3
   BuildCost: 1000
-  CostEnergy: 5
+  CostEnergy: 20
+  BuildingID: 0
+  CanBeDestroyed: 1
+  UnitAvailabilityMan: {fileID: 0}
 --- !u!114 &114261282446440160
 MonoBehaviour:
   m_ObjectHideFlags: 1
