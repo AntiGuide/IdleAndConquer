@@ -43,4 +43,8 @@ public class MissionManager : MonoBehaviour {
     public void AddUnitToBuildingMission(ref Unit unit) {
         this.Units.Add(unit);
     }
+
+    public void RemoveUnitFromBuildingMission(ref Unit unit) {
+        this.Units.Remove(unit);
+    }
 }

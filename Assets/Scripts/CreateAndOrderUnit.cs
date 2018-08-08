@@ -53,6 +53,8 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     public SoundController SoundControll;
 
+    public Sprite UnitIconSprite;
+
     private static readonly List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
 
     private static readonly int[] costLevel = { 0, 0, 0 };

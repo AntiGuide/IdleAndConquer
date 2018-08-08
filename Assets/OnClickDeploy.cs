@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class OnClickDeploy : MonoBehaviour {
@@ -11,14 +12,22 @@ public class OnClickDeploy : MonoBehaviour {
     private int unitCount;
     private int startUnitCount;
     private MissionManager missionMan;
+    private List<DeployedUnit> deplUnits = new List<DeployedUnit>();
 
     public void OnClickDeployEvent() {
         if (this.unitCount <= 0 || DeployedUnits >= MaxSlots) return;
         this.unitCount--;
         DeployedUnits++;
         this.RemainingUnitsText.text = this.unitCount.ToString();
-        this.showChosenGeneral.CreateNewUnitImage();
+        deplUnits.Add(this.showChosenGeneral.CreateNewUnitImage(attachedUnit, this));
         this.missionMan.AddUnitToBuildingMission(ref this.attachedUnit);
+    }
+
+    public void GiveUnitBack() {
+        this.unitCount++;
+        DeployedUnits--;
+        this.RemainingUnitsText.text = this.unitCount.ToString();
+        this.missionMan.RemoveUnitFromBuildingMission(ref this.attachedUnit);
     }
 
     public void Initialize(Unit unit) {
@@ -33,6 +42,11 @@ public class OnClickDeploy : MonoBehaviour {
     public void ResetOCD() {
         this.unitCount = this.startUnitCount;
         this.RemainingUnitsText.text = this.unitCount.ToString();
+        foreach (var deplUnit in deplUnits) {
+            Destroy(deplUnit);
+        }
+
+        deplUnits = new List<DeployedUnit>();
     }
 
     /// <summary>Use this for initialization</summary>

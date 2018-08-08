@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
@@ -15,13 +16,24 @@ public class ShowChosenGeneral : MonoBehaviour {
 
     public Transform UnitContainer;
 
+    public List<DeployedUnit> unitStacks = new List<DeployedUnit>();
+
     public void ShowSelectedGeneral(General gen) {
         this.GeneralName.text = gen.GeneralName;
         this.GeneralCountry.text = gen.Country;
     }
 
-    public GameObject CreateNewUnitImage() {
-        var go = Instantiate(this.UnitImagePrefab, this.UnitContainer);
+    public DeployedUnit CreateNewUnitImage(Unit unit,  OnClickDeploy ocd) {
+        foreach (var stack in unitStacks) {
+            if (stack.AttachedUnit == unit) {
+                stack.IncreaseCount();
+                return stack;
+            }
+        }
+
+        var go = Instantiate(this.UnitImagePrefab, this.UnitContainer).GetComponent<DeployedUnit>();
+        go.Initialize(unit, ocd,  this);
+        unitStacks.Add(go);
         return go;
     }
 
