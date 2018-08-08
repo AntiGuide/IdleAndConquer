@@ -25,6 +25,10 @@ public class BaseSwitchTrigger : MonoBehaviour {
 
     public MainMenueController MainMenueCont;
 
+    public Image UnavailableImage;
+
+    private bool available = false;
+
     /// <summary>Reference to the image component to regulate the tint color</summary>
     private Image image;
 
@@ -33,6 +37,10 @@ public class BaseSwitchTrigger : MonoBehaviour {
     /// If isLeft is true the base should be switched to the one on the left. If false its to the right.
     /// </summary>
     public void OnClickBaseSwitch() {
+        if (!available) {
+            return;
+        }
+
         this.CheckPlayerBuilding();
         this.BaseSwitch.OnClickBaseSwitch(this.IsLeft);
         this.UpdateButtons();
@@ -64,5 +72,15 @@ public class BaseSwitchTrigger : MonoBehaviour {
         if (this.BuildConfirmDialogHandle.isActiveAndEnabled) {
             this.BuildConfirmDialogHandle.DenyClick();
         }
+    }
+
+    public void Activate() {
+        UnavailableImage.color = new Color(0f, 0f, 0f, 0f);
+        available = true;
+    }
+
+    public void Deactivate() {
+        UnavailableImage.color = new Color(0f, 0f, 0f, 0.75f);
+        available = false;
     }
 }

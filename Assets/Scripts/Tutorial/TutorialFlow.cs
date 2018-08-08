@@ -10,6 +10,8 @@ public class TutorialFlow : MonoBehaviour {
 
     public EnergyManagement Management;
 
+    public BaseSwitchTrigger[] BaseSwitchTrigg;
+
     // Use this for initialization
     void Start () {
         //Deactivate all buttons beside Building
@@ -25,8 +27,10 @@ public class TutorialFlow : MonoBehaviour {
         UIInter.blockButtons[3] = true;
         UIInter.blockButtons[4] = true;
 
-        
-        
+        BaseSwitchTrigg[0].Deactivate();
+        BaseSwitchTrigg[1].Deactivate();
+
+
     }
     //barracks, tankfactory, airfield built
     public void BTABuilt() {
@@ -47,6 +51,9 @@ public class TutorialFlow : MonoBehaviour {
         UIInter.blockButtons[0] = false;
         UIInter.blockButtons[1] = false;
         UIInter.blockButtons[4] = false;
+
+        BaseSwitchTrigg[0].Activate();
+        BaseSwitchTrigg[1].Activate();
     }
 
 }
