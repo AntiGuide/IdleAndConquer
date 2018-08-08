@@ -3,6 +3,9 @@
 public class BuildAvailabiltyManager : MonoBehaviour {
     [SerializeField] private BuildButtonManager[] buildButtonManagers;
     [SerializeField] private BaseSwitcher baseSwitcher;
+    [SerializeField] private TutorialFlow tutorialFlow;
+
+    private bool isTutorialState = true;
 
     private void Start() {
         Refresh();
@@ -22,6 +25,7 @@ public class BuildAvailabiltyManager : MonoBehaviour {
          * 9 Centralbank
          */
 
+
         var buildBuilding = baseSwitcher.GetBuilder();
 
         foreach (var buildButtonManager in buildButtonManagers) {
@@ -29,6 +33,18 @@ public class BuildAvailabiltyManager : MonoBehaviour {
                 continue;
             }
             buildButtonManager.SetAvailability(false);
+        }
+
+        if (isTutorialState) {
+            this.buildButtonManagers[5].SetAvailability(true);
+            this.buildButtonManagers[7].SetAvailability(true);
+            this.buildButtonManagers[0].SetAvailability(true);
+            if (buildBuilding.BuiltBuildings[5] != null && buildBuilding.BuiltBuildings[7] != null && buildBuilding.BuiltBuildings[0] != null) {
+                isTutorialState = false;
+                tutorialFlow.BTABuilt();
+            } else {
+                return;
+            }
         }
 
         if (buildBuilding.BuiltBuildings[1] == null) {

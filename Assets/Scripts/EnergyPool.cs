@@ -3,7 +3,7 @@
 /// <summary>Contains energy data for each base</summary>
 public class EnergyPool : MonoBehaviour {
     /// <summary>The maximum containable energy</summary>
-    public int MaxEnergy = 96;
+    public int MaxEnergy = 80;
 
     /// <summary>The minimum containable energy</summary>
     public int MinEnergy = 0;
@@ -20,9 +20,9 @@ public class EnergyPool : MonoBehaviour {
     /// <param name="energyToAdd">How much energy to add</param>
     /// <returns>Returns wether the change is possible</returns>
     public void AddEnergy(int energyToAdd) {
-        if (!this.IsInBounds(this.CurEnergy + energyToAdd)) return;
+        //if (!this.IsInBounds(this.CurEnergy + energyToAdd)) return;
         this.CurEnergy += energyToAdd;
-        this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy, true);
+        this.EnergyManager.OutputEnergy(CurEnergy, true);
     }
 
     /// <summary>
@@ -31,9 +31,9 @@ public class EnergyPool : MonoBehaviour {
     /// <param name="energyToSub">How much energy to sub</param>
     /// <returns>Returns wether the change is possible</returns>
     public void SubEnergy(int energyToSub) {
-        if (!this.IsInBounds(this.CurEnergy - energyToSub)) return;
+        //if (!this.IsInBounds(this.CurEnergy - energyToSub)) return;
         this.CurEnergy -= energyToSub;
-        this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy, true);
+        this.EnergyManager.OutputEnergy(CurEnergy, true);
     }
 
     /// <summary>
@@ -48,12 +48,12 @@ public class EnergyPool : MonoBehaviour {
     /// </summary>
     /// <param name="valueToSet">To which level do we set the energy</param>
     private void SetEnergy(int valueToSet) {
-        if (this.IsInBounds(valueToSet)) {
-            this.CurEnergy = valueToSet;
-            this.EnergyManager.OutputEnergy(this.CurEnergy, this.MaxEnergy, this.MinEnergy, false);
-        } else {
-            throw new System.ArgumentException("Can not set an Energy Value that is not in the range of min and max Energy Value", "valueToSet");
-        }
+        //if (this.IsInBounds(valueToSet)) {
+        this.CurEnergy = valueToSet;
+        this.EnergyManager.OutputEnergy(CurEnergy, false);
+        //} else {
+        //throw new System.ArgumentException("Can not set an Energy Value that is not in the range of min and max Energy Value", "valueToSet");
+        //}
     }
 
     /// <summary>

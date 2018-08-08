@@ -83,14 +83,9 @@ public class GeneralManager : MonoBehaviour {
             var ret = attachedButton.gameObject.GetComponent<General>();
             ret.InitGeneral(this.chanceDeath, this.country, this.generalName, tmpGeneralID);
         }
-    }
 
-    /// <summary>
-    /// Update is called once per frame
-    /// </summary>
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
-            PlayerPrefs.DeleteAll();
+        if (AllGenerals.Count == 0) {
+            GenerateGeneral();
         }
     }
 }

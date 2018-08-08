@@ -18,14 +18,24 @@ public class UIInteraction : MonoBehaviour {
 
     public BuildConfirmDialogHandler BuildConfirmDialogHandle;
 
+    public bool[] blockButtons = new []{ false, false, false, false, false };
+
     /// <summary>Behaviour for button 1</summary>
     public void OpenButton1() {
+        if (blockButtons[0]) {
+            return;
+        }
+
         this.CheckPlayerBuilding();
         this.MissionMapLoad();
     }
 
     /// <summary>Behaviour for button 2</summary>
     public void OpenButton2() {
+        if (blockButtons[1]) {
+            return;
+        }
+
         this.CheckPlayerBuilding();
         this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(2);
@@ -33,6 +43,10 @@ public class UIInteraction : MonoBehaviour {
 
     /// <summary>Behaviour for button 3</summary>
     public void OpenButton3() {
+        if (blockButtons[2]) {
+            return;
+        }
+
         this.CheckPlayerBuilding();
         this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(3);
@@ -40,6 +54,10 @@ public class UIInteraction : MonoBehaviour {
 
     /// <summary>Behaviour for button 4</summary>
     public void OpenButton4() {
+        if (blockButtons[3]) {
+            return;
+        }
+
         this.CheckPlayerBuilding();
         this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(4);
@@ -47,6 +65,10 @@ public class UIInteraction : MonoBehaviour {
 
     /// <summary>Behaviour for button 5</summary>
     public void OpenButton5() {
+        if (blockButtons[4]) {
+            return;
+        }
+
         this.CheckPlayerBuilding();
         this.SoundControll.StartSound(SoundController.Sounds.MENUE_TAPS);
         this.MainMenueControll.ToggleMenue(5);

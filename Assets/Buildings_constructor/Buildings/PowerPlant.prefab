@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingType: 6
   BuildCost: 10000
-  CostEnergy: -30
+  CostEnergy: 0
   BuildingID: 0
   CanBeDestroyed: 1
   UnitAvailabilityMan: {fileID: 0}
