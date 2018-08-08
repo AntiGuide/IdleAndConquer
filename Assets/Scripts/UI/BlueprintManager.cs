@@ -29,6 +29,12 @@ public class BlueprintManager : MonoBehaviour {
             }
         }
 
+        if (possibleBlueprintStacks.Count <= 0) {
+            return null;
+        }
+
+        
+
         var bs = possibleBlueprintStacks[Mathf.RoundToInt(Random.Range(0, possibleBlueprintStacks.Count - 1))];
         bs.AddBlueprint(count);
         return bs;

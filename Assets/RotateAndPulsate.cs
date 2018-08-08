@@ -67,6 +67,7 @@ public class RotateAndPulsate : MonoBehaviour {
 
     public void StartUp() {
         count = PlayerPrefs.GetInt("LootboxButtons_" + id, 0);
+        count = 5;
         Output();
     }
 }

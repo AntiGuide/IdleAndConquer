@@ -10,7 +10,7 @@ public class LootGenerator : MonoBehaviour {
 
     private Vector2[,] amounts = new Vector2[3,4];
 
-    private void Start() {
+    public void InstantiateLootbox(LootBoxStackManager.LootboxType type, BlueprintManager BlueprintMan) {
 
         amounts[0, 0] = new Vector2(1, 10);
         amounts[0, 1] = new Vector2(1, 2);
@@ -26,9 +26,7 @@ public class LootGenerator : MonoBehaviour {
         amounts[2, 1] = new Vector2(4, 10);
         amounts[2, 2] = new Vector2(2, 5);
         amounts[2, 3] = new Vector2(1, 3);
-    }
 
-    public void InstantiateLootbox(LootBoxStackManager.LootboxType type, BlueprintManager BlueprintMan) {
         var typeChance = UnityEngine.Random.value;
         // Common
         var stackOne = BlueprintMan.GetStackAndAdd(Random.Range((int)amounts[(int)type, 0].x, (int)this.amounts[(int)type, 0].y), BlueprintStack.BlueprintRarityType.COMMON);
@@ -38,10 +36,14 @@ public class LootGenerator : MonoBehaviour {
             stackTwo = BlueprintMan.GetStackAndAdd(Random.Range((int)amounts[(int)type, 1].x, (int)amounts[(int)type, 1].y), BlueprintStack.BlueprintRarityType.RARE);
         } else if (typeChance < 0.95 || amounts[(int)type, 3] == Vector2.zero) {
             // Epic
-            stackTwo = BlueprintMan.GetStackAndAdd(Random.Range((int)amounts[(int)type, 2].x, (int)this.amounts[(int)type, 2].y), BlueprintStack.BlueprintRarityType.EPIC);
+            stackTwo = BlueprintMan.GetStackAndAdd(Random.Range((int)amounts[(int)type, 2].x, (int)amounts[(int)type, 2].y), BlueprintStack.BlueprintRarityType.EPIC);
         } else {
             // Legendary
             stackTwo = BlueprintMan.GetStackAndAdd(Random.Range((int)amounts[(int)type, 3].x, (int)this.amounts[(int)type, 3].y), BlueprintStack.BlueprintRarityType.LEGENDARY);
+        }
+
+        if (stackTwo == null || stackOne == null) {
+            return;
         }
 
         Description.text = stackOne.LastAmountAdded + " x " + stackOne.Description() + System.Environment.NewLine +

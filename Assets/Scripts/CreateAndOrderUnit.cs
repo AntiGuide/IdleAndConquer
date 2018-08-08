@@ -183,6 +183,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         this.buildingOverlay.fillAmount = 0f;
         this.unitBuilding = transform.Find("BuildingCountText").GetComponent<Text>();
         var count = PlayerPrefs.GetInt(this.unitName + "_COUNT", 0);
+        count += 5;
         if (count > 0) {
             this.AddPowerlevel(count * Mathf.RoundToInt(this.hp * this.attack * this.Defense / 1000f), true);
             this.SetUnitCount(count.ToString());
