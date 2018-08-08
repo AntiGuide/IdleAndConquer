@@ -18,6 +18,8 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public float LerpSpeed = 4f;
 
     public MainMenueController MainMenueControll;
+
+    public float StartPosition;
     
     /// <summary>Saves the canvas height times the y-scale</summary>
     private static float canvasHeight;
@@ -122,8 +124,8 @@ public class MenueController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     /// <summary>Use this for initialization</summary>
     private void Start() {
-        canvasHeight = this.CanvasRectTransform.rect.height * this.CanvasRectTransform.localScale.y;
-        this.startYMenue = this.transform.position.y;
+        canvasHeight = Screen.height;// * this.CanvasRectTransform.localScale.y;
+        this.startYMenue = canvasHeight * StartPosition;
     }
 
     /// <summary>Update is called once per frame</summary>

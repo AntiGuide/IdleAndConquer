@@ -18,4 +18,8 @@ public class NamePrompt : MonoBehaviour {
     public void OnFactionChooseOK() {
         UnityEngine.Object.Destroy(this.InputNamePrompt);
     }
+
+    public void ResetPlPref() {
+        PlayerPrefs.DeleteAll();
+    }
 }
