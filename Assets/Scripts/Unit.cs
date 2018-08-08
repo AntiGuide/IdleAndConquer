@@ -208,6 +208,8 @@ public class Unit : MonoBehaviour{
         if (this.UnitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp) > 0) {
             this.CreateAndOrderButton.AddPowerlevel(this.UnitCount * (powerLevelAfterLevelUp - powerLevelBeforeLevelUp), false);
         }
+
+        this.CreateAndOrderButton.LevelUpVisualize();
     }
 
     /// <summary>

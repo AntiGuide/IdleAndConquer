@@ -55,6 +55,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     public Sprite UnitIconSprite;
 
+    public Sprite[] levelIndicators;
+
+    public Image levelIndicatorImage;
+
     private static readonly List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
 
     private static readonly int[] costLevel = { 0, 0, 0 };
@@ -81,6 +85,8 @@ public class CreateAndOrderUnit : MonoBehaviour {
     private int buildingUnits = 0;
 
     private bool available;
+
+    private int level;
 
     public int Cost {
         get { return this.cost - (this.cost - Mathf.RoundToInt(Unit.HPBoostLevel[CreateAndOrderUnit.costLevel[(int)this.Type]] * this.cost)); }
@@ -199,5 +205,12 @@ public class CreateAndOrderUnit : MonoBehaviour {
         }
 
         allCreateAndOrder.Add(this);
+
+        levelIndicatorImage.color = new Color(1f,1f,1f,0f);
+    }
+
+    public void LevelUpVisualize() {
+        levelIndicatorImage.sprite = levelIndicators[level++];
+        levelIndicatorImage.color = Color.white;
     }
 }

@@ -83,12 +83,14 @@ public class UIInteraction : MonoBehaviour {
 
     public void MainLoad() {
         this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
+        this.MainMenueControll.Unexpand(false);
         this.MissionMapContainer.SetActive(false);
         this.MainContainer.SetActive(true);
     }
 
     private void MissionMapLoad() {
         this.SoundControll.StartSound(SoundController.Sounds.SWITCHBASE_TO_MISSION);
+        this.MainMenueControll.Unexpand(false);
         this.MainContainer.SetActive(false);
         this.MissionMapContainer.SetActive(true);
     }
