@@ -27,7 +27,7 @@ public class Unit : MonoBehaviour{
     // public static int[] LevelGroup = { 0, 0, 0 };
 
     /// <summary>The script that triggeres a production of this unit</summary>
-    private CreateAndOrderUnit CreateAndOrderButton;
+    public CreateAndOrderUnit CreateAndOrderButton;
 
     /// <summary>The used to get the correct production queue</summary>
     private BaseSwitcher baseSwitch;

@@ -66,7 +66,7 @@ public class ProductionQueue : MonoBehaviour {
 
         if (!(this.remainingTime <= 0f)) return;
         this.latestUnit.AddSingleBuiltUnit();
-        this.SoundControll.StartSound(SoundController.Sounds.UNIT_READY);
+        StartCoroutine(SoundControll.StartSound(SoundController.Sounds.UNIT_READY, this.latestUnit.CreateAndOrderButton.UnitTrack));
         if (BaseSwitcher.CurrentBase == this.BaseID) {
             this.buttonQueue[0].SubSingleUnitBuilding();
         }

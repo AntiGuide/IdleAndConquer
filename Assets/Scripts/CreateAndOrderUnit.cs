@@ -49,6 +49,10 @@ public class CreateAndOrderUnit : MonoBehaviour {
 
     public int AddOnStartup;
 
+    public AudioClip UnitTrack;
+
+    public SoundController SoundControll;
+
     private static readonly List<CreateAndOrderUnit> allCreateAndOrder = new List<CreateAndOrderUnit>();
 
     private static readonly int[] costLevel = { 0, 0, 0 };
@@ -99,7 +103,7 @@ public class CreateAndOrderUnit : MonoBehaviour {
         if (!available) {
             return;
         }
-
+        
         this.AttachedUnit.Order(ref this.MoneyManager);
     }
 

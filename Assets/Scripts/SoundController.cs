@@ -36,6 +36,12 @@ public class SoundController : MonoBehaviour {
         this.AudioSource1.PlayOneShot(this.Clips[(int)sound], volume);
     }
 
+    public IEnumerator StartSound(Sounds sound, AudioClip sound2, float volume = 1f) {
+        this.AudioSource1.PlayOneShot(this.Clips[(int)sound], volume);
+        yield return new WaitForSecondsRealtime(this.Clips[(int)sound].length + 0.5f);
+        this.AudioSource1.PlayOneShot(sound2, volume);
+    }
+
     public AudioSource StartLoopingSound(Sounds sound, float volume) {
         var retAudioSource = this.gameObject.AddComponent<AudioSource>();
         retAudioSource.loop = true;
