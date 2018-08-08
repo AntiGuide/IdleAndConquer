@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class LootGenerator : MonoBehaviour {
-
-    public BlueprintManager BlueprintMan;
+    
 
     public Text Description;
 
     private Vector2[,] amounts = new Vector2[3,4];
 
     private void Start() {
+
         amounts[0, 0] = new Vector2(1, 10);
         amounts[0, 1] = new Vector2(1, 2);
         amounts[0, 2] = new Vector2(1, 1);
@@ -28,7 +28,7 @@ public class LootGenerator : MonoBehaviour {
         amounts[2, 3] = new Vector2(1, 3);
     }
 
-    public void InstantiateLootbox(LootBoxStackManager.LootboxType type) {
+    public void InstantiateLootbox(LootBoxStackManager.LootboxType type, BlueprintManager BlueprintMan) {
         var typeChance = UnityEngine.Random.value;
         // Common
         var stackOne = BlueprintMan.GetStackAndAdd(Random.Range((int)amounts[(int)type, 0].x, (int)this.amounts[(int)type, 0].y), BlueprintStack.BlueprintRarityType.COMMON);

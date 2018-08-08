@@ -16,6 +16,7 @@ public class RotateAndPulsate : MonoBehaviour {
     [SerializeField] private GameObject[] objectsToHide;
     [SerializeField] private Transform transformCanvas;
     [SerializeField] private GameObject[] lootboxRewardPrefabs;
+    [SerializeField] private BlueprintManager blueprintMan;
 
     private int count = 0;
 
@@ -59,9 +60,10 @@ public class RotateAndPulsate : MonoBehaviour {
 
         var go = Instantiate(this.lootboxRewardPrefabs[(int)type], this.transformCanvas);
         var comp = go.GetComponent<LootGenerator>();
-        comp.InstantiateLootbox(type);
+        comp.InstantiateLootbox(type, blueprintMan);
         AddBox(-1);
     }
+
 
     public void StartUp() {
         count = PlayerPrefs.GetInt("LootboxButtons_" + id, 0);

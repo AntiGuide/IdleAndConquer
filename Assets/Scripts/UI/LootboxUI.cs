@@ -8,6 +8,7 @@ public class LootboxUI : MonoBehaviour {
     public GameObject OKButton;
     public int RewardCount;
     public string RewardUnitName;
+    public GameObject ButtonCase;
     private BlueprintManager blueprintMan;
 
     public void ClickCase() {
@@ -20,6 +21,7 @@ public class LootboxUI : MonoBehaviour {
     }
 
     public void ClickOK() {
+        this.blueprintMan = GameObject.Find("/Main/Canvas/MainMenue/MenueResearch").GetComponent<BlueprintManager>();
         this.blueprintMan.SearchUnitNameAddBlueprint(this.RewardUnitName, this.RewardCount);
         UnityEngine.Object.Destroy(transform.parent.parent.gameObject);
     }
@@ -28,6 +30,19 @@ public class LootboxUI : MonoBehaviour {
         this.blueprintMan.SearchUnitNameAddBlueprint(this.RewardUnitName, this.RewardCount);
         TimedResearchReward.BeginNewTimerNow = true;
         UnityEngine.Object.Destroy(transform.parent.parent.gameObject);
+    }
+
+    public void StartAnimation() {
+        ButtonCase.SetActive(false);
+        GetComponent<Animator>().SetBool("StartLootboxAnimation", true);
+    }
+
+    public void SpawnBlueprintImage() {
+
+    }
+
+    public void AnimationEnded() {
+        ClickCase();
     }
 
     private void Start() {
