@@ -47,6 +47,11 @@ public class ScreenStateMachine : MonoBehaviour {
             case WindowStates.MISSION_SELECT:
                 SetToState(WindowStates.MISSION_SELECT);
                 missionManager.Reset();
+                //ShowChosenGen.unitStacks = new List<DeployedUnit>();
+                //foreach (var onClickDeploy in OCDs) {
+                //    onClickDeploy.deplUnits = new List<DeployedUnit>();
+                //}
+                
                 this.UIInteractions.MainLoad();
                 break;
             case WindowStates.GENERAL_SELECT:

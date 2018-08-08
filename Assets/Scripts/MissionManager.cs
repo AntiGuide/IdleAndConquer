@@ -25,6 +25,9 @@ public class MissionManager : MonoBehaviour {
     }
 
     public void StartMission() {
+        if (MissionDetails == null) {
+            return;
+        }
         this.MissionGeneral.IsSentToMission = true;
         foreach (var item in this.Units) {
             item.SentToMission++;

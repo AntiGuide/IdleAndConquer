@@ -12,7 +12,7 @@ public class OnClickDeploy : MonoBehaviour {
     private int unitCount;
     private int startUnitCount;
     private MissionManager missionMan;
-    private List<DeployedUnit> deplUnits = new List<DeployedUnit>();
+    public List<DeployedUnit> deplUnits = new List<DeployedUnit>();
 
     public void OnClickDeployEvent() {
         if (this.unitCount <= 0 || DeployedUnits >= MaxSlots) return;
