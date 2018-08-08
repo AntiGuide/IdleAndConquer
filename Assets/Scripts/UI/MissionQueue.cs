@@ -12,14 +12,19 @@ public class MissionQueue : MonoBehaviour {
     public GameObject LootboxPopUpPrefab;
     [SerializeField] private MissionFeedbackPrompt missionFeedbackPrompt;
     [SerializeField] private MissionAvailabilityManager missionAvailabilityManager;
+    [SerializeField] private GameObject instantFinish;
     private readonly List<MissionUI> missionUIs = new List<MissionUI>();
 
+    private MissionUI missionUI;
 
     public void Add(Mission mission) {
         var missionUI = Instantiate(this.MissionBar, this.transform).GetComponentInChildren<MissionUI>();
+        instantFinish.SetActive(true);
         missionUI.Initialize(mission);
         this.missionUIs.Add(missionUI);
         missionUI.AttachedMissionQueue = this;
+        this.missionUI = missionUI;
+        instantFinish.GetComponent<FinishButton>().missionUI = missionUI;
     }
 
     public static void DestroyMissionBar(MissionUI missionUI) {
@@ -27,6 +32,7 @@ public class MissionQueue : MonoBehaviour {
     }
 
     public void FinshedMission(Mission attachedMission) {
+        instantFinish.SetActive(false);
         attachedMission.MissionDetails.currentlyRunning = false;
         attachedMission.MissionGeneral.IsSentToMission = false;
         var tmpMissionDetails = attachedMission.MissionDetails;

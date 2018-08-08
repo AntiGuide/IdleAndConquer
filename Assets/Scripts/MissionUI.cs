@@ -6,6 +6,7 @@ public class MissionUI : MonoBehaviour {
     // public MoneyManagement moneyManagement;
     // public FloatUpSpawner floatUpSpawner;
     public MissionQueue AttachedMissionQueue;
+    public bool ForceFinish = false;
     private Image img;
     private float missionTime = -1f;
     // private long missionMoneyReward;
@@ -29,10 +30,14 @@ public class MissionUI : MonoBehaviour {
         this.img = this.GetComponent<Image>();
     }
 
+
+
     // Update is called once per frame
     private void Update() {
         if (!(this.missionTime > 0f)) return;
         this.aktTime += Time.deltaTime;
+        this.aktTime = ForceFinish ? this.missionTime : this.aktTime;
+        ForceFinish = false;
         if (this.aktTime / this.missionTime >= 1f) {
             this.img.fillAmount = 1f;
             this.missionTime = -1f;
