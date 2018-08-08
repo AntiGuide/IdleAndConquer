@@ -4298,7 +4298,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 620172863}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999964
+  m_Size: 0.9999991
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -15682,6 +15682,7 @@ MonoBehaviour:
   AttachedBuilding: {fileID: 1577165762185470, guid: 9150ec5f63f3b7b4b9cd75bb509d9c6e,
     type: 2}
   BaseSwitch: {fileID: 1649716204}
+  SoundControll: {fileID: 238347730}
 --- !u!4 &402427400 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4050859014600704, guid: 484d2666a406d5341a5b61f71c2374ec,
@@ -21701,6 +21702,7 @@ MonoBehaviour:
   AttachedBuilding: {fileID: 1338776505941328, guid: a8d10cbb0047d944cbf533ba34a2b864,
     type: 2}
   BaseSwitch: {fileID: 1649716204}
+  SoundControll: {fileID: 238347730}
 --- !u!1 &566727760
 GameObject:
   m_ObjectHideFlags: 0
@@ -35825,6 +35827,7 @@ MonoBehaviour:
   AttachedBuilding: {fileID: 1706830012228478, guid: ae0be251846e3944abd1438add493fb4,
     type: 2}
   BaseSwitch: {fileID: 1649716204}
+  SoundControll: {fileID: 238347730}
 --- !u!1001 &907652386
 Prefab:
   m_ObjectHideFlags: 0
@@ -50282,7 +50285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0001614058}
+  m_AnchoredPosition: {x: 0, y: 0.0006081303}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1209598779
@@ -62399,6 +62402,7 @@ MonoBehaviour:
   AttachedBuilding: {fileID: 1094477539291470, guid: 6bed379ec8fbf504e9445125122b421c,
     type: 2}
   BaseSwitch: {fileID: 1649716204}
+  SoundControll: {fileID: 238347730}
 --- !u!1001 &1542706079
 Prefab:
   m_ObjectHideFlags: 0
@@ -69418,6 +69422,7 @@ MonoBehaviour:
   AttachedBuilding: {fileID: 1920727374271818, guid: e789ee5b117d89145aedcc22951d7cd7,
     type: 2}
   BaseSwitch: {fileID: 1649716204}
+  SoundControll: {fileID: 238347730}
 --- !u!1 &1698733103
 GameObject:
   m_ObjectHideFlags: 0
@@ -70295,6 +70300,7 @@ MonoBehaviour:
   AttachedBuilding: {fileID: 1462446017090782, guid: fcc6aebcf3a0efa41a2f3fc5d9c1b569,
     type: 2}
   BaseSwitch: {fileID: 1649716204}
+  SoundControll: {fileID: 238347730}
 --- !u!1 &1726234129
 GameObject:
   m_ObjectHideFlags: 0
@@ -78037,6 +78043,7 @@ MonoBehaviour:
   AttachedBuilding: {fileID: 1400704415396098, guid: 0309ec524cf43f546ace1eb447417332,
     type: 2}
   BaseSwitch: {fileID: 1649716204}
+  SoundControll: {fileID: 238347730}
 --- !u!114 &1921256366
 MonoBehaviour:
   m_ObjectHideFlags: 0

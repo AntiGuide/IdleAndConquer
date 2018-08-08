@@ -68,6 +68,7 @@ public class MoneyManagement : MonoBehaviour {
     /// <returns>If the player had enough money for the transaction. True is returned and the transaction is performed. (False --> no transaction)</returns>
     public bool SubMoney(long moneyToSub) {
         if (money < moneyToSub) {
+            SoundControll.StartSound(SoundController.Sounds.FUNDS_REQUIRED);
             return false;
         }
 

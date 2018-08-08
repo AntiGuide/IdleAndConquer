@@ -14,6 +14,8 @@ public class BuildButtonManager : MonoBehaviour {
     /// <summary>Reference to BaseSwitcher to get the correct BuildBuilding object</summary>
     public BaseSwitcher BaseSwitch;
 
+    public SoundController SoundControll;
+
     private bool available;
 
     /// <summary>Variable to store the cost of the attached building after the Start method</summary>
@@ -34,6 +36,9 @@ public class BuildButtonManager : MonoBehaviour {
 
         if (MoneyManagement.HasMoney(this.costBuilding)) {
             this.BaseSwitch.GetBuilder().BuildABuilding(i, this.costBuilding, this.costEnergy);
+        }
+        else {
+            SoundControll.StartSound(SoundController.Sounds.FUNDS_REQUIRED);
         }
     }
 
