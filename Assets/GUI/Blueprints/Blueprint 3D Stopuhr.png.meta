@@ -3,7 +3,8 @@ guid: 1893319fe49556449a3cc5df9c71240a
 timeCreated: 1533718921
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Blueprint 3D Stopuhr_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -89,7 +90,21 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Blueprint 3D Stopuhr_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 49
+        width: 256
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
