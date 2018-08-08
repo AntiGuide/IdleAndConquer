@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BuildBuilding : MonoBehaviour {
     public GameObject[] BuiltBuildings;
+    public int[] BuiltBuildingsCounts;
     public GameObject[] Buildings;
     public GameObject BuildConfirmUI;
     public MenueController[] MenueControll;
@@ -94,6 +95,7 @@ public class BuildBuilding : MonoBehaviour {
         this.newBuilding.GetComponentInChildren<BuildingManager>().InitializeAttachedBuilding(tmpBuildingID);
         this.isBuilt[this.newBuildingID] = true;
         this.BuiltBuildings[this.newBuildingID] = this.newBuilding;
+        BuiltBuildingsCounts[this.newBuildingID]++;
         this.newBuilding.transform.localScale = this.prevScale;
         this.newBuilding.transform.position = new Vector3(this.newBuilding.transform.position.x, 0, this.newBuilding.transform.position.z);
         this.newBuilding = null;

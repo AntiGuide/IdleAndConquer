@@ -37,6 +37,8 @@ public class InputHandler : MonoBehaviour {
 
     public TapEffectHandler TapEffectHandle;
 
+    public BuildAvailabiltyManager BuildAvailabiltyMan;
+
     /// <summary>The position where the touch began</summary>
     private Vector2 startPos;
 
@@ -194,7 +196,14 @@ public class InputHandler : MonoBehaviour {
                                     var id = buildingManager.BuildingID;
                                     var buildCost = buildingManager.BuildCost;
                                     var costEnergy = buildingManager.CostEnergy;
+                                    var BuildBuildng = BaseSwitch.GetBuilder();
+                                    BuildBuildng.BuiltBuildingsCounts[id-1]--;
+                                    if (BuildBuildng.BuiltBuildingsCounts[id-1] <= 0) {
+                                        BuildBuildng.BuiltBuildings[id-1] = null;
+                                    }
+
                                     Destroy(this.hitInformation.collider.gameObject);
+                                    BuildAvailabiltyMan.Refresh();
                                     BaseSwitch.GetBuilder().BuildABuilding(id, buildCost, costEnergy, true);
                                 }
                                 //Update dependancies
